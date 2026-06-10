@@ -1,0 +1,752 @@
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import {
+  ArrowUpRight, ArrowDown, Send, Check, Menu, X,
+  Mail, Phone, Calendar, ExternalLink, Github, Linkedin
+} from 'lucide-react';
+import {
+  PROJECT_LIST, PROJECT_FILTERS, EXPERIENCE, ABOUT_POINTS, STATS,
+  TECH_CATEGORIES, FAQS, PRICING, CONTACT
+} from './data';
+import { NavSection, Project } from './types';
+
+// ─── Cube logo (matches the loader / hero art) ──────────────────────────────
+const CubeMark = ({ className = 'w-6 h-6' }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" className={className}>
+    <path d="M12 3l7 4v10l-7 4-7-4V7l7-4z" />
+    <path d="M12 3v8m0 0l7-4m-7 4L5 7m7 4v10" opacity="0.6" />
+  </svg>
+);
+
+const WhatsAppIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+  </svg>
+);
+
+// ─── Loader (name + percentage, reference style) ────────────────────────────
+function Loader({ onDone }: { onDone: () => void }) {
+  const [pct, setPct] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => {
+      setPct(p => {
+        const next = Math.min(100, p + Math.ceil(Math.random() * 9));
+        if (next >= 100) { clearInterval(t); setTimeout(onDone, 350); }
+        return next;
+      });
+    }, 60);
+    return () => clearInterval(t);
+  }, [onDone]);
+
+  return (
+    <motion.div exit={{ opacity: 0, transition: { duration: 0.6 } }}
+      className="fixed inset-0 z-[300] bg-[#fafafa] flex flex-col items-center justify-center select-none">
+      <span className="side-label absolute right-8 top-1/2 -translate-y-1/2 hidden md:block">Full-Stack Developer</span>
+      <span className="side-label absolute left-8 top-1/2 -translate-y-1/2 hidden md:block" style={{ transform: 'rotate(180deg)' }}>Portfolio 2026</span>
+
+      <div className="relative w-44 h-44 flex items-center justify-center">
+        <svg viewBox="0 0 176 176" className="absolute inset-0 w-full h-full">
+          <circle cx="88" cy="88" r="84" fill="none" stroke="#dcdee1" strokeWidth="1" strokeDasharray="3 6" className="orbit-spin" />
+          <circle cx="88" cy="88" r="64" fill="none" stroke="#e4e5e8" strokeWidth="1" className="orbit-spin-rev" />
+          <circle cx="150" cy="50" r="4" fill="#16181d" className="orbit-spin" style={{ transformOrigin: '88px 88px' }} />
+        </svg>
+        <div className="w-20 h-20 rounded-full bg-white shadow-[0_10px_40px_rgba(20,22,26,0.10)] flex items-center justify-center cube-float">
+          <CubeMark className="w-9 h-9 text-[#16181d]" />
+        </div>
+      </div>
+
+      <h1 className="display text-4xl md:text-5xl mt-8">Aman Singh</h1>
+      <div className="w-56 h-px bg-[#dcdee1] mt-5 mb-4" />
+      <span className="text-[11px] tracking-[0.45em] uppercase text-[#6b7076]">Develop</span>
+
+      <div className="w-72 h-[3px] bg-[#e7e8ea] rounded-full mt-8 overflow-hidden">
+        <div className="h-full bg-[#16181d] rounded-full transition-all duration-100" style={{ width: `${pct}%` }} />
+      </div>
+      <div className="flex items-center gap-2 mt-4 text-[11px] tracking-[0.3em] uppercase text-[#6b7076]">
+        <span className="w-1.5 h-1.5 rounded-full bg-[#16181d]" /> Loading Experience <span className="text-[#16181d] text-base tracking-normal font-medium">{pct}%</span>
+      </div>
+      <span className="absolute bottom-8 text-[10px] tracking-[0.4em] uppercase text-[#b3b7bc]">Crafting Digital Experiences</span>
+    </motion.div>
+  );
+}
+
+// ─── Fade-up wrapper ─────────────────────────────────────────────────────────
+const FadeUp = ({ children, delay = 0, className = '' }: { children: React.ReactNode; delay?: number; className?: string; key?: React.Key }) => (
+  <motion.div initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: '-60px' }} transition={{ duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }}
+    className={className}>
+    {children}
+  </motion.div>
+);
+
+// ─── Project cover for items without screenshots ────────────────────────────
+const ProjectCover = ({ project }: { project: Project }) => (
+  <div className="w-full h-full flex items-center justify-center relative proj-img"
+    style={{ background: `linear-gradient(135deg, ${project.cover?.from} 0%, ${project.cover?.to} 100%)` }}>
+    <div className="absolute inset-0 opacity-[0.12]"
+      style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.6) 1px, transparent 1px)', backgroundSize: '22px 22px' }} />
+    <span className="font-display font-light text-white/90 text-6xl tracking-tight">{project.cover?.mark}</span>
+    <span className="absolute bottom-4 right-5 text-[10px] tracking-[0.3em] uppercase text-white/45">{project.subtitle}</span>
+  </div>
+);
+
+export default function App() {
+  const [loading, setLoading] = useState(true);
+  const [activeSection, setActiveSection] = useState<NavSection>('home');
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const [activeFilter, setActiveFilter] = useState('All');
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [calendlyOpen, setCalendlyOpen] = useState(false);
+
+  // Contact form
+  const [contactName, setContactName] = useState('');
+  const [contactEmail, setContactEmail] = useState('');
+  const [contactProjectType, setContactProjectType] = useState('Website / Web App');
+  const [contactMessage, setContactMessage] = useState('');
+  const [contactSent, setContactSent] = useState(false);
+
+  const refs = {
+    home: useRef<HTMLDivElement>(null),
+    about: useRef<HTMLDivElement>(null),
+    portfolio: useRef<HTMLDivElement>(null),
+    skills: useRef<HTMLDivElement>(null),
+    faq: useRef<HTMLDivElement>(null),
+    pricing: useRef<HTMLDivElement>(null),
+    contact: useRef<HTMLDivElement>(null),
+  };
+
+  const navLinks: { label: string; section: NavSection }[] = [
+    { label: 'About Me', section: 'about' },
+    { label: 'Portfolio', section: 'portfolio' },
+    { label: 'Skills', section: 'skills' },
+    { label: 'FAQ', section: 'faq' },
+    { label: 'Price', section: 'pricing' },
+    { label: 'Contact', section: 'contact' },
+  ];
+
+  const scrollTo = (section: NavSection) => {
+    setMobileNavOpen(false);
+    refs[section]?.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  useEffect(() => {
+    const onScroll = () => {
+      const pos = window.scrollY + 200;
+      const order: NavSection[] = ['contact', 'pricing', 'faq', 'skills', 'portfolio', 'about'];
+      for (const s of order) {
+        if (refs[s].current && pos >= refs[s].current!.offsetTop) { setActiveSection(s); return; }
+      }
+      setActiveSection('home');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handleContactSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!contactName || !contactEmail || !contactMessage) return;
+    const subject = encodeURIComponent(`Project Inquiry — ${contactProjectType} — ${contactName}`);
+    const body = encodeURIComponent(
+      `Hi Aman,\n\nName: ${contactName}\nEmail: ${contactEmail}\nProject Type: ${contactProjectType}\n\nMessage:\n${contactMessage}`
+    );
+    window.open(`mailto:${CONTACT.email}?subject=${subject}&body=${body}`);
+    setContactSent(true);
+    setContactName(''); setContactEmail(''); setContactMessage('');
+    setTimeout(() => setContactSent(false), 5000);
+  };
+
+  const filteredProjects = activeFilter === 'All'
+    ? PROJECT_LIST
+    : PROJECT_LIST.filter(p => p.filter === activeFilter);
+
+  return (
+    <div className="min-h-screen w-full bg-[#fafafa] text-[#16181d] relative">
+
+      <AnimatePresence>{loading && <Loader onDone={() => setLoading(false)} />}</AnimatePresence>
+
+      {/* ═══════════════════════════════════════════════ NAVBAR */}
+      <header className="fixed top-0 left-0 w-full z-50 bg-[#fafafa]/85 backdrop-blur-md border-b border-[#ececee]">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
+          <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="flex items-center gap-2 cursor-pointer">
+            <CubeMark className="w-7 h-7 text-[#16181d]" />
+          </button>
+
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.map(link => (
+              <button key={link.section} onClick={() => scrollTo(link.section)}
+                className={`text-sm transition-colors cursor-pointer ${
+                  activeSection === link.section ? 'text-[#16181d] font-medium' : 'text-[#6b7076] hover:text-[#16181d]'
+                }`}>
+                {link.label}
+              </button>
+            ))}
+          </nav>
+
+          <div className="flex items-center gap-3">
+            <button onClick={() => setCalendlyOpen(true)}
+              className="hidden md:flex items-center gap-1.5 text-sm font-medium underline underline-offset-4 decoration-[#c9cbce] hover:decoration-[#16181d] transition-all cursor-pointer">
+              Book A Call <ArrowUpRight className="w-4 h-4" />
+            </button>
+            <button onClick={() => setMobileNavOpen(true)} className="md:hidden w-9 h-9 flex items-center justify-center cursor-pointer">
+              <Menu className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Mobile drawer */}
+      <AnimatePresence>
+        {mobileNavOpen && (
+          <>
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+              onClick={() => setMobileNavOpen(false)} className="fixed inset-0 bg-black/30 backdrop-blur-sm z-[60]" />
+            <motion.div initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }}
+              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              className="fixed top-0 right-0 h-full w-72 bg-white z-[70] flex flex-col p-6 shadow-2xl">
+              <div className="flex items-center justify-between mb-8">
+                <CubeMark className="w-7 h-7" />
+                <button onClick={() => setMobileNavOpen(false)} className="w-9 h-9 rounded-full border border-[#e7e8ea] flex items-center justify-center">
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+              <nav className="flex flex-col gap-1 flex-1">
+                {navLinks.map(link => (
+                  <button key={link.section} onClick={() => scrollTo(link.section)}
+                    className="text-left px-4 py-3 rounded-xl text-sm text-[#4b5057] hover:bg-[#f3f4f5] transition-colors">
+                    {link.label}
+                  </button>
+                ))}
+              </nav>
+              <button onClick={() => { setMobileNavOpen(false); setCalendlyOpen(true); }}
+                className="mt-4 py-3.5 rounded-full bg-[#16181d] text-white text-sm font-medium flex items-center justify-center gap-2">
+                Book A Call <ArrowUpRight className="w-4 h-4" />
+              </button>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+
+      {/* ═══════════════════════════════════════════════ HERO */}
+      <section id="home" ref={refs.home} className="relative pt-16 min-h-screen flex flex-col lg:flex-row max-w-[1600px] mx-auto">
+        <span className="side-label absolute left-5 top-1/2 -translate-y-1/2 hidden xl:block" style={{ transform: 'rotate(180deg)' }}>
+          Full Stack Developer
+        </span>
+        <span className="side-label absolute left-5 bottom-12 hidden xl:block" style={{ transform: 'rotate(180deg)' }}>2026</span>
+
+        {/* Left: text */}
+        <div className="flex-1 flex flex-col justify-center px-6 md:px-14 xl:px-24 py-16 lg:py-0">
+          <FadeUp>
+            <div className="flex gap-12 mb-12">
+              {STATS.map((s, i) => (
+                <div key={i}>
+                  <div className="font-display font-light text-4xl md:text-5xl">{s.value}</div>
+                  <div className="text-sm text-[#6b7076] mt-1">{s.label}</div>
+                </div>
+              ))}
+            </div>
+          </FadeUp>
+          <FadeUp delay={0.1}>
+            <h1 className="display text-[clamp(4.5rem,11vw,9.5rem)] leading-[0.95]">Hello</h1>
+          </FadeUp>
+          <FadeUp delay={0.2}>
+            <p className="text-lg md:text-xl text-[#4b5057] mt-6 max-w-md font-light">
+              — It's <span className="font-medium text-[#16181d]">Aman Singh</span>, a Full-Stack Developer
+              building e-commerce, fintech & AI-powered products.
+            </p>
+            <p className="text-sm text-[#9ca1a8] mt-3 tracking-wide uppercase">Bangalore, India · Available for US · UK · Australia</p>
+          </FadeUp>
+          <FadeUp delay={0.3}>
+            <div className="flex items-center gap-4 mt-10">
+              <button onClick={() => scrollTo('contact')}
+                className="px-6 py-3.5 rounded-full bg-[#16181d] text-white text-sm font-medium flex items-center gap-2 hover:bg-black transition-colors cursor-pointer">
+                Start a Project <ArrowUpRight className="w-4 h-4" />
+              </button>
+              <button onClick={() => scrollTo('portfolio')}
+                className="px-6 py-3.5 rounded-full border border-[#d8dadd] text-sm text-[#4b5057] hover:border-[#16181d] hover:text-[#16181d] transition-colors cursor-pointer">
+                View Work
+              </button>
+            </div>
+            <button onClick={() => scrollTo('about')}
+              className="flex items-center gap-2 text-sm text-[#6b7076] mt-16 cursor-pointer hover:text-[#16181d] transition-colors">
+              Scroll down <ArrowDown className="w-4 h-4 animate-bounce" />
+            </button>
+          </FadeUp>
+        </div>
+
+        {/* Right: abstract geometric art */}
+        <div className="lg:w-[44%] flex items-stretch px-6 md:px-14 lg:pl-0 lg:pr-10 pb-10 lg:py-10">
+          <FadeUp className="w-full" delay={0.15}>
+            <div className="hero-art w-full h-[420px] lg:h-full min-h-[420px] rounded-[28px] flex items-center justify-center">
+              <svg viewBox="0 0 400 400" className="w-[78%] max-w-[420px] relative z-10">
+                <circle cx="200" cy="200" r="178" fill="none" stroke="rgba(255,255,255,0.14)" strokeWidth="1" strokeDasharray="2 7" className="orbit-spin" style={{ transformOrigin: '200px 200px' }} />
+                <circle cx="200" cy="200" r="136" fill="none" stroke="rgba(255,255,255,0.10)" strokeWidth="1" className="orbit-spin-rev" style={{ transformOrigin: '200px 200px' }} />
+                <circle cx="200" cy="200" r="96" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="1" strokeDasharray="1 5" className="orbit-spin" style={{ transformOrigin: '200px 200px', animationDuration: '30s' }} />
+                <g className="orbit-spin" style={{ transformOrigin: '200px 200px', animationDuration: '18s' }}>
+                  <circle cx="200" cy="22" r="5" fill="#fff" opacity="0.85" />
+                </g>
+                <g className="orbit-spin-rev" style={{ transformOrigin: '200px 200px', animationDuration: '26s' }}>
+                  <circle cx="336" cy="200" r="3.5" fill="#fff" opacity="0.5" />
+                </g>
+                <g className="cube-float">
+                  <path d="M200 118l66 38v88l-66 38-66-38v-88l66-38z" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.85)" strokeWidth="1.4" />
+                  <path d="M200 118v76m0 0l66-38m-66 38l-66-38m66 38v88" stroke="rgba(255,255,255,0.45)" strokeWidth="1.2" fill="none" />
+                </g>
+              </svg>
+              <span className="absolute bottom-6 left-7 text-[10px] tracking-[0.4em] uppercase text-white/35">Build · Ship · Scale</span>
+              <span className="absolute top-6 right-7 text-[10px] tracking-[0.4em] uppercase text-white/35">AS — 2026</span>
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* ─────────────────────────────── TRUSTED BY MARQUEE */}
+      <div className="border-y border-[#ececee] py-6 overflow-hidden bg-white">
+        <div className="animate-ticker">
+          {[...PROJECT_LIST, ...PROJECT_LIST, ...PROJECT_LIST].map((c, i) => (
+            <div key={i} className="flex items-center gap-3 px-10 flex-shrink-0">
+              <span className="text-lg leading-none">{c.country}</span>
+              <span className="text-sm font-medium text-[#4b5057]">{c.title}</span>
+              <span className="text-xs text-[#b3b7bc]">{c.category}</span>
+              <span className="ml-8 w-px h-5 bg-[#e7e8ea]" />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ═══════════════════════════════════════════════ ABOUT */}
+      <section id="about" ref={refs.about} className="max-w-[1440px] mx-auto px-6 md:px-10 py-24 md:py-32">
+        <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 mb-16">
+          <FadeUp>
+            <span className="eyebrow">About Me</span>
+            <h2 className="display text-[clamp(2.6rem,5.5vw,4.5rem)] mt-4">The engineer behind<br />the products</h2>
+          </FadeUp>
+          <FadeUp delay={0.1}>
+            <p className="text-[#6b7076] max-w-xs lg:text-right font-light">
+              Enterprise rigour from fintech at scale, startup speed from freelance builds — you get both.
+            </p>
+          </FadeUp>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+          {/* Left: stat card + cube panel */}
+          <FadeUp>
+            <div className="grid grid-cols-2 gap-5">
+              <div className="card p-7 col-span-2 sm:col-span-1">
+                <div className="font-display font-light text-6xl">+20<span className="text-3xl align-top">%</span></div>
+                <p className="text-sm text-[#6b7076] mt-3 leading-relaxed">Average increase in client engagement after relaunch</p>
+              </div>
+              <div className="card p-7 col-span-2 sm:col-span-1">
+                <div className="font-display font-light text-6xl">10M<span className="text-3xl align-top">+</span></div>
+                <p className="text-sm text-[#6b7076] mt-3 leading-relaxed">Users served by the lending platform I build for daily</p>
+              </div>
+              <div className="hero-art rounded-[22px] col-span-2 h-56 flex items-center justify-center">
+                <CubeMark className="w-16 h-16 text-white/90 cube-float" />
+                <span className="absolute bottom-4 left-5 text-[10px] tracking-[0.35em] uppercase text-white/35">Precision over cleverness</span>
+              </div>
+            </div>
+            <a href={CONTACT.linkedin} target="_blank" rel="noreferrer"
+              className="inline-flex items-center gap-2 mt-7 px-5 py-3 rounded-full border border-[#d8dadd] text-sm text-[#4b5057] hover:border-[#16181d] hover:text-[#16181d] transition-colors">
+              <Linkedin className="w-4 h-4" /> View LinkedIn
+            </a>
+          </FadeUp>
+
+          {/* Right: points */}
+          <div className="flex flex-col gap-7">
+            {ABOUT_POINTS.map((point, i) => (
+              <FadeUp key={i} delay={i * 0.06}>
+                <div className="flex items-start gap-4">
+                  <span className="w-6 h-6 rounded-full bg-[#16181d] text-white flex items-center justify-center flex-shrink-0 text-sm leading-none mt-0.5">+</span>
+                  <p className="text-[15px] text-[#4b5057] leading-relaxed font-light">{point}</p>
+                </div>
+              </FadeUp>
+            ))}
+          </div>
+        </div>
+
+        {/* Experience rows */}
+        <div className="mt-28">
+          <div className="flex flex-col lg:flex-row justify-between lg:items-end gap-4 mb-12">
+            <FadeUp>
+              <span className="eyebrow">Experiences</span>
+              <h3 className="display text-[clamp(2.2rem,4.5vw,3.6rem)] mt-4">Explore my development journey</h3>
+            </FadeUp>
+            <FadeUp delay={0.1}>
+              <p className="text-[#6b7076] max-w-sm lg:text-right font-light">
+                2.5+ years across enterprise fintech and freelance product builds for clients worldwide.
+              </p>
+            </FadeUp>
+          </div>
+
+          <div className="border-t border-[#e7e8ea]">
+            {EXPERIENCE.map((exp, i) => (
+              <FadeUp key={i}>
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-6 py-8 border-b border-[#e7e8ea] items-start hover:bg-white/70 transition-colors px-2 -mx-2 rounded-lg">
+                  <div className="md:col-span-3">
+                    <h4 className="font-display text-xl">{exp.org}</h4>
+                    <p className="text-xs text-[#9ca1a8] mt-1.5 flex items-center gap-1.5">
+                      <span className="w-1 h-1 rounded-full bg-[#9ca1a8]" /> {exp.period}
+                    </p>
+                  </div>
+                  <div className="md:col-span-5">
+                    <p className="text-sm text-[#6b7076] leading-relaxed font-light">{exp.description}</p>
+                    {exp.url && (
+                      <a href={exp.url} target="_blank" rel="noreferrer"
+                        className="text-sm font-medium text-[#16181d] underline underline-offset-4 decoration-[#c9cbce] hover:decoration-[#16181d] mt-2 inline-block">
+                        Visit website
+                      </a>
+                    )}
+                  </div>
+                  <div className="md:col-span-4 flex flex-wrap md:justify-end gap-2">
+                    {exp.tags.map((t, j) => <span key={j} className="pill">{t}</span>)}
+                  </div>
+                </div>
+              </FadeUp>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════ PORTFOLIO */}
+      <section id="portfolio" ref={refs.portfolio} className="bg-[#f3f4f5] border-y border-[#ececee]">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-10 py-24 md:py-32">
+          <div className="flex flex-col lg:flex-row justify-between lg:items-end gap-6 mb-12">
+            <FadeUp>
+              <span className="eyebrow">Portfolio</span>
+              <h2 className="display text-[clamp(2.6rem,5.5vw,4.5rem)] mt-4">Latest Works</h2>
+            </FadeUp>
+            <FadeUp delay={0.1}>
+              <div className="flex flex-wrap gap-2">
+                {PROJECT_FILTERS.map(f => (
+                  <button key={f} onClick={() => setActiveFilter(f)}
+                    className={`px-5 py-2.5 rounded-full text-sm transition-all cursor-pointer ${
+                      activeFilter === f
+                        ? 'bg-[#16181d] text-white'
+                        : 'bg-white border border-[#e7e8ea] text-[#6b7076] hover:text-[#16181d]'
+                    }`}>
+                    {f}
+                  </button>
+                ))}
+              </div>
+            </FadeUp>
+          </div>
+
+          <motion.div layout className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <AnimatePresence mode="popLayout">
+              {filteredProjects.map(project => (
+                <motion.div key={project.id} layout
+                  initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.96 }}
+                  transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                  className="card overflow-hidden group flex flex-col">
+                  {/* Image */}
+                  <div className="relative h-56 overflow-hidden m-4 mb-0 rounded-xl border border-[#ececee] bg-[#f3f4f5]">
+                    {project.image
+                      ? <img src={project.image} alt={project.title} loading="lazy" referrerPolicy="no-referrer"
+                          className="w-full h-full object-cover object-top proj-img" />
+                      : <ProjectCover project={project} />}
+                    <span className="absolute bottom-3 left-3 px-3.5 py-1.5 rounded-full bg-white/95 text-xs font-medium text-[#16181d] shadow-sm">
+                      {project.category}
+                    </span>
+                  </div>
+                  {/* Body */}
+                  <div className="p-6 flex flex-col flex-1">
+                    <div className="flex items-baseline justify-between gap-3">
+                      <h3 className="font-display text-2xl">{project.title}</h3>
+                      <span className="text-sm text-[#9ca1a8] flex-shrink-0">{project.techStack[0]}</span>
+                    </div>
+                    <p className="text-sm text-[#6b7076] font-light leading-relaxed mt-2.5">{project.description}</p>
+                    <div className="flex flex-wrap gap-1.5 mt-4">
+                      {project.techStack.slice(1).map((t, i) => (
+                        <span key={i} className="text-[11px] text-[#9ca1a8] bg-[#f3f4f5] rounded-full px-2.5 py-1">{t}</span>
+                      ))}
+                    </div>
+                    <div className="flex items-center gap-5 mt-5 pt-4 border-t border-[#f0f1f2]">
+                      {project.liveUrl && (
+                        <a href={project.liveUrl} target="_blank" rel="noreferrer"
+                          className="flex items-center gap-1.5 text-sm font-medium text-[#16181d] hover:opacity-70 transition-opacity">
+                          <ExternalLink className="w-3.5 h-3.5" /> Live Demo
+                        </a>
+                      )}
+                      <span className="text-xs text-[#9ca1a8] ml-auto text-right">{project.metrics}</span>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════ SKILLS */}
+      <section id="skills" ref={refs.skills} className="max-w-[1440px] mx-auto px-6 md:px-10 py-24 md:py-32">
+        <div className="flex flex-col lg:flex-row justify-between lg:items-end gap-4 mb-14">
+          <FadeUp>
+            <span className="eyebrow">Skills</span>
+            <h2 className="display text-[clamp(2.6rem,5.5vw,4.5rem)] mt-4">Technology stack</h2>
+          </FadeUp>
+          <FadeUp delay={0.1}>
+            <p className="text-[#6b7076] max-w-xs lg:text-right font-light">Every tool chosen for a reason — performance, reliability, speed of delivery.</p>
+          </FadeUp>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+          {TECH_CATEGORIES.map((cat, i) => (
+            <FadeUp key={i} delay={i * 0.05}>
+              <div className="card p-7 h-full">
+                <span className="text-xs tracking-[0.25em] uppercase text-[#9ca1a8]">{cat.label}</span>
+                <div className="flex flex-wrap gap-2 mt-5">
+                  {cat.items.map((item, j) => <span key={j} className="pill">{item}</span>)}
+                </div>
+              </div>
+            </FadeUp>
+          ))}
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════ DARK CTA BANNER */}
+      <div className="max-w-[1440px] mx-auto px-6 md:px-10">
+        <FadeUp>
+          <div className="hero-art rounded-[28px] py-20 px-8 text-center relative">
+            <p className="text-xs tracking-[0.25em] uppercase text-white/50 relative z-10">(Book your free consultation now)</p>
+            <h2 className="display text-[clamp(2rem,4.5vw,3.6rem)] !text-white mt-5 relative z-10">
+              Ready to build something<br /><em className="font-light italic">amazing together?</em>
+            </h2>
+            <p className="text-white/55 font-light mt-5 max-w-md mx-auto relative z-10">
+              A free 30-minute call to discuss your project with an experienced full-stack & AI developer.
+            </p>
+            <button onClick={() => setCalendlyOpen(true)}
+              className="relative z-10 mt-8 px-7 py-3.5 rounded-full bg-white text-[#16181d] text-sm font-medium inline-flex items-center gap-2 hover:bg-white/90 transition-colors cursor-pointer">
+              Let's talk <ArrowUpRight className="w-4 h-4" />
+            </button>
+          </div>
+        </FadeUp>
+      </div>
+
+      {/* ═══════════════════════════════════════════════ FAQ */}
+      <section id="faq" ref={refs.faq} className="max-w-[1440px] mx-auto px-6 md:px-10 py-24 md:py-32">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          <div className="lg:col-span-4">
+            <FadeUp>
+              <span className="eyebrow">FAQ</span>
+              <h2 className="display text-[clamp(2.4rem,4.5vw,3.8rem)] mt-4">The essentials</h2>
+              <p className="text-[#6b7076] font-light mt-5 max-w-xs">A simple breakdown of how I work and what to expect.</p>
+            </FadeUp>
+          </div>
+          <div className="lg:col-span-8">
+            {FAQS.map((item, i) => (
+              <FadeUp key={i}>
+                <div className="border-b border-[#e7e8ea] first:border-t">
+                  <button onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                    className="w-full flex items-center justify-between gap-6 py-6 text-left group cursor-pointer">
+                    <span className={`text-base md:text-lg font-light transition-colors ${openFaq === i ? 'text-[#16181d]' : 'text-[#4b5057] group-hover:text-[#16181d]'}`}>
+                      {item.q}
+                    </span>
+                    <motion.span animate={{ rotate: openFaq === i ? 45 : 0 }}
+                      className="flex-shrink-0 w-8 h-8 rounded-full border border-[#d8dadd] flex items-center justify-center text-[#6b7076] text-lg font-light">
+                      +
+                    </motion.span>
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {openFaq === i && (
+                      <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }} style={{ overflow: 'hidden' }}>
+                        <p className="text-[15px] text-[#6b7076] font-light leading-relaxed pb-7 max-w-2xl">{item.a}</p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </FadeUp>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════ PRICING */}
+      <section id="pricing" ref={refs.pricing} className="bg-[#f3f4f5] border-y border-[#ececee]">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-10 py-24 md:py-32">
+          <div className="flex flex-col lg:flex-row justify-between lg:items-end gap-4 mb-14">
+            <FadeUp>
+              <span className="eyebrow">Price</span>
+              <h2 className="display text-[clamp(2.6rem,5.5vw,4.5rem)] mt-4">Your vision, your budget</h2>
+            </FadeUp>
+            <FadeUp delay={0.1}>
+              <p className="text-[#6b7076] max-w-xs lg:text-right font-light">Transparent fixed pricing. No hourly billing, no surprises.</p>
+            </FadeUp>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {PRICING.map((plan, i) => (
+              <FadeUp key={i} delay={i * 0.1}>
+                <div className={`rounded-[22px] p-8 h-full flex flex-col ${plan.featured ? 'bg-[#16181d] text-white' : 'card'}`}>
+                  <span className={`text-xs tracking-[0.25em] uppercase ${plan.featured ? 'text-white/50' : 'text-[#9ca1a8]'}`}>{plan.tag}</span>
+                  <h3 className="font-display text-2xl mt-4">{plan.title}</h3>
+                  <p className={`text-sm font-light leading-relaxed mt-2 ${plan.featured ? 'text-white/60' : 'text-[#6b7076]'}`}>{plan.blurb}</p>
+                  <div className="flex items-baseline gap-1.5 mt-7">
+                    <span className="font-display font-light text-5xl">{plan.price}</span>
+                    <span className={plan.featured ? 'text-white/50' : 'text-[#9ca1a8]'}>{plan.unit}</span>
+                  </div>
+                  <div className={`mt-7 pt-6 space-y-3.5 border-t flex-1 ${plan.featured ? 'border-white/10' : 'border-[#f0f1f2]'}`}>
+                    {plan.features.map((f, j) => (
+                      <div key={j} className="flex items-start gap-3">
+                        <Check className={`w-4 h-4 flex-shrink-0 mt-0.5 ${plan.featured ? 'text-white/70' : 'text-[#16181d]'}`} />
+                        <span className={`text-sm font-light ${plan.featured ? 'text-white/75' : 'text-[#4b5057]'}`}>{f}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <button onClick={() => plan.featured ? setCalendlyOpen(true) : scrollTo('contact')}
+                    className={`mt-8 py-3.5 rounded-full text-sm font-medium flex items-center justify-center gap-2 transition-colors cursor-pointer ${
+                      plan.featured ? 'bg-white text-[#16181d] hover:bg-white/90' : 'bg-[#16181d] text-white hover:bg-black'
+                    }`}>
+                    {plan.cta} <ArrowUpRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </FadeUp>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════ CONTACT */}
+      <section id="contact" ref={refs.contact} className="max-w-[1440px] mx-auto px-6 md:px-10 py-24 md:py-32">
+        <FadeUp className="text-center mb-16">
+          <span className="eyebrow">Contact</span>
+          <h2 className="display text-[clamp(2.6rem,5.5vw,4.5rem)] mt-4">Let's work together</h2>
+          <p className="text-[#6b7076] font-light mt-4 max-w-md mx-auto">
+            Have a project in mind? Reply within 24h · IST (UTC+5:30) · async-friendly.
+          </p>
+        </FadeUp>
+
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 max-w-5xl mx-auto">
+          {/* Methods */}
+          <div className="lg:col-span-2 flex flex-col gap-4">
+            {[
+              { icon: <Mail className="w-4 h-4" />, label: 'Email', value: CONTACT.email, href: `mailto:${CONTACT.email}` },
+              { icon: <Phone className="w-4 h-4" />, label: 'WhatsApp', value: CONTACT.phone, href: CONTACT.whatsapp },
+            ].map((m, i) => (
+              <FadeUp key={i} delay={i * 0.08}>
+                <a href={m.href} target="_blank" rel="noreferrer" className="card p-5 flex items-center gap-4 group hover:shadow-md transition-shadow">
+                  <span className="w-11 h-11 rounded-full bg-[#f3f4f5] flex items-center justify-center text-[#4b5057] flex-shrink-0">{m.icon}</span>
+                  <span className="flex-1 min-w-0">
+                    <span className="text-xs tracking-[0.2em] uppercase text-[#9ca1a8] block">{m.label}</span>
+                    <span className="text-sm text-[#16181d] break-all">{m.value}</span>
+                  </span>
+                  <ArrowUpRight className="w-4 h-4 text-[#c9cbce] group-hover:text-[#16181d] transition-colors" />
+                </a>
+              </FadeUp>
+            ))}
+            <FadeUp delay={0.16}>
+              <button onClick={() => setCalendlyOpen(true)} className="card p-5 flex items-center gap-4 group hover:shadow-md transition-shadow w-full text-left cursor-pointer">
+                <span className="w-11 h-11 rounded-full bg-[#16181d] flex items-center justify-center text-white flex-shrink-0"><Calendar className="w-4 h-4" /></span>
+                <span className="flex-1">
+                  <span className="text-xs tracking-[0.2em] uppercase text-[#9ca1a8] block">Book a Call</span>
+                  <span className="text-sm text-[#16181d]">30 min via Calendly — free</span>
+                </span>
+                <ArrowUpRight className="w-4 h-4 text-[#c9cbce] group-hover:text-[#16181d] transition-colors" />
+              </button>
+            </FadeUp>
+          </div>
+
+          {/* Form */}
+          <FadeUp className="lg:col-span-3" delay={0.1}>
+            <div className="card p-7 md:p-8 h-full">
+              {contactSent ? (
+                <div className="py-16 flex flex-col items-center text-center gap-4">
+                  <span className="w-14 h-14 rounded-full bg-[#16181d] text-white flex items-center justify-center"><Check className="w-7 h-7" /></span>
+                  <p className="font-display text-xl">Message sent!</p>
+                  <p className="text-sm text-[#6b7076] font-light">Your email client should have opened. I'll reply within 24 hours.</p>
+                </div>
+              ) : (
+                <form onSubmit={handleContactSubmit} className="space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <input type="text" required placeholder="Your name *" value={contactName} onChange={e => setContactName(e.target.value)}
+                      className="bg-[#f7f7f8] border border-[#e7e8ea] rounded-xl px-4 py-3.5 text-sm focus:border-[#16181d] outline-none transition-colors w-full" />
+                    <input type="email" required placeholder="Email address *" value={contactEmail} onChange={e => setContactEmail(e.target.value)}
+                      className="bg-[#f7f7f8] border border-[#e7e8ea] rounded-xl px-4 py-3.5 text-sm focus:border-[#16181d] outline-none transition-colors w-full" />
+                  </div>
+                  <select value={contactProjectType} onChange={e => setContactProjectType(e.target.value)}
+                    className="bg-[#f7f7f8] border border-[#e7e8ea] rounded-xl px-4 py-3.5 text-sm focus:border-[#16181d] outline-none transition-colors w-full text-[#4b5057]">
+                    <option>Website / Web App</option>
+                    <option>E-Commerce Platform</option>
+                    <option>SaaS / AI Product</option>
+                    <option>Mobile App (Flutter)</option>
+                    <option>Monthly Retainer</option>
+                    <option>Something Else</option>
+                  </select>
+                  <textarea required rows={5} placeholder="Tell me about your project — goals, timeline, budget range… *"
+                    value={contactMessage} onChange={e => setContactMessage(e.target.value)}
+                    className="bg-[#f7f7f8] border border-[#e7e8ea] rounded-xl px-4 py-3.5 text-sm focus:border-[#16181d] outline-none transition-colors w-full resize-none" />
+                  <button type="submit"
+                    className="w-full py-4 rounded-full bg-[#16181d] text-white text-sm font-medium flex items-center justify-center gap-2 hover:bg-black transition-colors cursor-pointer">
+                    Send Message <Send className="w-4 h-4" />
+                  </button>
+                </form>
+              )}
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════ FOOTER */}
+      <footer className="border-t border-[#ececee] bg-white">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-10 py-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="flex items-center gap-3">
+            <CubeMark className="w-7 h-7" />
+            <p className="text-xs text-[#9ca1a8]">Aman Singh · Full-Stack Developer · Bangalore, India</p>
+          </div>
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
+            {navLinks.map(link => (
+              <button key={link.section} onClick={() => scrollTo(link.section)}
+                className="text-xs text-[#9ca1a8] hover:text-[#16181d] transition-colors cursor-pointer">
+                {link.label}
+              </button>
+            ))}
+          </div>
+          <div className="flex items-center gap-3">
+            <a href={CONTACT.github} target="_blank" rel="noreferrer" className="w-9 h-9 rounded-full border border-[#e7e8ea] flex items-center justify-center text-[#6b7076] hover:text-[#16181d] hover:border-[#16181d] transition-colors"><Github className="w-4 h-4" /></a>
+            <a href={CONTACT.linkedin} target="_blank" rel="noreferrer" className="w-9 h-9 rounded-full border border-[#e7e8ea] flex items-center justify-center text-[#6b7076] hover:text-[#16181d] hover:border-[#16181d] transition-colors"><Linkedin className="w-4 h-4" /></a>
+            <a href={`mailto:${CONTACT.email}`} className="w-9 h-9 rounded-full border border-[#e7e8ea] flex items-center justify-center text-[#6b7076] hover:text-[#16181d] hover:border-[#16181d] transition-colors"><Mail className="w-4 h-4" /></a>
+          </div>
+        </div>
+        <div className="border-t border-[#f0f1f2] px-6 md:px-10 py-4 max-w-[1440px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+          <p className="text-[11px] text-[#b3b7bc]">© 2026 Aman Singh. All rights reserved.</p>
+          <p className="text-[11px] text-[#b3b7bc]">Built with React · Deployed on Vercel</p>
+        </div>
+      </footer>
+
+      {/* ═══════════════════════════ WHATSAPP FLOAT */}
+      <a href={CONTACT.whatsapp} target="_blank" rel="noreferrer" title="Chat on WhatsApp"
+        className="fixed bottom-6 right-6 z-[200] w-14 h-14 rounded-full flex items-center justify-center text-white shadow-2xl cursor-pointer hover:scale-110 active:scale-95 transition-all duration-200"
+        style={{ backgroundColor: '#25D366', boxShadow: '0 4px 24px rgba(37,211,102,0.35)' }}>
+        <WhatsAppIcon />
+      </a>
+
+      {/* ═══════════════════════════ CALENDLY MODAL */}
+      <AnimatePresence>
+        {calendlyOpen && (
+          <>
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+              onClick={() => setCalendlyOpen(false)} className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[100] cursor-pointer" />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.97, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.97, y: 20 }}
+              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] max-w-3xl z-[101] rounded-3xl overflow-hidden shadow-2xl bg-white"
+              style={{ height: '85vh' }}>
+              <div className="flex items-center justify-between px-6 py-4 border-b border-[#ececee]">
+                <div className="flex items-center gap-3">
+                  <Calendar className="w-4 h-4 text-[#6b7076]" />
+                  <span className="text-sm text-[#4b5057]">Book a 30-min Discovery Call</span>
+                </div>
+                <button onClick={() => setCalendlyOpen(false)}
+                  className="w-8 h-8 rounded-full border border-[#e7e8ea] flex items-center justify-center hover:bg-[#16181d] hover:text-white transition-colors cursor-pointer">
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+              <iframe src={CONTACT.calendly} width="100%" height="100%" frameBorder="0"
+                title="Book a call with Aman Singh" style={{ background: '#fff' }} />
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}

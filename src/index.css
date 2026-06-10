@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --color-ink: #16181d;
+  --color-soft: #6b7076;
+  --color-faint: #9ca1a8;
+  --color-paper: #fafafa;
+  --color-line: #e7e8ea;
+}
+
+html, body, #root {
+  background-color: #fafafa;
+  color: #16181d;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+::selection { background: #16181d; color: #fafafa; }
+
+/* ── Display headings (light, airy — reference style) ───────────── */
+.display {
+  font-family: "Outfit", sans-serif;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: #16181d;
+}
+
+/* Eyebrow: ● Label */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #6b7076;
+}
+.eyebrow::before {
+  content: "";
+  width: 6px; height: 6px;
+  border-radius: 9999px;
+  background: #16181d;
+}
+
+/* Pill tag */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border: 1px solid #e7e8ea;
+  border-radius: 9999px;
+  background: #fff;
+  font-size: 12px;
+  color: #4b5057;
+  white-space: nowrap;
+}
+
+/* Card */
+.card {
+  background: #fff;
+  border: 1px solid #ececee;
+  border-radius: 18px;
+  box-shadow: 0 1px 2px rgba(20, 22, 26, 0.04);
+}
+
+/* Vertical side labels */
+.side-label {
+  writing-mode: vertical-rl;
+  letter-spacing: 0.35em;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #b3b7bc;
+}
+
+/* ── Loader ──────────────────────────────────────────────────────── */
+@keyframes orbitSpin { to { transform: rotate(360deg); } }
+@keyframes cubeFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.orbit-spin { animation: orbitSpin 14s linear infinite; transform-origin: center; }
+.orbit-spin-rev { animation: orbitSpin 22s linear infinite reverse; transform-origin: center; }
+.cube-float { animation: cubeFloat 5s ease-in-out infinite; }
+
+/* ── Hero art panel ──────────────────────────────────────────────── */
+.hero-art {
+  position: relative;
+  background:
+    radial-gradient(120% 90% at 80% 10%, #2a2d34 0%, #16181d 55%, #0d0e11 100%);
+  overflow: hidden;
+}
+.hero-art::after {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 26px 26px;
+  pointer-events: none;
+}
+
+/* Marquee */
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-ticker {
+  animation: ticker 30s linear infinite;
+  display: flex;
+  width: max-content;
+}
+.animate-ticker:hover { animation-play-state: paused; }
+
+/* Project card image hover */
+.proj-img { transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+.group:hover .proj-img { transform: scale(1.04); }
+
+/* Reveal on scroll helper (used with motion, fallback) */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
