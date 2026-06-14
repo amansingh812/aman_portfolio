@@ -425,7 +425,7 @@ export default function App() {
         </div>
 
         {/* Experience rows */}
-        <div className="mt-28">
+        <div className="mt-28 hidden">
           <div className="flex flex-col lg:flex-row justify-between lg:items-end gap-4 mb-12">
             <FadeUp>
               <span className="eyebrow">Experiences</span>
