@@ -2,11 +2,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
   ArrowUpRight, ArrowDown, Send, Check, Menu, X,
-  Mail, Phone, Calendar, ExternalLink, Github, Linkedin
+  Mail, Phone, Calendar, ExternalLink, Github, Linkedin, Sun, Moon
 } from 'lucide-react';
 import {
   PROJECT_LIST, PROJECT_FILTERS, EXPERIENCE, ABOUT_POINTS, STATS,
-  TECH_CATEGORIES, FAQS, PRICING, CONTACT
+  TECH_CATEGORIES, FAQS, PRICE_TIERS, RETAINER, CONTACT
 } from './data';
 import { NavSection, Project } from './types';
 
@@ -40,32 +40,32 @@ function Loader({ onDone }: { onDone: () => void }) {
 
   return (
     <motion.div exit={{ opacity: 0, transition: { duration: 0.6 } }}
-      className="fixed inset-0 z-[300] bg-[#fafafa] flex flex-col items-center justify-center select-none">
+      className="fixed inset-0 z-[300] bg-bg-primary flex flex-col items-center justify-center select-none">
       <span className="side-label absolute right-8 top-1/2 -translate-y-1/2 hidden md:block">Full-Stack Developer</span>
       <span className="side-label absolute left-8 top-1/2 -translate-y-1/2 hidden md:block" style={{ transform: 'rotate(180deg)' }}>Portfolio 2026</span>
 
       <div className="relative w-44 h-44 flex items-center justify-center">
         <svg viewBox="0 0 176 176" className="absolute inset-0 w-full h-full">
-          <circle cx="88" cy="88" r="84" fill="none" stroke="#dcdee1" strokeWidth="1" strokeDasharray="3 6" className="orbit-spin" />
-          <circle cx="88" cy="88" r="64" fill="none" stroke="#e4e5e8" strokeWidth="1" className="orbit-spin-rev" />
-          <circle cx="150" cy="50" r="4" fill="#16181d" className="orbit-spin" style={{ transformOrigin: '88px 88px' }} />
+          <circle cx="88" cy="88" r="84" fill="none" stroke="var(--border-loader)" strokeWidth="1" strokeDasharray="3 6" className="orbit-spin" />
+          <circle cx="88" cy="88" r="64" fill="none" stroke="var(--border-light-2)" strokeWidth="1" className="orbit-spin-rev" />
+          <circle cx="150" cy="50" r="4" fill="var(--text-primary)" className="orbit-spin" style={{ transformOrigin: '88px 88px' }} />
         </svg>
-        <div className="w-20 h-20 rounded-full bg-white shadow-[0_10px_40px_rgba(20,22,26,0.10)] flex items-center justify-center cube-float">
-          <CubeMark className="w-9 h-9 text-[#16181d]" />
+        <div className="w-20 h-20 rounded-full bg-bg-primary shadow-[0_10px_40px_rgba(20,22,26,0.10)] flex items-center justify-center cube-float">
+          <CubeMark className="w-9 h-9 text-text-primary" />
         </div>
       </div>
 
       <h1 className="display text-4xl md:text-5xl mt-8">Aman Singh</h1>
       <div className="w-56 h-px bg-[#dcdee1] mt-5 mb-4" />
-      <span className="text-[11px] tracking-[0.45em] uppercase text-[#6b7076]">Develop</span>
+      <span className="text-[11px] tracking-[0.45em] uppercase text-text-muted">Develop</span>
 
       <div className="w-72 h-[3px] bg-[#e7e8ea] rounded-full mt-8 overflow-hidden">
         <div className="h-full bg-[#16181d] rounded-full transition-all duration-100" style={{ width: `${pct}%` }} />
       </div>
-      <div className="flex items-center gap-2 mt-4 text-[11px] tracking-[0.3em] uppercase text-[#6b7076]">
-        <span className="w-1.5 h-1.5 rounded-full bg-[#16181d]" /> Loading Experience <span className="text-[#16181d] text-base tracking-normal font-medium">{pct}%</span>
+      <div className="flex items-center gap-2 mt-4 text-[11px] tracking-[0.3em] uppercase text-text-muted">
+        <span className="w-1.5 h-1.5 rounded-full bg-[#16181d]" /> Loading Experience <span className="text-text-primary text-base tracking-normal font-medium">{pct}%</span>
       </div>
-      <span className="absolute bottom-8 text-[10px] tracking-[0.4em] uppercase text-[#b3b7bc]">Crafting Digital Experiences</span>
+      <span className="absolute bottom-8 text-[10px] tracking-[0.4em] uppercase text-text-faintest">Crafting Digital Experiences</span>
     </motion.div>
   );
 }
@@ -97,6 +97,32 @@ export default function App() {
   const [activeFilter, setActiveFilter] = useState('All');
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [calendlyOpen, setCalendlyOpen] = useState(false);
+
+  // Theme state
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+      setIsDark(true);
+      document.documentElement.classList.add('dark');
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    setIsDark(prev => {
+      const next = !prev;
+      if (next) {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      }
+      return next;
+    });
+  };
 
   // Contact form
   const [contactName, setContactName] = useState('');
@@ -143,17 +169,47 @@ export default function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const handleContactSubmit = (e: React.FormEvent) => {
+  const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!contactName || !contactEmail || !contactMessage) return;
-    const subject = encodeURIComponent(`Project Inquiry — ${contactProjectType} — ${contactName}`);
-    const body = encodeURIComponent(
-      `Hi Aman,\n\nName: ${contactName}\nEmail: ${contactEmail}\nProject Type: ${contactProjectType}\n\nMessage:\n${contactMessage}`
-    );
-    window.open(`mailto:${CONTACT.email}?subject=${subject}&body=${body}`);
-    setContactSent(true);
-    setContactName(''); setContactEmail(''); setContactMessage('');
-    setTimeout(() => setContactSent(false), 5000);
+
+    try {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const accessKey = (import.meta as any).env?.VITE_WEB3FORMS_ACCESS_KEY;
+      
+      if (accessKey && accessKey !== 'your_access_key_here') {
+        await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            access_key: accessKey,
+            subject: `Project Inquiry — ${contactProjectType} — ${contactName}`,
+            from_name: contactName,
+            email: contactEmail,
+            message: `Project Type: ${contactProjectType}\n\nMessage:\n${contactMessage}`,
+          })
+        });
+        setContactSent(true);
+        setContactName(''); setContactEmail(''); setContactMessage('');
+        setTimeout(() => setContactSent(false), 5000);
+      } else {
+        // Fallback to mailto if no API key is provided
+        const subject = encodeURIComponent(`Project Inquiry — ${contactProjectType} — ${contactName}`);
+        const body = encodeURIComponent(
+          `Hi Aman,\n\nName: ${contactName}\nEmail: ${contactEmail}\nProject Type: ${contactProjectType}\n\nMessage:\n${contactMessage}`
+        );
+        window.open(`mailto:${CONTACT.email}?subject=${subject}&body=${body}`);
+        setContactSent(true);
+        setContactName(''); setContactEmail(''); setContactMessage('');
+        setTimeout(() => setContactSent(false), 5000);
+      }
+    } catch (error) {
+      console.error('Failed to submit form:', error);
+      alert('An error occurred. Please try again or email directly.');
+    }
   };
 
   const filteredProjects = activeFilter === 'All'
@@ -161,23 +217,23 @@ export default function App() {
     : PROJECT_LIST.filter(p => p.filter === activeFilter);
 
   return (
-    <div className="min-h-screen w-full bg-[#fafafa] text-[#16181d] relative">
+    <div className="min-h-screen w-full bg-bg-primary text-text-primary relative">
 
       <AnimatePresence>{loading && <Loader onDone={() => setLoading(false)} />}</AnimatePresence>
 
       {/* ═══════════════════════════════════════════════ NAVBAR */}
-      <header className="fixed top-0 left-0 w-full z-50 bg-[#fafafa]/85 backdrop-blur-md border-b border-[#ececee]">
+      <header className="fixed top-0 left-0 w-full z-50 bg-bg-primary/85 backdrop-blur-md border-b border-border-primary">
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
           <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="flex items-center gap-2 cursor-pointer">
-            <CubeMark className="w-7 h-7 text-[#16181d]" />
+            <CubeMark className="w-7 h-7 text-text-primary" />
           </button>
 
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map(link => (
               <button key={link.section} onClick={() => scrollTo(link.section)}
                 className={`text-sm transition-colors cursor-pointer ${
-                  activeSection === link.section ? 'text-[#16181d] font-medium' : 'text-[#6b7076] hover:text-[#16181d]'
+                  activeSection === link.section ? 'text-text-primary font-medium' : 'text-text-muted hover:text-text-primary'
                 }`}>
                 {link.label}
               </button>
@@ -185,8 +241,11 @@ export default function App() {
           </nav>
 
           <div className="flex items-center gap-3">
+            <button onClick={toggleTheme} className="w-9 h-9 rounded-full border border-border-secondary flex items-center justify-center text-text-muted hover:text-text-primary transition-colors cursor-pointer mr-1">
+              {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+            </button>
             <button onClick={() => setCalendlyOpen(true)}
-              className="hidden md:flex items-center gap-1.5 text-sm font-medium underline underline-offset-4 decoration-[#c9cbce] hover:decoration-[#16181d] transition-all cursor-pointer">
+              className="hidden md:flex items-center gap-1.5 text-sm font-medium underline underline-offset-4 decoration-text-accent hover:decoration-text-primary transition-all cursor-pointer">
               Book A Call <ArrowUpRight className="w-4 h-4" />
             </button>
             <button onClick={() => setMobileNavOpen(true)} className="md:hidden w-9 h-9 flex items-center justify-center cursor-pointer">
@@ -204,23 +263,23 @@ export default function App() {
               onClick={() => setMobileNavOpen(false)} className="fixed inset-0 bg-black/30 backdrop-blur-sm z-[60]" />
             <motion.div initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }}
               transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-              className="fixed top-0 right-0 h-full w-72 bg-white z-[70] flex flex-col p-6 shadow-2xl">
+              className="fixed top-0 right-0 h-full w-72 bg-bg-primary z-[70] flex flex-col p-6 shadow-2xl">
               <div className="flex items-center justify-between mb-8">
                 <CubeMark className="w-7 h-7" />
-                <button onClick={() => setMobileNavOpen(false)} className="w-9 h-9 rounded-full border border-[#e7e8ea] flex items-center justify-center">
+                <button onClick={() => setMobileNavOpen(false)} className="w-9 h-9 rounded-full border border-border-secondary flex items-center justify-center">
                   <X className="w-4 h-4" />
                 </button>
               </div>
               <nav className="flex flex-col gap-1 flex-1">
                 {navLinks.map(link => (
                   <button key={link.section} onClick={() => scrollTo(link.section)}
-                    className="text-left px-4 py-3 rounded-xl text-sm text-[#4b5057] hover:bg-[#f3f4f5] transition-colors">
+                    className="text-left px-4 py-3 rounded-xl text-sm text-text-secondary hover:bg-bg-secondary transition-colors">
                     {link.label}
                   </button>
                 ))}
               </nav>
               <button onClick={() => { setMobileNavOpen(false); setCalendlyOpen(true); }}
-                className="mt-4 py-3.5 rounded-full bg-[#16181d] text-white text-sm font-medium flex items-center justify-center gap-2">
+                className="mt-4 py-3.5 rounded-full bg-text-primary text-bg-primary text-sm font-medium flex items-center justify-center gap-2">
                 Book A Call <ArrowUpRight className="w-4 h-4" />
               </button>
             </motion.div>
@@ -242,7 +301,7 @@ export default function App() {
               {STATS.map((s, i) => (
                 <div key={i}>
                   <div className="font-display font-light text-4xl md:text-5xl">{s.value}</div>
-                  <div className="text-sm text-[#6b7076] mt-1">{s.label}</div>
+                  <div className="text-sm text-text-muted mt-1">{s.label}</div>
                 </div>
               ))}
             </div>
@@ -251,49 +310,44 @@ export default function App() {
             <h1 className="display text-[clamp(4.5rem,11vw,9.5rem)] leading-[0.95]">Hello</h1>
           </FadeUp>
           <FadeUp delay={0.2}>
-            <p className="text-lg md:text-xl text-[#4b5057] mt-6 max-w-md font-light">
-              — It's <span className="font-medium text-[#16181d]">Aman Singh</span>, a Full-Stack Developer
+            <p className="text-lg md:text-xl text-text-secondary mt-6 max-w-md font-light">
+              — It's <span className="font-medium text-text-primary">Aman Singh</span>, a Full-Stack Developer
               building e-commerce, fintech & AI-powered products.
             </p>
-            <p className="text-sm text-[#9ca1a8] mt-3 tracking-wide uppercase">Bangalore, India · Available for US · UK · Australia</p>
+            <p className="text-sm text-text-faint mt-3 tracking-wide uppercase">Bangalore, India · Available for US · UK · Australia</p>
           </FadeUp>
           <FadeUp delay={0.3}>
             <div className="flex items-center gap-4 mt-10">
               <button onClick={() => scrollTo('contact')}
-                className="px-6 py-3.5 rounded-full bg-[#16181d] text-white text-sm font-medium flex items-center gap-2 hover:bg-black transition-colors cursor-pointer">
+                className="px-6 py-3.5 rounded-full bg-text-primary text-bg-primary text-sm font-medium flex items-center gap-2 hover:bg-black transition-colors cursor-pointer">
                 Start a Project <ArrowUpRight className="w-4 h-4" />
               </button>
               <button onClick={() => scrollTo('portfolio')}
-                className="px-6 py-3.5 rounded-full border border-[#d8dadd] text-sm text-[#4b5057] hover:border-[#16181d] hover:text-[#16181d] transition-colors cursor-pointer">
+                className="px-6 py-3.5 rounded-full border border-border-tertiary text-sm text-text-secondary hover:border-[#16181d] hover:text-text-primary transition-colors cursor-pointer">
                 View Work
               </button>
             </div>
             <button onClick={() => scrollTo('about')}
-              className="flex items-center gap-2 text-sm text-[#6b7076] mt-16 cursor-pointer hover:text-[#16181d] transition-colors">
+              className="flex items-center gap-2 text-sm text-text-muted mt-16 cursor-pointer hover:text-text-primary transition-colors">
               Scroll down <ArrowDown className="w-4 h-4 animate-bounce" />
             </button>
           </FadeUp>
         </div>
 
-        {/* Right: abstract geometric art */}
-        <div className="lg:w-[44%] flex items-stretch px-6 md:px-14 lg:pl-0 lg:pr-10 pb-10 lg:py-10">
-          <FadeUp className="w-full" delay={0.15}>
-            <div className="hero-art w-full h-[420px] lg:h-full min-h-[420px] rounded-[28px] flex items-center justify-center">
-              <svg viewBox="0 0 400 400" className="w-[78%] max-w-[420px] relative z-10">
-                <circle cx="200" cy="200" r="178" fill="none" stroke="rgba(255,255,255,0.14)" strokeWidth="1" strokeDasharray="2 7" className="orbit-spin" style={{ transformOrigin: '200px 200px' }} />
-                <circle cx="200" cy="200" r="136" fill="none" stroke="rgba(255,255,255,0.10)" strokeWidth="1" className="orbit-spin-rev" style={{ transformOrigin: '200px 200px' }} />
-                <circle cx="200" cy="200" r="96" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="1" strokeDasharray="1 5" className="orbit-spin" style={{ transformOrigin: '200px 200px', animationDuration: '30s' }} />
-                <g className="orbit-spin" style={{ transformOrigin: '200px 200px', animationDuration: '18s' }}>
-                  <circle cx="200" cy="22" r="5" fill="#fff" opacity="0.85" />
-                </g>
-                <g className="orbit-spin-rev" style={{ transformOrigin: '200px 200px', animationDuration: '26s' }}>
-                  <circle cx="336" cy="200" r="3.5" fill="#fff" opacity="0.5" />
-                </g>
-                <g className="cube-float">
-                  <path d="M200 118l66 38v88l-66 38-66-38v-88l66-38z" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.85)" strokeWidth="1.4" />
-                  <path d="M200 118v76m0 0l66-38m-66 38l-66-38m66 38v88" stroke="rgba(255,255,255,0.45)" strokeWidth="1.2" fill="none" />
-                </g>
-              </svg>
+        {/* Right: video panel — portrait 9:16 to match source */}
+        <div className="lg:w-[44%] flex items-center justify-center px-6 md:px-14 lg:pl-0 lg:pr-10 pb-10 lg:py-10">
+          <FadeUp delay={0.15}>
+            <div className="hero-art w-[300px] sm:w-[340px] aspect-[9/16] rounded-[28px] overflow-hidden relative bg-[#0A0A0A]">
+              <video
+                autoPlay muted loop playsInline
+                className="w-full h-full object-cover"
+                style={{ mixBlendMode: 'screen', opacity: 0.9 }}
+              >
+                <source src="/hero-dev-loop.mp4" type="video/mp4" />
+              </video>
+
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-60 pointer-events-none" />
+
               <span className="absolute bottom-6 left-7 text-[10px] tracking-[0.4em] uppercase text-white/35">Build · Ship · Scale</span>
               <span className="absolute top-6 right-7 text-[10px] tracking-[0.4em] uppercase text-white/35">AS — 2026</span>
             </div>
@@ -302,13 +356,13 @@ export default function App() {
       </section>
 
       {/* ─────────────────────────────── TRUSTED BY MARQUEE */}
-      <div className="border-y border-[#ececee] py-6 overflow-hidden bg-white">
+      <div className="border-y border-border-primary py-6 overflow-hidden bg-bg-primary">
         <div className="animate-ticker">
           {[...PROJECT_LIST, ...PROJECT_LIST, ...PROJECT_LIST].map((c, i) => (
             <div key={i} className="flex items-center gap-3 px-10 flex-shrink-0">
               <span className="text-lg leading-none">{c.country}</span>
-              <span className="text-sm font-medium text-[#4b5057]">{c.title}</span>
-              <span className="text-xs text-[#b3b7bc]">{c.category}</span>
+              <span className="text-sm font-medium text-text-secondary">{c.title}</span>
+              <span className="text-xs text-text-faintest">{c.category}</span>
               <span className="ml-8 w-px h-5 bg-[#e7e8ea]" />
             </div>
           ))}
@@ -323,7 +377,7 @@ export default function App() {
             <h2 className="display text-[clamp(2.6rem,5.5vw,4.5rem)] mt-4">The engineer behind<br />the products</h2>
           </FadeUp>
           <FadeUp delay={0.1}>
-            <p className="text-[#6b7076] max-w-xs lg:text-right font-light">
+            <p className="text-text-muted max-w-xs lg:text-right font-light">
               Enterprise rigour from fintech at scale, startup speed from freelance builds — you get both.
             </p>
           </FadeUp>
@@ -335,19 +389,24 @@ export default function App() {
             <div className="grid grid-cols-2 gap-5">
               <div className="card p-7 col-span-2 sm:col-span-1">
                 <div className="font-display font-light text-6xl">+20<span className="text-3xl align-top">%</span></div>
-                <p className="text-sm text-[#6b7076] mt-3 leading-relaxed">Average increase in client engagement after relaunch</p>
+                <p className="text-sm text-text-muted mt-3 leading-relaxed">Average increase in client engagement after relaunch</p>
               </div>
               <div className="card p-7 col-span-2 sm:col-span-1">
                 <div className="font-display font-light text-6xl">10M<span className="text-3xl align-top">+</span></div>
-                <p className="text-sm text-[#6b7076] mt-3 leading-relaxed">Users served by the lending platform I build for daily</p>
+                <p className="text-sm text-text-muted mt-3 leading-relaxed">Users served by the lending platform I build for daily</p>
               </div>
-              <div className="hero-art rounded-[22px] col-span-2 h-56 flex items-center justify-center">
-                <CubeMark className="w-16 h-16 text-white/90 cube-float" />
-                <span className="absolute bottom-4 left-5 text-[10px] tracking-[0.35em] uppercase text-white/35">Precision over cleverness</span>
+              <div className="hero-art rounded-[22px] col-span-2 h-56 flex items-center justify-center relative overflow-hidden group border border-border-primary bg-[#0A0A0A]">
+                <img 
+                  src="/clean_arch_dark.png"
+                  alt="Precision over cleverness" 
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-80" />
+                <span className="absolute bottom-4 left-5 text-[10px] tracking-[0.35em] uppercase text-white/90 z-10 font-medium">Precision over cleverness</span>
               </div>
             </div>
             <a href={CONTACT.linkedin} target="_blank" rel="noreferrer"
-              className="inline-flex items-center gap-2 mt-7 px-5 py-3 rounded-full border border-[#d8dadd] text-sm text-[#4b5057] hover:border-[#16181d] hover:text-[#16181d] transition-colors">
+              className="inline-flex items-center gap-2 mt-7 px-5 py-3 rounded-full border border-border-tertiary text-sm text-text-secondary hover:border-[#16181d] hover:text-text-primary transition-colors">
               <Linkedin className="w-4 h-4" /> View LinkedIn
             </a>
           </FadeUp>
@@ -357,8 +416,8 @@ export default function App() {
             {ABOUT_POINTS.map((point, i) => (
               <FadeUp key={i} delay={i * 0.06}>
                 <div className="flex items-start gap-4">
-                  <span className="w-6 h-6 rounded-full bg-[#16181d] text-white flex items-center justify-center flex-shrink-0 text-sm leading-none mt-0.5">+</span>
-                  <p className="text-[15px] text-[#4b5057] leading-relaxed font-light">{point}</p>
+                  <span className="w-6 h-6 rounded-full bg-text-primary text-bg-primary flex items-center justify-center flex-shrink-0 text-sm leading-none mt-0.5">+</span>
+                  <p className="text-[15px] text-text-secondary leading-relaxed font-light">{point}</p>
                 </div>
               </FadeUp>
             ))}
@@ -373,27 +432,27 @@ export default function App() {
               <h3 className="display text-[clamp(2.2rem,4.5vw,3.6rem)] mt-4">Explore my development journey</h3>
             </FadeUp>
             <FadeUp delay={0.1}>
-              <p className="text-[#6b7076] max-w-sm lg:text-right font-light">
+              <p className="text-text-muted max-w-sm lg:text-right font-light">
                 2.5+ years across enterprise fintech and freelance product builds for clients worldwide.
               </p>
             </FadeUp>
           </div>
 
-          <div className="border-t border-[#e7e8ea]">
+          <div className="border-t border-border-secondary">
             {EXPERIENCE.map((exp, i) => (
               <FadeUp key={i}>
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-6 py-8 border-b border-[#e7e8ea] items-start hover:bg-white/70 transition-colors px-2 -mx-2 rounded-lg">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-6 py-8 border-b border-border-secondary items-start hover:bg-bg-secondary transition-colors px-2 -mx-2 rounded-lg">
                   <div className="md:col-span-3">
                     <h4 className="font-display text-xl">{exp.org}</h4>
-                    <p className="text-xs text-[#9ca1a8] mt-1.5 flex items-center gap-1.5">
+                    <p className="text-xs text-text-faint mt-1.5 flex items-center gap-1.5">
                       <span className="w-1 h-1 rounded-full bg-[#9ca1a8]" /> {exp.period}
                     </p>
                   </div>
                   <div className="md:col-span-5">
-                    <p className="text-sm text-[#6b7076] leading-relaxed font-light">{exp.description}</p>
+                    <p className="text-sm text-text-muted leading-relaxed font-light">{exp.description}</p>
                     {exp.url && (
                       <a href={exp.url} target="_blank" rel="noreferrer"
-                        className="text-sm font-medium text-[#16181d] underline underline-offset-4 decoration-[#c9cbce] hover:decoration-[#16181d] mt-2 inline-block">
+                        className="text-sm font-medium text-text-primary underline underline-offset-4 decoration-text-accent hover:decoration-text-primary mt-2 inline-block">
                         Visit website
                       </a>
                     )}
@@ -409,7 +468,7 @@ export default function App() {
       </section>
 
       {/* ═══════════════════════════════════════════════ PORTFOLIO */}
-      <section id="portfolio" ref={refs.portfolio} className="bg-[#f3f4f5] border-y border-[#ececee]">
+      <section id="portfolio" ref={refs.portfolio} className="bg-bg-secondary border-y border-border-primary">
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 py-24 md:py-32">
           <div className="flex flex-col lg:flex-row justify-between lg:items-end gap-6 mb-12">
             <FadeUp>
@@ -422,8 +481,8 @@ export default function App() {
                   <button key={f} onClick={() => setActiveFilter(f)}
                     className={`px-5 py-2.5 rounded-full text-sm transition-all cursor-pointer ${
                       activeFilter === f
-                        ? 'bg-[#16181d] text-white'
-                        : 'bg-white border border-[#e7e8ea] text-[#6b7076] hover:text-[#16181d]'
+                        ? 'bg-text-primary text-bg-primary'
+                        : 'bg-bg-primary border border-border-secondary text-text-muted hover:text-text-primary'
                     }`}>
                     {f}
                   </button>
@@ -440,7 +499,7 @@ export default function App() {
                   transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                   className="card overflow-hidden group flex flex-col">
                   {/* Image */}
-                  <div className="relative h-56 overflow-hidden m-4 mb-0 rounded-xl border border-[#ececee] bg-[#f3f4f5]">
+                  <div className="relative h-56 overflow-hidden m-4 mb-0 rounded-xl border border-border-primary bg-bg-secondary">
                     {project.image
                       ? <img src={project.image} alt={project.title} loading="lazy" referrerPolicy="no-referrer"
                           className="w-full h-full object-cover object-top proj-img" />
@@ -453,22 +512,22 @@ export default function App() {
                   <div className="p-6 flex flex-col flex-1">
                     <div className="flex items-baseline justify-between gap-3">
                       <h3 className="font-display text-2xl">{project.title}</h3>
-                      <span className="text-sm text-[#9ca1a8] flex-shrink-0">{project.techStack[0]}</span>
+                      <span className="text-sm text-text-faint flex-shrink-0">{project.techStack[0]}</span>
                     </div>
-                    <p className="text-sm text-[#6b7076] font-light leading-relaxed mt-2.5">{project.description}</p>
+                    <p className="text-sm text-text-muted font-light leading-relaxed mt-2.5">{project.description}</p>
                     <div className="flex flex-wrap gap-1.5 mt-4">
                       {project.techStack.slice(1).map((t, i) => (
-                        <span key={i} className="text-[11px] text-[#9ca1a8] bg-[#f3f4f5] rounded-full px-2.5 py-1">{t}</span>
+                        <span key={i} className="text-[11px] text-text-faint bg-bg-secondary rounded-full px-2.5 py-1">{t}</span>
                       ))}
                     </div>
-                    <div className="flex items-center gap-5 mt-5 pt-4 border-t border-[#f0f1f2]">
+                    <div className="flex items-center gap-5 mt-5 pt-4 border-t border-border-light">
                       {project.liveUrl && (
                         <a href={project.liveUrl} target="_blank" rel="noreferrer"
-                          className="flex items-center gap-1.5 text-sm font-medium text-[#16181d] hover:opacity-70 transition-opacity">
+                          className="flex items-center gap-1.5 text-sm font-medium text-text-primary hover:opacity-70 transition-opacity">
                           <ExternalLink className="w-3.5 h-3.5" /> Live Demo
                         </a>
                       )}
-                      <span className="text-xs text-[#9ca1a8] ml-auto text-right">{project.metrics}</span>
+                      <span className="text-xs text-text-faint ml-auto text-right">{project.metrics}</span>
                     </div>
                   </div>
                 </motion.div>
@@ -486,14 +545,14 @@ export default function App() {
             <h2 className="display text-[clamp(2.6rem,5.5vw,4.5rem)] mt-4">Technology stack</h2>
           </FadeUp>
           <FadeUp delay={0.1}>
-            <p className="text-[#6b7076] max-w-xs lg:text-right font-light">Every tool chosen for a reason — performance, reliability, speed of delivery.</p>
+            <p className="text-text-muted max-w-xs lg:text-right font-light">Every tool chosen for a reason — performance, reliability, speed of delivery.</p>
           </FadeUp>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
           {TECH_CATEGORIES.map((cat, i) => (
             <FadeUp key={i} delay={i * 0.05}>
               <div className="card p-7 h-full">
-                <span className="text-xs tracking-[0.25em] uppercase text-[#9ca1a8]">{cat.label}</span>
+                <span className="text-xs tracking-[0.25em] uppercase text-text-faint">{cat.label}</span>
                 <div className="flex flex-wrap gap-2 mt-5">
                   {cat.items.map((item, j) => <span key={j} className="pill">{item}</span>)}
                 </div>
@@ -529,20 +588,20 @@ export default function App() {
             <FadeUp>
               <span className="eyebrow">FAQ</span>
               <h2 className="display text-[clamp(2.4rem,4.5vw,3.8rem)] mt-4">The essentials</h2>
-              <p className="text-[#6b7076] font-light mt-5 max-w-xs">A simple breakdown of how I work and what to expect.</p>
+              <p className="text-text-muted font-light mt-5 max-w-xs">A simple breakdown of how I work and what to expect.</p>
             </FadeUp>
           </div>
           <div className="lg:col-span-8">
             {FAQS.map((item, i) => (
               <FadeUp key={i}>
-                <div className="border-b border-[#e7e8ea] first:border-t">
+                <div className="border-b border-border-secondary first:border-t">
                   <button onClick={() => setOpenFaq(openFaq === i ? null : i)}
                     className="w-full flex items-center justify-between gap-6 py-6 text-left group cursor-pointer">
-                    <span className={`text-base md:text-lg font-light transition-colors ${openFaq === i ? 'text-[#16181d]' : 'text-[#4b5057] group-hover:text-[#16181d]'}`}>
+                    <span className={`text-base md:text-lg font-light transition-colors ${openFaq === i ? 'text-text-primary' : 'text-text-secondary group-hover:text-text-primary'}`}>
                       {item.q}
                     </span>
                     <motion.span animate={{ rotate: openFaq === i ? 45 : 0 }}
-                      className="flex-shrink-0 w-8 h-8 rounded-full border border-[#d8dadd] flex items-center justify-center text-[#6b7076] text-lg font-light">
+                      className="flex-shrink-0 w-8 h-8 rounded-full border border-border-tertiary flex items-center justify-center text-text-muted text-lg font-light">
                       +
                     </motion.span>
                   </button>
@@ -550,7 +609,7 @@ export default function App() {
                     {openFaq === i && (
                       <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }} style={{ overflow: 'hidden' }}>
-                        <p className="text-[15px] text-[#6b7076] font-light leading-relaxed pb-7 max-w-2xl">{item.a}</p>
+                        <p className="text-[15px] text-text-muted font-light leading-relaxed pb-7 max-w-2xl">{item.a}</p>
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -562,7 +621,7 @@ export default function App() {
       </section>
 
       {/* ═══════════════════════════════════════════════ PRICING */}
-      <section id="pricing" ref={refs.pricing} className="bg-[#f3f4f5] border-y border-[#ececee]">
+      <section id="pricing" ref={refs.pricing} className="bg-bg-secondary border-y border-border-primary">
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 py-24 md:py-32">
           <div className="flex flex-col lg:flex-row justify-between lg:items-end gap-4 mb-14">
             <FadeUp>
@@ -570,38 +629,73 @@ export default function App() {
               <h2 className="display text-[clamp(2.6rem,5.5vw,4.5rem)] mt-4">Your vision, your budget</h2>
             </FadeUp>
             <FadeUp delay={0.1}>
-              <p className="text-[#6b7076] max-w-xs lg:text-right font-light">Transparent fixed pricing. No hourly billing, no surprises.</p>
+              <p className="text-text-muted max-w-xs lg:text-right font-light">
+                Transparent fixed pricing in USD for US & Australian clients. No hourly billing, no surprises.
+              </p>
             </FadeUp>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {PRICING.map((plan, i) => (
-              <FadeUp key={i} delay={i * 0.1}>
-                <div className={`rounded-[22px] p-8 h-full flex flex-col ${plan.featured ? 'bg-[#16181d] text-white' : 'card'}`}>
-                  <span className={`text-xs tracking-[0.25em] uppercase ${plan.featured ? 'text-white/50' : 'text-[#9ca1a8]'}`}>{plan.tag}</span>
-                  <h3 className="font-display text-2xl mt-4">{plan.title}</h3>
-                  <p className={`text-sm font-light leading-relaxed mt-2 ${plan.featured ? 'text-white/60' : 'text-[#6b7076]'}`}>{plan.blurb}</p>
-                  <div className="flex items-baseline gap-1.5 mt-7">
-                    <span className="font-display font-light text-5xl">{plan.price}</span>
-                    <span className={plan.featured ? 'text-white/50' : 'text-[#9ca1a8]'}>{plan.unit}</span>
-                  </div>
-                  <div className={`mt-7 pt-6 space-y-3.5 border-t flex-1 ${plan.featured ? 'border-white/10' : 'border-[#f0f1f2]'}`}>
-                    {plan.features.map((f, j) => (
-                      <div key={j} className="flex items-start gap-3">
-                        <Check className={`w-4 h-4 flex-shrink-0 mt-0.5 ${plan.featured ? 'text-white/70' : 'text-[#16181d]'}`} />
-                        <span className={`text-sm font-light ${plan.featured ? 'text-white/75' : 'text-[#4b5057]'}`}>{f}</span>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+            {/* Fixed-price tiers */}
+            <div className="lg:col-span-7">
+              <div className="border-t border-border-light-2">
+                {PRICE_TIERS.map((tier, i) => (
+                  <FadeUp key={i} delay={i * 0.05}>
+                    <div className="grid grid-cols-1 sm:grid-cols-12 gap-2 sm:gap-4 py-7 border-b border-border-light-2 items-start">
+                      <div className="sm:col-span-7">
+                        <h3 className="font-display text-xl">{tier.title}</h3>
+                        <p className="text-sm text-text-muted font-light leading-relaxed mt-1.5">{tier.desc}</p>
+                        <span className="text-xs text-text-faint mt-2 inline-flex items-center gap-1.5">
+                          <span className="w-1 h-1 rounded-full bg-[#9ca1a8]" /> {tier.timeline}
+                        </span>
                       </div>
-                    ))}
-                  </div>
-                  <button onClick={() => plan.featured ? setCalendlyOpen(true) : scrollTo('contact')}
-                    className={`mt-8 py-3.5 rounded-full text-sm font-medium flex items-center justify-center gap-2 transition-colors cursor-pointer ${
-                      plan.featured ? 'bg-white text-[#16181d] hover:bg-white/90' : 'bg-[#16181d] text-white hover:bg-black'
-                    }`}>
-                    {plan.cta} <ArrowUpRight className="w-4 h-4" />
+                      <div className="sm:col-span-5 flex sm:flex-col sm:items-end items-baseline gap-2 sm:gap-0.5">
+                        <span className="text-xs text-text-faint uppercase tracking-[0.2em] sm:order-1">from</span>
+                        <span className="font-display font-light text-4xl sm:order-2">{tier.price}</span>
+                        <span className="text-xs text-text-faint sm:order-3">{tier.aud}</span>
+                      </div>
+                    </div>
+                  </FadeUp>
+                ))}
+              </div>
+              <FadeUp delay={0.2}>
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-7">
+                  <p className="text-sm text-text-faint font-light">
+                    Every build includes: responsive design · SEO basics · 30 days free support · full code ownership.
+                  </p>
+                  <button onClick={() => scrollTo('contact')}
+                    className="px-6 py-3 rounded-full bg-text-primary text-bg-primary text-sm font-medium flex items-center gap-2 hover:bg-black transition-colors cursor-pointer flex-shrink-0 w-fit">
+                    Get a Fixed Quote <ArrowUpRight className="w-4 h-4" />
                   </button>
                 </div>
               </FadeUp>
-            ))}
+            </div>
+
+            {/* Retainer card */}
+            <FadeUp className="lg:col-span-5" delay={0.1}>
+              <div className="rounded-[22px] p-8 flex flex-col bg-text-primary text-bg-primary">
+                <span className="text-xs tracking-[0.25em] uppercase text-white/50">{RETAINER.tag}</span>
+                <h3 className="font-display text-2xl mt-4">{RETAINER.title}</h3>
+                <p className="text-sm font-light leading-relaxed mt-2 text-white/60">{RETAINER.blurb}</p>
+                <div className="flex items-baseline gap-1.5 mt-7">
+                  <span className="text-xs text-white/50 uppercase tracking-[0.2em] mr-1">from</span>
+                  <span className="font-display font-light text-5xl">{RETAINER.price}</span>
+                  <span className="text-white/50">{RETAINER.unit}</span>
+                </div>
+                <div className="mt-7 pt-6 space-y-3.5 border-t flex-1 border-white/10">
+                  {RETAINER.features.map((f, j) => (
+                    <div key={j} className="flex items-start gap-3">
+                      <Check className="w-4 h-4 flex-shrink-0 mt-0.5 text-white/70" />
+                      <span className="text-sm font-light text-white/75">{f}</span>
+                    </div>
+                  ))}
+                </div>
+                <button onClick={() => setCalendlyOpen(true)}
+                  className="mt-8 py-3.5 rounded-full text-sm font-medium flex items-center justify-center gap-2 transition-colors cursor-pointer bg-bg-primary text-text-primary hover:opacity-90">
+                  {RETAINER.cta} <ArrowUpRight className="w-4 h-4" />
+                </button>
+              </div>
+            </FadeUp>
           </div>
         </div>
       </section>
@@ -611,7 +705,7 @@ export default function App() {
         <FadeUp className="text-center mb-16">
           <span className="eyebrow">Contact</span>
           <h2 className="display text-[clamp(2.6rem,5.5vw,4.5rem)] mt-4">Let's work together</h2>
-          <p className="text-[#6b7076] font-light mt-4 max-w-md mx-auto">
+          <p className="text-text-muted font-light mt-4 max-w-md mx-auto">
             Have a project in mind? Reply within 24h · IST (UTC+5:30) · async-friendly.
           </p>
         </FadeUp>
@@ -625,12 +719,12 @@ export default function App() {
             ].map((m, i) => (
               <FadeUp key={i} delay={i * 0.08}>
                 <a href={m.href} target="_blank" rel="noreferrer" className="card p-5 flex items-center gap-4 group hover:shadow-md transition-shadow">
-                  <span className="w-11 h-11 rounded-full bg-[#f3f4f5] flex items-center justify-center text-[#4b5057] flex-shrink-0">{m.icon}</span>
+                  <span className="w-11 h-11 rounded-full bg-bg-secondary flex items-center justify-center text-text-secondary flex-shrink-0">{m.icon}</span>
                   <span className="flex-1 min-w-0">
-                    <span className="text-xs tracking-[0.2em] uppercase text-[#9ca1a8] block">{m.label}</span>
-                    <span className="text-sm text-[#16181d] break-all">{m.value}</span>
+                    <span className="text-xs tracking-[0.2em] uppercase text-text-faint block">{m.label}</span>
+                    <span className="text-sm text-text-primary break-all">{m.value}</span>
                   </span>
-                  <ArrowUpRight className="w-4 h-4 text-[#c9cbce] group-hover:text-[#16181d] transition-colors" />
+                  <ArrowUpRight className="w-4 h-4 text-text-accent group-hover:text-text-primary transition-colors" />
                 </a>
               </FadeUp>
             ))}
@@ -638,10 +732,10 @@ export default function App() {
               <button onClick={() => setCalendlyOpen(true)} className="card p-5 flex items-center gap-4 group hover:shadow-md transition-shadow w-full text-left cursor-pointer">
                 <span className="w-11 h-11 rounded-full bg-[#16181d] flex items-center justify-center text-white flex-shrink-0"><Calendar className="w-4 h-4" /></span>
                 <span className="flex-1">
-                  <span className="text-xs tracking-[0.2em] uppercase text-[#9ca1a8] block">Book a Call</span>
-                  <span className="text-sm text-[#16181d]">30 min via Calendly — free</span>
+                  <span className="text-xs tracking-[0.2em] uppercase text-text-faint block">Book a Call</span>
+                  <span className="text-sm text-text-primary">30 min via Calendly — free</span>
                 </span>
-                <ArrowUpRight className="w-4 h-4 text-[#c9cbce] group-hover:text-[#16181d] transition-colors" />
+                <ArrowUpRight className="w-4 h-4 text-text-accent group-hover:text-text-primary transition-colors" />
               </button>
             </FadeUp>
           </div>
@@ -651,20 +745,20 @@ export default function App() {
             <div className="card p-7 md:p-8 h-full">
               {contactSent ? (
                 <div className="py-16 flex flex-col items-center text-center gap-4">
-                  <span className="w-14 h-14 rounded-full bg-[#16181d] text-white flex items-center justify-center"><Check className="w-7 h-7" /></span>
+                  <span className="w-14 h-14 rounded-full bg-text-primary text-bg-primary flex items-center justify-center"><Check className="w-7 h-7" /></span>
                   <p className="font-display text-xl">Message sent!</p>
-                  <p className="text-sm text-[#6b7076] font-light">Your email client should have opened. I'll reply within 24 hours.</p>
+                  <p className="text-sm text-text-muted font-light">Your email client should have opened. I'll reply within 24 hours.</p>
                 </div>
               ) : (
                 <form onSubmit={handleContactSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <input type="text" required placeholder="Your name *" value={contactName} onChange={e => setContactName(e.target.value)}
-                      className="bg-[#f7f7f8] border border-[#e7e8ea] rounded-xl px-4 py-3.5 text-sm focus:border-[#16181d] outline-none transition-colors w-full" />
+                      className="bg-bg-tertiary border border-border-secondary rounded-xl px-4 py-3.5 text-sm focus:border-border-primary outline-none transition-colors w-full" />
                     <input type="email" required placeholder="Email address *" value={contactEmail} onChange={e => setContactEmail(e.target.value)}
-                      className="bg-[#f7f7f8] border border-[#e7e8ea] rounded-xl px-4 py-3.5 text-sm focus:border-[#16181d] outline-none transition-colors w-full" />
+                      className="bg-bg-tertiary border border-border-secondary rounded-xl px-4 py-3.5 text-sm focus:border-border-primary outline-none transition-colors w-full" />
                   </div>
                   <select value={contactProjectType} onChange={e => setContactProjectType(e.target.value)}
-                    className="bg-[#f7f7f8] border border-[#e7e8ea] rounded-xl px-4 py-3.5 text-sm focus:border-[#16181d] outline-none transition-colors w-full text-[#4b5057]">
+                    className="bg-bg-tertiary border border-border-secondary rounded-xl px-4 py-3.5 text-sm focus:border-border-primary outline-none transition-colors w-full text-text-secondary">
                     <option>Website / Web App</option>
                     <option>E-Commerce Platform</option>
                     <option>SaaS / AI Product</option>
@@ -674,9 +768,9 @@ export default function App() {
                   </select>
                   <textarea required rows={5} placeholder="Tell me about your project — goals, timeline, budget range… *"
                     value={contactMessage} onChange={e => setContactMessage(e.target.value)}
-                    className="bg-[#f7f7f8] border border-[#e7e8ea] rounded-xl px-4 py-3.5 text-sm focus:border-[#16181d] outline-none transition-colors w-full resize-none" />
+                    className="bg-bg-tertiary border border-border-secondary rounded-xl px-4 py-3.5 text-sm focus:border-border-primary outline-none transition-colors w-full resize-none" />
                   <button type="submit"
-                    className="w-full py-4 rounded-full bg-[#16181d] text-white text-sm font-medium flex items-center justify-center gap-2 hover:bg-black transition-colors cursor-pointer">
+                    className="w-full py-4 rounded-full bg-text-primary text-bg-primary text-sm font-medium flex items-center justify-center gap-2 hover:bg-black transition-colors cursor-pointer">
                     Send Message <Send className="w-4 h-4" />
                   </button>
                 </form>
@@ -687,29 +781,29 @@ export default function App() {
       </section>
 
       {/* ═══════════════════════════════════════════════ FOOTER */}
-      <footer className="border-t border-[#ececee] bg-white">
+      <footer className="border-t border-border-primary bg-bg-primary">
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 py-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="flex items-center gap-3">
             <CubeMark className="w-7 h-7" />
-            <p className="text-xs text-[#9ca1a8]">Aman Singh · Full-Stack Developer · Bangalore, India</p>
+            <p className="text-xs text-text-faint">Aman Singh · Full-Stack Developer · Bangalore, India</p>
           </div>
           <div className="flex flex-wrap gap-x-6 gap-y-2">
             {navLinks.map(link => (
               <button key={link.section} onClick={() => scrollTo(link.section)}
-                className="text-xs text-[#9ca1a8] hover:text-[#16181d] transition-colors cursor-pointer">
+                className="text-xs text-text-faint hover:text-text-primary transition-colors cursor-pointer">
                 {link.label}
               </button>
             ))}
           </div>
           <div className="flex items-center gap-3">
-            <a href={CONTACT.github} target="_blank" rel="noreferrer" className="w-9 h-9 rounded-full border border-[#e7e8ea] flex items-center justify-center text-[#6b7076] hover:text-[#16181d] hover:border-[#16181d] transition-colors"><Github className="w-4 h-4" /></a>
-            <a href={CONTACT.linkedin} target="_blank" rel="noreferrer" className="w-9 h-9 rounded-full border border-[#e7e8ea] flex items-center justify-center text-[#6b7076] hover:text-[#16181d] hover:border-[#16181d] transition-colors"><Linkedin className="w-4 h-4" /></a>
-            <a href={`mailto:${CONTACT.email}`} className="w-9 h-9 rounded-full border border-[#e7e8ea] flex items-center justify-center text-[#6b7076] hover:text-[#16181d] hover:border-[#16181d] transition-colors"><Mail className="w-4 h-4" /></a>
+            <a href={CONTACT.github} target="_blank" rel="noreferrer" className="w-9 h-9 rounded-full border border-border-secondary flex items-center justify-center text-text-muted hover:text-text-primary hover:border-[#16181d] transition-colors"><Github className="w-4 h-4" /></a>
+            <a href={CONTACT.linkedin} target="_blank" rel="noreferrer" className="w-9 h-9 rounded-full border border-border-secondary flex items-center justify-center text-text-muted hover:text-text-primary hover:border-[#16181d] transition-colors"><Linkedin className="w-4 h-4" /></a>
+            <a href={`mailto:${CONTACT.email}`} className="w-9 h-9 rounded-full border border-border-secondary flex items-center justify-center text-text-muted hover:text-text-primary hover:border-[#16181d] transition-colors"><Mail className="w-4 h-4" /></a>
           </div>
         </div>
-        <div className="border-t border-[#f0f1f2] px-6 md:px-10 py-4 max-w-[1440px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p className="text-[11px] text-[#b3b7bc]">© 2026 Aman Singh. All rights reserved.</p>
-          <p className="text-[11px] text-[#b3b7bc]">Built with React · Deployed on Vercel</p>
+        <div className="border-t border-border-light px-6 md:px-10 py-4 max-w-[1440px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+          <p className="text-[11px] text-text-faintest">© 2026 Aman Singh. All rights reserved.</p>
+          <p className="text-[11px] text-text-faintest">Built with React · Deployed on Vercel</p>
         </div>
       </footer>
 
@@ -729,15 +823,15 @@ export default function App() {
             <motion.div
               initial={{ opacity: 0, scale: 0.97, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.97, y: 20 }}
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] max-w-3xl z-[101] rounded-3xl overflow-hidden shadow-2xl bg-white"
+              className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] max-w-3xl z-[101] rounded-3xl overflow-hidden shadow-2xl bg-bg-primary"
               style={{ height: '85vh' }}>
-              <div className="flex items-center justify-between px-6 py-4 border-b border-[#ececee]">
+              <div className="flex items-center justify-between px-6 py-4 border-b border-border-primary">
                 <div className="flex items-center gap-3">
-                  <Calendar className="w-4 h-4 text-[#6b7076]" />
-                  <span className="text-sm text-[#4b5057]">Book a 30-min Discovery Call</span>
+                  <Calendar className="w-4 h-4 text-text-muted" />
+                  <span className="text-sm text-text-secondary">Book a 30-min Discovery Call</span>
                 </div>
                 <button onClick={() => setCalendlyOpen(false)}
-                  className="w-8 h-8 rounded-full border border-[#e7e8ea] flex items-center justify-center hover:bg-[#16181d] hover:text-white transition-colors cursor-pointer">
+                  className="w-8 h-8 rounded-full border border-border-secondary flex items-center justify-center hover:bg-[#16181d] hover:text-white transition-colors cursor-pointer">
                   <X className="w-4 h-4" />
                 </button>
               </div>

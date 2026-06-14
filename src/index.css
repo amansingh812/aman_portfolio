@@ -4,16 +4,69 @@
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Outfit", sans-serif;
-  --color-ink: #16181d;
-  --color-soft: #6b7076;
-  --color-faint: #9ca1a8;
-  --color-paper: #fafafa;
-  --color-line: #e7e8ea;
+  
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-tertiary: var(--bg-tertiary);
+  
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-text-faint: var(--text-faint);
+  --color-text-faintest: var(--text-faintest);
+  --color-text-accent: var(--text-accent);
+  
+  --color-border-primary: var(--border-primary);
+  --color-border-secondary: var(--border-secondary);
+  --color-border-tertiary: var(--border-tertiary);
+  --color-border-light: var(--border-light);
+  --color-border-light-2: var(--border-light-2);
+  --color-border-loader: var(--border-loader);
+}
+
+:root {
+  --bg-primary: #fafafa;
+  --bg-secondary: #f3f4f5;
+  --bg-tertiary: #f7f7f8;
+  
+  --text-primary: #16181d;
+  --text-secondary: #4b5057;
+  --text-muted: #6b7076;
+  --text-faint: #9ca1a8;
+  --text-faintest: #b3b7bc;
+  --text-accent: #c9cbce;
+  
+  --border-primary: #ececee;
+  --border-secondary: #e7e8ea;
+  --border-tertiary: #d8dadd;
+  --border-light: #f0f1f2;
+  --border-light-2: #e0e1e4;
+  --border-loader: #dcdee1;
+}
+
+html.dark {
+  --bg-primary: #0d0e11;
+  --bg-secondary: #16181d;
+  --bg-tertiary: #1e2126;
+  
+  --text-primary: #fafafa;
+  --text-secondary: #b3b7bc;
+  --text-muted: #9ca1a8;
+  --text-faint: #6b7076;
+  --text-faintest: #4b5057;
+  --text-accent: #7a8089;
+  
+  --border-primary: #2a2d34;
+  --border-secondary: #343840;
+  --border-tertiary: #4b5057;
+  --border-light: #1f2126;
+  --border-light-2: #2e323a;
+  --border-loader: #4b5057;
 }
 
 html, body, #root {
-  background-color: #fafafa;
-  color: #16181d;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -23,7 +76,7 @@ html, body, #root {
 
 *, *::before, *::after { box-sizing: border-box; }
 
-::selection { background: #16181d; color: #fafafa; }
+::selection { background: var(--text-primary); color: var(--bg-primary); }
 
 /* ── Display headings (light, airy — reference style) ───────────── */
 .display {
@@ -31,7 +84,7 @@ html, body, #root {
   font-weight: 300;
   letter-spacing: -0.02em;
   line-height: 1.05;
-  color: #16181d;
+  color: var(--text-primary);
 }
 
 /* Eyebrow: ● Label */
@@ -40,13 +93,13 @@ html, body, #root {
   align-items: center;
   gap: 8px;
   font-size: 13px;
-  color: #6b7076;
+  color: var(--text-muted);
 }
 .eyebrow::before {
   content: "";
   width: 6px; height: 6px;
   border-radius: 9999px;
-  background: #16181d;
+  background: var(--text-primary);
 }
 
 /* Pill tag */
@@ -54,18 +107,18 @@ html, body, #root {
   display: inline-flex;
   align-items: center;
   padding: 6px 14px;
-  border: 1px solid #e7e8ea;
+  border: 1px solid var(--border-secondary);
   border-radius: 9999px;
-  background: #fff;
+  background: var(--bg-primary);
   font-size: 12px;
-  color: #4b5057;
+  color: var(--text-secondary);
   white-space: nowrap;
 }
 
 /* Card */
 .card {
-  background: #fff;
-  border: 1px solid #ececee;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-primary);
   border-radius: 18px;
   box-shadow: 0 1px 2px rgba(20, 22, 26, 0.04);
 }
@@ -76,7 +129,7 @@ html, body, #root {
   letter-spacing: 0.35em;
   font-size: 10px;
   text-transform: uppercase;
-  color: #b3b7bc;
+  color: var(--text-faintest);
 }
 
 /* ── Loader ──────────────────────────────────────────────────────── */
