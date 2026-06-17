@@ -15,6 +15,7 @@
   --color-text-faint: var(--text-faint);
   --color-text-faintest: var(--text-faintest);
   --color-text-accent: var(--text-accent);
+  --color-brand: var(--brand);
   
   --color-border-primary: var(--border-primary);
   --color-border-secondary: var(--border-secondary);
@@ -35,7 +36,8 @@
   --text-faint: #9ca1a8;
   --text-faintest: #b3b7bc;
   --text-accent: #c9cbce;
-  
+  --brand: #e2622d;
+
   --border-primary: #ececee;
   --border-secondary: #e7e8ea;
   --border-tertiary: #d8dadd;
@@ -55,7 +57,8 @@ html.dark {
   --text-faint: #6b7076;
   --text-faintest: #4b5057;
   --text-accent: #7a8089;
-  
+  --brand: #f0744a;
+
   --border-primary: #2a2d34;
   --border-secondary: #343840;
   --border-tertiary: #4b5057;
@@ -121,6 +124,34 @@ html, body, #root {
   border: 1px solid var(--border-primary);
   border-radius: 18px;
   box-shadow: 0 1px 2px rgba(20, 22, 26, 0.04);
+}
+
+/* Primary Button */
+.btn-primary {
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 9999px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.btn-primary:hover {
+  background-color: #000000;
+  color: #ffffff !important;
+  border-color: var(--text-primary);
+}
+
+html.dark .btn-primary:hover {
+  background-color: #000000;
+  color: #ffffff !important;
+  border-color: #ffffff;
 }
 
 /* Vertical side labels */

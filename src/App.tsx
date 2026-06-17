@@ -10,11 +10,14 @@ import {
 } from './data';
 import { NavSection, Project } from './types';
 
-// ─── Cube logo (matches the loader / hero art) ──────────────────────────────
+// ─── Brand mark — browser window glyph (matches the BFS logo) ────────────────
 const CubeMark = ({ className = 'w-6 h-6' }: { className?: string }) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" className={className}>
-    <path d="M12 3l7 4v10l-7 4-7-4V7l7-4z" />
-    <path d="M12 3v8m0 0l7-4m-7 4L5 7m7 4v10" opacity="0.6" />
+  <svg viewBox="0 0 32 27" fill="none" className={className} aria-label="Build First Site">
+    <rect x="2" y="2.5" width="28" height="22" rx="5.5" stroke="currentColor" strokeWidth="2.2" />
+    <line x1="2" y1="9.6" x2="30" y2="9.6" stroke="currentColor" strokeWidth="2.2" />
+    <circle cx="6.8" cy="6" r="1.5" fill="#FF5600" />
+    <circle cx="11.6" cy="6" r="1.5" fill="currentColor" />
+    <circle cx="16.4" cy="6" r="1.5" fill="currentColor" />
   </svg>
 );
 
@@ -41,8 +44,8 @@ function Loader({ onDone }: { onDone: () => void }) {
   return (
     <motion.div exit={{ opacity: 0, transition: { duration: 0.6 } }}
       className="fixed inset-0 z-[300] bg-bg-primary flex flex-col items-center justify-center select-none">
-      <span className="side-label absolute right-8 top-1/2 -translate-y-1/2 hidden md:block">Full-Stack Developer</span>
-      <span className="side-label absolute left-8 top-1/2 -translate-y-1/2 hidden md:block" style={{ transform: 'rotate(180deg)' }}>Portfolio 2026</span>
+      <span className="side-label absolute right-8 top-1/2 -translate-y-1/2 hidden md:block">Web Design Studio</span>
+      <span className="side-label absolute left-8 top-1/2 -translate-y-1/2 hidden md:block" style={{ transform: 'rotate(180deg)' }}>Est. 2026</span>
 
       <div className="relative w-44 h-44 flex items-center justify-center">
         <svg viewBox="0 0 176 176" className="absolute inset-0 w-full h-full">
@@ -55,9 +58,9 @@ function Loader({ onDone }: { onDone: () => void }) {
         </div>
       </div>
 
-      <h1 className="display text-4xl md:text-5xl mt-8">Aman Singh</h1>
+      <h1 className="display text-4xl md:text-5xl mt-8">Build<span className="text-brand">First</span>Site</h1>
       <div className="w-56 h-px bg-[#dcdee1] mt-5 mb-4" />
-      <span className="text-[11px] tracking-[0.45em] uppercase text-text-muted">Develop</span>
+      <span className="text-[11px] tracking-[0.45em] uppercase text-text-muted">Web Studio</span>
 
       <div className="w-72 h-[3px] bg-[#e7e8ea] rounded-full mt-8 overflow-hidden">
         <div className="h-full bg-[#16181d] rounded-full transition-all duration-100" style={{ width: `${pct}%` }} />
@@ -142,7 +145,7 @@ export default function App() {
   };
 
   const navLinks: { label: string; section: NavSection }[] = [
-    { label: 'About Me', section: 'about' },
+    { label: 'About', section: 'about' },
     { label: 'Portfolio', section: 'portfolio' },
     { label: 'Skills', section: 'skills' },
     { label: 'FAQ', section: 'faq' },
@@ -199,7 +202,7 @@ export default function App() {
         // Fallback to mailto if no API key is provided
         const subject = encodeURIComponent(`Project Inquiry — ${contactProjectType} — ${contactName}`);
         const body = encodeURIComponent(
-          `Hi Aman,\n\nName: ${contactName}\nEmail: ${contactEmail}\nProject Type: ${contactProjectType}\n\nMessage:\n${contactMessage}`
+          `Hi Build First Site,\n\nName: ${contactName}\nEmail: ${contactEmail}\nProject Type: ${contactProjectType}\n\nMessage:\n${contactMessage}`
         );
         window.open(`mailto:${CONTACT.email}?subject=${subject}&body=${body}`);
         setContactSent(true);
@@ -225,8 +228,11 @@ export default function App() {
       <header className="fixed top-0 left-0 w-full z-50 bg-bg-primary/85 backdrop-blur-md border-b border-border-primary">
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
           <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="flex items-center gap-2 cursor-pointer">
+            className="flex items-center gap-2.5 cursor-pointer group">
             <CubeMark className="w-7 h-7 text-text-primary" />
+            <span className="font-display font-medium text-[15px] tracking-tight leading-none">
+              Build<span className="text-brand">First</span>Site
+            </span>
           </button>
 
           <nav className="hidden md:flex items-center gap-8">
@@ -279,7 +285,7 @@ export default function App() {
                 ))}
               </nav>
               <button onClick={() => { setMobileNavOpen(false); setCalendlyOpen(true); }}
-                className="mt-4 py-3.5 rounded-full bg-text-primary text-bg-primary text-sm font-medium flex items-center justify-center gap-2">
+                className="btn-primary mt-4 py-3.5 w-full">
                 Book A Call <ArrowUpRight className="w-4 h-4" />
               </button>
             </motion.div>
@@ -307,19 +313,21 @@ export default function App() {
             </div>
           </FadeUp>
           <FadeUp delay={0.1}>
-            <h1 className="display text-[clamp(4.5rem,11vw,9.5rem)] leading-[0.95]">Hello</h1>
+            <h1 className="display text-[clamp(2.5rem,6vw,5.5rem)] leading-[0.95]">
+              Your first<br />impression,<br /><span className="text-brand">built right.</span>
+            </h1>
           </FadeUp>
           <FadeUp delay={0.2}>
             <p className="text-lg md:text-xl text-text-secondary mt-6 max-w-md font-light">
-              — It's <span className="font-medium text-text-primary">Aman Singh</span>, a Full-Stack Developer
-              building e-commerce, fintech & AI-powered products.
+              We're <span className="font-medium text-text-primary">Build First Site</span> — a web studio crafting
+              high-converting business, e-commerce & AI-powered websites.
             </p>
-            <p className="text-sm text-text-faint mt-3 tracking-wide uppercase">Bangalore, India · Available for US · UK · Australia</p>
+            <p className="text-sm text-text-faint mt-3 tracking-wide uppercase">Design & Development Studio · Serving the US · UK · Australia</p>
           </FadeUp>
           <FadeUp delay={0.3}>
             <div className="flex items-center gap-4 mt-10">
               <button onClick={() => scrollTo('contact')}
-                className="px-6 py-3.5 rounded-full bg-text-primary text-bg-primary text-sm font-medium flex items-center gap-2 hover:bg-black transition-colors cursor-pointer">
+                className="btn-primary px-6 py-3.5">
                 Start a Project <ArrowUpRight className="w-4 h-4" />
               </button>
               <button onClick={() => scrollTo('portfolio')}
@@ -349,7 +357,7 @@ export default function App() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-60 pointer-events-none" />
 
               <span className="absolute bottom-6 left-7 text-[10px] tracking-[0.4em] uppercase text-white/35">Build · Ship · Scale</span>
-              <span className="absolute top-6 right-7 text-[10px] tracking-[0.4em] uppercase text-white/35">AS — 2026</span>
+              <span className="absolute top-6 right-7 text-[10px] tracking-[0.4em] uppercase text-white/35">BFS — 2026</span>
             </div>
           </FadeUp>
         </div>
@@ -373,12 +381,12 @@ export default function App() {
       <section id="about" ref={refs.about} className="max-w-[1440px] mx-auto px-6 md:px-10 py-24 md:py-32">
         <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 mb-16">
           <FadeUp>
-            <span className="eyebrow">About Me</span>
-            <h2 className="display text-[clamp(2.6rem,5.5vw,4.5rem)] mt-4">The engineer behind<br />the products</h2>
+            <span className="eyebrow">About Us</span>
+            <h2 className="display text-[clamp(2.6rem,5.5vw,4.5rem)] mt-4">The studio behind<br />the websites</h2>
           </FadeUp>
           <FadeUp delay={0.1}>
             <p className="text-text-muted max-w-xs lg:text-right font-light">
-              Enterprise rigour from fintech at scale, startup speed from freelance builds — you get both.
+              Enterprise rigour from fintech at scale, startup speed from product builds — your business gets both.
             </p>
           </FadeUp>
         </div>
@@ -393,7 +401,7 @@ export default function App() {
               </div>
               <div className="card p-7 col-span-2 sm:col-span-1">
                 <div className="font-display font-light text-6xl">10M<span className="text-3xl align-top">+</span></div>
-                <p className="text-sm text-text-muted mt-3 leading-relaxed">Users served by the lending platform I build for daily</p>
+                <p className="text-sm text-text-muted mt-3 leading-relaxed">Users served by platforms our team builds and ships</p>
               </div>
               <div className="hero-art rounded-[22px] col-span-2 h-56 flex items-center justify-center relative overflow-hidden group border border-border-primary bg-[#0A0A0A]">
                 <img 
@@ -421,6 +429,15 @@ export default function App() {
                 </div>
               </FadeUp>
             ))}
+            <FadeUp delay={0.4}>
+              <div className="card p-6 flex items-center gap-4 mt-2">
+                <span className="w-12 h-12 rounded-full bg-text-primary text-bg-primary flex items-center justify-center font-display text-lg flex-shrink-0">AS</span>
+                <div>
+                  <p className="text-sm font-medium text-text-primary">Aman Singh</p>
+                  <p className="text-xs text-text-muted">Founder &amp; Lead Developer · 3+ yrs · ex-L&amp;T Finance</p>
+                </div>
+              </div>
+            </FadeUp>
           </div>
         </div>
 
@@ -664,7 +681,7 @@ export default function App() {
                     Every build includes: responsive design · SEO basics · 30 days free support · full code ownership.
                   </p>
                   <button onClick={() => scrollTo('contact')}
-                    className="px-6 py-3 rounded-full bg-text-primary text-bg-primary text-sm font-medium flex items-center gap-2 hover:bg-black transition-colors cursor-pointer flex-shrink-0 w-fit">
+                    className="btn-primary px-6 py-3 flex-shrink-0 w-fit">
                     Get a Fixed Quote <ArrowUpRight className="w-4 h-4" />
                   </button>
                 </div>
@@ -674,19 +691,19 @@ export default function App() {
             {/* Retainer card */}
             <FadeUp className="lg:col-span-5" delay={0.1}>
               <div className="rounded-[22px] p-8 flex flex-col bg-text-primary text-bg-primary">
-                <span className="text-xs tracking-[0.25em] uppercase text-white/50">{RETAINER.tag}</span>
+                <span className="text-xs tracking-[0.25em] uppercase text-bg-primary/50">{RETAINER.tag}</span>
                 <h3 className="font-display text-2xl mt-4">{RETAINER.title}</h3>
-                <p className="text-sm font-light leading-relaxed mt-2 text-white/60">{RETAINER.blurb}</p>
+                <p className="text-sm font-light leading-relaxed mt-2 text-bg-primary/60">{RETAINER.blurb}</p>
                 <div className="flex items-baseline gap-1.5 mt-7">
-                  <span className="text-xs text-white/50 uppercase tracking-[0.2em] mr-1">from</span>
+                  <span className="text-xs text-bg-primary/50 uppercase tracking-[0.2em] mr-1">from</span>
                   <span className="font-display font-light text-5xl">{RETAINER.price}</span>
-                  <span className="text-white/50">{RETAINER.unit}</span>
+                  <span className="text-bg-primary/50">{RETAINER.unit}</span>
                 </div>
-                <div className="mt-7 pt-6 space-y-3.5 border-t flex-1 border-white/10">
+                <div className="mt-7 pt-6 space-y-3.5 border-t flex-1 border-bg-primary/10">
                   {RETAINER.features.map((f, j) => (
                     <div key={j} className="flex items-start gap-3">
-                      <Check className="w-4 h-4 flex-shrink-0 mt-0.5 text-white/70" />
-                      <span className="text-sm font-light text-white/75">{f}</span>
+                      <Check className="w-4 h-4 flex-shrink-0 mt-0.5 text-bg-primary/70" />
+                      <span className="text-sm font-light text-bg-primary/75">{f}</span>
                     </div>
                   ))}
                 </div>
@@ -770,7 +787,7 @@ export default function App() {
                     value={contactMessage} onChange={e => setContactMessage(e.target.value)}
                     className="bg-bg-tertiary border border-border-secondary rounded-xl px-4 py-3.5 text-sm focus:border-border-primary outline-none transition-colors w-full resize-none" />
                   <button type="submit"
-                    className="w-full py-4 rounded-full bg-text-primary text-bg-primary text-sm font-medium flex items-center justify-center gap-2 hover:bg-black transition-colors cursor-pointer">
+                    className="btn-primary w-full py-4">
                     Send Message <Send className="w-4 h-4" />
                   </button>
                 </form>
@@ -779,13 +796,13 @@ export default function App() {
           </FadeUp>
         </div>
       </section>
-
+      
       {/* ═══════════════════════════════════════════════ FOOTER */}
       <footer className="border-t border-border-primary bg-bg-primary">
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 py-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="flex items-center gap-3">
             <CubeMark className="w-7 h-7" />
-            <p className="text-xs text-text-faint">Aman Singh · Full-Stack Developer · Bangalore, India</p>
+            <p className="text-xs text-text-faint">Build First Site · Web Design & Development Studio · US · UK · Australia</p>
           </div>
           <div className="flex flex-wrap gap-x-6 gap-y-2">
             {navLinks.map(link => (
@@ -802,7 +819,7 @@ export default function App() {
           </div>
         </div>
         <div className="border-t border-border-light px-6 md:px-10 py-4 max-w-[1440px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p className="text-[11px] text-text-faintest">© 2026 Aman Singh. All rights reserved.</p>
+          <p className="text-[11px] text-text-faintest">© 2026 Build First Site. All rights reserved.</p>
           <p className="text-[11px] text-text-faintest">Built with React · Deployed on Vercel</p>
         </div>
       </footer>
@@ -836,7 +853,7 @@ export default function App() {
                 </button>
               </div>
               <iframe src={CONTACT.calendly} width="100%" height="100%" frameBorder="0"
-                title="Book a call with Aman Singh" style={{ background: '#fff' }} />
+                title="Book a call with Build First Site" style={{ background: '#fff' }} />
             </motion.div>
           </>
         )}

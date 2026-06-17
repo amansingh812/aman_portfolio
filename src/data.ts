@@ -125,11 +125,11 @@ export const EXPERIENCE: ExperienceItem[] = [
 
 // ─── About bullets ───────────────────────────────────────────────────────────
 export const ABOUT_POINTS = [
-  "Full-stack developer based in Bangalore with 3+ years across fintech at scale and freelance product builds.",
-  "Day job: bulletproof code for a lending platform serving millions. Freelance: speed and conversion for US, UK & Australian clients.",
-  "I start with the business goal, not the tech — then ship clean architecture, predictable state, and strict performance budgets.",
-  "Specialised in Next.js & React web products, Flutter mobile apps, and AI integrations from chatbots to multi-provider SaaS.",
-  "Fixed-price quotes, async-friendly communication, and a live staging link so you can watch progress in real time."
+  "Build First Site is a web design & development studio — we build the website that becomes your customer's first impression of your business.",
+  "Backed by 3+ years of engineering at scale: bulletproof code from fintech, paired with the speed and conversion focus growing businesses need.",
+  "We start with your business goal, not the tech — then ship clean, fast, SEO-ready sites that turn visitors into enquiries.",
+  "Custom Next.js & React builds, e-commerce, Flutter mobile apps, and AI integrations from chatbots to multi-provider SaaS.",
+  "Fixed-price quotes, async-friendly communication, and a live staging link so you watch progress in real time — for clients across the US, UK & Australia."
 ];
 
 export const STATS = [
@@ -215,6 +215,6 @@ export const CONTACT = {
   phone: "+61-413146498",
   whatsapp: "https://wa.me/61413146498?text=Hi%20Aman!%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project.",
   calendly: "https://calendly.com/amanpd0/30min",
-  linkedin: "linkedin.com/in/aman-singh-b3a7251a2",
+  linkedin: "https://www.linkedin.com/in/aman-singh-b3a7251a2",
   github: "https://github.com/amansingh812",
 };

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 64" font-family="'Outfit','Inter',sans-serif">
+  <g fill="none" stroke="#16181d" stroke-width="2.4" stroke-linejoin="round">
+    <path d="M32 10l18 10.4v20.8L32 51.6 14 41.2V20.4L32 10z"/>
+    <path d="M32 10v20.8m0 0l18-10.4M32 30.8l-18-10.4M32 30.8v20.8" stroke="#e2622d" stroke-width="2"/>
+  </g>
+  <text x="72" y="40" font-size="28" font-weight="600" letter-spacing="-0.5" fill="#16181d">
+    Build<tspan fill="#e2622d">First</tspan>Site
+  </text>
+  <text x="73" y="55" font-size="9.5" letter-spacing="3.2" fill="#9ca1a8">WEB DESIGN &amp; DEVELOPMENT STUDIO</text>
+</svg>
