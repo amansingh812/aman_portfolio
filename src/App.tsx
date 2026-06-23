@@ -437,7 +437,7 @@ export default function App() {
                 <span className="w-12 h-12 rounded-full bg-text-primary text-bg-primary flex items-center justify-center font-display text-lg flex-shrink-0">AS</span>
                 <div>
                   <p className="text-sm font-medium text-text-primary">Aman Singh</p>
-                  <p className="text-xs text-text-muted">Founder &amp; Lead Developer · 3+ yrs · ex-L&amp;T Finance</p>
+                  <p className="text-xs text-text-muted">Founder &amp; Lead Developer · 7+ yrs · ex-L&amp;T Finance</p>
                 </div>
               </div>
             </FadeUp>
