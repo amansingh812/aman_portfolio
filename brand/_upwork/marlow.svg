@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" font-family="'Outfit','Inter',sans-serif">
+<rect width="1200" height="675" fill="#2B211A"/>
+<rect x="80" y="70" width="1040" height="535" rx="18" fill="#F7F3EC"/>
+<rect x="80" y="70" width="1040" height="46" rx="18" fill="#ece4d6"/>
+<circle cx="110" cy="93" r="6" fill="#C4572E"/><circle cx="132" cy="93" r="6" fill="#cbbfa9"/><circle cx="154" cy="93" r="6" fill="#cbbfa9"/>
+<rect x="360" y="82" width="480" height="22" rx="11" fill="#f7f3ec"/>
+<text x="600" y="98" font-size="13" fill="#8a7c66" text-anchor="middle">marlow-vine-restaurant.vercel.app</text>
+<text x="130" y="210" font-size="20" fill="#C4572E" letter-spacing="3">MARLOW &amp; VINE · FITZROY</text>
+<text x="128" y="300" font-size="58" font-weight="600" fill="#2B211A">All-day brunch &amp;</text>
+<text x="128" y="366" font-size="58" font-weight="600" fill="#2B211A">natural <tspan fill="#C4572E" font-style="italic">wine</tspan></text>
+<text x="130" y="420" font-size="22" fill="#6f6253" font-weight="300">Editorial café site · zero-commission direct bookings</text>
+<g font-size="15" fill="#5c4f40">
+<rect x="130" y="460" width="200" height="40" rx="20" fill="#2b211a14"/><text x="230" y="485" text-anchor="middle">Table Booking Flow</text>
+<rect x="342" y="460" width="150" height="40" rx="20" fill="#2b211a14"/><text x="417" y="485" text-anchor="middle">Web Menu</text>
+<rect x="504" y="460" width="220" height="40" rx="20" fill="#C4572E"/><text x="614" y="485" text-anchor="middle" fill="#fff" font-weight="600">Restaurant Schema (SEO)</text>
+</g>
+<text x="130" y="540" font-size="15" fill="#9a8c79">React · react-router · Tailwind · JSON-LD · Vercel</text>
+</svg>

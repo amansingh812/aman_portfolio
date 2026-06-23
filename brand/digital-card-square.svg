@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" font-family="'Outfit','Inter',sans-serif">
+
+  <!-- Background -->
+  <rect width="1080" height="1080" fill="#16181d"/>
+
+  <!-- Subtle grid texture -->
+  <defs>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#ffffff" stroke-width="0.3" opacity="0.04"/>
+    </pattern>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#grid)"/>
+
+  <!-- Top-left orange corner accent -->
+  <rect x="0" y="0" width="8" height="320" fill="#f0744a"/>
+  <rect x="0" y="0" width="320" height="8" fill="#f0744a"/>
+
+  <!-- Bottom-right corner accent -->
+  <rect x="1072" y="760" width="8" height="320" fill="#f0744a"/>
+  <rect x="760" y="1072" width="320" height="8" fill="#f0744a"/>
+
+  <!-- Logo mark — browser window -->
+  <g transform="translate(80, 90) scale(3.4)">
+    <rect x="2" y="2.5" width="28" height="22" rx="5.5" fill="none" stroke="#fafafa" stroke-width="2.2"/>
+    <line x1="2" y1="9.6" x2="30" y2="9.6" stroke="#fafafa" stroke-width="2.2"/>
+    <circle cx="6.8" cy="6" r="1.5" fill="#f0744a"/>
+    <circle cx="11.6" cy="6" r="1.5" fill="#fafafa"/>
+    <circle cx="16.4" cy="6" r="1.5" fill="#fafafa"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="220" y="172" font-size="72" font-weight="700" letter-spacing="-1" fill="#fafafa">Build<tspan fill="#f0744a">First</tspan>Site</text>
+  <text x="222" y="210" font-size="18" letter-spacing="6" fill="#6b7076">WEB DESIGN &amp; DEVELOPMENT STUDIO</text>
+
+  <!-- Divider -->
+  <line x1="80" y1="270" x2="1000" y2="270" stroke="#2a2e35" stroke-width="1.5"/>
+
+  <!-- Name block -->
+  <text x="80" y="380" font-size="88" font-weight="700" letter-spacing="-1.5" fill="#fafafa">Aman Singh</text>
+  <text x="84" y="438" font-size="32" letter-spacing="1" fill="#f0744a">Full Stack Website Developer</text>
+
+  <!-- Divider -->
+  <line x1="80" y1="490" x2="1000" y2="490" stroke="#2a2e35" stroke-width="1.5"/>
+
+  <!-- Contact rows -->
+  <!-- Email -->
+  <g transform="translate(80, 560)">
+    <rect x="0" y="-30" width="54" height="54" rx="27" fill="none" stroke="#f0744a" stroke-width="2"/>
+    <g transform="translate(13, -16)" fill="none" stroke="#f0744a" stroke-width="2" stroke-linejoin="round">
+      <rect x="0" y="0" width="26" height="19" rx="2"/>
+      <path d="M0 1l13 10 13-10"/>
+    </g>
+    <text x="80" y="10" font-size="30" fill="#fafafa">contact@buildfirstsite.com</text>
+  </g>
+
+  <!-- Phone -->
+  <g transform="translate(80, 650)">
+    <rect x="0" y="-30" width="54" height="54" rx="27" fill="none" stroke="#f0744a" stroke-width="2"/>
+    <path d="M18 -18c-3 0-5 2-5 5 0 12 10 22 22 22 3 0 5-2 5-5v-4l-6-3-3 3c-4-1-8-5-9-9l3-3-3-6z" fill="none" stroke="#f0744a" stroke-width="2" stroke-linejoin="round"/>
+    <text x="80" y="10" font-size="30" fill="#fafafa">+61 413 146 498</text>
+  </g>
+
+  <!-- Website -->
+  <g transform="translate(80, 740)">
+    <rect x="0" y="-30" width="54" height="54" rx="27" fill="none" stroke="#f0744a" stroke-width="2"/>
+    <g transform="translate(13, -16)" fill="none" stroke="#f0744a" stroke-width="1.8">
+      <circle cx="13" cy="13" r="13"/>
+      <path d="M0 13h26 M13 0c6 5 6 21 0 26 M13 0c-6 5-6 21 0 26"/>
+    </g>
+    <text x="80" y="10" font-size="30" fill="#fafafa">buildfirstsite.com</text>
+  </g>
+
+  <!-- Location -->
+  <g transform="translate(80, 830)">
+    <rect x="0" y="-30" width="54" height="54" rx="27" fill="none" stroke="#f0744a" stroke-width="2"/>
+    <g transform="translate(14, -14)" fill="none" stroke="#f0744a" stroke-width="1.8">
+      <path d="M13 0C8 0 4 4 4 9c0 8 9 17 9 17s9-9 9-17c0-5-4-9-9-9z"/>
+      <circle cx="13" cy="9" r="3"/>
+    </g>
+    <text x="80" y="10" font-size="30" fill="#fafafa">US · UK · Australia</text>
+  </g>
+
+  <!-- Bottom tagline -->
+  <line x1="80" y1="910" x2="1000" y2="910" stroke="#2a2e35" stroke-width="1.5"/>
+  <text x="540" y="970" text-anchor="middle" font-size="22" letter-spacing="8" fill="#6b7076">BUILD · SHIP · SCALE</text>
+  <text x="540" y="1010" text-anchor="middle" font-size="18" fill="#3a3f47">buildfirstsite.com</text>
+
+</svg>

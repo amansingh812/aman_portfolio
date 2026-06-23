@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1122" height="672" viewBox="0 0 1122 672" font-family="'Inter',sans-serif">
+  <!-- 3.5x2in @300dpi trim = 1050x600, with 36px (3mm) bleed all sides -->
+  <rect width="1122" height="672" fill="#16181d"/>
+
+  <!-- Bottom accent bar (extends into bleed) -->
+  <rect x="0" y="658" width="1122" height="14" fill="#f0744a"/>
+
+  <g transform="translate(36,36)">
+    <!-- Small logo mark top-left — browser window glyph -->
+    <g transform="translate(72,52) scale(2.0)">
+      <rect x="2" y="2.5" width="28" height="22" rx="5.5" fill="none" stroke="#fafafa" stroke-width="2.2"/>
+      <line x1="2" y1="9.6" x2="30" y2="9.6" stroke="#fafafa" stroke-width="2.2"/>
+      <circle cx="6.8" cy="6" r="1.5" fill="#f0744a"/>
+      <circle cx="11.6" cy="6" r="1.5" fill="#fafafa"/>
+      <circle cx="16.4" cy="6" r="1.5" fill="#fafafa"/>
+    </g>
+
+    <!-- Motto top-right -->
+    <text x="978" y="100" text-anchor="end" font-family="'Outfit','Inter',sans-serif" font-size="20" letter-spacing="5" fill="#6b7076">BUILD · SHIP · SCALE</text>
+
+    <!-- Contact rows -->
+    <g>
+      <!-- Email -->
+      <g transform="translate(80,272)">
+        <rect x="-2" y="-26" width="50" height="50" rx="25" fill="none" stroke="#f0744a" stroke-width="2"/>
+        <g transform="translate(11,-12)" fill="none" stroke="#f0744a" stroke-width="2" stroke-linejoin="round">
+          <rect x="0" y="0" width="24" height="17" rx="2"/>
+          <path d="M0 1l12 9 12-9"/>
+        </g>
+        <text x="78" y="9" font-size="28" fill="#fafafa">contact@buildfirstsite.com</text>
+      </g>
+
+      <!-- Phone -->
+      <g transform="translate(80,352)">
+        <rect x="-2" y="-26" width="50" height="50" rx="25" fill="none" stroke="#f0744a" stroke-width="2"/>
+        <path d="M12 -10c-3 0-5 2-5 5 0 12 10 22 22 22 3 0 5-2 5-5v-4l-6-3-3 3c-4-1-8-5-9-9l3-3-3-6z" transform="translate(2,0)" fill="none" stroke="#f0744a" stroke-width="2" stroke-linejoin="round"/>
+        <text x="78" y="9" font-size="28" fill="#fafafa">+61 413 146 498</text>
+      </g>
+
+      <!-- Website -->
+      <g transform="translate(80,432)">
+        <rect x="-2" y="-26" width="50" height="50" rx="25" fill="none" stroke="#f0744a" stroke-width="2"/>
+        <g transform="translate(9,-13)" fill="none" stroke="#f0744a" stroke-width="1.8">
+          <circle cx="13" cy="13" r="13"/>
+          <path d="M0 13h26 M13 0c6 5 6 21 0 26 M13 0c-6 5-6 21 0 26"/>
+        </g>
+        <text x="78" y="9" font-size="28" fill="#fafafa">buildfirstsite.com</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Trim guides (corners only) -->
+  <g stroke="#5a5f66" stroke-width="1" opacity="0.5">
+    <line x1="36" y1="0" x2="36" y2="20"/><line x1="0" y1="36" x2="20" y2="36"/>
+    <line x1="1086" y1="0" x2="1086" y2="20"/><line x1="1102" y1="36" x2="1122" y2="36"/>
+    <line x1="36" y1="652" x2="36" y2="672"/><line x1="0" y1="636" x2="20" y2="636"/>
+    <line x1="1086" y1="652" x2="1086" y2="672"/><line x1="1102" y1="636" x2="1122" y2="636"/>
+  </g>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" font-family="'Outfit','Inter',sans-serif">
+<rect width="1200" height="675" fill="#0d0e11"/>
+<rect x="80" y="70" width="1040" height="535" rx="18" fill="#15171c" stroke="#ffffff1a"/>
+<rect x="80" y="70" width="1040" height="46" rx="18" fill="#0a0b0e"/>
+<circle cx="110" cy="93" r="6" fill="#F97316"/><circle cx="132" cy="93" r="6" fill="#3a3f47"/><circle cx="154" cy="93" r="6" fill="#3a3f47"/>
+<rect x="360" y="82" width="480" height="22" rx="11" fill="#15171c"/>
+<text x="600" y="98" font-size="13" fill="#9ca3af" text-anchor="middle">mobilearmour.com.au</text>
+<text x="130" y="210" font-size="20" fill="#F97316" letter-spacing="3">MOBILE ARMOUR · AUSTRALIA</text>
+<text x="128" y="300" font-size="56" font-weight="600" fill="#ffffff">AI-Powered Mobile</text>
+<text x="128" y="366" font-size="56" font-weight="600" fill="#ffffff">Accessories Store</text>
+<text x="130" y="420" font-size="22" fill="#b6bcc6" font-weight="300">OpenAI recommendations · conversational chatbot · Stripe</text>
+<g font-size="15" fill="#d4d9e0">
+<rect x="130" y="460" width="210" height="40" rx="20" fill="#ffffff14"/><text x="235" y="485" text-anchor="middle">+20% Engagement</text>
+<rect x="352" y="460" width="200" height="40" rx="20" fill="#F97316"/><text x="452" y="485" text-anchor="middle" fill="#fff" font-weight="600">-20% Load Time</text>
+</g>
+<text x="130" y="540" font-size="15" fill="#7b828c">Next.js · OpenAI · Stripe · MongoDB · Tailwind</text>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" font-family="'Outfit','Inter',sans-serif">
+<rect width="1200" height="675" fill="#0b1020"/>
+<rect x="80" y="70" width="1040" height="535" rx="18" fill="#111733" stroke="#ffffff1a"/>
+<rect x="80" y="70" width="1040" height="46" rx="18" fill="#0c1228"/>
+<circle cx="110" cy="93" r="6" fill="#6366F1"/><circle cx="132" cy="93" r="6" fill="#36406b"/><circle cx="154" cy="93" r="6" fill="#36406b"/>
+<rect x="360" y="82" width="480" height="22" rx="11" fill="#111733"/>
+<text x="600" y="98" font-size="13" fill="#9aa3c7" text-anchor="middle">AutoZenlyAI · SaaS Platform</text>
+<text x="130" y="210" font-size="20" fill="#818cf8" letter-spacing="3">AUTOZENLYAI · SAAS</text>
+<text x="128" y="300" font-size="56" font-weight="600" fill="#ffffff">Multi-AI Social</text>
+<text x="128" y="366" font-size="56" font-weight="600" fill="#ffffff">Media Automation</text>
+<text x="130" y="420" font-size="22" fill="#b9c0e0" font-weight="300">6 AI providers · visual scheduler · real-time analytics</text>
+<g font-size="15" fill="#d2d7f0">
+<rect x="130" y="460" width="200" height="40" rx="20" fill="#ffffff14"/><text x="230" y="485" text-anchor="middle">Claude · GPT-4 · Gemini</text>
+<rect x="342" y="460" width="230" height="40" rx="20" fill="#6366F1"/><text x="457" y="485" text-anchor="middle" fill="#fff" font-weight="600">Multi-Platform Scheduler</text>
+</g>
+<text x="130" y="540" font-size="15" fill="#7e87b0">Next.js 14 · FastAPI · Redis · Multi-LLM</text>
+</svg>

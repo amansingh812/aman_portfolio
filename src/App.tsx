@@ -195,6 +195,9 @@ export default function App() {
             message: `Project Type: ${contactProjectType}\n\nMessage:\n${contactMessage}`,
           })
         });
+        // Fire conversion event for GA4 / Google Ads (safe no-op if gtag isn't loaded)
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        (window as any).gtag?.('event', 'generate_lead', { method: 'contact_form', project_type: contactProjectType });
         setContactSent(true);
         setContactName(''); setContactEmail(''); setContactMessage('');
         setTimeout(() => setContactSent(false), 5000);

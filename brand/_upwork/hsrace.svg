@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" font-family="'Outfit','Inter',sans-serif">
+<rect width="1200" height="675" fill="#160a0a"/>
+<rect x="80" y="70" width="1040" height="535" rx="18" fill="#1f0e0d" stroke="#ffffff1a"/>
+<rect x="80" y="70" width="1040" height="46" rx="18" fill="#140807"/>
+<circle cx="110" cy="93" r="6" fill="#E0382B"/><circle cx="132" cy="93" r="6" fill="#4a2c2a"/><circle cx="154" cy="93" r="6" fill="#4a2c2a"/>
+<rect x="360" y="82" width="480" height="22" rx="11" fill="#1f0e0d"/>
+<text x="600" y="98" font-size="13" fill="#c79a96" text-anchor="middle">hsracegear.com.au</text>
+<text x="130" y="210" font-size="20" fill="#E0382B" letter-spacing="3">HS RACE GEAR · AUSTRALIA</text>
+<text x="128" y="300" font-size="56" font-weight="600" fill="#ffffff">Premium Racing</text>
+<text x="128" y="366" font-size="56" font-weight="600" fill="#ffffff">E-Commerce + <tspan fill="#E0382B">3D</tspan></text>
+<text x="130" y="420" font-size="22" fill="#d6b8b5" font-weight="300">Three.js product viewer · custom sizing · Stripe · admin</text>
+<g font-size="15" fill="#e8d2cf">
+<rect x="130" y="460" width="170" height="40" rx="20" fill="#ffffff14"/><text x="215" y="485" text-anchor="middle">3D Viewer</text>
+<rect x="312" y="460" width="190" height="40" rx="20" fill="#ffffff14"/><text x="407" y="485" text-anchor="middle">Stripe Checkout</text>
+<rect x="514" y="460" width="180" height="40" rx="20" fill="#E0382B"/><text x="604" y="485" text-anchor="middle" fill="#fff" font-weight="600">Custom Admin</text>
+</g>
+<text x="130" y="540" font-size="15" fill="#a07e7a">Next.js 15 · React 19 · Three.js · MongoDB · Stripe</text>
+</svg>
