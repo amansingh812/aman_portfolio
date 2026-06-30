@@ -1,0 +1,176 @@
+# Build First Site — Full Site Content for AI Ingestion
+
+> This file follows the llms-full.txt convention for AI language model ingestion.
+> Source: https://buildfirstsite.com | Updated: June 2026
+
+---
+
+## Homepage
+
+**Title:** Build First Site — Web Design & Development Studio | US · UK · Australia
+**URL:** https://buildfirstsite.com/
+**Description:** Build First Site is a web design & development studio building high-converting business websites, e-commerce stores, and AI-powered web apps for clients in the US, UK, and Australia. Fixed-price, fast delivery.
+
+**Headline:** Your first impression, built right.
+
+**About:** Build First Site is a web design and development studio — we build the website that becomes your customer's first impression of your business. Backed by 3+ years of engineering at scale in fintech, paired with the speed and conversion focus growing businesses need. We start with your business goal, not the tech — then ship clean, fast, SEO-ready sites that turn visitors into enquiries. Custom Next.js & React builds, e-commerce, Flutter mobile apps, and AI integrations from chatbots to multi-provider SaaS. Fixed-price quotes, async-friendly communication, and a live staging link for clients across the US, UK & Australia.
+
+**Stats:** 3+ years experience · 10+ products shipped · 5+ AI agents built
+
+**Founder:** Aman Singh — Lead Developer, ex-L&T Finance Software Engineer
+
+---
+
+## Services
+
+### Landing Page — from $600 (~AU$1,000) · ~2 weeks
+Conversion-focused single page — copy structure, SEO basics, analytics, deployed.
+
+### Business Website — from $2,000 (~AU$3,800) · 2–3 weeks
+Multi-page site with CMS, contact/quote forms, booking integration, local SEO.
+
+### E-Commerce Store — from $4,000 (~AU$5,000) · 4–6 weeks
+Full store with Stripe checkout, inventory, admin dashboard, and order emails.
+
+### AI / SaaS MVP — from $5,000 (~AU$6,500) · 6–8 weeks
+Product build from zero — auth, billing, AI integrations, dashboard, launch-ready.
+
+### Monthly Retainer — from $600/month
+Ongoing partnership: priority access, unlimited revisions on active tasks, monthly deployments, performance monitoring, direct Slack/WhatsApp collaboration. Pause anytime.
+
+---
+
+## Portfolio / Case Studies
+
+### HS Race Gear
+**URL:** https://www.hsracegear.com
+**Category:** E-Commerce · Full Stack
+**Country:** Australia 🇦🇺
+**Tech:** Next.js 15, React 19, Three.js, MongoDB, Stripe
+**Description:** Premium racing e-commerce for an Australian brand. 3D product viewer with Three.js, custom measurement forms, full Stripe checkout, inventory and admin dashboard — built from scratch.
+
+### Mobile Armour
+**URL:** https://mobilearmour.com.au
+**Category:** AI · E-Commerce
+**Country:** Australia 🇦🇺
+**Tech:** Next.js, OpenAI, Stripe, MongoDB, Tailwind
+**Description:** E-commerce platform with OpenAI product recommendations, a conversational AI chatbot, and Stripe payments. +20% engagement, −20% load time vs the previous build.
+
+### AutoZenlyAI
+**URL:** https://www.autozenlyai.com
+**Category:** SaaS · AI
+**Country:** Global 🌐
+**Tech:** Next.js 14, FastAPI, Redis, Claude, GPT-4
+**Description:** SaaS platform automating social content creation and scheduling. Claude, GPT-4, Gemini, Mistral, Cohere, and Groq behind one visual scheduler with real-time analytics.
+
+### AURELIA Estates & Prestige
+**URL:** https://aurelia-real-estate-silk.vercel.app
+**Category:** Real Estate
+**Tech:** React, Next.js, Tailwind CSS, Framer Motion
+**Description:** Modern luxury real estate platform featuring high-end property listings, advanced property search, and seamless inquiry flows.
+
+### Harbour Plumbing Co.
+**URL:** https://harbour-plumbing-website.vercel.app
+**Category:** Business Website · Local SEO
+**Country:** Australia 🇦🇺 (Sydney)
+**Tech:** React, Tailwind, Motion, Formspree, JSON-LD
+**Description:** Conversion-first website for a Sydney 24/7 emergency plumber — trust-badge hero, quote-request form, click-to-call, Google reviews strip, LocalBusiness + FAQ schema for local SEO. Lighthouse 95+.
+
+### Marlow & Vine
+**URL:** https://marlow-vine-restaurant.vercel.app
+**Category:** Hospitality · Restaurant
+**Country:** Australia 🇦🇺 (Melbourne, Fitzroy)
+**Tech:** React, Tailwind, Motion, react-router, JSON-LD
+**Description:** Editorial site for a Fitzroy brunch café & wine bar — full-bleed hero, tabbed menu (no PDFs), provider-agnostic table booking for zero-commission direct bookings, Restaurant & Menu schema.
+
+---
+
+## FAQ
+
+**Q: What services do you offer exactly?**
+A: We build websites, web apps, e-commerce platforms, and SaaS products — from design handoff to launch. Custom Next.js & React builds, Flutter mobile apps, AI integrations, Stripe & payment flows, admin dashboards, and performance audits.
+
+**Q: How much does a website cost?**
+A: Most projects fall between $600 and $15,000 USD depending on scope. A landing page starts at $600; a business website from $2,000; e-commerce from $4,000; an AI or SaaS MVP from $5,000. Fixed-price quotes upfront — never hourly billing.
+
+**Q: What are the payment terms?**
+A: 50% upfront to begin, 50% on completion. Larger projects can split into three milestones. We accept Wise, Stripe, PayPal, and bank transfer — works for clients in the US, UK, and Australia.
+
+**Q: Do you work with international clients?**
+A: Yes — most of our freelance work is for businesses in Australia, the US, and the UK. We handle timezones with async communication and scheduled calls, delivering on time regardless of location.
+
+**Q: How long does a project take?**
+A: Landing page: ~2 weeks. Business website: 2–3 weeks. E-commerce or SaaS: 4–6 weeks. You get a clear timeline with milestones in the proposal before we start.
+
+**Q: Will I own the code?**
+A: 100%. The code is yours, hosted wherever you like — Vercel, AWS, your own server. No subscriptions, no lock-in. Full repo handed over on completion.
+
+**Q: Do you offer ongoing support after launch?**
+A: The first 30 days post-launch are free. After that, monthly retainers start at $600/month for ongoing development, updates, and support.
+
+---
+
+## Technology Stack
+
+**Frontend:** Next.js 15, React 19, TypeScript, Tailwind CSS, Framer Motion, Three.js, Redux
+**Backend:** FastAPI, Node.js, Express, Python, REST APIs, WebSockets
+**Mobile:** Flutter, Dart, BLoC, Provider, React Native
+**Database:** MongoDB, PostgreSQL, Redis, FAISS, Supabase
+**AI / LLMs:** OpenAI, Claude, Gemini, Groq, Mistral, LangChain
+**Payments & DevOps:** Stripe, Razorpay, UPI, Vercel, AWS, Docker, GitHub Actions
+
+---
+
+## City Service Pages
+
+### Sydney
+**URL:** https://buildfirstsite.com/web-design-sydney/
+**Keywords:** web designer sydney, web developer sydney, website design sydney, ecommerce developer sydney
+**Summary:** Web design and development for Sydney businesses. Australian e-commerce, local SEO, business websites. Real projects: HS Race Gear (AU racing e-commerce), Harbour Plumbing Co. (Sydney local SEO).
+
+### Melbourne
+**URL:** https://buildfirstsite.com/web-design-melbourne/
+**Keywords:** web designer melbourne, web developer melbourne, restaurant website melbourne
+**Summary:** Web design and development for Melbourne businesses. Hospitality, e-commerce, professional services. Real projects: Marlow & Vine (Fitzroy restaurant), Mobile Armour (AU e-commerce).
+
+### Denver
+**URL:** https://buildfirstsite.com/web-design-denver/
+**Keywords:** web designer denver, web developer denver colorado, small business website denver
+**Summary:** Web design and development for Denver, Colorado businesses. Startups, outdoor brands, health & wellness, professional services.
+
+### Phoenix
+**URL:** https://buildfirstsite.com/web-design-phoenix/
+**Keywords:** web designer phoenix az, real estate website phoenix, small business web design phoenix
+**Summary:** Web design and development for Phoenix, Arizona businesses. Real estate platforms, service businesses, e-commerce, Scottsdale tech startups.
+
+### Nashville
+**URL:** https://buildfirstsite.com/web-design-nashville/
+**Keywords:** web designer nashville tn, restaurant website nashville, small business website nashville
+**Summary:** Web design and development for Nashville, Tennessee businesses. Restaurants, hospitality, healthcare, e-commerce, creative studios.
+
+---
+
+## Contact
+
+- **Email:** amansinghofficial9776@gmail.com
+- **Phone/WhatsApp:** +61 413 146 498
+- **Book a Call:** https://calendly.com/amanpd0/30min (30 min, free)
+- **LinkedIn:** https://www.linkedin.com/in/aman-singh-b3a7251a2
+- **GitHub:** https://github.com/amansingh812
+- **Response time:** Within 24 hours
+
+---
+
+## Differentiators
+
+1. **Fixed-price** — locked quote before work starts, no hourly billing, no scope creep
+2. **Full ownership** — complete GitHub repo handover, host anywhere, no subscriptions
+3. **Australian market expertise** — built for AU e-commerce brands, Sydney tradies, Melbourne hospitality
+4. **Enterprise-grade tech** — Next.js 15, React 19, TypeScript (same stack as Vercel and Shopify)
+5. **AI-ready** — production AI apps with OpenAI, Claude, Gemini, Groq; not prototypes
+6. **SEO-first** — every site ships with structured data, sitemap, semantic HTML, Core Web Vitals
+7. **Async-friendly** — live staging link from day one, Slack/WhatsApp, daily updates
+
+---
+
+*End of llms-full.txt — https://buildfirstsite.com*

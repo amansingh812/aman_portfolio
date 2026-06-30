@@ -821,6 +821,35 @@ export default function App() {
             <a href={`mailto:${CONTACT.email}`} className="w-9 h-9 rounded-full border border-border-secondary flex items-center justify-center text-text-muted hover:text-text-primary hover:border-[#16181d] transition-colors"><Mail className="w-4 h-4" /></a>
           </div>
         </div>
+        {/* ── City & service links (SEO internal linking) ── */}
+        <div className="border-t border-border-light max-w-[1440px] mx-auto px-6 md:px-10 py-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            <div>
+              <p className="text-[10px] tracking-[0.25em] uppercase text-text-faintest mb-3">Australia</p>
+              <div className="flex flex-col gap-1.5">
+                <a href="/web-design-sydney/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Web Designer Sydney</a>
+                <a href="/web-design-melbourne/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Web Designer Melbourne</a>
+              </div>
+            </div>
+            <div>
+              <p className="text-[10px] tracking-[0.25em] uppercase text-text-faintest mb-3">United States</p>
+              <div className="flex flex-col gap-1.5">
+                <a href="/web-design-denver/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Web Designer Denver</a>
+                <a href="/web-design-phoenix/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Web Designer Phoenix</a>
+                <a href="/web-design-nashville/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Web Designer Nashville</a>
+              </div>
+            </div>
+            <div>
+              <p className="text-[10px] tracking-[0.25em] uppercase text-text-faintest mb-3">Services</p>
+              <div className="flex flex-col gap-1.5">
+                <a href="/nextjs-development/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Next.js Developer</a>
+                <a href="/ecommerce-development/" className="text-xs text-text-faint hover:text-text-primary transition-colors">E-Commerce Developer</a>
+                <a href="/ai-web-development/" className="text-xs text-text-faint hover:text-text-primary transition-colors">AI Web Developer</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="border-t border-border-light px-6 md:px-10 py-4 max-w-[1440px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="text-[11px] text-text-faintest">© 2026 Build First Site. All rights reserved.</p>
           <p className="text-[11px] text-text-faintest">Built with React · Deployed on Vercel</p>

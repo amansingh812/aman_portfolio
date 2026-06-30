@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Homepage OG image -->
+  <url>
+    <loc>https://buildfirstsite.com/</loc>
+    <image:image>
+      <image:loc>https://buildfirstsite.com/og-image.png</image:loc>
+      <image:title>Build First Site — Web Design & Development Studio</image:title>
+      <image:caption>High-converting business websites, e-commerce and AI web apps for US, UK and Australia</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://buildfirstsite.com/clean_arch_dark.png</image:loc>
+      <image:title>Precision over cleverness — Build First Site engineering approach</image:title>
+      <image:caption>Enterprise-grade architecture for small business websites</image:caption>
+    </image:image>
+  </url>
+
+  <!-- HS Race Gear portfolio project -->
+  <url>
+    <loc>https://buildfirstsite.com/</loc>
+    <image:image>
+      <image:loc>https://s0.wp.com/mshots/v1/https%3A%2F%2Fwww.hsracegear.com?w=1200</image:loc>
+      <image:title>HS Race Gear — Premium Racing E-Commerce website built by Build First Site</image:title>
+      <image:caption>Australian racing gear e-commerce store with 3D product viewer, Stripe checkout, and admin dashboard built with Next.js 15</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Mobile Armour portfolio project -->
+  <url>
+    <loc>https://buildfirstsite.com/</loc>
+    <image:image>
+      <image:loc>https://s0.wp.com/mshots/v1/https%3A%2F%2Fmobilearmour.com.au?w=1200</image:loc>
+      <image:title>Mobile Armour — AI-Powered Accessories Store built by Build First Site</image:title>
+      <image:caption>Australian e-commerce store with OpenAI recommendations, chatbot, and Stripe payments. +20% engagement.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Harbour Plumbing Co. portfolio project -->
+  <url>
+    <loc>https://buildfirstsite.com/</loc>
+    <image:image>
+      <image:loc>https://s0.wp.com/mshots/v1/https%3A%2F%2Fharbour-plumbing-website.vercel.app?w=1200</image:loc>
+      <image:title>Harbour Plumbing Co. — Sydney Tradie Website with Local SEO</image:title>
+      <image:caption>Conversion-first website for a Sydney emergency plumber with local SEO schema, Lighthouse 95+</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Marlow & Vine portfolio project -->
+  <url>
+    <loc>https://buildfirstsite.com/</loc>
+    <image:image>
+      <image:loc>https://s0.wp.com/mshots/v1/https%3A%2F%2Fmarlow-vine-restaurant.vercel.app?w=1200</image:loc>
+      <image:title>Marlow & Vine — Melbourne Restaurant Website built by Build First Site</image:title>
+      <image:caption>Fitzroy brunch café website with direct booking, tabbed menu, and Restaurant schema markup</image:caption>
+    </image:image>
+  </url>
+
+  <!-- AutoZenlyAI portfolio project -->
+  <url>
+    <loc>https://buildfirstsite.com/</loc>
+    <image:image>
+      <image:loc>https://s0.wp.com/mshots/v1/https%3A%2F%2Fwww.autozenlyai.com?w=1200</image:loc>
+      <image:title>AutoZenlyAI — Multi-Provider Social Media SaaS built by Build First Site</image:title>
+      <image:caption>AI SaaS platform with Claude, GPT-4, Gemini, Mistral, Cohere, and Groq for social media automation</image:caption>
+    </image:image>
+  </url>
+
+  <!-- AURELIA Estates portfolio project -->
+  <url>
+    <loc>https://buildfirstsite.com/</loc>
+    <image:image>
+      <image:loc>https://s0.wp.com/mshots/v1/https%3A%2F%2Faurelia-real-estate-silk.vercel.app?w=1200</image:loc>
+      <image:title>AURELIA Estates & Prestige — Luxury Real Estate Platform</image:title>
+      <image:caption>Premium real estate platform with advanced property search and luxury listing pages built with Next.js</image:caption>
+    </image:image>
+  </url>
+
+</urlset>
