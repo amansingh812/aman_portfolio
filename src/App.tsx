@@ -842,9 +842,11 @@ export default function App() {
             <div>
               <p className="text-[10px] tracking-[0.25em] uppercase text-text-faintest mb-3">Services</p>
               <div className="flex flex-col gap-1.5">
+                <a href="/hire-website-builder/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Hire Website Builder</a>
                 <a href="/nextjs-development/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Next.js Developer</a>
                 <a href="/ecommerce-development/" className="text-xs text-text-faint hover:text-text-primary transition-colors">E-Commerce Developer</a>
                 <a href="/ai-web-development/" className="text-xs text-text-faint hover:text-text-primary transition-colors">AI Web Developer</a>
+                <a href="/how-much-does-a-website-cost-australia/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Website Cost Guide</a>
               </div>
             </div>
           </div>
