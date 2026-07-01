@@ -13,7 +13,7 @@ export const PROJECT_LIST: Project[] = [
     filter: "Full Stack",
     country: "🇦🇺",
     liveUrl: "https://www.hsracegear.com",
-    image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fwww.hsracegear.com?w=1200",
+    image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fwww.hsracegear.com?w=800",
     cover: { from: "#26100f", to: "#5c2420", mark: "HS" }
   },
   {
@@ -27,7 +27,7 @@ export const PROJECT_LIST: Project[] = [
     filter: "AI · SaaS",
     country: "🇦🇺",
     liveUrl: "https://mobilearmour.com.au",
-    image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fmobilearmour.com.au?w=1200"
+    image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fmobilearmour.com.au?w=800"
   },
   {
     id: "03",
@@ -40,7 +40,7 @@ export const PROJECT_LIST: Project[] = [
     filter: "AI · SaaS",
     country: "🌐",
     liveUrl: "https://www.autozenlyai.com",
-    image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fwww.autozenlyai.com?w=1200",
+    image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fwww.autozenlyai.com?w=800",
     cover: { from: "#1d2026", to: "#3b4150", mark: "Az" }
   },
   {
@@ -54,7 +54,7 @@ export const PROJECT_LIST: Project[] = [
     filter: "Full Stack",
     country: "🌐",
     liveUrl: "https://aurelia-real-estate-silk.vercel.app",
-    image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Faurelia-real-estate-silk.vercel.app?w=1200",
+    image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Faurelia-real-estate-silk.vercel.app?w=800",
     cover: { from: "#1e1e1e", to: "#3a3a3a", mark: "AU" }
   },
   {
@@ -68,7 +68,7 @@ export const PROJECT_LIST: Project[] = [
     filter: "Full Stack",
     country: "🇦🇺",
     liveUrl: "https://harbour-plumbing-website.vercel.app",
-    image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fharbour-plumbing-website.vercel.app?w=1200"
+    image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fharbour-plumbing-website.vercel.app?w=800"
   },
   {
     id: "06",
@@ -81,7 +81,7 @@ export const PROJECT_LIST: Project[] = [
     filter: "Full Stack",
     country: "🇦🇺",
     liveUrl: "https://marlow-vine-restaurant.vercel.app",
-    image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fmarlow-vine-restaurant.vercel.app?w=1200"
+    image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fmarlow-vine-restaurant.vercel.app?w=800"
   }
 ];
 
@@ -208,6 +208,35 @@ export const RETAINER = {
     "Scales with your roadmap — pause anytime",
   ],
 };
+
+// ─── Testimonials ────────────────────────────────────────────────────────────
+// ⚠️ IMPORTANT: These are PLACEHOLDERS based on real project outcomes.
+// Replace with REAL client quotes before running ads. In Australia, fake
+// testimonials breach the Australian Consumer Law (ACCC). Ask each client for
+// one line + permission to use their name/business.
+export const TESTIMONIALS = [
+  {
+    quote: "Aman rebuilt our site in a week and it's fast, clean, and finally converts. The quote form and click-to-call brought in enquiries almost immediately.",
+    name: "Operations Manager",
+    company: "Harbour Plumbing Co.",
+    country: "🇦🇺",
+    result: "Lighthouse 95+ · 1-week build",
+  },
+  {
+    quote: "The AI product recommendations and new checkout made a real difference — engagement went up and the store feels noticeably quicker on mobile.",
+    name: "Founder",
+    company: "Mobile Armour",
+    country: "🇦🇺",
+    result: "+20% engagement · −20% load time",
+  },
+  {
+    quote: "Clear fixed price, a live link to follow progress, and clean code handed over at the end. Exactly what I wanted — no surprises, no lock-in.",
+    name: "Owner",
+    company: "Marlow & Vine",
+    country: "🇦🇺",
+    result: "Direct bookings · zero commission",
+  },
+];
 
 // ─── Contact ─────────────────────────────────────────────────────────────────
 export const CONTACT = {

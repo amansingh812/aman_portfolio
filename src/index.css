@@ -32,11 +32,11 @@
   
   --text-primary: #16181d;
   --text-secondary: #4b5057;
-  --text-muted: #6b7076;
-  --text-faint: #9ca1a8;
-  --text-faintest: #b3b7bc;
+  --text-muted: #63686e;
+  --text-faint: #767b82;
+  --text-faintest: #868b92;
   --text-accent: #c9cbce;
-  --brand: #e2622d;
+  --brand: #d4551f;
 
   --border-primary: #ececee;
   --border-secondary: #e7e8ea;
@@ -52,10 +52,10 @@ html.dark {
   --bg-tertiary: #1e2126;
   
   --text-primary: #fafafa;
-  --text-secondary: #b3b7bc;
-  --text-muted: #9ca1a8;
-  --text-faint: #6b7076;
-  --text-faintest: #4b5057;
+  --text-secondary: #c2c6cc;
+  --text-muted: #a1a6ad;
+  --text-faint: #868b92;
+  --text-faintest: #767b82;
   --text-accent: #7a8089;
   --brand: #f0744a;
 

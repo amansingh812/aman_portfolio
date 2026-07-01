@@ -2,11 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
   ArrowUpRight, ArrowDown, Send, Check, Menu, X,
-  Mail, Phone, Calendar, ExternalLink, Github, Linkedin, Sun, Moon
+  Mail, Phone, Calendar, ExternalLink, Github, Linkedin, Sun, Moon,
+  Search, Quote, Zap
 } from 'lucide-react';
 import {
   PROJECT_LIST, PROJECT_FILTERS, EXPERIENCE, ABOUT_POINTS, STATS,
-  TECH_CATEGORIES, FAQS, PRICE_TIERS, RETAINER, CONTACT
+  TECH_CATEGORIES, FAQS, PRICE_TIERS, RETAINER, TESTIMONIALS, CONTACT
 } from './data';
 import { NavSection, Project } from './types';
 
@@ -133,6 +134,16 @@ export default function App() {
   const [contactProjectType, setContactProjectType] = useState('Website / Web App');
   const [contactMessage, setContactMessage] = useState('');
   const [contactSent, setContactSent] = useState(false);
+  const [contactSending, setContactSending] = useState(false);
+  const [contactError, setContactError] = useState(false);
+
+  // Route a visitor to the contact form with the "Free Website Audit" intent pre-filled
+  const startAudit = () => {
+    setContactProjectType('Free Website Audit');
+    setContactMessage("I'd like a free 5-minute website audit. My current website is: ");
+    setContactSent(false);
+    refs.contact?.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   const refs = {
     home: useRef<HTMLDivElement>(null),
@@ -175,46 +186,48 @@ export default function App() {
   const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!contactName || !contactEmail || !contactMessage) return;
+    setContactError(false);
+    setContactSending(true);
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const accessKey = (import.meta as any).env?.VITE_WEB3FORMS_ACCESS_KEY;
 
     try {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const accessKey = (import.meta as any).env?.VITE_WEB3FORMS_ACCESS_KEY;
-      
       if (accessKey && accessKey !== 'your_access_key_here') {
-        await fetch('https://api.web3forms.com/submit', {
+        const res = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify({
             access_key: accessKey,
-            subject: `Project Inquiry — ${contactProjectType} — ${contactName}`,
+            subject: `New Lead — ${contactProjectType} — ${contactName}`,
             from_name: contactName,
             email: contactEmail,
             message: `Project Type: ${contactProjectType}\n\nMessage:\n${contactMessage}`,
           })
         });
+        const data = await res.json();
+        if (!res.ok || !data.success) throw new Error('Submission failed');
+
         // Fire conversion event for GA4 / Google Ads (safe no-op if gtag isn't loaded)
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (window as any).gtag?.('event', 'generate_lead', { method: 'contact_form', project_type: contactProjectType });
         setContactSent(true);
         setContactName(''); setContactEmail(''); setContactMessage('');
-        setTimeout(() => setContactSent(false), 5000);
       } else {
-        // Fallback to mailto if no API key is provided
-        const subject = encodeURIComponent(`Project Inquiry — ${contactProjectType} — ${contactName}`);
+        // Fallback if no API key set yet: open the user's email client with the lead pre-filled
+        const subject = encodeURIComponent(`New Lead — ${contactProjectType} — ${contactName}`);
         const body = encodeURIComponent(
-          `Hi Build First Site,\n\nName: ${contactName}\nEmail: ${contactEmail}\nProject Type: ${contactProjectType}\n\nMessage:\n${contactMessage}`
+          `Name: ${contactName}\nEmail: ${contactEmail}\nProject Type: ${contactProjectType}\n\nMessage:\n${contactMessage}`
         );
         window.open(`mailto:${CONTACT.email}?subject=${subject}&body=${body}`);
         setContactSent(true);
         setContactName(''); setContactEmail(''); setContactMessage('');
-        setTimeout(() => setContactSent(false), 5000);
       }
     } catch (error) {
       console.error('Failed to submit form:', error);
-      alert('An error occurred. Please try again or email directly.');
+      setContactError(true);
+    } finally {
+      setContactSending(false);
     }
   };
 
@@ -231,6 +244,7 @@ export default function App() {
       <header className="fixed top-0 left-0 w-full z-50 bg-bg-primary/85 backdrop-blur-md border-b border-border-primary">
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
           <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            aria-label="Build First Site — back to top"
             className="flex items-center gap-2.5 cursor-pointer group">
             <CubeMark className="w-7 h-7 text-text-primary" />
             <span className="font-display font-medium text-[15px] tracking-tight leading-none">
@@ -250,14 +264,14 @@ export default function App() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <button onClick={toggleTheme} className="w-9 h-9 rounded-full border border-border-secondary flex items-center justify-center text-text-muted hover:text-text-primary transition-colors cursor-pointer mr-1">
+            <button onClick={toggleTheme} aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'} className="w-9 h-9 rounded-full border border-border-secondary flex items-center justify-center text-text-muted hover:text-text-primary transition-colors cursor-pointer mr-1">
               {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
             </button>
             <button onClick={() => setCalendlyOpen(true)}
               className="hidden md:flex items-center gap-1.5 text-sm font-medium underline underline-offset-4 decoration-text-accent hover:decoration-text-primary transition-all cursor-pointer">
               Book A Call <ArrowUpRight className="w-4 h-4" />
             </button>
-            <button onClick={() => setMobileNavOpen(true)} className="md:hidden w-9 h-9 flex items-center justify-center cursor-pointer">
+            <button onClick={() => setMobileNavOpen(true)} aria-label="Open menu" className="md:hidden w-9 h-9 flex items-center justify-center cursor-pointer">
               <Menu className="w-5 h-5" />
             </button>
           </div>
@@ -275,7 +289,7 @@ export default function App() {
               className="fixed top-0 right-0 h-full w-72 bg-bg-primary z-[70] flex flex-col p-6 shadow-2xl">
               <div className="flex items-center justify-between mb-8">
                 <CubeMark className="w-7 h-7" />
-                <button onClick={() => setMobileNavOpen(false)} className="w-9 h-9 rounded-full border border-border-secondary flex items-center justify-center">
+                <button onClick={() => setMobileNavOpen(false)} aria-label="Close menu" className="w-9 h-9 rounded-full border border-border-secondary flex items-center justify-center">
                   <X className="w-4 h-4" />
                 </button>
               </div>
@@ -297,6 +311,7 @@ export default function App() {
       </AnimatePresence>
 
       {/* ═══════════════════════════════════════════════ HERO */}
+      <main id="main">
       <section id="home" ref={refs.home} className="relative pt-16 min-h-screen flex flex-col lg:flex-row max-w-[1600px] mx-auto">
         <span className="side-label absolute left-5 top-1/2 -translate-y-1/2 hidden xl:block" style={{ transform: 'rotate(180deg)' }}>
           Full Stack Developer
@@ -350,17 +365,18 @@ export default function App() {
           <FadeUp delay={0.15}>
             <div className="hero-art w-[300px] sm:w-[340px] aspect-[9/16] rounded-[28px] overflow-hidden relative bg-[#0A0A0A]">
               <video
-                autoPlay muted loop playsInline
+                autoPlay muted loop playsInline aria-hidden="true"
                 className="w-full h-full object-cover"
                 style={{ mixBlendMode: 'screen', opacity: 0.9 }}
               >
                 <source src="/hero-dev-loop.mp4" type="video/mp4" />
+                <track kind="captions" srcLang="en" label="English" src="/captions.vtt" default />
               </video>
 
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-60 pointer-events-none" />
 
-              <span className="absolute bottom-6 left-7 text-[10px] tracking-[0.4em] uppercase text-white/35">Build · Ship · Scale</span>
-              <span className="absolute top-6 right-7 text-[10px] tracking-[0.4em] uppercase text-white/35">BFS — 2026</span>
+              <span className="absolute bottom-6 left-7 text-[10px] tracking-[0.4em] uppercase text-white/55">Build · Ship · Scale</span>
+              <span className="absolute top-6 right-7 text-[10px] tracking-[0.4em] uppercase text-white/55">BFS — 2026</span>
             </div>
           </FadeUp>
         </div>
@@ -521,7 +537,7 @@ export default function App() {
                   {/* Image */}
                   <div className="relative h-56 overflow-hidden m-4 mb-0 rounded-xl border border-border-primary bg-bg-secondary">
                     {project.image
-                      ? <img src={project.image} alt={project.title} loading="lazy" referrerPolicy="no-referrer"
+                      ? <img src={project.image} alt={`${project.title} — ${project.subtitle} website screenshot`} loading="lazy" decoding="async" width={800} height={480} referrerPolicy="no-referrer"
                           className="w-full h-full object-cover object-top proj-img" />
                       : <ProjectCover project={project} />}
                     <span className="absolute bottom-3 left-3 px-3.5 py-1.5 rounded-full bg-white/95 text-xs font-medium text-[#16181d] shadow-sm">
@@ -720,13 +736,66 @@ export default function App() {
         </div>
       </section>
 
+      {/* ═══════════════════════════════════════════════ TESTIMONIALS */}
+      <section id="testimonials" className="bg-bg-secondary border-y border-border-primary">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-10 py-24 md:py-28">
+          <div className="flex flex-col lg:flex-row justify-between lg:items-end gap-4 mb-14">
+            <FadeUp>
+              <span className="eyebrow">Testimonials</span>
+              <h2 className="display text-[clamp(2.4rem,5vw,4rem)] mt-4">What clients say</h2>
+            </FadeUp>
+            <FadeUp delay={0.1}>
+              <p className="text-text-muted max-w-xs lg:text-right font-light">
+                Real projects, shipped on time — for businesses across Australia and beyond.
+              </p>
+            </FadeUp>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {TESTIMONIALS.map((t, i) => (
+              <FadeUp key={i} delay={i * 0.08}>
+                <div className="card p-7 h-full flex flex-col">
+                  <Quote className="w-7 h-7 text-brand mb-4" />
+                  <p className="text-[15px] text-text-secondary leading-relaxed font-light flex-1">"{t.quote}"</p>
+                  <div className="mt-6 pt-5 border-t border-border-light">
+                    <p className="text-sm font-medium text-text-primary">{t.name} <span className="text-text-faint font-normal">· {t.company} {t.country}</span></p>
+                    <p className="text-xs text-brand mt-1">{t.result}</p>
+                  </div>
+                </div>
+              </FadeUp>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════ FREE AUDIT OFFER */}
+      <div className="max-w-[1440px] mx-auto px-6 md:px-10 pt-24 md:pt-32">
+        <FadeUp>
+          <div className="hero-art rounded-[28px] p-8 md:p-12 flex flex-col lg:flex-row lg:items-center justify-between gap-8 relative overflow-hidden">
+            <div className="relative z-10 max-w-2xl">
+              <span className="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-brand font-medium">
+                <Zap className="w-4 h-4" /> Free · No obligation
+              </span>
+              <h2 className="display text-[clamp(2rem,4vw,3.2rem)] !text-white mt-4">Get a free 5-minute website audit</h2>
+              <p className="text-white/60 font-light mt-4 leading-relaxed">
+                Send me your current site and I'll record a short, honest walkthrough of what's costing you customers —
+                speed, mobile, copy, and conversion — plus the 3 quickest wins. No pitch, yours to keep.
+              </p>
+            </div>
+            <button onClick={startAudit}
+              className="relative z-10 flex-shrink-0 px-7 py-4 rounded-full bg-white text-[#16181d] text-sm font-medium inline-flex items-center gap-2 hover:bg-white/90 transition-colors cursor-pointer">
+              <Search className="w-4 h-4" /> Claim my free audit
+            </button>
+          </div>
+        </FadeUp>
+      </div>
+
       {/* ═══════════════════════════════════════════════ CONTACT */}
       <section id="contact" ref={refs.contact} className="max-w-[1440px] mx-auto px-6 md:px-10 py-24 md:py-32">
         <FadeUp className="text-center mb-16">
           <span className="eyebrow">Contact</span>
           <h2 className="display text-[clamp(2.6rem,5.5vw,4.5rem)] mt-4">Let's work together</h2>
           <p className="text-text-muted font-light mt-4 max-w-md mx-auto">
-            Have a project in mind? Reply within 24h · IST (UTC+5:30) · async-friendly.
+            Have a project in mind, or want a free audit? Reply within 24h · async-friendly · serving AU · UK · US.
           </p>
         </FadeUp>
 
@@ -766,8 +835,8 @@ export default function App() {
               {contactSent ? (
                 <div className="py-16 flex flex-col items-center text-center gap-4">
                   <span className="w-14 h-14 rounded-full bg-text-primary text-bg-primary flex items-center justify-center"><Check className="w-7 h-7" /></span>
-                  <p className="font-display text-xl">Message sent!</p>
-                  <p className="text-sm text-text-muted font-light">Your email client should have opened. I'll reply within 24 hours.</p>
+                  <p className="font-display text-xl">Thanks — your message is in!</p>
+                  <p className="text-sm text-text-muted font-light">I'll get back to you within 24 hours. For anything urgent, message me on WhatsApp.</p>
                 </div>
               ) : (
                 <form onSubmit={handleContactSubmit} className="space-y-4">
@@ -778,7 +847,9 @@ export default function App() {
                       className="bg-bg-tertiary border border-border-secondary rounded-xl px-4 py-3.5 text-sm focus:border-border-primary outline-none transition-colors w-full" />
                   </div>
                   <select value={contactProjectType} onChange={e => setContactProjectType(e.target.value)}
+                    aria-label="Project type"
                     className="bg-bg-tertiary border border-border-secondary rounded-xl px-4 py-3.5 text-sm focus:border-border-primary outline-none transition-colors w-full text-text-secondary">
+                    <option>Free Website Audit</option>
                     <option>Website / Web App</option>
                     <option>E-Commerce Platform</option>
                     <option>SaaS / AI Product</option>
@@ -789,17 +860,28 @@ export default function App() {
                   <textarea required rows={5} placeholder="Tell me about your project — goals, timeline, budget range… *"
                     value={contactMessage} onChange={e => setContactMessage(e.target.value)}
                     className="bg-bg-tertiary border border-border-secondary rounded-xl px-4 py-3.5 text-sm focus:border-border-primary outline-none transition-colors w-full resize-none" />
-                  <button type="submit"
-                    className="btn-primary w-full py-4">
-                    Send Message <Send className="w-4 h-4" />
+                  <button type="submit" disabled={contactSending}
+                    className="btn-primary w-full py-4 disabled:opacity-70 disabled:cursor-not-allowed">
+                    {contactSending ? (
+                      <><span className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" /> Sending…</>
+                    ) : (
+                      <>Send Message <Send className="w-4 h-4" /></>
+                    )}
                   </button>
+                  {contactError && (
+                    <p className="text-xs text-center text-red-500">
+                      Something went wrong. Please email <a href={`mailto:${CONTACT.email}`} className="underline">{CONTACT.email}</a> or try WhatsApp.
+                    </p>
+                  )}
+                  <p className="text-[11px] text-center text-text-faint">No spam, ever. Your details go straight to my inbox.</p>
                 </form>
               )}
             </div>
           </FadeUp>
         </div>
       </section>
-      
+      </main>
+
       {/* ═══════════════════════════════════════════════ FOOTER */}
       <footer className="border-t border-border-primary bg-bg-primary">
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 py-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
@@ -816,9 +898,9 @@ export default function App() {
             ))}
           </div>
           <div className="flex items-center gap-3">
-            <a href={CONTACT.github} target="_blank" rel="noreferrer" className="w-9 h-9 rounded-full border border-border-secondary flex items-center justify-center text-text-muted hover:text-text-primary hover:border-[#16181d] transition-colors"><Github className="w-4 h-4" /></a>
-            <a href={CONTACT.linkedin} target="_blank" rel="noreferrer" className="w-9 h-9 rounded-full border border-border-secondary flex items-center justify-center text-text-muted hover:text-text-primary hover:border-[#16181d] transition-colors"><Linkedin className="w-4 h-4" /></a>
-            <a href={`mailto:${CONTACT.email}`} className="w-9 h-9 rounded-full border border-border-secondary flex items-center justify-center text-text-muted hover:text-text-primary hover:border-[#16181d] transition-colors"><Mail className="w-4 h-4" /></a>
+            <a href={CONTACT.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="w-9 h-9 rounded-full border border-border-secondary flex items-center justify-center text-text-muted hover:text-text-primary hover:border-[#16181d] transition-colors"><Github className="w-4 h-4" /></a>
+            <a href={CONTACT.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="w-9 h-9 rounded-full border border-border-secondary flex items-center justify-center text-text-muted hover:text-text-primary hover:border-[#16181d] transition-colors"><Linkedin className="w-4 h-4" /></a>
+            <a href={`mailto:${CONTACT.email}`} aria-label="Email us" className="w-9 h-9 rounded-full border border-border-secondary flex items-center justify-center text-text-muted hover:text-text-primary hover:border-[#16181d] transition-colors"><Mail className="w-4 h-4" /></a>
           </div>
         </div>
         {/* ── City & service links (SEO internal linking) ── */}
@@ -859,7 +941,7 @@ export default function App() {
       </footer>
 
       {/* ═══════════════════════════ WHATSAPP FLOAT */}
-      <a href={CONTACT.whatsapp} target="_blank" rel="noreferrer" title="Chat on WhatsApp"
+      <a href={CONTACT.whatsapp} target="_blank" rel="noreferrer" title="Chat on WhatsApp" aria-label="Chat on WhatsApp"
         className="fixed bottom-6 right-6 z-[200] w-14 h-14 rounded-full flex items-center justify-center text-white shadow-2xl cursor-pointer hover:scale-110 active:scale-95 transition-all duration-200"
         style={{ backgroundColor: '#25D366', boxShadow: '0 4px 24px rgba(37,211,102,0.35)' }}>
         <WhatsAppIcon />
@@ -881,7 +963,7 @@ export default function App() {
                   <Calendar className="w-4 h-4 text-text-muted" />
                   <span className="text-sm text-text-secondary">Book a 30-min Discovery Call</span>
                 </div>
-                <button onClick={() => setCalendlyOpen(false)}
+                <button onClick={() => setCalendlyOpen(false)} aria-label="Close"
                   className="w-8 h-8 rounded-full border border-border-secondary flex items-center justify-center hover:bg-[#16181d] hover:text-white transition-colors cursor-pointer">
                   <X className="w-4 h-4" />
                 </button>
