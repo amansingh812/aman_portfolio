@@ -905,7 +905,7 @@ export default function App() {
         </div>
         {/* ── City & service links (SEO internal linking) ── */}
         <div className="border-t border-border-light max-w-[1440px] mx-auto px-6 md:px-10 py-6">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
             <div>
               <p className="text-[10px] tracking-[0.25em] uppercase text-text-faintest mb-3">Australia</p>
               <div className="flex flex-col gap-1.5">
@@ -928,7 +928,15 @@ export default function App() {
                 <a href="/nextjs-development/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Next.js Developer</a>
                 <a href="/ecommerce-development/" className="text-xs text-text-faint hover:text-text-primary transition-colors">E-Commerce Developer</a>
                 <a href="/ai-web-development/" className="text-xs text-text-faint hover:text-text-primary transition-colors">AI Web Developer</a>
-                <a href="/how-much-does-a-website-cost-australia/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Website Cost Guide</a>
+              </div>
+            </div>
+            <div>
+              <p className="text-[10px] tracking-[0.25em] uppercase text-text-faintest mb-3">Blog</p>
+              <div className="flex flex-col gap-1.5">
+                <a href="/blog/" className="text-xs text-text-faint hover:text-text-primary transition-colors">All Guides</a>
+                <a href="/blog/website-cost-australia/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Website Cost in Australia</a>
+                <a href="/blog/signs-website-losing-customers/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Why Sites Lose Customers</a>
+                <a href="/blog/small-business-website-checklist/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Website Checklist</a>
               </div>
             </div>
           </div>
