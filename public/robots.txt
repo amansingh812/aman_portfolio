@@ -1,9 +1,15 @@
 User-agent: *
 Allow: /
 
-# Block AI training crawlers (optional — remove if you want AI training)
+# Allow AI assistants to crawl & cite the site (maximises AI/answer-engine visibility)
 User-agent: GPTBot
-Disallow: /
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
 
 User-agent: Google-Extended
 Allow: /
@@ -12,6 +18,9 @@ User-agent: PerplexityBot
 Allow: /
 
 User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
 Allow: /
 
 # Sitemaps

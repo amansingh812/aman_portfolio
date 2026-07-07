@@ -4,7 +4,7 @@
 
 ## About
 
-Build First Site is a web studio founded by Aman Singh (ex-L&T Finance, 3+ years engineering at scale). We specialize in custom Next.js and React builds, e-commerce platforms, Flutter mobile apps, and AI integrations for businesses in Sydney, Melbourne, Denver, Phoenix, Nashville, and across the US, UK, and Australia.
+Build First Site is a web studio founded by Aman Singh (ex-L&T Finance, 7+ years engineering at scale). We specialize in custom Next.js and React builds, e-commerce platforms, Flutter mobile apps, and AI integrations for businesses in Sydney, Melbourne, Denver, Phoenix, Nashville, and across the US, UK, and Australia.
 
 ## Services
 
@@ -54,7 +54,7 @@ Build First Site is a web studio founded by Aman Singh (ex-L&T Finance, 3+ years
 
 ## Contact
 
-- Email: amansinghofficial9776@gmail.com
+- Email: contact@buildfirstsite.com
 - Phone: +61 413 146 498
 - Book a call: https://calendly.com/amanpd0/30min
 - LinkedIn: https://www.linkedin.com/in/aman-singh-b3a7251a2

@@ -7,7 +7,7 @@
     <loc>https://buildfirstsite.com/</loc>
     <image:image>
       <image:loc>https://buildfirstsite.com/og-image.png</image:loc>
-      <image:title>Build First Site — Web Design & Development Studio</image:title>
+      <image:title>Build First Site — Web Design &amp; Development Studio</image:title>
       <image:caption>High-converting business websites, e-commerce and AI web apps for US, UK and Australia</image:caption>
     </image:image>
     <image:image>
@@ -47,12 +47,12 @@
     </image:image>
   </url>
 
-  <!-- Marlow & Vine portfolio project -->
+  <!-- Marlow &amp; Vine portfolio project -->
   <url>
     <loc>https://buildfirstsite.com/</loc>
     <image:image>
       <image:loc>https://s0.wp.com/mshots/v1/https%3A%2F%2Fmarlow-vine-restaurant.vercel.app?w=1200</image:loc>
-      <image:title>Marlow & Vine — Melbourne Restaurant Website built by Build First Site</image:title>
+      <image:title>Marlow &amp; Vine — Melbourne Restaurant Website built by Build First Site</image:title>
       <image:caption>Fitzroy brunch café website with direct booking, tabbed menu, and Restaurant schema markup</image:caption>
     </image:image>
   </url>
@@ -72,7 +72,7 @@
     <loc>https://buildfirstsite.com/</loc>
     <image:image>
       <image:loc>https://s0.wp.com/mshots/v1/https%3A%2F%2Faurelia-real-estate-silk.vercel.app?w=1200</image:loc>
-      <image:title>AURELIA Estates & Prestige — Luxury Real Estate Platform</image:title>
+      <image:title>AURELIA Estates &amp; Prestige — Luxury Real Estate Platform</image:title>
       <image:caption>Premium real estate platform with advanced property search and luxury listing pages built with Next.js</image:caption>
     </image:image>
   </url>
