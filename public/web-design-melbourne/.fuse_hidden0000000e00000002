@@ -195,9 +195,6 @@
       <div class="flex gap-6">
         <a href="/" class="hover:text-gray-700 transition-colors">Home</a>
         <a href="/blog/website-cost-australia/" class="hover:text-gray-700 transition-colors">Pricing Guide</a>
-        <a href="/web-design-brisbane/" class="hover:text-gray-700 transition-colors">Brisbane</a>
-        <a href="/web-design-perth/" class="hover:text-gray-700 transition-colors">Perth</a>
-        <a href="/web-design-adelaide/" class="hover:text-gray-700 transition-colors">Adelaide</a>
         <a href="/web-design-sydney/" class="hover:text-gray-700 transition-colors">Sydney</a>
         <a href="/web-design-denver/" class="hover:text-gray-700 transition-colors">Denver</a>
         <a href="/web-design-phoenix/" class="hover:text-gray-700 transition-colors">Phoenix</a>
