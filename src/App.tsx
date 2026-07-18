@@ -931,12 +931,11 @@ export default function App() {
               </div>
             </div>
             <div>
-              <p className="text-[10px] tracking-[0.25em] uppercase text-text-faintest mb-3">Blog</p>
+              <p className="text-[10px] tracking-[0.25em] uppercase text-text-faintest mb-3">Guides</p>
               <div className="flex flex-col gap-1.5">
-                <a href="/blog/" className="text-xs text-text-faint hover:text-text-primary transition-colors">All Guides</a>
-                <a href="/blog/website-cost-australia/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Website Cost in Australia</a>
-                <a href="/blog/signs-website-losing-customers/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Why Sites Lose Customers</a>
-                <a href="/blog/small-business-website-checklist/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Website Checklist</a>
+                <a href="/how-much-does-a-website-cost-australia/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Website Cost in Australia</a>
+                <a href="/small-business-website-checklist/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Website Checklist</a>
+                <a href="/hire-website-builder/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Hire a Website Builder</a>
               </div>
             </div>
           </div>
