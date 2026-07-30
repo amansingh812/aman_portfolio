@@ -20,6 +20,14 @@ tests/_output/
 # Output directory
 dist/
 
+# Next.js
+.next/
+next-env.d.ts
+out/
+
+# Retired Vite/Express tooling (kept locally for reference)
+_vite-backup/
+
 # IDEs and editors
 .idea/
 .vscode/
@@ -41,3 +49,4 @@ dist/
 amanPortfolio/
 brand/_scratch/
 brand/_fav/
+plan/

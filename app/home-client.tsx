@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
@@ -10,6 +12,16 @@ import {
   TECH_CATEGORIES, FAQS, PRICE_TIERS, RETAINER, TESTIMONIALS, CONTACT
 } from './data';
 import { NavSection, Project } from './types';
+
+// Maps each portfolio project id to its detailed case-study page slug (/work/[slug])
+const CASE_STUDY_SLUGS: Record<string, string> = {
+  '01': 'hs-race-gear',
+  '02': 'mobile-armour',
+  '03': 'autozenlyai',
+  '04': 'aurelia-estates',
+  '05': 'harbour-plumbing',
+  '06': 'marlow-vine',
+};
 
 // ─── Brand mark — browser window glyph (matches the BFS logo) ────────────────
 const CubeMark = ({ className = 'w-6 h-6' }: { className?: string }) => (
@@ -189,8 +201,7 @@ export default function App() {
     setContactError(false);
     setContactSending(true);
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const accessKey = (import.meta as any).env?.VITE_WEB3FORMS_ACCESS_KEY;
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
 
     try {
       if (accessKey && accessKey !== 'your_access_key_here') {
@@ -510,6 +521,9 @@ export default function App() {
             <FadeUp>
               <span className="eyebrow">Portfolio</span>
               <h2 className="display text-[clamp(2.6rem,5.5vw,4.5rem)] mt-4">Latest Works</h2>
+              <a href="/work/" className="inline-flex items-center gap-1.5 mt-4 text-sm text-text-muted hover:text-text-primary transition-colors">
+                Read the full case studies <ArrowUpRight className="w-4 h-4" />
+              </a>
             </FadeUp>
             <FadeUp delay={0.1}>
               <div className="flex flex-wrap gap-2">
@@ -561,6 +575,12 @@ export default function App() {
                         <a href={project.liveUrl} target="_blank" rel="noreferrer"
                           className="flex items-center gap-1.5 text-sm font-medium text-text-primary hover:opacity-70 transition-opacity">
                           <ExternalLink className="w-3.5 h-3.5" /> Live Demo
+                        </a>
+                      )}
+                      {CASE_STUDY_SLUGS[project.id] && (
+                        <a href={`/work/${CASE_STUDY_SLUGS[project.id]}/`}
+                          className="flex items-center gap-1.5 text-sm font-medium text-brand hover:opacity-70 transition-opacity">
+                          <ArrowUpRight className="w-3.5 h-3.5" /> Case Study
                         </a>
                       )}
                       <span className="text-xs text-text-faint ml-auto text-right">{project.metrics}</span>
@@ -905,12 +925,14 @@ export default function App() {
         </div>
         {/* ── City & service links (SEO internal linking) ── */}
         <div className="border-t border-border-light max-w-[1440px] mx-auto px-6 md:px-10 py-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-5">
             <div>
               <p className="text-[10px] tracking-[0.25em] uppercase text-text-faintest mb-3">Australia</p>
               <div className="flex flex-col gap-1.5">
                 <a href="/web-design-sydney/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Web Designer Sydney</a>
                 <a href="/web-design-melbourne/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Web Designer Melbourne</a>
+                <a href="/web-design-brisbane/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Web Designer Brisbane</a>
+                <a href="/web-design-perth/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Web Designer Perth</a>
               </div>
             </div>
             <div>
@@ -931,11 +953,23 @@ export default function App() {
               </div>
             </div>
             <div>
-              <p className="text-[10px] tracking-[0.25em] uppercase text-text-faintest mb-3">Guides</p>
+              <p className="text-[10px] tracking-[0.25em] uppercase text-text-faintest mb-3">Industries</p>
               <div className="flex flex-col gap-1.5">
+                <a href="/tradie-website-design/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Tradie Websites</a>
+                <a href="/restaurant-website-design/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Restaurant Websites</a>
+                <a href="/real-estate-website-design/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Real Estate Websites</a>
+              </div>
+            </div>
+            <div>
+              <p className="text-[10px] tracking-[0.25em] uppercase text-text-faintest mb-3">Learn &amp; Compare</p>
+              <div className="flex flex-col gap-1.5">
+                <a href="/work/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Case Studies</a>
+                <a href="/guides/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Guides</a>
                 <a href="/how-much-does-a-website-cost-australia/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Website Cost in Australia</a>
-                <a href="/small-business-website-checklist/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Website Checklist</a>
-                <a href="/hire-website-builder/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Hire a Website Builder</a>
+                <a href="/wix-vs-custom-website/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Wix vs Custom</a>
+                <a href="/squarespace-vs-custom-website/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Squarespace vs Custom</a>
+                <a href="/shopify-vs-custom-website/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Shopify vs Custom</a>
+                <a href="/webflow-vs-custom-website/" className="text-xs text-text-faint hover:text-text-primary transition-colors">Webflow vs Custom</a>
               </div>
             </div>
           </div>

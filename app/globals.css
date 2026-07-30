@@ -67,7 +67,7 @@ html.dark {
   --border-loader: #4b5057;
 }
 
-html, body, #root {
+html, body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   margin: 0;
