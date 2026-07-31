@@ -6,6 +6,8 @@ const COLUMNS: { title: string; links: { label: string; href: string }[] }[] = [
     links: [
       { label: 'Web Design', href: '/#skills' },
       { label: 'AI Web Development', href: '/ai-web-development/' },
+      { label: 'AI Chatbots & Booking', href: '/ai-chatbot-development-australia/' },
+      { label: 'App Development', href: '/app-development-australia/' },
       { label: 'E-Commerce Development', href: '/ecommerce-development/' },
       { label: 'Next.js Development', href: '/nextjs-development/' },
       { label: 'Hire a Website Builder', href: '/hire-website-builder/' },
@@ -44,6 +46,8 @@ const COLUMNS: { title: string; links: { label: string; href: string }[] }[] = [
       { label: 'Guides', href: '/guides/' },
       { label: 'Blog', href: '/blog/' },
       { label: 'What a Website Costs', href: '/how-much-does-a-website-cost-australia/' },
+      { label: 'Developer Rates in Australia', href: '/guides/freelance-web-developer-rates-australia/' },
+      { label: 'SEO for Small Business', href: '/guides/seo-for-small-business-australia/' },
     ],
   },
 ];
