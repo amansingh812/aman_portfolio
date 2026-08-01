@@ -20,9 +20,9 @@ export const PROJECT_LIST: Project[] = [
     id: "02",
     title: "Mobile Armour",
     subtitle: "AI-Powered Accessories Store",
-    description: "E-commerce platform with OpenAI product recommendations, a conversational chatbot, and Stripe payments. +20% engagement, −20% load time vs the previous build.",
+    description: "E-commerce platform with OpenAI product recommendations, a conversational chatbot, and Stripe payments — built to help shoppers find the right product instead of filtering a category page.",
     techStack: ["Next.js", "OpenAI", "Stripe", "MongoDB", "Tailwind"],
-    metrics: "+20% Engagement · −20% Load Time",
+    metrics: "AI Recommendations · Stripe Checkout",
     category: "AI · E-Commerce",
     filter: "AI · SaaS",
     country: "🇦🇺",
@@ -54,6 +54,7 @@ export const PROJECT_LIST: Project[] = [
     filter: "Full Stack",
     country: "🌐",
     liveUrl: "https://aurelia-real-estate-silk.vercel.app",
+    isConcept: true,
     image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Faurelia-real-estate-silk.vercel.app?w=800",
     cover: { from: "#1e1e1e", to: "#3a3a3a", mark: "AU" }
   },
@@ -63,11 +64,12 @@ export const PROJECT_LIST: Project[] = [
     subtitle: "Tradie Business Website",
     description: "Conversion-first website for a Sydney 24/7 emergency plumber — trust-badge hero, quote-request form, click-to-call everywhere, Google reviews strip, and LocalBusiness + FAQ schema for local SEO. Built in one week.",
     techStack: ["React", "Tailwind", "Motion", "Formspree", "JSON-LD"],
-    metrics: "Lighthouse 95+ · Local SEO Schema ",
+    metrics: "Local SEO Schema · Conversion-First",
     category: "Business Website",
     filter: "Full Stack",
     country: "🇦🇺",
     liveUrl: "https://harbour-plumbing-website.vercel.app",
+    isConcept: true,
     image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fharbour-plumbing-website.vercel.app?w=800"
   },
   {
@@ -81,6 +83,7 @@ export const PROJECT_LIST: Project[] = [
     filter: "Full Stack",
     country: "🇦🇺",
     liveUrl: "https://marlow-vine-restaurant.vercel.app",
+    isConcept: true,
     image: "https://s0.wp.com/mshots/v1/https%3A%2F%2Fmarlow-vine-restaurant.vercel.app?w=800"
   }
 ];
@@ -214,29 +217,16 @@ export const RETAINER = {
 // Replace with REAL client quotes before running ads. In Australia, fake
 // testimonials breach the Australian Consumer Law (ACCC). Ask each client for
 // one line + permission to use their name/business.
-export const TESTIMONIALS = [
-  {
-    quote: "Aman rebuilt our site in a week and it's fast, clean, and finally converts. The quote form and click-to-call brought in enquiries almost immediately.",
-    name: "Operations Manager",
-    company: "Harbour Plumbing Co.",
-    country: "🇦🇺",
-    result: "Lighthouse 95+ · 1-week build",
-  },
-  {
-    quote: "The AI product recommendations and new checkout made a real difference — engagement went up and the store feels noticeably quicker on mobile.",
-    name: "Founder",
-    company: "Mobile Armour",
-    country: "🇦🇺",
-    result: "+20% engagement · −20% load time",
-  },
-  {
-    quote: "Clear fixed price, a live link to follow progress, and clean code handed over at the end. Exactly what I wanted — no surprises, no lock-in.",
-    name: "Owner",
-    company: "Marlow & Vine",
-    country: "🇦🇺",
-    result: "Direct bookings · zero commission",
-  },
-];
+// ─── Testimonials ────────────────────────────────────────────────────────────
+// INTENTIONALLY EMPTY. The previous entries were not collected from real
+// clients. Australian Consumer Law treats fabricated testimonials as misleading
+// conduct, so the homepage renders nothing until real, attributable quotes
+// exist. Collect them from hsracegear.com / mobilearmour.com.au / autozenlyai.com
+// with permission to publish a name, then add them here.
+// See CLAUDE.md §1 honesty constraints.
+export const TESTIMONIALS: {
+  quote: string; name: string; company: string; country: string; result: string;
+}[] = [];
 
 // ─── Contact ─────────────────────────────────────────────────────────────────
 export const CONTACT = {

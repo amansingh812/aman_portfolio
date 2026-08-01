@@ -20,6 +20,12 @@ export interface Project {
   liveUrl?: string | null;
   image?: string | null;  // screenshot URL; null → stylized cover
   cover?: { from: string; to: string; mark: string }; // fallback cover style
+  /**
+   * True = spec/concept build, not commissioned client work.
+   * MUST be surfaced in the UI wherever the project is shown.
+   * See CLAUDE.md §1 honesty constraints.
+   */
+  isConcept?: boolean;
 }
 
 export interface ExperienceItem {

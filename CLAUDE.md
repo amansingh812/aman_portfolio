@@ -12,6 +12,25 @@ studio serving **Australia (primary)** and the **USA (secondary)**.
 The site's entire job is: **rank in Australian organic search → get a quote request.**
 Every technical and content decision should be judged against that.
 
+### Who we actually are — read this before writing any copy
+
+Build First Site is a **two-person studio**:
+
+- **Aman** — the engineer. Based in **India**. Builds everything.
+- **His brother** — based in **Australia**. Client contact, calls, paperwork.
+
+This is the positioning. Do not inflate it. "We" is accurate because there are
+genuinely two people; "our team of experts", "50+ specialists", "offices across
+three continents" are not, and that kind of claim is what competitors like Dev
+Story do (placeholder avatars, impossible statistics, an empty `tel:` field at a
+Pitt Street mailbox). **Being verifiably real is the differentiator** in a market
+where most offshore competitors present as local agencies.
+
+Never write copy that implies a larger team, an Australian-only operation, or
+that hides the India side. The honest version — an engineer in India, a local
+contact in Australia — explains the pricing, answers the timezone objection, and
+is more persuasive than the inflated version.
+
 Positioning / differentiators to reinforce in all copy:
 
 - **Fixed, transparent, upfront pricing in AUD** (landing pages from $600, business
@@ -19,6 +38,22 @@ Positioning / differentiators to reinforce in all copy:
 - **Modern stack** — Next.js, React, AI integrations (OpenAI / Gemini)
 - **Fast delivery**, direct communication with the builder (no agency layers)
 - **You own the code** — no platform lock-in, no forced monthly subscription
+- **A real local contact** in Australia, and the person writing the code is one
+  message away — not an account manager relaying to an offshore team
+
+### Honesty constraints (non-negotiable)
+
+- **No invented testimonials, client names, review counts, or metrics.** Australian
+  Consumer Law treats fabricated testimonials as misleading conduct. Ask Aman for
+  real ones. (Open issue: the current homepage testimonials and three case studies
+  need auditing — see below.)
+- **Spec/concept builds must be labelled as such.** `harbour-plumbing`,
+  `marlow-vine` and `aurelia-estates` are concept builds on `vercel.app`, not
+  client work. Showing them is fine; presenting them as clients is not.
+- Real client work (own domains): hsracegear.com · mobilearmour.com.au ·
+  autozenlyai.com · planet.ltfinance.com
+- NAP (name, address, phone) must be the brother's real Australian details and
+  identical across site, GBP, Clutch and directories.
 
 ---
 
@@ -163,6 +198,26 @@ case-study depth, blog cadence. Close those gaps, in that order.
 Lighthouse ≥ 90 mobile · Core Web Vitals green · mobile-first (~68% of AU
 traffic) · HTTPS · valid structured data (Rich Results Test) · sitemap in GSC ·
 no broken links · compressed images (webp/avif, lazy-loaded).
+
+### Priority order (revised Aug 2026 — reviews before pages)
+
+The site has 34 URLs and effectively no backlinks or reviews. More pages have
+sharply diminishing returns until that changes. Evidence: the Clutch Sydney
+directory lists firms with as few as **2 reviews** (Airteam 2, Nightjar 2,
+Wonderful 3, Jimmyweb 3, Shtudio 3), and 2–9 person studios there charge
+$100–300/hr. Being small is not the barrier — being invisible is.
+
+1. **Clutch profile + Google Business Profile** (service-area business, brother's
+   real AU address), then 3 real reviews from hsracegear / mobilearmour /
+   autozenlyai.
+2. **Fix the trust layer** — relabel concept builds, remove unverifiable metrics.
+3. **Linkable assets** — AUD cost calculator, free site audit tool.
+4. **Then** more keyword pages.
+
+**Do not build a programmatic industry × city matrix** (300–500 generated pages).
+Google's scaled-content-abuse and helpful-content systems target exactly that
+pattern, and a site-wide demotion would take the pages that already work with it.
+30–50 genuinely distinct pages in one niche beats 300 templated ones.
 
 ### Backlinks (AU-focused, prioritise `.au` domains)
 
