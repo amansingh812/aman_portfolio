@@ -27,7 +27,10 @@ function collectStaticIndexRoutes(dir, base = '') {
 }
 
 const publicDir = path.join(process.cwd(), 'public');
-const staticRoutes = collectStaticIndexRoutes(publicDir);
+// Skip the template's asset tree — it contains no pages and scanning it is slow.
+const staticRoutes = collectStaticIndexRoutes(publicDir).filter(
+  (r) => !r.startsWith('/assets')
+);
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

@@ -1,0 +1,1968 @@
+{
+  "exportedAt": "2026-08-02T13:29:59.318Z",
+  "note": "Portable content backup. Source of truth for the Agon rebuild. Honesty rules in CLAUDE.md apply.",
+  "homepage": {
+    "HERO": {
+      "eyebrow": "Web design & development · Australia",
+      "h1Lead": "Websites that bring",
+      "h1Accent": "Australian businesses",
+      "h1Trail": "more enquiries.",
+      "sub": "A two-person studio: a senior engineer who builds everything, and a local contact in Australia. Fixed prices in AUD, published upfront. You own the code.",
+      "priceAnchor": "Landing pages from $600 · Business sites from $2,000 · E-commerce from $4,000",
+      "primaryCta": {
+        "label": "Get a free quote",
+        "href": "#contact"
+      },
+      "secondaryCta": {
+        "label": "Book a free call",
+        "href": "https://calendly.com/amanpd0/30min"
+      },
+      "facts": [
+        {
+          "value": "Fixed",
+          "label": "AUD pricing, upfront"
+        },
+        {
+          "value": "2 wks",
+          "label": "Typical business site"
+        },
+        {
+          "value": "100%",
+          "label": "Code ownership"
+        }
+      ]
+    },
+    "REAL_CLIENTS": [
+      {
+        "name": "HS Race Gear",
+        "sector": "Motorsport e-commerce",
+        "url": "https://www.hsracegear.com",
+        "country": "🇦🇺"
+      },
+      {
+        "name": "Mobile Armour",
+        "sector": "AI-powered retail",
+        "url": "https://mobilearmour.com.au",
+        "country": "🇦🇺"
+      },
+      {
+        "name": "AutoZenlyAI",
+        "sector": "AI SaaS",
+        "url": "https://www.autozenlyai.com",
+        "country": "🌐"
+      },
+      {
+        "name": "L&T Finance",
+        "sector": "Enterprise fintech",
+        "url": "https://planet.ltfinance.com",
+        "country": "🌐"
+      }
+    ],
+    "PROBLEMS": {
+      "eyebrow": "The problem",
+      "heading": "Most small business websites quietly lose customers",
+      "intro": "Not dramatically. They just sit there — slow on a phone, invisible on Google, and impossible to update without paying someone.",
+      "items": [
+        {
+          "title": "Nobody can find it",
+          "body": "It was built to look nice, not to be found. No structured data, no local SEO, no pages targeting what your customers actually search."
+        },
+        {
+          "title": "It is slow on a phone",
+          "body": "About two thirds of Australian traffic is mobile. A site that takes five seconds to load on 4G loses most of those visitors before they see anything."
+        },
+        {
+          "title": "Enquiries go nowhere",
+          "body": "A contact form buried at the bottom, no click-to-call, nothing that captures the person who visited at 9pm and moved on to the next result."
+        },
+        {
+          "title": "You are renting it",
+          "body": "Monthly platform fees forever, a design locked to a template, and no way to move without starting again. You never actually owned it."
+        }
+      ]
+    },
+    "SERVICE_CARDS": [
+      {
+        "title": "Business Websites",
+        "body": "Multi-page sites for trades, professional services, clinics and retail — built to turn visitors into enquiries, with local SEO from day one.",
+        "href": "/hire-website-builder/",
+        "price": "from $2,000"
+      },
+      {
+        "title": "E-Commerce Stores",
+        "body": "Custom Stripe-powered stores with real inventory and order management. No platform commission on every sale.",
+        "href": "/ecommerce-development/",
+        "price": "from $4,000"
+      },
+      {
+        "title": "AI Chatbots & Booking",
+        "body": "Assistants that qualify enquiries and book jobs straight into your calendar — including the ones that arrive at 9pm.",
+        "href": "/ai-chatbot-development-australia/",
+        "price": "from $2,500"
+      },
+      {
+        "title": "App Development",
+        "body": "Web apps, dashboards, booking systems and cross-platform mobile apps. Usually cheaper than you expect — we will tell you if you do not need native.",
+        "href": "/app-development-australia/",
+        "price": "from $6,500"
+      },
+      {
+        "title": "AI Web Development",
+        "body": "OpenAI, Claude and Gemini built into production applications where they do a specific job — not bolted on as a gimmick.",
+        "href": "/ai-web-development/"
+      },
+      {
+        "title": "Next.js Development",
+        "body": "The modern React stack used by Vercel and OpenAI. Fast by default, excellent for SEO, and a genuine performance edge over page builders.",
+        "href": "/nextjs-development/"
+      }
+    ],
+    "INDUSTRIES": [
+      {
+        "label": "Tradies & home services",
+        "href": "/tradie-website-design/"
+      },
+      {
+        "label": "Restaurants & cafés",
+        "href": "/restaurant-website-design/"
+      },
+      {
+        "label": "Real estate",
+        "href": "/real-estate-website-design/"
+      }
+    ],
+    "PROCESS": {
+      "eyebrow": "How it works",
+      "heading": "No surprises, at any point",
+      "steps": [
+        {
+          "title": "Free call",
+          "body": "Thirty minutes to understand what you actually need. If a cheaper option would serve you better, we say so on this call."
+        },
+        {
+          "title": "Fixed quote in 24 hours",
+          "body": "A written scope and a fixed price in AUD. Clear about what is included and what is not, so the number does not move later."
+        },
+        {
+          "title": "Build in the open",
+          "body": "A live staging link from the first week. You watch it come together and give feedback as it happens — no month-long silence."
+        },
+        {
+          "title": "Launch & handover",
+          "body": "We deploy, hand over the repository and every account, and support you for 30 days. No mandatory retainer afterwards."
+        }
+      ]
+    },
+    "TEAM": {
+      "eyebrow": "Who you are working with",
+      "heading": "Two people. You will know both of them.",
+      "intro": "Build First Site is not an agency with account managers. It is two brothers — one who writes every line of code, and one who is your point of contact in Australia. That is the whole company, and it is why the pricing works.",
+      "members": [
+        {
+          "name": "Aman",
+          "role": "Engineer — builds everything",
+          "location": "India",
+          "body": "Seven years in software, including enterprise fintech at L&T Finance. Full-stack web, mobile, and AI integration. The person who writes your code is the person you talk to about it — there is nobody in between."
+        },
+        {
+          "name": "Your local contact",
+          "role": "Client contact — calls, quotes, paperwork",
+          "location": "Australia",
+          "body": "Based in Australia, in your timezone, for calls, quotes and anything administrative. A real person on a real phone number when you need one."
+        }
+      ],
+      "honestyNote": "We are upfront about this because plenty of offshore studios present themselves as local Australian agencies. We would rather tell you exactly how it works: the engineering happens in India, your contact is here, and the price reflects that."
+    },
+    "OBJECTIONS": [
+      {
+        "q": "You are based in India — how does that work for me?",
+        "a": "Your contact is in Australia and works in your timezone for calls and quotes. The engineering happens in India, which is exactly why a business website costs $2,000 here rather than $10,000 at a Sydney agency. You get a live staging link from week one, so you can see progress at any time rather than taking anyone on trust."
+      },
+      {
+        "q": "What if I need changes after launch?",
+        "a": "Thirty days of support is included. After that, changes are quoted per piece — there is no mandatory monthly retainer. Because you own the code outright, you can also take it to any other developer."
+      },
+      {
+        "q": "Do I really own the website?",
+        "a": "Yes. The full repository and every account are transferred to you on completion. No platform lock-in, no subscription to us, no hostage situation if you want to move on."
+      },
+      {
+        "q": "How do I know the quote will not creep up?",
+        "a": "The scope and price are agreed in writing before any work starts, and payment is split 50% to begin and 50% on launch. If you ask for something outside the agreed scope we re-quote it openly rather than quietly adding hours."
+      },
+      {
+        "q": "What if I only need something small?",
+        "a": "A single landing page starts at $600. If what you need is genuinely simpler than a custom build — sometimes a DIY builder is the right answer for a brand-new business — we will tell you that rather than sell you something you do not need yet."
+      }
+    ],
+    "FINAL_CTA": {
+      "heading": "Tell us what your business needs",
+      "body": "A fixed-price quote within 24 hours, and an honest answer if we think there is a cheaper way to get you there."
+    }
+  },
+  "legacy": {
+    "PROJECT_LIST": [
+      {
+        "id": "01",
+        "title": "HS Race Gear",
+        "subtitle": "Premium Racing E-Commerce",
+        "description": "3D product viewer with Three.js, custom measurement forms, full Stripe checkout, inventory and admin dashboard — built from scratch for an Australian racing brand.",
+        "techStack": [
+          "Next.js 15",
+          "React 19",
+          "Three.js",
+          "MongoDB",
+          "Stripe"
+        ],
+        "metrics": "3D Viewer · Full E-Commerce · Custom Admin",
+        "category": "Full Stack",
+        "filter": "Full Stack",
+        "country": "🇦🇺",
+        "liveUrl": "https://www.hsracegear.com",
+        "image": "https://s0.wp.com/mshots/v1/https%3A%2F%2Fwww.hsracegear.com?w=800",
+        "cover": {
+          "from": "#26100f",
+          "to": "#5c2420",
+          "mark": "HS"
+        }
+      },
+      {
+        "id": "02",
+        "title": "Mobile Armour",
+        "subtitle": "AI-Powered Accessories Store",
+        "description": "E-commerce platform with OpenAI product recommendations, a conversational chatbot, and Stripe payments — built to help shoppers find the right product instead of filtering a category page.",
+        "techStack": [
+          "Next.js",
+          "OpenAI",
+          "Stripe",
+          "MongoDB",
+          "Tailwind"
+        ],
+        "metrics": "AI Recommendations · Stripe Checkout",
+        "category": "AI · E-Commerce",
+        "filter": "AI · SaaS",
+        "country": "🇦🇺",
+        "liveUrl": "https://mobilearmour.com.au",
+        "image": "https://s0.wp.com/mshots/v1/https%3A%2F%2Fmobilearmour.com.au?w=800"
+      },
+      {
+        "id": "03",
+        "title": "AutoZenlyAI",
+        "subtitle": "Multi-Provider Social Media SaaS",
+        "description": "SaaS automating social content creation and scheduling. Claude, GPT-4, Gemini, Mistral, Cohere and Groq behind one visual scheduler with real-time analytics.",
+        "techStack": [
+          "Next.js 14",
+          "FastAPI",
+          "Redis",
+          "Claude",
+          "GPT-4"
+        ],
+        "metrics": "6 AI Providers · Multi-Platform Automation",
+        "category": "SaaS · AI",
+        "filter": "AI · SaaS",
+        "country": "🌐",
+        "liveUrl": "https://www.autozenlyai.com",
+        "image": "https://s0.wp.com/mshots/v1/https%3A%2F%2Fwww.autozenlyai.com?w=800",
+        "cover": {
+          "from": "#1d2026",
+          "to": "#3b4150",
+          "mark": "Az"
+        }
+      },
+      {
+        "id": "04",
+        "title": "AURELIA Estates & Prestige",
+        "subtitle": "Premium Real Estate Platform",
+        "description": "A modern luxury real estate platform featuring high-end property listings, advanced property search, and seamless property viewing inquiries.",
+        "techStack": [
+          "React",
+          "Next.js",
+          "Tailwind CSS",
+          "Framer Motion"
+        ],
+        "metrics": "Premium UI · Fast Load Times",
+        "category": "Real Estate",
+        "filter": "Full Stack",
+        "country": "🌐",
+        "liveUrl": "https://aurelia-real-estate-silk.vercel.app",
+        "isConcept": true,
+        "image": "https://s0.wp.com/mshots/v1/https%3A%2F%2Faurelia-real-estate-silk.vercel.app?w=800",
+        "cover": {
+          "from": "#1e1e1e",
+          "to": "#3a3a3a",
+          "mark": "AU"
+        }
+      },
+      {
+        "id": "05",
+        "title": "Harbour Plumbing Co.",
+        "subtitle": "Tradie Business Website",
+        "description": "Conversion-first website for a Sydney 24/7 emergency plumber — trust-badge hero, quote-request form, click-to-call everywhere, Google reviews strip, and LocalBusiness + FAQ schema for local SEO. Built in one week.",
+        "techStack": [
+          "React",
+          "Tailwind",
+          "Motion",
+          "Formspree",
+          "JSON-LD"
+        ],
+        "metrics": "Local SEO Schema · Conversion-First",
+        "category": "Business Website",
+        "filter": "Full Stack",
+        "country": "🇦🇺",
+        "liveUrl": "https://harbour-plumbing-website.vercel.app",
+        "isConcept": true,
+        "image": "https://s0.wp.com/mshots/v1/https%3A%2F%2Fharbour-plumbing-website.vercel.app?w=800"
+      },
+      {
+        "id": "06",
+        "title": "Marlow & Vine",
+        "subtitle": "Hospitality Website",
+        "description": "Editorial site for a Fitzroy brunch café & wine bar — full-bleed hero, tabbed menu (no PDFs), provider-agnostic table booking so the venue keeps zero-commission direct bookings, plus Restaurant & Menu schema.",
+        "techStack": [
+          "React",
+          "Tailwind",
+          "Motion",
+          "react-router",
+          "JSON-LD"
+        ],
+        "metrics": "Direct Bookings · Restaurant Schema ",
+        "category": "Hospitality",
+        "filter": "Full Stack",
+        "country": "🇦🇺",
+        "liveUrl": "https://marlow-vine-restaurant.vercel.app",
+        "isConcept": true,
+        "image": "https://s0.wp.com/mshots/v1/https%3A%2F%2Fmarlow-vine-restaurant.vercel.app?w=800"
+      }
+    ],
+    "PRICE_TIERS": [
+      {
+        "title": "Landing Page",
+        "desc": "Conversion-focused single page — copy structure, SEO basics, analytics, deployed.",
+        "price": "$600",
+        "aud": "≈ AU$1,000",
+        "timeline": "~2 week"
+      },
+      {
+        "title": "Business Website",
+        "desc": "Multi-page site with CMS, contact/quote forms, booking integration, local SEO.",
+        "price": "$2,000",
+        "aud": "≈ AU$3,800",
+        "timeline": "2–3 weeks"
+      },
+      {
+        "title": "E-Commerce Store",
+        "desc": "Full store with Stripe checkout, inventory, admin dashboard, and order emails.",
+        "price": "$4,000",
+        "aud": "≈ AU$5,000",
+        "timeline": "4–6 weeks"
+      },
+      {
+        "title": "AI / SaaS MVP",
+        "desc": "Product build from zero — auth, billing, AI integrations, dashboard, launch-ready.",
+        "price": "$5,000",
+        "aud": "≈ AU$6,500",
+        "timeline": "6–8 weeks"
+      }
+    ],
+    "RETAINER": {
+      "tag": "Monthly Retainer",
+      "title": "Ongoing Partnership",
+      "blurb": "Dedicated monthly engineering support for growing products that need continuous development.",
+      "price": "$600",
+      "unit": "/month",
+      "cta": "Book a Call",
+      "features": [
+        "Priority access & fast turnaround guarantee",
+        "Unlimited revisions on active tasks",
+        "Monthly feature deployments & updates",
+        "Performance monitoring & optimisation",
+        "Direct Slack / WhatsApp collaboration",
+        "Scales with your roadmap — pause anytime"
+      ]
+    },
+    "FAQS": [
+      {
+        "q": "What services do you offer exactly?",
+        "a": "I build websites, web apps, e-commerce platforms, and SaaS products — from design handoff to launch. Custom Next.js & React builds, Flutter mobile apps, AI integrations, Stripe & payment flows, admin dashboards, and performance audits."
+      },
+      {
+        "q": "How much does a project cost?",
+        "a": "Most projects fall between $800 and $15,000 USD depending on scope. A landing page starts at $800; a business website from $2,500; e-commerce from $4,500; an AI or SaaS MVP from $7,000. You always get a fixed quote upfront — never hourly billing."
+      },
+      {
+        "q": "What are the payment terms?",
+        "a": "50% upfront to begin, 50% on completion. Larger projects can split into three milestones. I accept Wise, Stripe, PayPal, and bank transfer — works for clients in the US, UK, and Australia."
+      },
+      {
+        "q": "Do you work with international clients?",
+        "a": "Yes — most of my freelance work is for businesses in Australia, the US, and the UK. I handle timezones with async communication and scheduled calls, and deliver on time regardless of location."
+      },
+      {
+        "q": "How long does a project take?",
+        "a": "Landing page: ~7 days. Business website: 2–3 weeks. E-commerce or SaaS: 4–6 weeks. You get a clear timeline with milestones in the proposal before we start."
+      },
+      {
+        "q": "Will I own the code?",
+        "a": "100%. The code is yours, hosted wherever you like — Vercel, AWS, your own server. No subscriptions, no lock-in. Full repo handed over on completion."
+      },
+      {
+        "q": "Do you offer ongoing support after launch?",
+        "a": "The first 30 days post-launch are free. After that, monthly retainers start at $800/month for ongoing development, updates, and support."
+      }
+    ],
+    "TECH_CATEGORIES": [
+      {
+        "label": "Frontend",
+        "items": [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Tailwind CSS",
+          "Framer Motion",
+          "Three.js",
+          "Redux"
+        ]
+      },
+      {
+        "label": "Backend",
+        "items": [
+          "FastAPI",
+          "Node.js",
+          "Express",
+          "Python",
+          "REST APIs",
+          "WebSockets"
+        ]
+      },
+      {
+        "label": "Mobile",
+        "items": [
+          "Flutter",
+          "Dart",
+          "BLoC",
+          "Provider",
+          "React Native"
+        ]
+      },
+      {
+        "label": "Database",
+        "items": [
+          "MongoDB",
+          "PostgreSQL",
+          "Redis",
+          "FAISS",
+          "Supabase"
+        ]
+      },
+      {
+        "label": "AI / LLMs",
+        "items": [
+          "OpenAI",
+          "Claude",
+          "Gemini",
+          "Groq",
+          "Mistral",
+          "LangChain"
+        ]
+      },
+      {
+        "label": "Payments & DevOps",
+        "items": [
+          "Stripe",
+          "Razorpay",
+          "UPI",
+          "Vercel",
+          "AWS",
+          "Docker",
+          "GitHub Actions"
+        ]
+      }
+    ],
+    "EXPERIENCE": [
+      {
+        "org": "L&T Finance",
+        "role": "Software Engineer — Planet App",
+        "period": "2023 — Present",
+        "description": "Digital lending app serving millions of users. Lead developer on the Farm Loan Top-Up flow: KYC verification, UPI & e-NACH integrations, Salesforce CRM.",
+        "tags": [
+          "Flutter",
+          "BLoC",
+          "Fintech"
+        ],
+        "url": "https://planet.ltfinance.com"
+      },
+      {
+        "org": "HS Race Gear",
+        "role": "Freelance — Full-Stack Build",
+        "period": "2025",
+        "description": "End-to-end e-commerce for an Australian racing gear brand: 3D product viewer, Stripe checkout, inventory and admin dashboard.",
+        "tags": [
+          "Next.js 15",
+          "Three.js",
+          "Stripe"
+        ],
+        "url": "https://www.hsracegear.com"
+      },
+      {
+        "org": "Mobile Armour",
+        "role": "Freelance — AI E-Commerce",
+        "period": "2024 — 2025",
+        "description": "AI-powered accessories store with OpenAI recommendations and a conversational chatbot. +20% engagement, 20% faster loads.",
+        "tags": [
+          "Next.js",
+          "OpenAI",
+          "Stripe"
+        ],
+        "url": "https://mobilearmour.com.au"
+      },
+      {
+        "org": "AutoZenlyAI",
+        "role": "Founder Build — SaaS Platform",
+        "period": "2024 — Present",
+        "description": "Multi-provider social media automation SaaS — six AI providers behind a single visual scheduler with analytics and team collaboration.",
+        "tags": [
+          "FastAPI",
+          "Redis",
+          "6 AI Providers"
+        ],
+        "url": "https://www.autozenlyai.com"
+      }
+    ],
+    "ABOUT_POINTS": [
+      "Build First Site is a web design & development studio — we build the website that becomes your customer's first impression of your business.",
+      "Backed by 7+ years of engineering at scale: bulletproof code from fintech, paired with the speed and conversion focus growing businesses need.",
+      "We start with your business goal, not the tech — then ship clean, fast, SEO-ready sites that turn visitors into enquiries.",
+      "Custom Next.js & React builds, e-commerce, Flutter mobile apps, and AI integrations from chatbots to multi-provider SaaS.",
+      "Fixed-price quotes, async-friendly communication, and a live staging link so you watch progress in real time — for clients across the US, UK & Australia."
+    ],
+    "CONTACT": {
+      "email": "contact@buildfirstsite.com",
+      "phone": "+61-413146498",
+      "whatsapp": "https://wa.me/61413146498?text=Hi%20Aman!%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project.",
+      "calendly": "https://calendly.com/amanpd0/30min",
+      "linkedin": "https://www.linkedin.com/in/aman-singh-b3a7251a2",
+      "github": "https://github.com/amansingh812"
+    },
+    "TESTIMONIALS": []
+  },
+  "caseStudies": [
+    {
+      "slug": "hs-race-gear",
+      "projectId": "01",
+      "name": "HS Race Gear",
+      "tagline": "A premium racing e-commerce store, built from scratch",
+      "metaTitle": "HS Race Gear — Racing E-Commerce Case Study | Build First Site",
+      "metaDescription": "How we built a premium motorsport e-commerce store for HS Race Gear: a Three.js 3D product viewer, custom made-to-measure forms, full Stripe checkout, and a bespoke admin dashboard.",
+      "industry": "Motorsport / E-Commerce",
+      "location": "Australia",
+      "liveUrl": "https://www.hsracegear.com",
+      "image": "https://s0.wp.com/mshots/v1/https%3A%2F%2Fwww.hsracegear.com?w=1200",
+      "cover": {
+        "from": "#26100f",
+        "to": "#5c2420",
+        "mark": "HS"
+      },
+      "timeline": "6 weeks",
+      "services": [
+        "E-Commerce Build",
+        "3D Product Viewer",
+        "Custom Admin Dashboard",
+        "Payments"
+      ],
+      "techStack": [
+        "Next.js 15",
+        "React 19",
+        "Three.js",
+        "MongoDB",
+        "Stripe"
+      ],
+      "challenge": [
+        "HS Race Gear sells high-end racing suits and gear where fit and finish matter enormously — customers spend serious money and need to trust exactly what they are buying. An off-the-shelf template store could not show the product the way the brand needed, and generic \"small / medium / large\" sizing does not work for made-to-measure race wear.",
+        "The brand needed a store that felt as premium as the product, let buyers inspect gear in 3D, captured precise measurements at checkout, and gave the owner a real back office to manage inventory and orders — without paying a platform a cut of every sale."
+      ],
+      "approach": [
+        {
+          "title": "Interactive 3D product viewer",
+          "body": "We built a real-time 3D viewer with Three.js so shoppers can rotate and inspect gear from every angle before buying. It loads progressively so the experience stays fast even on mobile connections, giving the confidence a flat photo never could."
+        },
+        {
+          "title": "Made-to-measure ordering",
+          "body": "Custom measurement forms capture the exact sizing data the brand needs for made-to-order race wear, validated on the client side and attached directly to each order so nothing gets lost between checkout and production."
+        },
+        {
+          "title": "Full Stripe checkout — zero platform fees",
+          "body": "A complete Stripe checkout handles payments, taxes, and order confirmation emails. Because the store is custom-built rather than rented from a SaaS platform, the brand keeps 100% of every sale beyond standard payment processing."
+        },
+        {
+          "title": "Bespoke admin dashboard",
+          "body": "We shipped a custom admin panel for managing products, inventory levels, and incoming orders — a single place for the team to run the store day to day, with no monthly subscription and full ownership of the data."
+        }
+      ],
+      "results": [
+        {
+          "label": "Product experience",
+          "value": "3D viewer"
+        },
+        {
+          "label": "Checkout",
+          "value": "Full Stripe"
+        },
+        {
+          "label": "Back office",
+          "value": "Custom admin"
+        },
+        {
+          "label": "Platform fees",
+          "value": "$0 / sale"
+        }
+      ],
+      "outcome": "The result is a store that matches the quality of the product it sells — fast, ownable, and free of per-sale platform fees. HS Race Gear now controls its own catalogue, checkout, and customer data end to end.",
+      "keywords": [
+        "racing e-commerce",
+        "custom online store",
+        "three.js product viewer",
+        "stripe checkout developer"
+      ]
+    },
+    {
+      "slug": "mobile-armour",
+      "projectId": "02",
+      "name": "Mobile Armour",
+      "tagline": "An AI-powered accessories store that sells smarter",
+      "metaTitle": "Mobile Armour — AI E-Commerce Case Study | Build First Site",
+      "metaDescription": "How we rebuilt Mobile Armour as an AI-powered e-commerce store with OpenAI product recommendations and a conversational shopping assistant — lifting engagement 20% and cutting load time 20%.",
+      "industry": "Retail / E-Commerce",
+      "location": "Australia",
+      "liveUrl": "https://mobilearmour.com.au",
+      "image": "https://s0.wp.com/mshots/v1/https%3A%2F%2Fmobilearmour.com.au?w=1200",
+      "cover": {
+        "from": "#141414",
+        "to": "#2f2f33",
+        "mark": "MA"
+      },
+      "timeline": "4 weeks",
+      "services": [
+        "E-Commerce Rebuild",
+        "AI Recommendations",
+        "Conversational Chatbot",
+        "Performance"
+      ],
+      "techStack": [
+        "Next.js",
+        "OpenAI",
+        "Stripe",
+        "MongoDB",
+        "Tailwind"
+      ],
+      "challenge": [
+        "Mobile Armour had a working store, but a slow one — and a catalogue big enough that shoppers struggled to find the right accessory for their exact device. Every extra second of load time and every dead-end search was a lost sale.",
+        "The brief was to make the store both faster and smarter: help customers find the right product instantly, and rebuild the front end so it felt quick on the mobile devices its customers actually shop from."
+      ],
+      "approach": [
+        {
+          "title": "AI product recommendations",
+          "body": "We integrated OpenAI to power contextual product recommendations, surfacing the right accessories for a shopper based on what they are browsing rather than static \"related items\" lists."
+        },
+        {
+          "title": "Conversational shopping assistant",
+          "body": "A built-in chatbot answers compatibility and product questions in natural language, guiding customers to the right item without them needing to know exact model numbers."
+        },
+        {
+          "title": "Rebuilt for speed",
+          "body": "Migrating to a modern Next.js front end with optimised images and code-splitting cut load time by around 20% versus the previous build — a direct win for both conversion and SEO."
+        },
+        {
+          "title": "Stripe payments",
+          "body": "A streamlined Stripe checkout keeps the path from product to purchase short, with mobile-first UX for the store’s primarily on-phone audience."
+        }
+      ],
+      "results": [
+        {
+          "label": "Engagement",
+          "value": "+20%"
+        },
+        {
+          "label": "Load time",
+          "value": "−20%"
+        },
+        {
+          "label": "Recommendations",
+          "value": "AI-driven"
+        },
+        {
+          "label": "Support",
+          "value": "AI chatbot"
+        }
+      ],
+      "outcome": "The rebuilt store engages more shoppers and loads noticeably faster on mobile, with AI doing the heavy lifting of matching customers to the right product — turning a big catalogue from a liability into an advantage.",
+      "keywords": [
+        "ai e-commerce",
+        "openai product recommendations",
+        "shopping chatbot",
+        "ecommerce developer australia"
+      ]
+    },
+    {
+      "slug": "autozenlyai",
+      "projectId": "03",
+      "name": "AutoZenlyAI",
+      "tagline": "Six AI providers behind one social-media scheduler",
+      "metaTitle": "AutoZenlyAI — Multi-Provider AI SaaS Case Study | Build First Site",
+      "metaDescription": "How we designed and built AutoZenlyAI, a social-media automation SaaS that unifies Claude, GPT-4, Gemini, Mistral, Cohere and Groq behind a single visual scheduler with real-time analytics.",
+      "industry": "SaaS / AI",
+      "location": "Global",
+      "liveUrl": "https://www.autozenlyai.com",
+      "image": "https://s0.wp.com/mshots/v1/https%3A%2F%2Fwww.autozenlyai.com?w=1200",
+      "cover": {
+        "from": "#1d2026",
+        "to": "#3b4150",
+        "mark": "Az"
+      },
+      "timeline": "8+ weeks",
+      "services": [
+        "SaaS Product Build",
+        "Multi-LLM Integration",
+        "Scheduling Engine",
+        "Analytics"
+      ],
+      "techStack": [
+        "Next.js 14",
+        "FastAPI",
+        "Redis",
+        "Claude",
+        "GPT-4",
+        "Gemini"
+      ],
+      "challenge": [
+        "Content teams juggle a dozen tools: one for writing, another for scheduling, another for analytics — and each AI model has its own strengths and its own dashboard. AutoZenlyAI’s vision was to collapse all of that into one product.",
+        "That meant a genuinely hard engineering problem: put six different AI providers behind a single, consistent interface, schedule content reliably across multiple platforms, and show it all working in real time — as a product strangers could sign up for and trust."
+      ],
+      "approach": [
+        {
+          "title": "One interface, six AI providers",
+          "body": "We built an abstraction layer that routes requests to Claude, GPT-4, Gemini, Mistral, Cohere or Groq behind a single API — so users pick the model that fits the task without ever leaving the app or learning six dashboards."
+        },
+        {
+          "title": "Visual scheduling engine",
+          "body": "A drag-and-friendly visual scheduler plans and queues content across platforms, backed by Redis for fast, reliable job handling so posts fire when they are supposed to."
+        },
+        {
+          "title": "Real-time analytics",
+          "body": "Performance data streams back into the dashboard so users can see what is working and adjust — closing the loop from generation to scheduling to results in one place."
+        },
+        {
+          "title": "Production SaaS foundations",
+          "body": "A FastAPI backend, authentication, and team collaboration turn the concept into a real product with the reliability and structure a paying user base expects."
+        }
+      ],
+      "results": [
+        {
+          "label": "AI providers",
+          "value": "6 unified"
+        },
+        {
+          "label": "Scheduling",
+          "value": "Multi-platform"
+        },
+        {
+          "label": "Analytics",
+          "value": "Real-time"
+        },
+        {
+          "label": "Backend",
+          "value": "FastAPI + Redis"
+        }
+      ],
+      "outcome": "AutoZenlyAI turned a complex, multi-model idea into a single working SaaS — proof that ambitious AI products can be shipped end to end, from architecture to a live app people can sign up for.",
+      "keywords": [
+        "ai saas development",
+        "multi-llm platform",
+        "social media automation saas",
+        "saas mvp developer"
+      ]
+    },
+    {
+      "slug": "aurelia-estates",
+      "projectId": "04",
+      "name": "AURELIA Estates & Prestige",
+      "tagline": "A luxury real-estate platform that feels the part",
+      "metaTitle": "AURELIA Estates — Luxury Real Estate Platform Case Study | Build First Site",
+      "metaDescription": "How we built AURELIA Estates & Prestige, a premium real-estate platform with high-end listings, advanced property search, and fast, polished UI that matches the properties it showcases.",
+      "industry": "Real Estate",
+      "location": "Global",
+      "liveUrl": "https://aurelia-real-estate-silk.vercel.app",
+      "image": "https://s0.wp.com/mshots/v1/https%3A%2F%2Faurelia-real-estate-silk.vercel.app?w=1200",
+      "cover": {
+        "from": "#1e1e1e",
+        "to": "#3a3a3a",
+        "mark": "AU"
+      },
+      "timeline": "3 weeks",
+      "services": [
+        "Real Estate Platform",
+        "Advanced Search",
+        "Enquiry Flows",
+        "UI / Motion"
+      ],
+      "techStack": [
+        "React",
+        "Next.js",
+        "Tailwind CSS",
+        "Framer Motion"
+      ],
+      "challenge": [
+        "In luxury real estate, the website is the shopfront — and a template that looks like every other agency site actively undermines a premium brand. AURELIA needed a platform whose design signalled the calibre of the properties it lists.",
+        "It also had to be genuinely useful: buyers needed to filter a high-end portfolio quickly and enquire about viewings without friction, all while the interface stayed fast and refined."
+      ],
+      "approach": [
+        {
+          "title": "Design that matches the portfolio",
+          "body": "We built a restrained, high-end interface with considered typography and Framer Motion transitions that feel expensive — so the site reads as prestige from the first scroll."
+        },
+        {
+          "title": "Advanced property search",
+          "body": "Buyers can filter and search the listings by the criteria that matter for high-value property, getting to relevant homes in a few clicks rather than endless scrolling."
+        },
+        {
+          "title": "Frictionless viewing enquiries",
+          "body": "Property enquiry flows make requesting a viewing effortless, capturing qualified leads directly from each listing page."
+        },
+        {
+          "title": "Fast by default",
+          "body": "A modern React/Next.js build keeps load times low and interactions smooth, so the polish never comes at the cost of speed."
+        }
+      ],
+      "results": [
+        {
+          "label": "Design",
+          "value": "Premium UI"
+        },
+        {
+          "label": "Search",
+          "value": "Advanced filters"
+        },
+        {
+          "label": "Leads",
+          "value": "Per-listing enquiries"
+        },
+        {
+          "label": "Performance",
+          "value": "Fast load"
+        }
+      ],
+      "outcome": "AURELIA now has a platform that looks and performs like the properties it represents — a credible digital shopfront that turns browsers into viewing enquiries.",
+      "keywords": [
+        "real estate website design",
+        "property platform developer",
+        "luxury real estate website",
+        "next.js real estate"
+      ]
+    },
+    {
+      "slug": "harbour-plumbing",
+      "projectId": "05",
+      "name": "Harbour Plumbing Co.",
+      "tagline": "A tradie website built to win jobs, not awards",
+      "metaTitle": "Harbour Plumbing — Tradie Website Case Study | Build First Site",
+      "metaDescription": "How we built a conversion-first website for a Sydney 24/7 emergency plumber in one week: trust-badge hero, quote-request form, click-to-call, and LocalBusiness + FAQ schema for local SEO.",
+      "industry": "Trades / Home Services",
+      "location": "Sydney, Australia",
+      "liveUrl": "https://harbour-plumbing-website.vercel.app",
+      "image": "https://s0.wp.com/mshots/v1/https%3A%2F%2Fharbour-plumbing-website.vercel.app?w=1200",
+      "cover": {
+        "from": "#0f2233",
+        "to": "#1d4e6b",
+        "mark": "HP"
+      },
+      "timeline": "1 week",
+      "services": [
+        "Business Website",
+        "Local SEO",
+        "Lead Capture",
+        "Schema"
+      ],
+      "techStack": [
+        "React",
+        "Tailwind",
+        "Motion",
+        "Formspree",
+        "JSON-LD"
+      ],
+      "challenge": [
+        "When a pipe bursts at 2am, nobody scrolls — they call the first plumber who looks trustworthy and reachable. Harbour Plumbing needed a site that converts panicked, high-intent visitors into calls and quote requests immediately.",
+        "It also needed to show up in local search, because most of those visitors arrive from a \"plumber near me\" Google search rather than a bookmark."
+      ],
+      "approach": [
+        {
+          "title": "Trust-first hero",
+          "body": "The hero leads with trust badges and a clear 24/7 promise, so a stressed visitor instantly knows they are in the right place — with the phone number and quote button impossible to miss."
+        },
+        {
+          "title": "Click-to-call everywhere",
+          "body": "Every section keeps a tap-to-call button within reach, matched with a short quote-request form for people who would rather type than talk. Both routes capture the lead."
+        },
+        {
+          "title": "Local SEO built in",
+          "body": "LocalBusiness and FAQ schema (JSON-LD) plus a Google reviews strip give the site the structured signals search engines reward for local queries — helping it surface for \"emergency plumber Sydney\" searches."
+        },
+        {
+          "title": "Fast enough to keep the visitor",
+          "body": "A lean build scores Lighthouse 95+, so the page loads before an impatient, in-emergency visitor bounces to a competitor."
+        }
+      ],
+      "results": [
+        {
+          "label": "Build time",
+          "value": "1 week"
+        },
+        {
+          "label": "Lighthouse",
+          "value": "95+"
+        },
+        {
+          "label": "Local SEO",
+          "value": "Schema + reviews"
+        },
+        {
+          "label": "Lead capture",
+          "value": "Call + form"
+        }
+      ],
+      "outcome": "Harbour Plumbing went from no real web presence to a fast, trustworthy site engineered around a single goal — turning local searchers into phone calls — delivered in a week.",
+      "keywords": [
+        "tradie website design",
+        "plumber website",
+        "local seo website",
+        "emergency plumber sydney website"
+      ]
+    },
+    {
+      "slug": "marlow-vine",
+      "projectId": "06",
+      "name": "Marlow & Vine",
+      "tagline": "A hospitality site that keeps bookings commission-free",
+      "metaTitle": "Marlow & Vine — Restaurant Website Case Study | Build First Site",
+      "metaDescription": "How we built an editorial website for a Fitzroy café and wine bar with a tabbed menu (no PDFs), provider-agnostic direct table bookings, and Restaurant + Menu schema for local discovery.",
+      "industry": "Hospitality",
+      "location": "Fitzroy, Australia",
+      "liveUrl": "https://marlow-vine-restaurant.vercel.app",
+      "image": "https://s0.wp.com/mshots/v1/https%3A%2F%2Fmarlow-vine-restaurant.vercel.app?w=1200",
+      "cover": {
+        "from": "#2a2016",
+        "to": "#4d3a24",
+        "mark": "MV"
+      },
+      "timeline": "1.5 weeks",
+      "services": [
+        "Hospitality Website",
+        "Menu System",
+        "Direct Bookings",
+        "Schema"
+      ],
+      "techStack": [
+        "React",
+        "Tailwind",
+        "Motion",
+        "react-router",
+        "JSON-LD"
+      ],
+      "challenge": [
+        "Marlow & Vine, a Fitzroy brunch café and wine bar, wanted a site that looked as considered as the venue — and, crucially, one that kept table bookings direct instead of handing a commission to a third-party platform on every cover.",
+        "The old habit of uploading a menu PDF also had to go: PDFs are slow, unreadable on phones, and invisible to search engines."
+      ],
+      "approach": [
+        {
+          "title": "Editorial, full-bleed design",
+          "body": "A full-bleed hero and considered layout give the site the editorial feel of a good food magazine, matching the atmosphere of the venue itself."
+        },
+        {
+          "title": "Real, tabbed menu — no PDFs",
+          "body": "The menu is built as fast, mobile-friendly tabbed content that customers can actually read on a phone — and that search engines can index, unlike a buried PDF."
+        },
+        {
+          "title": "Provider-agnostic direct bookings",
+          "body": "Table booking is wired so the venue keeps zero-commission direct reservations, rather than paying per-cover fees to a booking marketplace on bookings it earned itself."
+        },
+        {
+          "title": "Restaurant & Menu schema",
+          "body": "Restaurant and Menu JSON-LD helps the venue appear correctly in local search and rich results, so nearby diners find it when they search."
+        }
+      ],
+      "results": [
+        {
+          "label": "Bookings",
+          "value": "Direct, 0% commission"
+        },
+        {
+          "label": "Menu",
+          "value": "Indexable, no PDF"
+        },
+        {
+          "label": "Schema",
+          "value": "Restaurant + Menu"
+        },
+        {
+          "label": "Design",
+          "value": "Editorial"
+        }
+      ],
+      "outcome": "Marlow & Vine got a site as polished as the room — and one that protects its margins by keeping bookings direct and its menu discoverable in search.",
+      "keywords": [
+        "restaurant website design",
+        "cafe website",
+        "direct table booking website",
+        "hospitality web design"
+      ]
+    }
+  ],
+  "comparisons": [
+    {
+      "slug": "squarespace-vs-custom-website",
+      "competitor": "Squarespace",
+      "metaTitle": "Squarespace vs Custom Website (2026): Which Is Right for Your Business?",
+      "metaDescription": "An honest comparison of Squarespace vs a custom-built website — design flexibility, SEO, performance, cost, and ownership — to help you choose the right option for your business.",
+      "keywords": [
+        "squarespace vs custom website",
+        "squarespace alternative",
+        "is squarespace good for business",
+        "custom website vs website builder"
+      ],
+      "h1": "Squarespace vs a Custom Website",
+      "intro": [
+        "Squarespace is one of the most popular all-in-one website builders, loved for its polished templates and simple editor. A custom website, by contrast, is designed and coded specifically for your business. Both can produce a good-looking site — the real difference is in flexibility, performance, ownership, and where the costs land over time.",
+        "This is an honest breakdown of where each option wins, so you can pick based on your actual goals rather than marketing. There is no single right answer — only the right answer for your situation."
+      ],
+      "verdict": "Squarespace is an excellent choice if you want to get a clean, professional site live quickly and are happy to work within its templates and monthly subscription. A custom website makes more sense once you need unique functionality, top-tier performance and SEO, or you simply want to own your site outright with no recurring platform fee.",
+      "bestForPlatform": [
+        "You need a professional site live fast and on a tight budget",
+        "Your needs fit a standard template — a few pages, a blog, basic forms",
+        "You are comfortable editing the site yourself and paying monthly",
+        "You do not expect complex custom features any time soon"
+      ],
+      "bestForCustom": [
+        "You want a design that is genuinely yours, not a recognisable template",
+        "You need custom features — bookings, calculators, integrations, dashboards",
+        "Performance and technical SEO are a priority for competitive search terms",
+        "You want to own the code with no ongoing platform subscription or lock-in"
+      ],
+      "rows": [
+        {
+          "dimension": "Design flexibility",
+          "platform": "Great templates, but you work within their structure",
+          "custom": "Fully bespoke — anything you can design can be built"
+        },
+        {
+          "dimension": "Performance",
+          "platform": "Good, but shared platform overhead and extra scripts",
+          "custom": "Optimised — typically faster Core Web Vitals scores"
+        },
+        {
+          "dimension": "SEO control",
+          "platform": "Solid basics, limited deep technical control",
+          "custom": "Full control of markup, schema, speed and structure"
+        },
+        {
+          "dimension": "Custom features",
+          "platform": "Limited to what the platform and plugins allow",
+          "custom": "Unlimited — booking systems, integrations, custom logic"
+        },
+        {
+          "dimension": "Ongoing cost",
+          "platform": "Monthly subscription, forever",
+          "custom": "One-time build; you only pay for hosting (often minimal)"
+        },
+        {
+          "dimension": "Ownership",
+          "platform": "You rent the site on their platform",
+          "custom": "You own 100% of the code and can host it anywhere"
+        },
+        {
+          "dimension": "Time to launch",
+          "platform": "Fast — days if you do it yourself",
+          "custom": "Longer — usually 1–3 weeks with a developer"
+        }
+      ],
+      "costNote": "Squarespace costs less upfront but you pay every month for as long as the site is live. A custom site costs more to build once, then typically only inexpensive hosting after that — so over a few years the total cost often evens out, and you own the asset at the end.",
+      "faqs": [
+        {
+          "q": "Is Squarespace good for SEO?",
+          "a": "Squarespace covers the SEO basics well — clean templates, mobile-friendly pages, and simple meta editing. For competitive keywords where speed and deep technical SEO matter, a custom build gives you more control over performance, structured data, and site architecture."
+        },
+        {
+          "q": "Can I move off Squarespace later?",
+          "a": "You can export some content, but the design and any Squarespace-specific features do not transfer — you would rebuild the site elsewhere. This is why some businesses choose a custom, portable build from the start."
+        },
+        {
+          "q": "Is a custom website worth it over Squarespace?",
+          "a": "It depends on your goals. If you need unique functionality, best-in-class performance, or full ownership with no monthly fee, a custom site is usually worth it. For a simple brochure site you plan to edit yourself, Squarespace can be the smarter, cheaper choice."
+        }
+      ]
+    },
+    {
+      "slug": "shopify-vs-custom-website",
+      "competitor": "Shopify",
+      "metaTitle": "Shopify vs Custom E-Commerce Website (2026): Which Should You Choose?",
+      "metaDescription": "Shopify vs a custom-built online store compared honestly — fees, flexibility, performance, ownership and total cost — so you can choose the right foundation for your e-commerce business.",
+      "keywords": [
+        "shopify vs custom website",
+        "shopify alternative",
+        "custom ecommerce vs shopify",
+        "shopify transaction fees"
+      ],
+      "h1": "Shopify vs a Custom E-Commerce Website",
+      "intro": [
+        "Shopify is the default answer for many people starting an online store — and for good reason. It handles hosting, payments, inventory and security out of the box, so you can start selling quickly. A custom e-commerce build gives you a store designed and coded around your exact products and workflow, with no platform taking a slice of every sale.",
+        "The right choice depends on your margins, your catalogue, and how unique your selling experience needs to be. Here is a fair comparison of both."
+      ],
+      "verdict": "Shopify is hard to beat for getting a reliable store live quickly, especially early on. A custom store becomes compelling once transaction fees and app subscriptions add up, when you need a bespoke buying experience, or when you want to stop renting your storefront and own it outright.",
+      "bestForPlatform": [
+        "You are launching and want to start selling this week",
+        "You value having hosting, security and payments handled for you",
+        "A standard storefront and checkout flow suits your products",
+        "You would rather pay monthly than invest upfront"
+      ],
+      "bestForCustom": [
+        "Your sales volume makes per-transaction and app fees expensive",
+        "You need a unique buying experience (3D viewers, made-to-measure, custom flows)",
+        "You want maximum performance and SEO for product and category pages",
+        "You want to own the store and its data with no platform lock-in"
+      ],
+      "rows": [
+        {
+          "dimension": "Setup speed",
+          "platform": "Very fast — sell within days",
+          "custom": "Longer — a full store is typically 4–6 weeks"
+        },
+        {
+          "dimension": "Transaction fees",
+          "platform": "Payment fees, plus extra unless using Shopify Payments",
+          "custom": "Only your payment processor’s standard rate"
+        },
+        {
+          "dimension": "Monthly cost",
+          "platform": "Subscription plus paid apps for extra features",
+          "custom": "Mainly hosting; features are built in, not rented"
+        },
+        {
+          "dimension": "Custom experiences",
+          "platform": "Constrained by themes and the app ecosystem",
+          "custom": "Anything — bespoke viewers, configurators, checkouts"
+        },
+        {
+          "dimension": "Performance",
+          "platform": "Good, but themes and apps add weight",
+          "custom": "Lean and fast; you control every asset"
+        },
+        {
+          "dimension": "Ownership & data",
+          "platform": "You operate within Shopify’s ecosystem",
+          "custom": "Full ownership of code, data and customer relationships"
+        },
+        {
+          "dimension": "Maintenance",
+          "platform": "Handled by Shopify",
+          "custom": "You (or a retainer) handle updates and hosting"
+        }
+      ],
+      "costNote": "Shopify’s costs scale with your success — more sales and more apps mean higher monthly bills and transaction fees. A custom store is a larger upfront investment but keeps ongoing costs low, which is why high-volume merchants often move to custom builds as they grow.",
+      "faqs": [
+        {
+          "q": "Does Shopify charge transaction fees?",
+          "a": "Shopify charges standard payment processing fees, and adds an extra transaction fee if you use a third-party payment gateway instead of Shopify Payments. On a custom store you only pay your payment processor’s normal rate, with no platform surcharge."
+        },
+        {
+          "q": "Is a custom store better than Shopify for SEO?",
+          "a": "A custom store gives you complete control over page speed, structured data, and URL structure, which helps for competitive product searches. Shopify’s SEO is solid for most stores, but heavier themes and apps can slow pages down."
+        },
+        {
+          "q": "When should I switch from Shopify to custom?",
+          "a": "Common triggers are rising app and transaction fees, needing a buying experience Shopify themes cannot deliver, or wanting full ownership of your storefront and customer data. If any of those apply, a custom build is worth costing out."
+        }
+      ]
+    },
+    {
+      "slug": "webflow-vs-custom-website",
+      "competitor": "Webflow",
+      "metaTitle": "Webflow vs Custom Website (2026): An Honest Comparison",
+      "metaDescription": "Webflow vs a hand-coded custom website compared — design freedom, performance, scalability, cost and ownership — to help you decide which fits your business best.",
+      "keywords": [
+        "webflow vs custom website",
+        "webflow vs coded website",
+        "is webflow good",
+        "webflow alternative developer"
+      ],
+      "h1": "Webflow vs a Custom-Coded Website",
+      "intro": [
+        "Webflow sits between a template builder and full custom development. It gives designers powerful visual control and produces cleaner output than most drag-and-drop builders. A custom-coded website goes one step further — no platform constraints at all, built in modern frameworks like Next.js and React.",
+        "For many marketing sites, Webflow is genuinely excellent. The question is whether your project will eventually bump into its ceilings. Here is where each option shines."
+      ],
+      "verdict": "Webflow is a strong choice for design-led marketing sites where a visual tool is enough and a monthly subscription is acceptable. A custom build wins when you need advanced functionality, app-like interactivity, deep integrations, or the freedom and ownership that only having your own codebase provides.",
+      "bestForPlatform": [
+        "You want strong visual design control without hand-coding",
+        "Your site is primarily marketing pages, a blog and CMS content",
+        "You are comfortable with Webflow’s subscription and hosting",
+        "You do not need complex custom application logic"
+      ],
+      "bestForCustom": [
+        "You need app-like features, custom logic, or heavy integrations",
+        "You want the absolute best performance and technical SEO",
+        "You expect the product to grow beyond a marketing site",
+        "You want to own the codebase and avoid platform lock-in"
+      ],
+      "rows": [
+        {
+          "dimension": "Design control",
+          "platform": "Excellent visual control within Webflow’s model",
+          "custom": "Total — no constraints on design or interaction"
+        },
+        {
+          "dimension": "Custom functionality",
+          "platform": "Limited; complex logic needs workarounds",
+          "custom": "Unlimited — any feature can be built properly"
+        },
+        {
+          "dimension": "Performance",
+          "platform": "Good, generally better than template builders",
+          "custom": "Best-in-class with modern frameworks and tuning"
+        },
+        {
+          "dimension": "Integrations",
+          "platform": "Possible but can get awkward at scale",
+          "custom": "Native — connect any API, service or database"
+        },
+        {
+          "dimension": "Ongoing cost",
+          "platform": "Monthly Webflow subscription and hosting",
+          "custom": "One-time build; low-cost hosting afterwards"
+        },
+        {
+          "dimension": "Ownership",
+          "platform": "Hosted on Webflow’s platform",
+          "custom": "You own and can host the code anywhere"
+        },
+        {
+          "dimension": "Scalability",
+          "platform": "Great for marketing sites; ceilings for apps",
+          "custom": "Scales into full products and web apps"
+        }
+      ],
+      "costNote": "Webflow is cheaper to start and faster for pure marketing sites. A custom build costs more upfront but removes the subscription, unlocks unlimited functionality, and gives you an asset you fully own — which matters most when the site is central to your business.",
+      "faqs": [
+        {
+          "q": "Is Webflow better than a custom-coded site?",
+          "a": "For design-led marketing sites, Webflow is often the pragmatic choice. For sites that need custom application features, complex integrations, or maximum performance, a custom-coded build in a framework like Next.js gives you more headroom and full ownership."
+        },
+        {
+          "q": "Can Webflow handle complex web apps?",
+          "a": "Webflow is built primarily for marketing and content sites. Genuinely app-like functionality — dashboards, custom workflows, real-time features — is where a custom codebase is a far better fit."
+        },
+        {
+          "q": "Do I own my site on Webflow?",
+          "a": "Your site lives on Webflow’s platform and you can export static code, but any Webflow CMS and interactions are tied to the platform. A custom build gives you a complete, portable codebase you own outright."
+        }
+      ]
+    }
+  ],
+  "guides": [
+    {
+      "slug": "how-to-choose-a-web-developer",
+      "title": "How to Choose a Web Developer for Your Small Business",
+      "metaTitle": "How to Choose a Web Developer for Your Small Business (2026 Guide)",
+      "metaDescription": "A practical guide to hiring the right web developer for your small business — what to look for, the questions to ask, red flags to avoid, and how to compare quotes fairly.",
+      "keywords": [
+        "how to choose a web developer",
+        "hire a web developer",
+        "find a web developer small business",
+        "questions to ask a web developer"
+      ],
+      "excerpt": "Hiring the right developer is the difference between a website that quietly earns you customers and one that becomes an expensive headache. Here is how to choose well.",
+      "readingTime": "6 min read",
+      "datePublished": "2026-07-31",
+      "intro": [
+        "Your website is often the first real impression a customer gets of your business — and the developer you hire decides whether that impression works for you or against you. Yet most small business owners hire based on price alone, then discover too late that the cheapest quote cost them the most.",
+        "This guide walks through how to choose a web developer the right way: what actually matters, the questions that separate professionals from amateurs, and the red flags worth walking away from."
+      ],
+      "sections": [
+        {
+          "heading": "Start with your goal, not the technology",
+          "body": [
+            "Before you talk to anyone, get clear on what the website is for. Is it to generate enquiries, take bookings, sell products, or simply look credible? A good developer will ask about your business goal first and recommend an approach around it. Be cautious of anyone who leads with technology and buzzwords before understanding what you are trying to achieve.",
+            "Writing down your goal in one sentence — \"I want tradespeople in my area to call me from Google\" — makes every later decision easier, from design to budget."
+          ]
+        },
+        {
+          "heading": "Look at their actual work, not just their portfolio shots",
+          "body": [
+            "Screenshots are easy to make look good. Visit the live sites a developer has built and use them like a customer would: open them on your phone, check how fast they load, try the contact form, click around. Speed and mobile experience are where corners get cut, and they directly affect how many customers you win.",
+            "If a developer cannot show you live sites they have built, or only shows template demos, treat that as a warning sign."
+          ]
+        },
+        {
+          "heading": "Ask who owns the finished website",
+          "body": [
+            "This is the single most important question, and most owners forget to ask it. Will you own the code and be able to host it anywhere, or are you renting the site on the developer’s platform or a page builder subscription? Ownership means freedom — you can change developers, move hosts, and never be held hostage.",
+            "A professional will happily hand over the full codebase and accounts on completion. If someone is evasive about ownership, you may be signing up for lock-in."
+          ]
+        },
+        {
+          "heading": "The questions that reveal a professional",
+          "body": [
+            "Ask how they handle SEO basics, page speed, and mobile. Ask what happens after launch — is there support, and what does it cost? Ask for a fixed price and a timeline in writing rather than an open-ended hourly arrangement. Clear, confident answers signal someone who has done this many times.",
+            "Also ask how you will see progress. A developer who gives you a live staging link to watch the site come together is far easier to work with than one who disappears for weeks and reveals a finished product you cannot influence."
+          ]
+        },
+        {
+          "heading": "How to compare quotes fairly",
+          "body": [
+            "The cheapest quote is rarely the cheapest outcome. A low price often means a template, slow support, or a platform subscription you will pay forever. Compare what is actually included: design, number of pages, SEO setup, forms and integrations, revisions, post-launch support, and — crucially — ownership.",
+            "A slightly higher fixed price with clear scope, fast performance, and full ownership almost always beats a bargain quote that leaves you paying monthly and unable to make changes."
+          ]
+        },
+        {
+          "heading": "Red flags to walk away from",
+          "body": [
+            "Be wary of no written scope or timeline, reluctance to share live examples, vague answers about ownership, communication that is already slow before you have paid, and prices that seem too good to be true. Trust how the sales conversation feels — it is a preview of the whole project."
+          ]
+        }
+      ],
+      "takeaways": [
+        "Define your business goal before choosing any developer or technology.",
+        "Test their live sites on mobile — speed and UX reveal quality.",
+        "Always confirm you will own the code with no lock-in.",
+        "Prefer a fixed price and timeline in writing over hourly, open-ended work.",
+        "Compare total value and ownership, not just the headline price."
+      ]
+    },
+    {
+      "slug": "website-builder-vs-web-developer",
+      "title": "Website Builder vs Web Developer: Which Do You Actually Need?",
+      "metaTitle": "Website Builder vs Web Developer: Which Do You Actually Need? (2026)",
+      "metaDescription": "DIY website builder or hire a web developer? An honest guide to the trade-offs in cost, time, performance, SEO and ownership — so you make the right call for your business.",
+      "keywords": [
+        "website builder vs web developer",
+        "diy website vs hire developer",
+        "should i use a website builder",
+        "website builder or developer"
+      ],
+      "excerpt": "A DIY builder can get you online this weekend. A developer builds you an asset. Here is how to know which one your business actually needs right now.",
+      "readingTime": "7 min read",
+      "datePublished": "2026-07-31",
+      "intro": [
+        "Every business owner eventually hits this fork: drag-and-drop your own site on a builder like Wix or Squarespace, or hire a developer to build it properly. Both are valid — the wrong choice just costs you either money or momentum.",
+        "This guide lays out the real trade-offs so you can decide based on where your business is today, not on marketing from either side."
+      ],
+      "sections": [
+        {
+          "heading": "What a website builder is genuinely good at",
+          "body": [
+            "DIY builders are fast, cheap to start, and require no technical skill. If you need a simple, presentable site online quickly — a few pages, a contact form, maybe a blog — a builder can absolutely do the job, and there is no shame in starting there.",
+            "For a brand-new business testing an idea, or a side project with no budget, a builder is often the smart, pragmatic first step. You can always upgrade later."
+          ]
+        },
+        {
+          "heading": "Where builders quietly cost you",
+          "body": [
+            "The trade-offs show up over time. You pay a subscription every month for as long as the site exists. Performance and SEO are constrained by the platform, which matters enormously once you are competing for search traffic. And your design tends to look like a template because it is one.",
+            "The biggest hidden cost is ownership: you are renting your website. If the platform raises prices, changes features, or you want to move, your site does not simply come with you."
+          ]
+        },
+        {
+          "heading": "What hiring a developer gives you",
+          "body": [
+            "A developer builds a site around your business rather than fitting your business into a template. You get a unique design, best-in-class speed and technical SEO, any custom feature you need, and — with the right developer — full ownership of the code with no ongoing platform fee.",
+            "The cost is higher upfront and it takes longer to launch. In return you get an asset you own, one that can grow with you instead of hitting a ceiling."
+          ]
+        },
+        {
+          "heading": "A simple way to decide",
+          "body": [
+            "Choose a website builder if your needs are simple, your budget is tight, you are comfortable maintaining it yourself, and speed to launch matters more than long-term performance. Choose a developer if the website is central to how you win customers, you need custom functionality or serious SEO, or you want to own your site outright rather than rent it.",
+            "A useful test: if your website going down for a week would genuinely hurt revenue, it is important enough to build properly."
+          ]
+        },
+        {
+          "heading": "The middle path: start DIY, upgrade when it pays off",
+          "body": [
+            "You do not have to get it perfect on day one. Plenty of businesses start on a builder to validate demand, then invest in a custom build once the website is clearly driving revenue and the monthly fees and limitations start to bite.",
+            "The key is to make the move deliberately — before the platform’s ceilings cost you customers — rather than staying on a builder out of inertia."
+          ]
+        }
+      ],
+      "takeaways": [
+        "Website builders win on speed, low upfront cost, and simplicity.",
+        "Developers win on performance, SEO, custom features, and ownership.",
+        "Rent (builder) vs own (custom) is the real long-term difference.",
+        "If downtime would hurt your revenue, build the site properly.",
+        "Starting DIY and upgrading later is a legitimate, low-risk strategy."
+      ]
+    },
+    {
+      "slug": "freelance-web-developer-rates-australia",
+      "title": "Freelance Web Developer Rates in Australia: What You Should Expect to Pay",
+      "metaTitle": "Freelance Web Developer Rates Australia 2026 | Hourly & Fixed Pricing",
+      "metaDescription": "What freelance web developers actually charge in Australia — hourly rates by experience level, fixed-price ranges by project type, and how to tell a fair quote from a bad one.",
+      "keywords": [
+        "freelance web developer rates",
+        "freelance web developer rates Australia",
+        "web developer hourly rate Australia",
+        "how much do web developers charge Australia",
+        "website developer cost Australia"
+      ],
+      "excerpt": "Hourly rates, fixed-price ranges, and the questions that tell you whether a quote is fair — written by someone who publishes their prices.",
+      "readingTime": "8 min read",
+      "datePublished": "2026-08-01",
+      "intro": [
+        "Almost nobody in Australian web development publishes their rates. You get \"contact us for a quote\", then three wildly different numbers with no way to tell which one is reasonable. That opacity is not an accident — it makes comparison hard, and hard comparison protects margins.",
+        "This guide lays out what freelance and small-studio web developers actually charge in Australia, why the ranges are so wide, and how to work out whether a quote in front of you is fair. We publish our own prices, so we have no particular reason to keep this vague."
+      ],
+      "sections": [
+        {
+          "heading": "Hourly rates by experience level",
+          "body": [
+            "Australian freelance web developers broadly fall into three bands. Junior or newly freelancing developers typically charge somewhere around $40–70 per hour. Mid-level developers with a few years of commercial work behind them generally sit around $70–120. Senior specialists and established consultancies charge from roughly $120 up to $300 per hour at the premium end, where you are partly paying for strategy and risk reduction rather than typing.",
+            "Offshore rates sit well below all of these, often $15–40 per hour. That gap is real, and so are the trade-offs: timezone friction, communication overhead, and highly variable quality control. Plenty of businesses use offshore developers successfully, but the ones who do it well usually have someone technical in-house to manage the work.",
+            "Treat these as indicative ranges rather than measured survey data — rates move, and they vary by city and specialism. The point is the shape of the market, not the decimal place."
+          ]
+        },
+        {
+          "heading": "Why hourly billing works against you",
+          "body": [
+            "Hourly billing puts you and the developer on opposite sides. Every hour that the project runs long is revenue for them and cost for you, and you have almost no way to audit whether a task genuinely took nine hours. You also cannot budget: the number you are quoted is an estimate, and estimates in software have a well-earned reputation.",
+            "The more useful question is not \"what is your hourly rate\" but \"what will this project cost, in writing, before we start\". A developer who can answer that has scoped the work properly and is carrying the estimation risk themselves. One who cannot may be planning to discover the scope on your budget.",
+            "This is why we quote fixed prices in AUD. It is not generosity — it forces us to actually understand the project before committing, which is where most bad outcomes get prevented."
+          ]
+        },
+        {
+          "heading": "Fixed-price ranges by project type",
+          "body": [
+            "A single landing page — one page, a form, conversion-focused — generally runs from around $600 to $2,500 depending on design complexity and whether the copy is written for you. A standard small-business website of five to ten pages typically lands between $2,000 and $8,000. A custom e-commerce store usually starts around $4,000 and rises quickly with catalogue size and integrations. Web applications and SaaS products start around $6,500 for a genuine MVP and go up from there.",
+            "Australian agencies quote considerably higher for comparable scope — commonly $10,000 and up for a business website, and $50,000-plus for app work. Some of that premium buys real things: account management, larger teams, redundancy if someone leaves. Some of it buys the overhead of those same things. Whether it is worth it depends on the size and risk of your project.",
+            "For reference, our published starting points are $600 for a landing page, $2,000 for a business website, $4,000 for e-commerce, and $6,500 for a web app MVP."
+          ]
+        },
+        {
+          "heading": "What should be included in the price",
+          "body": [
+            "Before comparing two quotes, check they cover the same ground. A quote should be explicit about: the number of pages or screens, whether design is bespoke or template-based, who writes the copy, how many rounds of revisions are included, SEO fundamentals such as metadata and structured data, mobile responsiveness, forms and integrations, and what support you get after launch.",
+            "The item people most often forget to check is ownership. Do you get the code and the accounts, or is the site rented on the developer's platform or a page-builder subscription? A cheaper quote that locks you into a monthly fee and cannot be moved to another developer is frequently the most expensive option over three years.",
+            "Also ask what happens if you need a change in six months. \"Quoted per piece, no retainer required\" and \"you must be on our $250/month plan\" are very different businesses."
+          ]
+        },
+        {
+          "heading": "How to tell a fair quote from a bad one",
+          "body": [
+            "A fair quote is specific. It names deliverables, dates, and a number, and it is comfortable saying what is excluded. A bad quote is either vague — a single figure with no scope — or suspiciously cheap in a way that implies a template, an offshore subcontractor you were not told about, or a plan to recoup the difference through change requests.",
+            "Watch how the person handles the scoping conversation. Someone who asks what the website is for, who your customers are, and what would count as success is going to build you something useful. Someone who quotes off a one-line brief is guessing, and you will pay for the guess later.",
+            "Finally, price is a weak signal of quality in both directions. The most expensive quote is not automatically the best work, and the cheapest is not automatically bad. What correlates far better is clarity: whether they can explain what they will do, why, and what it costs, without hedging."
+          ]
+        },
+        {
+          "heading": "Questions worth asking before you sign",
+          "body": [
+            "Ask for a fixed price and timeline in writing. Ask who owns the code and the accounts on completion. Ask whether there is a mandatory ongoing fee. Ask to see live sites they built — then open those sites on your phone and check how fast they load. Ask what happens after launch and what support costs. Ask who you will actually be talking to day to day.",
+            "The answers matter, but so does the manner. How someone handles the sales conversation is a reliable preview of how they will handle your project when something goes wrong."
+          ]
+        }
+      ],
+      "takeaways": [
+        "Australian freelance rates broadly run $40–70/hr junior, $70–120/hr mid, $120–300/hr senior — treat as indicative, not measured.",
+        "Ask for a fixed project price rather than an hourly rate; it shifts estimation risk off you.",
+        "Compare quotes on scope and inclusions, not just the headline number.",
+        "Always confirm you own the code and are not locked into a monthly fee.",
+        "Clarity of scoping predicts quality far better than price does."
+      ]
+    },
+    {
+      "slug": "seo-for-small-business-australia",
+      "title": "SEO for Small Businesses in Australia: A Practical Starting Guide",
+      "metaTitle": "SEO for Small Businesses Australia | Practical 2026 Guide",
+      "metaDescription": "A no-jargon SEO guide for Australian small businesses — local search, Google Business Profile, the pages worth building, and what actually moves rankings in 2026.",
+      "keywords": [
+        "SEO for small businesses Australia",
+        "small business SEO Australia",
+        "local SEO Australia",
+        "Google Business Profile Australia",
+        "how to rank on Google Australia"
+      ],
+      "excerpt": "What actually moves the needle for a small Australian business in search — and what is a waste of your money.",
+      "readingTime": "9 min read",
+      "datePublished": "2026-08-01",
+      "intro": [
+        "Most SEO advice aimed at small businesses is either too abstract to act on or a thinly disguised pitch for a monthly retainer. This guide is the version we would give a client over a coffee: what matters for an Australian small business, roughly in the order it matters, and what you can safely ignore for now.",
+        "One thing to set expectations on first. SEO is slow. Meaningful movement takes months, not weeks, and anyone promising page one by next quarter is either lucky, targeting a term nobody searches, or not being straight with you."
+      ],
+      "sections": [
+        {
+          "heading": "Start with Google Business Profile, not your website",
+          "body": [
+            "If you serve customers in a specific area, your Google Business Profile is almost certainly worth more to you than any page on your website. It is what feeds the map pack — the three local results that sit above the normal listings — and it is free.",
+            "Claim it, then fill in everything: categories, service areas, hours, photos, and a description. Keep your name, address and phone number identical everywhere they appear online, because inconsistency there genuinely confuses local ranking.",
+            "Then ask for reviews, consistently. Review volume and recency are among the strongest local ranking factors, and they are the thing most small businesses neglect entirely. A competitor with 160 reviews will beat you on the strength of that alone, regardless of how good your website is. Asking every satisfied customer, every time, is unglamorous and effective."
+          ]
+        },
+        {
+          "heading": "One page, one keyword",
+          "body": [
+            "The most common structural mistake is trying to make the homepage rank for everything. Search engines match a query to a page, not a business, so a page that talks about six services vaguely will lose to six pages that each talk about one service properly.",
+            "Pick one primary keyword per page and let the page genuinely be about that. If you are a plumber, \"emergency plumber Brisbane\" gets its own page rather than a paragraph on a services list. Two pages targeting the same keyword is worse than one — they compete with each other, which is called cannibalisation and it is entirely self-inflicted.",
+            "Write the page for a person who has that specific problem. The keyword should appear in the page title, the single H1, and naturally in the text — but text stuffed with repetitions of a phrase reads badly to humans and has not helped rankings for many years."
+          ]
+        },
+        {
+          "heading": "What Australian customers actually search",
+          "body": [
+            "Australian search behaviour skews local and price-curious. \"Near me\" and city-qualified searches dominate service categories, and cost queries — \"how much does X cost\" — carry real commercial intent because people are shortlisting before they contact anyone.",
+            "That makes pricing content unusually valuable here. A page that answers \"what does this cost in Australia\" honestly, in AUD, tends to attract people who are close to buying, and most competitors avoid the question. Answering it is both an SEO play and a trust play.",
+            "Also note that roughly two thirds of Australian traffic is mobile. If your site is slow or awkward on a phone, you are losing the majority of your visitors regardless of where you rank."
+          ]
+        },
+        {
+          "heading": "The technical basics that actually matter",
+          "body": [
+            "You do not need to become technical, but a handful of things are worth checking. Your site should load fast on a phone — Google's PageSpeed Insights will tell you, free, in about a minute. Every page needs a unique title and description. Images need descriptive alt text. You need an XML sitemap submitted to Google Search Console, which is also free and is the only place you will see what people actually searched to find you.",
+            "Structured data — a small block of code describing your business, services, and FAQs — helps search engines understand the page and can earn richer-looking results. For a local business, LocalBusiness schema with your address and hours is the one to have.",
+            "Beyond that, most technical SEO advice you will read is aimed at large sites and is not where your next customer comes from."
+          ]
+        },
+        {
+          "heading": "Links: the part nobody wants to hear",
+          "body": [
+            "Links from other websites remain one of the strongest ranking signals, and they are the hardest thing to get. This is usually the real reason a well-built small-business site sits on page two while a mediocre competitor sits on page one — they have been around longer and more sites point at them.",
+            "The realistic options for a small Australian business: get listed in legitimate directories, join your local chamber of commerce or industry association, sponsor a local club or event, ask suppliers and clients whose sites list partners, and publish something genuinely useful enough that people reference it. A free tool or a properly researched local guide earns more links than ten generic blog posts.",
+            "Avoid buying links. It works until it does not, and the recovery is worse than never having ranked."
+          ]
+        },
+        {
+          "heading": "What to ignore for now",
+          "body": [
+            "Publishing thin blog posts on a weekly schedule because \"content is king\" is the most common way small businesses waste money on SEO. Ten shallow posts are worth less than one page that genuinely answers a question people search for.",
+            "Similarly, chasing broad national keywords — \"web design\", \"plumber\", \"accountant\" — is usually futile for a small business. The competition has years of links and budget. You win on specific and local: the long-tail phrases with lower volume and far higher intent.",
+            "And be sceptical of any agency selling a fixed monthly SEO retainer without telling you specifically what they will do each month. Ask for the deliverables. If the answer is vague, the work usually is too."
+          ]
+        },
+        {
+          "heading": "A realistic first 90 days",
+          "body": [
+            "Month one: claim and complete your Google Business Profile, set up Search Console and Analytics, run PageSpeed Insights and fix the obvious problems, and start asking every customer for a review.",
+            "Month two: sort out your page structure. One page per service, one per location you genuinely serve, each with a unique title, a single clear H1, and honest AUD pricing where you can. Make sure every page is linked to from somewhere — orphan pages get discounted.",
+            "Month three: build one genuinely useful thing — a local guide, a cost breakdown, a checklist — and tell people about it. Then start the unglamorous link work: directories, associations, suppliers, local sponsorship.",
+            "After that it is repetition and patience. Check Search Console monthly to see which queries you are actually appearing for; that data is usually more useful than any keyword tool, because it is about your site specifically."
+          ]
+        }
+      ],
+      "takeaways": [
+        "For local businesses, Google Business Profile and review volume beat almost any on-site work.",
+        "One page, one primary keyword — two pages on the same term compete with each other.",
+        "Australians search local and price-first; honest AUD pricing content attracts buyers.",
+        "Links are the real bottleneck, and useful resources earn them better than thin blog posts.",
+        "Expect months, not weeks. Anyone promising fast rankings is not being straight with you."
+      ]
+    }
+  ],
+  "services": [
+    {
+      "slug": "app-development-australia",
+      "eyebrow": "App Development",
+      "h1": "App Development Company in Australia",
+      "metaTitle": "App Development Company Australia | Fixed-Price Web & Mobile Apps",
+      "metaDescription": "Australian app development company building web and mobile apps on a modern stack. Fixed AUD pricing from $6,500, direct access to the developer, and you own the code.",
+      "keywords": [
+        "app development company Australia",
+        "app developers Australia",
+        "mobile app developer Melbourne",
+        "mobile app developer Sydney",
+        "custom app development Australia",
+        "web app development Australia"
+      ],
+      "intro": [
+        "Most Australian businesses that come to us for an app do not actually need a native iOS and Android build. They need something their customers can use on a phone, that works offline-ish, sends notifications, and connects to the systems they already run. That is usually a web app or a progressive web app — and it costs a fraction of a native build.",
+        "We start by working out which one you actually need, then quote a fixed price in AUD before any work begins. You get a live staging link from week one, direct access to the person writing the code, and the full repository on handover."
+      ],
+      "highlights": [
+        {
+          "label": "Pricing",
+          "value": "Fixed, in AUD"
+        },
+        {
+          "label": "Typical build",
+          "value": "6–10 weeks"
+        },
+        {
+          "label": "Stack",
+          "value": "Next.js · React Native"
+        },
+        {
+          "label": "On handover",
+          "value": "You own the code"
+        }
+      ],
+      "capabilities": [
+        {
+          "title": "Web apps and dashboards",
+          "body": "Internal tools, client portals, booking systems, and admin dashboards — the kind of software that replaces a tangle of spreadsheets. Built as a fast web app that works on any device with no app-store approval to wait on."
+        },
+        {
+          "title": "Progressive web apps (PWA)",
+          "body": "Installs to the home screen, works on a patchy connection, and sends push notifications — without the cost and release cycle of a native build. For most small-business use cases this is the honest answer."
+        },
+        {
+          "title": "Cross-platform mobile apps",
+          "body": "When you genuinely need the app stores — camera, background location, offline-first field work — we build with React Native so one codebase ships to both iOS and Android."
+        },
+        {
+          "title": "SaaS products and MVPs",
+          "body": "Multi-tenant accounts, subscription billing through Stripe, usage limits, and an admin back office. Enough to put a real product in front of real users and charge for it."
+        },
+        {
+          "title": "AI features",
+          "body": "Chat and lead qualification, appointment booking, and product recommendations built on OpenAI, Claude, or Gemini — added to an app where they do a specific job, not bolted on for the sake of it."
+        },
+        {
+          "title": "Integrations",
+          "body": "Payments, calendars, CRMs, accounting, and messaging. An app that does not talk to the tools you already use creates more admin than it removes."
+        }
+      ],
+      "tiers": [
+        {
+          "name": "Web App MVP",
+          "price": "from AU$6,500",
+          "timeline": "6–8 weeks",
+          "summary": "A focused first version — the core workflow, built properly, in front of users.",
+          "includes": [
+            "Accounts and authentication",
+            "The one workflow that matters, done well",
+            "Admin back office",
+            "Responsive on phone, tablet and desktop",
+            "Deployed and live"
+          ]
+        },
+        {
+          "name": "Full Web App",
+          "price": "from AU$12,000",
+          "timeline": "8–12 weeks",
+          "summary": "A production application with multiple user roles and real integrations.",
+          "includes": [
+            "Everything in the MVP tier",
+            "Multiple roles and permissions",
+            "Payments and subscription billing",
+            "Third-party integrations",
+            "Reporting and analytics"
+          ]
+        },
+        {
+          "name": "Cross-Platform Mobile",
+          "price": "from AU$18,000",
+          "timeline": "10–16 weeks",
+          "summary": "One React Native codebase shipped to both the App Store and Google Play.",
+          "includes": [
+            "iOS and Android from one codebase",
+            "Push notifications",
+            "Offline support",
+            "Store submission handled",
+            "Backend API included"
+          ]
+        }
+      ],
+      "pricingNote": "These are honest starting points, not a bait price. The final number depends on how many screens, how many integrations, and how much of the logic is genuinely custom — and you get that number in writing before we start. Payment is split 50% to begin and 50% on launch. If scope changes mid-project, we re-quote rather than quietly billing more hours.",
+      "process": [
+        {
+          "step": "Scoping call",
+          "body": "A free 30-minute call to work out what you are actually trying to achieve, and whether an app is the right way to get there. Sometimes the answer is no, and we will tell you."
+        },
+        {
+          "step": "Fixed quote",
+          "body": "A written scope and a fixed AUD price within 24 hours. Clear about what is included and, just as importantly, what is not."
+        },
+        {
+          "step": "Build in the open",
+          "body": "You get a live staging link from the first week and see progress as it happens. No four-week silences followed by a reveal you cannot influence."
+        },
+        {
+          "step": "Launch",
+          "body": "We deploy, submit to the app stores if relevant, and hand over the repository and every account. Thirty days of support included."
+        },
+        {
+          "step": "After",
+          "body": "Ongoing work is quoted per piece. There is no mandatory retainer and no subscription to us — if you want to take the code to another developer, you can."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "Do you need a native app, or a web app?",
+          "body": [
+            "This is the question that decides most of your budget, so it is worth getting right. A native mobile app needs to be built, reviewed, and released through the App Store and Google Play, which adds cost and turns every update into a submission. A web app is a URL — it works on every device immediately and updates the moment you deploy.",
+            "You genuinely need native when you depend on deep device features: background location tracking, Bluetooth hardware, heavy offline use in the field, or being discoverable in the app stores as a distribution channel. If your app is fundamentally forms, dashboards, bookings, or content, a web app or PWA does the same job for a lot less.",
+            "We would rather talk you into the cheaper option that fits than sell you a native build you did not need."
+          ]
+        },
+        {
+          "heading": "What app development actually costs in Australia",
+          "body": [
+            "Australian agencies commonly quote app projects from around $50,000, and enterprise consultancies run well past that — a lot of which goes on account managers, project managers, and layers between you and the person writing the code.",
+            "We publish our starting prices because the guesswork helps nobody. A focused web app MVP starts at AU$6,500, a full production web app at AU$12,000, and a cross-platform mobile app at AU$18,000. Where you land inside that depends on scope, and you get a fixed number before committing.",
+            "The other cost people forget is what happens after launch. Ask any developer whether you own the code and whether you are locked into a monthly fee. With us the answer is that you own it outright and there is no mandatory retainer."
+          ]
+        },
+        {
+          "heading": "Working with us from anywhere in Australia",
+          "body": [
+            "We work with businesses in Sydney, Melbourne, Brisbane, Perth and Adelaide, and remotely across the rest of the country. App projects do not require someone in the room — they require someone who replies, shows progress, and hits the dates.",
+            "You deal directly with the developer building your app. There is no account manager relaying messages, which in practice is the single biggest difference clients notice."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "q": "How much does app development cost in Australia?",
+          "a": "Our web app MVPs start at AU$6,500, full production web apps at AU$12,000, and cross-platform mobile apps at AU$18,000. Many Australian agencies start around $50,000 for comparable work. You get a fixed quote in writing before any work begins, so the number does not move unless the scope does."
+        },
+        {
+          "q": "How long does it take to build an app?",
+          "a": "A focused web app MVP takes 6–8 weeks. A full production web app runs 8–12 weeks. A cross-platform mobile app is typically 10–16 weeks including app store submission. The timeline is agreed upfront alongside the price."
+        },
+        {
+          "q": "Do I own the app when it is finished?",
+          "a": "Yes — completely. You get the full repository and every account on handover. There is no platform lock-in, no mandatory subscription to us, and you are free to take the code to another developer at any time."
+        },
+        {
+          "q": "Can you add AI features to my app?",
+          "a": "Yes. The three we are asked for most are chat that qualifies leads, automated appointment booking, and product recommendations. We build these on OpenAI, Claude, or Gemini, and we will be straight with you about whether AI actually improves the app or just adds cost."
+        },
+        {
+          "q": "Do you build native iOS and Android apps?",
+          "a": "We build cross-platform apps with React Native, which ships to both iOS and Android from one codebase and covers the large majority of real requirements at roughly half the cost of two separate native builds. If your project genuinely needs fully native, we will say so rather than take the work."
+        },
+        {
+          "q": "Do I need to be in Sydney or Melbourne to work with you?",
+          "a": "No. We work with businesses across Australia and communicate async with a live staging link, so you can see progress whenever you like rather than waiting for a status meeting."
+        }
+      ],
+      "related": [
+        {
+          "href": "/ai-chatbot-development-australia/",
+          "label": "AI chatbots & booking automation"
+        },
+        {
+          "href": "/nextjs-development/",
+          "label": "Next.js development"
+        },
+        {
+          "href": "/ecommerce-development/",
+          "label": "E-commerce development"
+        },
+        {
+          "href": "/work/autozenlyai/",
+          "label": "Case study: AutoZenlyAI SaaS"
+        },
+        {
+          "href": "/how-much-does-a-website-cost-australia/",
+          "label": "What a website costs in Australia"
+        }
+      ]
+    },
+    {
+      "slug": "ai-chatbot-development-australia",
+      "eyebrow": "AI Development",
+      "h1": "AI Chatbot & Booking Automation for Australian Businesses",
+      "metaTitle": "AI Chatbot Development Australia | Lead Qualification & Booking",
+      "metaDescription": "Custom AI chatbots for Australian businesses — qualify leads, answer questions and book jobs 24/7. Fixed AUD pricing from $2,500, built into your own site. You own it.",
+      "keywords": [
+        "AI chatbot development Australia",
+        "AI chatbot for small business Australia",
+        "AI booking system Australia",
+        "AI lead qualification",
+        "custom AI chatbot developer",
+        "AI web developer Australia"
+      ],
+      "intro": [
+        "The enquiries you lose are rarely the ones you turned down. They are the ones that came in at 9pm, or while you were on a job, and went to whoever answered first. For a tradie, a clinic, or a restaurant, that is the difference between a booked week and a quiet one.",
+        "We build AI assistants into your existing website that answer questions in your own words, work out whether an enquiry is worth your time, and put the good ones straight into your calendar — at any hour. Not a generic widget you rent by the month: a custom build, on your site, that you own."
+      ],
+      "highlights": [
+        {
+          "label": "Starting at",
+          "value": "AU$2,500"
+        },
+        {
+          "label": "Typical build",
+          "value": "2–4 weeks"
+        },
+        {
+          "label": "Models",
+          "value": "OpenAI · Claude · Gemini"
+        },
+        {
+          "label": "Ongoing fee to us",
+          "value": "None"
+        }
+      ],
+      "capabilities": [
+        {
+          "title": "Lead qualification",
+          "body": "The assistant asks the questions you would ask — job type, location, timeframe, budget range — and separates real enquiries from tyre-kickers before they reach you. Qualified leads land in your inbox or CRM with the answers already attached."
+        },
+        {
+          "title": "Booking and appointments",
+          "body": "Connects to your calendar so a visitor can go from question to confirmed booking without a phone call. This is where most of the value sits for service businesses: the enquiry converts while the interest is still there."
+        },
+        {
+          "title": "After-hours enquiry capture",
+          "body": "Most enquiries arrive outside business hours. Rather than a contact form that sits unread until morning, the assistant responds immediately, captures the detail, and flags anything urgent."
+        },
+        {
+          "title": "Answers from your own content",
+          "body": "Grounded in your actual pricing, service areas, policies and FAQs — so it answers like your business rather than inventing something plausible. If it does not know, it says so and hands over."
+        },
+        {
+          "title": "Product recommendations",
+          "body": "For online stores: an assistant that asks what the customer is trying to do and points them at the right product, instead of leaving them to filter through a category page."
+        },
+        {
+          "title": "Handover to a human",
+          "body": "Clear escalation when a conversation needs you — with the full transcript, so the customer never has to repeat themselves. Automation that knows its limits beats automation that bluffs."
+        }
+      ],
+      "tiers": [
+        {
+          "name": "Assistant",
+          "price": "from AU$2,500",
+          "timeline": "2 weeks",
+          "summary": "A trained assistant on your existing site that answers questions and captures enquiries.",
+          "includes": [
+            "Trained on your content and pricing",
+            "Enquiry capture to email",
+            "Branded to match your site",
+            "Conversation history",
+            "Escalation to a human"
+          ]
+        },
+        {
+          "name": "Qualify & Book",
+          "price": "from AU$4,500",
+          "timeline": "3–4 weeks",
+          "summary": "Adds qualification logic and live calendar booking — the version most service businesses want.",
+          "includes": [
+            "Everything in Assistant",
+            "Custom qualification questions",
+            "Calendar booking integration",
+            "Lead scoring and routing",
+            "CRM or email delivery"
+          ]
+        },
+        {
+          "name": "Custom AI Build",
+          "price": "from AU$6,500",
+          "timeline": "4–8 weeks",
+          "summary": "Multi-step workflows, product recommendations, or AI built into a larger application.",
+          "includes": [
+            "Everything in Qualify & Book",
+            "Product recommendation engine",
+            "Multi-step automated workflows",
+            "Custom integrations",
+            "Admin dashboard and analytics"
+          ]
+        }
+      ],
+      "pricingNote": "One fixed build cost in AUD, and no monthly fee to us afterwards. You will pay the AI provider directly for usage — for a typical small business that is usually a modest monthly amount, and we will estimate it honestly for your expected volume before you commit rather than after. Because the assistant is built into your own site on your own account, you can keep running it if you stop working with us.",
+      "process": [
+        {
+          "step": "Work out if it is worth it",
+          "body": "A free call to look at how many enquiries you get, when they arrive, and what happens to them now. If an AI assistant will not move the needle for you, we will say so."
+        },
+        {
+          "step": "Fixed quote",
+          "body": "A written scope and fixed AUD price, plus an honest estimate of your ongoing AI usage cost."
+        },
+        {
+          "step": "Train it on your business",
+          "body": "We feed it your real pricing, service areas, policies and the questions you get asked constantly — then test it against conversations you have actually had."
+        },
+        {
+          "step": "Test and tune",
+          "body": "You try to break it before your customers do. We tighten the answers, set the escalation rules, and agree what it should never attempt to handle."
+        },
+        {
+          "step": "Launch and hand over",
+          "body": "Live on your site, with the accounts and code in your name. Thirty days of support to refine it against real conversations."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "Where an AI assistant actually pays for itself",
+          "body": [
+            "The clearest case is a service business that misses enquiries because the work happens away from a desk. Trades, mobile services, clinics, and hospitality all lose bookings to whoever replies first, and the enquiry that arrives at 9pm is the one most likely to go elsewhere.",
+            "The second clear case is repetitive questions. If you answer the same five questions about pricing, service area, availability and lead time every day, that is time you can get back with no loss to the customer experience — provided the answers are grounded in your real information.",
+            "It pays for itself less often when your enquiry volume is low, when every job needs a genuine expert conversation up front, or when your customers strongly prefer to phone. We would rather tell you that on the first call than sell you something that sits unused."
+          ]
+        },
+        {
+          "heading": "Custom build versus a subscription widget",
+          "body": [
+            "You can add a chatbot to your site this afternoon for a monthly fee, and for some businesses that is a perfectly reasonable place to start. The trade-offs are the same as any rented platform: your conversation data lives with them, your customisation stops where their product stops, and the fee continues for as long as the bot does.",
+            "A custom build costs more upfront and nothing per month to us. It behaves exactly the way your business works, connects to whatever you already use, and the code and accounts are yours. Over a few years the economics usually favour owning it — but if your needs are simple, a subscription tool may genuinely be the smarter call, and we will say so."
+          ]
+        },
+        {
+          "heading": "Being honest about what AI gets wrong",
+          "body": [
+            "An AI assistant will occasionally be asked something it has no good answer for. The failure mode that damages your business is one that invents an answer — quoting a price you do not offer or promising a timeframe you cannot meet.",
+            "We build to fail the other way. The assistant answers from your supplied information, is instructed to say when it does not know, and escalates rather than guesses on anything involving a firm quote, a commitment, or a complaint. You also get the transcripts, so you can see exactly what it is telling your customers.",
+            "It is also worth being clear that an assistant does not replace judgement on complex or sensitive jobs. It handles the front door so the conversations that need you actually reach you."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "q": "How much does an AI chatbot cost in Australia?",
+          "a": "Our builds start at AU$2,500 for a trained assistant that answers questions and captures enquiries, AU$4,500 with qualification and calendar booking, and AU$6,500 for custom AI workflows or product recommendations. That is a one-off fixed cost — there is no monthly fee to us."
+        },
+        {
+          "q": "Are there ongoing costs?",
+          "a": "You pay the AI provider directly for usage, which for a typical small business is usually a modest monthly amount that scales with conversation volume. We estimate it for your expected traffic before you commit. There is no mandatory retainer or subscription to us."
+        },
+        {
+          "q": "Can it book jobs into my calendar?",
+          "a": "Yes — that is the most requested feature and where most of the value sits. The assistant qualifies the enquiry, then offers real available times from your calendar and confirms the booking inside the conversation, so the lead converts while the interest is still live."
+        },
+        {
+          "q": "Will it make things up about my business?",
+          "a": "It answers from the pricing, service areas and policies you supply, and is instructed to say when it does not know and hand over to you. We deliberately restrict it from committing to firm quotes or timeframes on your behalf, and you get full transcripts so you can see what it tells customers."
+        },
+        {
+          "q": "How long does it take to build?",
+          "a": "A trained assistant takes about 2 weeks. Adding qualification logic and calendar booking takes 3–4 weeks. Custom AI workflows run 4–8 weeks depending on how many systems they touch."
+        },
+        {
+          "q": "Do I own it?",
+          "a": "Yes. It is built into your own website on your own accounts, and the code is yours on handover. If you stop working with us, the assistant keeps running."
+        },
+        {
+          "q": "Will it work with my existing website?",
+          "a": "Usually, yes — including sites on WordPress, Shopify, Squarespace and Wix, as well as custom builds. We will confirm on the first call, since a few older or heavily locked-down platforms make integration harder than it is worth."
+        }
+      ],
+      "related": [
+        {
+          "href": "/ai-web-development/",
+          "label": "AI web development"
+        },
+        {
+          "href": "/app-development-australia/",
+          "label": "App development Australia"
+        },
+        {
+          "href": "/tradie-website-design/",
+          "label": "Tradie websites"
+        },
+        {
+          "href": "/restaurant-website-design/",
+          "label": "Restaurant websites"
+        },
+        {
+          "href": "/work/mobile-armour/",
+          "label": "Case study: AI product recommendations"
+        }
+      ]
+    }
+  ]
+}

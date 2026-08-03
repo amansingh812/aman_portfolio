@@ -1,0 +1,31 @@
+User-agent: *
+Allow: /
+
+# Allow AI assistants to crawl & cite the site (maximises AI/answer-engine visibility)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Sitemaps
+Sitemap: https://buildfirstsite.com/sitemap-index.xml
+Sitemap: https://buildfirstsite.com/sitemap.xml
+Sitemap: https://buildfirstsite.com/sitemap-city-pages.xml
+Sitemap: https://buildfirstsite.com/sitemap-service-pages.xml
+Sitemap: https://buildfirstsite.com/sitemap-images.xml

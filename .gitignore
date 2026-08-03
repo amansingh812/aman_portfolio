@@ -29,6 +29,11 @@ tsconfig.tsbuildinfo
 # Retired Vite/Express tooling (kept locally for reference)
 _vite-backup/
 
+# Purchased design templates — reference only, NEVER commit.
+# 1.1GB incl. node_modules/.next; demo images are not licensed for redistribution.
+agency_template_nextjs/
+_design-reference/
+
 # IDEs and editors
 .idea/
 .vscode/

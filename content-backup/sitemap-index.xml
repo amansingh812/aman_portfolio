@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://buildfirstsite.com/sitemap.xml</loc>
+    <lastmod>2026-08-01</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://buildfirstsite.com/sitemap-city-pages.xml</loc>
+    <lastmod>2026-06-23</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://buildfirstsite.com/sitemap-service-pages.xml</loc>
+    <lastmod>2026-08-01</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://buildfirstsite.com/sitemap-images.xml</loc>
+    <lastmod>2026-06-23</lastmod>
+  </sitemap>
+</sitemapindex>

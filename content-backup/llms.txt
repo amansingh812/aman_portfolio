@@ -1,0 +1,65 @@
+# Build First Site
+
+> Web design and development studio building high-converting business websites, e-commerce stores, and AI-powered web apps for clients in the US, UK, and Australia. Fixed-price quotes, fast delivery, full code ownership.
+
+## About
+
+Build First Site is a web studio founded by Aman Singh (ex-L&T Finance, 7+ years engineering at scale). We specialize in custom Next.js and React builds, e-commerce platforms, Flutter mobile apps, and AI integrations for businesses in Sydney, Melbourne, Denver, Phoenix, Nashville, and across the US, UK, and Australia.
+
+## Services
+
+- [Business Websites](https://buildfirstsite.com/): Multi-page sites with local SEO, contact forms, booking integration. From $2,000.
+- [E-Commerce Stores](https://buildfirstsite.com/): Custom Stripe checkout, inventory, admin dashboard. From $4,000.
+- [AI / SaaS MVPs](https://buildfirstsite.com/): Auth, billing, AI integrations, multi-LLM apps. From $5,000.
+- [Landing Pages](https://buildfirstsite.com/): Conversion-focused single pages. From $600.
+- [Monthly Retainer](https://buildfirstsite.com/): Ongoing development from $600/month.
+
+## City Pages
+
+- [Web Designer Sydney](https://buildfirstsite.com/web-design-sydney/)
+- [Web Designer Melbourne](https://buildfirstsite.com/web-design-melbourne/)
+- [Web Designer Denver](https://buildfirstsite.com/web-design-denver/)
+- [Web Designer Phoenix](https://buildfirstsite.com/web-design-phoenix/)
+- [Web Designer Nashville](https://buildfirstsite.com/web-design-nashville/)
+
+## Key Facts
+
+- Fixed-price quotes (not hourly)
+- 50% upfront, 50% on launch
+- Full GitHub repo handover — 100% code ownership
+- 30 days free post-launch support
+- Accepts: Stripe, Wise, PayPal, bank transfer
+- Serves: Australia, United States, United Kingdom
+- Response time: within 24 hours
+- Communication: Slack, WhatsApp, async-friendly
+
+## Pricing
+
+| Service | Price (USD) | Timeline |
+|---------|-------------|----------|
+| Landing Page | from $600 | ~2 weeks |
+| Business Website | from $2,000 | 2–3 weeks |
+| E-Commerce Store | from $4,000 | 4–6 weeks |
+| AI / SaaS MVP | from $5,000 | 6–8 weeks |
+| Monthly Retainer | from $600/month | ongoing |
+
+## Technology Stack
+
+- Frontend: Next.js 15, React 19, TypeScript, Tailwind CSS, Framer Motion, Three.js
+- Backend: FastAPI, Node.js, Express, Python, REST APIs
+- Mobile: Flutter, Dart, React Native
+- Database: MongoDB, PostgreSQL, Redis, Supabase
+- AI / LLMs: OpenAI, Claude, Gemini, Groq, Mistral, LangChain
+- Payments & DevOps: Stripe, Vercel, AWS, Docker
+
+## Contact
+
+- Email: contact@buildfirstsite.com
+- Phone: +61 413 146 498
+- Book a call: https://calendly.com/amanpd0/30min
+- LinkedIn: https://www.linkedin.com/in/aman-singh-b3a7251a2
+- GitHub: https://github.com/amansingh812
+
+## Optional
+
+- Full site content: https://buildfirstsite.com/llms-full.txt
