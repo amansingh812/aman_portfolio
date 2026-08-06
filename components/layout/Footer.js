@@ -11,7 +11,7 @@ const Footer = () => {
 					<div className="row">
 						<div className="col-md-4 col-sm-6 text-center text-md-start">
 							<Link href="/">
-								<Image src="/assets/imgs/template/logo.svg" alt="Build First Site" width={182} height={38} />
+								<Image src="/assets/imgs/template/logo.svg" alt="Build First Site" width={218} height={46} />
 							</Link>
 						</div>
 						<div className="col-md-8 col-sm-6 text-center text-md-end">

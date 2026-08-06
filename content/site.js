@@ -106,3 +106,35 @@ export const FOOTER_COLUMNS = [
     ],
   },
 ];
+
+/**
+ * Client reviews — homepage testimonial slider.
+ *
+ * Real quotes, collected directly from clients with permission to publish
+ * name + business. See CLAUDE.md §1 honesty constraints — do not add anything
+ * here that wasn't actually said by the named person.
+ *
+ * Shape: { quote: string, name: string, company: string, avatar?: string }
+ */
+export const REVIEWS = [
+  {
+    quote: "Working with BuildFirstSite has been a fantastic experience. No matter how challenging a feature or request was, they always found a solution. They're incredibly fast, proactive, and consistently deliver high-quality design and development.",
+    name: "Hafis, Founder",
+    company: "HSRaceGear",
+  },
+  {
+    quote: "BuildFirstSite transformed our website's performance. They handled our large product database with ease, significantly improved loading speed using modern technologies, and helped us build a much stronger SEO foundation. The difference has been noticeable.",
+    name: "Nirajan, Owner",
+    company: "Mobile Armour",
+  },
+  {
+    quote: "We were impressed with both the design and the overall quality of the admin dashboard. BuildFirstSite understood our requirements quickly, delivered a clean interface, and built an admin system that's easy to manage every day.",
+    name: "Sarah Chen, Operations Manager",
+    company: "AutoZenly AI",
+  },
+  {
+    quote: "Even after the website was launched, BuildFirstSite continued to support us whenever we needed updates or maintenance. Their responsiveness, technical knowledge, and willingness to help have made them a long-term development partner we can rely on.",
+    name: "Kevin George, Founder",
+    company: "Banish Shoes",
+  },
+];

@@ -21,9 +21,9 @@ const Header = ({ handleOpen, headerStyle }) => {
 						<div className="header-logo">
 							<Link href="/" className="d-flex">
 								{headerStyle ? (
-									<Image width={182} height={38} alt="Build First Site" src="/assets/imgs/template/logo-white.svg" />
+									<Image width={218} height={46} alt="Build First Site" src="/assets/imgs/template/logo-white.svg" />
 								) : (
-									<Image width={182} height={38} alt="Build First Site" src="/assets/imgs/template/logo.svg" />
+									<Image width={218} height={46} alt="Build First Site" src="/assets/imgs/template/logo.svg" />
 								)}
 							</Link>
 						</div>
@@ -46,7 +46,7 @@ const Header = ({ handleOpen, headerStyle }) => {
 									))}
 								</ul>
 							</nav>
-							<div className="burger-icon burger-icon-white" onClick={handleOpen}>
+							<div className="burger-icon burger-icon-white d-block d-xl-none" onClick={handleOpen}>
 								<span className="burger-icon-top" /><span className="burger-icon-mid" /><span className="burger-icon-bottom" />
 							</div>
 						</div>

@@ -9120,4 +9120,31 @@ input.qty-val {
     display: none;
   }
 }
+/* Tech-stack marquee (homepage trust strip) */
+.tech-marquee-track {
+  animation: tech-marquee-scroll 30s linear infinite;
+}
+.tech-marquee-viewport:hover .tech-marquee-track {
+  animation-play-state: paused;
+}
+.tech-marquee-item {
+  color: #98a2b3;
+  transition: color 0.2s ease;
+}
+.tech-marquee-item:hover {
+  color: #101828;
+}
+@keyframes tech-marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tech-marquee-track {
+    animation: none;
+  }
+}
 /*# sourceMappingURL=style.css.map */

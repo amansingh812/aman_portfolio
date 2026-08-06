@@ -1,7 +1,12 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python3 -c \"import cairosvg; print\\('OK'\\)\")"
+      "Bash(python3 -c \"import cairosvg; print\\('OK'\\)\")",
+      "Bash(npx tsc *)",
+      "Bash(grep -E \"^\\(app|pages\\)$\")",
+      "Bash(curl -s -o /dev/null -w \"hsracegear: %{http_code}\\\\n\" \"https://s0.wp.com/mshots/v1/https%3A%2F%2Fwww.hsracegear.com?w=1200\" --max-time 15)",
+      "Bash(curl -s -o /dev/null -w \"banishshoes retry: %{http_code}\\\\n\" \"https://s0.wp.com/mshots/v1/https%3A%2F%2Fbanishshoes.com?w=1200\" --max-time 15)",
+      "Bash(curl -s -A \"Mozilla/5.0\" https://www.swarom.in/ --max-time 15)"
     ]
   }
 }

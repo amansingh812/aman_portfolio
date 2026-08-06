@@ -95,8 +95,7 @@ export default function ContactPage() {
                                     Build First Site
                                 </h4>
                                 <p className="text-body-text color-gray-600">
-                                    Australia (local contact)<br />
-                                    India (engineering)
+                                    Australia (local contact)
                                 </p>
                                 <p className="text-body-text color-gray-600">
                                     <a href={`tel:${SITE.phone.replace(/\s+/g, "")}`} style={{ color: 'inherit' }}>

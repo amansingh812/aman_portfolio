@@ -466,6 +466,95 @@ export const CASE_STUDIES = [
       "direct table booking website",
       "hospitality web design"
     ]
+  },
+  {
+    "slug": "banish-shoes",
+    "projectId": "07",
+    "name": "Banish Shoes",
+    "tagline": "A made-to-order leather footwear store on WordPress",
+    "metaTitle": "Banish Shoes — WordPress E-Commerce Case Study | Build First Site",
+    "metaDescription": "How we built and maintain the WordPress store for Banish Shoes, a made-to-order leather footwear brand — ongoing updates and support after launch.",
+    "industry": "Footwear / E-Commerce",
+    "location": "Agra, India",
+    "liveUrl": "https://banishshoes.com",
+    "image": "https://s0.wp.com/mshots/v1/https%3A%2F%2Fbanishshoes.com?w=1200",
+    "cover": {
+      "from": "#2b1c14",
+      "to": "#5a3c28",
+      "mark": "BS"
+    },
+    "timeline": "Ongoing",
+    "services": [
+      "WordPress Build",
+      "E-Commerce Setup",
+      "Maintenance & Support"
+    ],
+    "techStack": [
+      "WordPress",
+      "WooCommerce"
+    ],
+    "challenge": [
+      "Banish Shoes needed a WordPress store to sell its made-to-order handcrafted leather footwear, plus a reliable partner to keep it running and updated after launch — rather than a one-off build with no support afterwards."
+    ],
+    "approach": [
+      {
+        "title": "WordPress store build",
+        "body": "We built the Banish Shoes storefront on WordPress, set up to showcase and sell its made-to-order shoe range."
+      },
+      {
+        "title": "Ongoing maintenance",
+        "body": "Since launch, we've continued supporting the site with updates and maintenance work as the business needs them."
+      }
+    ],
+    "results": [],
+    "outcome": "Banish Shoes has a working WordPress store and an ongoing maintenance relationship, with updates handled as they come up.",
+    "keywords": [
+      "wordpress developer",
+      "woocommerce store",
+      "wordpress maintenance"
+    ]
+  },
+  {
+    "slug": "swarom",
+    "projectId": "08",
+    "name": "Swarom",
+    "tagline": "A personalised 925 silver jewellery store, built on Next.js",
+    "metaTitle": "Swarom — Personalised Jewellery E-Commerce Case Study | Build First Site",
+    "metaDescription": "How we built the Next.js store for Swarom, a made-to-order 925 sterling silver jewellery brand — pendants, rings, bracelets and anklets with a personalised, engraved twist.",
+    "industry": "Jewellery / E-Commerce",
+    "location": "Bengaluru, India",
+    "liveUrl": "https://www.swarom.in",
+    "image": "https://s0.wp.com/mshots/v1/https%3A%2F%2Fwww.swarom.in?w=1200",
+    "cover": {
+      "from": "#2e2620",
+      "to": "#8a7350",
+      "mark": "SW"
+    },
+    "timeline": "Recent",
+    "services": [
+      "E-Commerce Build",
+      "Product Catalogue"
+    ],
+    "techStack": [
+      "Next.js",
+      "React"
+    ],
+    "challenge": [
+      "Swarom needed a store built for a made-to-order, personalised jewellery brand — pendants, rings, bracelets and anklets, including engraved and initial-led collections — with a look and feel that matches a premium, handcrafted product."
+    ],
+    "approach": [
+      {
+        "title": "Next.js storefront",
+        "body": "We built the Swarom storefront on Next.js, organised around its product categories and featured collections (including the Letters and Keepsake ranges)."
+      }
+    ],
+    "results": [],
+    "outcome": "Swarom now has a modern Next.js store live at swarom.in, showcasing its made-to-order silver jewellery collections.",
+    "keywords": [
+      "jewellery ecommerce website",
+      "next.js ecommerce developer",
+      "personalised jewellery store"
+    ]
   }
 ];
 

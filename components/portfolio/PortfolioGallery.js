@@ -27,9 +27,11 @@ const CATEGORIES = {
     "aurelia-estates":  ["realestate"],
     "harbour-plumbing": ["trades"],
     "marlow-vine":      ["hospo"],
+    "banish-shoes":     ["client", "ecommerce"],
+    "swarom":           ["client", "ecommerce"],
 }
 
-const REAL_CLIENT_SLUGS = ["hs-race-gear", "mobile-armour", "autozenlyai"]
+const REAL_CLIENT_SLUGS = ["hs-race-gear", "mobile-armour", "autozenlyai", "banish-shoes", "swarom"]
 
 export default function PortfolioGallery({ projects }) {
     const [active, setActive] = useState("all")
