@@ -518,7 +518,7 @@ function FinalCta() {
           <p className="mt-6 text-lg text-text-secondary max-w-xl mx-auto">{FINAL_CTA.body}</p>
           <div className="mt-10 flex flex-wrap gap-3 justify-center">
             <a href="mailto:contact@buildfirstsite.com" className="btn-primary px-8 py-4">
-              Get a free quote <ArrowUpRight className="w-4 h-4" />
+              Get a quote <ArrowUpRight className="w-4 h-4" />
             </a>
             <a
               href="https://calendly.com/amanpd0/30min"

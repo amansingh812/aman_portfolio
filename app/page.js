@@ -1,96 +1,118 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable @next/next/no-img-element */
 /**
- * Home (/) — visual skeleton with template imagery.
+ * Home (/) — Build First Site homepage, v3.
  *
- * Structural placeholder for every homepage block from
- * docs/CONTENT-PLAN.md §20. Uses Agon's own demo imagery so the page has
- * proper visual weight during design review. Copy is filled in a separate
- * pass, per §28 decisions.
+ * Restructured to match the wireframe anatomy the user shared:
+ *   1. HERO             — powerful statement + primary CTA + animated mockup
+ *   2. TECH STACK strip — social proof via the modern stack we ship with
+ *   3. BENEFITS (3)     — Fixed AUD · Modern stack · You own the code
+ *   4. FOR WHO (3)      — target audiences, no invented personas
+ *   5. SERVICES (6)     — end-to-end offer, links to individual service pages
+ *   6. PORTFOLIO (3)    — 3 recent projects with LIVE DEMO buttons
+ *   7. PROCESS (4)      — Free call → Fixed quote → Build open → Launch
+ *   8. FAQ              — Accordion (existing component)
+ *   9. FINAL CTA        — big rounded panel, Get a quote + Book a call
  *
- * ⚠ All /assets/imgs/... references are Agon DEMO imagery. Licensed for
- * demo/development only per the purchased template terms. MUST be replaced
- * with our own or properly-licensed stock before launch — see CONTENT-PLAN §29.
- *
- * Anchor IDs (#home, #services, #work, #pricing, #about, #guides, #contact)
- * match the nav in content/site.js so single-page scroll works alongside
- * the dedicated routes.
+ * HONESTY: no invented testimonials, no fake stats, spec builds NOT shown
+ * on the homepage strip (they live in /work/ properly labelled).
  */
-
-import Layout from "@/components/layout/Layout";
-import Link from "next/link";
-import Image from "next/image";
-import { CTA } from "@/content/site";
+import Layout from "@/components/layout/Layout"
+import Accordion from "@/components/elements/Accordion"
+import TechStack from "@/components/home/TechStack"
+import Link from "next/link"
+import Image from "next/image"
+import { CTA, SITE } from "@/content/site"
+import { CASE_STUDIES } from "@/content/case-studies"
 
 export const metadata = {
     title: "Build First Site — Web, App & AI Development for Australian Businesses",
     description:
-        "Fixed AUD pricing, modern stack, full code ownership. Websites, apps, AI systems and custom software for Australian small businesses.",
+        "Websites, apps and AI systems built for Australian businesses. Fixed AUD pricing from $600, modern Next.js stack, full code ownership. A two-person studio.",
     alternates: { canonical: "/" },
-};
+    openGraph: {
+        title: "Build First Site — Fixed AUD Prices, Modern Stack",
+        description: "Websites, apps and AI systems. Fixed AUD prices. You own the code.",
+        url: "https://buildfirstsite.com/",
+    },
+}
+
+/* ─── data ────────────────────────────────────────────────────────────── */
+
+
 
 const SERVICES = [
-    { title: "Business Websites",       icon: "/assets/imgs/page/homepage1/business-strategy.svg", body: "Multi-page sites for local businesses — fast, mobile-first, ready to rank.",              href: "/hire-website-builder/" },
-    { title: "E-Commerce Development",  icon: "/assets/imgs/page/homepage1/market.svg",            body: "Custom stores with Stripe checkout, real inventory, no platform commission.",             href: "/ecommerce-development/" },
-    { title: "AI Chatbots & Booking",   icon: "/assets/imgs/page/homepage1/consulting.svg",        body: "Assistants that qualify enquiries and book jobs straight into your calendar.",           href: "/ai-chatbot-development-australia/" },
-    { title: "App Development",         icon: "/assets/imgs/page/homepage1/social.svg",            body: "Web apps, dashboards and cross-platform mobile — usually cheaper than you expect.",       href: "/app-development-australia/" },
-    { title: "Custom Software",         icon: "/assets/imgs/page/homepage1/local.svg",             body: "Internal tools, admin portals, desktop apps — built around how you actually work.",     href: "/services/" },
-    { title: "AI Web Development",      icon: "/assets/imgs/page/homepage1/cognity.svg",           body: "OpenAI, Claude and Gemini built into production apps, doing a specific job.",            href: "/ai-web-development/" },
-];
+    {
+        title: "Web Development",
+        icon: "/assets/imgs/page/services/1/icon-web.svg",
+        body: "Responsive, fast websites and web apps on a modern Next.js / React stack.",
+        href: "/services/web-development/",
+    },
+    {
+        title: "Mobile App Development",
+        icon: "/assets/imgs/page/services/1/icon-product.svg",
+        body: "Cross-platform iOS + Android apps from one React Native codebase.",
+        href: "/services/mobile-app-development/",
+    },
+    {
+        title: "Custom Software",
+        icon: "/assets/imgs/page/services/1/icon-build.svg",
+        body: "Dashboards, client portals, booking systems — software that replaces a spreadsheet.",
+        href: "/services/custom-software/",
+    },
+    {
+        title: "Marketing & SEO",
+        icon: "/assets/imgs/page/services/1/icon-share.svg",
+        body: "Local SEO, Google Business Profile, content strategy and technical SEO.",
+        href: "/services/marketing-seo/",
+    },
+    {
+        title: "AI & Automation",
+        icon: "/assets/imgs/page/services/1/icon-business.svg",
+        body: "Chatbots, lead qualification, workflow automation on OpenAI, Claude & Gemini.",
+        href: "/services/ai-automation/",
+    },
+    {
+        title: "Maintenance & Support",
+        icon: "/assets/imgs/page/services/1/icon-support.svg",
+        body: "Updates, monitoring, backups, content changes. From AU$150/month.",
+        href: "/services/maintenance-support/",
+    },
+]
 
-const PROJECTS = [
-    { title: "Client Project 01", tag: "E-commerce",    img: "/assets/imgs/page/homepage1/img-1-2.jpg", isConcept: false },
-    { title: "Client Project 02", tag: "AI · Retail",   img: "/assets/imgs/page/homepage1/img-1-3.jpg", isConcept: false },
-    { title: "Client Project 03", tag: "SaaS",          img: "/assets/imgs/page/homepage1/img-1-4.jpg", isConcept: false },
-    { title: "Concept Build 01",  tag: "Real Estate",   img: "/assets/imgs/page/homepage1/img-1-5.jpg", isConcept: true  },
-    { title: "Concept Build 02",  tag: "Trades",        img: "/assets/imgs/page/homepage1/img-1-6.jpg", isConcept: true  },
-    { title: "Concept Build 03",  tag: "Hospitality",   img: "/assets/imgs/page/homepage2/img.png",     isConcept: true  },
-];
+/* Only the 3 real, shipped client projects — spec builds live in /work/ */
+const PORTFOLIO = CASE_STUDIES.filter((cs) =>
+    ["hs-race-gear", "mobile-armour", "autozenlyai"].includes(cs.slug)
+)
 
-const GUIDES = [
-    { title: "How to Choose a Web Developer for Your Small Business",           img: "/assets/imgs/page/homepage1/img-news-1.png", tag: "Guide" },
-    { title: "Website Builder vs Web Developer: Which Do You Actually Need?",   img: "/assets/imgs/page/homepage1/img-news-2.png", tag: "Guide" },
-    { title: "Freelance Web Developer Rates in Australia",                      img: "/assets/imgs/page/homepage1/img-news-3.png", tag: "Guide" },
-];
-
-const PRICING = [
-    { name: "Grow · Landing",     price: "AU$1,000+", time: "~2 weeks" },
-    { name: "Grow · Business",    price: "AU$3,800+", time: "2–3 weeks" },
-    { name: "Sell · E-Commerce",  price: "AU$5,000+", time: "4–6 weeks" },
-    { name: "Build · App MVP",    price: "AU$6,500+", time: "6–8 weeks" },
-    { name: "Automate · AI",      price: "AU$2,500+", time: "2–4 weeks" },
-    { name: "Own · Custom SW",    price: "AU$8,000+", time: "Scoped" },
-];
-
-const LOGOS = [1, 2, 3, 4, 5, 6];
+/* ─── page ────────────────────────────────────────────────────────────── */
 
 export default function Home() {
     return (
         <Layout>
-            {/* ═══════════════ HERO */}
+
+            {/* ═══════════════ 1. HERO ═══════════════ */}
             <section id="home" className="section-box">
                 <div className="banner-hero banner-1">
                     <div className="container">
                         <div className="row align-items-center">
                             <div className="col-lg-7">
-                                <span className="tag-1">Web · App · AI · for Australia</span>
+                                <span className="tag-1">Accepting new projects — Q3 2026</span>
                                 <h1 className="text-display-2 mt-20">
-                                    Websites that bring
-                                    <span className="color-green-900"> Australian businesses </span>
-                                    more enquiries.
+                                    Websites &amp; apps built for
+                                    <span className="color-green-900"> Australian businesses.</span>
                                 </h1>
                                 <p className="text-body-lead-large color-gray-500 mt-30 pr-40">
-                                    Fixed AUD pricing, modern stack, full code ownership. A small studio
-                                    with a real local contact in Australia and a senior engineer who
-                                    builds every project himself.
-                                </p>
-                                <p className="text-body-text color-gray-500 mt-20">
-                                    Landing from AU$1,000 · Business from AU$3,800 · E-commerce from AU$5,000 · Apps from AU$6,500
+                                    A two-person studio: engineer in India, local contact in Australia.
+                                    Fixed AUD prices from $600, modern Next.js stack, and you own the code.
                                 </p>
                                 <div className="mt-40">
-                                    <Link href={CTA.primary.href} className="btn btn-black icon-arrow-right-white">
-                                        {CTA.primary.label}
+                                    <Link href="/contact/" className="btn btn-black icon-arrow-right-white mr-10">
+                                        Get a quote
                                     </Link>
-                                    <a href={CTA.secondary.href} className="btn btn-link icon-arrow-right color-gray-900 text-heading-6">
-                                        {CTA.secondary.label}
+                                    <a href={SITE.calendly} target="_blank" rel="noopener noreferrer"
+                                        className="btn btn-link icon-arrow-right color-gray-900 text-heading-6">
+                                        Book a free call
                                     </a>
                                 </div>
                             </div>
@@ -98,7 +120,7 @@ export default function Home() {
                                 <Image
                                     width={520}
                                     height={520}
-                                    className="img-responsive"
+                                    className="img-responsive shape-2"
                                     src="/assets/imgs/page/homepage1/banner.png"
                                     alt="Web design and development studio"
                                     priority
@@ -109,363 +131,507 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* ═══════════════ CLIENT LOGO STRIP (placeholder — replace with real once ≥6 clients) */}
-            <div className="section-box overflow-visible mt-70">
-                <div className="container">
-                    <div className="row justify-content-md-center align-items-center">
-                        {LOGOS.map((n) => (
-                            <div className="col-lg-2 col-md-3 col-sm-4 col-6 text-center" key={n}>
-                                <span className="item-logo box-hover-shadow hover-up d-inline-block">
-                                    <Image
-                                        width={100}
-                                        height={40}
-                                        alt={`Client logo ${n}`}
-                                        src={`/assets/imgs/slider/logo/sample-logo-${n}.svg`}
-                                    />
-                                </span>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </div>
+            {/* ═══════════════ 2. TECH STACK TRUST STRIP ═══════════════ */}
+            <TechStack />
 
-            {/* ═══════════════ PROBLEM */}
+            {/* ═══════════════ 3. BENEFITS — index-2 split layout ═══════════════ */}
             <section className="section-box">
-                <div className="container mt-100">
-                    <div className="row justify-content-center">
-                        <div className="col-lg-8 text-center">
-                            <span className="tag-1">The problem</span>
-                            <h2 className="text-heading-1 color-gray-900 mt-20">
-                                Most small business websites quietly lose customers
-                            </h2>
-                            <p className="text-body-lead-large color-gray-600 mt-20">
-                                Not dramatically — they just sit there, slow on a phone, invisible on Google,
-                                and impossible to update without paying someone.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="row mt-70">
-                        {[
-                            { n: "01", h: "Nobody can find it",     b: "Built to look nice, not to be found. No structured data, no local SEO, no pages for what your customers actually search." },
-                            { n: "02", h: "It is slow on a phone",  b: "About two thirds of Australian traffic is mobile. A slow site loses most visitors before they see anything." },
-                            { n: "03", h: "Enquiries go nowhere",   b: "A contact form buried at the bottom, no click-to-call, nothing that captures the 9pm visitor." },
-                            { n: "04", h: "You are renting it",     b: "Monthly platform fees forever, design locked to a template, no way to move without starting again." },
-                        ].map((p) => (
-                            <div className="col-lg-6 col-sm-12 mb-40" key={p.n}>
-                                <div className="d-flex">
-                                    <span className="text-display-3 color-green-900 mr-30">{p.n}</span>
-                                    <div>
-                                        <h3 className="text-heading-3">{p.h}</h3>
-                                        <p className="text-body-excerpt color-gray-600 mt-15">{p.b}</p>
-                                    </div>
+                <div className="container mt-120">
+                    <div className="row">
+                        {/* Left — photo with floating chart card */}
+                        <div className="col-lg-6 col-sm-12 block-img-we-do">
+                            <div className="inner-image">
+                                <Image
+                                    className="bdrd-16 img-responsive"
+                                    width={0} height={0} sizes="100vw"
+                                    style={{ width: "100%", height: "auto" }}
+                                    src="/assets/imgs/page/homepage2/img-2.png"
+                                    alt="Build First Site — web development studio at work"
+                                />
+                                <div className="block-chart">
+                                    <Image width={0} height={0} sizes="100vw"
+                                        style={{ width: "auto", height: "auto" }}
+                                        src="/assets/imgs/page/homepage2/chart.png"
+                                        alt="Project growth chart"
+                                    />
                                 </div>
                             </div>
-                        ))}
+                        </div>
+
+                        {/* Right — tag + heading + 3 icon-list items */}
+                        <div className="col-lg-6 col-sm-12 block-we-do-2">
+                            <span className="tag-1 bg-6 color-green-900">What you get</span>
+                            <h2 className="text-heading-1 mt-30">
+                                Three things every project comes with
+                            </h2>
+                            <p className="text-body-lead-large color-gray-600 mt-30">
+                                No matter which service you pick — landing page or full SaaS product —
+                                these three things are baked into every build.
+                            </p>
+                            <div className="list-icons mt-50">
+                                <div className="item-icon none-bd">
+                                    <span className="icon-left">
+                                        <Image width={0} height={0} sizes="100vw"
+                                            style={{ width: "auto", height: "auto" }}
+                                            src="/assets/imgs/page/homepage2/icon-work.svg"
+                                            alt="Fixed AUD pricing"
+                                        />
+                                    </span>
+                                    <h4 className="text-heading-4">Fixed AUD pricing</h4>
+                                    <p className="text-body-excerpt color-gray-600 mt-15">
+                                        A written quote in AUD before any work starts. It does not move unless the scope does. No hourly surprises.
+                                    </p>
+                                </div>
+                                <div className="item-icon none-bd">
+                                    <span className="icon-left">
+                                        <Image width={0} height={0} sizes="100vw"
+                                            style={{ width: "auto", height: "auto" }}
+                                            src="/assets/imgs/page/homepage2/icon-design.svg"
+                                            alt="Modern tech stack"
+                                        />
+                                    </span>
+                                    <h4 className="text-heading-4">Modern stack</h4>
+                                    <p className="text-body-excerpt color-gray-600 mt-15">
+                                        Next.js, React, Tailwind, Node — the same modern stack used by large tech companies, not a page-builder.
+                                    </p>
+                                </div>
+                                <div className="item-icon none-bd">
+                                    <span className="icon-left">
+                                        <Image width={0} height={0} sizes="100vw"
+                                            style={{ width: "auto", height: "auto" }}
+                                            src="/assets/imgs/page/homepage2/icon-advance.svg"
+                                            alt="Full code ownership"
+                                        />
+                                    </span>
+                                    <h4 className="text-heading-4">You own the code</h4>
+                                    <p className="text-body-excerpt color-gray-600 mt-15">
+                                        Full repo, hosting accounts, every credential handed over at launch. No lock-in, no forced monthly subscription.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* ═══════════════ SERVICES */}
-            <section id="services" className="section-box">
-                <div className="container mt-100">
-                    <div className="row justify-content-center">
-                        <div className="col-lg-8 text-center">
-                            <span className="tag-1">What we do</span>
-                            <h2 className="text-heading-1 color-gray-900 mt-20">
-                                Everything a business needs to be found and booked
+            {/* ═══════════════ 4. INDUSTRIES TEASER ═══════════════ */}
+            <section className="section-box">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-2 col-sm-1 col-12" />
+                        <div className="col-lg-8 col-sm-10 col-12 text-center mt-100">
+                            <span className="tag-1 bg-6 color-green-900">Industries</span>
+                            <h2 className="text-heading-1 color-gray-900 mt-20 mb-10">
+                                Built for your industry
                             </h2>
                             <p className="text-body-lead-large color-gray-600 mt-20">
-                                Fixed prices in AUD, quoted in writing before anything starts.
+                                We've built sites for tradies, e-commerce brands, real estate agents, hospitality venues and more.
+                                Every build comes with industry-specific content and conversion patterns baked in.
                             </p>
                         </div>
-                    </div>
-                    <div className="row mt-70">
-                        {SERVICES.map((s) => (
-                            <div className="col-lg-4 col-sm-6 col-12 mb-30" key={s.title}>
-                                <Link href={s.href} className="card-grid-1 bg-5 hover-up d-block h-100">
-                                    <div className="grid-1-img mb-20">
-                                        <Image width={64} height={64} src={s.icon} alt={s.title} />
-                                    </div>
-                                    <h3 className="text-heading-3">{s.title}</h3>
-                                    <p className="text-body-excerpt color-gray-600 mt-15">{s.body}</p>
-                                </Link>
-                            </div>
-                        ))}
-                    </div>
-                    <div className="row mt-30">
-                        <div className="col-12 text-center">
-                            {[
-                                { label: "Tradies",     href: "/tradie-website-design/" },
-                                { label: "Restaurants", href: "/restaurant-website-design/" },
-                                { label: "Real Estate", href: "/real-estate-website-design/" },
-                            ].map((i) => (
-                                <Link key={i.href} href={i.href} className="btn btn-tag mr-10 mb-10">
-                                    Industry: {i.label}
-                                </Link>
-                            ))}
-                        </div>
+                        <div className="col-lg-2 col-sm-1 col-12" />
                     </div>
                 </div>
-            </section>
-
-            {/* ═══════════════ SELECTED WORK */}
-            <section id="work" className="section-box">
-                <div className="container mt-100">
-                    <div className="row align-items-end">
-                        <div className="col-lg-8">
-                            <span className="tag-1">Selected work</span>
-                            <h2 className="text-heading-1 color-gray-900 mt-20">
-                                Projects built to do a job
-                            </h2>
+                <div className="container mt-70 mb-lg-50">
+                    <div className="row">
+                        <div className="col-lg-6 col-sm-12 mb-30">
+                            <Link href="/industries/finance-legal/" className="text-decoration-none">
+                                <div className="bg-2 box-square hover-up" style={{ overflow: 'hidden' }}>
+                                    <h4 className="text-heading-4 color-gray-900 mb-15">
+                                        Finance &amp; Legal
+                                    </h4>
+                                    <p className="text-body-text-md color-gray-600">
+                                        Professional sites for accountants, financial advisers, mortgage brokers and law firms — trust-first design that converts.
+                                    </p>
+                                    <div className="box-image-inner bg-color-1">
+                                        <Image
+                                            width={0} height={0} sizes="100vw"
+                                            style={{ width: "100%", height: "auto" }}
+                                            src="/assets/imgs/page/industries/industry-finance-legal.png"
+                                            alt="Finance and legal website design Australia"
+                                        />
+                                    </div>
+                                </div>
+                            </Link>
                         </div>
-                        <div className="col-lg-4 text-lg-end">
-                            <Link href="/work/" className="btn btn-link icon-arrow-right color-gray-900">
-                                All case studies
+                        <div className="col-lg-6 col-sm-12 mb-30">
+                            <Link href="/industries/hospitality/" className="text-decoration-none">
+                                <div className="bg-6 box-square hover-up" style={{ overflow: 'hidden' }}>
+                                    <h4 className="text-heading-4 color-gray-900 mb-15">
+                                        Hospitality
+                                    </h4>
+                                    <p className="text-body-text-md color-gray-600">
+                                        Restaurant, café, bar and venue sites built to drive bookings and walk-ins — with menus, reservations and Google Maps integration.
+                                    </p>
+                                    <div className="box-image-inner bg-color-2">
+                                        <Image
+                                            width={0} height={0} sizes="100vw"
+                                            style={{ width: "100%", height: "auto" }}
+                                            src="/assets/imgs/page/industries/industry-hospitality.png"
+                                            alt="Hospitality and restaurant website design Australia"
+                                        />
+                                    </div>
+                                </div>
                             </Link>
                         </div>
                     </div>
-                    <div className="row mt-50">
-                        {PROJECTS.map((p) => (
-                            <div className="col-lg-4 col-sm-6 col-12 mb-30" key={p.title}>
-                                <div className="card-grid-style-4 hover-up h-100">
-                                    <div className="grid-4-img">
-                                        <Image width={400} height={260} src={p.img} alt={p.title} />
+                    <div className="text-center mt-40 mb-20">
+                        <Link href="/industries/" className="btn btn-black icon-arrow-right-white">
+                            Explore all industries
+                        </Link>
+                    </div>
+                </div>
+            </section>
+
+            {/* ═══════════════ 5. FOR WHO — "Built exclusively for you" layout ═══════════════ */}
+            <section className="section-box mt-50">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-2 col-sm-1 col-12" />
+                        <div className="col-lg-8 col-sm-10 col-12 text-center mt-20">
+                            <span className="tag-1 bg-6 color-green-900">For who</span>
+                            <h2 className="text-heading-1 color-gray-900 mt-20 mb-10">
+                                We build for three kinds of people
+                            </h2>
+                            <p className="text-body-lead-large color-gray-600 mt-20">
+                                If you recognise yourself below, we&apos;ll probably work well together.
+                            </p>
+                        </div>
+                        <div className="col-lg-2 col-sm-1 col-12" />
+                    </div>
+                </div>
+                <div className="container mt-70">
+                    <div className="row">
+                        <div className="col-lg-4 col-md-12 col-sm-12">
+                            <div className="list-icons mt-50">
+                                <div className="item-icon">
+                                    <span className="icon-left">
+                                        <Image width={0} height={0} sizes="100vw"
+                                            style={{ width: "auto", height: "auto" }}
+                                            src="/assets/imgs/page/homepage2/icon-acquis.svg"
+                                            alt="Small businesses and tradies"
+                                        />
+                                    </span>
+                                    <h4 className="text-heading-4">Small businesses &amp; tradies</h4>
+                                    <p className="text-body-text color-gray-600 mt-15">
+                                        You need a website that ranks locally, works on phones, and turns into calls or quote forms — not a $10K agency job. From AU$600.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-lg-4 col-md-12 col-sm-12">
+                            <div className="list-icons mt-50">
+                                <div className="item-icon">
+                                    <span className="icon-left">
+                                        <Image width={0} height={0} sizes="100vw"
+                                            style={{ width: "auto", height: "auto" }}
+                                            src="/assets/imgs/page/homepage2/icon-active.svg"
+                                            alt="Growing brands and e-commerce"
+                                        />
+                                    </span>
+                                    <h4 className="text-heading-4">Growing brands &amp; e-commerce</h4>
+                                    <p className="text-body-text color-gray-600 mt-15">
+                                        Custom stores with Stripe, product pages that convert, and a back office you control — no per-sale platform fees eating your margin.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-lg-4 col-md-12 col-sm-12">
+                            <div className="list-icons mt-50">
+                                <div className="item-icon">
+                                    <span className="icon-left">
+                                        <Image width={0} height={0} sizes="100vw"
+                                            style={{ width: "auto", height: "auto" }}
+                                            src="/assets/imgs/page/homepage2/icon-retent.svg"
+                                            alt="Startups and SaaS founders"
+                                        />
+                                    </span>
+                                    <h4 className="text-heading-4">Startups &amp; SaaS founders</h4>
+                                    <p className="text-body-text color-gray-600 mt-15">
+                                        MVPs, dashboards, AI features and full products. Ship fast, iterate faster, own everything from day one.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* ═══════════════ 5. SERVICES ═══════════════ */}
+            <section id="services" className="section-box mt-100">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-12 col-sm-12 col-12">
+                            <div className="text-start mb-25">
+                                <span className="tag-1 bg-6 color-green-900">What we do</span>
+                            </div>
+                            <h2 className="text-heading-2 color-gray-900 mb-50">
+                                Six things we do,<br className="d-lg-block d-none" />
+                                done properly
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div className="container mt-20">
+                    <div className="row">
+                        {SERVICES.map((s) => (
+                            <div className="col-lg-4 col-md-6 col-sm-6 col-12 mb-40" key={s.title}>
+                                <Link href={s.href} className="d-block h-100" style={{ textDecoration: 'none' }}>
+                                    <div className="list-icons">
+                                        <div className="item-icon none-bd">
+                                            <span className="icon-left">
+                                                <Image
+                                                    width={0} height={0} sizes="100vw"
+                                                    style={{ width: "auto", height: "auto" }}
+                                                    src={s.icon}
+                                                    alt={s.title}
+                                                />
+                                            </span>
+                                            <h4 className="text-heading-6 color-gray-900">{s.title}</h4>
+                                            <p className="text-body-text color-gray-600 mt-15">{s.body}</p>
+                                            <span className="text-heading-6 color-green-900 mt-15 d-inline-block">
+                                                Learn more →
+                                            </span>
+                                        </div>
                                     </div>
-                                    <div className="pt-20">
-                                        <span className="tag-dot">{p.tag}</span>
-                                        {p.isConcept && (
-                                            <span className="tag-1 ml-10">Concept build</span>
-                                        )}
-                                        <h3 className="text-heading-4 mt-15">{p.title}</h3>
+                                </Link>
+                            </div>
+                        ))}
+                    </div>
+                    <div className="text-start mt-10 mb-20">
+                        <Link href="/services/" className="btn btn-black icon-arrow-right-white">
+                            See all services
+                        </Link>
+                    </div>
+                </div>
+            </section>
+
+            {/* ═══════════════ 6. PORTFOLIO STRIP ═══════════════ */}
+            <section id="work" className="section-box mt-100">
+                <div className="container">
+                    <div className="row justify-content-center">
+                        <div className="col-lg-8 text-center">
+                            <span className="tag-1 bg-6 color-green-900">Recent work</span>
+                            <h2 className="text-heading-1 color-gray-900 mt-20">
+                                Three live client projects
+                            </h2>
+                            <p className="text-body-lead-large color-gray-600 mt-20">
+                                Real Australian businesses, real live URLs — click any LIVE DEMO to see it running.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="row mt-70">
+                        {PORTFOLIO.map((p) => (
+                            <div className="col-lg-4 col-md-6 mb-30" key={p.slug}>
+                                <div className="hover-up h-100" style={{
+                                    background: '#F1F4FB',
+                                    borderRadius: 22,
+                                    padding: 18,
+                                }}>
+                                    <a href={p.liveUrl} target="_blank" rel="noopener noreferrer"
+                                        style={{ display: 'block', borderRadius: 14, overflow: 'hidden' }}>
+                                        <img
+                                            src={p.image}
+                                            alt={`${p.name} — live website`}
+                                            style={{
+                                                width: '100%', height: 220,
+                                                objectFit: 'cover', objectPosition: 'top center',
+                                                display: 'block', background: '#fff',
+                                            }}
+                                            loading="lazy"
+                                        />
+                                    </a>
+                                    <div className="d-flex justify-content-between align-items-center mt-20"
+                                        style={{ gap: 12 }}>
+                                        <div style={{ minWidth: 0, flex: 1 }}>
+                                            <h4 className="text-heading-5 color-gray-900 mb-0"
+                                                style={{ lineHeight: 1.15 }}>{p.name}</h4>
+                                            <p className="text-body-small color-gray-500 mt-5 mb-0">{p.industry}</p>
+                                        </div>
+                                        <a href={p.liveUrl} target="_blank" rel="noopener noreferrer"
+                                            style={{
+                                                background: '#101828', color: '#fff',
+                                                borderRadius: 999, padding: '12px 18px',
+                                                fontSize: 12, fontWeight: 700,
+                                                display: 'inline-flex', alignItems: 'center',
+                                                gap: 7, whiteSpace: 'nowrap',
+                                                textDecoration: 'none', flexShrink: 0,
+                                                letterSpacing: 0.3,
+                                            }}>
+                                            <span style={{
+                                                width: 7, height: 7, borderRadius: '50%',
+                                                background: '#22C55E', display: 'inline-block',
+                                            }} />
+                                            LIVE
+                                        </a>
+                                    </div>
+                                    <div className="mt-15">
+                                        <Link href={`/work/${p.slug}/`}
+                                            style={{
+                                                color: '#0F5E4E', fontWeight: 600,
+                                                textDecoration: 'none', fontSize: 13,
+                                            }}>
+                                            Read the case study →
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
                         ))}
                     </div>
+                    <div className="text-center mt-40">
+                        <Link href="/work/" className="btn btn-black icon-arrow-right-white">
+                            See the full portfolio
+                        </Link>
+                    </div>
                 </div>
             </section>
 
-            {/* ═══════════════ PROCESS */}
-            <section className="section-box">
-                <div className="container mt-100">
+            {/* ═══════════════ 7. PROCESS ═══════════════ */}
+            <section className="section-box mt-100">
+                <div className="container">
                     <div className="row">
-                        <div className="col-lg-5">
-                            <span className="tag-1">How it works</span>
-                            <h2 className="text-heading-1 color-gray-900 mt-20">
-                                No surprises, at any point
+                        <div className="col-lg-1 col-sm-1 col-12" />
+                        <div className="col-lg-10 col-sm-10 col-12 text-center">
+                            <div className="text-center mb-20">
+                                <span className="tag-1 bg-6 color-green-900">Process</span>
+                            </div>
+                            <h2 className="text-display-3 color-gray-900 mb-60">
+                                How every project runs
                             </h2>
-                            <p className="text-body-lead-large color-gray-600 mt-20">
-                                A free call to understand what you need, a fixed AUD quote in 24 hours,
-                                and a live staging link from the first week.
+                        </div>
+                        <div className="col-lg-1 col-sm-1 col-12" />
+                    </div>
+                </div>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-1 col-sm-12 col-12" />
+                        <div className="col-lg-10 col-sm-12 col-12">
+                            <ul className="list-steps">
+                                <li className="icon-asset1">
+                                    <div className="text-center block-step">
+                                        <div className="mb-30">
+                                            <Image width={0} height={0} sizes="100vw" style={{ width: "auto", height: "auto" }}
+                                                src="/assets/imgs/page/about/2/icon-start-plan.svg" alt="Free call" />
+                                        </div>
+                                        <h3 className="text-heading-5 mb-10">Free Call</h3>
+                                        <p className="text-body-text color-gray-500">30 min — understand your goals and whether we&apos;re a fit</p>
+                                    </div>
+                                </li>
+                                <li className="icon-asset2">
+                                    <div className="text-center block-step">
+                                        <div className="mb-30">
+                                            <Image width={0} height={0} sizes="100vw" style={{ width: "auto", height: "auto" }}
+                                                src="/assets/imgs/page/about/2/icon-connect.svg" alt="Fixed quote" />
+                                        </div>
+                                        <h3 className="text-heading-5 mb-10">Fixed Quote</h3>
+                                        <p className="text-body-text color-gray-500">Written AUD scope + price in one business day. No hourly rates.</p>
+                                    </div>
+                                </li>
+                                <li className="icon-asset3">
+                                    <div className="text-center block-step bg-5">
+                                        <div className="mb-30">
+                                            <Image width={0} height={0} sizes="100vw" style={{ width: "auto", height: "auto" }}
+                                                src="/assets/imgs/page/about/2/icon-match.svg" alt="Build in the open" />
+                                        </div>
+                                        <h3 className="text-heading-5 mb-10">Build Open</h3>
+                                        <p className="text-body-text color-gray-500">Live staging link from week one. Feedback in real time.</p>
+                                    </div>
+                                </li>
+                                <li className="icon-asset4">
+                                    <div className="text-center block-step bg-5">
+                                        <div className="mb-30">
+                                            <Image width={0} height={0} sizes="100vw" style={{ width: "auto", height: "auto" }}
+                                                src="/assets/imgs/page/about/2/icon-complete.svg" alt="Review" />
+                                        </div>
+                                        <h3 className="text-heading-5 mb-10">Review</h3>
+                                        <p className="text-body-text color-gray-500">Feedback rounds until it&apos;s right. No limits.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div className="text-center block-step bg-9">
+                                        <div className="mb-30">
+                                            <Image width={0} height={0} sizes="100vw" style={{ width: "auto", height: "auto" }}
+                                                src="/assets/imgs/page/about/2/icon-review.svg" alt="Launch and handover" />
+                                        </div>
+                                        <h3 className="text-heading-5 mb-10">Launch</h3>
+                                        <p className="text-body-text color-gray-500">Deploy + hand over the code and every account. 30 days of support.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="col-lg-1 col-sm-12 col-12" />
+                    </div>
+                </div>
+            </section>
+
+            {/* ═══════════════ 8. FAQ ═══════════════ */}
+            <section className="section-box mt-100">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-5 mb-40">
+                            <span className="tag-1 bg-6 color-green-900">FAQ</span>
+                            <h2 className="text-heading-1 mt-20">Frequently asked questions</h2>
+                            <p className="text-body-lead color-gray-600 mt-30">
+                                Everything most people ask before we start a project. Something else?
+                                Send us a message — usually replied same day.
                             </p>
                             <div className="mt-40">
-                                <Link href={CTA.primary.href} className="btn btn-black icon-arrow-right-white">
-                                    Start a project
+                                <Link href="/contact/" className="btn btn-black icon-arrow-right-white mr-15">
+                                    Contact us
                                 </Link>
+                                <a href={SITE.calendly} target="_blank" rel="noopener noreferrer"
+                                    className="btn btn-link icon-arrow-right color-gray-900 text-heading-6">
+                                    Book a call
+                                </a>
                             </div>
                         </div>
-                        <div className="col-lg-6 offset-lg-1">
-                            {[
-                                { n: "01", h: "Free 30-min scoping call", b: "Understand your goal, your customers, and whether custom is even the right call for you." },
-                                { n: "02", h: "Fixed AUD quote in 24h",   b: "Written scope, written price, explicit about what is and is not included." },
-                                { n: "03", h: "Build in the open",        b: "Live staging link from week one, weekly demos, no month-long silences." },
-                                { n: "04", h: "Launch and handover",      b: "Full repo + accounts on completion, 30 days support, no mandatory retainer." },
-                            ].map((s) => (
-                                <div className="mb-40" key={s.n}>
-                                    <div className="line-bd-green mb-25" />
-                                    <h4 className="text-heading-4">
-                                        <span className="color-green-900 mr-15">{s.n}</span>{s.h}
-                                    </h4>
-                                    <p className="text-body-excerpt color-gray-600 mt-15">{s.b}</p>
-                                </div>
-                            ))}
+                        <div className="col-lg-7">
+                            <Accordion />
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* ═══════════════ PRICING */}
-            <section id="pricing" className="section-box section-green mt-100">
-                <div className="container pt-70 pb-70">
-                    <div className="row justify-content-center">
-                        <div className="col-lg-8 text-center">
-                            <span className="tag-1">Pricing</span>
-                            <h2 className="text-heading-1 color-gray-900 mt-20">
-                                Published, fixed, in AUD
-                            </h2>
-                            <p className="text-body-lead-large color-gray-600 mt-20">
-                                Most agencies hide this behind &ldquo;contact us&rdquo;. Here is what things actually cost.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="row mt-50">
-                        {PRICING.map((t) => (
-                            <div className="col-lg-4 col-sm-6 col-12 mb-30" key={t.name}>
-                                <div className="card-grid-1 bg-white h-100 p-30">
-                                    <h3 className="text-heading-3">{t.name}</h3>
-                                    <p className="text-display-3 color-green-900 mt-15">{t.price}</p>
-                                    <p className="text-body-text color-gray-500 mt-5">{t.time}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                    <div className="row mt-20">
-                        <div className="col-12 text-center">
-                            <p className="text-body-text color-gray-600">
-                                Every build: full code ownership · 30 days support · no mandatory retainer · live staging from week one
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* ═══════════════ ABOUT */}
-            <section id="about" className="section-box">
-                <div className="container mt-100">
-                    <div className="row align-items-center">
-                        <div className="col-lg-6">
-                            <Image
-                                width={560}
-                                height={420}
-                                className="img-responsive bdrd-16"
-                                src="/assets/imgs/page/homepage2/banner.png"
-                                alt="A small studio, close to the work"
-                            />
-                        </div>
-                        <div className="col-lg-5 offset-lg-1">
-                            <span className="tag-1">Who you are working with</span>
-                            <h2 className="text-heading-1 color-gray-900 mt-20">
-                                A small studio. We answer the phone.
-                            </h2>
-                            <p className="text-body-lead-large color-gray-600 mt-20">
-                                Build First Site is a senior engineer building your project himself, plus
-                                a real local contact in Australia for calls, quotes and paperwork.
-                                Contractors are credited by name when the scope needs them.
-                            </p>
-                            <p className="text-body-excerpt color-gray-600 mt-20">
-                                The engineering happens in India, the contact is in Australia, and the
-                                price reflects it. Said plainly, because that structure is why the price works.
-                            </p>
-                            <div className="mt-30">
-                                <Link href="/about/" className="btn btn-link icon-arrow-right color-gray-900">
-                                    More about us
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/*
-              Testimonials section is intentionally omitted from the visible page.
-              Australian Consumer Law treats invented testimonials as misleading
-              conduct — nothing renders until real, attributable client quotes
-              exist. See CONTENT-PLAN §28.9.
-            */}
-
-            {/* ═══════════════ GUIDES */}
-            <section id="guides" className="section-box">
-                <div className="container mt-100">
-                    <div className="row align-items-end">
-                        <div className="col-lg-8">
-                            <span className="tag-1">Guides</span>
-                            <h2 className="text-heading-1 color-gray-900 mt-20">
-                                Practical writing, no jargon
-                            </h2>
-                        </div>
-                        <div className="col-lg-4 text-lg-end">
-                            <Link href="/guides/" className="btn btn-link icon-arrow-right color-gray-900">
-                                All guides
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="row mt-50">
-                        {GUIDES.map((g) => (
-                            <div className="col-lg-4 col-sm-12 mb-30" key={g.title}>
-                                <div className="card-grid-style-4 hover-up h-100">
-                                    <div className="grid-4-img">
-                                        <Image width={400} height={220} src={g.img} alt={g.title} />
-                                    </div>
-                                    <div className="pt-20">
-                                        <span className="tag-dot">{g.tag}</span>
-                                        <h3 className="text-heading-4 mt-15">{g.title}</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* ═══════════════ OBJECTIONS / FAQ */}
-            <section className="section-box">
-                <div className="container mt-100">
+            {/* ═══════════════ 9. FINAL CTA ═══════════════ */}
+            <section className="section-box overflow-visible mt-100 mb-100">
+                <div className="container">
                     <div className="row">
-                        <div className="col-lg-4">
-                            <span className="tag-1">Questions</span>
-                            <h2 className="text-heading-1 color-gray-900 mt-20">
-                                The things people actually ask
-                            </h2>
-                        </div>
-                        <div className="col-lg-7 offset-lg-1">
-                            {[
-                                { q: "You are based in India — how does that work for me?", a: "Your contact is in Australia and works in your timezone. Engineering happens in India, which is why a business website costs AU$3,800 here rather than AU$10,000 at a Sydney agency. Live staging from week one, so nothing is taken on trust." },
-                                { q: "What if I need changes after launch?",                 a: "Thirty days of support is included. After that, changes are quoted per piece — no mandatory retainer. You own the code, so you can also take it to any other developer." },
-                                { q: "Do I really own the website?",                         a: "Yes. Full repo and every account transferred to you on completion. No lock-in, no subscription to us." },
-                                { q: "How do I know the quote will not creep up?",           a: "Scope and price are agreed in writing before work starts. If you ask for something outside the agreed scope, we re-quote rather than quietly billing more hours." },
-                                { q: "What if I only need something small?",                 a: "A single landing page starts at AU$1,000. If a DIY builder would serve you better, we will say so on the first call." },
-                            ].map((f) => (
-                                <details key={f.q} className="mb-15" style={{ borderTop: "1px solid var(--border-primary, #ececee)", padding: "22px 0" }}>
-                                    <summary className="text-heading-4" style={{ cursor: "pointer", listStyle: "none" }}>
-                                        {f.q}
-                                    </summary>
-                                    <p className="text-body-excerpt color-gray-600 mt-15">{f.a}</p>
-                                </details>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* ═══════════════ CONTACT */}
-            <section id="contact" className="section-box">
-                <div className="container mt-100">
-                    <div className="row justify-content-center">
-                        <div className="col-lg-8 text-center">
-                            <span className="tag-1">Contact</span>
-                            <h2 className="text-heading-1 color-gray-900 mt-20">
-                                Tell us what you are trying to build
-                            </h2>
-                            <p className="text-body-lead-large color-gray-600 mt-20">
-                                A fixed-price quote within 24 hours, and an honest answer if we think
-                                there is a cheaper way to get you there.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="row mt-70">
-                        <div className="col-lg-6 col-sm-12 mb-30">
-                            <div className="card-grid-1 bg-5 h-100 p-30">
-                                <h3 className="text-heading-3">Get a written quote</h3>
-                                <p className="text-body-excerpt color-gray-600 mt-15">
-                                    Short form: what you need, budget range, when you want it. We reply within 24 hours business time.
-                                </p>
-                                <div className="mt-30">
-                                    <Link href="/contact/" className="btn btn-black icon-arrow-right-white">
-                                        Start your quote
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-6 col-sm-12 mb-30">
-                            <div className="card-grid-1 bg-5 h-100 p-30">
-                                <h3 className="text-heading-3">Book a 30-min call</h3>
-                                <p className="text-body-excerpt color-gray-600 mt-15">
-                                    Talk it through with the person who will build it. Free, no pitch.
-                                </p>
-                                <div className="mt-30">
-                                    <a href={CTA.secondary.href} className="btn btn-black icon-arrow-right-white">
-                                        Pick a time
-                                    </a>
+                        <div className="col-lg-10 mx-auto">
+                            <div className="bg-6 box-newsletter position-relative">
+                                <div className="row">
+                                    <div className="col-lg-7 col-md-8">
+                                        <span className="text-body-capitalized color-gray-500 text-uppercase">
+                                            Ready when you are
+                                        </span>
+                                        <h4 className="text-heading-2 mb-10 mt-10">
+                                            Ready to build?
+                                        </h4>
+                                        <p className="text-body-text color-gray-500">
+                                            Tell us what you&apos;re trying to build — we&apos;ll come back with
+                                            a written scope, an AUD price and a delivery date within
+                                            one business day.
+                                        </p>
+                                        <div className="mt-30">
+                                            <Link href="/contact/" className="btn btn-black icon-arrow-right-white mr-15">
+                                                Get a quote
+                                            </Link>
+                                            <a href={SITE.calendly} target="_blank" rel="noopener noreferrer"
+                                                className="btn btn-link icon-arrow-right color-gray-900">
+                                                Book a free call
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div className="col-lg-5 col-md-4 mt-30 mt-lg-0 mt-md-30 mt-sm-30 position-relative text-end">
+                                        <div className="block-chart shape-1">
+                                            <Image width={0} height={0} sizes="100vw"
+                                                style={{ width: "auto", height: "auto" }}
+                                                src="/assets/imgs/template/chart.png" alt="Analytics" />
+                                        </div>
+                                        <Image width={0} height={0} sizes="100vw"
+                                            style={{ width: "auto", height: "auto" }}
+                                            className="img-responsive img-newsletter"
+                                            src="/assets/imgs/template/img-newsletter.png" alt="Book a call" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -473,25 +639,6 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* ═══════════════ FINAL CTA */}
-            <section className="section-box section-green mt-100">
-                <div className="container pt-70 pb-70 text-center">
-                    <h2 className="text-heading-1 color-gray-900">
-                        Ready to build something that earns its keep?
-                    </h2>
-                    <p className="text-body-lead-large color-gray-600 mt-20">
-                        Fixed quote within 24 hours.
-                    </p>
-                    <div className="mt-40">
-                        <Link href={CTA.primary.href} className="btn btn-black icon-arrow-right-white">
-                            {CTA.primary.label}
-                        </Link>
-                        <a href={CTA.secondary.href} className="btn btn-link icon-arrow-right color-gray-900 text-heading-6">
-                            {CTA.secondary.label}
-                        </a>
-                    </div>
-                </div>
-            </section>
         </Layout>
-    );
+    )
 }

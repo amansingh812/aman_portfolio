@@ -9,8 +9,6 @@
  *    Never write copy implying a larger team.
  *  - No invented testimonials, client names, review counts or metrics.
  *  - Concept builds must be labelled as concept builds.
- *  - The Agon template ships stat counters and "our team of experts" copy.
- *    Do not populate them with numbers we cannot support.
  */
 
 export const SITE = {
@@ -20,8 +18,8 @@ export const SITE = {
     'Web design and development for Australian small businesses. Fixed prices in AUD from $600, modern Next.js builds, and you own the code. A two-person studio with a local contact in Australia.',
   email: 'contact@buildfirstsite.com',
   calendly: 'https://calendly.com/amanpd0/30min',
-  // TODO: confirm the AU contact number that should be public.
   phone: '+61 413 146 498',
+  whatsapp: 'https://wa.me/61413146498',
   social: {
     linkedin: 'https://www.linkedin.com/in/aman-singh-b3a7251a2',
     github: 'https://github.com/amansingh812',
@@ -29,18 +27,41 @@ export const SITE = {
   },
 };
 
+/* ─── service items used in navbar dropdown + service pages ─── */
+export const SERVICE_ITEMS = [
+  { label: 'Web Development',        href: '/services/web-development/',        icon: '🌐', desc: 'Responsive, fast websites and web applications' },
+  { label: 'Mobile App Development', href: '/services/mobile-app-development/', icon: '📱', desc: 'Cross-platform apps for iOS and Android' },
+  { label: 'Custom Software',        href: '/services/custom-software/',        icon: '⚙️', desc: 'Tailored software to automate your business' },
+  { label: 'Marketing & SEO',        href: '/services/marketing-seo/',          icon: '📈', desc: 'Digital marketing and search engine optimisation' },
+  { label: 'AI & Automation',        href: '/services/ai-automation/',          icon: '🤖', desc: 'AI-powered solutions and workflow automation' },
+  { label: 'Maintenance & Support',  href: '/services/maintenance-support/',    icon: '🛠️', desc: 'Ongoing support, updates and monitoring' },
+];
+
+/* ─── industry items used in navbar dropdown + industry pages ─── */
+export const INDUSTRY_ITEMS = [
+  { label: 'Healthcare',         href: '/industries/healthcare/',         icon: '🏥', desc: 'Clinics, telehealth portals, patient booking' },
+  { label: 'Real Estate',        href: '/industries/real-estate/',        icon: '🏠', desc: 'Property listings, agent sites, buyer portals' },
+  { label: 'Construction & Trades', href: '/industries/construction-trades/', icon: '🔧', desc: 'Tradie sites, quote forms, job management' },
+  { label: 'Hospitality',        href: '/industries/hospitality/',        icon: '🍽️', desc: 'Restaurants, cafés, hotels, direct bookings' },
+  { label: 'Education',          href: '/industries/education/',          icon: '🎓', desc: 'Schools, courses, LMS and student portals' },
+  { label: 'Retail & E-Commerce', href: '/industries/retail-ecommerce/',  icon: '🛒', desc: 'Online stores, inventory, Stripe payments' },
+  { label: 'Finance & Legal',    href: '/industries/finance-legal/',      icon: '⚖️', desc: 'Compliance-ready sites for regulated industries' },
+  { label: 'Startups & SaaS',    href: '/industries/startups-saas/',      icon: '🚀', desc: 'MVPs, SaaS products, growth-stage apps' },
+];
+
+/* ─── main navigation — items with `children` get dropdown menus ─── */
 export const NAV = [
   { label: 'Home', href: '/' },
-  { label: 'Services', href: '/services/' },
-  { label: 'Work', href: '/work/' },
-  { label: 'Pricing', href: '/pricing/' },
   { label: 'About', href: '/about/' },
-  { label: 'Guides', href: '/guides/' },
+  { label: 'Services', href: '/services/' },
+  { label: 'Industries', href: '/industries/' },
+  { label: 'Portfolio', href: '/work/' },
+  { label: 'Blog', href: '/blog/' },
   { label: 'Contact', href: '/contact/' },
 ];
 
 export const CTA = {
-  primary: { label: 'Get a free quote', href: '/contact/' },
+  primary: { label: 'Get a quote', href: '/contact/' },
   secondary: { label: 'Book a free call', href: SITE.calendly },
 };
 
@@ -48,30 +69,20 @@ export const CTA = {
 export const FOOTER_COLUMNS = [
   {
     title: 'Services',
-    links: [
-      { label: 'Business Websites', href: '/hire-website-builder/' },
-      { label: 'E-Commerce Development', href: '/ecommerce-development/' },
-      { label: 'AI Chatbots & Booking', href: '/ai-chatbot-development-australia/' },
-      { label: 'App Development', href: '/app-development-australia/' },
-      { label: 'AI Web Development', href: '/ai-web-development/' },
-      { label: 'Next.js Development', href: '/nextjs-development/' },
-    ],
+    links: SERVICE_ITEMS.map(s => ({ label: s.label, href: s.href })),
   },
   {
     title: 'Industries',
-    links: [
-      { label: 'Tradie Websites', href: '/tradie-website-design/' },
-      { label: 'Restaurant Websites', href: '/restaurant-website-design/' },
-      { label: 'Real Estate Websites', href: '/real-estate-website-design/' },
-    ],
+    links: INDUSTRY_ITEMS.slice(0, 6).map(i => ({ label: i.label, href: i.href })),
   },
   {
-    title: 'Compare',
+    title: 'Company',
     links: [
-      { label: 'Wix vs Custom', href: '/wix-vs-custom-website/' },
-      { label: 'Squarespace vs Custom', href: '/squarespace-vs-custom-website/' },
-      { label: 'Shopify vs Custom', href: '/shopify-vs-custom-website/' },
-      { label: 'Webflow vs Custom', href: '/webflow-vs-custom-website/' },
+      { label: 'About Us', href: '/about/' },
+      { label: 'Portfolio', href: '/work/' },
+      { label: 'Blog', href: '/blog/' },
+      { label: 'Join Us', href: '/join/' },
+      { label: 'Contact', href: '/contact/' },
     ],
   },
   {
@@ -85,13 +96,13 @@ export const FOOTER_COLUMNS = [
     ],
   },
   {
-    title: 'Learn',
+    title: 'Resources',
     links: [
-      { label: 'Case Studies', href: '/work/' },
       { label: 'Guides', href: '/guides/' },
-      { label: 'Blog', href: '/blog/' },
       { label: 'What a Website Costs', href: '/how-much-does-a-website-cost-australia/' },
-      { label: 'Developer Rates in Australia', href: '/guides/freelance-web-developer-rates-australia/' },
+      { label: 'Wix vs Custom', href: '/wix-vs-custom-website/' },
+      { label: 'Squarespace vs Custom', href: '/squarespace-vs-custom-website/' },
+      { label: 'Website Checklist', href: '/small-business-website-checklist/' },
     ],
   },
 ];

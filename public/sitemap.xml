@@ -2,109 +2,115 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://buildfirstsite.com/</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://buildfirstsite.com/web-design-sydney/</loc>
-    <lastmod>2026-06-23</lastmod>
+    <loc>https://buildfirstsite.com/about/</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://buildfirstsite.com/services/</loc>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://buildfirstsite.com/web-design-melbourne/</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://buildfirstsite.com/web-design-denver/</loc>
-    <lastmod>2026-06-23</lastmod>
+    <loc>https://buildfirstsite.com/services/web-development/</loc>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://buildfirstsite.com/web-design-phoenix/</loc>
-    <lastmod>2026-06-23</lastmod>
+    <loc>https://buildfirstsite.com/services/mobile-app-development/</loc>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://buildfirstsite.com/web-design-nashville/</loc>
-    <lastmod>2026-06-23</lastmod>
+    <loc>https://buildfirstsite.com/services/custom-software/</loc>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://buildfirstsite.com/blog/</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://buildfirstsite.com/blog/website-cost-australia/</loc>
-    <lastmod>2026-07-08</lastmod>
+    <loc>https://buildfirstsite.com/services/marketing-seo/</loc>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://buildfirstsite.com/blog/signs-website-losing-customers/</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://buildfirstsite.com/blog/small-business-website-checklist/</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://buildfirstsite.com/blog/wordpress-vs-custom-website/</loc>
-    <lastmod>2026-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://buildfirstsite.com/blog/how-long-to-build-a-website/</loc>
-    <lastmod>2026-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://buildfirstsite.com/blog/tradie-website-cost/</loc>
-    <lastmod>2026-07-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://buildfirstsite.com/blog/7-website-mistakes-australia/</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://buildfirstsite.com/services/ai-automation/</loc>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://buildfirstsite.com/web-design-brisbane/</loc>
-    <lastmod>2026-07-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://buildfirstsite.com/web-design-perth/</loc>
-    <lastmod>2026-07-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://buildfirstsite.com/web-design-adelaide/</loc>
-    <lastmod>2026-07-31</lastmod>
+    <loc>https://buildfirstsite.com/services/maintenance-support/</loc>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://buildfirstsite.com/industries/</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://buildfirstsite.com/industries/healthcare/</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://buildfirstsite.com/industries/real-estate/</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://buildfirstsite.com/industries/construction-trades/</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://buildfirstsite.com/industries/hospitality/</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://buildfirstsite.com/industries/education/</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://buildfirstsite.com/industries/retail-ecommerce/</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://buildfirstsite.com/industries/finance-legal/</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://buildfirstsite.com/industries/startups-saas/</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://buildfirstsite.com/work/</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -145,6 +151,24 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://buildfirstsite.com/blog/</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://buildfirstsite.com/join/</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://buildfirstsite.com/contact/</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://buildfirstsite.com/guides/</loc>
     <lastmod>2026-07-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -161,6 +185,18 @@
     <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://buildfirstsite.com/guides/freelance-web-developer-rates-australia/</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://buildfirstsite.com/guides/seo-for-small-business-australia/</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buildfirstsite.com/squarespace-vs-custom-website/</loc>
@@ -193,14 +229,50 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://buildfirstsite.com/guides/freelance-web-developer-rates-australia/</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://buildfirstsite.com/web-design-sydney/</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://buildfirstsite.com/web-design-melbourne/</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://buildfirstsite.com/web-design-brisbane/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://buildfirstsite.com/web-design-perth/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://buildfirstsite.com/web-design-adelaide/</loc>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://buildfirstsite.com/guides/seo-for-small-business-australia/</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://buildfirstsite.com/web-design-denver/</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://buildfirstsite.com/web-design-phoenix/</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://buildfirstsite.com/web-design-nashville/</loc>
+    <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

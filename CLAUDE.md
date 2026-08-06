@@ -189,7 +189,7 @@ case-study depth, blog cadence. Close those gaps, in that order.
 6. **Minimum 3 internal links out** + linked from `SiteFooter.tsx` (and the
    sitemap). No orphan pages, ever.
 7. Descriptive `alt` on every image.
-8. Dual CTA: "Get a free quote" → `/#contact` and "Book a free call".
+8. Dual CTA: "Get a quote" → `/#contact` and "Book a free call".
 9. Canonical set via `alternates: { canonical: '/path/' }`.
 10. **Add the URL to `public/sitemap.xml` and bump `sitemap-index.xml` lastmod.**
 

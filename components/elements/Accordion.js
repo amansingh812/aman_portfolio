@@ -1,76 +1,62 @@
 'use client'
-import { useState } from "react";
+import { useState } from "react"
+
+const FAQS = [
+    {
+        q: "How much does a website cost?",
+        a: "We publish fixed prices in AUD upfront: landing pages from $600, business websites from $2,000, e-commerce from $4,000, and custom web apps from $8,000. You get a written quote before any work starts — it does not move unless the scope changes."
+    },
+    {
+        q: "Who actually builds my website?",
+        a: "Aman, the engineer, builds everything. He works directly with you (or through your local Australian contact). There are no layers, no subcontractors, no agency hand-offs — you speak to the person writing the code."
+    },
+    {
+        q: "How do I communicate if the developer is in India?",
+        a: "Most communication is async (email or project chat) with video calls when needed. Our Australian contact handles calls and meetings in your timezone. In practice, most clients find response times faster than dealing with a local agency."
+    },
+    {
+        q: "Do I own the website after it is built?",
+        a: "Yes. Full code repository, domain, hosting accounts — everything is handed over on completion. There is no ongoing subscription to us unless you choose our maintenance plan."
+    },
+    {
+        q: "How long does a website take to build?",
+        a: "A landing page takes 3–5 days. A business website typically takes 2–4 weeks. An e-commerce store takes 4–6 weeks. A custom web app takes 6–12 weeks. You will see a live staging link from week one."
+    },
+    {
+        q: "What technology do you use?",
+        a: "We build primarily with Next.js, React, Tailwind CSS, and Node.js — the same modern stack used by large tech companies. For e-commerce we integrate Stripe. For AI features we use OpenAI, Claude, or Google Gemini APIs."
+    },
+    {
+        q: "Do you offer ongoing support after launch?",
+        a: "Every project includes 30 days of post-launch support. After that, you can choose our monthly maintenance plan (from $150/month) covering updates, backups, monitoring, and minor changes."
+    },
+]
 
 function Accordion() {
-    const [isActive, setIsActive] = useState({
-        status: false,
-        key: 1,
-    });
+    const [activeKey, setActiveKey] = useState(1)
 
-    const handleToggle = (key) => {
-        if (isActive.key === key) {
-            setIsActive({
-                status: false,
-            });
-        } else {
-            setIsActive({
-                status: true,
-                key,
-            });
-        }
-    };
+    const toggle = (key) => setActiveKey(activeKey === key ? null : key)
+
     return (
-        <>
-
-            <div className="accordion" id="accordionFAQ">
-                <div className="accordion-item">
-                    <h2 className="accordion-header" onClick={() => handleToggle(1)}>
-                        <button className={isActive.key == 1 ? "accordion-button text-heading-5 " : "accordion-button text-heading-5 collapsed"}>Where is my order? Quisque molestie</button>
-                    </h2>
-                    <div className={isActive.key == 1 ? "accordion-collapse collapse show" : "accordion-collapse collapse "}>
-                        <div className="accordion-body">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature Id pro doctus mediocrem erroribus, diam nostro sed cu. Ea pri graeco tritani partiendo. Omittantur No tale choro fastidii his, pri cu epicuri perpetua. Enim dictas omittantur et duo, vocent lucilius quaestio mea ex. Ex illum officiis id.</div>
+        <div className="accordion" id="accordionFAQ">
+            {FAQS.map((item, i) => {
+                const key = i + 1
+                const isOpen = activeKey === key
+                return (
+                    <div className="accordion-item" key={key}>
+                        <h2 className="accordion-header" onClick={() => toggle(key)}>
+                            <button className={`accordion-button text-heading-5${isOpen ? '' : ' collapsed'}`}>
+                                {item.q}
+                            </button>
+                        </h2>
+                        <div className={`accordion-collapse collapse${isOpen ? ' show' : ''}`}>
+                            <div className="accordion-body">{item.a}</div>
+                        </div>
                     </div>
-                </div>
-                <div className="accordion-item">
-                    <h2 className="accordion-header" onClick={() => handleToggle(2)}><button className={isActive.key == 2 ? "accordion-button text-heading-5 " : "accordion-button text-heading-5 collapsed"}>How can I return an item purchased online?</button></h2>
-                    <div className={isActive.key == 2 ? "accordion-collapse collapse show" : "accordion-collapse collapse "}>
-                        <div className="accordion-body">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature Id pro doctus mediocrem erroribus, diam nostro sed cu. Ea pri graeco tritani partiendo. Omittantur No tale choro fastidii his, pri cu epicuri perpetua. Enim dictas omittantur et duo, vocent lucilius quaestio mea ex. Ex illum officiis id.</div>
-                    </div>
-                </div>
-                <div className="accordion-item">
-                    <h2 className="accordion-header" onClick={() => handleToggle(3)}><button className={isActive.key == 3 ? "accordion-button text-heading-5 " : "accordion-button text-heading-5 collapsed"}>Can I cancel or change my order?</button></h2>
-                    <div className={isActive.key == 3 ? "accordion-collapse collapse show" : "accordion-collapse collapse "}>
-                        <div className="accordion-body">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature Id pro doctus mediocrem erroribus, diam nostro sed cu. Ea pri graeco tritani partiendo. Omittantur No tale choro fastidii his, pri cu epicuri perpetua. Enim dictas omittantur et duo, vocent lucilius quaestio mea ex. Ex illum officiis id.</div>
-                    </div>
-                </div>
-                <div className="accordion-item">
-                    <h2 className="accordion-header" onClick={() => handleToggle(4)}><button className={isActive.key == 4 ? "accordion-button text-heading-5 " : "accordion-button text-heading-5 collapsed"}>I have promotional or discount code?</button></h2>
-                    <div className={isActive.key == 4 ? "accordion-collapse collapse show" : "accordion-collapse collapse "}>
-                        <div className="accordion-body">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature Id pro doctus mediocrem erroribus, diam nostro sed cu. Ea pri graeco tritani partiendo. Omittantur No tale choro fastidii his, pri cu epicuri perpetua. Enim dictas omittantur et duo, vocent lucilius quaestio mea ex. Ex illum officiis id.</div>
-                    </div>
-                </div>
-                <div className="accordion-item">
-                    <h2 className="accordion-header" onClick={() => handleToggle(5)}><button className={isActive.key == 5 ? "accordion-button text-heading-5 " : "accordion-button text-heading-5 collapsed"}>What are the delivery types you use?</button></h2>
-                    <div className={isActive.key == 5 ? "accordion-collapse collapse show" : "accordion-collapse collapse "}>
-                        <div className="accordion-body">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature Id pro doctus mediocrem erroribus, diam nostro sed cu. Ea pri graeco tritani partiendo. Omittantur No tale choro fastidii his, pri cu epicuri perpetua. Enim dictas omittantur et duo, vocent lucilius quaestio mea ex. Ex illum officiis id.</div>
-                    </div>
-                </div>
-                <div className="accordion-item">
-                    <h2 className="accordion-header" onClick={() => handleToggle(6)}><button className={isActive.key == 6 ? "accordion-button text-heading-5 " : "accordion-button text-heading-5 collapsed"}>How can I pay for my purchases?</button></h2>
-                    <div className={isActive.key == 6 ? "accordion-collapse collapse show" : "accordion-collapse collapse "}>
-                        <div className="accordion-body">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature Id pro doctus mediocrem erroribus, diam nostro sed cu. Ea pri graeco tritani partiendo. Omittantur No tale choro fastidii his, pri cu epicuri perpetua. Enim dictas omittantur et duo, vocent lucilius quaestio mea ex. Ex illum officiis id.</div>
-                    </div>
-                </div>
-                <div className="accordion-item">
-                    <h2 className="accordion-header" onClick={() => handleToggle(7)}><button className={isActive.key == 7 ? "accordion-button text-heading-5 " : "accordion-button text-heading-5 collapsed"}>Can I cancel my order?</button></h2>
-                    <div className={isActive.key == 7 ? "accordion-collapse collapse show" : "accordion-collapse collapse "}>
-                        <div className="accordion-body">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature Id pro doctus mediocrem erroribus, diam nostro sed cu. Ea pri graeco tritani partiendo. Omittantur No tale choro fastidii his, pri cu epicuri perpetua. Enim dictas omittantur et duo, vocent lucilius quaestio mea ex. Ex illum officiis id.</div>
-                    </div>
-                </div>
-            </div>
-
-        </>
+                )
+            })}
+        </div>
     )
 }
 
-export default Accordion;
+export default Accordion
