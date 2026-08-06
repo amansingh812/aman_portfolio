@@ -162,8 +162,9 @@ export default function ContactPage() {
                                             <a href={r.action}
                                                 target={r.external ? "_blank" : undefined}
                                                 rel={r.external ? "noopener noreferrer" : undefined}
-                                                className="btn btn-link icon-arrow-right color-green-900 text-heading-6 p-0">
-                                                {r.actionLabel}
+                                                className="color-green-900 text-heading-6"
+                                                style={{ textDecoration: 'none', fontWeight: 700 }}>
+                                                {r.actionLabel} →
                                             </a>
                                         </div>
                                     </div>

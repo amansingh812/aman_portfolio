@@ -10,23 +10,38 @@ export default function AboutContactForm() {
     const handleSubmit = async (e) => {
         e.preventDefault()
         setStatus("sending")
-        const res = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "",
-                subject: "New enquiry from About page",
-                ...form,
-            }),
-        })
-        setStatus(res.ok ? "sent" : "error")
+        try {
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ ...form, source: "About page" }),
+            })
+            setStatus(res.ok ? "sent" : "error")
+        } catch {
+            setStatus("error")
+        }
     }
 
     if (status === "sent") {
         return (
             <div className="col-lg-8 text-center pt-40">
-                <h4 className="text-heading-4 color-gray-900">Message sent ✓</h4>
-                <p className="text-body-text color-gray-600 mt-10">We will get back to you within one business day.</p>
+                <div style={{ fontSize: 40, marginBottom: 16 }}>✓</div>
+                <h4 className="text-heading-4 color-gray-900">Message sent!</h4>
+                <p className="text-body-text color-gray-600 mt-10">
+                    Check your inbox for a confirmation. We will get back to you within one business day.
+                </p>
+            </div>
+        )
+    }
+
+    if (status === "error") {
+        return (
+            <div className="col-lg-8 text-center pt-40">
+                <h4 className="text-heading-4 color-gray-900">Something went wrong</h4>
+                <p className="text-body-text color-gray-600 mt-10">
+                    Please email us directly at contact@buildfirstsite.com
+                </p>
+                <button className="btn btn-black mt-20" onClick={() => setStatus("idle")}>Try again</button>
             </div>
         )
     }
@@ -62,9 +77,9 @@ export default function AboutContactForm() {
                     </div>
                     <div className="col-lg-12 mt-15">
                         <button className="btn btn-black icon-arrow-right-white mr-40 mb-20" type="submit" disabled={status === "sending"}>
-                            {status === "sending" ? "Sending…" : "Send Message"}
+                            {status === "sending" ? "Sending..." : "Send Message"}
                         </button>
-                        <span className="text-body-text-md color-gray-500 mb-20">By submitting you agree to our privacy policy.</span>
+                        <span className="text-body-text-md color-gray-500">We reply within one business day.</span>
                     </div>
                 </div>
             </form>

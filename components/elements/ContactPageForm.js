@@ -1,11 +1,6 @@
 'use client'
 import { useState } from "react"
 
-/**
- * Web3Forms-backed contact form using the Agon page-contact layout.
- * Extracted into its own client component so the parent page stays a
- * server component with proper metadata.
- */
 export default function ContactPageForm() {
     const [status, setStatus] = useState("idle")
     const [form, setForm] = useState({ name: "", company: "", email: "", phone: "", message: "" })
@@ -15,26 +10,42 @@ export default function ContactPageForm() {
     const handleSubmit = async (e) => {
         e.preventDefault()
         setStatus("sending")
-        const res = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "",
-                subject: "New enquiry from Contact page",
-                ...form,
-            }),
-        })
-        setStatus(res.ok ? "sent" : "error")
+        try {
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ ...form, source: "Contact page" }),
+            })
+            setStatus(res.ok ? "sent" : "error")
+        } catch {
+            setStatus("error")
+        }
     }
 
     if (status === "sent") {
         return (
             <div className="col-lg-8">
-                <div className="p-40 bdrd-16" style={{ background: '#F4E9DF', textAlign: 'center' }}>
-                    <h3 className="text-heading-3 color-gray-900">Message sent ✓</h3>
-                    <p className="text-body-lead color-gray-700 mt-15">
-                        We&apos;ll get back to you within one business day.
+                <div className="p-40 bdrd-16 text-center" style={{ background: '#FEF3ED' }}>
+                    <div style={{ fontSize: 40, marginBottom: 16 }}>✓</div>
+                    <h3 className="text-heading-3 color-gray-900">Message sent!</h3>
+                    <p className="text-body-lead color-gray-600 mt-15">
+                        Check your inbox — we have sent you a confirmation.
+                        We will reply with a fixed AUD quote within one business day.
                     </p>
+                </div>
+            </div>
+        )
+    }
+
+    if (status === "error") {
+        return (
+            <div className="col-lg-8">
+                <div className="p-40 bdrd-16 text-center" style={{ background: '#FEF2F2' }}>
+                    <h3 className="text-heading-4 color-gray-900">Something went wrong</h3>
+                    <p className="text-body-text color-gray-600 mt-15">
+                        Please email us directly at contact@buildfirstsite.com
+                    </p>
+                    <button className="btn btn-black mt-20" onClick={() => setStatus("idle")}>Try again</button>
                 </div>
             </div>
         )
@@ -46,7 +57,7 @@ export default function ContactPageForm() {
                 <div className="row">
                     <div className="col-lg-6">
                         <div className="form-group">
-                            <input className="form-control" name="name" placeholder="Enter your name" required
+                            <input className="form-control" name="name" placeholder="Your name" required
                                 value={form.name} onChange={handleChange} />
                         </div>
                     </div>
@@ -78,11 +89,10 @@ export default function ContactPageForm() {
                     <div className="col-lg-12 mt-15">
                         <button className="btn btn-black icon-arrow-right-white mr-40 mb-20" type="submit"
                             disabled={status === "sending"}>
-                            {status === "sending" ? "Sending…" : "Send Message"}
+                            {status === "sending" ? "Sending..." : "Send Message"}
                         </button>
-                        <br className="d-lg-none d-block" />
-                        <span className="text-body-text-md color-gray-500 mb-20">
-                            By submitting you agree to our privacy policy — we reply within one business day.
+                        <span className="text-body-text-md color-gray-500">
+                            We reply within one business day.
                         </span>
                     </div>
                 </div>
