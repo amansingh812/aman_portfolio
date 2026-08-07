@@ -43,7 +43,7 @@ export const INDUSTRY_PAGES = [
     slug: "construction-trades",
     title: "Construction & Trades",
     metaTitle: "Tradie Website Design Australia | Plumber, Electrician, Builder Sites",
-    metaDescription: "Websites for Australian tradies — plumbers, electricians, builders, landscapers. Click-to-call, quote forms, local SEO. Fixed pricing from AU$600.",
+    metaDescription: "Websites for Australian tradies — plumbers, electricians, builders, landscapers. Click-to-call, quote forms, local SEO. Fixed pricing from AU$800.",
     hero: "Tradie sites built to win jobs, not awards.",
     intro: "When a pipe bursts at 2am, nobody scrolls — they call the first tradie who looks trustworthy and reachable. We build tradie websites around that moment: trust badges up front, click-to-call everywhere, quote forms that work on a phone, and local SEO so you show up in 'near me' searches.",
     needs: [
@@ -97,7 +97,7 @@ export const INDUSTRY_PAGES = [
     slug: "retail-ecommerce",
     title: "Retail & E-Commerce",
     metaTitle: "E-Commerce Development Australia | Online Stores, Stripe, Custom Builds",
-    metaDescription: "Custom e-commerce stores for Australian retailers. Stripe payments, inventory, product search. No per-sale platform fees. Fixed AUD pricing from $4,000.",
+    metaDescription: "Custom e-commerce stores for Australian retailers. Stripe payments, inventory, product search. No per-sale platform fees. Fixed AUD pricing from $4,500.",
     hero: "Online stores you own — with zero per-sale platform fees.",
     intro: "Shopify takes a cut of every sale. We build stores you own outright — custom product pages, Stripe checkout, inventory management and search, with no ongoing platform fees beyond hosting. For Australian retailers who want control of their margins and their data.",
     needs: [

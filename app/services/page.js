@@ -25,7 +25,7 @@ const SERVICES = [
     {
         title: "Web Development",
         icon: "/assets/imgs/page/services/1/icon-web.svg",
-        body: "Responsive, fast websites and web apps on a modern Next.js / React stack. Landing pages from AU$600.",
+        body: "Responsive, fast websites and web apps on a modern Next.js / React stack. Sites from AU$800.",
         href: "/services/web-development/",
     },
     {
@@ -55,7 +55,7 @@ const SERVICES = [
     {
         title: "Maintenance & Support",
         icon: "/assets/imgs/page/services/1/icon-support.svg",
-        body: "Updates, monitoring, backups, security patches and content changes. From AU$150/month, no long lock-in.",
+        body: "Updates, monitoring, backups, security patches and content changes. From AU$250/month, no long lock-in.",
         href: "/services/maintenance-support/",
     },
 ]

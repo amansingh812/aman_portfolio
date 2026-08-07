@@ -6,6 +6,7 @@ import Link from "next/link"
 import { SITE } from "@/content/site"
 import { BLOG_POSTS } from "@/content/blog"
 import { GUIDES } from "@/content/guides"
+import { fmtDate } from "@/lib/format"
 
 export const metadata = {
     title: "Blog — Web Development Insights for Australian Businesses | Build First Site",
@@ -20,8 +21,6 @@ export const metadata = {
 }
 
 /* Helper — nicely format AU dates */
-const fmtDate = (d) =>
-    new Date(d).toLocaleDateString("en-AU", { year: "numeric", month: "long", day: "numeric" })
 
 /* Stock backgrounds cycle in order (matches Agon blog-2 template) */
 const COLOR_BG = [

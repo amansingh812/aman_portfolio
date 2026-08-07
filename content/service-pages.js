@@ -7,22 +7,22 @@ export const SERVICE_PAGES = [
   {
     slug: "web-development",
     title: "Web Development",
-    metaTitle: "Web Development Australia | Modern Websites from AU$600 | Build First Site",
-    metaDescription: "Custom websites for Australian businesses. Next.js, React, full SEO, fixed AUD pricing from $600. You own the code.",
+    metaTitle: "Web Development Australia | Modern Websites from AU$800 | Build First Site",
+    metaDescription: "Custom websites for Australian businesses. Next.js, React, full SEO, fixed AUD pricing from $800. You own the code.",
     hero: "Websites that load fast, rank well and convert visitors into customers.",
     intro: "We build responsive, high-performance websites on a modern stack — Next.js, React, Tailwind — optimised for speed, SEO and mobile from day one. No templates, no page builder lock-in, no monthly platform fees. You get a custom site, built around your business, that you own outright.",
     capabilities: [
       { title: "Business websites", body: "Five to fifteen pages, professionally designed, with forms, SEO setup, and structured data. Built to rank and convert." },
-      { title: "Landing pages", body: "Conversion-focused single pages for campaigns, launches or lead capture. Fast turnaround from AU$600." },
+      { title: "Landing pages", body: "Conversion-focused single pages for campaigns, launches or lead capture. Fast turnaround from AU$800." },
       { title: "E-commerce", body: "Online stores with Stripe payments, inventory management, and product search. No per-sale platform fees." },
       { title: "Web applications", body: "Dashboards, client portals, booking systems and internal tools. The kind of software that replaces a spreadsheet." },
       { title: "CMS integration", body: "Content management so you can update text, images and blog posts without touching code." },
       { title: "Performance & SEO", body: "Lighthouse 90+, Core Web Vitals green, structured data, sitemap, and mobile-first by default." },
     ],
     pricing: [
-      { tier: "Landing Page", price: "From AU$600", timeline: "1 week" },
-      { tier: "Business Website", price: "From AU$2,000", timeline: "2–4 weeks" },
-      { tier: "E-Commerce Store", price: "From AU$4,000", timeline: "4–6 weeks" },
+      { tier: "Starter (3–5 pages)", price: "AU$800", timeline: "5–7 days" },
+      { tier: "Business (up to 10 pages)", price: "AU$1,900", timeline: "2–3 weeks" },
+      { tier: "E-Commerce Store", price: "AU$4,500", timeline: "4–6 weeks" },
     ],
     faqs: [
       { q: "What stack do you use?", a: "Next.js 15, React 19, Tailwind CSS, deployed on Vercel or your preferred host. Modern, fast, and future-proof." },
@@ -34,8 +34,8 @@ export const SERVICE_PAGES = [
   {
     slug: "mobile-app-development",
     title: "Mobile App Development",
-    metaTitle: "Mobile App Development Australia | iOS & Android from AU$6,500 | Build First Site",
-    metaDescription: "Cross-platform mobile apps for Australian businesses. React Native, one codebase, both app stores. Fixed AUD pricing from $6,500.",
+    metaTitle: "Mobile App Development Australia | iOS & Android from AU$4,500 | Build First Site",
+    metaDescription: "Cross-platform mobile apps for Australian businesses. React Native, one codebase, both app stores. Fixed AUD pricing from $4,500.",
     hero: "One codebase. Both app stores. A fraction of the cost.",
     intro: "We build cross-platform mobile apps with React Native — iOS and Android from a single codebase, at roughly half the cost of two separate native builds. Push notifications, offline support, camera access, and app store submission included. You own the code.",
     capabilities: [
@@ -47,13 +47,13 @@ export const SERVICE_PAGES = [
       { title: "App store submission", body: "We handle the submission process for both the App Store and Google Play." },
     ],
     pricing: [
-      { tier: "Web App MVP", price: "From AU$6,500", timeline: "6–8 weeks" },
-      { tier: "Full Web App", price: "From AU$12,000", timeline: "8–12 weeks" },
-      { tier: "Cross-Platform Mobile", price: "From AU$18,000", timeline: "10–16 weeks" },
+      { tier: "Application", price: "AU$4,500", timeline: "4–8 weeks" },
+      { tier: "Custom Software", price: "From AU$5,000", timeline: "8–12 weeks" },
+      { tier: "Cross-Platform Mobile", price: "AU$4,500", timeline: "10–16 weeks" },
     ],
     faqs: [
       { q: "Do I need a native app or a web app?", a: "Most small businesses need a web app or PWA, not a native app. We will tell you which one fits on the first call." },
-      { q: "How much does an app cost?", a: "Web app MVPs from AU$6,500, full web apps from AU$12,000, cross-platform mobile from AU$18,000. Fixed quotes." },
+      { q: "How much does an app cost?", a: "Applications are AU$4,500 for a standard build. Anything larger is custom software from AU$5,000, quoted against your requirements. Fixed quotes either way." },
       { q: "Do you build for both iOS and Android?", a: "Yes — one React Native codebase ships to both stores. One build, one price." },
     ],
   },
@@ -74,7 +74,7 @@ export const SERVICE_PAGES = [
     ],
     pricing: [
       { tier: "Internal Tool", price: "From AU$5,000", timeline: "4–6 weeks" },
-      { tier: "Full Platform", price: "From AU$12,000", timeline: "8–12 weeks" },
+      { tier: "Full Platform", price: "From AU$5,000", timeline: "8–12 weeks" },
     ],
     faqs: [
       { q: "What kind of software do you build?", a: "Internal tools, admin dashboards, client portals, workflow automation and API integrations. Anything that replaces a manual process." },
@@ -98,8 +98,7 @@ export const SERVICE_PAGES = [
     ],
     pricing: [
       { tier: "SEO Audit", price: "AU$500", timeline: "1 week" },
-      { tier: "Full SEO Setup", price: "From AU$2,000", timeline: "2–4 weeks" },
-      { tier: "Ongoing SEO", price: "From AU$800/mo", timeline: "Monthly" },
+      { tier: "Care + SEO", price: "AU$250/month", timeline: "Ongoing" },
     ],
     faqs: [
       { q: "How long does SEO take?", a: "Expect meaningful movement in 3–6 months. Anyone promising page one by next quarter is either lucky or not being straight with you." },
@@ -110,7 +109,7 @@ export const SERVICE_PAGES = [
     slug: "ai-automation",
     title: "AI & Automation",
     metaTitle: "AI & Automation Development Australia | Chatbots, AI Tools | Build First Site",
-    metaDescription: "AI chatbots, lead qualification, booking automation and workflow AI for Australian businesses. Built on OpenAI, Claude, Gemini. Fixed AUD pricing from $2,500.",
+    metaDescription: "AI chatbots, lead qualification, booking automation and workflow AI for Australian businesses. Built on OpenAI, Claude, Gemini. Fixed AUD pricing from $900.",
     hero: "AI that does a specific job, not AI for the sake of it.",
     intro: "We build AI into your business where it actually helps — qualifying leads at 9pm, booking appointments without a phone call, recommending products, answering the same five questions your team handles daily. Custom-built on OpenAI, Claude or Gemini, integrated into your existing site, and owned by you.",
     capabilities: [
@@ -122,9 +121,9 @@ export const SERVICE_PAGES = [
       { title: "Custom AI integrations", body: "Multi-step AI workflows built into your existing systems. Not a plugin — a proper integration." },
     ],
     pricing: [
-      { tier: "AI Assistant", price: "From AU$2,500", timeline: "2 weeks" },
+      { tier: "AI Chatbot", price: "From AU$900", timeline: "2 weeks" },
       { tier: "Qualify & Book", price: "From AU$4,500", timeline: "3–4 weeks" },
-      { tier: "Custom AI Build", price: "From AU$6,500", timeline: "4–8 weeks" },
+      { tier: "Custom AI Build", price: "From AU$5,000", timeline: "4–8 weeks" },
     ],
     faqs: [
       { q: "Will it make things up?", a: "It answers from your supplied information and is instructed to say when it does not know. You get full transcripts." },
@@ -147,9 +146,8 @@ export const SERVICE_PAGES = [
       { title: "Analytics reporting", body: "Monthly summary of traffic, conversions and what is working — in plain English, not jargon." },
     ],
     pricing: [
+      { tier: "Care + SEO", price: "AU$250/month", timeline: "Ongoing" },
       { tier: "Pay Per Piece", price: "From AU$200", timeline: "As needed" },
-      { tier: "Basic Plan", price: "AU$400/mo", timeline: "Monthly" },
-      { tier: "Growth Plan", price: "AU$800/mo", timeline: "Monthly" },
     ],
     faqs: [
       { q: "Do I have to sign a contract?", a: "No. Monthly plans are month-to-month. Pay-per-piece work is quoted individually. No lock-in either way." },

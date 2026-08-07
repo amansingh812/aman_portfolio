@@ -15,7 +15,7 @@ export const SITE = {
   name: 'Build First Site',
   url: 'https://buildfirstsite.com',
   description:
-    'Web design and development for Australian small businesses. Fixed prices in AUD from $600, modern Next.js builds, and you own the code. A two-person studio with a local contact in Australia.',
+    'Web design and development for Australian small businesses. Fixed prices in AUD from $800, modern Next.js builds, and you own the code. A two-person studio with a local contact in Australia.',
   email: 'contact@buildfirstsite.com',
   calendly: 'https://calendly.com/amanpd0/30min',
   phone: '+61 413 146 498',
@@ -49,14 +49,19 @@ export const INDUSTRY_ITEMS = [
   { label: 'Startups & SaaS',    href: '/industries/startups-saas/',      icon: '🚀', desc: 'MVPs, SaaS products, growth-stage apps' },
 ];
 
-/* ─── main navigation — items with `children` get dropdown menus ─── */
+/* ─── main navigation — items with `children` get dropdown menus ───
+ * Blog was deliberately moved out of the navbar (Aug 2026) to make room for
+ * Pricing, which is the highest-intent page on the site. Blog posts stay
+ * indexed and are linked from the footer Company column — do not remove them
+ * there or the 8 published posts become orphans.
+ */
 export const NAV = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about/' },
   { label: 'Services', href: '/services/' },
   { label: 'Industries', href: '/industries/' },
   { label: 'Portfolio', href: '/work/' },
-  { label: 'Blog', href: '/blog/' },
+  { label: 'Pricing', href: '/pricing/' },
   { label: 'Contact', href: '/contact/' },
 ];
 
@@ -79,7 +84,9 @@ export const FOOTER_COLUMNS = [
     title: 'Company',
     links: [
       { label: 'About Us', href: '/about/' },
+      { label: 'Pricing', href: '/pricing/' },
       { label: 'Portfolio', href: '/work/' },
+      // Blog is footer-only since it left the navbar — keep this link.
       { label: 'Blog', href: '/blog/' },
       { label: 'Join Us', href: '/join/' },
       { label: 'Contact', href: '/contact/' },

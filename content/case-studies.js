@@ -555,6 +555,82 @@ export const CASE_STUDIES = [
       "next.js ecommerce developer",
       "personalised jewellery store"
     ]
+  },
+  {
+    "slug": "school-scout",
+    "projectId": "09",
+    "name": "School Scout",
+    "tagline": "A school discovery platform for Indian parents, built to compare, not just list",
+    "metaTitle": "School Scout — School Discovery Platform Case Study | Build First Site",
+    "metaDescription": "How we built School Scout, a platform helping Indian parents research and compare 6,500+ schools by city, board, fees and facilities, with an AI-powered school matching tool.",
+    "industry": "EdTech",
+    "location": "India",
+    "liveUrl": "https://myschoolscout.in",
+    "image": "https://s0.wp.com/mshots/v1/https%3A%2F%2Fmyschoolscout.in?w=1200",
+    "cover": {
+      "from": "#0f2a1e",
+      "to": "#1e6b4e",
+      "mark": "SS"
+    },
+    "timeline": "Ongoing",
+    "services": [
+      "Platform Build",
+      "Search & Filters",
+      "AI Matching Tool",
+      "Comparison Engine"
+    ],
+    "techStack": [
+      "Next.js",
+      "React",
+      "AI Matching"
+    ],
+    "challenge": [
+      "Choosing a school in India means wading through scattered, unverified information across dozens of tabs — board type, fees, facilities, staff ratios — with no easy way to compare options side by side. Parents needed one place to search, filter and actually compare schools, not just another directory listing.",
+      "The brief was a platform that covers multiple cities and thousands of schools, gives parents genuinely useful comparison tools, and helps narrow the decision down with data rather than guesswork."
+    ],
+    "approach": [
+      {
+        "title": "Search built around how parents decide",
+        "body": "Schools can be filtered by city, curriculum board (CBSE, ICSE, IB, Cambridge), budget and format, so parents narrow thousands of listings down to the handful that actually fit their situation."
+      },
+      {
+        "title": "Side-by-side comparisons",
+        "body": "A comparison view puts fees, facilities, staff ratios and other criteria next to each other, replacing a dozen open tabs with one clear view."
+      },
+      {
+        "title": "Free AI-powered matching",
+        "body": "An AI matching tool takes a parent's preferences and surfaces relevant schools directly, alongside a board finder and age-eligibility checker for grade placement."
+      },
+      {
+        "title": "Built to scale across cities",
+        "body": "The platform is structured to grow city by city — it currently covers schools across Bangalore, Mumbai, Delhi, Hyderabad and Pune — without the search and comparison experience breaking down as the catalogue grows."
+      }
+    ],
+    "results": [
+      {
+        "label": "Schools listed",
+        "value": "6,500+"
+      },
+      {
+        "label": "Matching",
+        "value": "AI-powered"
+      },
+      {
+        "label": "Cities covered",
+        "value": "5+"
+      },
+      {
+        "label": "Comparison",
+        "value": "Side-by-side"
+      }
+    ],
+    "outcome": "School Scout gives Indian parents a single place to search, compare and shortlist schools with real filtering and AI matching — turning a scattered, stressful decision into a structured one.",
+    "keywords": [
+      "school discovery platform",
+      "edtech developer india",
+      "school comparison website",
+      "ai school matching tool"
+    ]
   }
 ];
 

@@ -29,9 +29,10 @@ const CATEGORIES = {
     "marlow-vine":      ["hospo"],
     "banish-shoes":     ["client", "ecommerce"],
     "swarom":           ["client", "ecommerce"],
+    "school-scout":     ["client", "saas"],
 }
 
-const REAL_CLIENT_SLUGS = ["hs-race-gear", "mobile-armour", "autozenlyai", "banish-shoes", "swarom"]
+const REAL_CLIENT_SLUGS = ["hs-race-gear", "mobile-armour", "autozenlyai", "banish-shoes", "swarom", "school-scout"]
 
 export default function PortfolioGallery({ projects }) {
     const [active, setActive] = useState("all")

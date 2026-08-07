@@ -4,7 +4,7 @@ import { useState } from "react"
 const FAQS = [
     {
         q: "How much does a website cost?",
-        a: "We publish our prices upfront, in AUD, before you make any commitment. Landing pages from $600, business websites from $2,000, e-commerce stores from $4,000, and custom web apps from $8,000. You get a written quote that doesn't move unless the scope does — no hourly billing surprises at the end."
+        a: "We publish our prices upfront, in AUD, before you make any commitment. Three to five page sites from $800, up to ten pages $1,900, unlimited pages $3,500, e-commerce and applications $4,500, and custom software from $5,000. You get a written quote that doesn't move unless the scope does — no hourly billing surprises at the end."
     },
     {
         q: "What makes you different from other Australian web agencies?",
@@ -32,7 +32,7 @@ const FAQS = [
     },
     {
         q: "What happens after my website launches?",
-        a: "Every project includes 30 days of post-launch support at no extra cost. After that, our optional maintenance plan (from $150/month) covers security updates, backups, uptime monitoring, and small content changes. No long lock-in — cancel any month."
+        a: "Every project includes 30 days of post-launch support at no extra cost. After that, our Care + SEO plan ($250/month) covers security updates, backups, uptime monitoring, and small content changes. No long lock-in — cancel any month."
     },
 ]
 

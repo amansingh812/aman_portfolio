@@ -11,8 +11,16 @@
  *   5. SERVICES (6)     — end-to-end offer, links to individual service pages
  *   6. PORTFOLIO (3)    — 3 recent projects with LIVE DEMO buttons
  *   7. CLIENT REVIEWS    — empty until real quotes exist (see content/site.js REVIEWS)
- *   8. FAQ              — Accordion (existing component)
- *   9. FINAL CTA        — big rounded panel, Get a quote + Book a call
+ *   8. PRICING          — the 6 packages + monthly, from content/pricing.js
+ *   9. FAQ              — Accordion (existing component)
+ *  10. FINAL CTA        — big rounded panel, Get a quote + Book a call
+ *
+ * PRICES: never hardcode a figure in this file. Import BUILD_TIERS and
+ * RETAINER from content/pricing.js so the homepage, /pricing/ and every
+ * service page always agree.
+ *
+ * DATES: use the helpers in lib/format.js (fmtDate) rather than calling
+ * toLocaleDateString inline — that is how the blog pages drifted apart.
  *
  * HONESTY: no invented testimonials, no fake stats, spec builds NOT shown
  * on the homepage strip (they live in /work/ properly labelled).
@@ -25,11 +33,12 @@ import Link from "next/link"
 import Image from "next/image"
 import { CTA, SITE, REVIEWS } from "@/content/site"
 import { CASE_STUDIES } from "@/content/case-studies"
+import { BUILD_TIERS } from "@/content/pricing"
 
 export const metadata = {
     title: "Build First Site — Web, App & AI Development for Australian Businesses",
     description:
-        "Websites, apps and AI systems built for Australian businesses. Fixed AUD pricing from $600, modern Next.js stack, full code ownership. A two-person studio.",
+        "Websites, apps and AI systems built for Australian businesses. Fixed AUD pricing from $800, modern Next.js stack, full code ownership. A two-person studio.",
     alternates: { canonical: "/" },
     openGraph: {
         title: "Build First Site — Fixed AUD Prices, Modern Stack",
@@ -76,7 +85,7 @@ const SERVICES = [
     {
         title: "Maintenance & Support",
         icon: "/assets/imgs/page/services/1/icon-support.svg",
-        body: "Ongoing support and maintenance to keep your systems running smoothly. From AU$150/month.",
+        body: "Ongoing support and maintenance to keep your systems running smoothly. From AU$250/month.",
         href: "/services/maintenance-support/",
     },
 ]
@@ -91,6 +100,25 @@ const PORTFOLIO = CASE_STUDIES.filter((cs) =>
 export default function Home() {
     return (
         <Layout>
+
+            {/* Layout-only styles for the pricing cards. Type sizes and
+                colours come from the Agon utility classes above. */}
+            <style dangerouslySetInnerHTML={{ __html: `
+.home-price-card { position:relative; height:100%; display:flex; flex-direction:column;
+  background:#fff; border:1.5px solid #E4E7EC; border-radius:16px; padding:34px 30px;
+  transition:border-color .2s ease, box-shadow .2s ease, transform .2s ease; }
+.home-price-card:hover { border-color:#83C5BE; transform:translateY(-4px);
+  box-shadow:0 16px 40px rgba(0,109,119,.10); }
+.home-price-card.is-featured { border:2px solid #006D77; box-shadow:0 16px 44px rgba(0,109,119,.14); }
+.home-price-chip { position:absolute; top:-16px; left:30px; padding:7px 16px !important;
+  font-size:12px !important; line-height:12px !important; }
+.home-price-amt { display:flex; align-items:baseline;
+  padding-bottom:22px; border-bottom:1px solid #E4E7EC; }
+.home-price-btn { margin-top:auto; width:100%; text-align:center; }
+.home-price-retainer { background:#F4FAFB; border:1px solid #BEE1E6; border-radius:16px;
+  padding:32px 36px; display:flex; align-items:center; justify-content:space-between;
+  gap:26px; flex-wrap:wrap; }
+` }} />
 
             {/* ═══════════════ 1. HERO ═══════════════ */}
             <section id="home" className="section-box">
@@ -449,7 +477,74 @@ export default function Home() {
                 </section>
             )}
 
-            {/* ═══════════════ 8. FAQ ═══════════════ */}
+            {/* ═══════════════ 8. PRICING ═══════════════
+                Figures come from content/pricing.js — the single source of
+                truth. Never hardcode a price here; if it looks wrong, fix it
+                there and every page updates together. Homepage shows only the
+                3 core site tiers (starter/business/unlimited) — E-Commerce,
+                Application and Custom Software are on /pricing/ only. */}
+            <section id="pricing" className="section-box mt-60">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-8 mx-auto text-center mb-50">
+                            <span className="tag-1 bg-6 color-green-900">Pricing</span>
+                            <h2 className="text-heading-1 color-gray-900 mt-20 mb-20">
+                                Priced by size, not by features
+                            </h2>
+                            <p className="text-body-lead-large color-gray-600">
+                                Every package includes the same thing — custom design, a CMS you
+                                can edit, SEO built in, and full ownership of the code. The only
+                                variable is how big the build is.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className="row">
+                        {BUILD_TIERS.filter((t) =>
+                            ['starter', 'business', 'unlimited'].includes(t.id)
+                        ).map((t) => (
+                            <div className="col-lg-4 col-md-6 col-sm-12 mb-30" key={t.id}>
+                                <div className={`home-price-card${t.featured ? " is-featured" : ""}`}>
+                                    {t.featured && (
+                                        <span className="tag-1 bg-6 color-green-900 home-price-chip">
+                                            Most popular
+                                        </span>
+                                    )}
+                                    <h3 className="text-heading-5 color-gray-900 mb-10">{t.name}</h3>
+                                    <p className="text-body-small color-gray-500 mb-25">{t.scope}</p>
+
+                                    <div className="home-price-amt">
+                                        <span className="text-heading-2 color-green-900">{t.priceLabel}</span>
+                                        <span className="text-body-small color-gray-500 ml-5">AUD</span>
+                                    </div>
+
+                                    <p className="text-body-text color-gray-600 mt-20 mb-25">{t.tagline}</p>
+
+                                    <p className="text-body-small color-gray-500 mb-25">
+                                        Delivery {t.delivery}
+                                    </p>
+
+                                    <Link href="/pricing/"
+                                        className="btn btn-default icon-arrow-right home-price-btn">
+                                        See what&apos;s included
+                                    </Link>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="text-center mt-10">
+                        <Link href="/pricing/" className="btn btn-default icon-arrow-right">
+                            View all plans
+                        </Link>
+                        <p className="text-body-small color-gray-500 mt-25">
+                            All prices AUD · GST not included · Hosting included for year one
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* ═══════════════ 9. FAQ ═══════════════ */}
             <section className="section-box mt-100">
                 <div className="container">
                     <div className="row">
@@ -477,7 +572,7 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* ═══════════════ 9. FINAL CTA ═══════════════ */}
+            {/* ═══════════════ 10. FINAL CTA ═══════════════ */}
             <section className="section-box overflow-visible mt-100 mb-100">
                 <div className="container">
                     <div className="row">

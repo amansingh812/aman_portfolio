@@ -8,6 +8,7 @@ import { notFound } from "next/navigation"
 import { BLOG_POSTS, getBlogPost } from "@/content/blog"
 import { BLOG_CONTENT } from "@/content/blog-content"
 import { SITE } from "@/content/site"
+import { fmtDate } from "@/lib/format"
 
 export const dynamicParams = false
 
@@ -15,8 +16,9 @@ export function generateStaticParams() {
     return BLOG_POSTS.map((p) => ({ slug: p.slug }))
 }
 
-export function generateMetadata({ params }) {
-    const post = getBlogPost(params.slug)
+export async function generateMetadata({ params }) {
+    const { slug } = await params
+    const post = getBlogPost(slug)
     if (!post) return {}
     return {
         title: `${post.title} | Build First Site`,
@@ -27,12 +29,13 @@ export function generateMetadata({ params }) {
             description: post.excerpt,
             url: `https://buildfirstsite.com/blog/${post.slug}/`,
             type: "article",
+            images: post.image
+                ? [{ url: `https://buildfirstsite.com${post.image}`, width: 1200, height: 675 }]
+                : [],
         },
     }
 }
 
-const fmtDate = (d) =>
-    new Date(d).toLocaleDateString("en-AU", { year: "numeric", month: "long", day: "numeric" })
 
 export default async function BlogPost({ params }) {
     const { slug } = await params
@@ -47,9 +50,44 @@ export default async function BlogPost({ params }) {
         .sort((a, b) => (a.category === post.category ? -1 : 1))
         .slice(0, 3)
 
+    /* ── Structured data: Article + BreadcrumbList ── */
+    const url = `https://buildfirstsite.com/blog/${slug}/`
+    const jsonLd = [
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: post.title,
+            description: post.excerpt,
+            datePublished: post.date,
+            dateModified: post.date,
+            mainEntityOfPage: { "@type": "WebPage", "@id": url },
+            author: { "@type": "Organization", name: "Build First Site", url: "https://buildfirstsite.com/" },
+            publisher: {
+                "@type": "Organization",
+                name: "Build First Site",
+                url: "https://buildfirstsite.com/",
+                logo: { "@type": "ImageObject", url: "https://buildfirstsite.com/assets/imgs/template/logo.svg" },
+            },
+            inLanguage: "en-AU",
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Home", item: "https://buildfirstsite.com/" },
+                { "@type": "ListItem", position: 2, name: "Blog", item: "https://buildfirstsite.com/blog/" },
+                { "@type": "ListItem", position: 3, name: post.title, item: url },
+            ],
+        },
+    ]
+
     return (
         <Layout>
             <div>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                />
 
                 {/* ── HERO with title + tag ── */}
                 <section className="section-box">
@@ -125,8 +163,9 @@ export default async function BlogPost({ params }) {
                                         width={0} height={0} sizes="100vw"
                                         style={{ width: "100%", height: "auto" }}
                                         className="img-responsive bdr-16 mb-30"
-                                        src="/assets/imgs/page/blog/single/img-1.png"
+                                        src={post.image || "/assets/imgs/page/blog/single/img-1.png"}
                                         alt={post.title}
+                                        fetchpriority="high"
                                     />
 
                                     <BlogContent blocks={article.content} />

@@ -10,7 +10,7 @@ export const HERO = {
   "h1Accent": "Australian businesses",
   "h1Trail": "more enquiries.",
   "sub": "A two-person studio: a senior engineer who builds everything, and a local contact in Australia. Fixed prices in AUD, published upfront. You own the code.",
-  "priceAnchor": "Landing pages from $600 · Business sites from $2,000 · E-commerce from $4,000",
+  "priceAnchor": "Websites from $800 · Up to 10 pages $1,900 · E-commerce from $4,500",
   "primaryCta": {
     "label": "Get a free quote",
     "href": "#contact"
@@ -60,6 +60,12 @@ export const REAL_CLIENTS = [
     "sector": "Enterprise fintech",
     "url": "https://planet.ltfinance.com",
     "country": "🌐"
+  },
+  {
+    "name": "School Scout",
+    "sector": "EdTech / School discovery",
+    "url": "https://myschoolscout.in",
+    "country": "🇮🇳"
   }
 ];
 
@@ -93,25 +99,25 @@ export const SERVICE_CARDS = [
     "title": "Business Websites",
     "body": "Multi-page sites for trades, professional services, clinics and retail — built to turn visitors into enquiries, with local SEO from day one.",
     "href": "/hire-website-builder/",
-    "price": "from $2,000"
+    "price": "from $1,900"
   },
   {
     "title": "E-Commerce Stores",
     "body": "Custom Stripe-powered stores with real inventory and order management. No platform commission on every sale.",
     "href": "/ecommerce-development/",
-    "price": "from $4,000"
+    "price": "from $4,500"
   },
   {
     "title": "AI Chatbots & Booking",
     "body": "Assistants that qualify enquiries and book jobs straight into your calendar — including the ones that arrive at 9pm.",
     "href": "/ai-chatbot-development-australia/",
-    "price": "from $2,500"
+    "price": "from $900"
   },
   {
     "title": "App Development",
     "body": "Web apps, dashboards, booking systems and cross-platform mobile apps. Usually cheaper than you expect — we will tell you if you do not need native.",
     "href": "/app-development-australia/",
-    "price": "from $6,500"
+    "price": "from $4,500"
   },
   {
     "title": "AI Web Development",
@@ -188,7 +194,7 @@ export const TEAM = {
 export const OBJECTIONS = [
   {
     "q": "You are based in India — how does that work for me?",
-    "a": "Your contact is in Australia and works in your timezone for calls and quotes. The engineering happens in India, which is exactly why a business website costs $2,000 here rather than $10,000 at a Sydney agency. You get a live staging link from week one, so you can see progress at any time rather than taking anyone on trust."
+    "a": "Your contact is in Australia and works in your timezone for calls and quotes. The engineering happens in India, which is exactly why a business website costs $1,900 here rather than $10,000 at a Sydney agency. You get a live staging link from week one, so you can see progress at any time rather than taking anyone on trust."
   },
   {
     "q": "What if I need changes after launch?",
@@ -204,7 +210,7 @@ export const OBJECTIONS = [
   },
   {
     "q": "What if I only need something small?",
-    "a": "A single landing page starts at $600. If what you need is genuinely simpler than a custom build — sometimes a DIY builder is the right answer for a brand-new business — we will tell you that rather than sell you something you do not need yet."
+    "a": "A 3–5 page site starts at $800. If what you need is genuinely simpler than a custom build — sometimes a DIY builder is the right answer for a brand-new business — we will tell you that rather than sell you something you do not need yet."
   }
 ];
 
@@ -307,6 +313,29 @@ export const PROJECTS = [
     }
   },
   {
+    "id": "09",
+    "title": "School Scout",
+    "subtitle": "School Discovery Platform",
+    "description": "A search-and-compare platform helping Indian parents find and evaluate schools by city, board (CBSE, ICSE, IB, Cambridge), fees and facilities — with a free AI-powered school matching tool and side-by-side comparisons.",
+    "techStack": [
+      "Next.js",
+      "React",
+      "AI Matching",
+      "Search & Filters"
+    ],
+    "metrics": "6,500+ Schools · AI School Matching",
+    "category": "EdTech",
+    "filter": "Full Stack",
+    "country": "🇮🇳",
+    "liveUrl": "https://myschoolscout.in",
+    "image": "https://s0.wp.com/mshots/v1/https%3A%2F%2Fmyschoolscout.in?w=800",
+    "cover": {
+      "from": "#0f2a1e",
+      "to": "#1e6b4e",
+      "mark": "SS"
+    }
+  },
+  {
     "id": "05",
     "title": "Harbour Plumbing Co.",
     "subtitle": "Tradie Business Website",
@@ -348,82 +377,93 @@ export const PROJECTS = [
   }
 ];
 
+/**
+ * Homepage pricing teaser — a 4-tier subset of the full ladder.
+ * The complete ladder (6 build tiers + SEO + maintenance) lives in
+ * content/pricing.js and renders on /pricing/. These four must match it.
+ * All figures are AUD, GST excluded.
+ */
 export const PRICE_TIERS = [
   {
-    "title": "Landing Page",
-    "desc": "Conversion-focused single page — copy structure, SEO basics, analytics, deployed.",
-    "price": "$600",
-    "aud": "≈ AU$1,000",
-    "timeline": "~2 week"
+    "title": "Starter",
+    "desc": "3–5 pages with everything included — custom design, CMS, SEO, schema and analytics.",
+    "price": "$800",
+    "aud": "3–5 pages",
+    "timeline": "5–7 days"
   },
   {
-    "title": "Business Website",
-    "desc": "Multi-page site with CMS, contact/quote forms, booking integration, local SEO.",
-    "price": "$2,000",
-    "aud": "≈ AU$3,800",
+    "title": "Business",
+    "desc": "Up to 10 pages. Same inclusions, more room to explain everything you do.",
+    "price": "$1,900",
+    "aud": "Up to 10 pages",
     "timeline": "2–3 weeks"
   },
   {
-    "title": "E-Commerce Store",
-    "desc": "Full store with Stripe checkout, inventory, admin dashboard, and order emails.",
-    "price": "$4,000",
-    "aud": "≈ AU$5,000",
-    "timeline": "4–6 weeks"
+    "title": "Unlimited",
+    "desc": "No page cap — for multi-service and multi-location businesses.",
+    "price": "$3,500",
+    "aud": "Unlimited pages",
+    "timeline": "3–4 weeks"
   },
   {
-    "title": "AI / SaaS MVP",
-    "desc": "Product build from zero — auth, billing, AI integrations, dashboard, launch-ready.",
-    "price": "$5,000",
-    "aud": "≈ AU$6,500",
-    "timeline": "6–8 weeks"
+    "title": "E-Commerce",
+    "desc": "Full store with Stripe, inventory, orders and customer accounts.",
+    "price": "$4,500",
+    "aud": "Online store",
+    "timeline": "4–6 weeks"
   }
 ];
 
+/**
+ * Homepage retainer teaser. Entry point of the monthly ladder — the full
+ * SEO tiers ($250 / $450 / $850) and Care Plan ($150) live in
+ * content/pricing.js and render on /pricing/.
+ */
 export const RETAINER = {
-  "tag": "Monthly Retainer",
-  "title": "Ongoing Partnership",
-  "blurb": "Dedicated monthly engineering support for growing products that need continuous development.",
-  "price": "$600",
+  "tag": "Monthly",
+  "title": "Care + SEO",
+  "blurb": "One plan, not four tiers. Hosting, security, backups, technical SEO and a new page every month. Cancel with 30 days notice.",
+  "price": "$250",
   "unit": "/month",
-  "cta": "Book a Call",
+  "cta": "See what's included",
   "features": [
-    "Priority access & fast turnaround guarantee",
-    "Unlimited revisions on active tasks",
-    "Monthly feature deployments & updates",
-    "Performance monitoring & optimisation",
-    "Direct Slack / WhatsApp collaboration",
-    "Scales with your roadmap — pause anytime"
+    "Hosting, security and uptime monitoring",
+    "Weekly backups and dependency updates",
+    "Technical SEO and on-page optimisation",
+    "One new page or blog post every month",
+    "Speed and Core Web Vitals monitoring",
+    "Monthly growth report and priority support"
   ]
 };
 
 export const FAQS = [
   {
     "q": "What services do you offer exactly?",
-    "a": "I build websites, web apps, e-commerce platforms, and SaaS products — from design handoff to launch. Custom Next.js & React builds, Flutter mobile apps, AI integrations, Stripe & payment flows, admin dashboards, and performance audits."
+    "a": "We build websites, web apps, e-commerce platforms and SaaS products — from design through to launch. Custom Next.js and React builds, cross-platform mobile apps, AI integrations, Stripe and payment flows, admin dashboards, and performance audits."
   },
   {
     "q": "How much does a project cost?",
-    "a": "Most projects fall between $800 and $15,000 USD depending on scope. A landing page starts at $800; a business website from $2,500; e-commerce from $4,500; an AI or SaaS MVP from $7,000. You always get a fixed quote upfront — never hourly billing."
+    "a": "Every price is published in AUD on our pricing page and set by scope, not by features. 3–5 pages is $800, up to 10 pages $1,900, unlimited pages $3,500, e-commerce and applications $4,500, and custom software from $5,000. You get a fixed quote upfront — never hourly billing."
   },
   {
     "q": "What are the payment terms?",
-    "a": "50% upfront to begin, 50% on completion. Larger projects can split into three milestones. I accept Wise, Stripe, PayPal, and bank transfer — works for clients in the US, UK, and Australia."
+    "a": "50% to begin, 50% on completion. Larger projects can split into three milestones. We accept Stripe, PayPal, Wise and Australian bank transfer."
   },
   {
     "q": "Do you work with international clients?",
-    "a": "Yes — most of my freelance work is for businesses in Australia, the US, and the UK. I handle timezones with async communication and scheduled calls, and deliver on time regardless of location."
+    "a": "Yes. Most of our work is for Australian businesses, with some clients in the US and UK. Your contact is based in Australia and works Australian hours; calls are scheduled in the AEST morning."
   },
   {
     "q": "How long does a project take?",
-    "a": "Landing page: ~7 days. Business website: 2–3 weeks. E-commerce or SaaS: 4–6 weeks. You get a clear timeline with milestones in the proposal before we start."
+    "a": "Starter: 5–7 days. Business: 2–3 weeks. Unlimited: 3–4 weeks. E-commerce: 4–6 weeks. Applications: 4–8 weeks. Custom software is scoped per project. You get a timeline with milestones in the proposal before we start."
   },
   {
     "q": "Will I own the code?",
-    "a": "100%. The code is yours, hosted wherever you like — Vercel, AWS, your own server. No subscriptions, no lock-in. Full repo handed over on completion."
+    "a": "100%. The code is yours, hosted wherever you like — Vercel, AWS or your own server. No proprietary CMS, no lock-in. The full repository is handed over on completion."
   },
   {
     "q": "Do you offer ongoing support after launch?",
-    "a": "The first 30 days post-launch are free. After that, monthly retainers start at $800/month for ongoing development, updates, and support."
+    "a": "Every package includes 30 days of free post-launch support. After that, Care + SEO is $250/month — hosting, security, backups, technical SEO and one new page monthly. Optional, cancel with 30 days notice."
   }
 ];
 

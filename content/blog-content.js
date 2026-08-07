@@ -1,4 +1,347 @@
 export const BLOG_CONTENT = {
+  "best-web-design-agencies-australia": {
+    "lead": "Four Australian web design agencies, compared on published prices, technology and code ownership. We're one of the four — so here's our weakness up front, and every figure linked to its source.",
+    "content": [
+      {
+        "type": "p",
+        "html": "Comparison · Australia · Updated August 2026"
+      },
+      {
+        "type": "p",
+        "html": "Almost every \"best web design agencies in Australia\" article you'll find is written by an agency that puts itself at number one. This one is written by an agency too — <strong>Build First Site</strong> — so read it with that in mind. What makes this list different is that every price below is <em>published on the agency's own website</em>, in AUD, and you can click through and check it yourself."
+      },
+      {
+        "type": "p",
+        "html": "We compared four Australian agencies on the things that actually decide the outcome: what they charge, what technology they build on, whether you end up owning the site, and how much verifiable proof exists that they do good work. Prices were checked on <strong>7 August 2026</strong> and agencies change them, so verify before you commit."
+      },
+      {
+        "type": "h2",
+        "text": "Quick comparison: what Australian web agencies charge in 2026"
+      },
+      {
+        "type": "p",
+        "html": "Three of the four publish a price list. One doesn't. That alone tells you something about how each of them sells."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Agency",
+          "Entry price",
+          "Business site",
+          "E-commerce",
+          "Built on"
+        ],
+        "rows": [
+          [
+            "Build First Site",
+            "$800",
+            "$1,900",
+            "$4,500",
+            "Next.js / React"
+          ],
+          [
+            "Aussify Web Design",
+            "$900",
+            "$2,300",
+            "$4,200",
+            "WordPress"
+          ],
+          [
+            "Havealook",
+            "$995",
+            "$1,995",
+            "Quote",
+            "Static HTML + own CMS"
+          ],
+          [
+            "Growth Digital",
+            "Not published",
+            "Not published",
+            "Not published",
+            "Shopify"
+          ]
+        ]
+      },
+      {
+        "type": "p",
+        "html": "The headline range for a standard small business website in Australia is roughly <strong>$2,000 to $2,300</strong> across the agencies that publish figures. That's a useful anchor, because larger Australian agencies routinely quote $10,000 to $50,000 for work in the same category. If you've been quoted five figures for a brochure site, this table is your evidence that you're being overcharged."
+      },
+      {
+        "type": "h2",
+        "text": "Havealook — the incumbent"
+      },
+      {
+        "type": "p",
+        "html": "<strong>Melbourne · operating since 2005 · 4.8★ from 300 Google reviews</strong>"
+      },
+      {
+        "type": "p",
+        "html": "If you're picking on track record alone, Havealook wins and it isn't close. Twenty years in business, 300 Google reviews at 4.8 stars, and by their own count more than 20,000 websites built. Their support is Australian-based and their clients say so repeatedly in the reviews. For a business owner who wants a phone number that a real person answers, this is a genuinely strong option."
+      },
+      {
+        "type": "p",
+        "html": "Their published packages:"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Package",
+          "Price",
+          "What you get"
+        ],
+        "rows": [
+          [
+            "Starter",
+            "$995",
+            "3 stock images, CMS, hosting"
+          ],
+          [
+            "Economy",
+            "$1,495",
+            "+ homepage slideshow, graphical buttons"
+          ],
+          [
+            "Premium",
+            "$1,995",
+            "+ full-width slideshow, sticky menu, custom footer"
+          ],
+          [
+            "The Works",
+            "$2,795",
+            "+ full-screen backgrounds, animation, logo preloader"
+          ]
+        ]
+      },
+      {
+        "type": "p",
+        "html": "All tiers include hosting and GST, and they include three rounds of changes. Logo design is $295 to $395 on top."
+      },
+      {
+        "type": "p",
+        "html": "<strong>The thing to ask about:</strong> the packages are differentiated largely by the number of iStock images included (3 → 5 → 7 → 12) and by animation effects. Those are presentation features, not capability features. Nothing in the tiers changes what the website can <em>do</em> — there's no booking system, no customer portal, no automation. And the site is built on Havealook's own content management system and hosted on their servers. Before signing, ask them directly what happens if you want to move to a different provider in three years, and get the answer in writing."
+      },
+      {
+        "type": "h2",
+        "text": "Aussify Web Design — the broadest menu"
+      },
+      {
+        "type": "p",
+        "html": "<strong>Bankstown, NSW · founded 2019 · Trustpilot 3.7 from 9 reviews, Clutch 4.5 from 2 reviews</strong>"
+      },
+      {
+        "type": "p",
+        "html": "Aussify publishes the most detailed price list of anyone on this page, covering websites, logos, copywriting, animation, social media graphics and monthly SEO. If you want one supplier for everything, this is the widest menu available."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Package",
+          "Price",
+          "Pages"
+        ],
+        "rows": [
+          [
+            "Basic Website",
+            "$900",
+            "3 pages"
+          ],
+          [
+            "Start Up",
+            "$1,400",
+            "5 pages"
+          ],
+          [
+            "Professional",
+            "$2,300",
+            "5–10 pages, WordPress CMS"
+          ],
+          [
+            "Corporate",
+            "$3,500",
+            "10–15 pages"
+          ],
+          [
+            "E-commerce",
+            "$4,200",
+            "Unlimited products"
+          ],
+          [
+            "Identity",
+            "$5,000",
+            "Unlimited pages"
+          ]
+        ]
+      },
+      {
+        "type": "p",
+        "html": "They also run monthly SEO retainers from <strong>$225 to $1,499 per month</strong> — the only agency here with a published recurring plan, which is worth knowing if you want ongoing search work bundled with the build."
+      },
+      {
+        "type": "p",
+        "html": "<strong>The thing to ask about:</strong> their Clutch profile lists the company at 50–249 employees, while carrying two Clutch reviews and nine Trustpilot reviews. Those numbers are hard to reconcile. Ask who specifically will build your site, where they're located, and request to speak with them directly rather than only a project manager."
+      },
+      {
+        "type": "h2",
+        "text": "Growth Digital — Shopify specialists"
+      },
+      {
+        "type": "p",
+        "html": "<strong>Melbourne · Shopify and Shopify Plus · 60+ reviews claimed</strong>"
+      },
+      {
+        "type": "p",
+        "html": "Growth Digital do one thing: Shopify stores. If you're launching or rebuilding an online shop and you've already decided Shopify is the platform, a specialist is a reasonable choice over a generalist. Their reviews are reproduced in full with real names, which is more than most agencies bother to do."
+      },
+      {
+        "type": "p",
+        "html": "They publish three pricing <em>models</em> — fixed packages, custom quotes, and ad-hoc hourly work — but no actual numbers. You'll need to request a proposal to find out what anything costs. At the time of writing they run a \"$1,000 off, first 5 sign-ups this month\" offer, which is a standard urgency mechanic; treat the discount as the real price rather than a saving."
+      },
+      {
+        "type": "p",
+        "html": "<strong>The thing to ask about:</strong> a Shopify store means your storefront lives on Shopify's platform and you pay Shopify's monthly subscription and transaction fees for as long as it exists. That's fine and often the right call — just factor the ongoing platform cost into the comparison, because it doesn't show up in the build quote."
+      },
+      {
+        "type": "h2",
+        "text": "Build First Site — that's us"
+      },
+      {
+        "type": "p",
+        "html": "<strong>Australian contact, engineering by the founder · Next.js and React · no Google reviews yet</strong>"
+      },
+      {
+        "type": "p",
+        "html": "We'll state our weakness first, because you'd find it anyway: <strong>Build First Site has no Google reviews.</strong> Havealook has 300. If review volume is your deciding factor, they win and we're not going to pretend otherwise."
+      },
+      {
+        "type": "p",
+        "html": "What we do differently is the engineering. Build First Site builds on Next.js and React — the same framework stack used by large technology companies — rather than WordPress, a page builder, or a proprietary CMS. In practice that means faster load times, better Core Web Vitals, and a site that can grow into a booking system, customer portal, dashboard or AI assistant later without being rebuilt from scratch."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Package",
+          "Price",
+          "Typical timeline"
+        ],
+        "rows": [
+          [
+            "Starter (3–5 pages)",
+            "$800",
+            "5–7 days"
+          ],
+          [
+            "Business (up to 10 pages)",
+            "$1,900",
+            "2–3 weeks"
+          ],
+          [
+            "E-commerce store",
+            "$4,500",
+            "4–6 weeks"
+          ],
+          [
+            "Custom software",
+            "from $5,000",
+            "6–12 weeks"
+          ],
+          [
+            "Maintenance",
+            "$250/month",
+            "Ongoing, cancel anytime"
+          ]
+        ]
+      },
+      {
+        "type": "p",
+        "html": "We're also a small team — the person who writes the code is the person you talk to, not an account manager relaying messages. That's a genuine advantage on responsiveness and a genuine limitation on capacity. Both are true."
+      },
+      {
+        "type": "h2",
+        "text": "The question almost nobody asks: do you actually own your website?"
+      },
+      {
+        "type": "p",
+        "html": "This is the single most expensive detail buyers miss, and it doesn't appear in any pricing table."
+      },
+      {
+        "type": "p",
+        "html": "When a website is built on an agency's own content management system and hosted on the agency's own servers, you are renting it. The monthly fee is not just hosting — it's continued access to the thing you paid to have built. If you ever want to move to another developer, there is nothing to hand over. The new developer starts again, and you pay for the site a second time."
+      },
+      {
+        "type": "p",
+        "html": "Three questions to ask <em>every</em> agency before you sign, including us:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "<strong>Do I receive the complete source code?</strong> The answer should be an unqualified yes, with a repository handed to you at launch.",
+          "<strong>Whose accounts are the domain and hosting registered under?</strong> They should be in your business name, with you as the owner.",
+          "<strong>If I leave in three years, what do I physically take with me?</strong> If the honest answer is \"nothing\", you are renting, not buying."
+        ]
+      },
+      {
+        "type": "p",
+        "html": "Of the four agencies here, Aussify state that source files are included in most packages, Build First Site hands over the full repository plus every account, Growth Digital's work lives on Shopify's platform, and Havealook build on their own CMS. None of that is hidden information — but you have to ask."
+      },
+      {
+        "type": "h2",
+        "text": "How to choose between them"
+      },
+      {
+        "type": "p",
+        "html": "There isn't a single best agency, only a best fit. Based on what each one publishes:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "<strong>Choose Havealook</strong> if track record and Australian phone support matter more to you than the underlying technology, and you want a simple brochure site from a business that has been around for twenty years.",
+          "<strong>Choose Aussify</strong> if you want one supplier handling website, logo, copywriting and monthly SEO together, and WordPress suits how you want to manage content.",
+          "<strong>Choose Growth Digital</strong> if you're committed to Shopify and want a specialist rather than a generalist.",
+          "<strong>Choose Build First Site</strong> if performance matters, you want to own the code outright, and you expect the site to grow into something more than pages — bookings, dashboards, automation, AI."
+        ]
+      },
+      {
+        "type": "p",
+        "html": "And whoever you choose: get the price in writing, get the scope in writing, and get the ownership answer in writing."
+      },
+      {
+        "type": "h2",
+        "text": "Frequently asked questions"
+      },
+      {
+        "type": "p",
+        "html": "<strong>How much should a small business website cost in Australia in 2026?</strong><br/>Based on published prices from the agencies compared here, a standard small business website costs between <strong>$995 and $2,300</strong>. E-commerce sites run from roughly $4,000. Quotes of $10,000 or more are common from larger agencies but are not the market rate for a straightforward business site."
+      },
+      {
+        "type": "p",
+        "html": "<strong>Why do some agencies not publish prices?</strong><br/>Undisclosed pricing lets an agency quote based on what it estimates you can afford. That isn't necessarily dishonest — complex projects genuinely need scoping — but for a standard business website there's no technical reason a price can't be published. If an agency won't give you a figure before a sales call, ask why."
+      },
+      {
+        "type": "p",
+        "html": "<strong>Is WordPress a bad choice?</strong><br/>No. WordPress powers a large share of the web and is a reasonable fit for content-heavy sites where non-technical staff publish regularly. The trade-offs are security patching, plugin conflicts, and a performance ceiling that's hard to get past. For a marketing site that needs to be fast and rank well, a modern framework generally performs better."
+      },
+      {
+        "type": "p",
+        "html": "<strong>How long should a website take to build?</strong><br/>A landing page should take days, not weeks. A standard business website takes two to four weeks with responsive communication. E-commerce takes four to six. If an agency quotes several months for a brochure site, ask what's driving the timeline."
+      },
+      {
+        "type": "p",
+        "html": "<strong>Should I pick the cheapest option?</strong><br/>Not on price alone. Compare what's actually included — hosting, GST, revisions, ongoing fees, and code ownership. A $995 site you can never move away from can cost more over five years than a $1,900 site you own outright."
+      },
+      {
+        "type": "h2",
+        "text": "Want a fixed quote to compare against?"
+      },
+      {
+        "type": "p",
+        "html": "Tell us what you're building and we'll come back with a written scope and a fixed AUD price within one business day — no sales call required, and no obligation. If a competitor's quote is better for your situation, we'll say so."
+      },
+      {
+        "type": "p",
+        "html": "You may also want to read our breakdown of <a href=\"/blog/website-cost-australia/\">how much a website costs in Australia</a>, our comparison of <a href=\"/blog/wordpress-vs-custom-website/\">WordPress versus a custom website</a>, and our <a href=\"/blog/small-business-website-checklist/\">small business website checklist</a>. If you'd rather talk it through first, <a href=\"/contact/\">get in touch</a>."
+      }
+    ]
+  },
   "7-website-mistakes-australia": {
     "lead": "Most Australian small business websites have at least three of these problems. Some have all seven. The good news: none of them require a full rebuild to fix — just knowing where to look.",
     "content": [
@@ -277,7 +620,7 @@ export const BLOG_CONTENT = {
       },
       {
         "type": "p",
-        "html": "If your site scores under 60 on mobile and you're on Wix or WordPress, the honest answer is that the platform is part of the problem. A custom-built website on Vercel eliminates the speed issue, the CTA can be built in properly from day one, and it comes with GSC and sitemap submission on launch day. We build business websites from $2,000 AUD fixed price — <a class=\"text-orange-500 hover:underline\" href=\"/#contact\">get a quote here</a>."
+        "html": "If your site scores under 60 on mobile and you're on Wix or WordPress, the honest answer is that the platform is part of the problem. A custom-built website on Vercel eliminates the speed issue, the CTA can be built in properly from day one, and it comes with GSC and sitemap submission on launch day. We build business websites from $1,900 AUD fixed price — <a class=\"text-orange-500 hover:underline\" href=\"/#contact\">get a quote here</a>."
       },
       {
         "type": "p",
@@ -970,7 +1313,7 @@ export const BLOG_CONTENT = {
       },
       {
         "type": "p",
-        "html": "We quote <strong>fixed prices</strong> — you know the number before any work starts. Landing pages from AU$1,200, business websites from AU$3,800, e-commerce from AU$5,000. Every build includes responsive design, SEO basics, 30 days of free support, and <strong>full code ownership</strong> — no lock-in, ever. You also get a live staging link so you can watch progress in real time. Based in Australia, we work with businesses in <a class=\"text-orange-600 hover:underline\" href=\"/web-design-sydney/\">Sydney</a>, <a class=\"text-orange-600 hover:underline\" href=\"/web-design-melbourne/\">Melbourne</a> and across the country."
+        "html": "We quote <strong>fixed prices</strong> — you know the number before any work starts. Starter sites from AU$800, business websites at AU$1,900, e-commerce from AU$4,500. Every build includes responsive design, SEO basics, 30 days of free support, and <strong>full code ownership</strong> — no lock-in, ever. You also get a live staging link so you can watch progress in real time. Based in Australia, we work with businesses in <a class=\"text-orange-600 hover:underline\" href=\"/web-design-sydney/\">Sydney</a>, <a class=\"text-orange-600 hover:underline\" href=\"/web-design-melbourne/\">Melbourne</a> and across the country."
       },
       {
         "type": "h2",

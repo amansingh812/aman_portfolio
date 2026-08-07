@@ -172,7 +172,7 @@ export const GUIDES = [
         "body": [
           "A single landing page — one page, a form, conversion-focused — generally runs from around $600 to $2,500 depending on design complexity and whether the copy is written for you. A standard small-business website of five to ten pages typically lands between $2,000 and $8,000. A custom e-commerce store usually starts around $4,000 and rises quickly with catalogue size and integrations. Web applications and SaaS products start around $6,500 for a genuine MVP and go up from there.",
           "Australian agencies quote considerably higher for comparable scope — commonly $10,000 and up for a business website, and $50,000-plus for app work. Some of that premium buys real things: account management, larger teams, redundancy if someone leaves. Some of it buys the overhead of those same things. Whether it is worth it depends on the size and risk of your project.",
-          "For reference, our published starting points are $600 for a landing page, $2,000 for a business website, $4,000 for e-commerce, and $6,500 for a web app MVP."
+          "For reference, our published starting points are $800 for a three to five page site, $1,900 for up to ten pages, $3,500 for unlimited pages, $4,500 for e-commerce or an application, and $5,000 for custom software."
         ]
       },
       {
