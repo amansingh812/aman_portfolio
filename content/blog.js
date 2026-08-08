@@ -64,7 +64,7 @@ export const BLOG_POSTS = [
     excerpt: "WordPress or a custom-coded site in 2026 — real cost, speed, SEO, security and maintenance differences for Australian businesses. An honest comparison to help you choose.",
     category: "Comparison",
     date: "2026-08-01",
-    readingTime: "7 min read",
+    readingTime: "9 min read",
     href: "/blog/wordpress-vs-custom-website/",
     image: "/assets/imgs/page/blog/wordpress-vs-custom-website.png",
   },
@@ -139,6 +139,18 @@ export const BLOG_POSTS = [
     readingTime: "9 min read",
     href: "/blog/seo-for-ndis-providers/",
     image: "/assets/imgs/page/blog/seo-for-ndis-providers.png",
+  },
+  {
+    slug: "best-ndis-website-designers",
+    metaDescription: "Who builds NDIS provider websites in Australia, the five questions that separate them, and honest pricing — including where we fall short.",
+    metaTitle: "Best NDIS Website Designers in Australia (2026)",
+    title: "Best NDIS Website Designers in Australia (2026): An Honest Comparison",
+    excerpt: "Who is actually building NDIS provider websites in Australia, how to tell the accessibility specialists from the marketers, and what each charges. Includes us, and what we cannot claim.",
+    category: "Comparison",
+    date: "2026-08-08",
+    readingTime: "9 min read",
+    href: "/blog/best-ndis-website-designers/",
+    image: "/assets/imgs/page/blog/best-ndis-website-designers.png",
   },
 ];
 

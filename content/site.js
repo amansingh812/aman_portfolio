@@ -182,7 +182,6 @@ export const FOOTER_COLUMNS = [
       { label: 'Guides', href: '/guides/' },
       { label: 'What a Website Costs', href: '/how-much-does-a-website-cost-australia/' },
       { label: 'Wix vs Custom', href: '/wix-vs-custom-website/' },
-      { label: 'Squarespace vs Custom', href: '/squarespace-vs-custom-website/' },
       { label: 'Website Checklist', href: '/small-business-website-checklist/' },
     ],
   },

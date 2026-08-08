@@ -45,6 +45,17 @@ const nextConfig = {
       ]),
     };
   },
+  async redirects() {
+    // Off-strategy US city pages (Denver, Phoenix, Nashville) removed during
+    // the static-HTML migration (CLAUDE.md §2/§4 — AU-first, no real US
+    // presence, stale non-AUD-aligned pricing). 301 to /pricing/ rather than
+    // 404 to preserve whatever link/traffic value they had.
+    return [
+      { source: '/web-design-denver/', destination: '/pricing/', permanent: true },
+      { source: '/web-design-phoenix/', destination: '/pricing/', permanent: true },
+      { source: '/web-design-nashville/', destination: '/pricing/', permanent: true },
+    ];
+  },
 };
 
 export default nextConfig;

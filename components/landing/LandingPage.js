@@ -20,7 +20,7 @@
 import Layout from "@/components/layout/Layout"
 import BlogContent from "@/components/blog/BlogContent"
 import Link from "next/link"
-import { SITE } from "@/content/site"
+import { SITE, NAP } from "@/content/site"
 import { BUILD_TIERS, RETAINER } from "@/content/pricing"
 
 export function buildMetadata(page) {
@@ -37,6 +37,15 @@ export function buildMetadata(page) {
             type: "website",
             locale: "en_AU",
         },
+        // Local-search signal for city landing pages — set page.geo to emit.
+        ...(page.geo && {
+            other: {
+                "geo.region": page.geo.region,
+                "geo.placename": page.geo.placename,
+                "geo.position": `${page.geo.latitude};${page.geo.longitude}`,
+                ICBM: `${page.geo.latitude}, ${page.geo.longitude}`,
+            },
+        }),
     }
 }
 
@@ -59,7 +68,7 @@ export default function LandingPage({ page }) {
             url,
             // One business entity, declared only on /web-design-melbourne/.
             provider: { "@id": "https://buildfirstsite.com/#localbusiness" },
-            areaServed: { "@type": "Country", name: "Australia" },
+            areaServed: page.areaServed || { "@type": "Country", name: "Australia" },
             inLanguage: "en-AU",
             ...(tiers.length && {
                 offers: {
@@ -80,6 +89,43 @@ export default function LandingPage({ page }) {
             ],
         },
     ]
+
+    /*
+     * ONE business entity, declared ONLY when page.localBusiness is true —
+     * currently only /web-design-melbourne/, our single verified GBP location.
+     * Built from content/site.js NAP so the GBP-synced facts (geo, hours,
+     * service areas) live in exactly one place. Every other landing page's
+     * `Service` block above points at this @id rather than declaring its own.
+     */
+    if (page.localBusiness) {
+        jsonLd.unshift({
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            "@id": "https://buildfirstsite.com/#localbusiness",
+            name: NAP.businessName,
+            url: SITE.url,
+            telephone: NAP.phoneE164,
+            email: NAP.email,
+            description: page.metaDescription,
+            priceRange: "$$",
+            currenciesAccepted: "AUD",
+            paymentAccepted: "Credit Card, Bank Transfer, PayPal, Stripe",
+            inLanguage: "en-AU",
+            geo: {
+                "@type": "GeoCoordinates",
+                latitude: NAP.geo.latitude,
+                longitude: NAP.geo.longitude,
+            },
+            areaServed: NAP.serviceAreas.map((name) => ({ "@type": "City", name })),
+            openingHoursSpecification: NAP.openingHours.map((h) => ({
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: h.days,
+                opens: h.opens,
+                closes: h.closes,
+            })),
+            sameAs: Object.values(SITE.social),
+        })
+    }
 
     /* Emitted only when real Q&As exist — an empty FAQPage is a schema error. */
     if (faqs.length) {

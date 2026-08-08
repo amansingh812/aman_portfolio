@@ -1315,133 +1315,46 @@ export const BLOG_CONTENT = {
     ]
   },
   "wordpress-vs-custom-website": {
-    "lead": "It's the first real decision you'll make about your website, and it shapes your cost, speed, security and headaches for years. Here's an honest 2026 comparison — no religious war, just the trade-offs that actually matter for a small Australian business.",
-    "content": [
-      {
-        "type": "h2",
-        "text": "The short answer"
-      },
-      {
-        "type": "p",
-        "html": "If you'll be editing content every day yourself and want the biggest pool of people who can work on it, <strong>WordPress</strong> is a reasonable default. If you want a <strong>fast, secure, low-maintenance site that just brings in leads</strong> — and you're happy to ask a developer for bigger changes — a <strong>custom-coded site</strong> (React / Next.js) usually serves a business better and costs less to run."
-      },
-      {
-        "type": "table",
-        "headers": [
-          "Factor",
-          "WordPress",
-          "Custom (React/Next.js)"
-        ],
-        "rows": [
-          [
-            "Upfront cost",
-            "Lower (AU$1,500–5,000)",
-            "Similar–higher (AU$2,000–8,000)"
-          ],
-          [
-            "Ongoing cost",
-            "AU$20–50/mo hosting + upkeep",
-            "Often free–AU$50/yr"
-          ],
-          [
-            "Speed",
-            "Depends on theme/plugins",
-            "Very fast by default"
-          ],
-          [
-            "SEO",
-            "Good (needs tuning)",
-            "Excellent"
-          ],
-          [
-            "Security",
-            "Needs constant updates",
-            "Minimal attack surface"
-          ],
-          [
-            "Editing yourself",
-            "Easy (built-in editor)",
-            "Needs a CMS or a dev"
-          ],
-          [
-            "Finding help",
-            "Huge talent pool",
-            "Smaller, more specialist"
-          ]
-        ]
-      },
-      {
-        "type": "h2",
-        "text": "Cost: upfront vs total"
-      },
-      {
-        "type": "p",
-        "html": "WordPress usually wins on day one. A themed WordPress site can be AU$1,500–5,000 and you'll never struggle to find someone to build one. But the sticker price hides the running costs: managed WordPress hosting (AU$20–50/month), premium plugins, and the time or money to keep everything patched. Over three years that quietly adds up."
-      },
-      {
-        "type": "p",
-        "html": "A custom site can cost a little more to build, but a static React/Next.js build hosts <a class=\"text-orange-600 hover:underline\" href=\"/how-much-does-a-website-cost-australia/\">free or near-free on Vercel/Netlify</a>, with almost nothing to maintain. Run the numbers over 2–3 years and the two often end up level — or the custom build comes out cheaper."
-      },
-      {
-        "type": "h2",
-        "text": "Speed and SEO"
-      },
-      {
-        "type": "p",
-        "html": "Google cares about speed (Core Web Vitals), and this is where custom builds shine. A default Next.js site is fast out of the box. WordPress <em>can</em> be fast, but the typical business site — a heavy theme plus a dozen plugins — often loads slowly, which hurts both rankings and conversions. If you go WordPress, budget for proper performance work; don't assume it'll be fast by default."
-      },
-      {
-        "type": "h2",
-        "text": "Security and maintenance"
-      },
-      {
-        "type": "p",
-        "html": "Most WordPress hacks come through outdated plugins or the login page. It's manageable — but it's ongoing work you either do or pay for. A custom static site has no admin login or plugin ecosystem to exploit, so there's far less to go wrong and almost nothing to patch. For a busy owner who doesn't want to think about their site, that peace of mind is worth a lot."
-      },
-      {
-        "type": "h2",
-        "text": "Who should choose what"
-      },
-      {
-        "type": "ul",
-        "items": [
-          "<strong>Choose WordPress if:</strong> you publish content constantly, want to edit everything yourself, or need a specific WordPress plugin/ecosystem.",
-          "<strong>Choose custom if:</strong> you want maximum speed and SEO, low running costs, strong security, and a site that mostly needs occasional updates rather than daily edits."
-        ]
-      },
-      {
-        "type": "p",
-        "html": "There's also a middle path: a custom-built front end with a lightweight CMS, so you get speed <em>and</em> the ability to edit your own content. That's often the best of both worlds for a growing business."
-      },
-      {
-        "type": "h2",
-        "text": "Common questions"
-      },
-      {
-        "type": "p",
-        "html": "Is WordPress cheaper than a custom website?"
-      },
-      {
-        "type": "p",
-        "html": "Cheaper upfront, often not cheaper overall. Add up 2–3 years of hosting, plugins and maintenance and the gap usually closes."
-      },
-      {
-        "type": "p",
-        "html": "Is a custom website better for SEO?"
-      },
-      {
-        "type": "p",
-        "html": "Usually yes, because it loads faster and has cleaner code — but a well-optimised WordPress site can rank well too. Speed is the real differentiator."
-      },
-      {
-        "type": "p",
-        "html": "Can I edit a custom website myself?"
-      },
-      {
-        "type": "p",
-        "html": "Yes, if it's built with a CMS. Ask your developer to include one so you can update text and images without code."
-      }
-    ]
+    lead:
+      "WordPress runs about 43% of the web, so it is rarely a wrong choice — but it is often a default one. This compares real five-year AUD costs, where each genuinely wins, and the one question that settles it for most Australian businesses.",
+    content: [
+      {"type": "h2", "text": "The short answer"},
+      {"type": "p", "html": "<strong>WordPress if you need a lot of content, a lot of contributors, or a specific plugin that already solves your problem. Custom if the site needs to be fast, do something specific, or stop costing you money in maintenance.</strong>"},
+      {"type": "p", "html": "Roughly 43% of the web runs on WordPress, so this is not a fringe choice. It is the default for good reasons. It is also the default for bad ones — plenty of businesses are on it because an agency only builds WordPress, not because it was the right fit."},
+      {"type": "h2", "text": "Five-year cost, honestly"},
+      {"type": "p", "html": "Most comparisons stop at the build price, which hides where WordPress actually costs money."},
+      {"type": "table", "headers": ["", "WordPress", "Custom (Next.js)"], "rows": [["Build", "$1,500–5,000", "$1,900"], ["Hosting", "$15–50/mo (managed)", "$0–20/mo"], ["Premium plugins", "$200–600/yr", "$0"], ["Maintenance", "$80–250/mo", "$0, or $250 with Care + SEO"], ["Security incidents", "Occasional, sometimes expensive", "Rare — no plugin attack surface"], ["Five-year total", "~$8,000–20,000", "~$1,900–17,000"]]},
+      {"type": "p", "html": "The custom range looks wide because it depends entirely on whether you take a monthly plan. Custom with no retainer is a one-off $1,900. WordPress cannot be left alone — unpatched plugins are the single most common way small business sites get compromised."},
+      {"type": "h2", "text": "Speed, and why it matters commercially"},
+      {"type": "p", "html": "This is where the gap is widest and where it shows up in revenue rather than invoices."},
+      {"type": "p", "html": "A typical WordPress business site with a page builder and a dozen plugins loads a large amount of CSS and JavaScript before anything appears. A Next.js site sends mostly pre-rendered HTML from an edge network. On a mid-range Android over 4G, that is often the difference between a page appearing in around two seconds and around five."},
+      {"type": "p", "html": "About two thirds of Australian traffic is mobile, and Core Web Vitals is a confirmed ranking factor. So a slow site is not only a worse experience — it also ranks lower, which means fewer people see it in the first place."},
+      {"type": "p", "html": "WordPress <em>can</em> be fast. It requires disciplined plugin choice, good hosting, caching and someone who knows what they are doing. Most WordPress sites are not fast because most are not built that way."},
+      {"type": "h2", "text": "Where WordPress genuinely wins"},
+      {"type": "p", "html": "We build custom sites, so treat this as the section arguing against ourselves."},
+      {"type": "ul", "items": ["<strong>Heavy publishing.</strong> Multiple authors, editorial workflow, hundreds of posts. WordPress was built for this and does it better than anything we would write from scratch.", "<strong>A plugin already solves your exact problem.</strong> Membership sites, complex event booking, LMS platforms. Buying a mature $200 plugin beats paying us to rebuild it.", "<strong>You need any developer to be able to pick it up.</strong> The WordPress talent pool is enormous. That is real risk reduction if you are worried about being tied to one developer.", "<strong>Budget under $1,500 with a lot of pages.</strong> A well-chosen theme gets you further than a small custom budget will."]},
+      {"type": "p", "html": "If two or more of those describe you, WordPress is probably right and we will tell you so on the call."},
+      {"type": "h2", "text": "Where it costs you"},
+      {"type": "ul", "items": ["<strong>Plugin sprawl.</strong> Every plugin is code from a stranger running on your site. Twelve plugins means twelve update streams, twelve security surfaces and twelve chances something breaks after an update.", "<strong>Security.</strong> WordPress core is well maintained. The vulnerabilities are overwhelmingly in plugins and themes, and they are exploited at scale because the platform is so widely used.", "<strong>Page builders.</strong> Elementor, Divi and WPBakery make editing easy and pages heavy. They also lock you in — the content is stored in builder-specific markup, so switching means rebuilding.", "<strong>Update anxiety.</strong> The reason so many WordPress sites run outdated plugins is that owners have been burned by an update breaking the site. That is a real operational cost, paid in avoidance."]},
+      {"type": "h2", "text": "SEO: closer than either side admits"},
+      {"type": "p", "html": "WordPress SEO is fine. Yoast and Rank Math handle titles, meta descriptions, sitemaps and schema competently, and plenty of WordPress sites rank at the top of competitive terms."},
+      {"type": "p", "html": "The differences that matter are narrower than the marketing suggests:"},
+      {"type": "ul", "items": ["<strong>Core Web Vitals</strong> — custom starts fast by default; WordPress gets there with work", "<strong>Structural control</strong> — arbitrary schema and precise HTML structure are easier without a theme in the way", "<strong>Nothing else, really</strong> — content quality and links decide rankings far more than either platform does"]},
+      {"type": "p", "html": "Anyone telling you WordPress cannot rank is selling something. So is anyone telling you the platform is the reason you are not ranking."},
+      {"type": "h2", "text": "The question that actually decides it"},
+      {"type": "p", "html": "Not cost, not speed. <strong>Does the site need to say something, or do something?</strong>"},
+      {"type": "p", "html": "Saying something — who you are, what you sell, how to get in touch, plus a blog — is squarely WordPress territory, and a good theme will get you there quickly and cheaply."},
+      {"type": "p", "html": "Doing something — a booking flow that talks to your CRM, a quoting calculator, an inventory sync, an AI assistant trained on your documents — is where WordPress becomes a stack of plugins held together with hope, and where building properly is both cheaper and more reliable."},
+      {"type": "h2", "text": "Can you move from WordPress later?"},
+      {"type": "p", "html": "Yes, and more easily than from a hosted platform like Wix or Squarespace. Your content lives in a database you control and exports cleanly. What does not transfer is the design and any page-builder layouts."},
+      {"type": "p", "html": "Practically: budget for a rebuild of the presentation layer, keep the content, keep the URLs, and redirect anything that changes. We do this regularly and it is a normal project rather than a rescue."},
+      {"type": "h2", "text": "Common questions"},
+      {"type": "faq", "q": "Is WordPress or a custom website better for SEO?", "a": "Closer than either side claims. WordPress with Yoast or Rank Math handles titles, meta descriptions, sitemaps and schema competently, and many WordPress sites rank at the top of competitive terms. Custom builds have an edge on Core Web Vitals, because they start fast rather than being optimised into it, and on precise structural control. Content quality and backlinks decide rankings far more than the platform does."},
+      {"type": "faq", "q": "Is WordPress cheaper than a custom website?", "a": "Cheaper to build, often more expensive to own. A WordPress build runs AU$1,500 to $5,000 against $1,900 for a comparable custom site, but add managed hosting at $15 to $50 a month, premium plugin licences at $200 to $600 a year, and maintenance at $80 to $250 a month. Over five years WordPress typically totals $8,000 to $20,000. A custom site with no retainer stays at its build price."},
+      {"type": "faq", "q": "When should I choose WordPress over a custom build?", "a": "Choose WordPress if you publish heavily with multiple authors, if a mature plugin already solves your exact problem, if you need any developer to be able to maintain it, or if your budget is under $1,500 and you need a lot of pages. Choose custom if the site needs to do something specific, if speed matters commercially, or if you want to stop paying maintenance indefinitely."},
+      {"type": "faq", "q": "Is WordPress secure?", "a": "WordPress core is well maintained and rarely the problem. The vulnerabilities are overwhelmingly in third-party plugins and themes, and they get exploited at scale precisely because the platform is so widely used. A WordPress site with twelve plugins has twelve update streams to keep patched. Keeping plugin count low and updates current handles most of the risk, but it is ongoing work that never ends."},
+      {"type": "faq", "q": "Can I move my WordPress site to a custom website later?", "a": "Yes, and more easily than from Wix or Squarespace. Your content lives in a database you control and exports cleanly. The design and any page-builder layouts do not transfer, so budget for rebuilding the presentation layer while keeping content and URLs, with redirects for anything that changes. It is a normal project, not a rescue."},
+    ],
   },
   "ndis-website-accessibility-checklist": {
     lead:
@@ -1550,6 +1463,39 @@ export const BLOG_CONTENT = {
       {"type": "faq", "q": "Does website accessibility affect SEO?", "a": "Yes, and for NDIS providers the overlap is substantial. Semantic HTML and heading structure help both screen readers and search engines parse a page. Descriptive alt text serves blind users and image search. Descriptive link text aids screen reader navigation and passes context to Google. Fast mobile-friendly pages are a WCAG consideration and a confirmed ranking factor."},
       {"type": "faq", "q": "Should NDIS providers create a page for every suburb they serve?", "a": "No. Thirty near-identical suburb pages is exactly the scaled-content pattern Google's helpful content systems target, and a site-wide demotion would take your good pages down with it. Cover your service area properly within fewer, stronger pages, and only build a separate location page where you have a genuine physical presence or distinct service offering."},
       {"type": "faq", "q": "How long does SEO take for an NDIS provider?", "a": "Three to six months for meaningful ranking movement, longer in competitive metro markets. Google Business Profile improvements can show results within weeks because local search responds faster than organic. Content and authority take longer. Any agency guaranteeing first-page rankings within 30 days is either guessing or targeting terms nobody searches."},
+    ],
+  },
+  "best-ndis-website-designers": {
+    lead:
+      "Several Australian agencies specialise exclusively in NDIS website design, and several generalists do the work well too. This compares who is operating in the space, the five questions that separate them, and where we sit — including what we cannot claim.",
+    content: [
+      {"type": "h2", "text": "How this list works"},
+      {"type": "p", "html": "Build First Site is on this list. We are not going to rank ourselves first or pretend to be neutral — instead, everything below is stated as fact you can verify yourself, and we have flagged plainly where competitors are stronger than us."},
+      {"type": "p", "html": "<strong>What we did not do:</strong> invent review counts, rank companies we have not researched, or copy claims off their own homepages and present them as findings. Where we could not verify something, we say so."},
+      {"type": "h2", "text": "The two kinds of NDIS web designer"},
+      {"type": "p", "html": "Before any list is useful, understand the split. It explains most of the price difference."},
+      {"type": "p", "html": "<strong>NDIS specialists.</strong> Agencies whose entire business is NDIS providers, often with exact-match domains like ndiswebsitedesigns.com.au or participantconnect.com.au. They know the sector, the language and the referral journey. Some understand accessibility deeply; others are marketers who outsource the build and treat accessibility as a word on a page. The specialisation usually carries a premium of roughly $1,000 to $3,000."},
+      {"type": "p", "html": "<strong>Generalists with accessibility capability.</strong> Studios that build accessible sites across sectors. You lose some NDIS-specific fluency and gain, usually, better engineering and lower prices. Build First Site sits here."},
+      {"type": "p", "html": "Neither is automatically better. The question is which weakness you can live with."},
+      {"type": "h2", "text": "Who is operating in this space"},
+      {"type": "p", "html": "These are Australian agencies actively marketing NDIS website design, listed alphabetically rather than ranked. Details are what they publish about themselves — verify anything that matters to your decision."},
+      {"type": "table", "headers": ["Agency", "Focus", "What stands out"], "rows": [["Aussify", "Generalist with NDIS pages", "Publishes prices. Also runs \"best NDIS agencies\" listicles that place themselves first"], ["Build First Site (us)", "Generalist, accessibility-first", "Prices published from $800. WCAG 2.1 AA in every build. No NDIS clients yet"], ["2Brownies", "NDIS specialist", "Claims 200+ NDIS provider sites built"], ["NDIS Website Designs", "NDIS specialist, exact-match domain", "Entire business is NDIS providers"], ["Participant Connect", "NDIS specialist", "Positions around the participant journey"], ["Velacore", "NDIS specialist", "Markets on compliance and accessibility"]]},
+      {"type": "p", "html": "We have not audited these sites, so this is not a quality ranking. Use the criteria below to assess any of them, including us."},
+      {"type": "h2", "text": "The five questions that actually separate them"},
+      {"type": "p", "html": "Ask every agency on your shortlist these. The answers sort the field faster than any list can."},
+      {"type": "ol", "items": ["<strong>\"Can you show me a WCAG 2.1 AA audit of a site you built?\"</strong> This is the question. An agency that genuinely does accessibility has test output and will send it. One that treats it as marketing will change the subject or send a screenshot of a Lighthouse score, which is not the same thing.", "<strong>\"Do we own the source code and hosting account?\"</strong> Several Australian agencies build on proprietary systems you cannot leave without a rebuild. It is rarely disclosed before signing. Ask directly and watch how long the answer takes.", "<strong>\"Is accessibility included, or a line item?\"</strong> Built in from the start it costs close to nothing, because semantic HTML and proper contrast are how a site should be built anyway. Charged separately usually means it is being retrofitted.", "<strong>\"Who writes the content, and at what reading level?\"</strong> Participant-facing pages should sit around Year 7 to 9. Most provider websites are written for auditors, in language that excludes the people they are trying to reach.", "<strong>\"What happens to the site if we stop paying you monthly?\"</strong> If the answer is that it goes offline, you are renting."]},
+      {"type": "h2", "text": "What a good NDIS website has to do"},
+      {"type": "p", "html": "Two audiences, different needs, one site. Support coordinators are assessing your credibility and service fit before they refer. Participants and families are working out whether you can help and how to reach you."},
+      {"type": "ul", "items": ["<strong>Accessible to WCAG 2.1 AA</strong> — not as a badge, but because your users are more likely than most to rely on screen readers, keyboard navigation and high contrast", "<strong>A page per service</strong> rather than one combined services page — that is how you rank for what people actually search", "<strong>Plain English at Year 7 to 9</strong> — write \"we help you live independently\", not \"capacity building supports aligned to participant goals\"", "<strong>Obvious next step</strong> — a referral form or phone number that does not require scrolling to find", "<strong>Fast on a phone</strong> — most first visits are mobile, and speed is both an accessibility and a ranking factor"]},
+      {"type": "h2", "text": "Being straight about where we sit"},
+      {"type": "p", "html": "<strong>Build First Site has not yet built a website for an NDIS provider.</strong> If deep sector experience is what you need most, one of the specialists above will serve you better and we would rather say so than win the job dishonestly."},
+      {"type": "p", "html": "What we can evidence is the capability that decides whether an NDIS site is any good: we build accessible, fast, semantic websites, and WCAG 2.1 AA is included in every build rather than priced as an extra. Our client work is at <a href=\"https://www.hsracegear.com\" target=\"_blank\" rel=\"noopener\">hsracegear.com</a> and <a href=\"https://mobilearmour.com.au\" target=\"_blank\" rel=\"noopener\">mobilearmour.com.au</a> — none of it NDIS. Open them, run Lighthouse, and judge the build quality directly."},
+      {"type": "p", "html": "Our prices are published: $800 for three to five pages, $1,900 for up to ten, $3,500 unlimited. Details on the <a href=\"/pricing/\">pricing page</a>, and our <a href=\"/blog/ndis-website-cost/\">NDIS website cost guide</a> covers what the specialists charge."},
+      {"type": "h2", "text": "Common questions"},
+      {"type": "faq", "q": "Who are the best NDIS website designers in Australia?", "a": "Several Australian agencies specialise exclusively in NDIS providers, including 2Brownies, NDIS Website Designs, Participant Connect and Velacore, alongside generalists like Aussify and Build First Site. There is no single best — the right choice depends on whether you value sector fluency or engineering and accessibility capability more. The fastest way to separate them is to ask each for a WCAG 2.1 AA audit of a site they built."},
+      {"type": "faq", "q": "Should I use an NDIS-specialist agency or a generalist?", "a": "Specialists know the sector language, referral journeys and participant needs, and typically charge a premium of $1,000 to $3,000 for that focus. Generalists with genuine accessibility capability often build better and cost less but need more briefing on the sector. Neither is automatically right. Ask both for accessibility test output — that separates the ones doing the work from the ones marketing it."},
+      {"type": "faq", "q": "How do I check if an NDIS web designer actually understands accessibility?", "a": "Ask for a WCAG 2.1 AA audit of a site they built. An agency doing the work will have it. Then check one of their live sites yourself — unplug your mouse and try to complete the contact form using only the keyboard. If you get stuck or cannot see where the focus is, they are not delivering accessibility regardless of what the sales page says."},
+      {"type": "faq", "q": "How much should an NDIS website cost?", "a": "Between AU$800 and AU$4,500 for a standard provider website depending on scope. NDIS-specialist agencies commonly quote AU$3,000 to $8,000 for comparable work. The premium is only worth paying if they can evidence the specialisation with accessibility test results rather than just sector-specific marketing language."},
     ],
   },
 };

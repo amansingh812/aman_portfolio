@@ -19,7 +19,8 @@
       "Bash(curl -s http://localhost:3001/nextjs-development/)",
       "Bash(grep -o '\\\\$1,900\\\\|\\\\$3,500\\\\|from \\\\$5,000')",
       "Bash(python3 -c ' *)",
-      "Bash(pkill -f \"next dev\")"
+      "Bash(pkill -f \"next dev\")",
+      "Bash(grep -v -E \"^\\(blog|assets|.*\\\\.\\(xml|txt|svg|png|ico|jpg|webp|json|mp4|vtt|html\\)\\)$\")"
     ]
   }
 }
