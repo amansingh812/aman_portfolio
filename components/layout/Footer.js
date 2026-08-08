@@ -11,7 +11,7 @@ const Footer = () => {
 					<div className="row">
 						<div className="col-md-4 col-sm-6 text-center text-md-start">
 							<Link href="/">
-								<Image src="/assets/imgs/template/logo.svg" alt="Build First Site" width={218} height={46} />
+								<Image src="/assets/imgs/New_logo/logo.png" alt="Build First Site" width={885} height={230} style={{ height: '48px', width: 'auto' }} />
 							</Link>
 						</div>
 						<div className="col-md-8 col-sm-6 text-center text-md-end">

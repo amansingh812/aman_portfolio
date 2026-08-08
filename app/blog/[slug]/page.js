@@ -75,7 +75,7 @@ export default async function BlogPost({ params }) {
                 "@type": "Organization",
                 name: "Build First Site",
                 url: "https://buildfirstsite.com/",
-                logo: { "@type": "ImageObject", url: "https://buildfirstsite.com/assets/imgs/template/logo.svg" },
+                logo: { "@type": "ImageObject", url: "https://buildfirstsite.com/assets/imgs/New_logo/logo.png" },
             },
             inLanguage: "en-AU",
         },

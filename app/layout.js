@@ -40,8 +40,11 @@ export const metadata = {
         description: SITE.description,
         images: ['/og-image.png'],
     },
-    robots: { index: true, follow: true },
-    icons: { icon: '/favicon.svg' },
+    icons: {
+        icon: '/assets/imgs/New_logo/favicon.png',
+        shortcut: '/favicon.ico',
+        apple: '/assets/imgs/New_logo/favicon.png',
+    },
 }
 
 export const viewport = {

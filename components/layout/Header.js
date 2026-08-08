@@ -21,9 +21,9 @@ const Header = ({ handleOpen, headerStyle }) => {
 						<div className="header-logo">
 							<Link href="/" className="d-flex">
 								{headerStyle ? (
-									<Image width={218} height={46} alt="Build First Site" src="/assets/imgs/template/logo-white.svg" />
+									<Image width={300} height={64} alt="Build First Site" src="/assets/imgs/template/logo-white.svg" />
 								) : (
-									<Image width={218} height={46} alt="Build First Site" src="/assets/imgs/template/logo.svg" />
+									<Image width={885} height={230} alt="Build First Site" src="/assets/imgs/New_logo/logo.png" style={{ height: '48px', width: 'auto' }} priority />
 								)}
 							</Link>
 						</div>
