@@ -27,7 +27,9 @@ export function buildMetadata(page) {
     if (!page) return {}
     const url = `https://buildfirstsite.com/${page.slug}/`
     return {
-        title: `${page.metaTitle} | Build First Site`,
+        // Root layout applies the `%s | Build First Site` template — do NOT
+        // append the brand here or it renders twice and truncates in SERPs.
+        title: page.metaTitle,
         description: page.metaDescription,
         alternates: { canonical: `/${page.slug}/` },
         openGraph: {
