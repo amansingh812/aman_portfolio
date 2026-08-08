@@ -309,24 +309,29 @@ export const BLOG_CONTENT = {
         "text": "Frequently asked questions"
       },
       {
-        "type": "p",
-        "html": "<strong>How much should a small business website cost in Australia in 2026?</strong><br/>Based on published prices from the agencies compared here, a standard small business website costs between <strong>$995 and $2,300</strong>. E-commerce sites run from roughly $4,000. Quotes of $10,000 or more are common from larger agencies but are not the market rate for a straightforward business site."
+        "type": "faq",
+        "q": "How much should a small business website cost in Australia in 2026?",
+        "a": "Based on published prices from the agencies compared here, a standard small business website costs between $995 and $2,300. E-commerce sites run from roughly $4,000. Quotes of $10,000 or more are common from larger agencies but are not the market rate for a straightforward business site."
       },
       {
-        "type": "p",
-        "html": "<strong>Why do some agencies not publish prices?</strong><br/>Undisclosed pricing lets an agency quote based on what it estimates you can afford. That isn't necessarily dishonest — complex projects genuinely need scoping — but for a standard business website there's no technical reason a price can't be published. If an agency won't give you a figure before a sales call, ask why."
+        "type": "faq",
+        "q": "Why do some web agencies not publish their prices?",
+        "a": "Undisclosed pricing lets an agency quote based on what it estimates you can afford. While complex projects genuinely need custom scoping, standard business websites can easily have clear published rates. If an agency will not give you a figure before a sales call, ask why."
       },
       {
-        "type": "p",
-        "html": "<strong>Is WordPress a bad choice?</strong><br/>No. WordPress powers a large share of the web and is a reasonable fit for content-heavy sites where non-technical staff publish regularly. The trade-offs are security patching, plugin conflicts, and a performance ceiling that's hard to get past. For a marketing site that needs to be fast and rank well, a modern framework generally performs better."
+        "type": "faq",
+        "q": "Is WordPress a bad choice for an Australian business?",
+        "a": "No. WordPress powers a large share of the web and fits content-heavy sites. However, plugin conflicts, security patching, and lower mobile performance scores can be limiting. For a marketing site that needs high speed and conversion, a modern framework generally performs better."
       },
       {
-        "type": "p",
-        "html": "<strong>How long should a website take to build?</strong><br/>A landing page should take days, not weeks. A standard business website takes two to four weeks with responsive communication. E-commerce takes four to six. If an agency quotes several months for a brochure site, ask what's driving the timeline."
+        "type": "faq",
+        "q": "How long should a business website take to build?",
+        "a": "A single landing page should take ~1 week. A standard business site takes 2–4 weeks with responsive communication. E-commerce takes 4–6 weeks. If an agency quotes several months for a brochure site, ask what is driving that timeline."
       },
       {
-        "type": "p",
-        "html": "<strong>Should I pick the cheapest option?</strong><br/>Not on price alone. Compare what's actually included — hosting, GST, revisions, ongoing fees, and code ownership. A $995 site you can never move away from can cost more over five years than a $1,900 site you own outright."
+        "type": "faq",
+        "q": "Should I pick the cheapest web design quote?",
+        "a": "Not on price alone. Compare what is included — hosting, GST, revisions, ongoing maintenance fees, and full code ownership. A $995 site on a proprietary CMS can cost far more over three years than a $1,900 site you own outright."
       },
       {
         "type": "h2",
@@ -608,11 +613,35 @@ export const BLOG_CONTENT = {
       },
       {
         "type": "h2",
+        "text": "Frequently asked questions"
+      },
+      {
+        "type": "faq",
+        "q": "What is the most damaging website mistake Australian small businesses make?",
+        "a": "Slow mobile load speed is the most damaging mistake. Over 70% of Australian web traffic occurs on mobile devices. If a page takes more than 3 seconds to load, over half of visitors leave before reading your offer. You can test your site instantly using our <a href=\"/website-speed-checker/\">free website speed checker</a>."
+      },
+      {
+        "type": "faq",
+        "q": "Why is click-to-call so important on mobile websites?",
+        "a": "Mobile users looking for local Australian services (tradies, emergency repair, dining, consulting) want to contact you immediately. If your phone number is not a tappable tel: link, users have to manually copy and dial, causing high drop-off rates compared to competitors with floating call buttons."
+      },
+      {
+        "type": "faq",
+        "q": "How can I fix a slow mobile load score on my small business site?",
+        "a": "Start by compressing all images using modern WebP formats and stripping unused plugins. If your site is built on heavy visual builders like Elementor or Wix, moving to a modern framework like Next.js can permanently boost your mobile PageSpeed score to 90+."
+      },
+      {
+        "type": "faq",
+        "q": "Do PDF menus hurt restaurant SEO in Australia?",
+        "a": "Yes. PDF menus cannot be properly indexed by search engines for specific dish searches, dietary filters, or local keywords. Furthermore, downloading PDFs on mobile devices creates user friction. Replacing PDFs with a responsive HTML menu page improves both user experience and local rankings."
+      },
+      {
+        "type": "h2",
         "text": "Where to start"
       },
       {
         "type": "p",
-        "html": "Check your mobile speed score first. It's the highest-impact issue and the quickest to diagnose. If you're below 70, everything else is secondary — a slow site undermines every other improvement you make."
+        "html": "Check your mobile speed score first. It's the highest-impact issue and the quickest to diagnose. If you're below 70, everything else is secondary — a slow site undermines every other improvement you make. Use our <a href=\"/website-speed-checker/\">speed checker tool</a> to analyze your site."
       },
       {
         "type": "p",
@@ -620,7 +649,7 @@ export const BLOG_CONTENT = {
       },
       {
         "type": "p",
-        "html": "If your site scores under 60 on mobile and you're on Wix or WordPress, the honest answer is that the platform is part of the problem. A custom-built website on Vercel eliminates the speed issue, the CTA can be built in properly from day one, and it comes with GSC and sitemap submission on launch day. We build business websites from $1,900 AUD fixed price — <a class=\"text-orange-500 hover:underline\" href=\"/#contact\">get a quote here</a>."
+        "html": "If your site scores under 60 on mobile and you're on Wix or WordPress, the honest answer is that the platform is part of the problem. A custom-built website on Vercel eliminates the speed issue, the CTA can be built in properly from day one, and it comes with GSC and sitemap submission on launch day. We build business websites from $1,900 AUD fixed price — check our <a href=\"/pricing/\">transparent pricing guide</a> or <a href=\"/contact/\">contact us for a quote</a>."
       },
       {
         "type": "p",
@@ -665,7 +694,7 @@ export const BLOG_CONTENT = {
     ]
   },
   "how-long-to-build-a-website": {
-    "lead": "\"When can it go live?\" is one of the first questions every business owner asks. Here's an honest 2026 breakdown of how long a website really takes — and the two things that decide whether it ships in weeks or drags on for months.",
+    "lead": "\"When can it go live?\" is one of the first questions every business owner asks. Here's an honest 2026 breakdown of how long a website really takes in Australia — and the key factors that decide whether your site ships in 7 days or drags on for months.",
     "content": [
       {
         "type": "h2",
@@ -673,269 +702,541 @@ export const BLOG_CONTENT = {
       },
       {
         "type": "p",
-        "html": "For most small businesses, a professional website takes <strong>1 to 6 weeks</strong> depending on size. A single landing page can be live in a week; a full e-commerce store is more like 4–6 weeks. The build itself is rarely the bottleneck — content and feedback are."
+        "html": "For most Australian small-to-medium businesses, a professional website takes <strong>1 to 6 weeks</strong> from initial sign-off to live launch. A focused single landing page can be live in 5 to 7 days; a full multi-page business website takes 2 to 3 weeks; and a custom e-commerce store or SaaS platform takes 4 to 8 weeks. Crucially, the coding itself is rarely the bottleneck — content collection, photo assets, and feedback response times are."
       },
       {
         "type": "table",
         "headers": [
           "Type of site",
           "Typical timeline",
-          "Pages"
+          "Page count",
+          "Best for"
         ],
         "rows": [
           [
             "Landing page",
-            "~1 week",
-            "1"
+            "5–7 days",
+            "1 page",
+            "Ad campaigns, single product launch, sole traders"
           ],
           [
             "Small business website",
             "2–3 weeks",
-            "5–8"
+            "5–10 pages",
+            "Tradies, cafes, professional services, local SEO"
           ],
           [
             "E-commerce store",
             "4–6 weeks",
-            "10+"
+            "10–50+ pages",
+            "Online retailers, Stripe checkout, inventory sync"
           ],
           [
             "Custom web app / SaaS",
             "6–12 weeks+",
-            "Varies"
+            "Varies",
+            "Portals, AI integrations, custom business logic"
           ]
         ]
       },
       {
         "type": "h2",
-        "text": "What happens in each stage"
+        "text": "Phase 1: Discovery & Scoping (Days 1–3)"
+      },
+      {
+        "type": "p",
+        "html": "Every successful website project starts with clarity. Before writing code or opening a design file, developer and client align on exact business objectives, key target audiences, competitor positioning, and functional requirements."
+      },
+      {
+        "type": "p",
+        "html": "During discovery, we map out your sitemap structure (e.g. Home, Services, About, Pricing, Contact, Suburb landing pages) and establish your brand voice. Having a clear brief tied to a <a href=\"/pricing/\">fixed pricing tier</a> prevents scope creep and mid-project surprises."
+      },
+      {
+        "type": "h2",
+        "text": "Phase 2: UI Design & Wireframing (Days 4–7)"
+      },
+      {
+        "type": "p",
+        "html": "Design turns strategic goals into a visual reality. Wireframes outline layout anatomy — headline positioning, call-to-action buttons, mobile tap targets, and social proof trust signals."
+      },
+      {
+        "type": "p",
+        "html": "We show full-fidelity interactive mockups on a live staging link rather than static images. This allows you to test mobile responsive navigation, font legibility, and color harmony on your phone before development begins."
+      },
+      {
+        "type": "h2",
+        "text": "Phase 3: Front-End & Back-End Engineering (Weeks 2–3)"
+      },
+      {
+        "type": "p",
+        "html": "This is where clean code is written. Building on modern frameworks like Next.js and React provides dramatic performance advantages over traditional drag-and-drop page builders. Learn more about technology trade-offs in our detailed <a href=\"/wordpress-vs-custom-website/\">WordPress vs Custom Website comparison</a>."
       },
       {
         "type": "ul",
         "items": [
-          "<strong>Discovery (1–3 days)</strong> — goals, pages, examples you like, gathering your brand assets.",
-          "<strong>Design (3–7 days)</strong> — layout and look, usually shown on a live staging link.",
-          "<strong>Build (1–3 weeks)</strong> — turning the design into a fast, responsive, working site.",
-          "<strong>Content &amp; review (ongoing)</strong> — your copy and photos go in; you review and request tweaks.",
-          "<strong>Launch (1 day)</strong> — final checks, then it goes live on your domain."
+          "<strong>Semantic HTML5 & CSS:</strong> Ensures accessibility standards (WCAG 2.1 AA) and clean layout rendering across iOS and Android viewports.",
+          "<strong>Core Web Vitals Optimization:</strong> Image compression (WebP/AVIF), font preloading, zero layout shifts (CLS), and sub-2.5s Largest Contentful Paint (LCP).",
+          "<strong>API & Form Integration:</strong> Wiring up contact forms to send real-time email notifications, Webhooks, or CRM lead queues.",
+          "<strong>Schema Markup:</strong> Injecting LocalBusiness, Service, BreadcrumbList, and FAQPage JSON-LD structured data for Google rich snippets."
         ]
       },
       {
         "type": "h2",
-        "text": "Why some websites take months"
+        "text": "Phase 4: Content Population & QA Testing (Week 3)"
       },
       {
         "type": "p",
-        "html": "When a \"simple\" site takes three months, it's almost never the coding. It's the <strong>waiting</strong>: content that isn't ready, photos still being taken, feedback that trickles in over weeks, or approvals stuck with a committee. Add a big scope — 15 pages, custom integrations, a booking system — and weeks become months. The good news: most of that is within your control."
+        "html": "With the codebase ready, final copy, team photos, project galleries, and customer reviews are inserted. Quality assurance (QA) testing spans multiple operating systems, browser engines (Safari, Chrome, Firefox, Edge), and device widths."
+      },
+      {
+        "type": "p",
+        "html": "We run rigorous automated performance checks using our internal audit tooling and Google Lighthouse. Test your current site's performance score anytime with our <a href=\"/website-speed-checker/\">free website speed checker</a>."
       },
       {
         "type": "h2",
-        "text": "How to make it faster"
+        "text": "Phase 5: Launch & DNS Migration (Day 1)"
+      },
+      {
+        "type": "p",
+        "html": "On launch day, DNS records (A and CNAME records) are configured to point your custom domain (e.g. yourbusiness.com.au) to secure hosting servers (Vercel / Cloudflare). SSL certificates are provisioned automatically, XML sitemaps are submitted to Google Search Console, and live Google Analytics 4 tracking is verified."
+      },
+      {
+        "type": "h2",
+        "text": "The 4 real reasons website projects get delayed"
+      },
+      {
+        "type": "p",
+        "html": "When a small business website project estimated at 3 weeks takes 4 months, it is almost never due to technical coding delays. In 90% of cases, delays stem from four predictable human factors:"
       },
       {
         "type": "ul",
         "items": [
-          "<strong>Have content ready</strong> — copy, logo and photos before day one is the single biggest time-saver.",
-          "<strong>Batch your feedback</strong> — one clear round of notes beats twenty piecemeal messages.",
-          "<strong>Start lean</strong> — launch a tight core site now, add pages later once it's live and earning.",
-          "<strong>Use a fixed scope</strong> — a clear brief with a <a class=\"text-orange-600 hover:underline\" href=\"/how-much-does-a-website-cost-australia/\">fixed quote</a> prevents mid-project detours.",
-          "<strong>Insist on a staging link</strong> — seeing progress live keeps everyone aligned and fast."
+          "<strong>Unready Content & Assets:</strong> Waiting for copy to be drafted or photos to be taken mid-project halts development momentum.",
+          "<strong>Piecemeal Feedback Loops:</strong> Sending 30 separate email requests over three weeks instead of consolidating review notes into a single organized document.",
+          "<strong>Committee Approval Paralysis:</strong> Requiring multiple internal stakeholders or family members to sign off on minor design tweaks.",
+          "<strong>Domain & DNS Access Delays:</strong> Forgotten registrar passwords (GoDaddy, Crazy Domains) or lost access to old web hosting accounts on launch day."
         ]
       },
       {
         "type": "h2",
-        "text": "Common questions"
+        "text": "How technology choices impact delivery speed"
       },
       {
         "type": "p",
-        "html": "Can a website be built in a day?"
+        "html": "Your choice of underlying web platform heavily dictates speed to market and long-term maintenance overhead:"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Platform",
+          "Initial build speed",
+          "Ongoing maintenance time",
+          "Long-term performance"
+        ],
+        "rows": [
+          [
+            "Wix / Squarespace",
+            "Fast (1–2 weeks)",
+            "Low maintenance",
+            "Slow mobile speed, capped SEO ceiling"
+          ],
+          [
+            "WordPress + Elementor",
+            "Moderate (3–5 weeks)",
+            "High maintenance (constant plugin updates)",
+            "Plugin bloat, vulnerability risks"
+          ],
+          [
+            "Custom Next.js / React",
+            "Fast to Moderate (1–3 weeks)",
+            "Zero maintenance (static serverless deployment)",
+            "100/100 PageSpeed, instant load, superior SEO"
+          ]
+        ]
       },
       {
         "type": "p",
-        "html": "A very simple one-page site can be, if content is ready and the design is straightforward. Most business sites benefit from at least a week to do properly."
+        "html": "To see how much an Australian website build costs across different industries and scopes, read our full <a href=\"/how-much-does-a-website-cost-australia/\">website cost guide</a>."
       },
       {
-        "type": "p",
-        "html": "What slows a build down most?"
+        "type": "h2",
+        "text": "5 ways to fast-track your website build"
       },
       {
-        "type": "p",
-        "html": "Waiting on your content and feedback. Solve those two and most projects move quickly."
+        "type": "ol",
+        "items": [
+          "<strong>Prepare text copy beforehand:</strong> Have your services, about us, contact details, and initial FAQs ready in a Google Doc before day one.",
+          "<strong>Gather phone photos:</strong> High-resolution phone photos of your real team, workspace, vans, or past jobs beat generic stock photography every time.",
+          "<strong>Consolidate feedback:</strong> Review staging links on both desktop and mobile, then send all feedback in one comprehensive batch.",
+          "<strong>Locate domain logins early:</strong> Log into your registrar (GoDaddy, Cloudflare, Namecheap) during week one so DNS migration is smooth.",
+          "<strong>Choose a fixed-scope partner:</strong> Work with developers who provide guaranteed timelines and written AUD pricing upfront."
+        ]
       },
       {
-        "type": "p",
-        "html": "How fast can you build mine?"
+        "type": "h2",
+        "text": "Frequently asked questions"
       },
       {
-        "type": "p",
-        "html": "We deliver most landing pages in about a week and business sites in 2–3 weeks — send us your brief for an exact timeline."
+        "type": "faq",
+        "q": "Can a small business website be built in 24 hours?",
+        "a": "A simple one-page landing page can technically be built in 24 to 48 hours if all copy, logos, images, and domain credentials are fully provided on day one. However, high-converting business websites with custom design, mobile optimization, and local SEO setup usually require 1 to 2 weeks for proper execution."
+      },
+      {
+        "type": "faq",
+        "q": "What is the biggest cause of website project delays in Australia?",
+        "a": "The #1 cause of website build delays is waiting for content from the client — specifically text descriptions, service lists, high-res photos, and prompt review feedback. Providing all text and images upfront cuts build time by 50%."
+      },
+      {
+        "type": "faq",
+        "q": "How fast can Build First Site deliver my business website?",
+        "a": "We deliver single landing pages in 5 to 7 days, complete 5-10 page business websites in 2 to 3 weeks, and custom web applications or e-commerce stores in 4 to 6 weeks. View our <a href=\"/pricing/\">fixed AUD pricing packages</a> for full scope details."
+      },
+      {
+        "type": "faq",
+        "q": "Does building a website faster compromise quality or mobile speed?",
+        "a": "Not when built with modern engineering frameworks like Next.js. Because our tech stack uses pre-built, reusable component architectures and automated optimization pipelines, fast delivery coexists with 90+ mobile PageSpeed scores and WCAG accessibility standards."
       }
     ]
   },
   "signs-website-losing-customers": {
-    "lead": "Plenty of businesses get visitors but barely any enquiries — and blame \"not enough traffic.\" Usually the traffic is fine; the website is leaking. Here are the five most common leaks, in the order they cost you the most, with a fix for each.",
+    "lead": "Plenty of Australian businesses get steady website traffic but struggle with low lead volume — and blame \"not enough traffic.\" Usually, traffic is not the problem; the website is leaking potential customers. Here is an in-depth 2026 breakdown of the 5 most common conversion leaks, why they cost you thousands in lost revenue, and how to fix each one.",
     "content": [
       {
         "type": "h2",
-        "text": "1. It loads slowly"
+        "text": "The Conversion Leak Equation"
       },
       {
         "type": "p",
-        "html": "This is the silent killer. Over half of visitors leave a page that takes more than 3 seconds to load, and on mobile it's worse. Every extra second drops conversions. Google also uses speed as a ranking factor, so a slow site loses you customers <em>and</em> search visibility."
+        "html": "Before diagnosing specific issues, understand the math behind website conversion. If your business receives 1,000 monthly visitors and converts 1% into enquiries, you get 10 leads a month. If you double your conversion rate to 2% through targeted fixes, you double your leads to 20 — without spending an extra dollar on Google Ads, social media marketing, or SEO campaigns."
       },
       {
         "type": "p",
-        "html": "<strong>The fix:</strong> compress images, remove heavy page-builder bloat, and aim for a load under 2.5 seconds. Test yours free at PageSpeed Insights — if you're below 90 on mobile, there's money being left on the table."
+        "html": "Fixing conversion leaks provides the highest return on investment (ROI) of any digital marketing activity because it maximizes the value of traffic you are already paying for or earning."
       },
       {
         "type": "h2",
-        "text": "2. It's clumsy on mobile"
+        "text": "1. Slow Mobile Load Speed (The Silent Lead Killer)"
       },
       {
         "type": "p",
-        "html": "Most of your visitors are on a phone. If they have to pinch-zoom, tap tiny buttons, or scroll sideways, they leave. A site that looks great on your laptop can be quietly failing on the device most people actually use."
+        "html": "Mobile speed is the single largest point of drop-off for Australian small business websites. Over 70% of organic search traffic in Australia occurs on mobile phones. Research by Google demonstrates that as page load time increases from 1 second to 3 seconds, the probability of a mobile visitor bouncing increases by 32%. At 5 seconds, that bounce probability spikes to 90%."
       },
       {
         "type": "p",
-        "html": "<strong>The fix:</strong> a mobile-first, responsive build — thumb-friendly buttons, readable text without zooming, and a phone number that's tappable. Open your own site on your phone and try to book/buy. If it's annoying, it's costing you."
+        "html": "Furthermore, Google's Core Web Vitals algorithms directly evaluate mobile page speed when determining organic search rankings. A slow site suffers a double penalty: it loses organic visibility on Google, and bounces the visitors who manage to land on it."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "<strong>Largest Contentful Paint (LCP):</strong> Measures how quickly your main hero section renders. Must be under 2.5 seconds.",
+          "<strong>Total Blocking Time (TBT):</strong> Measures responsiveness when users attempt to tap buttons or open menus. Must be under 200ms.",
+          "<strong>Cumulative Layout Shift (CLS):</strong> Measures visual movement while images load. Must be under 0.1."
+        ]
+      },
+      {
+        "type": "p",
+        "html": "<strong>The Fix:</strong> Compress all images using modern WebP formats, eliminate bloated plugins, and migrate away from legacy WordPress page builders or slow platforms. Analyze your site's current performance metrics for free using our <a href=\"/website-speed-checker/\">website speed checker tool</a>."
       },
       {
         "type": "h2",
-        "text": "3. Visitors can't tell what you do in 5 seconds"
+        "text": "2. Clumsy & Frustrating Mobile UX"
       },
       {
         "type": "p",
-        "html": "People decide almost instantly whether they're in the right place. If your homepage headline is a slogan (\"Excellence, delivered\") instead of a plain statement of what you do and for whom, they bounce. Confusion is the enemy of conversion."
+        "html": "A website designed primarily on a 27-inch desktop monitor often degrades poorly on a 6-inch mobile screen. Common mobile UX flaws include text that requires pinch-zooming, tap targets placed too close together, pop-up banners blocking content, and hidden contact numbers."
       },
       {
         "type": "p",
-        "html": "<strong>The fix:</strong> put a clear, specific promise above the fold — <em>what</em> you do, <em>who</em> it's for, and <em>why</em> you. \"Sydney's 24/7 emergency plumbers — on-time, upfront pricing\" beats anything clever."
+        "html": "Mobile users navigate with their thumbs. Key conversion elements — such as emergency call buttons, quote forms, and main navigation toggles — must sit within natural \"thumb zones\" near the bottom and middle of the mobile screen."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "<strong>Tap-to-Call Buttons:</strong> Every phone number must be wrapped in a direct <code>tel:</code> link so users can dial with a single tap.",
+          "<strong>Sticky Mobile Header/Footer:</strong> A fixed bottom navigation bar displaying \"Call Now\" or \"Get Quote\" keeps primary actions visible as users scroll.",
+          "<strong>Thumb-Friendly Form Fields:</strong> Large, comfortable input fields with appropriate mobile keyboard triggers (e.g. numeric keypads for phone numbers)."
+        ]
+      },
+      {
+        "type": "p",
+        "html": "<strong>The Fix:</strong> Audit your website on an actual smartphone (not just a resized desktop browser window). Test completing a quote request using one hand. If any step feels clunky, explore our custom <a href=\"/services/web-development/\">web development services</a> engineered for mobile-first performance."
       },
       {
         "type": "h2",
-        "text": "4. The call-to-action is weak or hidden"
+        "text": "3. Failing the 5-Second Headline Test"
       },
       {
         "type": "p",
-        "html": "If a visitor is ready to act, can they, instantly? Many sites bury \"Contact\" in a menu, or offer a vague \"Learn more\" that leads nowhere. Every screen should make the next step obvious."
+        "html": "First-time website visitors decide within 3 to 5 seconds whether your business is relevant to their needs. If your hero headline displays a vague marketing slogan (e.g. \"Excellence & Innovation Delivered\") instead of stating plainly what you do, who you serve, and where you operate, visitors hit the back button."
       },
       {
         "type": "p",
-        "html": "<strong>The fix:</strong> one clear primary action repeated down the page — \"Get a free quote,\" \"Call now,\" \"Book a table.\" Make it a button, make it stand out, and put a way to contact you on <em>every</em> screen, including a sticky call button on mobile."
+        "html": "Clear value propositions beat clever slogans every time. Compare these two hero headlines:"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Weak Vague Headline",
+          "Strong Clear Value Proposition"
+        ],
+        "rows": [
+          [
+            "\"Crafting Tailored Solutions for Tomorrow\"",
+            "\"Licensed Plumbers in Melbourne — 24/7 Emergency Repairs & Upfront Pricing\""
+          ],
+          [
+            "\"Empowering Your Financial Growth\"",
+            "\"Small Business Accountants in Sydney — Tax Minimization & Xero Setup\""
+          ],
+          [
+            "\"Quality You Can Rely On\"",
+            "\"NDIS Registered Support Coordinators in Brisbane — Fast Participant Onboarding\""
+          ]
+        ]
+      },
+      {
+        "type": "p",
+        "html": "<strong>The Fix:</strong> Rewrite your main hero section using the formula: <em>[Primary Service] for [Target Customer] in [City/Region] + [Key Differentiator]</em>. Position your primary call-to-action button directly beneath the headline above the fold."
       },
       {
         "type": "h2",
-        "text": "5. There's nothing that builds trust"
+        "text": "4. Weak, Hidden, or Competing Calls-to-Action"
       },
       {
         "type": "p",
-        "html": "Strangers don't buy from businesses they don't trust. No reviews, no real photos, no licence numbers, no recognisable logos — and visitors quietly assume the worst and go to a competitor who has them."
+        "html": "Many small business websites suffer from CTA ambiguity. Either there is no obvious next step, or the page presents five competing calls-to-action (\"Call Us\", \"Email Us\", \"Download Brochure\", \"Follow on Instagram\", \"Subscribe to Newsletter\"). When presented with too many choices, users experience decision fatigue and take no action at all."
       },
       {
         "type": "p",
-        "html": "<strong>The fix:</strong> add genuine reviews or testimonials, a Google rating, real team/work photos, and any credentials (licence, insurance, awards). Trust signals often lift enquiries more than any design change."
+        "html": "A high-converting website establishes a clear primary CTA hierarchy:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "<strong>Single Primary CTA:</strong> High-contrast button for high-intent visitors ready to buy or inquire (e.g. \"Get a Free Quote\").",
+          "<strong>Secondary Low-Friction CTA:</strong> Subtle option for visitors still researching (e.g. \"View Pricing Guide\" or \"Read Case Studies\").",
+          "<strong>Repeated Placement:</strong> Repeat your primary CTA button at logical intervals down long landing pages, especially after key benefit sections and pricing tables."
+        ]
+      },
+      {
+        "type": "p",
+        "html": "<strong>The Fix:</strong> Choose one primary business goal for each page. Make the CTA button color stand out distinctly from your background, and review our <a href=\"/pricing/\">transparent fixed AUD packages</a> to see how we build high-converting conversion funnels."
       },
       {
         "type": "h2",
-        "text": "The pattern"
+        "text": "5. Missing Trust Signals & Proof"
       },
       {
         "type": "p",
-        "html": "Notice that none of these are about \"more traffic.\" They're about not wasting the visitors you already get. Fixing even two or three of these usually lifts enquiries without spending a cent more on ads or SEO — which is exactly why it's the first thing worth doing."
+        "html": "Australian consumers are naturally cautious online. If a visitor cannot quickly verify that your business is legitimate, licensed, and highly rated by real customers, they will leave for a competitor who offers proof."
+      },
+      {
+        "type": "p",
+        "html": "Relying solely on text testimonials without verification or using generic stock photography active on hundreds of other sites erodes credibility."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "<strong>Real Verified Reviews:</strong> Embed live Google Business Profile star ratings and authentic customer quotes.",
+          "<strong>Real Team & Job Photos:</strong> Photos of your actual staff, branded vehicles, equipment, and completed local projects beat stock photos every time.",
+          "<strong>Licensing & Credentials:</strong> Display ABN/ACN numbers, trade licences, industry memberships (e.g. Master Builders, CPA Australia), and insurance coverage.",
+          "<strong>Transparent Pricing Guidance:</strong> Providing upfront pricing guidelines or starting estimates builds immediate goodwill and pre-qualifies incoming enquiries."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "The Step-by-Step Conversion Audit Checklist"
+      },
+      {
+        "type": "ol",
+        "items": [
+          "Run a mobile speed test on <a href=\"/website-speed-checker/\">Build First Site Speed Checker</a> — ensure mobile LCP is under 2.5s.",
+          "Verify your phone number is a tappable link on mobile.",
+          "Test your homepage hero headline — can a stranger understand your service in 5 seconds?",
+          "Ensure your primary CTA button appears above the fold and repeats down the page.",
+          "Add 3–5 verified Google reviews and trade licence numbers to your homepage."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Frequently asked questions"
+      },
+      {
+        "type": "faq",
+        "q": "Why is my website getting traffic but no phone calls or enquiries?",
+        "a": "Low conversion despite high traffic usually points to one of five leaks: slow mobile load speed, poor mobile navigation, an unclear headline, missing calls-to-action, or lack of trust signals like Google reviews and trade credentials."
+      },
+      {
+        "type": "faq",
+        "q": "How much does fixing website conversion leaks cost in Australia?",
+        "a": "Minor fixes like adding tap-to-call buttons or updating headlines can be done in an afternoon. If your website is constrained by slow mobile page builders like Wix or legacy WordPress setups, a full modern rebuild typically ranges from $800 for a landing page to $1,900 for a multi-page business website."
+      },
+      {
+        "type": "faq",
+        "q": "What is a good conversion rate for a small business website in Australia?",
+        "a": "For local service businesses (tradies, legal, accounting, healthcare), a good website conversion rate is between 3% and 10% of total visitors. Emergency services (plumbing, towing, locksmiths) often convert above 15% when tap-to-call buttons are prominent."
+      },
+      {
+        "type": "faq",
+        "q": "How does website load speed affect lead conversions?",
+        "a": "Every additional second of load time reduces conversions by roughly 7% to 10%. Over half of mobile visitors abandon a website if it takes longer than 3 seconds to load. You can test your site's speed score free using our <a href=\"/website-speed-checker/\">website speed checker</a>."
       }
     ]
   },
   "small-business-website-checklist": {
-    "lead": "Whether you're building your first site or replacing a tired one, here's exactly what a small business website needs in 2026 — no jargon, no filler. Use it as a spec for your developer, or to sanity-check what you already have.",
+    "lead": "Whether you are building your first website or replacing an outdated one, here is the ultimate, practical 2026 checklist for Australian small businesses. No technical jargon, no fluff — use this guide as a benchmark for your web developer or to audit your existing site.",
     "content": [
       {
         "type": "h2",
-        "text": "1. The essential pages"
+        "text": "1. Site Architecture & Essential Pages"
+      },
+      {
+        "type": "p",
+        "html": "A clear, logical site structure helps both human visitors and Google search crawlers navigate your business offerings. Avoid sprawling 30-page structures when a clean 5-to-10 page layout performs significantly better."
       },
       {
         "type": "ul",
         "items": [
-          "✅ <strong>Home</strong> — clear headline, what you do, who for, and a strong call-to-action",
-          "✅ <strong>Services / Products</strong> — what you offer, with pricing or \"from\" guidance where possible",
-          "✅ <strong>About</strong> — the human behind the business; builds trust",
-          "✅ <strong>Contact</strong> — form, phone, email, and a map or service area",
-          "➕ <strong>Testimonials / Reviews</strong> — social proof (huge for conversions)",
-          "➕ <strong>FAQ</strong> — answers objections and helps SEO",
-          "➕ <strong>Location / service-area pages</strong> — if you serve specific suburbs or cities"
+          "✅ <strong>Homepage:</strong> Above-the-fold value proposition stating <em>what</em> you do, <em>who</em> you serve, <em>where</em> you operate, and an unmissable call-to-action button.",
+          "✅ <strong>Services / Products Pages:</strong> Dedicated pages for each core service offering. Separate pages rank significantly better in local search than one giant page combining everything.",
+          "✅ <strong>Transparent Pricing Guidance:</strong> Upfront pricing tiers or starting estimates build immediate trust. Read our breakdown of Australian market rates in our <a href=\"/how-much-does-a-website-cost-australia/\">website cost guide</a>.",
+          "✅ <strong>About Us:</strong> Real team photos, business story, trade qualifications, and ABN details. Strangers buy from businesses they trust.",
+          "✅ <strong>Contact Page:</strong> Multi-channel contact options — direct phone number, email address, interactive quote form, service radius map, and operating hours.",
+          "➕ <strong>Targeted Suburb / City Pages:</strong> Dedicated local landing pages if your business services specific regions (e.g. Sydney, Melbourne, Brisbane).",
+          "➕ <strong>Customer Case Studies / Reviews:</strong> Real client testimonials, before-and-after photo galleries, and verified Google reviews."
         ]
       },
       {
         "type": "h2",
-        "text": "2. Mobile & speed (non-negotiable)"
+        "text": "2. Mobile Responsiveness & Speed Benchmarks"
+      },
+      {
+        "type": "p",
+        "html": "Over 70% of Australian web traffic originates from mobile devices. If your website is slow or difficult to use on a smartphone, you lose potential leads before they even read your headline."
       },
       {
         "type": "ul",
         "items": [
-          "✅ Mobile-first, responsive design (most of your traffic is on a phone)",
-          "✅ Loads in under 2.5 seconds; PageSpeed score 90+ on mobile",
-          "✅ Tappable phone number and thumb-friendly buttons",
-          "✅ No pop-ups that block the whole screen on mobile"
+          "✅ <strong>Mobile-First Design:</strong> Layouts engineered specifically for phone screens, featuring thumb-friendly navigation and large tap targets.",
+          "✅ <strong>Sub-2.5 Second Load Times:</strong> Mobile Largest Contentful Paint (LCP) under 2.5 seconds. Test your site free with our <a href=\"/website-speed-checker/\">website speed checker tool</a>.",
+          "✅ <strong>Tappable Call Buttons:</strong> Direct <code>tel:</code> link integration so mobile visitors can dial your phone number with a single tap.",
+          "✅ <strong>Zero Interstitial Pop-ups:</strong> Avoid full-screen pop-ups or intrusive email overlays that block content on mobile screens.",
+          "✅ <strong>Zero Layout Shifts (CLS):</strong> Images and fonts pre-sized so text doesn't jump unexpectedly while loading."
         ]
       },
       {
         "type": "h2",
-        "text": "3. Getting found (SEO basics)"
+        "text": "3. Search Engine Optimization (SEO) Foundations"
+      },
+      {
+        "type": "p",
+        "html": "Getting found on Google requires establishing solid technical and on-page SEO foundations from day one. Do not pay extra for \"basic SEO\" — it should be built into every professional project."
       },
       {
         "type": "ul",
         "items": [
-          "✅ Unique page titles and meta descriptions on every page",
-          "✅ Semantic HTML with one clear H1 per page",
-          "✅ A sitemap.xml and robots.txt",
-          "✅ Structured data (LocalBusiness / Organization schema)",
-          "✅ A <strong>Google Business Profile</strong> linked to your site (essential for local Australian search)",
-          "✅ Fast, crawlable pages — not trapped behind heavy JavaScript"
+          "✅ <strong>Unique Title Tags & Meta Descriptions:</strong> Every page has a custom title tag under 60 characters and a compelling meta description (140-158 characters).",
+          "✅ <strong>Single H1 Heading Hierarchy:</strong> Exactly one <code>&lt;h1&gt;</code> tag per page incorporating primary target keywords.",
+          "✅ <strong>Structured Schema Markup:</strong> Valid JSON-LD code for LocalBusiness, Service, BreadcrumbList, and FAQPage schemas so Google displays rich snippets.",
+          "✅ <strong>XML Sitemap & Robots.txt:</strong> Clean sitemap index files submitted directly to Google Search Console.",
+          "✅ <strong>Google Business Profile Integration:</strong> Linked directly to your primary website URL with consistent Name, Address, and Phone (NAP) details.",
+          "✅ <strong>Internal Linking Network:</strong> Contextual internal links connecting related service pages, pricing guides, and blog articles."
         ]
       },
       {
         "type": "h2",
-        "text": "4. Turning visitors into customers"
+        "text": "4. High-Converting Lead Capture & Funnels"
+      },
+      {
+        "type": "p",
+        "html": "Driving traffic is useless if your website fails to convert visitors into phone calls or quote submissions."
       },
       {
         "type": "ul",
         "items": [
-          "✅ One clear primary call-to-action, repeated down the page",
-          "✅ A working contact form that actually emails you (and doesn't just open an app)",
-          "✅ Trust signals: reviews, real photos, licence/insurance, recognisable logos",
-          "✅ A low-friction offer (free quote, free audit, free consult) to capture the undecided",
-          "✅ Sticky \"Call now\" / \"Get a quote\" bar on mobile"
+          "✅ <strong>Primary CTA Hierarchy:</strong> One distinct, high-contrast primary CTA button (e.g. \"Get a Free Quote\") repeated at logical intervals down every page.",
+          "✅ <strong>Sticky Mobile Action Bar:</strong> A fixed header or bottom bar displaying direct phone and quote buttons on mobile devices.",
+          "✅ <strong>Low-Friction Contact Forms:</strong> Contact forms requiring only essential information (Name, Phone, Suburb, Message) to maximize completion rates.",
+          "✅ <strong>Automated Email Notifications:</strong> Instant notification emails delivered to your inbox whenever a customer submits a lead form.",
+          "✅ <strong>Trust Signal Badges:</strong> Displaying trade licence numbers, master association logos, insurance coverage details, and Google star ratings."
         ]
       },
       {
         "type": "h2",
-        "text": "5. The technical foundations"
+        "text": "5. Technical Security & Full Code Ownership"
+      },
+      {
+        "type": "p",
+        "html": "Protect your digital asset and ensure you are never held hostage by proprietary agency platforms."
       },
       {
         "type": "ul",
         "items": [
-          "✅ Your own domain (yourbusiness.com or .com.au)",
-          "✅ HTTPS / SSL (the padlock) — Google and customers expect it",
-          "✅ Reliable hosting (Vercel, Netlify, or a solid AU host)",
-          "✅ Basic analytics (Google Analytics 4) so you can see what's working",
-          "✅ <strong>You own the code and content</strong> — no platform lock-in",
-          "✅ A privacy policy (required if you collect any personal data — including a contact form)"
+          "✅ <strong>HTTPS / SSL Certificate:</strong> Active SSL padlock protecting customer data and satisfying Google security requirements.",
+          "✅ <strong>Custom Domain Ownership:</strong> Domain name registered in your business name with direct access to your registrar.",
+          "✅ <strong>Full Code Ownership:</strong> Access to your complete source code repository without monthly platform lock-in fees.",
+          "✅ <strong>Fast Serverless Hosting:</strong> Modern hosting infrastructure (Vercel / Cloudflare) ensuring 99.99% uptime and zero server maintenance overhead.",
+          "✅ <strong>Privacy Policy & Terms:</strong> Mandatory privacy policy compliant with Australian Privacy Principles (APP) when capturing personal information.",
+          "✅ <strong>Analytics & Tracking:</strong> Google Analytics 4 (GA4) configured to track lead form conversions and phone call taps."
         ]
       },
       {
         "type": "h2",
-        "text": "6. Nice-to-haves that pay off"
+        "text": "6. Advanced Features That Drive Growth"
       },
       {
         "type": "ul",
         "items": [
-          "➕ Online booking or quote request flow",
-          "➕ Live chat or an AI chatbot to answer common questions 24/7",
-          "➕ Email capture for a newsletter or offers",
-          "➕ A simple blog (like this one) to rank for what your customers search"
+          "➕ <strong>Online Booking Systems:</strong> Direct calendar scheduling (Calendly, Acuity, Timely) for service appointments.",
+          "➕ <strong>E-commerce & Stripe Payments:</strong> Secure online payment collection for deposits, products, or service packages.",
+          "➕ <strong>Automated AI Chatbots:</strong> 24/7 AI assistants trained on your business FAQs to capture leads outside office hours.",
+          "➕ <strong>Content Marketing Blog:</strong> Regular articles targeting high-intent long-tail search terms in your local market."
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "7. Ongoing Maintenance & Post-Launch Care"
+      },
+      {
+        "type": "p",
+        "html": "A website is not a static object set up once and forgotten. Continuous health monitoring ensures your platform stays secure, compliant, and indexed correctly on search engines."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "✅ <strong>Monthly Broken Link Audits:</strong> Checking for 404 error pages or broken external links using search console audit tooling.",
+          "✅ <strong>Form Submission Verification:</strong> Periodically submitting test contact forms to confirm email delivery systems operate cleanly.",
+          "✅ <strong>Content & Review Freshness:</strong> Adding new Google reviews, recent project photos, and updated pricing information every quarter.",
+          "✅ <strong>Speed & Core Web Vitals Checks:</strong> Running quarterly performance benchmarks on our <a href=\"/website-speed-checker/\">free website speed tool</a>."
         ]
       },
       {
         "type": "p",
-        "html": "If you can tick most of section 1–5, you have a genuinely effective business website. Miss several and you're likely leaving enquiries on the table — usually the fixes are faster and cheaper than people expect."
+        "html": "Explore our full range of fixed-rate packages on our <a href=\"/pricing/\">website pricing page</a> or contact us to build a custom solution tailored to your business."
+      },
+      {
+        "type": "h2",
+        "text": "Frequently asked questions"
+      },
+      {
+        "type": "faq",
+        "q": "What are the absolute minimum requirements for an Australian small business website?",
+        "a": "The absolute minimum includes a mobile-first responsive design, fast load speed (under 2.5s), clear hero headline, tap-to-call button on mobile, contact form, SSL certificate, basic local SEO title tags, and full ownership of your domain and code."
+      },
+      {
+        "type": "faq",
+        "q": "Why is full code ownership so important for small business websites?",
+        "a": "Full code ownership ensures you own your website asset outright. Proprietary agency platforms lock your site behind recurring monthly fees. If you ever leave, you lose your website. Owning your source code repository gives you freedom to host anywhere without lock-in."
+      },
+      {
+        "type": "faq",
+        "q": "How often should I update my small business website checklist items?",
+        "a": "Core technical elements (speed, security, backups) should be verified monthly. Content, customer reviews, and pricing guidance should be updated quarterly to maintain search engine freshness and high conversion rates."
+      },
+      {
+        "type": "faq",
+        "q": "How much does a website meeting all these checklist items cost in Australia?",
+        "a": "A professional 5-to-10 page business website meeting all speed, mobile UX, SEO, and schema requirements typically costs between $1,900 and $3,500 AUD with a specialized small studio. View our <a href=\"/pricing/\">transparent AUD pricing packages</a>."
       }
     ]
   },
@@ -1257,52 +1558,34 @@ export const BLOG_CONTENT = {
         "text": "Common questions about website costs in Australia"
       },
       {
-        "type": "p",
-        "html": "How much does a small business website cost in Australia?"
+        "type": "faq",
+        "q": "How much does a small business website cost in Australia?",
+        "a": "Most small business websites cost between AU$1,500 and AU$8,000 with a freelancer or small studio. A simple landing page starts around AU$1,200, a full multi-page business site is typically AU$3,000–6,000, and e-commerce runs AU$5,000+."
       },
       {
-        "type": "p",
-        "html": "Most small business websites cost between AU$1,500 and AU$8,000 with a freelancer or small studio. A simple landing page starts around AU$1,200, a full multi-page business site is typically AU$3,000–6,000, and e-commerce runs AU$5,000+."
+        "type": "faq",
+        "q": "How much does website hosting cost in Australia?",
+        "a": "Hosting ranges from free to about AU$50/month. Shared hosting is roughly AU$5–20/month, managed WordPress AU$20–50/month, and modern static/React sites on Vercel or Netlify are free at small-business scale — so most businesses spend under AU$100/year including a domain."
       },
       {
-        "type": "p",
-        "html": "How much does website hosting cost in Australia?"
+        "type": "faq",
+        "q": "How long does it take to build a website?",
+        "a": "A one-page landing site takes about a week, a 5–8 page business website 2–3 weeks, and an e-commerce store 4–6 weeks. The biggest variable is how quickly you supply content and feedback."
       },
       {
-        "type": "p",
-        "html": "Hosting ranges from free to about AU$50/month. Shared hosting is roughly AU$5–20/month, managed WordPress AU$20–50/month, and modern static/React sites on <a class=\"text-orange-600 hover:underline\" href=\"https://vercel.com\" rel=\"noreferrer\" target=\"_blank\">Vercel</a> or Netlify are free at small-business scale — so most businesses spend under AU$100/year including a domain."
+        "type": "faq",
+        "q": "Is it cheaper to build a website myself?",
+        "a": "DIY builders like Wix or Squarespace cost roughly AU$20–60/month, so they are cheaper upfront. But you pay in time, and template sites often convert poorly. For a business that relies on the site for leads, a custom build usually pays for itself."
       },
       {
-        "type": "p",
-        "html": "How long does it take to build a website?"
+        "type": "faq",
+        "q": "What are the ongoing costs of a website?",
+        "a": "Expect a domain (~AU$15–30/year) and hosting (AU$0–50/month depending on platform). Modern React/Next.js sites can host free at small scale, so ongoing costs can be under AU$50/year plus any updates you request."
       },
       {
-        "type": "p",
-        "html": "A one-page landing site takes about a week, a 5–8 page business website 2–3 weeks, and an e-commerce store 4–6 weeks. The biggest variable is how quickly you supply content and feedback."
-      },
-      {
-        "type": "p",
-        "html": "Is it cheaper to build a website myself?"
-      },
-      {
-        "type": "p",
-        "html": "DIY builders like Wix or Squarespace cost roughly AU$20–60/month, so they're cheaper upfront. But you pay in time, and template sites often convert poorly. For a business that relies on the site for leads, a custom build usually pays for itself."
-      },
-      {
-        "type": "p",
-        "html": "What are the ongoing costs of a website?"
-      },
-      {
-        "type": "p",
-        "html": "Expect a domain (~AU$15–30/year) and hosting (AU$0–50/month depending on platform). Modern React/Next.js sites can host free at small scale, so ongoing costs can be under AU$50/year plus any updates you request."
-      },
-      {
-        "type": "p",
-        "html": "Is a WordPress or a custom-coded website cheaper?"
-      },
-      {
-        "type": "p",
-        "html": "WordPress is cheaper to start but costs more to run (plugins, updates, security, AU$20–50/month hosting). A custom React/Next.js site can cost a little more upfront but is faster, more secure, and can host free — so it often wins on total cost over 2–3 years."
+        "type": "faq",
+        "q": "Is a WordPress or a custom-coded website cheaper?",
+        "a": "WordPress is cheaper to start but costs more to run (plugins, updates, security, AU$20–50/month hosting). A custom React/Next.js site can cost a little more upfront but is faster, more secure, and can host free — so it often wins on total cost over 2–3 years."
       },
       {
         "type": "p",
@@ -1328,8 +1611,8 @@ export const BLOG_CONTENT = {
       {"type": "h2", "text": "Speed, and why it matters commercially"},
       {"type": "p", "html": "This is where the gap is widest and where it shows up in revenue rather than invoices."},
       {"type": "p", "html": "A typical WordPress business site with a page builder and a dozen plugins loads a large amount of CSS and JavaScript before anything appears. A Next.js site sends mostly pre-rendered HTML from an edge network. On a mid-range Android over 4G, that is often the difference between a page appearing in around two seconds and around five."},
-      {"type": "p", "html": "About two thirds of Australian traffic is mobile, and Core Web Vitals is a confirmed ranking factor. So a slow site is not only a worse experience — it also ranks lower, which means fewer people see it in the first place."},
-      {"type": "p", "html": "WordPress <em>can</em> be fast. It requires disciplined plugin choice, good hosting, caching and someone who knows what they are doing. Most WordPress sites are not fast because most are not built that way."},
+      {"type": "p", "html": "About two thirds of Australian traffic is mobile, and Core Web Vitals is a confirmed ranking factor. So a slow site is not only a worse experience — it also ranks lower, which means fewer people see it in the first place. You can test your mobile speed score anytime using our <a href=\"/website-speed-checker/\">free website speed checker</a>."},
+      {"type": "p", "html": "WordPress <em>can</em> be fast. It requires disciplined plugin choice, good hosting, caching and someone who knows what they are doing. Most WordPress sites are not fast because most are not built that way. View our custom Next.js builds and <a href=\"/pricing/\">transparent AUD pricing tiers</a> to see how we deliver 90+ mobile PageSpeed scores out of the box."},
       {"type": "h2", "text": "Where WordPress genuinely wins"},
       {"type": "p", "html": "We build custom sites, so treat this as the section arguing against ourselves."},
       {"type": "ul", "items": ["<strong>Heavy publishing.</strong> Multiple authors, editorial workflow, hundreds of posts. WordPress was built for this and does it better than anything we would write from scratch.", "<strong>A plugin already solves your exact problem.</strong> Membership sites, complex event booking, LMS platforms. Buying a mature $200 plugin beats paying us to rebuild it.", "<strong>You need any developer to be able to pick it up.</strong> The WordPress talent pool is enormous. That is real risk reduction if you are worried about being tied to one developer.", "<strong>Budget under $1,500 with a lot of pages.</strong> A well-chosen theme gets you further than a small custom budget will."]},
@@ -1385,7 +1668,7 @@ export const BLOG_CONTENT = {
       {"type": "h2", "text": "Where most NDIS provider sites fail"},
       {"type": "p", "html": "From reviewing provider websites, the same five issues recur. None are hard to fix."},
       {"type": "table", "headers": ["Issue", "Why it happens", "Impact"], "rows": [["Low contrast text", "Brand colours chosen before checking contrast", "Fails 1.4.3 — most common failure"], ["Focus outline removed", "A designer removed it as \"ugly\"", "Site unusable by keyboard"], ["PDF-only documents", "Service guides published as scanned PDFs", "Often unreadable by screen readers"], ["Placeholder used as label", "Modern minimal form design", "Field purpose lost once typing starts"], ["Jargon-heavy copy", "Written for auditors, not participants", "Excludes cognitive disability users"]]},
-      {"type": "p", "html": "The PDF one deserves particular attention. A scanned service guide is an image — a screen reader gets nothing from it. If you publish documents, publish them as real web pages, or as tagged accessible PDFs."},
+      {"type": "p", "html": "The PDF one deserves particular attention. A scanned service guide is an image — a screen reader gets nothing from it. If you publish documents, publish them as real web pages, or as tagged accessible PDFs. Learn more about how we build fully accessible sites on our <a href=\"/services/web-development/\">web development services page</a>."},
       {"type": "h2", "text": "Common questions"},
       {"type": "faq", "q": "Is WCAG 2.1 AA legally required for NDIS providers in Australia?", "a": "Not by name. The Disability Discrimination Act 1992 does not specify WCAG or any technical standard. What it does is make discrimination in service provision unlawful, including online services, and WCAG 2.1 Level AA is the benchmark Australian courts, the Australian Human Rights Commission and government procurement use to assess whether a website creates an unlawful barrier. For NDIS providers the practical expectation is WCAG 2.1 AA."},
       {"type": "faq", "q": "Can I make my existing NDIS website accessible without rebuilding it?", "a": "Often partially. Contrast, alt text, link wording and form labels can be fixed on most platforms. Structural problems — bad heading hierarchy, non-semantic markup, keyboard traps built into a theme — usually require rebuilding templates. An audit will tell you which category you are in before you spend anything."},
@@ -1410,7 +1693,7 @@ export const BLOG_CONTENT = {
       {"type": "p", "html": "This is the question specific to NDIS, and the answer surprises people."},
       {"type": "p", "html": "<strong>Built in from the start: close to nothing.</strong> Semantic HTML, sufficient colour contrast, keyboard navigation and proper form labels are how any competent developer builds anyway. There is no meaningful extra cost — which is why we include WCAG 2.1 AA in every package rather than pricing it separately."},
       {"type": "p", "html": "<strong>Retrofitted later: expensive.</strong> If a site was built without accessibility in mind, the problems run through every template. Expect an audit at $500 to $1,500, then remediation that can run several thousand — and some structural issues cannot be fixed without rebuilding."},
-      {"type": "p", "html": "If you are choosing between a $1,500 site that ignores accessibility and a $2,500 one that does not, the second is cheaper within two years. Our <a href=\"/blog/ndis-website-accessibility-checklist/\">NDIS accessibility checklist</a> shows exactly what should be included."},
+      {"type": "p", "html": "If you are choosing between a $1,500 site that ignores accessibility and a $2,500 one that does not, the second is cheaper within two years. Our <a href=\"/blog/ndis-website-accessibility-checklist/\">NDIS accessibility checklist</a> shows exactly what should be included. You can also analyze your site's current mobile performance and accessibility loading metrics for free on our <a href=\"/website-speed-checker/\">website speed checker</a>."},
       {"type": "h2", "text": "Ongoing costs to plan for"},
       {"type": "table", "headers": ["Cost", "Typical AUD", "Notes"], "rows": [["Domain", "$15–20/year", "Yours"], ["Hosting", "$0–40/month", "Free first year with us"], ["Maintenance and SEO", "$250/month", "Optional with us; compulsory with some agencies"], ["Accessibility re-check", "$300–800/year", "Worth doing after any major content change"], ["Platform lock-in", "Varies", "The one that hurts — see below"]]},
       {"type": "p", "html": "Several Australian agencies build on proprietary systems they own. You cannot move the site, and leaving means rebuilding. It is rarely disclosed before signing. <strong>Ask directly: if we leave in two years, do we take the website with us?</strong>"},
@@ -1419,7 +1702,7 @@ export const BLOG_CONTENT = {
       {"type": "p", "html": "The first question is the important one. An agency that genuinely does accessibility will have test output to show you. One that treats it as a marketing word will change the subject."},
       {"type": "h2", "text": "Being straight with you"},
       {"type": "p", "html": "BuildFirstSite has not yet built a website for an NDIS provider. We are not going to imply otherwise — plenty of agencies claim vertical expertise they cannot evidence, and you should ask all of them for proof."},
-      {"type": "p", "html": "What we can evidence is the technical capability that matters here: we build accessible, fast, semantic websites, and every build includes WCAG 2.1 AA. Our client work is at <a href=\"https://www.hsracegear.com\" target=\"_blank\" rel=\"noopener\">hsracegear.com</a> and <a href=\"https://mobilearmour.com.au\" target=\"_blank\" rel=\"noopener\">mobilearmour.com.au</a> — open them, run Lighthouse, and judge the build quality yourself."},
+      {"type": "p", "html": "What we can evidence is the technical capability that matters here: we build accessible, fast, semantic websites, and every build includes WCAG 2.1 AA. Our client work is at <a href=\"https://www.hsracegear.com\" target=\"_blank\" rel=\"noopener\">hsracegear.com</a> and <a href=\"https://mobilearmour.com.au\" target=\"_blank\" rel=\"noopener\">mobilearmour.com.au</a> — open them, run Lighthouse, and judge the build quality yourself. You can also explore our full range of fixed Australian dollar packages on our <a href=\"/services/web-development/\">web development services page</a> or calculate custom project estimates on our <a href=\"/pricing/\">pricing page</a>."},
       {"type": "h2", "text": "Common questions"},
       {"type": "faq", "q": "How much does an NDIS website cost in Australia?", "a": "Between AU$800 and AU$4,500 for a standard provider website. A three to five page site for a new provider is $800, up to ten pages with referral forms is $1,900, and unlimited pages is $3,500. Custom builds with participant portals or intake systems start at $4,500. NDIS-specialist agencies commonly quote $3,000 to $8,000 for comparable scope."},
       {"type": "faq", "q": "Does accessibility compliance cost extra?", "a": "It should not. Built in from the start, WCAG 2.1 AA compliance adds close to nothing because semantic HTML, colour contrast and keyboard support are how a site should be built anyway. BuildFirstSite includes it in every package. Retrofitting accessibility onto an existing inaccessible site is where the real cost appears — an audit runs $500 to $1,500 and remediation can be several thousand."},
@@ -1449,6 +1732,7 @@ export const BLOG_CONTENT = {
       {"type": "p", "html": "This is both an SEO factor and an accessibility one, which is unusual and useful."},
       {"type": "p", "html": "Most provider websites are written for auditors. Phrases like \"person-centred service delivery frameworks\" and \"capacity building supports aligned to participant goals\" appear on hundreds of sites and mean nothing to a parent trying to find respite care."},
       {"type": "p", "html": "Write how people search. Someone types \"who can help my son live independently\", not \"SIL capacity building framework\". Answer the question in the words they used, and target a Year 7 to 9 reading level — the same standard our <a href=\"/blog/ndis-website-accessibility-checklist/\">accessibility checklist</a> recommends."},
+      {"type": "p", "html": "Fast page performance is equally essential for local search rankings and accessibility. Learn how we engineer fast, accessible websites with upfront quotes on our <a href=\"/pricing/\">transparent AUD pricing page</a> or test your current page performance on our <a href=\"/website-speed-checker/\">free website speed checker</a>."},
       {"type": "h2", "text": "Accessibility is an SEO factor"},
       {"type": "p", "html": "Building an accessible site improves rankings, because most accessibility work overlaps with what search engines need."},
       {"type": "ul", "items": ["Semantic HTML and correct heading order help screen readers and help Google parse structure", "Descriptive alt text serves blind users and image search", "Descriptive link text helps screen reader navigation and passes context between pages", "Fast, mobile-friendly pages are a WCAG consideration and a confirmed ranking factor", "Plain language reaches cognitive disability users and matches how people search"]},
