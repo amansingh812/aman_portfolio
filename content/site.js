@@ -177,12 +177,6 @@ export const FOOTER_COLUMNS = [
     ],
   },
   {
-    title: 'Free Tools',
-    links: [
-      { label: 'Website Speed Checker', href: '/website-speed-checker/' },
-    ],
-  },
-  {
     title: 'Resources',
     links: [
       { label: 'Guides', href: '/guides/' },

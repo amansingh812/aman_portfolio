@@ -2,6 +2,7 @@ import '../public/assets/css/style.css'
 import '../public/assets/css/modal.css'
 import "../public/assets/css/swiper-custom.css";
 import { Chivo, Noto_Sans } from 'next/font/google'
+import Script from 'next/script'
 import { SITE } from '@/content/site'
 
 const chivo = Chivo({
@@ -52,7 +53,23 @@ export const viewport = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
+            <head>
+                <Script
+                    src="https://www.googletagmanager.com/gtag/js?id=G-QYPW2B8CZS"
+                    strategy="afterInteractive"
+                />
+                <Script id="google-analytics" strategy="afterInteractive">
+                    {`
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+
+                        gtag('config', 'G-QYPW2B8CZS');
+                    `}
+                </Script>
+            </head>
             <body className={`${chivo.variable} ${noto.variable}`}>{children}</body>
         </html>
     )
 }
+
