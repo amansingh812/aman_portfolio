@@ -110,13 +110,13 @@ export const SERVICE_CARDS = [
   {
     "title": "AI Chatbots & Booking",
     "body": "Assistants that qualify enquiries and book jobs straight into your calendar — including the ones that arrive at 9pm.",
-    "href": "/ai-chatbot-development-australia/",
+    "href": "/services/ai-automation/",
     "price": "from $900"
   },
   {
     "title": "App Development",
     "body": "Web apps, dashboards, booking systems and cross-platform mobile apps. Usually cheaper than you expect — we will tell you if you do not need native.",
-    "href": "/app-development-australia/",
+    "href": "/services/mobile-app-development/",
     "price": "from $4,500"
   },
   {

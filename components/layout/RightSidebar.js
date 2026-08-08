@@ -137,7 +137,7 @@ const RightSidebar = ({ openClass }) => {
 													<Link href="/page-signup" >Sign Up</Link>
 												</li >
 												<li>
-													<Link href="/page-login" >Log In</Link>
+													<Link href="/contact/" >Log In</Link>
 												</li >
 												<li>
 													<Link href="/page-reset" >Reset Password</Link>
@@ -192,7 +192,7 @@ const RightSidebar = ({ openClass }) => {
 										<Link href="/#" >Go Pro</Link>
 									</li >
 									<li>
-										<Link href="/page-login" >Sign Out</Link>
+										<Link href="/contact/" >Sign Out</Link>
 									</li >
 								</ul >
 							</div >

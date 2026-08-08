@@ -178,7 +178,7 @@ export const SERVICES = [
     ],
     "related": [
       {
-        "href": "/ai-chatbot-development-australia/",
+        "href": "/services/ai-automation/",
         "label": "AI chatbots & booking automation"
       },
       {
@@ -386,7 +386,7 @@ export const SERVICES = [
         "label": "AI web development"
       },
       {
-        "href": "/app-development-australia/",
+        "href": "/services/mobile-app-development/",
         "label": "App development Australia"
       },
       {

@@ -69,6 +69,16 @@ export default function BlogContent({ blocks }) {
                                 </table>
                             </div>
                         )
+                    /* FAQ — must render visibly. FAQPage schema in the blog
+                       template is built from these same blocks, and schema that
+                       describes content a user cannot see is a violation. */
+                    case "faq":
+                        return (
+                            <div key={i} className="mt-30 mb-30">
+                                <h3 className="text-heading-5 color-gray-900 mb-15">{b.q}</h3>
+                                <p className="text-body-text color-gray-600">{b.a}</p>
+                            </div>
+                        )
                     case "quote":
                         return (
                             <div key={i} className="box-quote mt-30 mb-30">

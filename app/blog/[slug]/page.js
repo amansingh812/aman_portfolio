@@ -21,12 +21,12 @@ export async function generateMetadata({ params }) {
     const post = getBlogPost(slug)
     if (!post) return {}
     return {
-        title: `${post.title} | Build First Site`,
-        description: post.excerpt,
+        title: `${post.metaTitle || post.title} | Build First Site`,
+        description: post.metaDescription || post.excerpt,
         alternates: { canonical: `/blog/${post.slug}/` },
         openGraph: {
             title: post.title,
-            description: post.excerpt,
+            description: post.metaDescription || post.excerpt,
             url: `https://buildfirstsite.com/blog/${post.slug}/`,
             type: "article",
             images: post.image
@@ -61,7 +61,16 @@ export default async function BlogPost({ params }) {
             datePublished: post.date,
             dateModified: post.date,
             mainEntityOfPage: { "@type": "WebPage", "@id": url },
-            author: { "@type": "Organization", name: "Build First Site", url: "https://buildfirstsite.com/" },
+            author: {
+                "@type": "Person",
+                name: "Aman Singh",
+                jobTitle: "Software Engineer",
+                description:
+                    "Seven years building web, mobile and AI software, including enterprise fintech at L&T Finance. Writes and builds everything at Build First Site.",
+                url: "https://buildfirstsite.com/about/",
+                sameAs: [SITE.social.linkedin, SITE.social.github].filter(Boolean),
+                worksFor: { "@type": "Organization", name: "Build First Site", url: "https://buildfirstsite.com/" },
+            },
             publisher: {
                 "@type": "Organization",
                 name: "Build First Site",
@@ -80,6 +89,21 @@ export default async function BlogPost({ params }) {
             ],
         },
     ]
+
+    /* FAQPage — built from any {type:"faq"} blocks in the article body.
+       Only emitted when real Q&As exist; an empty FAQPage is a schema error. */
+    const faqs = (article.content || []).filter((b) => b.type === "faq")
+    if (faqs.length) {
+        jsonLd.push({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((f) => ({
+                "@type": "Question",
+                name: f.q,
+                acceptedAnswer: { "@type": "Answer", text: f.a },
+            })),
+        })
+    }
 
     return (
         <Layout>
@@ -143,8 +167,12 @@ export default async function BlogPost({ params }) {
                                                     alt="Build First Site"
                                                 />
                                             </div>
-                                            <h4 className="text-body-lead color-gray-900">Build First Site</h4>
-                                            <p className="text-body-small color-gray-500">{fmtDate(post.date)}</p>
+                                            <h4 className="text-body-lead color-gray-900">
+                                                <Link href="/about/" className="color-gray-900">Aman Singh</Link>
+                                            </h4>
+                                            <p className="text-body-small color-gray-500">
+                                                Engineer, Build First Site · {fmtDate(post.date)}
+                                            </p>
                                         </div>
                                     </div>
                                     <div className="col-lg-6 col-md-5 col-sm-5 col-5 tag-mb text-end">

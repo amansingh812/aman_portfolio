@@ -27,6 +27,80 @@ export const SITE = {
   },
 };
 
+/**
+ * ─── NAP — Name, Address, Phone ──────────────────────────────────────────
+ *
+ * The single source of truth for our local-search identity. NAP consistency
+ * is a direct local ranking factor: the string here must match the Google
+ * Business Profile, Clutch, and every directory listing CHARACTER FOR
+ * CHARACTER. "Suite 2, 14 Smith St" and "Suite 2/14 Smith Street" are two
+ * different businesses as far as Google's entity matching is concerned.
+ *
+ * ✅ SYNCED TO THE LIVE GBP on 2026-08-08. Registered as a SERVICE-AREA
+ *    BUSINESS: Google holds the street address for verification but it is
+ *    hidden publicly, so we declare serviceArea instead. Base is Reservoir
+ *    VIC 3073.
+ *
+ * ⚠️  If you change ANY value here, change it on the Google Business Profile
+ *    in the same sitting, and vice versa. Drift between the two is what
+ *    breaks entity matching. Do not invent a street address — the SAB setup
+ *    means one is never displayed.
+ */
+export const NAP = {
+  /** Must match GBP exactly. Not "BuildFirstSite", not "Build First Site Pty Ltd". */
+  businessName: 'Build First Site',
+
+  /**
+   * Service-area business — Google has the address for verification but it is
+   * HIDDEN on the profile ("No location; deliveries and home services only").
+   * streetAddress stays empty deliberately: it is never displayed publicly and
+   * must not be invented. Suburb/postcode below are the real registered base.
+   */
+  streetAddress: '',            // intentionally blank — SAB, address hidden
+  suburb: 'Reservoir',
+  postalCode: '3073',
+  addressLocality: 'Melbourne',
+  addressRegion: 'VIC',
+  addressCountry: 'AU',
+  hideAddress: true,
+
+  /** Local format matches GBP. E.164 (+61413146498) is used in tel: links. */
+  phone: '0413 146 498',
+  phoneE164: '+61413146498',
+  email: SITE.email,
+
+  /** Reservoir VIC 3073 — the verified base, not the CBD. */
+  geo: { latitude: -37.7180, longitude: 145.0020 },
+
+  /** MUST stay identical to the GBP service-area list. Verified 2026-08-08. */
+  serviceAreas: [
+    'Melbourne',
+    'Preston',
+    'Richmond',
+    'Brunswick',
+    'Reservoir',
+  ],
+
+  primaryCategory: 'Website designer',
+  secondaryCategories: [
+    'Software company',
+    'Internet marketing service',
+    'Web hosting company',
+  ],
+
+  gbpUrl: '',                   // TODO — fill once verification completes
+  gbpReviewUrl: '',             // TODO — direct "leave a review" short link
+
+  /** Matches GBP: 7am-7pm, seven days. */
+  openingHours: [
+    { days: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],
+      opens: '07:00', closes: '19:00' },
+  ],
+};
+
+/** True once the three TODO fields above are filled. Guards schema output. */
+export const NAP_READY = Boolean(NAP.suburb && NAP.postalCode);
+
 /* ─── service items used in navbar dropdown + service pages ─── */
 export const SERVICE_ITEMS = [
   { label: 'Web Development',        href: '/services/web-development/',        icon: '🌐', desc: 'Responsive, fast websites and web applications' },

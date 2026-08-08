@@ -940,112 +940,49 @@ export const BLOG_CONTENT = {
     ]
   },
   "tradie-website-cost": {
-    "lead": "Whether you're a plumber, sparky, chippy or builder, a good website is one of the cheapest ways to win more jobs. Here's what a tradie website actually costs in 2026 — and what it needs to turn Google searches into phone calls.",
-    "content": [
-      {
-        "type": "h2",
-        "text": "The short answer"
-      },
-      {
-        "type": "p",
-        "html": "A professional tradie website in Australia typically costs <strong>AU$1,500–4,000</strong>. A simple, high-converting one-pager with tap-to-call and a quote form starts around AU$1,200; a fuller site with service-area pages and local SEO runs AU$2,500–4,000. Compared to what one extra job a month is worth, it pays for itself fast."
-      },
-      {
-        "type": "table",
-        "headers": [
-          "Site type",
-          "Typical AU cost",
-          "Best for"
-        ],
-        "rows": [
-          [
-            "One-page site",
-            "AU$1,200–2,000",
-            "Solo tradies wanting calls fast"
-          ],
-          [
-            "Multi-page + local SEO",
-            "AU$2,500–4,000",
-            "Established trades, multiple services/suburbs"
-          ],
-          [
-            "Site + booking/quotes system",
-            "AU$4,000–7,000",
-            "Teams wanting online quote/booking flow"
-          ]
-        ]
-      },
-      {
-        "type": "h2",
-        "text": "Do tradies actually need a website?"
-      },
-      {
-        "type": "p",
-        "html": "Yes — and here's why. When someone's hot water system fails, they Google \"emergency plumber near me\" and call one of the first businesses that looks legit. If all you have is a Facebook page, you're invisible for that search. A fast website with reviews, your service area, and a tap-to-call button wins that job. Paired with a free <strong>Google Business Profile</strong>, it also puts you on Google Maps for local searches — where most trade work actually comes from."
-      },
-      {
-        "type": "h2",
-        "text": "What a tradie website must include"
-      },
-      {
-        "type": "ul",
-        "items": [
-          "<strong>Tap-to-call phone number</strong> — front and centre, on every screen. Most trade enquiries are phone calls.",
-          "<strong>Quote request form</strong> — for the ones who won't call, capture the job before they move on.",
-          "<strong>Service area &amp; suburbs</strong> — so you rank for \"[trade] in [suburb]\" and customers know you cover them.",
-          "<strong>Real photos of your work</strong> — before/afters build instant trust.",
-          "<strong>Reviews</strong> — a few genuine ones outperform any sales copy.",
-          "<strong>Licence &amp; insurance</strong> — shows you're legit and compliant.",
-          "<strong>Fast load + mobile-first</strong> — customers are on their phone, often in a hurry.",
-          "<strong>Local SEO &amp; schema</strong> — so Google understands where you work and what you do."
-        ]
-      },
-      {
-        "type": "p",
-        "html": "We recently built exactly this kind of site for a Sydney emergency plumber — conversion-first, local SEO baked in, Lighthouse 95+. You can see the approach on our <a class=\"text-orange-600 hover:underline\" href=\"/#work\">portfolio</a>."
-      },
-      {
-        "type": "h2",
-        "text": "What drives the price up or down"
-      },
-      {
-        "type": "ul",
-        "items": [
-          "<strong>Number of services/suburbs</strong> — more service-area pages means more local reach, but more to build.",
-          "<strong>Booking or online quotes</strong> — handy for teams, adds cost.",
-          "<strong>Content ready or not</strong> — supplying your own photos and details saves money.",
-          "<strong>DIY vs custom</strong> — a AU$399 template rarely ranks or converts; a purpose-built tradie site does."
-        ]
-      },
-      {
-        "type": "h2",
-        "text": "Common questions"
-      },
-      {
-        "type": "p",
-        "html": "How much does a plumber or electrician website cost?"
-      },
-      {
-        "type": "p",
-        "html": "The same AU$1,500–4,000 range applies to most trades. Emergency trades benefit most from a fast, call-focused one-pager plus local SEO."
-      },
-      {
-        "type": "p",
-        "html": "Will a website get me more jobs?"
-      },
-      {
-        "type": "p",
-        "html": "Combined with a Google Business Profile and a few reviews, yes — it captures the \"near me\" searches that currently go to competitors."
-      },
-      {
-        "type": "p",
-        "html": "Do I need to pay monthly?"
-      },
-      {
-        "type": "p",
-        "html": "No. We build one-off sites you own outright, with tiny hosting costs — no locked monthly plan. See our <a class=\"text-orange-600 hover:underline\" href=\"/how-much-does-a-website-cost-australia/\">full cost guide</a>."
-      }
-    ]
+    lead:
+      "A tradie website in Australia costs between AU$800 and AU$4,500. This guide breaks down what you get at each price, the ongoing costs most quotes leave out, and how to work out whether it pays for itself using your own job values.",
+    content: [
+      {"type": "h2", "text": "What a tradie website costs in Australia"},
+      {"type": "p", "html": "A tradie website in Australia costs between <strong>AU$800 and AU$4,500</strong> depending on how many pages you need and whether you want online booking or payments. A simple three to five page site for a plumber, electrician or builder starts at <strong>$800</strong>. A larger site with service-area pages and a booking system runs <strong>$1,900 to $3,500</strong>."},
+      {"type": "p", "html": "Those are BuildFirstSite's published prices, fixed in writing before work starts. Most Australian agencies quote $3,000 to $10,000 for the same scope, and many will not give you a number until you sit through a sales call."},
+      {"type": "table", "headers": ["What you need", "Pages", "Price (AUD)", "Build time"], "rows": [["Just get me online — name, services, phone", "3–5", "$800", "5–7 days"], ["Service pages, gallery, quote form", "Up to 10", "$1,900", "2–3 weeks"], ["Multiple trades or suburbs, no page limit", "Unlimited", "$3,500", "3–4 weeks"], ["Online booking, payments, job management", "Custom app", "$4,500", "4–8 weeks"]]},
+      {"type": "p", "html": "Prices exclude GST. Hosting is included for the first year. Ongoing care and SEO is <strong>$250/month</strong> and optional — see <a href=\"/pricing/\">full pricing</a>."},
+      {"type": "h2", "text": "Do you actually need a website?"},
+      {"type": "p", "html": "Honest answer: not always, and not first."},
+      {"type": "p", "html": "If you are a sole trader who just started and you have no Google Business Profile yet, <strong>set that up before you spend a dollar on a website</strong>. It is free, it puts you on Google Maps, and for a lot of trades it generates more calls in month one than a website will. Anyone who tells you otherwise is selling you something."},
+      {"type": "p", "html": "A website earns its keep once one of these is true:"},
+      {"type": "ul", "items": ["You are competing for jobs where people compare two or three tradies before calling", "You want work beyond emergency call-outs — renovations, commercial, fit-outs", "You are quoting jobs over $5,000 and people want to see previous work first", "You are paying for Google Ads and sending that traffic to a Facebook page", "You want to stop explaining your service area and pricing on every phone call"]},
+      {"type": "p", "html": "If none of those apply yet, a Google Business Profile plus a few good photos will do more for you this month than a website will."},
+      {"type": "h2", "text": "What a tradie website has to do"},
+      {"type": "p", "html": "A tradie website has one job: turn someone who is standing in a flooded laundry into a phone call. Everything else is decoration."},
+      {"type": "p", "html": "That means the following are not optional:"},
+      {"type": "ul", "items": ["<strong>Tap-to-call button, visible without scrolling.</strong> Most of your visitors are on a phone and in a hurry. If they have to hunt for your number you have lost them.", "<strong>Your service area, stated plainly.</strong> \"We cover Melbourne's northern suburbs — Preston, Reservoir, Brunswick, Coburg\" beats a vague map graphic every time.", "<strong>Loads in under three seconds on mobile data.</strong> A tradie site that takes six seconds on 4G loses roughly half its visitors before anything appears.", "<strong>Photos of your actual work.</strong> Not stock images of someone else's van. Twelve real job photos taken on your phone will out-convert professional stock every time.", "<strong>Licence and insurance numbers.</strong> Displayed, not buried. This is a trust signal that costs nothing and most tradie sites skip it.", "<strong>A quote form that asks the right questions.</strong> Job type, suburb, urgency, photos. A form that only asks for name and email creates work for you, not leads.", "<strong>Reviews on the page.</strong> Pull your Google reviews onto the site. Do not retype them — link them so people can verify."]},
+      {"type": "h2", "text": "What pushes the price up"},
+      {"type": "p", "html": "Four things genuinely change what a tradie website costs. Everything else is noise."},
+      {"type": "table", "headers": ["Factor", "Adds", "Why"], "rows": [["Number of pages", "$120–180 per page", "Each service or suburb page is real work — copy, layout, internal links"], ["Online booking system", "from $700", "Calendar, reminders, sometimes deposit payments"], ["Copywriting", "$140 per page", "If you cannot supply the words, someone has to research and write them"], ["Logo or branding", "$290–490", "Only if you do not already have one you are happy with"]]},
+      {"type": "p", "html": "What does <em>not</em> change the price at BuildFirstSite: SEO, mobile responsiveness, a CMS you can edit, schema markup, or analytics. Those are in every package because withholding them to make a cheaper tier look worse is a sales tactic, not an engineering decision."},
+      {"type": "h2", "text": "The ongoing costs nobody mentions in the quote"},
+      {"type": "p", "html": "The build price is not the whole picture, and this is where a cheap quote often stops being cheap."},
+      {"type": "table", "headers": ["Cost", "Typical AUD", "Notes"], "rows": [["Domain name", "$15–20/year", "Yours, renewed annually"], ["Hosting", "$0–40/month", "Included free for year one with us"], ["Maintenance and SEO", "$250/month", "Optional with us. Some agencies make it compulsory"], ["Platform lock-in", "Varies", "The one that actually hurts — see below"]]},
+      {"type": "p", "html": "Several Australian agencies build on their own content management system and their own hosting. That means you cannot take the site anywhere. Leaving requires rebuilding from scratch, and it is almost never disclosed before you sign. <strong>Ask any agency you are considering one question: if I leave in two years, do I take the website with me?</strong> Watch how long it takes them to answer."},
+      {"type": "h2", "text": "Does it pay for itself?"},
+      {"type": "p", "html": "Work it out with your own numbers rather than taking anyone's word for it."},
+      {"type": "p", "html": "Take your average job value. A plumber doing $400 call-outs, an electrician doing $1,200 switchboard jobs, a builder doing $30,000 renovations — the maths is the same. Divide the website cost by your average job."},
+      {"type": "table", "headers": ["Trade", "Average job", "Site cost", "Jobs to break even"], "rows": [["Plumber — call-outs", "$400", "$800", "2 jobs"], ["Electrician — switchboard", "$1,200", "$1,900", "2 jobs"], ["Builder — renovation", "$30,000", "$3,500", "Under 1 job"], ["Landscaper — full yard", "$8,000", "$1,900", "Under 1 job"]]},
+      {"type": "p", "html": "For most trades a website pays for itself inside the first two or three jobs it brings in. After that it is working for free. That is the only comparison that matters — not whether one quote is $400 cheaper than another."},
+      {"type": "h2", "text": "What we would build you"},
+      {"type": "p", "html": "We built a concept site for a fictional plumbing business to show what this looks like in practice — tap-to-call in the header, service-area pages for each suburb, a quote form that asks for job photos, and a gallery. It is a <strong>concept build, not a client project</strong>, and we label it that way because plenty of agencies pass demo work off as client work."},
+      {"type": "p", "html": "Our real client work is at <a href=\"https://www.hsracegear.com\" target=\"_blank\" rel=\"noopener\">hsracegear.com</a> and <a href=\"https://mobilearmour.com.au\" target=\"_blank\" rel=\"noopener\">mobilearmour.com.au</a>. Neither is a trade business — we are not going to pretend otherwise. Open them and run a speed test if you want to see how we build."},
+      {"type": "p", "html": "More detail on what is included is on our <a href=\"/tradie-website-design/\">tradie website design page</a>."},
+      {"type": "h2", "text": "Common questions"},
+      {"type": "faq", "q": "How much does a tradie website cost in Australia?", "a": "Between AU$800 and AU$4,500 depending on scope. A three to five page site for a plumber, electrician or builder is $800. Up to ten pages with service-area pages and a quote form is $1,900. Unlimited pages is $3,500. Online booking or job management is $4,500. Prices exclude GST and are fixed in writing before work starts."},
+      {"type": "faq", "q": "Can I build a tradie website myself with Wix or Squarespace?", "a": "Yes, and for a brand new sole trader that is a reasonable place to start. Expect to spend a weekend on it and roughly $20 to $40 a month forever. The trade-off is speed and ownership — builder platforms are slower on mobile, which matters when someone is searching for an emergency plumber, and you are renting the site rather than owning it."},
+      {"type": "faq", "q": "How long does a tradie website take to build?", "a": "Five to seven business days for a three to five page site, two to three weeks for a larger one. The single biggest delay is content. Builds that run long are almost always waiting on job photos and service descriptions from the client, not on development."},
+      {"type": "faq", "q": "Will a website get me on the first page of Google?", "a": "A website alone will not. Ranking depends on your Google Business Profile, reviews, and links from other sites, and it takes months. Anyone guaranteeing first-page rankings is guessing. What a well-built site does is remove the technical reasons Google might ignore you — speed, structure, schema and mobile usability are all included in our builds rather than sold separately."},
+      {"type": "faq", "q": "Do I own the website?", "a": "With BuildFirstSite, completely. You get the source code, the repository and the hosting account in your name, and you can move to another developer at any time. This is worth checking with any agency you approach, because several Australian agencies build on proprietary systems you cannot leave without a full rebuild."},
+      {"type": "faq", "q": "What is the cheapest way to get a tradie website?", "a": "Set up a free Google Business Profile first — it costs nothing and for many trades generates more calls than a website in the early months. If you then need a site, a three to five page build at $800 covers what most sole traders actually need. Be careful with quotes under $500: they usually mean a template with your logo dropped in, hosting you do not control, or a monthly fee that runs forever."},
+    ],
   },
   "website-cost-australia": {
     "lead": "Updated 8 July 2026. If you've asked three \"web designers\" and gotten three wildly different numbers, you're not alone. Here's an honest, jargon-free breakdown of what a website actually costs in Australia in 2026 — and what makes the price go up or down.",
@@ -1505,5 +1442,114 @@ export const BLOG_CONTENT = {
         "html": "Yes, if it's built with a CMS. Ask your developer to include one so you can update text and images without code."
       }
     ]
-  }
+  },
+  "ndis-website-accessibility-checklist": {
+    lead:
+      "WCAG 2.1 Level AA is the benchmark Australian courts and government bodies point to when judging whether a website meets Disability Discrimination Act obligations. This checklist covers the 24 checks that matter most for NDIS provider websites, what each one means in plain English, and how to test it yourself for free.",
+    content: [
+      {"type": "h2", "text": "What standard does an NDIS website actually have to meet?"},
+      {"type": "p", "html": "<strong>WCAG 2.1 Level AA.</strong> That is the answer, but the reason is worth understanding because it changes how seriously you take it."},
+      {"type": "p", "html": "The Disability Discrimination Act 1992 does not name WCAG or specify any coding requirement. What it does is make it unlawful to discriminate in the provision of services, including services delivered online. When a complaint reaches the Australian Human Rights Commission or a court, <strong>WCAG is the benchmark used to judge whether a website created an unlawful barrier</strong>."},
+      {"type": "p", "html": "For NDIS providers the expectation sits higher than for an average business, for an obvious reason: your users are more likely than the general population to rely on screen readers, keyboard navigation, captions and high-contrast display. The NDIS itself states its own website targets WCAG 2.1 A and AA conformance."},
+      {"type": "p", "html": "So: not a statute you can be fined under by name, but a real legal exposure and a genuine barrier to the people you exist to serve."},
+      {"type": "h2", "text": "The 24-point checklist"},
+      {"type": "p", "html": "Grouped by the four WCAG principles. Each item states the check, then what it means in practice."},
+      {"type": "h3", "text": "1. Perceivable — can people take the information in?"},
+      {"type": "ul", "items": ["<strong>Alt text on every meaningful image.</strong> Describe what the image conveys, not what it looks like. Decorative images get empty alt (alt=\"\") so screen readers skip them.", "<strong>Colour contrast of at least 4.5:1</strong> for body text, 3:1 for large text. This is the single most commonly failed check on Australian provider sites.", "<strong>Never use colour alone</strong> to convey meaning. \"Fields marked in red are required\" fails; add an asterisk or the word Required.", "<strong>Captions on all video.</strong> Auto-generated YouTube captions are not sufficient — they need review for names, service terms and acronyms.", "<strong>Transcripts for audio.</strong> Podcasts, recorded webinars, audio explainers.", "<strong>Text resizes to 200% without breaking.</strong> Zoom your site to 200% in a browser and check nothing overlaps or gets cut off.", "<strong>Content reflows at 320px wide</strong> without horizontal scrolling."]},
+      {"type": "h3", "text": "2. Operable — can people navigate and use it?"},
+      {"type": "ul", "items": ["<strong>Everything works with a keyboard alone.</strong> Unplug your mouse and try to complete your referral form. This one test finds more failures than any other.", "<strong>Visible focus indicator.</strong> When tabbing, you must always be able to see where you are. Many themes remove this for aesthetics.", "<strong>No keyboard traps.</strong> You can tab into and back out of every component, including modals and embedded maps.", "<strong>Skip-to-content link</strong> as the first focusable element, so screen reader users bypass the nav on every page.", "<strong>No auto-playing media,</strong> or an obvious pause control within reach.", "<strong>No content that flashes</strong> more than three times per second.", "<strong>Descriptive link text.</strong> \"Read our support coordination services\" not \"click here\". Screen reader users often navigate by pulling up a list of links alone.", "<strong>Touch targets at least 44x44 pixels</strong> with spacing between them."]},
+      {"type": "h3", "text": "3. Understandable — is it clear and predictable?"},
+      {"type": "ul", "items": ["<strong>Page language declared</strong> in the HTML (lang=\"en-AU\").", "<strong>Plain English.</strong> Aim for a Year 7 to 9 reading level on participant-facing pages. Write \"we help you find services\" rather than \"we facilitate service navigation pathways\".", "<strong>Consistent navigation</strong> in the same position on every page.", "<strong>Form labels visibly attached</strong> to their fields. Placeholder text alone is not a label — it disappears when typing starts.", "<strong>Errors identified in text</strong> and describe the fix. \"Enter a phone number including area code\" beats a red border.", "<strong>Acronyms explained on first use.</strong> Write out NDIS, SIL, SDA, plan management the first time each appears on a page."]},
+      {"type": "h3", "text": "4. Robust — does it work with assistive technology?"},
+      {"type": "ul", "items": ["<strong>Valid, semantic HTML.</strong> Real heading tags in order, real buttons, real lists — not divs styled to look like them.", "<strong>One h1 per page,</strong> headings in logical order with no skipped levels.", "<strong>ARIA labels where genuinely needed</strong> — and nowhere else. Incorrect ARIA is worse than none at all."]},
+      {"type": "h2", "text": "How to test this yourself, for free"},
+      {"type": "p", "html": "You do not need to hire anyone to find most of your problems. Three tests take about forty minutes and will surface the majority of failures."},
+      {"type": "table", "headers": ["Test", "Tool", "Finds"], "rows": [["Automated scan", "WAVE browser extension, or Lighthouse in Chrome DevTools", "Contrast, missing alt, heading order, ARIA errors"], ["Keyboard test", "Your keyboard. Unplug the mouse", "Focus traps, invisible focus, unreachable controls"], ["Screen reader test", "NVDA (Windows, free) or VoiceOver (Mac, built in)", "Meaningless link text, unlabelled forms, wrong reading order"]]},
+      {"type": "p", "html": "<strong>Important caveat:</strong> automated tools catch roughly 30 to 40 percent of WCAG issues. They cannot judge whether your alt text is meaningful or whether your language is clear. A clean Lighthouse score is a starting point, not a pass."},
+      {"type": "h2", "text": "What this usually costs to fix"},
+      {"type": "p", "html": "It depends entirely on what you are starting from."},
+      {"type": "ul", "items": ["<strong>Retrofitting an existing site</strong> is the expensive path. If accessibility was not considered during the build, contrast, semantics and keyboard behaviour are woven through every template. Budget several thousand dollars, and accept that some issues cannot be fully fixed without a rebuild.", "<strong>Building it in from the start</strong> costs close to nothing extra. Semantic HTML, proper contrast and keyboard support are how a site should be built anyway. At BuildFirstSite, WCAG 2.1 AA is included in every build rather than sold as an add-on — sites start at $800 and go to $4,500 for larger builds. Full figures are on our <a href=\"/pricing/\">pricing page</a>.", "<strong>Accessibility overlay widgets</strong> — the floating accessibility button you see on some sites — do not make a site compliant. They are widely criticised by disability advocates and have been named in US litigation. Avoid them."]},
+      {"type": "h2", "text": "Where most NDIS provider sites fail"},
+      {"type": "p", "html": "From reviewing provider websites, the same five issues recur. None are hard to fix."},
+      {"type": "table", "headers": ["Issue", "Why it happens", "Impact"], "rows": [["Low contrast text", "Brand colours chosen before checking contrast", "Fails 1.4.3 — most common failure"], ["Focus outline removed", "A designer removed it as \"ugly\"", "Site unusable by keyboard"], ["PDF-only documents", "Service guides published as scanned PDFs", "Often unreadable by screen readers"], ["Placeholder used as label", "Modern minimal form design", "Field purpose lost once typing starts"], ["Jargon-heavy copy", "Written for auditors, not participants", "Excludes cognitive disability users"]]},
+      {"type": "p", "html": "The PDF one deserves particular attention. A scanned service guide is an image — a screen reader gets nothing from it. If you publish documents, publish them as real web pages, or as tagged accessible PDFs."},
+      {"type": "h2", "text": "Common questions"},
+      {"type": "faq", "q": "Is WCAG 2.1 AA legally required for NDIS providers in Australia?", "a": "Not by name. The Disability Discrimination Act 1992 does not specify WCAG or any technical standard. What it does is make discrimination in service provision unlawful, including online services, and WCAG 2.1 Level AA is the benchmark Australian courts, the Australian Human Rights Commission and government procurement use to assess whether a website creates an unlawful barrier. For NDIS providers the practical expectation is WCAG 2.1 AA."},
+      {"type": "faq", "q": "Can I make my existing NDIS website accessible without rebuilding it?", "a": "Often partially. Contrast, alt text, link wording and form labels can be fixed on most platforms. Structural problems — bad heading hierarchy, non-semantic markup, keyboard traps built into a theme — usually require rebuilding templates. An audit will tell you which category you are in before you spend anything."},
+      {"type": "faq", "q": "Do accessibility overlay widgets make my site WCAG compliant?", "a": "No. Overlay tools that add a floating accessibility button do not fix underlying code, are widely opposed by disability advocacy organisations, and have been named in accessibility litigation overseas. They can also interfere with the assistive technology a user already has configured. Fix the site rather than layering a widget over it."},
+      {"type": "faq", "q": "How do I check if my NDIS website is accessible?", "a": "Run three tests. First, an automated scan with the free WAVE extension or Chrome Lighthouse. Second, unplug your mouse and try to complete your referral form using only the keyboard. Third, turn on NVDA or VoiceOver and listen to a page. Automated tools catch only 30 to 40 percent of issues, so the manual tests matter more than the score."},
+      {"type": "faq", "q": "What reading level should NDIS website content be written at?", "a": "Year 7 to 9 for participant-facing pages. Write out acronyms on first use, keep sentences short, and use plain words. This is a WCAG consideration under the Understandable principle and also a practical one — content written for auditors rather than participants excludes the people you are trying to reach."},
+    ],
+  },
+  "ndis-website-cost": {
+    lead:
+      "An NDIS provider website in Australia costs between AU$800 and AU$4,500 for a standard build, with specialist NDIS agencies typically quoting $3,000 to $8,000. This guide breaks down what changes the price, what accessibility compliance actually costs, and the ongoing fees most quotes leave out.",
+    content: [
+      {"type": "h2", "text": "What an NDIS website costs"},
+      {"type": "p", "html": "<strong>Between AU$800 and AU$4,500</strong> for a standard provider website, depending on how many services and pages you need. Agencies that specialise only in NDIS commonly quote <strong>$3,000 to $8,000</strong> for comparable scope."},
+      {"type": "table", "headers": ["What you need", "Pages", "Price (AUD)", "Build time"], "rows": [["New provider — services, about, contact", "3–5", "$800", "5–7 days"], ["Multiple service types, referral forms", "Up to 10", "$1,900", "2–3 weeks"], ["Many services and locations, no page cap", "Unlimited", "$3,500", "3–4 weeks"], ["Participant portal, rostering, intake system", "Custom", "$4,500+", "4–8 weeks"]]},
+      {"type": "p", "html": "Those are BuildFirstSite's published prices, fixed in writing before work starts, with WCAG 2.1 AA accessibility included rather than charged as an extra. Full detail on our <a href=\"/pricing/\">pricing page</a>."},
+      {"type": "h2", "text": "Why NDIS quotes vary so much"},
+      {"type": "p", "html": "Ask five agencies for an NDIS provider website and you will get quotes between $1,500 and $15,000 for what sounds like the same thing. Four things explain most of the gap."},
+      {"type": "table", "headers": ["Factor", "Effect on price", "Worth paying for?"], "rows": [["Accessibility done properly", "$0 if built in, thousands if retrofitted", "Yes — and it should be included, not an add-on"], ["Number of service pages", "$120–180 per page", "Yes, if each service brings referrals"], ["Referral / intake workflow", "from $700", "Yes, if you handle intake manually today"], ["\"NDIS specialist\" branding", "Often $1,000–3,000 premium", "Only if they can show accessibility test results"]]},
+      {"type": "p", "html": "That last row is the one to scrutinise. A number of Australian agencies market exclusively to NDIS providers and charge a premium for that focus. Some genuinely understand accessibility. Others are marketers who outsource the build and have never run a screen reader. <strong>The premium is only worth paying if they can show you an audit.</strong>"},
+      {"type": "h2", "text": "What accessibility actually costs"},
+      {"type": "p", "html": "This is the question specific to NDIS, and the answer surprises people."},
+      {"type": "p", "html": "<strong>Built in from the start: close to nothing.</strong> Semantic HTML, sufficient colour contrast, keyboard navigation and proper form labels are how any competent developer builds anyway. There is no meaningful extra cost — which is why we include WCAG 2.1 AA in every package rather than pricing it separately."},
+      {"type": "p", "html": "<strong>Retrofitted later: expensive.</strong> If a site was built without accessibility in mind, the problems run through every template. Expect an audit at $500 to $1,500, then remediation that can run several thousand — and some structural issues cannot be fixed without rebuilding."},
+      {"type": "p", "html": "If you are choosing between a $1,500 site that ignores accessibility and a $2,500 one that does not, the second is cheaper within two years. Our <a href=\"/blog/ndis-website-accessibility-checklist/\">NDIS accessibility checklist</a> shows exactly what should be included."},
+      {"type": "h2", "text": "Ongoing costs to plan for"},
+      {"type": "table", "headers": ["Cost", "Typical AUD", "Notes"], "rows": [["Domain", "$15–20/year", "Yours"], ["Hosting", "$0–40/month", "Free first year with us"], ["Maintenance and SEO", "$250/month", "Optional with us; compulsory with some agencies"], ["Accessibility re-check", "$300–800/year", "Worth doing after any major content change"], ["Platform lock-in", "Varies", "The one that hurts — see below"]]},
+      {"type": "p", "html": "Several Australian agencies build on proprietary systems they own. You cannot move the site, and leaving means rebuilding. It is rarely disclosed before signing. <strong>Ask directly: if we leave in two years, do we take the website with us?</strong>"},
+      {"type": "h2", "text": "What to ask before you sign"},
+      {"type": "ul", "items": ["Can you show me a WCAG 2.1 AA audit of a site you built?", "Is accessibility included, or is it a line item?", "Do we own the source code and hosting account?", "Who writes the content, and is it written at a Year 7 to 9 reading level?", "Is the price fixed in writing before work starts?", "What happens to the site if we stop paying you monthly?"]},
+      {"type": "p", "html": "The first question is the important one. An agency that genuinely does accessibility will have test output to show you. One that treats it as a marketing word will change the subject."},
+      {"type": "h2", "text": "Being straight with you"},
+      {"type": "p", "html": "BuildFirstSite has not yet built a website for an NDIS provider. We are not going to imply otherwise — plenty of agencies claim vertical expertise they cannot evidence, and you should ask all of them for proof."},
+      {"type": "p", "html": "What we can evidence is the technical capability that matters here: we build accessible, fast, semantic websites, and every build includes WCAG 2.1 AA. Our client work is at <a href=\"https://www.hsracegear.com\" target=\"_blank\" rel=\"noopener\">hsracegear.com</a> and <a href=\"https://mobilearmour.com.au\" target=\"_blank\" rel=\"noopener\">mobilearmour.com.au</a> — open them, run Lighthouse, and judge the build quality yourself."},
+      {"type": "h2", "text": "Common questions"},
+      {"type": "faq", "q": "How much does an NDIS website cost in Australia?", "a": "Between AU$800 and AU$4,500 for a standard provider website. A three to five page site for a new provider is $800, up to ten pages with referral forms is $1,900, and unlimited pages is $3,500. Custom builds with participant portals or intake systems start at $4,500. NDIS-specialist agencies commonly quote $3,000 to $8,000 for comparable scope."},
+      {"type": "faq", "q": "Does accessibility compliance cost extra?", "a": "It should not. Built in from the start, WCAG 2.1 AA compliance adds close to nothing because semantic HTML, colour contrast and keyboard support are how a site should be built anyway. BuildFirstSite includes it in every package. Retrofitting accessibility onto an existing inaccessible site is where the real cost appears — an audit runs $500 to $1,500 and remediation can be several thousand."},
+      {"type": "faq", "q": "Should I use an NDIS-specialist web agency?", "a": "Only if they can prove the specialisation. Several Australian agencies market exclusively to NDIS providers and charge a premium of $1,000 to $3,000 for that focus. Some genuinely understand accessibility; others are marketers who outsource development. Ask for a WCAG 2.1 AA audit of a site they built. The ones who do the work will have it."},
+      {"type": "faq", "q": "How long does an NDIS website take to build?", "a": "Five to seven business days for a three to five page site, two to three weeks for up to ten pages, and three to four weeks for larger builds. The most common delay is content — service descriptions written in plain English take longer to produce than providers expect, particularly when existing material was written for auditors rather than participants."},
+    ],
+  },
+  "seo-for-ndis-providers": {
+    lead:
+      "Most NDIS participants and support coordinators find providers through Google. This guide covers what actually moves rankings for NDIS providers in Australia — local search, service pages, plain-English content and accessibility — and what to ignore.",
+    content: [
+      {"type": "h2", "text": "How people actually find NDIS providers"},
+      {"type": "p", "html": "Three channels bring most enquiries, and SEO only affects two of them."},
+      {"type": "ul", "items": ["<strong>Support coordinator referral.</strong> Relationship-driven, but coordinators check your website before recommending you. A weak site loses referrals you had already earned.", "<strong>Google search.</strong> Participants and families searching \"support coordination near me\" or \"SIL provider Melbourne\". This is what SEO addresses.", "<strong>The NDIS Provider Finder.</strong> Separate from Google — make sure your listing is complete, but it is not something SEO influences."]},
+      {"type": "p", "html": "The practical implication: your website has two audiences with different needs. A coordinator is assessing credibility and service fit. A family is trying to work out whether you can help and how to contact you. Write for both."},
+      {"type": "h2", "text": "Local SEO comes first"},
+      {"type": "p", "html": "NDIS services are delivered locally, so local search matters more than general SEO. Two things dominate."},
+      {"type": "p", "html": "<strong>Google Business Profile.</strong> Free, and it accounts for roughly a third of local ranking weight. Set the primary category correctly — \"Disability services provider\" or the closest match — fill in every field, list your service areas, and add real photos. An incomplete profile is the most common gap we see."},
+      {"type": "p", "html": "<strong>Reviews.</strong> Ask satisfied participants and families, with care and without pressure. Never offer anything in exchange — that breaches Google's policy and Australian Consumer Law. Reply to every review."},
+      {"type": "p", "html": "Beyond that, keep your name, address and phone number identical everywhere they appear — your site, Google, the Provider Finder, directories. Inconsistency weakens the entity Google builds of your organisation."},
+      {"type": "h2", "text": "Build a page per service, not one page listing all of them"},
+      {"type": "p", "html": "This is the single biggest on-site opportunity for most providers."},
+      {"type": "p", "html": "A page titled \"Our Services\" listing eight things ranks for none of them. Eight pages, each covering one service properly, can rank for eight different searches. Someone searching \"supported independent living Brunswick\" should land on a page about supported independent living, not a general services page they then have to navigate."},
+      {"type": "table", "headers": ["Service", "Page targets", "Should answer"], "rows": [["Support coordination", "support coordination [city]", "What a coordinator does, who is eligible, how to start"], ["SIL", "supported independent living [city]", "What housing looks like, staffing, how vacancies work"], ["Community participation", "community participation NDIS", "What activities, how funding is used"], ["Plan management", "ndis plan management [city]", "How invoicing works, what it costs a participant"], ["Therapy supports", "[therapy type] ndis [city]", "Qualifications, wait times, telehealth options"]]},
+      {"type": "p", "html": "Each page needs genuine detail — eligibility, what happens first, wait times, who to contact. Eight thin pages are worse than one good one."},
+      {"type": "h2", "text": "Write in plain English"},
+      {"type": "p", "html": "This is both an SEO factor and an accessibility one, which is unusual and useful."},
+      {"type": "p", "html": "Most provider websites are written for auditors. Phrases like \"person-centred service delivery frameworks\" and \"capacity building supports aligned to participant goals\" appear on hundreds of sites and mean nothing to a parent trying to find respite care."},
+      {"type": "p", "html": "Write how people search. Someone types \"who can help my son live independently\", not \"SIL capacity building framework\". Answer the question in the words they used, and target a Year 7 to 9 reading level — the same standard our <a href=\"/blog/ndis-website-accessibility-checklist/\">accessibility checklist</a> recommends."},
+      {"type": "h2", "text": "Accessibility is an SEO factor"},
+      {"type": "p", "html": "Building an accessible site improves rankings, because most accessibility work overlaps with what search engines need."},
+      {"type": "ul", "items": ["Semantic HTML and correct heading order help screen readers and help Google parse structure", "Descriptive alt text serves blind users and image search", "Descriptive link text helps screen reader navigation and passes context between pages", "Fast, mobile-friendly pages are a WCAG consideration and a confirmed ranking factor", "Plain language reaches cognitive disability users and matches how people search"]},
+      {"type": "p", "html": "For NDIS providers this is the rare case where compliance work and marketing work are the same work."},
+      {"type": "h2", "text": "What to ignore"},
+      {"type": "ul", "items": ["<strong>Keyword stuffing.</strong> Repeating \"NDIS provider Melbourne\" forty times does not work and reads badly to the humans deciding whether to trust you.", "<strong>Buying backlinks.</strong> Against Google's guidelines and a real risk to a site you depend on.", "<strong>Ranking guarantees.</strong> Nobody can guarantee position one. An agency promising it is either guessing or targeting a term nobody searches.", "<strong>A suburb page for every suburb.</strong> Thirty near-identical pages is the scaled-content pattern Google penalises. Cover your service area properly on fewer, better pages."]},
+      {"type": "h2", "text": "A realistic order to work in"},
+      {"type": "table", "headers": ["Do this", "Why first", "Effort"], "rows": [["Complete your Google Business Profile", "Biggest local factor, free", "2 hours"], ["Ask for reviews", "Slowest input to move, start now", "Ongoing"], ["Split services into individual pages", "Biggest on-site gain", "1–2 weeks"], ["Rewrite copy in plain English", "Helps SEO and accessibility together", "1 week"], ["Fix accessibility failures", "Compliance plus ranking", "Varies"], ["Publish participant-focused guides", "Long-term authority", "Ongoing"]]},
+      {"type": "p", "html": "Expect three to six months before rankings move meaningfully. Anyone promising faster is selling something."},
+      {"type": "h2", "text": "Common questions"},
+      {"type": "faq", "q": "How do NDIS providers rank higher on Google?", "a": "Start with a complete Google Business Profile and genuine reviews, which drive local search where most NDIS enquiries begin. Then build a separate page for each service rather than one combined services page, write in plain English at a Year 7 to 9 reading level, and fix accessibility issues — semantic HTML, alt text and fast mobile pages help both screen readers and search engines. Expect three to six months for meaningful movement."},
+      {"type": "faq", "q": "Does website accessibility affect SEO?", "a": "Yes, and for NDIS providers the overlap is substantial. Semantic HTML and heading structure help both screen readers and search engines parse a page. Descriptive alt text serves blind users and image search. Descriptive link text aids screen reader navigation and passes context to Google. Fast mobile-friendly pages are a WCAG consideration and a confirmed ranking factor."},
+      {"type": "faq", "q": "Should NDIS providers create a page for every suburb they serve?", "a": "No. Thirty near-identical suburb pages is exactly the scaled-content pattern Google's helpful content systems target, and a site-wide demotion would take your good pages down with it. Cover your service area properly within fewer, stronger pages, and only build a separate location page where you have a genuine physical presence or distinct service offering."},
+      {"type": "faq", "q": "How long does SEO take for an NDIS provider?", "a": "Three to six months for meaningful ranking movement, longer in competitive metro markets. Google Business Profile improvements can show results within weeks because local search responds faster than organic. Content and authority take longer. Any agency guaranteeing first-page rankings within 30 days is either guessing or targeting terms nobody searches."},
+    ],
+  },
 };
