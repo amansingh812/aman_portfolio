@@ -1048,7 +1048,7 @@ export const LANDING_PAGES = [
       { type: 'faq', q: 'How quickly can I get a website built?',
         a: 'The fastest we can deliver is around 1 week for a simple landing page, assuming you provide all content upfront (text, logo, photos). For business websites, the minimum realistic timeline is 2 weeks. Rush delivery is possible with a surcharge for projects with a firm deadline.' },
     ],
-  },,
+  },
   {
     "slug": "squarespace-vs-custom-website",
     "metaTitle": "Squarespace vs Custom Website: 5-Year Cost",
