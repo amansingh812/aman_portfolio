@@ -50,7 +50,7 @@ const Footer = () => {
 					<div className="row">
 						<div className="col-md-6">
 							<span className="color-gray-400 text-body-lead">© {new Date().getFullYear()} Build First Site</span>
-							<Link href="/terms/" className="text-body-text color-gray-400 ml-50">Privacy policy</Link>
+							<Link href="/privacy/" className="text-body-text color-gray-400 ml-50">Privacy policy</Link>
 							<Link href="/terms/" className="text-body-text color-gray-400 ml-50">Terms of service</Link>
 						</div>
 						<div className="col-md-6 text-center text-lg-end text-md-end">

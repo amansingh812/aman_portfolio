@@ -3,28 +3,35 @@ import Link from "next/link";
 import { CTA, SITE } from "@/content/site";
 
 export const metadata = {
-    title: "Join Us — Work With Build First Site",
+    // Root layout applies `%s | Build First Site` — do NOT repeat the brand here.
+    title: "Join Us",
     description:
         "Join a two-person studio building websites, apps and AI systems for Australian businesses. Remote, flexible, project-based. Developers, designers and marketers welcome.",
     alternates: { canonical: "/join/" },
 };
 
+/**
+ * ⚠️  These are the kinds of work we contract out — NOT a list of funded,
+ *     currently-open vacancies. We are two people; we bring someone in when a
+ *     project needs them. Do not reword this into "we're hiring" unless we
+ *     actually are. See CLAUDE.md §1.
+ */
 const ROLES = [
     {
         title: "Freelance Frontend Developer",
-        type: "Contract · Remote",
+        type: "Contract · Remote · Project-based",
         desc: "React / Next.js work on client projects. You get clear briefs, fair rates, and interesting builds.",
         skills: ["React", "Next.js", "Tailwind CSS", "TypeScript"],
     },
     {
         title: "Freelance Designer",
-        type: "Contract · Remote",
+        type: "Contract · Remote · Project-based",
         desc: "UI/UX design for websites and apps. Figma-based workflow, direct client collaboration.",
         skills: ["Figma", "UI/UX", "Responsive Design", "Design Systems"],
     },
     {
         title: "Digital Marketing Specialist",
-        type: "Contract · Remote",
+        type: "Contract · Remote · Project-based",
         desc: "SEO, content strategy and Google Ads for Australian small businesses. Results-focused, transparent reporting.",
         skills: ["SEO", "Google Ads", "Content Strategy", "Analytics"],
     },
@@ -46,7 +53,7 @@ export default function JoinPage() {
                 <div className="banner-hero banner-breadcrumbs">
                     <div className="container text-center">
                         <span className="tag-1">Join Us</span>
-                        <h1 className="text-display-2 mt-20">
+                        <h1 className="text-heading-1 mt-20">
                             Build with us.<br />
                             <span className="color-green-900">From anywhere.</span>
                         </h1>
@@ -86,7 +93,12 @@ export default function JoinPage() {
                 <div className="container pt-70 pb-70">
                     <div className="row justify-content-center">
                         <div className="col-lg-8 text-center">
-                            <h2 className="text-heading-1 color-gray-900">Open roles</h2>
+                            <h2 className="text-heading-1 color-gray-900">The work we bring people in for</h2>
+                            <p className="text-body-lead-large color-gray-600 mt-15">
+                                Straight up: we are two people, so this is not a list of open salaried
+                                jobs. We bring contractors in project by project. Send us your work and
+                                we will come to you when something fits.
+                            </p>
                             <p className="text-body-lead-large color-gray-600 mt-15">
                                 All roles are freelance/contract and fully remote.
                             </p>
