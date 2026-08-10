@@ -635,3 +635,6 @@ export const CASE_STUDIES = [
 ];
 
 export function getCaseStudie(slug){return CASE_STUDIES.find(x=>x.slug===slug);}
+export function getCaseStudy(slug){return CASE_STUDIES.find(x=>x.slug===slug);}
+export function getAllCaseStudies(){return CASE_STUDIES;}
+

@@ -1675,6 +1675,8 @@ export const BLOG_CONTENT = {
       {"type": "faq", "q": "Do accessibility overlay widgets make my site WCAG compliant?", "a": "No. Overlay tools that add a floating accessibility button do not fix underlying code, are widely opposed by disability advocacy organisations, and have been named in accessibility litigation overseas. They can also interfere with the assistive technology a user already has configured. Fix the site rather than layering a widget over it."},
       {"type": "faq", "q": "How do I check if my NDIS website is accessible?", "a": "Run three tests. First, an automated scan with the free WAVE extension or Chrome Lighthouse. Second, unplug your mouse and try to complete your referral form using only the keyboard. Third, turn on NVDA or VoiceOver and listen to a page. Automated tools catch only 30 to 40 percent of issues, so the manual tests matter more than the score."},
       {"type": "faq", "q": "What reading level should NDIS website content be written at?", "a": "Year 7 to 9 for participant-facing pages. Write out acronyms on first use, keep sentences short, and use plain words. This is a WCAG consideration under the Understandable principle and also a practical one — content written for auditors rather than participants excludes the people you are trying to reach."},
+    ,
+      {"type": "p", "html": "Planning a full NDIS provider website? Our <a href=\"/ndis-website-design/\">NDIS website design service</a> covers WCAG 2.1 AA compliance, fixed AUD pricing, and local SEO built in from day one."}
     ],
   },
   "ndis-website-cost": {
@@ -1708,6 +1710,8 @@ export const BLOG_CONTENT = {
       {"type": "faq", "q": "Does accessibility compliance cost extra?", "a": "It should not. Built in from the start, WCAG 2.1 AA compliance adds close to nothing because semantic HTML, colour contrast and keyboard support are how a site should be built anyway. BuildFirstSite includes it in every package. Retrofitting accessibility onto an existing inaccessible site is where the real cost appears — an audit runs $500 to $1,500 and remediation can be several thousand."},
       {"type": "faq", "q": "Should I use an NDIS-specialist web agency?", "a": "Only if they can prove the specialisation. Several Australian agencies market exclusively to NDIS providers and charge a premium of $1,000 to $3,000 for that focus. Some genuinely understand accessibility; others are marketers who outsource development. Ask for a WCAG 2.1 AA audit of a site they built. The ones who do the work will have it."},
       {"type": "faq", "q": "How long does an NDIS website take to build?", "a": "Five to seven business days for a three to five page site, two to three weeks for up to ten pages, and three to four weeks for larger builds. The most common delay is content — service descriptions written in plain English take longer to produce than providers expect, particularly when existing material was written for auditors rather than participants."},
+    ,
+      {"type": "p", "html": "Planning a full NDIS provider website? Our <a href=\"/ndis-website-design/\">NDIS website design service</a> covers WCAG 2.1 AA compliance, fixed AUD pricing, and local SEO built in from day one."}
     ],
   },
   "seo-for-ndis-providers": {
@@ -1747,6 +1751,8 @@ export const BLOG_CONTENT = {
       {"type": "faq", "q": "Does website accessibility affect SEO?", "a": "Yes, and for NDIS providers the overlap is substantial. Semantic HTML and heading structure help both screen readers and search engines parse a page. Descriptive alt text serves blind users and image search. Descriptive link text aids screen reader navigation and passes context to Google. Fast mobile-friendly pages are a WCAG consideration and a confirmed ranking factor."},
       {"type": "faq", "q": "Should NDIS providers create a page for every suburb they serve?", "a": "No. Thirty near-identical suburb pages is exactly the scaled-content pattern Google's helpful content systems target, and a site-wide demotion would take your good pages down with it. Cover your service area properly within fewer, stronger pages, and only build a separate location page where you have a genuine physical presence or distinct service offering."},
       {"type": "faq", "q": "How long does SEO take for an NDIS provider?", "a": "Three to six months for meaningful ranking movement, longer in competitive metro markets. Google Business Profile improvements can show results within weeks because local search responds faster than organic. Content and authority take longer. Any agency guaranteeing first-page rankings within 30 days is either guessing or targeting terms nobody searches."},
+    ,
+      {"type": "p", "html": "Planning a full NDIS provider website? Our <a href=\"/ndis-website-design/\">NDIS website design service</a> covers WCAG 2.1 AA compliance, fixed AUD pricing, and local SEO built in from day one."}
     ],
   },
   "best-ndis-website-designers": {

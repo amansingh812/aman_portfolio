@@ -212,13 +212,13 @@ export const LANDING_PAGES = [
   },
   {
     slug: 'tradie-website-design',
-    metaTitle: 'Tradie Website Design Australia | From $800',
+    metaTitle: 'Tradie Websites Australia 2026 | From $800',
     metaDescription:
-      'Tradie website design from $800. Tap-to-call, quote forms and service-area pages for plumbers, electricians and builders. Fixed AUD prices, you own the code.',
+      'Tradie websites Australia from $800. Tap-to-call, quote forms and suburb service pages for plumbers, electricians, builders. 2026 prices, you own the code.',
     eyebrow: 'Tradie',
-    h1: 'Websites for Australian tradies, from $800',
+    h1: 'Tradie Websites Australia — Built to Win You Jobs',
     lead:
-      'Most tradie websites are built to look nice. Yours needs to turn someone standing in a flooded laundry into a phone call — everything else is decoration.',
+      'Most tradie websites are built to look nice. Yours needs to turn someone standing in a flooded laundry into a phone call. This page explains what actually works — and what a tradie website costs in Australia in 2026.',
     priceTiers: ['starter', 'business', 'unlimited'],
     schemaType: 'Service',
     breadcrumb: 'Tradie Website Design',
@@ -229,6 +229,10 @@ export const LANDING_PAGES = [
       { href: '/pricing/', label: 'All pricing' },
     ],
     body: [
+      { type: 'h2', text: 'Why tradie websites are different from regular business sites' },
+      { type: 'p', html: 'Over 70% of tradie searches in Australia happen on mobile, and a lot of them happen mid-emergency — someone with a burst pipe, a power fault, or a leak they found at 7am. That visitor is not browsing. They are about to call the first number that appears and works. Your website has about three seconds and one clear button to make that happen.' },
+      { type: 'p', html: 'That means a tradie website is not a brochure. It is a phone call trigger. Every design decision should be evaluated against one question: does this make someone more likely to call?' },
+
       { type: 'h2', text: 'What most tradie websites get wrong' },
       { type: 'ul', items: [
         '<strong>The number is hard to find.</strong> Your visitor is on a phone, one-handed, in a hurry. If the phone number is not tappable and visible without scrolling, you have lost the job to whoever ranked below you.',
@@ -248,6 +252,19 @@ export const LANDING_PAGES = [
         'Loads in under three seconds on 4G',
         'Google Business Profile setup, which for trades often out-earns the website itself',
       ]},
+
+      { type: 'h2', text: 'Local SEO for tradies: suburb pages beat broad terms' },
+      { type: 'p', html: 'Ranking for \"electrician Melbourne\" is nearly impossible for a small business. Ranking for \"electrician Preston\" or \"electrician Reservoir\" is very achievable — and those searches convert at a higher rate because the person typing them already knows where they want you to come from.' },
+      { type: 'p', html: 'We build a service-area page for each suburb you actually cover. Instead of one page fighting the biggest agencies for broad terms, you have ten pages ranking for specific suburbs with almost no competition. This is how small trades compete against franchise brands.' },
+      { type: 'ul', items: [
+        'One page per suburb you service — written specifically for that area',
+        'Suburb name in the page title, H1 and URL',
+        'Local landmarks and context so it reads as genuine, not templated',
+        'Linked back to your main service page and Google Business Profile',
+      ]},
+
+      { type: 'h2', text: 'What types of tradies we build for' },
+      { type: 'p', html: 'Plumbers, electricians, builders, plasterers, painters, tilers, carpenters, roofers, HVAC technicians, pest controllers, cleaners and landscapers. The website structure is similar across trades — the service-area pages, the emergency CTA, the licence display — but the content is written for your specific trade, not repurposed from a template.' },
 
       { type: 'h2', text: 'When you probably do not need us yet' },
       { type: 'p', html: 'If you have just started and have no Google Business Profile, set that up first. It is free, it puts you on Maps, and for a lot of trades it generates more calls in month one than a website will. We would rather tell you that than sell you something you do not need yet. Come back when you are competing for jobs people compare before calling.' },
@@ -386,13 +403,13 @@ export const LANDING_PAGES = [
   },
   {
     slug: 'web-design-melbourne',
-    metaTitle: 'Web Design Melbourne | Prices From $800',
+    metaTitle: 'Web Design Melbourne 2026 | From $800 | Build First Site',
     metaDescription:
-      'Melbourne web design with prices published upfront — from $800. Fast Next.js builds, SEO included, and you own the code. Fixed quote in one business day.',
+      'Web design Melbourne from $800 AUD. Modern Next.js builds, local SEO included, code ownership, no lock-in. Fixed price — quote in one business day.',
     eyebrow: 'MELBOURNE, VICTORIA',
-    h1: 'Web design in Melbourne, with the price on the page.',
+    h1: 'Web Design Melbourne — Modern Websites From $800',
     lead:
-      'Most Melbourne agencies make you sit through a discovery call before they tell you what it costs. Ours starts at $800 and every figure is published. Fast Next.js builds, SEO included, and you own the code.',
+      'Most Melbourne web design agencies gate their pricing behind a discovery call. Ours starts at $800 and is published right here. Modern Next.js builds, local SEO included, and the source code is yours on launch day — no retainer, no lock-in.',
     priceTiers: ['starter', 'business', 'unlimited', 'ecommerce', 'application', 'custom-software'],
     schemaType: 'Service',
     breadcrumb: 'Web Design Melbourne',
@@ -443,13 +460,13 @@ export const LANDING_PAGES = [
   },
   {
     slug: 'web-design-sydney',
-    metaTitle: 'Web Design Sydney | Prices From $800',
+    metaTitle: 'Web Design Sydney 2026 | From $800 | Build First Site',
     metaDescription:
-      'Sydney web design with prices published upfront — from $800. Fast Next.js builds, SEO included, and you own the code. Fixed quote in one business day.',
+      'Web design Sydney from $800 AUD. Modern Next.js builds, local SEO included, you own the code. No discovery call needed — fixed price, quote in one business day.',
     eyebrow: 'SYDNEY, NSW',
-    h1: 'Web design in Sydney, with the price on the page.',
+    h1: 'Web Design Sydney — Modern Websites From $800',
     lead:
-      'Most Sydney agencies make you sit through a discovery call before telling you what it costs. Ours starts at $800 and every figure is published. Fast Next.js builds, SEO included, and you own the code.',
+      'Most Sydney web design agencies make you sit through a discovery call before revealing a price. Ours starts at $800, everything is published, and you receive a fixed written quote in one business day. Modern Next.js builds, SEO included, code is yours.',
     priceTiers: ['starter', 'business', 'unlimited', 'ecommerce', 'application', 'custom-software'],
     schemaType: 'Service',
     breadcrumb: 'Web Design Sydney',
@@ -493,13 +510,13 @@ export const LANDING_PAGES = [
   },
   {
     slug: 'web-design-brisbane',
-    metaTitle: 'Web Design Brisbane | Prices From $800',
+    metaTitle: 'Web Design Brisbane 2026 | From $800 | Build First Site',
     metaDescription:
-      'Brisbane web design with prices published upfront — from $800. Fast Next.js builds, SEO included, and you own the code. Fixed quote in one business day.',
+      'Web design Brisbane from $800 AUD. Modern Next.js builds, local SEO included, you own the code. Fixed price, no discovery call — quote in one business day.',
     eyebrow: 'BRISBANE, QLD',
-    h1: 'Web design in Brisbane, with the price on the page.',
+    h1: 'Web Design Brisbane — Fast, Modern Websites From $800',
     lead:
-      'Most Brisbane agencies make you sit through a discovery call before telling you what it costs. Ours starts at $800 and every figure is published. Fast Next.js builds, SEO included, and you own the code.',
+      'Most Brisbane web design agencies won\'t show a price until after a discovery call. Ours starts at $800 and everything is published upfront. Modern Next.js builds, local SEO included, and the source code is yours the day you launch.',
     priceTiers: ['starter', 'business', 'unlimited', 'ecommerce', 'application', 'custom-software'],
     schemaType: 'Service',
     breadcrumb: 'Web Design Brisbane',
@@ -543,13 +560,13 @@ export const LANDING_PAGES = [
   },
   {
     slug: 'web-design-perth',
-    metaTitle: 'Web Design Perth | Prices From $800',
+    metaTitle: 'Web Design Perth WA 2026 | From $800 | Build First Site',
     metaDescription:
-      'Perth web design with prices published upfront — from $800. Fast Next.js builds, SEO included, and you own the code. Fixed quote in one business day.',
+      'Web design Perth WA from $800 AUD. Next.js builds, local SEO included, you own the code. Fixed AUD price, no discovery call needed. Quote in one business day.',
     eyebrow: 'PERTH, WA',
-    h1: 'Web design in Perth, with the price on the page.',
+    h1: 'Web Design Perth WA — Modern Websites From $800',
     lead:
-      'Most Perth agencies make you sit through a discovery call before telling you what it costs. Ours starts at $800 and every figure is published. Fast Next.js builds, SEO included, and you own the code.',
+      'Most Perth web design agencies make you wait through a discovery call before giving a price. Ours starts at $800 and everything is published. Modern Next.js builds, local SEO included, and the source code is yours on the day you launch.',
     priceTiers: ['starter', 'business', 'unlimited', 'ecommerce', 'application', 'custom-software'],
     schemaType: 'Service',
     breadcrumb: 'Web Design Perth',
@@ -561,22 +578,30 @@ export const LANDING_PAGES = [
       { href: '/pricing/', label: 'All pricing' },
     ],
     body: [
-      { type: 'h2', text: 'Perth has fewer web designers — which cuts both ways' },
-      { type: 'p', html: 'Perth is the most isolated capital city in the world, and its web design market is smaller than the east coast equivalent. That has an obvious upside: less competition for local search terms, so a well-built Perth website can rank faster than the same site would in Sydney.' },
-      { type: 'p', html: 'The downside is less price competition. With fewer studios bidding, quotes are less disciplined and the gap between the cheapest and most expensive can be enormous for identical scope.' },
-      { type: 'p', html: 'The timezone question comes up in Perth more than anywhere else. We work remotely and our contact is in Melbourne, which is two to three hours ahead of Perth depending on daylight saving. In practice that means we are working while you are starting your day, and calls are scheduled in the Perth morning.' },
+      { type: 'h2', text: 'What a website costs in Perth in 2026' },
+      { type: 'p', html: 'Perth web design pricing is less competitive than the east coast because the market is smaller — with fewer studios bidding on each project, quotes are less disciplined. Local agency rates typically run $3,000 to $8,000 for a business website.' },
+      { type: 'p', html: 'Our prices are published and fixed: <strong>$800</strong> for a three to five page site, <strong>$1,900</strong> for up to ten pages, <strong>$3,500</strong> for unlimited pages, and <strong>$4,500</strong> for e-commerce. Every quote is in writing before work starts.' },
+      { type: 'p', html: 'Perth is also the most isolated capital city in the world, which has an SEO upside: less competition for local search terms. A well-built Perth website with proper local schema and suburb pages can rank significantly faster than the same site would in Sydney or Melbourne.' },
 
-      { type: 'h2', text: 'What we build for Perth businesses' },
+      { type: 'h2', text: 'Perth industries we build for' },
       { type: 'ul', items: [
-        '<strong>Mining services and industrial.</strong> Contractors and suppliers who need to look credible to procurement teams, not just to consumers.',
-        '<strong>Trades and home services.</strong> Perth trades competing across a sprawling metro area where service-area pages matter more than in a compact city.',
-        '<strong>Hospitality.</strong> Fremantle and Northbridge venues taking bookings direct.',
-        '<strong>Retail and e-commerce.</strong> Selling to the east coast and beyond without a platform commission.',
+        '<strong>Mining services and resources.</strong> Perth is the commercial hub of Australia\'s resources sector. Contractors, METS companies and professional services firms need websites that read as credible to procurement teams at major miners — not consumer-grade templates.',
+        '<strong>Construction and trades.</strong> Perth trades compete across one of the most sprawling metro areas in the world. Service-area pages for Joondalup, Rockingham, Mandurah and Midland are not optional — they are how you appear in suburb-specific searches.',
+        '<strong>FIFO and fly-in businesses.</strong> Suppliers and services catering to FIFO workers have a unique audience. We build sites that convert from mobile during roster changeovers.',
+        '<strong>Hospitality and tourism.</strong> Fremantle, Northbridge and the Swan Valley visitor economy, booking direct without commission.',
+        '<strong>Health and allied health.</strong> Perth\'s growing northern suburbs (Joondalup, Wanneroo, Alkimos) have significant demand for accessible, bookable clinic websites.',
       ]},
 
-      { type: 'h2', text: 'Working with Perth businesses' },
-      { type: 'p', html: 'We are based in Melbourne and work with Perth businesses remotely. That is worth stating plainly rather than implying an office we do not have. In practice it changes very little: you get a live staging link from the first week, calls scheduled for the Perth morning, and the same fixed price a local agency would charge more for.' },
-      { type: 'p', html: 'We work with businesses across <strong>Perth CBD, Fremantle, Joondalup, Subiaco, Cannington, Midland, Rockingham, Mandurah, Osborne Park and Cockburn</strong> and the wider Western Australia metro area.' },
+      { type: 'h2', text: 'Why Perth websites rank differently' },
+      { type: 'p', html: 'The keyword \"web designers perth wa\" alone receives 5,000 searches per month — and competition is classified as Low by Google. Compare that to Sydney or Melbourne where competition is Medium to High for the equivalent term. This means a properly built Perth website with correct local SEO can reach page one faster and stay there with less effort than in the eastern capitals.' },
+      { type: 'p', html: 'We include Google Business Profile setup and local schema markup in every Perth project — the two elements that have the largest impact on appearing in the Google Maps pack for WA searches.' },
+
+      { type: 'h2', text: 'Perth suburbs and regions we work across' },
+      { type: 'p', html: 'We work with businesses across <strong>Perth CBD, Fremantle, Joondalup, Subiaco, Cannington, Midland, Rockingham, Mandurah, Osborne Park, Cockburn, Wanneroo, Stirling, Armadale, Kalamunda and the Swan Valley</strong> and the wider Western Australia metro and regional area.' },
+      { type: 'p', html: 'Remote delivery means your location within WA makes no difference to what we build or what we charge. We have worked with Perth-based businesses from Broome to Bunbury and everything in between.' },
+
+      { type: 'h2', text: 'The timezone question' },
+      { type: 'p', html: 'Perth runs two to three hours behind Melbourne depending on daylight saving. In practice: we are working while Perth is starting the day, so questions sent in the Perth morning are answered before your lunch. We schedule calls for the Perth morning specifically.' },
 
       { type: 'h2', text: 'Perth web design questions' },
       { type: 'faq', q: 'How much does a website cost in Perth?',
@@ -593,13 +618,13 @@ export const LANDING_PAGES = [
   },
   {
     slug: 'web-design-adelaide',
-    metaTitle: 'Web Design Adelaide | Prices From $800',
+    metaTitle: 'Web Design Adelaide 2026 | From $800 | Build First Site',
     metaDescription:
-      'Adelaide web design with prices published upfront — from $800. Fast Next.js builds, SEO included, and you own the code. Fixed quote in one business day.',
+      'Web design Adelaide from $800 AUD. Next.js builds, local SEO included, you own the code. Trusted by Australian small businesses. Fixed quote in one day.',
     eyebrow: 'ADELAIDE, SA',
-    h1: 'Web design in Adelaide, with the price on the page.',
+    h1: 'Web Design Adelaide — Fast, Modern Websites From $800',
     lead:
-      'Most Adelaide agencies make you sit through a discovery call before telling you what it costs. Ours starts at $800 and every figure is published. Fast Next.js builds, SEO included, and you own the code.',
+      'Most Adelaide web design agencies make you wait through a discovery call before revealing their price. Ours starts at $800 and everything is published upfront. Modern Next.js builds, local SEO included, and you own the source code outright.',
     priceTiers: ['starter', 'business', 'unlimited', 'ecommerce', 'application', 'custom-software'],
     schemaType: 'Service',
     breadcrumb: 'Web Design Adelaide',
@@ -611,22 +636,30 @@ export const LANDING_PAGES = [
       { href: '/pricing/', label: 'All pricing' },
     ],
     body: [
-      { type: 'h2', text: 'Adelaide businesses get quoted less — and often get less' },
-      { type: 'p', html: 'Adelaide agency pricing runs below the eastern capitals, typically $2,500 to $6,000 for a business website. That sounds like good news until you look at what is inside the cheaper quotes: a template with your logo dropped in, hosting you do not control, and SEO sold separately as a monthly add-on.' },
-      { type: 'p', html: 'A cheap website that nobody finds is not cheap. It is a smaller amount of money that produces nothing, which is more expensive than a good site that brings in work.' },
-      { type: 'p', html: 'Adelaide\'s defence, health and wine sectors have raised the standard of what local buyers expect from a business online. A site that looked fine in 2020 now reads as dated to the people you are trying to win work from.' },
+      { type: 'h2', text: 'What a website costs in Adelaide in 2026' },
+      { type: 'p', html: 'Adelaide agency pricing typically runs $2,500 to $6,000 for a business website — below the eastern capitals, but still variable depending on what is actually inside the quote. The cheaper end is usually a template with your logo dropped in, hosting you do not control, and SEO sold separately as a monthly retainer.' },
+      { type: 'p', html: 'Our prices are published and fixed: <strong>$800</strong> for a three to five page site, <strong>$1,900</strong> for up to ten pages, <strong>$3,500</strong> for unlimited pages, and <strong>$4,500</strong> for e-commerce. Every quote is in writing before work starts. No surprises at handover.' },
+      { type: 'p', html: 'A cheap website that nobody finds is not cheap — it is a smaller amount of money that produces nothing. The measure is not what you spend, it is what you get back.' },
 
-      { type: 'h2', text: 'What we build for Adelaide businesses' },
+      { type: 'h2', text: 'Adelaide industries we build for' },
       { type: 'ul', items: [
-        '<strong>Trades and home services.</strong> Adelaide trades competing for renovation and maintenance work across the metro area.',
-        '<strong>Health and allied health.</strong> Clinics and practitioners needing accessible, bookable sites.',
-        '<strong>Food, wine and hospitality.</strong> Cellar doors, venues and producers selling direct.',
-        '<strong>Professional and defence services.</strong> Firms needing credibility with procurement and enterprise buyers.',
+        '<strong>Defence and AUKUS supply chain.</strong> Adelaide is home to the most significant defence shipbuilding program in Australian history. Suppliers and contractors need websites that read as professional to procurement teams, with credentials clearly visible.',
+        '<strong>Health and allied health.</strong> Clinics, physiotherapy, psychology, dental and specialist practices needing accessible, bookable websites that comply with accessibility standards.',
+        '<strong>Wine, food and agribusiness.</strong> Barossa Valley, McLaren Vale and Eden Valley producers selling cellar door, direct-to-consumer and export. Photography-forward builds with direct checkout.',
+        '<strong>Trades and home services.</strong> Builders, plumbers, electricians and landscapers competing across the metro area from Salisbury to Marion to Glenelg.',
+        '<strong>Professional services.</strong> Legal, accounting and consulting firms needing credibility with mid-market clients.',
       ]},
 
-      { type: 'h2', text: 'Working with Adelaide businesses' },
-      { type: 'p', html: 'We are based in Melbourne and work with Adelaide businesses remotely. That is worth stating plainly rather than implying an office we do not have. In practice it changes very little: you get a live staging link from the first week, calls whenever you want them, and the same fixed price a local agency would charge more for.' },
-      { type: 'p', html: 'We work with businesses across <strong>Adelaide CBD, North Adelaide, Glenelg, Norwood, Prospect, Marion, Salisbury, Port Adelaide, Unley and Modbury</strong> and the wider South Australia metro area.' },
+      { type: 'h2', text: 'Why Adelaide websites rank differently' },
+      { type: 'p', html: 'Adelaide has less online competition than Sydney or Melbourne for most local search terms. A well-built site with proper local SEO — correct Google Business Profile, suburb-specific service pages, structured data — can rank on the first page within three to six months in most Adelaide business categories. The same effort in Sydney takes longer because you are competing against more established players.' },
+      { type: 'p', html: 'The keyword \"web design adelaide\" alone receives 5,000 searches per month in Australia. With published prices and a transparent approach, we aim to be the result people click when they are ready to spend — not after a discovery call, not after a proposal that takes a week.' },
+
+      { type: 'h2', text: 'Adelaide suburbs we work across' },
+      { type: 'p', html: 'We work with businesses across <strong>Adelaide CBD, North Adelaide, Glenelg, Norwood, Prospect, Marion, Salisbury, Port Adelaide, Unley, Modbury, Mawson Lakes, Burnside, Tea Tree Gully, Morphett Vale and Mount Barker</strong> and the wider South Australia metro area. Remote delivery means your location within SA does not change what we can build or the price we charge.' },
+
+      { type: 'h2', text: 'How we work with Adelaide businesses' },
+      { type: 'p', html: 'We are based in Melbourne and work with Adelaide businesses remotely — we say that plainly rather than implying an Adelaide office. In practice it changes very little: you get a live staging link from the first week, calls whenever you want them, and the same fixed price a local studio would charge more for (without the overheads).' },
+      { type: 'p', html: 'Every project starts with a written scope. You approve the price, we build, you review on a live staging environment, and we launch. Post-launch support is included for the period stated in your quote. If you want ongoing SEO and maintenance, our Care + SEO plan is $250/month with 30 days cancel anytime.' },
 
       { type: 'h2', text: 'Adelaide web design questions' },
       { type: 'faq', q: 'How much does a website cost in Adelaide?',
@@ -724,13 +757,13 @@ export const LANDING_PAGES = [
   },
   {
     slug: 'wix-vs-custom-website',
-    metaTitle: 'Wix vs Custom Website: 5-Year Cost Compared',
+    metaTitle: 'Wix vs Custom Website Australia 2026 — 5-Year Cost Compared',
     metaDescription:
-      'Wix vs custom website — an honest comparison covering cost over 5 years, SEO, speed and ownership. Real AUD numbers, no platform bias.',
+      'Wix vs custom website Australia 2026 — real AUD cost over 5 years, SEO comparison, speed, and code ownership. No platform bias, no upsell.',
     eyebrow: 'Guide · Australia · 2026',
-    h1: 'Wix vs custom website: which is actually better?',
+    h1: 'Wix vs Custom Website Australia (2026) — The Honest Comparison',
     lead:
-      'The honest answer? It depends on your business — but not in the way most web designers will tell you. This guide breaks down the real cost, SEO performance, and long-term trade-offs of Wix (and Squarespace) vs a custom-built website.',
+      'The honest answer is: it depends on your stage. This guide breaks down the real AUD cost over five years, SEO performance, and long-term trade-offs of Wix vs a custom-built website — so you can decide without a sales pitch.',
     priceTiers: [],
     schemaType: 'Article',
     breadcrumb: 'Wix vs Custom Website',
@@ -1051,11 +1084,11 @@ export const LANDING_PAGES = [
   },
   {
     "slug": "squarespace-vs-custom-website",
-    "metaTitle": "Squarespace vs Custom Website: 5-Year Cost",
+    "metaTitle": "Squarespace vs Custom Website Australia (2026)",
     "metaDescription": "Squarespace or a custom-built website? Real AUD costs over five years, where Squarespace genuinely wins, and the ownership question that decides it.",
     "eyebrow": "Comparison",
-    "h1": "Squarespace vs a custom website",
-    "lead": "Squarespace is a genuinely good product, and for some businesses it is the right answer. This page is about working out whether yours is one of them — with real five-year AUD numbers rather than a sales pitch either way.",
+    "h1": "Squarespace vs a Custom Website in Australia (2026)",
+    "lead": "Squarespace looks cheap until you do the five-year maths. For some Australian businesses it genuinely is the right call. This page works out whether yours is one of them — with real AUD numbers, a plain feature comparison, and no sales pitch in either direction.",
     "priceTiers": [
       "starter",
       "business",
@@ -1214,6 +1247,43 @@ export const LANDING_PAGES = [
       },
       {
         "type": "h2",
+        "text": "At a glance: Squarespace vs custom, compared"
+      },
+      {
+        "type": "table",
+        "headers": ["Feature", "Squarespace", "Custom (Build First Site)"],
+        "rows": [
+          ["Setup time", "Days (DIY)", "5–14 business days"],
+          ["Upfront cost (AUD)", "$0", "From $800"],
+          ["Ongoing cost (AUD)", "~$49/month forever", "$0, or $250/mo with Care + SEO"],
+          ["5-year total (AUD)", "~$2,940+", "From $800 (one-off)"],
+          ["SEO control", "Good basics only", "Full — schema, CWV, structure"],
+          ["Speed (Core Web Vitals)", "Platform-limited", "Green on every build"],
+          ["Customisation", "Template ceiling", "No ceiling"],
+          ["You own the site", "No — platform owns it", "Yes — source code is yours"],
+          ["Can take it elsewhere", "No — must rebuild", "Yes — any developer"],
+          ["eCommerce transaction fee", "Up to 3%", "$0 (Stripe rate only)"],
+          ["Works without internet", "No — goes offline if you stop paying", "Yes — hosted in your name"]
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Which is right for your business right now?"
+      },
+      {
+        "type": "p",
+        "html": "The right platform changes depending on where your business is. Here is the honest breakdown."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "<strong>Use Squarespace if you are just starting out.</strong> Under $49/month, live in days, no developer needed. Perfect for testing whether the business idea works before committing to a proper build.",
+          "<strong>Use a custom website if your site is a primary source of enquiries.</strong> If organic Google traffic matters, if you need any integration beyond the basics, or if you have been in business more than two years — you have outgrown templates.",
+          "<strong>Not sure?</strong> Ask yourself one question: will this website still matter to your business in three years? If yes, build. The cost curve and the ownership argument both point the same way."
+        ]
+      },
+      {
+        "type": "h2",
         "text": "Common questions"
       },
       {
@@ -1235,8 +1305,140 @@ export const LANDING_PAGES = [
         "type": "faq",
         "q": "When should I choose Squarespace over a custom build?",
         "a": "Choose Squarespace if you need something live this week on a near-zero budget, if it is a portfolio or simple brochure site that will not grow much, if you want to make design changes yourself constantly without a developer, or if you are still testing whether the business idea works. Do not spend $1,900 validating an idea — spend $49 a month, find out, then build properly."
+      },
+      {
+        "type": "faq",
+        "q": "What about WordPress — where does that fit?",
+        "a": "WordPress sits between Squarespace and a fully custom build. It is free and flexible, but you manage hosting, security updates and plugin compatibility yourself — or pay someone to. A WordPress build typically costs AU $3,000–$8,500 with ongoing hosting and maintenance on top. A custom Next.js build from us costs from $800, includes hosting setup, and has no platform dependency to maintain. For most Australian small businesses, the choice is Squarespace (quick and cheap) or custom (own it and rank with it) — WordPress makes the most sense when you need a specific plugin ecosystem."
       }
     ]
+  },
+
+  {
+    slug: 'ndis-website-design',
+    metaTitle: 'NDIS Website Design Australia 2026 | WCAG 2.1 AA | From $1,900',
+    metaDescription:
+      'NDIS provider website design Australia — WCAG 2.1 AA compliant, fast, participant-friendly. Fixed AUD pricing from $1,900. Build First Site.',
+    eyebrow: 'NDIS & Disability Services',
+    h1: 'NDIS Website Design — Accessible, Fast, Compliant',
+    lead:
+      'NDIS provider websites have a higher standard than a typical business site. Accessibility compliance is a legal requirement under the Disability Discrimination Act. We build NDIS websites that meet WCAG 2.1 AA, load fast on mobile, and convert participants and support coordinators into enquiries.',
+    priceTiers: ['business', 'unlimited'],
+    schemaType: 'Service',
+    breadcrumb: 'NDIS Website Design',
+    related: [
+      { href: '/web-design-melbourne/', label: 'Web design Melbourne' },
+      { href: '/web-design-sydney/', label: 'Web design Sydney' },
+      { href: '/dental-website-design/', label: 'Dental website design' },
+      { href: '/blog/ndis-website-cost/', label: 'NDIS website cost guide' },
+      { href: '/blog/ndis-website-accessibility-checklist/', label: 'WCAG 2.1 AA checklist' },
+    ],
+    body: [
+      { type: 'h2', text: 'What makes an NDIS website different' },
+      { type: 'p', html: 'NDIS providers serve participants who may have physical, cognitive, sensory, or communication disabilities. A website that works fine for an able-bodied user can be completely inaccessible to your actual audience — small font, low colour contrast, keyboard-only navigation that breaks, or video without captions.' },
+      { type: 'p', html: 'Beyond your participants, the Disability Discrimination Act 1992 creates a legal obligation for service providers to make digital services accessible. WCAG 2.1 AA is the benchmark the Australian Human Rights Commission refers to. A non-compliant website is a liability, not just a missed opportunity.' },
+
+      { type: 'h2', text: 'What WCAG 2.1 AA compliance means in practice' },
+      { type: 'ul', items: [
+        '<strong>Colour contrast ratio of 4.5:1 minimum</strong> for body text — critical for participants with low vision.',
+        '<strong>Full keyboard navigability</strong> — every page can be used without a mouse, meaning screen reader users are not blocked.',
+        '<strong>Alt text on every image</strong> — descriptive, not just filenames. "A support worker helping a participant with daily living tasks" not "img-hero.jpg".',
+        '<strong>Captions on video</strong> — any video content needs accurate captions. Auto-generated YouTube captions do not meet WCAG.',
+        '<strong>Clear, plain-language content</strong> — NDIS documentation is already complex; your website should be the opposite.',
+        '<strong>Resizable text without breaking layout</strong> — pages must work at 200% zoom.',
+        '<strong>No content that flashes more than 3 times per second</strong> — seizure safety.',
+      ]},
+
+      { type: 'h2', text: 'What NDIS provider websites need to convert' },
+      { type: 'p', html: 'Accessibility is table stakes. Conversion is the other half of the job. The participants and coordinators visiting your site are making a real decision about support services — trust signals matter more here than on a typical business website.' },
+      { type: 'ul', items: [
+        '<strong>Service pages, not a services list.</strong> One page per support category — Supported Independent Living, Community Participation, Daily Activities, etc. Each page targets the search terms participants and coordinators actually use.',
+        '<strong>NDIS registration number visible.</strong> If you are a Registered Provider, display your number. Unregistered providers should state that clearly too — coordinator referrals depend on knowing this.',
+        '<strong>Intake process explained step by step.</strong> What happens after someone contacts you? How long does onboarding take? Uncertainty is the biggest drop-off point on NDIS provider websites.',
+        '<strong>Service area map or suburb list.</strong> Google indexes suburb-specific pages and coordinators search by location.',
+        '<strong>Testimonials from participants or families</strong> (with permission). Third-party trust is critical in this sector.',
+      ]},
+
+      { type: 'h2', text: 'NDIS website cost in Australia (2026)' },
+      { type: 'p', html: 'Our Business package at <strong>$1,900</strong> covers up to ten pages — enough for a home page, about, contact, and six service category pages. Our Unlimited package at <strong>$3,500</strong> is the right choice if you need a page per suburb, a participant portal, or more than ten service types.' },
+      { type: 'p', html: 'We include WCAG 2.1 AA compliance, Google Business Profile setup, local schema markup, structured data for each service, and a Lighthouse mobile score above 90 in every NDIS build.' },
+
+      { type: 'h2', text: 'SEO for NDIS providers' },
+      { type: 'p', html: 'NDIS provider SEO is different from general local SEO. Participants and coordinators search by service type and location: "SIL providers Melbourne", "community participation NDIS Parramatta", "speech therapy NDIS Canberra". These are high-intent searches with low competition because most NDIS providers still rely on the NDIS provider finder and word of mouth.' },
+      { type: 'p', html: 'We build NDIS websites with the right page structure from day one — one URL per service, suburb-specific content where relevant, FAQPage schema for participant questions, and internal links between related services. Our guide on <a href="/blog/seo-for-ndis-providers/">SEO for NDIS providers</a> covers the full strategy.' },
+
+      { type: 'h2', text: 'NDIS website design questions' },
+      { type: 'faq', q: 'Does my NDIS website legally have to be accessible?',
+        a: 'WCAG 2.1 AA is not a legal mandate written explicitly into Australian law, but the Disability Discrimination Act 1992 prohibits discriminating against people with disabilities in the provision of services — and a non-accessible website does exactly that. The Australian Human Rights Commission has investigated digital accessibility complaints. NDIS providers who receive Commonwealth funding have additional obligations. The safe answer: build to WCAG 2.1 AA from the start.' },
+      { type: 'faq', q: 'How much does an NDIS website cost?',
+        a: 'Our Business package is $1,900 AUD for up to ten pages, which covers a standard NDIS provider site with one page per service type. The Unlimited package at $3,500 covers suburb pages, more service categories, and no page limit. See our detailed breakdown at /blog/ndis-website-cost/.' },
+      { type: 'faq', q: 'Can you help me rank for NDIS-related searches?',
+        a: 'Yes. We build NDIS websites with the page structure, local schema, and service-specific content that search engines reward. We also have a full guide to SEO for NDIS providers on our blog covering the specific keywords and page types that generate participant enquiries.' },
+      { type: 'faq', q: 'Do I need to be a Registered Provider to get a website from you?',
+        a: 'No. We work with both Registered and unregistered NDIS providers. We will mark your registration status accurately on the site — this is important information for participants and coordinators making referrals.' },
+      { type: 'faq', q: 'How long does it take to build an NDIS provider website?',
+        a: 'Typically two to four weeks for a Business package site, depending on how quickly you can provide content and photos. We start with a staging URL so you can review and request changes before the site goes live.' },
+    ],
+  },
+
+  {
+    slug: 'dental-website-design',
+    metaTitle: 'Dental Website Design Australia 2026 | From $1,900 | Build First Site',
+    metaDescription:
+      'Dental practice website design Australia — appointment booking integrations, AHPRA-compliant copy, fast mobile pages. Fixed AUD price from $1,900.',
+    eyebrow: 'Healthcare · Dental',
+    h1: 'Dental Website Design Australia — Built to Book More Patients',
+    lead:
+      'A dental practice website has one job: convert searchers into booked appointments. We build fast, AHPRA-compliant dental websites with appointment booking integrations, local SEO, and a Lighthouse score above 90 — so your practice appears in local search and converts when it does.',
+    priceTiers: ['business', 'unlimited'],
+    schemaType: 'Service',
+    breadcrumb: 'Dental Website Design',
+    related: [
+      { href: '/web-design-melbourne/', label: 'Web design Melbourne' },
+      { href: '/web-design-sydney/', label: 'Web design Sydney' },
+      { href: '/ndis-website-design/', label: 'NDIS website design' },
+      { href: '/pricing/', label: 'View all pricing' },
+    ],
+    body: [
+      { type: 'h2', text: 'What a dental website needs to do in 2026' },
+      { type: 'p', html: 'Most dental practice websites fall into one of two categories: a 2018-era WordPress theme that loads slowly and looks dated, or a website built by a dental marketing agency that locks you into a proprietary system and a monthly retainer you can never leave.' },
+      { type: 'p', html: 'Neither serves your patients well. A patient searching for a dentist on their phone at 9pm needs a fast page, an obvious phone number, and a booking link — not a slow-loading slider and a generic stock photo of someone smiling. That is what we build.' },
+
+      { type: 'h2', text: 'Dental website cost in Australia (2026)' },
+      { type: 'p', html: 'Dental marketing agencies typically charge $3,000–$8,000 for a practice website, plus $200–$500/month for hosting and a CMS licence they own. Our prices are fixed and published: <strong>$1,900</strong> for a Business package (up to ten pages — home, about, services, contact, and individual treatment pages), or <strong>$3,500</strong> for unlimited pages.' },
+      { type: 'p', html: 'You own the source code. Hosting on Vercel is free. No ongoing platform fee, no proprietary CMS, no lock-in. The $0 hosting situation means you will be ahead on total cost within 12 months of a typical dental agency quote.' },
+
+      { type: 'h2', text: 'AHPRA compliance on dental websites' },
+      { type: 'p', html: 'AHPRA guidelines restrict health practitioners from using patient testimonials in marketing materials — a blanket "we have 200 five-star reviews" widget is a compliance issue if it displays individual patient testimonials on the page. We build dental websites with this in mind: aggregate review stars from Google Business Profile are fine, individual testimonials require care.' },
+      { type: 'p', html: 'We do not write clinical claims we cannot substantiate. Any copy about treatments includes appropriate caveats ("results may vary"), and we do not use before/after treatment photos without appropriate context. AHPRA audits practices for digital advertising — we make sure your website is not the thing that triggers one.' },
+
+      { type: 'h2', text: 'Features every dental website should have' },
+      { type: 'ul', items: [
+        '<strong>Online appointment booking.</strong> HotDoc, Cliniko, or any booking system you already use. We integrate it so patients can book without calling — the single biggest conversion improvement for most dental sites.',
+        '<strong>Individual treatment pages.</strong> One page per treatment — general dentistry, cosmetic, orthodontics, implants, emergency. Each page targets the specific search term patients use and provides the depth Google rewards.',
+        '<strong>Google Business Profile integration.</strong> Your star rating and review count displayed correctly — aggregate stars are AHPRA-compliant; individual testimonials require more care.',
+        '<strong>DentalMark or practice accreditation badges.</strong> Third-party trust signals that patients recognise.',
+        '<strong>Team pages with photos and qualifications.</strong> Patients choose dentists based on who they will be treated by. A real photo and a list of qualifications converts better than a stock photo.',
+        '<strong>Clear fee guides.</strong> Dental pricing anxiety is real. Practices that publish fee guides or Medicare/Child Dental Benefits Schedule information on the page reduce enquiry friction.',
+        '<strong>Emergency dental landing page.</strong> "Emergency dentist [suburb]" is one of the highest-intent searches in dental. A dedicated emergency page targeting your suburb captures this traffic.',
+      ]},
+
+      { type: 'h2', text: 'Local SEO for dental practices' },
+      { type: 'p', html: '"Dentist near me" and "[suburb] dentist" are the two highest-volume dental searches in Australia. Ranking in the Google Maps pack for those terms is determined primarily by Google Business Profile completeness, distance from the searcher, and website authority.' },
+      { type: 'p', html: 'We set up Google Business Profile correctly for every dental project — service area, practice hours, treatment categories, photo uploads. We also build suburb-specific content into the site architecture where appropriate (a clinic in Parramatta should rank for "dentist Parramatta", "dentist North Parramatta", and "dentist Westmead").' },
+
+      { type: 'h2', text: 'Dental website design questions' },
+      { type: 'faq', q: 'How much does a dental website cost in Australia?',
+        a: 'Our Business package is $1,900 AUD for up to ten pages — home, about, services overview, individual treatment pages, and contact. Unlimited pages are $3,500. Hosting is free on Vercel. Dental marketing agencies typically charge $3,000–$8,000 plus a monthly retainer. We publish the price before any conversation.' },
+      { type: 'faq', q: 'Can you integrate online booking into our dental website?',
+        a: 'Yes. We integrate with HotDoc, Cliniko, Dental4Windows, and any booking system that provides an embed code or API. Online booking is the single biggest conversion improvement for most dental websites — patients who cannot book immediately often do not call back.' },
+      { type: 'faq', q: 'Are patient testimonials allowed on dental websites under AHPRA guidelines?',
+        a: 'AHPRA guidelines prohibit the use of patient testimonials in advertising. Displaying individual patient reviews on your practice website falls within advertising and needs to be handled carefully. Aggregate star ratings (e.g. "4.9 stars on Google") are generally acceptable. We build dental websites with AHPRA compliance in mind and can advise on what is and is not permissible.' },
+      { type: 'faq', q: 'How long does it take to build a dental website?',
+        a: 'Typically two to four weeks for a Business package site. We start with a private staging link so you can review, request edits, and sign off before going live. The most common delay is waiting for professional team photos — we recommend organising these early in the project.' },
+      { type: 'faq', q: 'Do you build websites for specialist dental practices?',
+        a: 'Yes — we work with general practices, specialists (orthodontists, periodontists, oral surgeons, endodontists), and multi-location group practices. Specialist websites have different keyword strategies and referral-network trust signals; we tailor the content and structure accordingly.' },
+    ],
   }
 ]
 

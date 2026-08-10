@@ -183,6 +183,8 @@ export const FOOTER_COLUMNS = [
       { label: 'What a Website Costs', href: '/how-much-does-a-website-cost-australia/' },
       { label: 'Wix vs Custom', href: '/wix-vs-custom-website/' },
       { label: 'Website Checklist', href: '/small-business-website-checklist/' },
+      { label: 'NDIS Website Design', href: '/ndis-website-design/' },
+      { label: 'Dental Website Design', href: '/dental-website-design/' },
     ],
   },
 ];
