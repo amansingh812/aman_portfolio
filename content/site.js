@@ -185,6 +185,9 @@ export const FOOTER_COLUMNS = [
       { label: 'Website Checklist', href: '/small-business-website-checklist/' },
       { label: 'NDIS Website Design', href: '/ndis-website-design/' },
       { label: 'Dental Website Design', href: '/dental-website-design/' },
+      { label: 'WordPress vs Custom', href: '/wordpress-vs-custom-website/' },
+      { label: 'Webflow vs Custom', href: '/webflow-vs-custom-website/' },
+      { label: 'Freelancer vs Agency', href: '/freelancer-vs-web-design-agency/' },
     ],
   },
 ];

@@ -20,7 +20,7 @@ export const BLOG_POSTS = [
     date: "2026-07-15",
     readingTime: "8 min read",
     href: "/blog/7-website-mistakes-australia/",
-    image: "/assets/imgs/page/blog/7-website-mistakes-australia.png",
+    image: "/assets/imgs/page/blog/7-website-mistakes-australia.webp",
   },
   {
     slug: "website-cost-australia",
@@ -32,7 +32,7 @@ export const BLOG_POSTS = [
     date: "2026-07-20",
     readingTime: "7 min read",
     href: "/blog/website-cost-australia/",
-    image: "/assets/imgs/page/blog/website-cost-australia.png",
+    image: "/assets/imgs/page/blog/website-cost-australia.webp",
   },
   {
     slug: "signs-website-losing-customers",
@@ -43,7 +43,7 @@ export const BLOG_POSTS = [
     date: "2026-07-25",
     readingTime: "8 min read",
     href: "/blog/signs-website-losing-customers/",
-    image: "/assets/imgs/page/blog/signs-website-losing-customers.png",
+    image: "/assets/imgs/page/blog/signs-website-losing-customers.webp",
   },
   {
     slug: "small-business-website-checklist",
@@ -54,7 +54,7 @@ export const BLOG_POSTS = [
     date: "2026-07-28",
     readingTime: "8 min read",
     href: "/blog/small-business-website-checklist/",
-    image: "/assets/imgs/page/blog/small-business-website-checklist.png",
+    image: "/assets/imgs/page/blog/small-business-website-checklist.webp",
   },
   {
     slug: "wordpress-vs-custom-website",
@@ -66,7 +66,7 @@ export const BLOG_POSTS = [
     date: "2026-08-01",
     readingTime: "9 min read",
     href: "/blog/wordpress-vs-custom-website/",
-    image: "/assets/imgs/page/blog/wordpress-vs-custom-website.png",
+    image: "/assets/imgs/page/blog/wordpress-vs-custom-website.webp",
   },
   {
     slug: "how-long-to-build-a-website",
@@ -78,7 +78,7 @@ export const BLOG_POSTS = [
     date: "2026-08-03",
     readingTime: "8 min read",
     href: "/blog/how-long-to-build-a-website/",
-    image: "/assets/imgs/page/blog/how-long-to-build-a-website.png",
+    image: "/assets/imgs/page/blog/how-long-to-build-a-website.webp",
   },
   {
     slug: "tradie-website-cost",
@@ -90,7 +90,7 @@ export const BLOG_POSTS = [
     date: "2026-08-05",
     readingTime: "9 min read",
     href: "/blog/tradie-website-cost/",
-    image: "/assets/imgs/page/blog/tradie-website-cost.png",
+    image: "/assets/imgs/page/blog/tradie-website-cost.webp",
   },
   {
     slug: "best-web-design-agencies-australia",
@@ -102,7 +102,7 @@ export const BLOG_POSTS = [
     date: "2026-08-07",
     readingTime: "9 min read",
     href: "/blog/best-web-design-agencies-australia/",
-    image: "/assets/imgs/page/blog/best-web-design-agencies-australia.png",
+    image: "/assets/imgs/page/blog/best-web-design-agencies-australia.webp",
   },
   {
     slug: "ndis-website-accessibility-checklist",
@@ -114,7 +114,7 @@ export const BLOG_POSTS = [
     date: "2026-08-08",
     readingTime: "10 min read",
     href: "/blog/ndis-website-accessibility-checklist/",
-    image: "/assets/imgs/page/blog/ndis-website-accessibility-checklist.png",
+    image: "/assets/imgs/page/blog/ndis-website-accessibility-checklist.webp",
   },
   {
     slug: "ndis-website-cost",
@@ -126,7 +126,7 @@ export const BLOG_POSTS = [
     date: "2026-08-08",
     readingTime: "8 min read",
     href: "/blog/ndis-website-cost/",
-    image: "/assets/imgs/page/blog/ndis-website-cost.png",
+    image: "/assets/imgs/page/blog/ndis-website-cost.webp",
   },
   {
     slug: "seo-for-ndis-providers",
@@ -138,7 +138,7 @@ export const BLOG_POSTS = [
     date: "2026-08-08",
     readingTime: "9 min read",
     href: "/blog/seo-for-ndis-providers/",
-    image: "/assets/imgs/page/blog/seo-for-ndis-providers.png",
+    image: "/assets/imgs/page/blog/seo-for-ndis-providers.webp",
   },
   {
     slug: "best-ndis-website-designers",
@@ -150,7 +150,43 @@ export const BLOG_POSTS = [
     date: "2026-08-08",
     readingTime: "9 min read",
     href: "/blog/best-ndis-website-designers/",
-    image: "/assets/imgs/page/blog/best-ndis-website-designers.png",
+    image: "/assets/imgs/page/blog/best-ndis-website-designers.webp",
+  },
+  {
+    slug: "wordpress-vs-nextjs-speed-australia",
+    metaDescription: "WordPress vs Next.js performance compared for Australian small business sites — real PageSpeed scores, Core Web Vitals, and what the gap means for your Google rankings.",
+    metaTitle: "WordPress vs Next.js Speed: Real PageSpeed Scores for AU Sites (2026)",
+    title: "WordPress vs Next.js: Which is Faster for Australian Small Business Sites? (2026)",
+    excerpt: "We ran PageSpeed tests on real Australian WordPress and Next.js sites. The average gap is 35 points on mobile. Here is what that means for your Google rankings.",
+    category: "Performance",
+    date: "2026-08-11",
+    readingTime: "8 min read",
+    href: "/blog/wordpress-vs-nextjs-speed-australia/",
+    image: "/assets/imgs/page/blog/wordpress-vs-nextjs-speed-australia.webp",
+  },
+  {
+    slug: "tradie-suburb-pages-seo",
+    metaDescription: "Why suburb pages beat broad city terms for tradie SEO in Australia — with real keyword data, page structure, and examples for plumbers, electricians and builders.",
+    metaTitle: "Why Tradie Websites Need Suburb Pages (Not Just a Service Area)",
+    title: "Why Tradie Websites Need Suburb Pages (Not Just a Service Area)",
+    excerpt: "Broad terms like 'plumber Melbourne' are owned by directories. The keyword 'plumber Moonee Ponds' is not. Here is why suburb pages are the fastest SEO win for Australian tradies.",
+    category: "SEO",
+    date: "2026-08-11",
+    readingTime: "7 min read",
+    href: "/blog/tradie-suburb-pages-seo/",
+    image: "/assets/imgs/page/blog/tradie-suburb-pages-seo.webp",
+  },
+  {
+    slug: "wcag-audit-process-ndis-websites",
+    metaDescription: "How we audit NDIS provider websites for WCAG 2.1 AA compliance — the exact 8-step process, free tools, and what fails most often.",
+    metaTitle: "How We Audit NDIS Websites for WCAG 2.1 AA: Our 8-Step Process",
+    title: "How We Audit NDIS Websites for WCAG 2.1 AA Compliance: Our 8-Step Process",
+    excerpt: "Every NDIS website we build goes through an 8-step accessibility audit before launch. Here is exactly what we check, what fails most often, and the free tools you can use yourself.",
+    category: "Accessibility",
+    date: "2026-08-11",
+    readingTime: "9 min read",
+    href: "/blog/wcag-audit-process-ndis-websites/",
+    image: "/assets/imgs/page/blog/wcag-audit-process-ndis-websites.webp",
   },
 ];
 

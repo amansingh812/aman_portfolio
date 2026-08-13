@@ -41,6 +41,13 @@ export default function BlogContent({ blocks }) {
                                 ))}
                             </ol>
                         )
+                    case "image":
+                        return (
+                            <div key={i} className="mt-30 mb-30 text-center">
+                                <Image src={b.src} alt={b.alt || "Blog image"} width={b.width || 1200} height={b.height || 675} style={{ borderRadius: 12, maxWidth: '100%', height: 'auto' }} />
+                                {b.caption && <p className="text-body-small color-gray-500 mt-10" style={{ fontStyle: 'italic' }}>{b.caption}</p>}
+                            </div>
+                        )
                     case "table":
                         return (
                             <div key={i} className="mt-30 mb-30" style={{ overflowX: 'auto' }}>
@@ -78,6 +85,30 @@ export default function BlogContent({ blocks }) {
                                 <h3 className="text-heading-5 color-gray-900 mb-15">{b.q}</h3>
                                 <p className="text-body-text color-gray-600">{b.a}</p>
                             </div>
+                        )
+                    /* In-body image. `alt` is REQUIRED — a decorative image in
+                       an article body is a WCAG failure and wastes the image
+                       SEO signal. `caption` is optional but recommended:
+                       Google reads it as context for image search. */
+                    case "image":
+                        return (
+                            <figure key={i} className="mt-30 mb-30">
+                                <Image
+                                    src={b.src}
+                                    alt={b.alt}
+                                    width={b.width || 1200}
+                                    height={b.height || 675}
+                                    sizes="(max-width: 768px) 100vw, 800px"
+                                    style={{ width: "100%", height: "auto", borderRadius: 12 }}
+                                    loading="lazy"
+                                />
+                                {b.caption && (
+                                    <figcaption className="text-body-text color-gray-500 mt-10"
+                                        style={{ textAlign: "center", fontStyle: "italic" }}>
+                                        {b.caption}
+                                    </figcaption>
+                                )}
+                            </figure>
                         )
                     case "quote":
                         return (

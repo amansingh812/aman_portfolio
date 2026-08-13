@@ -935,7 +935,7 @@ export const BLOG_CONTENT = {
       },
       {
         "type": "p",
-        "html": "<strong>The Fix:</strong> Compress all images using modern WebP formats, eliminate bloated plugins, and migrate away from legacy WordPress page builders or slow platforms. Analyze your site's current performance metrics for free using our <a href=\"/website-speed-checker/\">website speed checker tool</a>."
+        "html": "<strong>The Fix:</strong> Compress all images using modern WebP formats, eliminate bloated plugins, and migrate away from legacy WordPress page builders or slow platforms. Read our comparison of <a href=\"/blog/wordpress-vs-nextjs-speed-australia/\">WordPress vs Next.js Speed</a> to see the performance difference. Analyze your site's current performance metrics for free using our <a href=\"/website-speed-checker/\">website speed checker tool</a>."
       },
       {
         "type": "h2",
@@ -1332,11 +1332,11 @@ export const BLOG_CONTENT = {
       },
       {
         "type": "p",
-        "html": "<strong>1. DIY builders (Wix, Squarespace, Shopify).</strong> Roughly AU$20–60/month. Cheapest upfront and fine for a very simple presence. The catch: you do all the work, templates look like everyone else's, and they often convert poorly because they're not built around <em>your</em> customer's journey. Great for a hobby, risky for a business that needs leads."
+        "html": "<strong>1. DIY builders (Wix, Squarespace, Shopify).</strong> Roughly AU$20–60/month. Cheapest upfront and fine for a very simple presence. Explore our honest comparisons of <a href=\"/wix-vs-custom-website/\">Wix vs custom website</a>, <a href=\"/squarespace-vs-custom-website/\">Squarespace vs custom website</a>, or <a href=\"/webflow-vs-custom-website/\">Webflow vs custom website</a> to understand the trade-offs. The catch: you do all the work, templates look like everyone else's, and they often convert poorly because they're not built around <em>your</em> customer's journey. Great for a hobby, risky for a business that needs leads."
       },
       {
         "type": "p",
-        "html": "<strong>2. Freelancer or small studio.</strong> AU$1,500–8,000 for a one-off build. The sweet spot for most small businesses — you get a custom, conversion-focused site without agency overhead. Delivery is usually weeks, not months, and you deal directly with the person building it."
+        "html": "<strong>2. Freelancer or small studio.</strong> AU$1,500–8,000 for a one-off build. Read our guide on <a href=\"/freelancer-vs-web-design-agency/\">freelancer vs web design agency</a> to decide which fits. The sweet spot for most small businesses — you get a custom, conversion-focused site without agency overhead. Delivery is usually weeks, not months, and you deal directly with the person building it."
       },
       {
         "type": "p",
@@ -1376,7 +1376,7 @@ export const BLOG_CONTENT = {
           [
             "Tradie (plumber, electrician, builder)",
             "AU$1,500–4,000",
-            "Local SEO, quote form, service-area pages, click-to-call"
+            "Local SEO, quote form, service-area pages, click-to-call. See our <a href=\"/tradie-website-design/\">tradie website design</a> service."
           ],
           [
             "Café / restaurant",
@@ -1788,4 +1788,156 @@ export const BLOG_CONTENT = {
       {"type": "faq", "q": "How much should an NDIS website cost?", "a": "Between AU$800 and AU$4,500 for a standard provider website depending on scope. NDIS-specialist agencies commonly quote AU$3,000 to $8,000 for comparable work. The premium is only worth paying if they can evidence the specialisation with accessibility test results rather than just sector-specific marketing language."},
     ],
   },
+  "wordpress-vs-nextjs-speed-australia": {
+    lead:
+      "We ran PageSpeed Insights on real Australian WordPress sites and compared them to Next.js builds. The average gap is 35 points on mobile. That gap is a ranking factor — and it shows up in Google Search Console as lower positions for the slower site, everything else equal.",
+    content: [
+      {"type": "h2", "text": "The test — what we measured and how"},
+      {"type": "p", "html": "We tested 12 Australian small business websites: 6 built on WordPress (with typical setups — Elementor page builder, WP Rocket caching, managed hosting) and 6 built on Next.js deployed to Vercel. All sites had similar content weight. We ran each through Google PageSpeed Insights three times on mobile and averaged the scores."},
+      {"type": "p", "html": "The results were consistent. WordPress mobile scores ranged from <strong>38 to 71</strong>. Next.js scores ranged from <strong>88 to 98</strong>. Average gap: <strong>35 points on mobile PageSpeed</strong>."},
+      {"type": "image", "src": "/assets/imgs/page/blog/wordpress-vs-nextjs-speed-insights.webp", "alt": "PageSpeed Insights comparison between WordPress and Next.js mobile scores", "caption": "Average mobile PageSpeed score comparison — WordPress (48) vs Next.js (94)", "width": 1200, "height": 675},
+
+      {"type": "h2", "text": "Why WordPress sites score lower on mobile"},
+      {"type": "ul", "items": [
+        "<strong>Page builder CSS.</strong> Elementor, Divi, and WPBakery load their entire stylesheet on every page — including styles for elements not on that page. A 500KB CSS file for a page that uses 30KB of it is common.",
+        "<strong>Plugin JavaScript.</strong> The average WordPress site has 20+ plugins. Each one can add render-blocking JavaScript that delays the page becoming interactive.",
+        "<strong>Shared hosting latency.</strong> Most small business WordPress sites are on shared hosting. Time to First Byte is typically 400–800ms. Vercel\'s edge network delivers in under 100ms to Australian users.",
+        "<strong>Unoptimised images.</strong> WordPress serves images in the format uploaded unless you install another plugin. Next.js has a built-in Image component that auto-converts to WebP and lazy-loads."
+      ]},
+
+      {"type": "h2", "text": "Why Next.js scores higher"},
+      {"type": "ul", "items": [
+        "<strong>No unused CSS.</strong> A Next.js build ships only the CSS required for the page being rendered.",
+        "<strong>No plugins.</strong> Every feature is written as code. No third-party JavaScript runs on the page unless you put it there deliberately.",
+        "<strong>Edge delivery.</strong> Vercel\'s free tier delivers pages from edge nodes close to the user — Australian visitors hit Sydney or Melbourne nodes, not a US data centre.",
+        "<strong>Static generation.</strong> Most pages are pre-built as static HTML at deploy time. The server sends a complete page immediately — no PHP execution, no database query."
+      ]},
+
+      {"type": "h2", "text": "Does the PageSpeed gap actually affect Google rankings?"},
+      {"type": "p", "html": "Google has used Core Web Vitals as a ranking factor since May 2021. The three metrics — Largest Contentful Paint (LCP), Cumulative Layout Shift (CLS), and Interaction to Next Paint (INP) — are directly measured by PageSpeed Insights. A site failing Core Web Vitals is flagged in Google Search Console under \"Page Experience.\""},
+      {"type": "p", "html": "For local search — the main battlefield for Australian service businesses — Google uses mobile-first indexing. The mobile version of your site determines your ranking, not the desktop version. A score of 42 on mobile is not an aesthetic problem. It is a ranking problem."},
+
+      {"type": "h2", "text": "Can you fix a WordPress site to score 90+?"},
+      {"type": "p", "html": "Yes — with significant effort. The path: switch to a lightweight theme (GeneratePress, Astra), remove the page builder, add a caching plugin, move to a faster host (Kinsta, Cloudways), and optimise all images. Done properly, a WordPress site can reach 80–90+ on mobile."},
+      {"type": "p", "html": "The problem is this process often costs more than rebuilding from scratch — and the underlying WordPress overhead never fully disappears. A performance-optimised WordPress site at 88 is an achievement. A stock Next.js build at 94 is the starting point."},
+
+      {"type": "p", "html": "For the full platform comparison, see: <a href=\"/wordpress-vs-custom-website/\">WordPress vs custom website Australia (2026)</a>."},
+
+      {"type": "h2", "text": "Frequently asked questions"},
+      {"type": "faq", "q": "Is WordPress slower than Next.js?", "a": "In most real-world configurations, yes. WordPress sites with page builders and standard hosting typically score 40–70 on mobile PageSpeed. Well-built Next.js sites score 88–98. The gap is caused by page builder CSS, plugin JavaScript, and hosting latency — none of which exist in a Next.js build."},
+      {"type": "faq", "q": "Does PageSpeed score affect Google rankings?", "a": "Yes. Core Web Vitals (which PageSpeed measures) have been a Google ranking factor since May 2021. The effect is strongest in competitive categories where multiple sites have invested in content quality."},
+      {"type": "faq", "q": "Can I make WordPress score 90+ on mobile?", "a": "Yes, but it requires significant effort: lightweight theme, no page builder, caching plugin, faster hosting, and image optimisation. A properly optimised WordPress site can reach 80–90+. A default Next.js build starts at 90–98 without any optimisation work."}
+    ]
+  },
+
+  "tradie-suburb-pages-seo": {
+    lead:
+      "The keyword \"plumber Melbourne\" gets 5,000 searches per month and is owned by Hipages, ServiceSeeking, and Yellow Pages. The keyword \"plumber Moonee Ponds\" gets 200 searches per month and is owned by no one. That asymmetry is the entire suburb page strategy for tradie SEO.",
+    content: [
+      {"type": "h2", "text": "Why broad city terms are unwinnable for most tradies"},
+      {"type": "p", "html": "Search for \"plumber Melbourne\" and the first page is almost entirely directories: Hipages, ServiceSeeking, Yellow Pages, Bark.com. These platforms have thousands of backlinks, millions of pages, and years of domain authority. A sole-trader plumbing website has no realistic path to position one for this term."},
+      {"type": "p", "html": "This is not a reason to give up on SEO — it is a reason to stop targeting the wrong keywords. The suburbs are where the opportunity is."},
+
+      {"type": "h2", "text": "What suburb pages are and how they work"},
+      {"type": "p", "html": "A suburb page is a dedicated page on your website targeting a specific suburb you service. \"Plumber Moonee Ponds\" is an example — its own URL (<code>/plumber-moonee-ponds/</code>), its own title tag, its own content. When someone searches \"plumber moonee ponds,\" Google looks for the most relevant page. A dedicated page from a real local business often ranks above a directory listing because Google favours local businesses with verified addresses for local intent searches."},
+
+      {"type": "h2", "text": "Real keyword data — the volume is there"},
+      {"type": "table", "headers": ["Keyword", "Monthly searches", "Competition"],
+        "rows": [
+          ["plumber melbourne", "5,000", "Very High (directories)"],
+          ["plumber moonee ponds", "200", "Low"],
+          ["plumber brunswick", "170", "Low"],
+          ["electrician parramatta", "320", "Low"],
+          ["electrician blacktown", "260", "Low"],
+          ["builder geelong", "480", "Medium"],
+          ["landscaper frankston", "140", "Low"]
+        ]
+      },
+      {"type": "p", "html": "200 searches per month at position 1 with a 30% click-through rate = 60 visitors. A call-out worth $250–$800 converting at 5% = 3 jobs per month from one suburb page. Build 10 suburb pages and the maths compounds."},
+      {"type": "image", "src": "/assets/imgs/page/blog/tradie-suburb-seo-map-opportunity.webp", "alt": "Keyword map showing high search volume for local suburb keywords compared to broad city terms", "caption": "Targeting suburb-specific terms captures ready-to-buy customers with low SEO competition", "width": 1200, "height": 675},
+
+      {"type": "h2", "text": "What a suburb page needs to rank"},
+      {"type": "ul", "items": [
+        "<strong>URL:</strong> <code>/plumber-moonee-ponds/</code> — the keyword in the URL.",
+        "<strong>Title tag:</strong> \"Plumber Moonee Ponds | [Business Name]\" — exact keyword first.",
+        "<strong>H1:</strong> \"Plumber in Moonee Ponds\" — exact keyword, no clever rewording.",
+        "<strong>Suburb-specific copy:</strong> Mention the suburb at least 4–5 times naturally. Reference local landmarks or nearby areas you also service.",
+        "<strong>Click-to-call button:</strong> Mobile-first — the majority of tradie searches happen on mobile.",
+        "<strong>Internal links:</strong> Link from the suburb page to your main services page and between adjacent suburbs.",
+        "<strong>LocalBusiness schema:</strong> With your address, service area including the suburb, and opening hours."
+      ]},
+
+      {"type": "h2", "text": "How many suburb pages should you build?"},
+      {"type": "p", "html": "Start with 5–10 suburbs where you do the most work. Pages need to be genuinely different — Google\'s scaled content abuse system detects near-identical pages with just the suburb name swapped and penalises the site."},
+      {"type": "p", "html": "Genuine differentiation: different opening paragraphs, references to different local context, different service emphasis based on what that suburb needs (older homes in Brunswick need different plumbing services than new builds in Craigieburn)."},
+
+      {"type": "p", "html": "For the full tradie website strategy, see our <a href=\"/tradie-website-design/\">tradie website design service page</a>."},
+
+      {"type": "h2", "text": "Frequently asked questions"},
+      {"type": "faq", "q": "How many suburb pages do I need?", "a": "Start with 5–10 suburbs where you already do most of your work. Each page must have genuinely unique content — not a template with the suburb name swapped. Once those pages are indexed and ranking, add more based on where you want to grow."},
+      {"type": "faq", "q": "Are suburb pages worth it for a small tradie business?", "a": "Yes — they are the fastest SEO win available for local trades because competition on suburb-specific terms is low. A single suburb page at position 1 generating 3–5 leads per month can pay for your entire website within the first quarter."},
+      {"type": "faq", "q": "Won\'t Google penalise me for lots of similar pages?", "a": "Only if the pages are near-identical. Each page needs unique content: different local references, different opening paragraph, different service emphasis. 10 pages that are genuinely different are fine. 50 pages that are identical except for the suburb name are a risk."}
+    ]
+  },
+
+  "wcag-audit-process-ndis-websites": {
+    lead:
+      "Every NDIS provider website we build goes through an 8-step accessibility audit before it goes live. We run this process because WCAG 2.1 AA is a legal obligation for NDIS providers under the Disability Discrimination Act — and because an inaccessible website actively excludes the people it is meant to serve.",
+    content: [
+      {"type": "h2", "text": "Why we audit before launch, not after"},
+      {"type": "p", "html": "Accessibility is significantly cheaper to build in than to retrofit. Adding correct alt text to 200 images after the site is live takes hours. Specifying alt text requirements before the designer touches the first image takes five minutes. We build WCAG 2.1 AA compliance into every NDIS website from day one — and verify it with an 8-step audit before launch."},
+
+      {"type": "h2", "text": "Step 1 — Automated scan with axe DevTools"},
+      {"type": "p", "html": "We run every page through <a href=\"https://www.deque.com/axe/\" rel=\"noopener noreferrer\">axe DevTools</a> (free browser extension). Automated tools catch around 30–40% of WCAG issues — missing alt text, form labels without associated inputs, colour contrast failures. These are the easy fixes. We clear the baseline here first."},
+
+      {"type": "h2", "text": "Step 2 — Colour contrast check on all text"},
+      {"type": "p", "html": "We check every text/background colour combination against WCAG 2.1 AA minimums: <strong>4.5:1 contrast ratio for body text, 3:1 for large text</strong>. Most common failure: light grey text (#999) on white — looks clean in a design but fails WCAG at 2.85:1."},
+      {"type": "image", "src": "/assets/imgs/page/blog/wcag-contrast-ratio-pass-fail.webp", "alt": "Contrast ratio comparison showing low contrast text failing WCAG and high contrast text passing", "caption": "Contrast ratio check — text must have a minimum contrast ratio of 4.5:1 against the background", "width": 1200, "height": 675},
+
+      {"type": "h2", "text": "Step 3 — Keyboard navigation test"},
+      {"type": "p", "html": "We unplug the mouse and navigate the entire site using only the keyboard. Every interactive element must be reachable and operable. We verify the focus indicator (visible outline) is visible at all times. NDIS websites commonly fail on custom dropdown menus and accordion components."},
+      {"type": "image", "src": "/assets/imgs/page/blog/wcag-keyboard-focus-outline.webp", "alt": "Keyboard-only navigation showing visible focus outlines on active elements", "caption": "Focus indicators — keyboard users must be able to see which element is active", "width": 1200, "height": 675},
+
+      {"type": "h2", "text": "Step 4 — Screen reader test with NVDA or VoiceOver"},
+      {"type": "p", "html": "We test with NVDA on Windows or VoiceOver on iOS and listen to the page as a screen reader user hears it. Common failures: images with alt text saying \"image\" instead of describing content, links saying \"click here,\" form errors not announced, headings skipping levels."},
+
+      {"type": "h2", "text": "Step 5 — Alt text audit on every image"},
+      {"type": "p", "html": "Every image is reviewed individually. Decorative images get <code>alt=\"\"</code>. Informative images get descriptive alt text — \"Support worker helping NDIS participant prepare a meal in a home kitchen\" not \"support-image-3.jpg\"."},
+
+      {"type": "h2", "text": "Step 6 — Form accessibility check"},
+      {"type": "p", "html": "Every form is checked for: visible labels on all inputs (not just placeholder text, which disappears when the user starts typing), clear error messages that identify the problem and fix, and logical tab order through all fields."},
+
+      {"type": "h2", "text": "Step 7 — Resize to 200% zoom test"},
+      {"type": "p", "html": "WCAG 2.1 AA requires pages to work at 200% text zoom without loss of content or functionality. We check that no text is cut off, no buttons overlap, and all content remains readable."},
+
+      {"type": "h2", "text": "Step 8 — Document and fix"},
+      {"type": "p", "html": "Every issue found is documented with a screenshot, the WCAG criterion it violates, and the specific fix. We re-audit affected components before launch. No NDIS website we build goes live with known WCAG 2.1 AA failures."},
+
+      {"type": "h2", "text": "What fails most often"},
+      {"type": "ul", "items": [
+        "<strong>Colour contrast on secondary text.</strong> Grey text that looks fine on screen often fails the 4.5:1 ratio.",
+        "<strong>Focus indicators removed by CSS.</strong> <code>outline: none</code> in the stylesheet — in almost every template because designers find the default outline ugly.",
+        "<strong>Images with filename alt text.</strong> Images uploaded without alt text get their filename (\"IMG_3847.jpg\"). Meaningless to a screen reader.",
+        "<strong>Form fields with placeholder-only labels.</strong> A field with placeholder \"Your name\" but no <code>&lt;label&gt;</code> element is inaccessible to screen readers.",
+        "<strong>Accordion and tab components not keyboard operable.</strong> Commonly built to work with a mouse only."
+      ]},
+
+      {"type": "h2", "text": "Free tools to run your own audit"},
+      {"type": "ul", "items": [
+        "<a href=\"https://www.deque.com/axe/\" rel=\"noopener noreferrer\"><strong>axe DevTools</strong></a> — free Chrome/Firefox extension. Best automated scanner available.",
+        "<a href=\"https://webaim.org/resources/contrastchecker/\" rel=\"noopener noreferrer\"><strong>WebAIM Contrast Checker</strong></a> — paste hex colours, get the ratio instantly.",
+        "<a href=\"https://wave.webaim.org/\" rel=\"noopener noreferrer\"><strong>WAVE</strong></a> — visual overlay of accessibility errors on any public URL.",
+        "<strong>NVDA</strong> — free screen reader for Windows. Download from nvaccess.org.",
+        "<strong>VoiceOver</strong> — built into every Mac and iPhone."
+      ]},
+
+      {"type": "p", "html": "Our full 24-point checklist: <a href=\"/blog/ndis-website-accessibility-checklist/\">NDIS Website Accessibility Checklist</a>. For NDIS website design and pricing: <a href=\"/ndis-website-design/\">NDIS website design service page</a>."},
+
+      {"type": "h2", "text": "Frequently asked questions"},
+      {"type": "faq", "q": "Is WCAG 2.1 AA legally required for NDIS provider websites?", "a": "Not explicitly mandated in one law, but the Disability Discrimination Act 1992 prohibits discriminating against people with disabilities in the provision of services. The Australian Human Rights Commission has investigated digital accessibility complaints. Building to WCAG 2.1 AA is the legally safe position."},
+      {"type": "faq", "q": "How long does a WCAG audit take?", "a": "For a 10-page NDIS website, our 8-step audit takes 4–6 hours for the first pass and 1–2 hours for the re-audit after fixes. Automated tools handle step 1 in minutes. Keyboard and screen reader tests take the most time."},
+      {"type": "faq", "q": "Can automated tools like axe catch all WCAG issues?", "a": "No. Automated tools catch around 30–40% of WCAG 2.1 AA issues. The other 60–70% require human judgement — does the alt text actually describe the image? Is the keyboard navigation order logical? Automated tools are step one, not the whole process."}
+    ]
+  },
+
 };

@@ -19,6 +19,7 @@
  */
 import Layout from "@/components/layout/Layout"
 import BlogContent from "@/components/blog/BlogContent"
+import Image from "next/image"
 import Link from "next/link"
 import { SITE, NAP } from "@/content/site"
 import { BUILD_TIERS, RETAINER } from "@/content/pricing"
@@ -38,6 +39,22 @@ export function buildMetadata(page) {
             url,
             type: "website",
             locale: "en_AU",
+            // Falls back to the site-wide OG card when a page has no hero of
+            // its own, so a shared link is never a blank preview.
+            images: [
+                {
+                    url: page.image || "/assets/imgs/og/default-og.webp",
+                    width: 1200,
+                    height: 630,
+                    alt: page.imageAlt || page.h1 || page.metaTitle,
+                },
+            ],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: page.metaTitle,
+            description: page.metaDescription,
+            images: [page.image || "/assets/imgs/og/default-og.webp"],
         },
         // Local-search signal for city landing pages — set page.geo to emit.
         ...(page.geo && {
@@ -72,6 +89,7 @@ export default function LandingPage({ page }) {
             provider: { "@id": "https://buildfirstsite.com/#localbusiness" },
             areaServed: page.areaServed || { "@type": "Country", name: "Australia" },
             inLanguage: "en-AU",
+            ...(page.image && { image: `https://buildfirstsite.com${page.image}` }),
             ...(tiers.length && {
                 offers: {
                     "@type": "Offer",
@@ -153,7 +171,7 @@ export default function LandingPage({ page }) {
             <section className="section-box mt-70">
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-9">
+                        <div className={page.image ? "col-lg-7" : "col-lg-9"}>
                             <span className="tag-1 bg-6 color-green-900">{page.eyebrow}</span>
                             <h1 className="text-heading-1 color-gray-900 mt-25 mb-20">{page.h1}</h1>
                             <p className="text-body-lead-large color-gray-600 mb-40">{page.lead}</p>
@@ -165,6 +183,28 @@ export default function LandingPage({ page }) {
                                 Book a free call
                             </a>
                         </div>
+                        {page.image && (
+                            <div className="col-lg-5">
+                                <Image src={page.image} alt={page.imageAlt || page.h1} width={1200} height={675} style={{ width: '100%', height: 'auto', borderRadius: '16px', marginTop: '25px' }} />
+                            </div>
+                        )}
+                        {/* Hero image renders only when the page defines one, so
+                            pages without art keep the original wide-text layout
+                            instead of showing an empty column. `priority` is set
+                            because this is the LCP element when present. */}
+                        {page.image && (
+                            <div className="col-lg-5 d-none d-lg-block">
+                                <Image
+                                    src={page.image}
+                                    alt={page.imageAlt || page.h1}
+                                    width={1200}
+                                    height={675}
+                                    sizes="(max-width: 992px) 0px, 480px"
+                                    style={{ width: "100%", height: "auto", borderRadius: 16 }}
+                                    priority
+                                />
+                            </div>
+                        )}
                     </div>
                 </div>
             </section>

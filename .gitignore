@@ -60,3 +60,8 @@ plan/
 # Google Keywords directory
 Google_keyWords/
 
+
+# Source artwork for SEO images — huge PNG originals, converted into
+# public/assets/imgs/page/{blog,landing}/ by hand. Never deploy these:
+# anything under public/ is served by Vercel and this folder is ~187MB.
+public/assets/imgs/images_seo/

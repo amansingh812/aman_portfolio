@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "sass": "sass --watch public/assets/scss/main.scss:public/assets/css/main.css"
+    "sass": "sass --watch public/assets/scss/main.scss:public/assets/css/main.css",
+    "sitemap:images": "node scripts/generate-image-sitemap.mjs"
   },
   "dependencies": {
     "next": "14.2.14",
