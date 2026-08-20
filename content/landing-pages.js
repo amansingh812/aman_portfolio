@@ -432,7 +432,7 @@ export const LANDING_PAGES = [
     slug: 'web-design-melbourne',
     image: '/assets/imgs/page/landing/web-design-melbourne.webp',
     imageAlt: 'Melbourne skyline behind a local business website built for the local market',
-    metaTitle: 'Web Design Melbourne 2026 | From $800 | Build First Site',
+    metaTitle: 'Web Design Melbourne 2026 | From $800',
     metaDescription:
       'Web design Melbourne from $800 AUD. Modern Next.js builds, local SEO included, code ownership, no lock-in. Fixed price — quote in one business day.',
     eyebrow: 'MELBOURNE, VICTORIA',
@@ -494,7 +494,7 @@ export const LANDING_PAGES = [
     slug: 'web-design-sydney',
     image: '/assets/imgs/page/landing/web-design-sydney.webp',
     imageAlt: 'Sydney skyline behind a local business website built for the Sydney market',
-    metaTitle: 'Web Design Sydney 2026 | From $800 | Build First Site',
+    metaTitle: 'Web Design Sydney 2026 | From $800',
     metaDescription:
       'Web design Sydney from $800 AUD. Modern Next.js builds, local SEO included, you own the code. No discovery call needed — fixed price, quote in one business day.',
     eyebrow: 'SYDNEY, NSW',
@@ -549,7 +549,7 @@ export const LANDING_PAGES = [
     slug: 'web-design-brisbane',
     image: '/assets/imgs/page/landing/web-design-brisbane.webp',
     imageAlt: 'Brisbane skyline behind a local business website built for the Brisbane market',
-    metaTitle: 'Web Design Brisbane 2026 | From $800 | Build First Site',
+    metaTitle: 'Web Design Brisbane 2026 | From $800',
     metaDescription:
       'Web design Brisbane from $800 AUD. Modern Next.js builds, local SEO included, you own the code. Fixed price, no discovery call — quote in one business day.',
     eyebrow: 'BRISBANE, QLD',
@@ -604,7 +604,7 @@ export const LANDING_PAGES = [
     slug: 'web-design-perth',
     image: '/assets/imgs/page/landing/web-design-perth.webp',
     imageAlt: 'Perth skyline behind a local business website built for the Perth market',
-    metaTitle: 'Web Design Perth WA 2026 | From $800 | Build First Site',
+    metaTitle: 'Web Design Perth WA 2026 | From $800',
     metaDescription:
       'Web design Perth WA from $800 AUD. Next.js builds, local SEO included, you own the code. Fixed AUD price, no discovery call needed. Quote in one business day.',
     eyebrow: 'PERTH, WA',
@@ -667,7 +667,7 @@ export const LANDING_PAGES = [
     slug: 'web-design-adelaide',
     image: '/assets/imgs/page/landing/web-design-adelaide.webp',
     imageAlt: 'Adelaide skyline behind a local business website built for the Adelaide market',
-    metaTitle: 'Web Design Adelaide 2026 | From $800 | Build First Site',
+    metaTitle: 'Web Design Adelaide 2026 | From $800',
     metaDescription:
       'Web design Adelaide from $800 AUD. Next.js builds, local SEO included, you own the code. Trusted by Australian small businesses. Fixed quote in one day.',
     eyebrow: 'ADELAIDE, SA',
@@ -813,7 +813,7 @@ export const LANDING_PAGES = [
     slug: 'wix-vs-custom-website',
     image: '/assets/imgs/page/landing/wix-vs-custom-website.webp',
     imageAlt: 'Wix locked template compared with an open custom website build',
-    metaTitle: 'Wix vs Custom Website Australia 2026 — 5-Year Cost Compared',
+    metaTitle: 'Wix vs Custom Website Australia | 5-Year Cost',
     metaDescription:
       'Wix vs custom website Australia 2026 — real AUD cost over 5 years, SEO comparison, speed, and code ownership. No platform bias, no upsell.',
     eyebrow: 'Guide · Australia · 2026',
@@ -1010,7 +1010,7 @@ export const LANDING_PAGES = [
     slug: 'hire-website-builder',
     image: '/assets/imgs/page/landing/hire-website-builder.webp',
     imageAlt: 'Working directly with a website builder reviewing a design together',
-    metaTitle: 'Hire a Website Builder | Build First Site',
+    metaTitle: 'Hire a Website Builder',
     metaDescription:
       'Need someone to build your website? Fixed-price, custom Next.js builds for Australian businesses. No templates, no monthly fees, full code ownership.',
     eyebrow: 'Australia · Professional Website Builder',
@@ -1388,7 +1388,7 @@ export const LANDING_PAGES = [
     slug: 'ndis-website-design',
     image: '/assets/imgs/page/landing/ndis-website-design.webp',
     imageAlt: 'NDIS provider website passing WCAG 2.1 AA contrast and keyboard tests',
-    metaTitle: 'NDIS Website Design Australia 2026 | WCAG 2.1 AA | From $1,900',
+    metaTitle: 'NDIS Website Design Australia | WCAG 2.1 AA | $1,900',
     metaDescription:
       'NDIS provider website design Australia — WCAG 2.1 AA compliant, fast, participant-friendly. Fixed AUD pricing from $1,900. Build First Site.',
     eyebrow: 'NDIS & Disability Services',
@@ -1460,7 +1460,7 @@ export const LANDING_PAGES = [
     slug: 'dental-website-design',
     image: '/assets/imgs/page/landing/dental-website-design.webp',
     imageAlt: 'Dental clinic website with online appointment booking on a tablet',
-    metaTitle: 'Dental Website Design Australia 2026 | From $1,900 | Build First Site',
+    metaTitle: 'Dental Website Design Australia 2026 | From $1,900',
     metaDescription:
       'Dental practice website design Australia — appointment booking integrations, AHPRA-compliant copy, fast mobile pages. Fixed AUD price from $1,900.',
     eyebrow: 'Healthcare · Dental',
@@ -1525,7 +1525,7 @@ export const LANDING_PAGES = [
     slug: 'wordpress-vs-custom-website',
     image: '/assets/imgs/page/landing/wordpress-vs-custom-website.webp',
     imageAlt: 'WordPress plugin overhead compared with a fast custom Next.js build',
-    metaTitle: 'WordPress vs Custom Website Australia 2026 | Real 5-Year Costs',
+    metaTitle: 'WordPress vs Custom Website Australia | 5-Year Cost',
     metaDescription:
       'WordPress vs a custom website in Australia. Real 5-year AUD costs, PageSpeed data, plugin and maintenance risk, and who each option actually suits.',
     eyebrow: 'Comparison',
@@ -1616,7 +1616,7 @@ export const LANDING_PAGES = [
     slug: 'webflow-vs-custom-website',
     image: '/assets/imgs/page/landing/webflow-vs-custom-website.webp',
     imageAlt: 'Webflow visual builder compared with a hand-built custom codebase',
-    metaTitle: 'Webflow vs Custom Website Australia 2026 | Costs Compared',
+    metaTitle: 'Webflow vs Custom Website Australia | 5-Year Cost',
     metaDescription:
       'Webflow vs a custom website in Australia. Real 5-year AUD costs, platform fees, code ownership and export limits explained honestly.',
     eyebrow: 'Comparison',
@@ -1699,7 +1699,7 @@ export const LANDING_PAGES = [
     slug: 'freelancer-vs-web-design-agency',
     image: '/assets/imgs/page/landing/freelancer-vs-web-design-agency.webp',
     imageAlt: 'Solo freelancer compared with a small web design studio team',
-    metaTitle: 'Freelancer vs Web Design Agency Australia 2026 | Honest Comparison',
+    metaTitle: 'Freelancer vs Web Design Agency Australia 2026',
     metaDescription:
       'Freelancer vs agency for your Australian website. Real AUD rates, the risks of each, and how to tell which one your project actually needs.',
     eyebrow: 'Comparison',

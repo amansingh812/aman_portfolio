@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Image from 'next/image'
 import Link from "next/link"
-import { CTA, SITE, FOOTER_COLUMNS } from "@/content/site"
+import { CTA, SITE, NAP, FOOTER_COLUMNS } from "@/content/site"
 
 const Footer = () => {
 	return (
@@ -39,7 +39,10 @@ const Footer = () => {
 							<a href={`mailto:${SITE.email}`}>{SITE.email}</a>
 						</div>
 						<div className="text-body-text color-gray-600 mb-10">
-							<a href={`tel:${SITE.phone}`}>{SITE.phone}</a>
+							{/* href must be E.164 with no spaces — spaces in a tel: URI
+							    break click-to-call on some Android handsets. Display
+							    the readable version, dial the strict one. */}
+							<a href={`tel:${NAP.phoneE164}`}>{SITE.phone}</a>
 						</div>
 						<div className="text-body-text color-gray-600">
 							<a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp →</a>

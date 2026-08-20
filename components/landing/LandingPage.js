@@ -28,9 +28,12 @@ export function buildMetadata(page) {
     if (!page) return {}
     const url = `https://buildfirstsite.com/${page.slug}/`
     return {
-        // Root layout applies the `%s | Build First Site` template — do NOT
-        // append the brand here or it renders twice and truncates in SERPs.
-        title: page.metaTitle,
+        // ABSOLUTE title — deliberately bypasses the root `%s | Build First Site`
+        // template. That suffix costs 19 characters of a ~60-character SERP
+        // budget to promote a brand nobody is searching for yet. Those
+        // characters are worth more spent on the keyword. Revisit once we have
+        // brand search volume worth capturing.
+        title: { absolute: page.metaTitle },
         description: page.metaDescription,
         alternates: { canonical: `/${page.slug}/` },
         openGraph: {
