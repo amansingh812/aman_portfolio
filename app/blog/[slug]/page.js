@@ -21,9 +21,16 @@ export async function generateMetadata({ params }) {
     const post = getBlogPost(slug)
     if (!post) return {}
     return {
-        title: `${post.metaTitle || post.title} | Build First Site`,
+        // ABSOLUTE — the root layout already applies `%s | Build First Site`.
+        // Appending it here rendered the brand twice and truncated the headline
+        // in SERPs on all 15 posts.
+        title: { absolute: post.metaTitle || post.title },
         description: post.metaDescription || post.excerpt,
-        alternates: { canonical: `/blog/${post.slug}/` },
+        // `canonicalTo` lets a post defer to a stronger page in its cluster.
+        // Used where Google has already chosen a different canonical itself —
+        // declaring it explicitly just confirms the decision instead of
+        // leaving the post competing with its own hub.
+        alternates: { canonical: post.canonicalTo || `/blog/${post.slug}/` },
         openGraph: {
             title: post.title,
             description: post.metaDescription || post.excerpt,

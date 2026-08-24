@@ -130,6 +130,7 @@ export const BLOG_POSTS = [
   },
   {
     slug: "seo-for-ndis-providers",
+    canonicalTo: "/ndis-website-design/",
     metaDescription: "What actually moves rankings for NDIS providers — Google Business Profile, a page per service, plain English, and why accessibility is SEO work.",
     metaTitle: "SEO for NDIS Providers: A Practical 2026 Guide",
     title: "SEO for NDIS Providers: How to Get Found by Participants and Coordinators",

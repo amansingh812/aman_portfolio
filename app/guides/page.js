@@ -7,7 +7,7 @@
 export { default } from "../blog-1/page";
 
 export const metadata = {
-    title: "Guides — Practical Web Design & SEO Advice for Australian Business",
+    title: "Guides — Web Design & SEO Advice",
     description:
         "How to hire a web developer, DIY builder vs custom, freelance rates in Australia, SEO fundamentals. No jargon, no sales pitch.",
     alternates: { canonical: "/guides/" },

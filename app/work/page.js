@@ -7,7 +7,7 @@ import { CASE_STUDIES } from "@/content/case-studies"
 import { SITE } from "@/content/site"
 
 export const metadata = {
-    title: "Portfolio — Our Work | Build First Site",
+    title: "Portfolio — Our Work",
     description:
         "Live client sites and concept builds: e-commerce, AI SaaS, real estate, hospitality and tradie websites, built by a two-person studio for Australian businesses.",
     alternates: { canonical: "/work/" },

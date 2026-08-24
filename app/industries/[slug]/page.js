@@ -17,7 +17,10 @@ export async function generateMetadata({ params }) {
     return {
         title: p.metaTitle,
         description: p.metaDescription,
-        alternates: { canonical: `/industries/${p.slug}/` },
+        // `canonicalTo` defers to the matching commercial landing page where
+        // one exists — Google already treats these as duplicates and picks the
+        // landing page, so we declare that rather than compete with ourselves.
+        alternates: { canonical: p.canonicalTo || `/industries/${p.slug}/` },
     };
 }
 

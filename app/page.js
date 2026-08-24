@@ -36,7 +36,9 @@ import { CASE_STUDIES } from "@/content/case-studies"
 import { BUILD_TIERS } from "@/content/pricing"
 
 export const metadata = {
-    title: "Build First Site — Web, App & AI Development for Australian Businesses",
+    // ABSOLUTE — the brand is already the first words here, so letting the root
+    // `%s | Build First Site` template append it would render it twice.
+    title: { absolute: "Build First Site — Web, App & AI Development Australia" },
     description:
         "Websites, apps and AI systems built for Australian businesses. Fixed AUD pricing from $800, modern Next.js stack, full code ownership. A two-person studio.",
     alternates: { canonical: "/" },

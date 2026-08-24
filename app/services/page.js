@@ -6,7 +6,7 @@ import Link from "next/link"
 import { SITE } from "@/content/site"
 
 export const metadata = {
-    title: "Our Services — Web, Apps, AI & Custom Software | Build First Site",
+    title: "Services — Web, Apps, AI & Software",
     description:
         "Everything we build for Australian businesses — websites, mobile apps, custom software, marketing, AI automation and ongoing support. Fixed AUD pricing.",
     alternates: { canonical: "/services/" },

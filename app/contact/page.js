@@ -7,7 +7,7 @@ import Link from "next/link"
 import { SITE } from "@/content/site"
 
 export const metadata = {
-    title: "Contact Us — Fixed AUD Quote in 24 Hours | Build First Site",
+    title: "Contact Us — Fixed AUD Quote in 24 Hours",
     description:
         "Tell us what you're building. We reply with a fixed AUD quote in one business day. Or book a free 30-minute call — no obligation.",
     alternates: { canonical: "/contact/" },

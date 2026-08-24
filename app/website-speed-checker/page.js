@@ -17,7 +17,7 @@
 import SpeedCheckerClient from "./SpeedCheckerClient"
 
 export const metadata = {
-    title: "Free Website Speed Checker (Core Web Vitals)",
+    title: "Free Website Speed Checker",
     description:
         "Free website speed test using Google's Lighthouse engine. Check your Core Web Vitals — LCP, TBT and CLS — on mobile and desktop. No signup, shareable results.",
     keywords: [

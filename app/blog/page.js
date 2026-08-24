@@ -9,7 +9,7 @@ import { GUIDES } from "@/content/guides"
 import { fmtDate } from "@/lib/format"
 
 export const metadata = {
-    title: "Blog — Web Development Insights for Australian Businesses | Build First Site",
+    title: "Blog — Web Development Insights Australia",
     description:
         "Practical guides, comparisons and insights on web development, SEO and digital strategy for Australian small businesses.",
     alternates: { canonical: "/blog/" },

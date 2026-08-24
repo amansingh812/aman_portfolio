@@ -23,6 +23,7 @@ export const INDUSTRY_PAGES = [
   },
   {
     slug: "real-estate",
+    canonicalTo: '/real-estate-website-design/',
     title: "Real Estate",
     metaTitle: "Real Estate Web Development Australia | Agent Sites, Property Platforms",
     metaDescription: "Property listing websites, agent portfolios and buyer portals for Australian real estate. IDX-ready, fast search, mobile-first. Fixed AUD pricing.",

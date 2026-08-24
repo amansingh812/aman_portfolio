@@ -1594,7 +1594,9 @@ export const BLOG_CONTENT = {
       {
         "type": "p",
         "html": "A tradie site with local SEO, quote form and click-to-call is typically AU$1,500–4,000. A café/restaurant with booking runs AU$2,500–6,000, and professional-services sites AU$3,000–7,000."
-      }
+      },
+      {"type": "h2", "text": "Want our fixed price rather than the market range?"},
+      {"type": "p", "html": "This guide covers what websites cost across the Australian market — agencies, freelancers, platforms and everything in between. If you would rather skip the range and see one fixed number, our <a href=\"/how-much-does-a-website-cost-australia/\" class=\"color-green-900\">fixed AUD pricing page</a> lists every package with the scope it covers, and <a href=\"/pricing/\" class=\"color-green-900\">all six packages sit side by side here</a>. You can also <a href=\"/contact/\" class=\"color-green-900\">get a written quote</a> within one business day, and <a href=\"/about/\" class=\"color-green-900\">read who actually builds it</a> before you commit."}
     ]
   },
   "wordpress-vs-custom-website": {

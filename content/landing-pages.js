@@ -515,7 +515,7 @@ export const LANDING_PAGES = [
       { type: 'h2', text: 'Why Sydney web design quotes are the highest in Australia' },
       { type: 'p', html: 'Sydney has the most expensive commercial rents in the country, and agency pricing reflects it. A five-page business website that costs $2,000 in Adelaide is routinely quoted at $8,000 to $15,000 in the Sydney CBD. The build is the same. What differs is the overhead sitting behind it — office space in Surry Hills or North Sydney, an account manager, a project coordinator and a sales team all get costed into your quote before anyone writes a line of code.' },
       { type: 'p', html: 'That overhead buys you a meeting room. It does not make the website faster, rank better or convert more visitors — the <a href="/freelancer-vs-web-design-agency/" class="color-green-900">freelancer vs agency comparison</a> breaks down where the money actually goes. We work remotely from Melbourne, which is why our prices are published and start at $800.' },
-      { type: 'p', html: 'Sydney is also the most crowded market for web designers in Australia, which is genuinely good news for you: it means you can compare several published quotes before committing. Ask every one of them for a fixed price in writing, and ask whether you own the code.' },
+      { type: 'p', html: 'Sydney is also the most crowded market for web designers in Australia, which is genuinely good news for you — you can compare our <a href="/pricing/" class="color-green-900">published prices</a> against any quote you receive: it means you can compare several published quotes before committing. Ask every one of them for a fixed price in writing, and ask whether you own the code.' },
 
       { type: 'h2', text: 'What we build for Sydney businesses' },
       { type: 'ul', items: [
@@ -642,7 +642,7 @@ export const LANDING_PAGES = [
 
       { type: 'h2', text: 'Perth suburbs and regions we work across' },
       { type: 'p', html: 'We work with businesses across <strong>Perth CBD, Fremantle, Joondalup, Subiaco, Cannington, Midland, Rockingham, Mandurah, Osborne Park, Cockburn, Wanneroo, Stirling, Armadale, Kalamunda and the Swan Valley</strong> and the wider Western Australia metro and regional area.' },
-      { type: 'p', html: 'Remote delivery means your location within WA makes no difference to what we build or what we charge. We have worked with Perth-based businesses from Broome to Bunbury and everything in between.' },
+      { type: 'p', html: 'Remote delivery means your location within WA makes no difference to what we build or what we charge — <a href="/about/" class="color-green-900">who we are</a> is on the record, and you can <a href="/contact/" class="color-green-900">get a fixed quote</a> without a discovery call. We have worked with Perth-based businesses from Broome to Bunbury and everything in between.' },
 
       { type: 'h2', text: 'The timezone question' },
       { type: 'p', html: 'Perth runs two to three hours behind Melbourne depending on daylight saving. In practice: we are working while Perth is starting the day, so questions sent in the Perth morning are answered before your lunch. We schedule calls for the Perth morning specifically.' },
@@ -700,7 +700,7 @@ export const LANDING_PAGES = [
       ]},
 
       { type: 'h2', text: 'Why Adelaide websites rank differently' },
-      { type: 'p', html: 'Adelaide has less online competition than Sydney or Melbourne for most local search terms. A well-built site with proper local SEO — correct Google Business Profile, suburb-specific service pages, structured data — can rank on the first page within three to six months in most Adelaide business categories. The same effort in Sydney takes longer because you are competing against more established players.' },
+      { type: 'p', html: 'Adelaide has less online competition than Sydney or Melbourne for most local search terms. Our <a href="/pricing/" class="color-green-900">published pricing</a> and <a href="/about/" class="color-green-900">two-person studio setup</a> are both stated plainly before you talk to anyone. A well-built site with proper local SEO — correct Google Business Profile, suburb-specific service pages, structured data — can rank on the first page within three to six months in most Adelaide business categories. The same effort in Sydney takes longer because you are competing against more established players.' },
       { type: 'p', html: 'The keyword \"web design adelaide\" alone receives 5,000 searches per month in Australia. With published prices and a transparent approach, we aim to be the result people click when they are ready to spend — not after a discovery call, not after a proposal that takes a week.' },
 
       { type: 'h2', text: 'Adelaide suburbs we work across' },

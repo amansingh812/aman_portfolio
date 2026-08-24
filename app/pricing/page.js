@@ -36,7 +36,7 @@ import { SITE } from "@/content/site"
 import { BUILD_TIERS, RETAINER, PRICING_FAQS, NEGOTIABLE_NOTE } from "@/content/pricing"
 
 export const metadata = {
-    title: "Website Pricing Australia — Fixed AUD Prices From $800",
+    title: "Website Pricing Australia — From $800",
     description:
         "Fixed AUD pricing by scope: 3–5 pages $800, up to 10 pages $1,900, unlimited $3,500, e-commerce and apps $4,500, custom software from $5,000. Care + SEO $250/month. You own the code.",
     keywords: [
