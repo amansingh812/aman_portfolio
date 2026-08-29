@@ -8,7 +8,7 @@ import { CTA, SITE } from "@/content/site"
 import { BLOG_POSTS } from "@/content/blog"
 
 export const metadata = {
-    title: "About Us — A Two-Person Studio",
+    title: "About Us — How We Work",
     description:
         "BuildFirstSite is a software development studio specialising in high-performance websites, custom web applications, AI solutions, and scalable business software. We help startups, small businesses, and growing companies turn ideas into reliable digital products. Fixed AUD pricing, modern Next.js stack, full code ownership — no lock-in.",
     alternates: { canonical: "/about/" },

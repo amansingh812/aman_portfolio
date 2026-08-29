@@ -9,7 +9,7 @@ import { SITE } from "@/content/site"
 export const metadata = {
     title: "Portfolio — Our Work",
     description:
-        "Live client sites and concept builds: e-commerce, AI SaaS, real estate, hospitality and tradie websites, built by a two-person studio for Australian businesses.",
+        "Live client sites and concept builds: e-commerce, AI SaaS, real estate, hospitality and tradie websites, built for Australian businesses.",
     alternates: { canonical: "/work/" },
     openGraph: {
         title: "Portfolio | Build First Site",

@@ -146,7 +146,7 @@ export const BUILD_TIERS = [
 /* ─────────────────────────────────────────────────────────────────────────
    MONTHLY — one plan, not a ladder
 
-   Competitors run three or four SEO tiers. We run one, because a two-person
+   Competitors run three or four SEO tiers. We run one, because a small
    studio should promise one thing it can genuinely deliver every month
    rather than four it cannot.
    ───────────────────────────────────────────────────────────────────────── */
@@ -230,7 +230,7 @@ export const VALUE_PILLARS = [
   {
     icon: '👤',
     title: 'The engineer is on the call',
-    body: 'Two people run this studio. Nobody translates your requirement through an account manager, and nothing gets lost between the brief and the build.',
+    body: 'You talk to the person who builds it. Nobody translates your requirement through an account manager, and nothing gets lost between the brief and the build.',
   },
   {
     icon: '📈',

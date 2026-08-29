@@ -51,6 +51,11 @@ const nextConfig = {
     // presence, stale non-AUD-aligned pricing). 301 to /pricing/ rather than
     // 404 to preserve whatever link/traffic value they had.
     return [
+      // /join/ removed Aug 2026. The careers copy ('we bring contractors in
+      // project by project') was being quoted verbatim in cold freelancer
+      // outreach and contradicted the direct-access positioning. 301 rather
+      // than 404 — the URL was indexed and footer-linked sitewide.
+      { source: '/join/', destination: '/about/', permanent: true },
       { source: '/web-design-denver/', destination: '/pricing/', permanent: true },
       { source: '/web-design-phoenix/', destination: '/pricing/', permanent: true },
       { source: '/web-design-nashville/', destination: '/pricing/', permanent: true },

@@ -700,7 +700,7 @@ export const LANDING_PAGES = [
       ]},
 
       { type: 'h2', text: 'Why Adelaide websites rank differently' },
-      { type: 'p', html: 'Adelaide has less online competition than Sydney or Melbourne for most local search terms. Our <a href="/pricing/" class="color-green-900">published pricing</a> and <a href="/about/" class="color-green-900">two-person studio setup</a> are both stated plainly before you talk to anyone. A well-built site with proper local SEO — correct Google Business Profile, suburb-specific service pages, structured data — can rank on the first page within three to six months in most Adelaide business categories. The same effort in Sydney takes longer because you are competing against more established players.' },
+      { type: 'p', html: 'Adelaide has less online competition than Sydney or Melbourne for most local search terms. Our <a href="/pricing/" class="color-green-900">published pricing</a> and <a href="/about/" class="color-green-900">how we work</a> are both stated plainly before you talk to anyone. A well-built site with proper local SEO — correct Google Business Profile, suburb-specific service pages, structured data — can rank on the first page within three to six months in most Adelaide business categories. The same effort in Sydney takes longer because you are competing against more established players.' },
       { type: 'p', html: 'The keyword \"web design adelaide\" alone receives 5,000 searches per month in Australia. With published prices and a transparent approach, we aim to be the result people click when they are ready to spend — not after a discovery call, not after a proposal that takes a week.' },
 
       { type: 'h2', text: 'Adelaide suburbs we work across' },
@@ -1016,7 +1016,7 @@ export const LANDING_PAGES = [
     eyebrow: 'Australia · Professional Website Builder',
     h1: 'Need someone to build your website?',
     lead:
-      'Build First Site is a two-person studio building websites for Australian businesses — no templates, no page builders, no monthly fees. Fixed price, fast delivery, full ownership of your code.',
+      'Build First Site builds websites for Australian businesses — no templates, no page builders, no monthly fees. Fixed price, fast delivery, full ownership of your code.',
     priceTiers: ['starter', 'business', 'ecommerce', 'custom-software'],
     schemaType: 'Service',
     breadcrumb: 'Hire a Website Builder',
@@ -1750,9 +1750,9 @@ export const LANDING_PAGES = [
       ]},
       { type: 'p', html: 'Check who is actually building. Ask directly: who writes the code, and where are they? An agency that answers plainly is a good sign.' },
 
-      { type: 'h2', text: 'Where we sit — plainly' },
-      { type: 'p', html: 'Build First Site is two people. Aman is the engineer and builds everything; he is based in India. His brother handles client contact, calls and paperwork from Australia. That is the whole business.' },
-      { type: 'p', html: 'We are telling you this because it explains our pricing and answers the timezone question before you ask it. It also means you talk to the person building your site rather than a layer in between. If you need a team of fifteen with formal project management, we are not the right fit and will say so early.' },
+      { type: 'h2', text: 'Where we sit' },
+      { type: 'p', html: 'Build First Site is a small studio. You deal directly with the engineer who writes your code, and your day-to-day contact is in Australia on Australian hours. There is no account manager relaying messages and no junior you never meet.' },
+      { type: 'p', html: 'That structure is why our prices are lower than an agency quoting the same scope — there is no office, no sales layer and no overhead to recover. If you need formal project management across a large programme of work, we are not the right fit and will say so early rather than take the job.' },
       { type: 'p', html: 'More on how we work is on the <a href="/about/" class="color-green-900">about page</a>, and our fixed prices are published on the <a href="/pricing/" class="color-green-900">pricing page</a> rather than quoted after a discovery call.' },
 
       { type: 'h2', text: 'Which one your project needs' },
@@ -1782,8 +1782,8 @@ export const LANDING_PAGES = [
         a: 'Ask directly who writes the code and where they are based. Check whether the phone number connects to a real person, whether the address is an office or a mailbox, and whether team photos are real rather than stock. Plenty of agencies presenting as local build offshore without disclosing it — the problem is the lack of disclosure, not the arrangement itself.' },
       { type: 'faq', q: 'What should I get at the end of a website project?',
         a: 'Full source code in a repository in your name, hosting under your own account, admin access to every service, and documentation of anything non-obvious. If any of that is withheld, you do not own your website — you are renting it.' },
-      { type: 'faq', q: 'Is a two-person studio risky compared with an agency?',
-        a: 'It is a fair question and the honest answer is that it carries some of the same continuity risk as a freelancer. What reduces it is that you get full code ownership and standard tooling — Next.js, a normal Git repository, your own Vercel account — so any competent developer can pick the project up. Lock-in, not team size, is what actually strands people.' },
+      { type: 'faq', q: 'Is a small studio riskier than an agency?',
+        a: 'It is a fair question. A smaller studio carries some of the same continuity risk as a freelancer, and pretending otherwise would be dishonest. What reduces it is that you get full code ownership and standard tooling — Next.js, a normal Git repository, your own Vercel account — so any competent developer can pick the project up tomorrow. Lock-in, not team size, is what actually strands people: a large agency that builds on its own proprietary CMS is far harder to leave.' },
     ],
   }
 

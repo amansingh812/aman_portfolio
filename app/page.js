@@ -40,7 +40,7 @@ export const metadata = {
     // `%s | Build First Site` template append it would render it twice.
     title: { absolute: "Build First Site — Web, App & AI Development Australia" },
     description:
-        "Websites, apps and AI systems built for Australian businesses. Fixed AUD pricing from $800, modern Next.js stack, full code ownership. A two-person studio.",
+        "Websites, apps and AI systems built for Australian businesses. Fixed AUD pricing from $800, modern Next.js stack, full code ownership.",
     alternates: { canonical: "/" },
     openGraph: {
         title: "Build First Site — Fixed AUD Prices, Modern Stack",

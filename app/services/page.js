@@ -76,7 +76,7 @@ export default function ServicesPage() {
                                 </h1>
                                 <p className="text-body-lead-large color-gray-500 mt-40 pr-40">
                                     Websites, mobile apps, custom software, AI systems and ongoing
-                                    support — delivered by a two-person studio with fixed AUD
+                                    support — delivered with fixed AUD
                                     pricing and no agency layers between you and the code.
                                 </p>
                                 <div className="mt-40">

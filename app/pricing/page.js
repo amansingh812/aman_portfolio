@@ -249,7 +249,7 @@ export default function PricingPage() {
                             </h2>
                             <p className="text-body-lead-large color-gray-600 mb-50">
                                 Competitors run three or four SEO tiers. We run one, because a
-                                two-person studio should promise one thing it can genuinely
+                                small studio should promise one thing it can genuinely
                                 deliver every month rather than four it cannot.
                             </p>
                         </div>

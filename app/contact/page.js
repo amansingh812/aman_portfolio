@@ -130,7 +130,7 @@ export default function ContactPage() {
                             <p className="text-body-lead-large color-gray-600 mt-20">
                                 Prefer email, phone, or a quick call? Pick whatever suits you —
                                 <br className="d-lg-block d-none" />
-                                it&apos;s the same two people either way.
+                                it reaches the same person either way.
                             </p>
                         </div>
                     </div>

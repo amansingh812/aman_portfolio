@@ -46,7 +46,7 @@ export default function Privacy() {
 
                             <h2 className="text-heading-3 color-gray-900 mt-50 mb-20">Who we are</h2>
                             <p className="text-body-text color-gray-600">
-                                Build First Site is a two-person web development studio operating from
+                                Build First Site is a web development studio operating from
                                 {" "}{NAP.addressLocality}, {NAP.addressRegion}, Australia. You can reach us at{" "}
                                 <a href={`mailto:${SITE.email}`} className="color-green-900">{SITE.email}</a>{" "}
                                 or {NAP.phone}.

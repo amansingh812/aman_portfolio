@@ -9,7 +9,7 @@ export const HERO = {
   "h1Lead": "Websites that bring",
   "h1Accent": "Australian businesses",
   "h1Trail": "more enquiries.",
-  "sub": "A two-person studio: a senior engineer who builds everything, and a local contact in Australia. Fixed prices in AUD, published upfront. You own the code.",
+  "sub": "A senior engineer who builds everything, and a local contact in Australia. Fixed prices in AUD, published upfront. You own the code.",
   "priceAnchor": "Websites from $800 · Up to 10 pages $1,900 · E-commerce from $4,500",
   "primaryCta": {
     "label": "Get a free quote",
@@ -169,11 +169,11 @@ export const PROCESS = {
   ]
 };
 
-/** Two people. Names intentionally omitted — Aman's call. */
+/** No headcount in public copy (CLAUDE.md §1) — lead with direct access. */
 export const TEAM = {
   "eyebrow": "Who you are working with",
-  "heading": "Two people. You will know both of them.",
-  "intro": "Build First Site is not an agency with account managers. It is two brothers — one who writes every line of code, and one who is your point of contact in Australia. That is the whole company, and it is why the pricing works.",
+  "heading": "You will know who is building your site.",
+  "intro": "Build First Site is not an agency with account managers. The person who writes every line of your code is the person you talk to about it, and your point of contact is in Australia. That is why the pricing works.",
   "members": [
     {
       "name": "Aman",

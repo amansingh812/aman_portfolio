@@ -5,8 +5,9 @@
  * Header and Footer so nothing is hardcoded in template markup.
  *
  * HONESTY RULES (see CLAUDE.md §1) — these survive the rebuild:
- *  - We are TWO people: an engineer in India, a client contact in Australia.
- *    Never write copy implying a larger team.
+ *  - Do NOT state a headcount in public copy. Equally, never write copy that
+ *    implies a larger team than exists — no "our team of experts", no
+ *    invented specialists, no offices we do not have.
  *  - No invented testimonials, client names, review counts or metrics.
  *  - Concept builds must be labelled as concept builds.
  */
@@ -15,7 +16,7 @@ export const SITE = {
   name: 'Build First Site',
   url: 'https://buildfirstsite.com',
   description:
-    'Web design and development for Australian small businesses. Fixed prices in AUD from $800, modern Next.js builds, and you own the code. A two-person studio with a local contact in Australia.',
+    'Web design and development for Australian small businesses. Fixed prices in AUD from $800, modern Next.js builds, and you own the code. You work directly with the engineer, with a local contact in Australia.',
   email: 'contact@buildfirstsite.com',
   calendly: 'https://calendly.com/amanpd0/30min',
   phone: '+61 413 146 498',
@@ -162,7 +163,6 @@ export const FOOTER_COLUMNS = [
       { label: 'Portfolio', href: '/work/' },
       // Blog is footer-only since it left the navbar — keep this link.
       { label: 'Blog', href: '/blog/' },
-      { label: 'Join Us', href: '/join/' },
       { label: 'Contact', href: '/contact/' },
     ],
   },

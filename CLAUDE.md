@@ -62,21 +62,47 @@ create scale.* — Not a 2026 priority. Noted so we don't design ourselves out o
 
 ## 1. Who we actually are — read before writing any copy
 
-Build First Site is a **two-person studio**:
+The reality (internal — do not publish):
 
 - **Aman** — the engineer. Based in **India**. Builds everything.
 - **His brother** — based in **Australia**. Client contact, calls, paperwork.
 
-Do not inflate this. "We" is accurate because there are genuinely two people;
-"our team of experts", "50+ specialists", "offices across three continents" are
-not. That's what Aussify ("50–249 employees", 2 Clutch reviews, Bankstown mailbox)
-and Dev Story (placeholder avatars, empty `tel:`, Pitt Street mailbox) do.
-**Being verifiably real is the differentiator** in a market where most offshore
-competitors present as local agencies.
+### The headcount rule — changed Aug 2026
 
-Never write copy implying a larger team, an Australia-only operation, or hiding
-the India side. The honest version explains the pricing, answers the timezone
-objection, and is more persuasive than the inflated one.
+**Do not state a headcount in public copy.** "A two-person studio" has been
+removed from every page. Aman's call: it invited the wrong conversation and
+framed the business by its size rather than what it delivers.
+
+**This is a decision to stop volunteering the number — not licence to invent a
+bigger one.** The distinction matters and is not negotiable:
+
+| Allowed | Not allowed |
+|---|---|
+| "a small studio" | "our team of experts" |
+| "you deal directly with the engineer who writes your code" | "our developers" / "our designers" (as a department) |
+| "your day-to-day contact is in Australia" | any implied office, headcount or specialist roster |
+| saying nothing about size at all | anything implying an Australia-only operation |
+
+Not stating your size is normal and every small studio does it. Claiming a size
+you do not have is misleading conduct, and it is exactly what Aussify
+("50–249 employees", 2 Clutch reviews, Bankstown mailbox) and Dev Story
+(placeholder avatars, empty `tel:`, Pitt Street mailbox) do.
+**Being verifiably real is still the differentiator.**
+
+The arguments that used to lean on "two people" now lean on **direct access to
+the builder** and **no agency overhead** — same persuasive force, no headcount
+claim. If asked directly by a prospect, answer honestly.
+
+**Never** write copy implying a larger team, an Australia-only operation, or
+that hides the India side if someone asks.
+
+### `/join/` — removed Aug 2026
+
+The careers page was deleted and 301'd to `/about/`. Its copy ("we bring
+contractors in project by project", "Freelance Frontend Developer · React /
+Next.js") was being quoted verbatim in cold outreach from freelancers, it sat in
+the sitewide footer, and it contradicted the direct-access positioning. Do not
+recreate it without an explicit instruction.
 
 ### Honesty constraints (non-negotiable)
 
