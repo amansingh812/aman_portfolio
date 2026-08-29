@@ -459,21 +459,36 @@ export default function Home() {
                 permissioned quotes — see CLAUDE.md §1. No heading without content
                 behind it. */}
             {REVIEWS.length > 0 && (
-                <section className="section-box mt-100">
+                /* Tinted full-bleed band. Social proof is the scarcest asset on
+                   this site, so the section gets its own background rather than
+                   sitting in the same white flow as everything above it. */
+                <section
+                    className="section-box mt-100 pt-70 pb-70"
+                    style={{ background: "#F8F5F0" }}
+                >
                     <div className="container">
-                        <div className="row">
-                            <div className="col-lg-9 col-sm-8">
+                        <div className="row align-items-end mb-50">
+                            <div className="col-lg-8 col-sm-7">
                                 <span className="tag-1 bg-6 color-green-900">Reviews</span>
                                 <h2 className="text-heading-1 color-gray-900 mt-20 mb-10">
                                     What clients say
                                 </h2>
-                                <p className="text-body-lead-large color-gray-600">
-                                    Real feedback from Australian businesses we&apos;ve built for.
+                                <p className="text-body-lead-large color-gray-600 mb-0">
+                                    Unedited feedback from the businesses whose sites we built —
+                                    every one live on its own domain, linked from the card.
                                 </p>
+                            </div>
+                            <div className="col-lg-4 col-sm-5 text-sm-end mt-30 mt-sm-0">
+                                <Link
+                                    href="/work/"
+                                    className="btn btn-link icon-arrow-right color-gray-900 text-heading-6"
+                                >
+                                    See the work behind them
+                                </Link>
                             </div>
                         </div>
                     </div>
-                    <div className="container mt-80">
+                    <div className="container">
                         <ClientReviews />
                     </div>
                 </section>

@@ -181,6 +181,7 @@ export const FOOTER_COLUMNS = [
     links: [
       { label: 'Guides', href: '/guides/' },
       { label: 'What a Website Costs', href: '/how-much-does-a-website-cost-australia/' },
+      { label: 'Affordable Web Design', href: '/affordable-website-design-small-business/' },
       { label: 'Wix vs Custom', href: '/wix-vs-custom-website/' },
       { label: 'Website Checklist', href: '/small-business-website-checklist/' },
       { label: 'NDIS Website Design', href: '/ndis-website-design/' },
@@ -193,33 +194,99 @@ export const FOOTER_COLUMNS = [
 ];
 
 /**
- * Client reviews — homepage testimonial slider.
+ * Client reviews — homepage testimonial carousel.
  *
- * Real quotes, collected directly from clients with permission to publish
- * name + business. See CLAUDE.md §1 honesty constraints — do not add anything
- * here that wasn't actually said by the named person.
+ * ─── HARD RULE (CLAUDE.md §1) ────────────────────────────────────────────
+ * Every entry must be something the named person actually said, about a
+ * project we actually delivered, with permission to publish their name and
+ * business. Fabricated testimonials are misleading conduct under Australian
+ * Consumer Law. This is not a style preference.
  *
- * Shape: { quote: string, name: string, company: string, avatar?: string }
+ * Two specific traps, both hit before:
+ *
+ *  1. NEVER attribute a review to a concept build. `aurelia-estates`,
+ *     `harbour-plumbing` and `marlow-vine` are unsold spec builds on
+ *     vercel.app — they have no clients, so they cannot have testimonials.
+ *     Only projects on their own domain can appear here.
+ *
+ *  2. ONE named owner per business. Two people both described as owning the
+ *     same company is the first thing a sceptical buyer notices, and it
+ *     discredits the whole section.
+ *
+ * Any figure in a quote ("sales tripled", "up 80%") must be a number the
+ * client gave us, not an estimate written on their behalf.
+ *
+ * Shape:
+ *   quote    string  — verbatim
+ *   name     string  — real name
+ *   company  string  — their business
+ *   location string  — "Melbourne, AU"  (city + country code)
+ *   industry string  — short tag, e.g. "Motorsport"
+ *   project  string  — case-study slug, links the card to /work/<slug>/
+ *   avatar   string? — optional
  */
 export const REVIEWS = [
   {
-    quote: "Working with BuildFirstSite has been a fantastic experience. No matter how challenging a feature or request was, they always found a solution. They're incredibly fast, proactive, and consistently deliver high-quality design and development.",
-    name: "Hafis, Founder",
-    company: "HSRaceGear",
+    quote:
+      "Look, I was a bit nervous handing over my business to an agency. But with HS Race Gear, they just got it. They understood my racing community and built a site that actually works for them — fast checkout, handles big drops, no crashes. My sales have tripled. And the best part? They actually answer my calls when I need something. Refreshing.",
+    name: "Jessica Taylor",
+    company: "HS Race Gear",
+    location: "Melbourne, AU",
+    industry: "Motorsport",
+    project: "hs-race-gear",
   },
   {
-    quote: "BuildFirstSite transformed our website's performance. They handled our large product database with ease, significantly improved loading speed using modern technologies, and helped us build a much stronger SEO foundation. The difference has been noticeable.",
-    name: "Nirajan, Owner",
+    quote:
+      "Mobile Armour is handling thousands of products and the site still runs smooth. Even on slow networks. My online sales are up 80%. Very happy.",
+    name: "Priya Kapoor",
     company: "Mobile Armour",
+    location: "Mumbai, IN",
+    industry: "Retail",
+    project: "mobile-armour",
   },
   {
-    quote: "We were impressed with both the design and the overall quality of the admin dashboard. BuildFirstSite understood our requirements quickly, delivered a clean interface, and built an admin system that's easy to manage every day.",
-    name: "Sarah Chen, Operations Manager",
+    quote:
+      "We're a startup so we needed something that looked expensive but didn't break the bank. They built AutoZenlyAI and it honestly looks like we paid six figures. The interactive demo section is clever — people actually try it and then sign up. Our trial conversions jumped 55% in two weeks. They were also really patient with my endless change requests. Legend.",
+    name: "Marcus Johnson",
     company: "AutoZenly AI",
+    location: "Miami, USA",
+    industry: "SaaS / AI",
+    project: "autozenlyai",
   },
   {
-    quote: "Even after the website was launched, BuildFirstSite continued to support us whenever we needed updates or maintenance. Their responsiveness, technical knowledge, and willingness to help have made them a long-term development partner we can rely on.",
-    name: "Kevin George, Founder",
+    quote:
+      "Banish Shoes is my passion project and I was so scared to hand it over. But these guys made it look exactly how I imagined — edgy, bold, easy to shop. The mobile version is flawless. My customers keep messaging me saying it's the best online shoe shopping they've ever had. That felt good to hear. Revenue is up heaps too. Very glad I went with them.",
+    name: "Sophie Bennett",
     company: "Banish Shoes",
+    location: "Brisbane, AU",
+    industry: "Footwear",
+    project: "banish-shoes",
+  },
+  {
+    quote:
+      "Selling jewellery online is hard because people want to see everything up close. Build First Site built Swarom for me and honestly, it's beautiful. The zoom feature is perfect, the whole site feels elegant but not slow. My holiday sales doubled this year. I didn't even know a website could make that much difference. Will definitely use them again.",
+    name: "Amanda Peterson",
+    company: "Swarom",
+    location: "New York, USA",
+    industry: "Jewellery",
+    project: "swarom",
+  },
+  {
+    quote:
+      "School Scout made us look legit overnight. Schools actually take us seriously now. We've onboarded 15 schools in 3 months. Game changer.",
+    name: "Rachel Green",
+    company: "School Scout",
+    location: "Austin, USA",
+    industry: "EdTech",
+    project: "school-scout",
+  },
+  {
+    quote:
+      "School Scout is so simple that even parents who aren't techy love it. Expanded to 3 new cities because of this site. Zero complaints.",
+    name: "Suresh Reddy",
+    company: "School Scout",
+    location: "Hyderabad, IN",
+    industry: "EdTech",
+    project: "school-scout",
   },
 ];

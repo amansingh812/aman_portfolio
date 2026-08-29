@@ -36,7 +36,7 @@ import { SITE } from "@/content/site"
 import { BUILD_TIERS, RETAINER, PRICING_FAQS, NEGOTIABLE_NOTE } from "@/content/pricing"
 
 export const metadata = {
-    title: "Website Pricing Australia — From $800",
+    title: "Small Business Website Design Packages | From $800",
     description:
         "Fixed AUD pricing by scope: 3–5 pages $800, up to 10 pages $1,900, unlimited $3,500, e-commerce and apps $4,500, custom software from $5,000. Care + SEO $250/month. You own the code.",
     keywords: [
@@ -48,7 +48,7 @@ export const metadata = {
     ],
     alternates: { canonical: "/pricing/" },
     openGraph: {
-        title: "Website Pricing Australia — Fixed AUD Prices From $800",
+        title: "Small Business Website Design Packages Australia",
         description:
             "Priced by scope, not by features. Every package includes a CMS, SEO, schema and full code ownership.",
         url: "https://buildfirstsite.com/pricing/",
@@ -140,11 +140,42 @@ export default function PricingPage() {
                             <h1 className="text-heading-1 color-gray-900 mt-25 mb-20">
                                 Priced by size,<br className="d-lg-block d-none" /> not by features
                             </h1>
-                            <p className="text-body-lead-large color-gray-600 mb-50">
+                            <p className="text-body-lead-large color-gray-600 mb-30">
                                 Every package includes everything — CMS, SEO, schema, analytics
                                 and full code ownership. The only thing that changes the price
                                 is how big the build is.
                             </p>
+
+                            {/* Free homepage design offer. Deliberately says
+                                "design", not "demo site" — what the client
+                                receives is a visual mockup, not a working build,
+                                and describing it as a live demo would overstate
+                                it (CLAUDE.md §1). */}
+                            <div
+                                className="mb-50"
+                                style={{
+                                    background: "#F4FAFB",
+                                    border: "1px solid #BEE1E6",
+                                    borderRadius: 16,
+                                    padding: "24px 28px",
+                                    textAlign: "left",
+                                }}
+                            >
+                                <span className="tag-1 bg-6 color-green-900">Free, no commitment</span>
+                                <h2 className="text-heading-4 color-gray-900 mt-15 mb-10">
+                                    See your homepage designed before you pay anything
+                                </h2>
+                                <p className="text-body-text color-gray-600 mb-15">
+                                    Tell us what the business does and we will design your homepage
+                                    using your real name, services and photos — so you can judge the
+                                    quality on your own business, not on someone else&apos;s portfolio.
+                                    It is a design rather than a working site; the build starts only
+                                    if you decide to go ahead. No deposit, no obligation.
+                                </p>
+                                <Link href="/contact/" className="btn btn-black icon-arrow-right-white">
+                                    Get my free homepage design
+                                </Link>
+                            </div>
                         </div>
                     </div>
 
@@ -171,10 +202,10 @@ export default function PricingPage() {
                         <div className="col-lg-8 mx-auto text-center">
                             <span className="tag-1 bg-6 color-green-900">Packages</span>
                             <h2 className="text-heading-2 color-gray-900 mt-25 mb-20">
-                                All six, side by side
+                                Small business website design packages
                             </h2>
                             <p className="text-body-lead-large color-gray-600 mb-50">
-                                Same build quality, same inclusions. Pick the size that matches
+                                All six packages, side by side. Same build quality, same inclusions. Pick the size that matches
                                 what you need.
                             </p>
                         </div>

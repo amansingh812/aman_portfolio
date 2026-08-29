@@ -1786,6 +1786,94 @@ export const LANDING_PAGES = [
         a: 'It is a fair question. A smaller studio carries some of the same continuity risk as a freelancer, and pretending otherwise would be dishonest. What reduces it is that you get full code ownership and standard tooling — Next.js, a normal Git repository, your own Vercel account — so any competent developer can pick the project up tomorrow. Lock-in, not team size, is what actually strands people: a large agency that builds on its own proprietary CMS is far harder to leave.' },
     ],
   }
+  ,
+  {
+    slug: 'affordable-website-design-small-business',
+    metaTitle: 'Affordable Website Design for Small Business AU',
+    metaDescription:
+      'Affordable website design for Australian small business from $800 AUD. Published fixed prices, free homepage design before you commit, and you own the code.',
+    eyebrow: 'Affordable',
+    h1: 'Affordable Website Design for Small Business',
+    lead:
+      'Most Australian agencies will not tell you a price until you have sat through a discovery call. Ours start at $800 and every figure is published on this page. You also get a free homepage design before you spend anything.',
+    priceTiers: ['starter', 'business', 'unlimited'],
+    schemaType: 'Service',
+    breadcrumb: 'Affordable Website Design',
+    related: [
+      { href: '/pricing/', label: 'All packages and prices' },
+      { href: '/how-much-does-a-website-cost-australia/', label: 'What a website costs in Australia' },
+      { href: '/small-business-website-checklist/', label: 'Small business website checklist' },
+      { href: '/wix-vs-custom-website/', label: 'Wix vs custom website' },
+      { href: '/hire-website-builder/', label: 'Hire a website builder' },
+    ],
+    body: [
+      { type: 'h2', text: 'What affordable actually means here' },
+      { type: 'p', html: 'Affordable is a word every agency uses and almost none of them define. Here is our definition: a fixed price you can read before you contact us, no monthly platform fee, and full ownership of the code so you are never paying to stay.' },
+      { type: 'p', html: 'A three to five page site is <strong>$800</strong>. Up to ten pages is <strong>$1,900</strong>. Unlimited pages is <strong>$3,500</strong>. E-commerce is <strong>$4,500</strong>. Those are the numbers, in AUD, before GST. Nothing changes unless the scope changes, and if it does we re-quote openly rather than quietly adding hours.' },
+
+      { type: 'h2', text: 'See your homepage designed before you pay anything' },
+      { type: 'p', html: 'Choosing a web designer is mostly guesswork. You look at their portfolio, you hope your project turns out the same, and you find out after you have paid a deposit.' },
+      { type: 'p', html: 'So we removed that risk. Tell us about your business and we will design your homepage first, using your real business name, your services and your photos. You see the actual design for your business, not a template with someone else stretched across it.' },
+      { type: 'ul', items: [
+        '<strong>Completely free.</strong> No deposit, no commitment, no obligation to continue.',
+        '<strong>Your business, not a sample.</strong> Real name, real services, real content.',
+        '<strong>A design, not a live site.</strong> You get the homepage design so you can judge the quality before spending anything. The working build starts once you decide to go ahead.',
+        '<strong>Yours to walk away from.</strong> If you do not like it, that is genuinely the end of it.',
+      ]},
+      { type: 'p', html: 'Ask for one from the <a href="/contact/" class="color-green-900">contact page</a> and tell us what the business does.' },
+
+      { type: 'h2', text: 'Why we can charge $800 when agencies charge $5,000' },
+      { type: 'p', html: 'Not because the work is worse. Because the overhead is smaller and we do not have to recover it from you.' },
+      { type: 'table',
+        headers: ['Where agency money goes', 'Do we have it?'],
+        rows: [
+          ['Office lease in a capital city', 'No'],
+          ['Sales team and account managers', 'No - you talk to the person building it'],
+          ['Discovery and proposal phase billed to you', 'No - prices are published'],
+          ['Project management overhead', 'No'],
+          ['Actual design and development', 'Yes - this is what you pay for'],
+        ]
+      },
+      { type: 'p', html: 'A $5,000 quote for a five page site is not five thousand dollars of building. It is roughly a thousand dollars of building and four thousand of everything else. We stripped out the everything else.' },
+
+      { type: 'h2', text: 'What you still get at $800' },
+      { type: 'ul', items: [
+        '<strong>Custom design.</strong> Not a template with your logo dropped in.',
+        '<strong>Built on Next.js.</strong> The same stack large tech companies use, not a page builder.',
+        '<strong>SEO from the first line.</strong> Semantic HTML, structured data, meta, sitemap - wired in during the build, not sold back to you later.',
+        '<strong>Mobile first.</strong> Roughly 68% of Australian traffic is mobile, so that is where we start.',
+        '<strong>Full code ownership.</strong> Repository and hosting in your name.',
+        '<strong>Hosting included for year one</strong>, then free on Vercel for most small business sites.',
+      ]},
+      { type: 'p', html: 'Nothing is withheld to make a cheaper tier look worse. The only variable is how many pages you need - the full breakdown is on the <a href="/pricing/" class="color-green-900">pricing page</a>.' },
+
+      { type: 'h2', text: 'When cheap is a false economy' },
+      { type: 'p', html: 'Worth saying plainly, because it is the honest part of a page like this. Cheap becomes expensive when:' },
+      { type: 'ul', items: [
+        'The site is built on a platform you cannot leave, so moving means paying to rebuild.',
+        'SEO was not included, so nobody finds it and you pay a second agency to retrofit it.',
+        'You do not get the code, so every small change has to go back through them.',
+        'It is a template thousands of other businesses are using, so it builds no distinctiveness.',
+        'There is a monthly fee that never ends and buys you nothing you keep.',
+      ]},
+      { type: 'p', html: 'A $20 a month builder is $1,200 over five years and you own nothing at the end of it. We set the real numbers out in <a href="/how-much-does-a-website-cost-australia/" class="color-green-900">what a website actually costs in Australia</a> and in <a href="/wix-vs-custom-website/" class="color-green-900">Wix vs a custom website</a>.' },
+
+      { type: 'h2', text: 'Who this suits' },
+      { type: 'p', html: 'Tradies, cafes, clinics, agents, consultants, retailers - any Australian small business that needs a credible site that brings in enquiries and does not want to spend five figures finding out whether it works. If you are in the trades specifically, the <a href="/tradie-website-design/" class="color-green-900">tradie website page</a> covers suburb pages and click-to-call in more detail.' },
+
+      { type: 'h2', text: 'Common questions' },
+      { type: 'faq', q: 'How much does a small business website cost in Australia?',
+        a: 'Ours are published: $800 AUD for three to five pages, $1,900 for up to ten pages, $3,500 for unlimited pages, and $4,500 for e-commerce. Australian agencies commonly quote $3,000 to $10,000 for the same scope. Every quote is fixed in writing before work starts.' },
+      { type: 'faq', q: 'Is the free homepage design really free?',
+        a: 'Yes. You tell us about the business, we design your homepage using your real content, and you look at it. No deposit, no commitment, no obligation to continue. It is a design rather than a working site - the build begins only if you decide to go ahead.' },
+      { type: 'faq', q: 'Is a cheap website going to look cheap?',
+        a: 'It should not, and you do not have to take our word for it. Open hsracegear.com, mobilearmour.com.au or banishshoes.com and run a speed test on any of them. Then ask for the free homepage design and judge your own before paying anything.' },
+      { type: 'faq', q: 'What is not included in the price?',
+        a: 'Domain registration (roughly $15 to $20 a year), premium stock imagery or paid fonts if you specifically request them, and any third-party subscriptions such as an email marketing platform. Hosting is included for the first year. We tell you before you commit, not after.' },
+      { type: 'faq', q: 'Why is this so much cheaper than the quotes I am getting?',
+        a: 'Because a large part of an agency quote is office lease, sales staff, account management and an unpaid discovery phase recovered across clients. We do not carry that overhead, so the price reflects the build rather than the business around it.' },
+    ],
+  }
 
 ]
 
