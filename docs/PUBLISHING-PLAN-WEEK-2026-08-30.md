@@ -43,7 +43,7 @@ an honest "when cheap is a false economy" section, and 5 FAQs.
 
 ## The week
 
-### Sun 31 Aug — `website developers for small business`
+### Sun 31 Aug — `website developers for small business` ✅ DONE
 
 **Type:** rework existing · `/hire-website-builder/`
 **Vol:** 100–1k · Low
@@ -115,11 +115,62 @@ agencies upsell that do not. Links up to the affordable page and to
 
 No publishing. Instead:
 
-1. Check Search Console — are the new pages indexed? Request indexing on any
+1. **Question mining — do this first.** See below. It outranks Keyword Planner
+   for value.
+2. Check Search Console — are the new pages indexed? Request indexing on any
    that are not.
-2. Confirm every new page is in `public/sitemap.xml` and linked from the footer.
-3. Run `npm run sitemap:images` if images have landed.
-4. Run the next Keyword Planner round on the seeds listed below.
+3. Confirm every new page is in `public/sitemap.xml` and linked from the footer.
+4. Run `npm run sitemap:images` if images have landed.
+5. Run the next Keyword Planner round on the seeds listed below.
+
+---
+
+## Question mining — the weekly ritual that beats Keyword Planner
+
+**Why it comes first:** Keyword Planner tells you what people search. Search
+Console tells you what Google *already associates with this site*. The second is
+a far shorter path to ranking, because half the work is already done — Google
+has decided we are relevant, it just is not sure enough to rank us.
+
+Proven on 30 Aug. Of the 8 queries earning impressions in 24 hours, **three were
+questions we were served for but had never answered:**
+
+| Query | Impressions | Was it answered? | Fix applied |
+|---|---|---|---|
+| do tradies need a website | 3 | Nearly — FAQ said "Do tradies **actually** need a website?" | Removed "actually" for exact match |
+| hire someone to build a website | 2 | No | New FAQ on `/hire-website-builder/` |
+| wordpress website cost | 2 | No | New FAQ on `/wordpress-vs-custom-website/` |
+
+That single inserted word — "actually" — was enough to break the match. Verbatim
+matters more than it sounds like it should.
+
+### The procedure
+
+1. GSC → **Performance → Queries**, last 28 days
+2. Filter queries containing: `how` · `do` · `what` · `should` · `need` · `cost` ·
+   `can` · `why`
+3. For each one, ask: **is this question answered verbatim anywhere on the site?**
+4. If no → add it as an FAQ on the closest existing page. Do not build a new page
+   for a single question.
+5. Phrase it **exactly as typed**. `Do tradies need a website?` — not
+   `Why tradies need websites`, not `Do tradies actually need a website?`
+
+### Why FAQs specifically
+
+We already carry **172 FAQ blocks** sitewide and they emit `FAQPage` schema. That
+is the asset doing most of the ranking work on this domain — question-format
+long-tail is the lowest-competition category that exists, and it is the only one
+a zero-backlink site gets served in.
+
+It also feeds AI search. ChatGPT, Perplexity and Google's AI answers quote
+question-and-answer content directly, and our `robots.txt` already allows those
+crawlers.
+
+### The rule
+
+**Never invent an FAQ to chase a keyword.** Only add questions real people
+actually typed, and only answer them truthfully. A fabricated FAQ with a schema
+block around it is worse than no FAQ — see `CLAUDE.md` §1.
 
 ---
 

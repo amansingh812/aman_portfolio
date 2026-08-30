@@ -292,7 +292,7 @@ export const LANDING_PAGES = [
       { type: 'h2', text: 'Common questions' },
       { type: 'faq', q: 'How much does a tradie website cost?',
         a: 'A three to five page tradie site is $800, up to ten pages with service-area pages is $1,900, and unlimited pages is $3,500 (<a href="/pricing/" class="color-green-900">all packages</a>). Add a booking system from $700. Every quote is fixed in writing before work starts.' },
-      { type: 'faq', q: 'Do tradies actually need a website?',
+      { type: 'faq', q: 'Do tradies need a website?',
         a: 'Not always, and not first. A free Google Business Profile should come before a website for a brand new sole trader. A website earns its keep once you are competing for jobs where people compare two or three tradies, quoting work over $5,000, or paying for ads and sending that traffic to a Facebook page.' },
       { type: 'faq', q: 'How long does a tradie website take?',
         a: 'Five to seven business days for a three to five page site, two to three weeks for a larger one. The usual delay is waiting on job photos and service descriptions, not development.' },
@@ -1010,13 +1010,13 @@ export const LANDING_PAGES = [
     slug: 'hire-website-builder',
     image: '/assets/imgs/page/landing/hire-website-builder.webp',
     imageAlt: 'Working directly with a website builder reviewing a design together',
-    metaTitle: 'Hire a Website Builder',
+    metaTitle: 'Website Developers for Small Business Australia',
     metaDescription:
-      'Need someone to build your website? Fixed-price, custom Next.js builds for Australian businesses. No templates, no monthly fees, full code ownership.',
+      'Website developers for small business across Australia. Fixed prices from $800 AUD, custom Next.js builds, free homepage design, and you own the code.',
     eyebrow: 'Australia · Professional Website Builder',
     h1: 'Need someone to build your website?',
     lead:
-      'Build First Site builds websites for Australian businesses — no templates, no page builders, no monthly fees. Fixed price, fast delivery, full ownership of your code.',
+      'We are website developers for small business — no templates, no page builders, no monthly fees. Fixed prices from $800, and we will design your homepage free before you commit so you can judge the work on your own business first.',
     priceTiers: ['starter', 'business', 'ecommerce', 'custom-software'],
     schemaType: 'Service',
     breadcrumb: 'Hire a Website Builder',
@@ -1026,6 +1026,8 @@ export const LANDING_PAGES = [
       { href: '/ecommerce-development/', label: 'E-commerce development' },
     ],
     body: [
+      { type: 'h2', text: 'What website developers for small business should actually give you' },
+      { type: 'p', html: 'Most small businesses do not need an agency. They need a developer who returns calls, quotes a fixed number, and hands over the code at the end. That is the whole job, and it is what this page is about. Our prices are published on the <a href="/pricing/" class="color-green-900">pricing page</a> and start at $800, and the <a href="/affordable-website-design-small-business/" class="color-green-900">affordable small business page</a> explains how that number is possible.' },
       { type: 'h2', text: 'Why hire a website builder instead of doing it yourself?' },
       { type: 'p', html: '<a href="/wix-vs-custom-website/" class="color-green-900">Wix</a> and <a href="/squarespace-vs-custom-website/" class="color-green-900">Squarespace</a> look easy — until you need something they can\'t do. Here is what you actually get when you hire a professional website builder instead.' },
       { type: 'table', headers: ['', 'Hire Build First Site', 'DIY (Wix / Squarespace)'], rows: [
@@ -1060,6 +1062,8 @@ export const LANDING_PAGES = [
       { type: 'p', html: 'Before you hire anyone: <a href="/freelancer-vs-web-design-agency/" class="color-green-900">freelancer vs agency</a>, <a href="/how-much-does-a-website-cost-australia/" class="color-green-900">what a website costs</a>.' },
 
       { type: 'h2', text: 'Common questions' },
+      { type: 'faq', q: 'Can I hire someone to build a website for my small business?',
+        a: 'Yes, and that is exactly what we do. You tell us what the business needs, we send a written scope with a fixed AUD price within one business day, and we design your homepage free before you commit to anything. Prices start at $800 for three to five pages. You are hiring the person who writes the code, not an account manager.' },
       { type: 'faq', q: 'How much does it cost to hire a website builder in Australia?',
         a: 'At Build First Site, a landing page starts from $800 AUD, a full business website from $1,900 AUD, and a custom e-commerce store from $4,500 AUD. All prices are fixed upfront — no hourly billing, no hidden extras.' },
       { type: 'faq', q: 'How long does it take to get a website built?',
@@ -1608,6 +1612,8 @@ export const LANDING_PAGES = [
         a: 'Yes. We keep your URLs so existing search rankings carry over, set up redirects for anything that changes, and preserve your content. Migration is quoted as part of the build rather than as a separate surprise cost.' },
       { type: 'faq', q: 'What happens to my site if I stop working with you?',
         a: 'Nothing. You have full source code and repository access in your name, deployed to your own Vercel account where possible. Any developer can pick it up. There is no proprietary platform to be locked into.' },
+      { type: 'faq', q: 'How much does a WordPress website cost in Australia?',
+        a: 'A typical small business WordPress build runs $2,000 to $4,000 up front, plus $15 to $60 a month hosting, $500 to $1,500 in premium plugins over five years, and $50 to $150 a month maintenance if you want it kept patched. That lands between $6,700 and $18,100 across five years. Our fixed custom build is $1,900 for the same page count with free hosting on Vercel and no plugin fees.' },
       { type: 'faq', q: 'Is WordPress cheaper than a custom website?',
         a: 'Cheaper up front sometimes, more expensive over five years almost always. Hosting, premium plugins and mandatory maintenance add up, while a static custom build has no plugin fees and free hosting on Vercel. The five-year table above shows the difference.' },
     ],
