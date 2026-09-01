@@ -1,3 +1,4 @@
+/* eslint-disable react/no-danger */
 /**
  * Individual guide pages — /guides/<slug>/
  *
@@ -96,8 +97,14 @@ export default async function GuidePage({ params }) {
                                 {g.readingTime}
                                 {g.datePublished && ` · Updated ${g.datePublished}`}
                             </p>
+                            {/* Rendered as HTML so guide copy can carry inline
+                                internal links. Content is authored by us in
+                                content/guides.js — never user input — so this is
+                                not an injection surface. Verified no existing
+                                guide contains stray angle brackets. */}
                             {(g.intro || []).map((p, i) => (
-                                <p key={i} className="text-body-lead-large color-gray-600 mb-20">{p}</p>
+                                <p key={i} className="text-body-lead-large color-gray-600 mb-20"
+                                    dangerouslySetInnerHTML={{ __html: p }} />
                             ))}
                         </div>
                     </div>
@@ -112,7 +119,8 @@ export default async function GuidePage({ params }) {
                                 <div key={i}>
                                     <h2 className="text-heading-3 color-gray-900 mt-40 mb-15">{s.heading}</h2>
                                     {(s.body || []).map((p, j) => (
-                                        <p key={j} className="text-body-lead color-gray-600 mb-15">{p}</p>
+                                        <p key={j} className="text-body-lead color-gray-600 mb-15"
+                                            dangerouslySetInnerHTML={{ __html: p }} />
                                     ))}
                                 </div>
                             ))}
@@ -122,7 +130,8 @@ export default async function GuidePage({ params }) {
                                     <h2 className="text-heading-3 color-gray-900 mt-40 mb-15">Key takeaways</h2>
                                     <ul className="mb-30" style={{ paddingLeft: 20 }}>
                                         {g.takeaways.map((t, i) => (
-                                            <li key={i} className="text-body-lead color-gray-600 mb-10">{t}</li>
+                                            <li key={i} className="text-body-lead color-gray-600 mb-10"
+                                                dangerouslySetInnerHTML={{ __html: t }} />
                                         ))}
                                     </ul>
                                 </>

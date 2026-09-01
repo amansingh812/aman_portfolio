@@ -40,11 +40,18 @@ export const metadata = {
         description: SITE.description,
         images: ['/og-image.png'],
     },
-    icons: {
-        icon: '/assets/imgs/New_logo/favicon.png',
-        shortcut: '/favicon.ico',
-        apple: '/assets/imgs/New_logo/favicon.png',
-    },
+    // NO `icons:` block here — deliberately.
+    //
+    // Icons are handled entirely by the App Router file conventions:
+    //   app/favicon.ico     -> <link rel="icon" sizes="any">      (legacy)
+    //   app/icon.png        -> <link rel="icon" type="image/png"> (modern)
+    //   app/apple-icon.png  -> <link rel="apple-touch-icon">      (iOS)
+    //
+    // Declaring them here as well emitted FOUR competing <link rel="icon">
+    // tags — two pointing at different files with no `sizes` or `type` to
+    // disambiguate — so which icon a browser picked was essentially arbitrary.
+    // The file convention emits correct attributes automatically. Do not add
+    // an `icons:` block back on top of it.
 }
 
 export const viewport = {

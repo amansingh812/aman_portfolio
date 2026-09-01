@@ -1,8 +1,116 @@
 export const GUIDES = [
   {
+    "slug": "get-your-business-on-google",
+    "title": "How to Get Your Business on Google (2026 Australian Guide)",
+    "metaTitle": "How to Get Your Business on Google | AU Guide",
+    "metaDescription": "How to get your business on Google in Australia — Business Profile setup, the map pack, and why a website still matters alongside it. Free, step by step.",
+    "keywords": [
+      "google page for my business",
+      "google pages business",
+      "get your website on google",
+      "google business website",
+      "how to get my business on google"
+    ],
+    "excerpt": "Getting on Google means two separate things, and most guides only explain one of them. Here is how the Business Profile and your website actually work together — and how to set both up properly.",
+    "readingTime": "10 min read",
+    "datePublished": "2026-09-02",
+    "intro": [
+      "When someone says they want their business on Google, they usually mean one of two things without realising they are different: appearing in the map results with the pin and the star rating, or appearing in the ordinary blue-link results underneath.",
+      "They are controlled by different systems. The map results come from your Google Business Profile, which is free. The blue links come from your website. Setting up one does very little for the other, which is why so many businesses do half the job and wonder why nothing happens.",
+      "This guide covers both, in order, with no step that requires paying anyone."
+    ],
+    "sections": [
+      {
+        "heading": "The two places you can appear (and why it matters)",
+        "body": [
+          "Search for a service plus a suburb in Australia and you will typically see: a few paid ads at the top, then a map with three business listings — often called the map pack or local pack — and then the ordinary organic results.",
+          "The map pack is drawn almost entirely from Google Business Profiles. Distance, relevance and prominence decide who appears. Reviews carry real weight here.",
+          "The organic results below are drawn from websites. Content, technical quality and links decide who appears. Your Business Profile has essentially no influence on this section.",
+          "That distinction is the single most useful thing to understand. A business with a great profile and no website will show on the map but vanish from every result underneath it. A business with a great website and no profile misses the map pack entirely, which for local service searches is where a large share of the clicks go."
+        ]
+      },
+      {
+        "heading": "Step 1 — Create your Google Business Profile",
+        "body": [
+          "This is free, takes about twenty minutes, and is the highest-return thing most Australian small businesses can do online.",
+          "Go to google.com/business and sign in with the Google account you want to own the listing long term. Use a business account you control, not a personal one belonging to a staff member who might leave.",
+          "Enter your business name exactly as it appears everywhere else — no added keywords. \"Smith Plumbing\" not \"Smith Plumbing | Best Plumber Melbourne\". Keyword stuffing the name is against Google guidelines and listings get suspended for it.",
+          "Choose your primary category carefully. It is the strongest single relevance signal you control, and you can only have one. A plumber who picks \"Contractor\" instead of \"Plumber\" is competing in the wrong category. Add secondary categories afterwards for anything else you genuinely do.",
+          "If customers come to you, add your address. If you travel to them, set it up as a service-area business instead and list the suburbs you cover — Google will hide the street address, which is correct and expected for trades and mobile services.",
+          "Then verify. Google will ask for a postcard, phone call, email or video depending on your category. Video verification has become common and usually means filming your premises, signage, tools and equipment in one unbroken take. Nothing goes live until verification completes."
+        ]
+      },
+      {
+        "heading": "Step 2 — Fill the profile in properly",
+        "body": [
+          "A verified but empty profile ranks poorly. Google favours complete listings, and so do customers.",
+          "Add real opening hours, including public holiday exceptions. Add your phone number and website URL. Write a description that explains what you do and where, in plain language.",
+          "Add photos, and keep adding them. Profiles with photos get materially more interaction than those without, and a listing whose only image is the default map pin looks abandoned. Photos of actual work, actual premises and actual staff outperform stock imagery every time.",
+          "Turn on messaging only if you will actually answer it. A profile advertising instant messaging that nobody monitors is worse than not offering it.",
+          "Add your services or products as individual entries. Each one gives Google more to match a search against."
+        ]
+      },
+      {
+        "heading": "Step 3 — Get your NAP consistent everywhere",
+        "body": [
+          "NAP means Name, Address, Phone. Google cross-references these across the web to decide whether it is confident your business is real and exactly what it is called.",
+          "The catch is that the match has to be character for character. \"Suite 2, 14 Smith St\" and \"Suite 2/14 Smith Street\" read as identical to a human and as two different businesses to Google's entity matching.",
+          "Pick one exact format and use it on your website, your Business Profile, and every directory listing — Yellow Pages, Hotfrog, True Local, industry directories, your social profiles. Where old listings exist with wrong details, correct or remove them.",
+          "This is dull work and it is one of the few local ranking factors entirely within your control."
+        ]
+      },
+      {
+        "heading": "Step 4 — Ask for reviews, and keep asking",
+        "body": [
+          "Reviews are one of the strongest factors in map pack ranking, and the single biggest influence on whether someone chooses you once they see you.",
+          "The bar is lower than people assume. In most Australian suburbs, businesses with a handful of genuine reviews outrank businesses with none. You are not competing with a thousand-review national brand for \"plumber Moonee Ponds\".",
+          "Ask in person at the point the customer is happiest, then follow up with the direct review link from your profile. The easier you make it, the more you get.",
+          "Never buy reviews, never write your own, and never offer a discount in exchange for a positive one. Google detects review manipulation and the penalty is losing the listing. It is also misleading conduct under Australian Consumer Law."
+        ]
+      },
+      {
+        "heading": "Step 5 — Getting your website onto Google",
+        "body": [
+          "The Business Profile handles the map. The website handles everything else, and it needs its own setup.",
+          "Verify the site in Google Search Console — it is free, and it is the only place Google tells you directly what it thinks of your site. Submit your sitemap there so Google knows which pages exist.",
+          "Use URL Inspection to check whether your important pages are actually indexed. \"Discovered — currently not indexed\" is common on new sites and means Google knows the page exists but has not judged it worth crawling yet.",
+          "Give each page one clear subject and a title that matches what someone would type. A page titled \"Home\" or \"Services\" tells Google almost nothing. \"Emergency Plumber Moonee Ponds\" tells it everything.",
+          "Make sure the site is fast on mobile. Roughly 68% of Australian traffic is mobile, and Core Web Vitals have been a ranking factor since 2021. You can check your own score free with our <a href=\"/website-speed-checker/\" class=\"color-green-900\">website speed checker</a>.",
+          "None of this is instant. A new site typically takes weeks to months to appear for anything competitive, and that is normal rather than a sign something is broken."
+        ]
+      },
+      {
+        "heading": "Why a Business Profile alone is not enough",
+        "body": [
+          "It is tempting to stop after the profile. It is free, it is quick, and it produces visible results faster than a website does.",
+          "The limits show up soon after. You cannot explain anything in depth on a profile. You cannot show your process, your pricing, your past work or answer the twenty questions a customer has before they call. You cannot appear in the organic results at all. And you do not own the listing — Google does, and profiles get suspended, merged or hijacked with no warning and no support line.",
+          "The profile is also where the customer starts, not where they decide. Most people find you on the map, click through to the website, and make up their minds there. A profile pointing at no website, or at a slow and dated one, loses the customer at exactly the moment they were interested.",
+          "The two work together: the profile gets you found, the website gets you chosen."
+        ]
+      },
+      {
+        "heading": "How long it takes",
+        "body": [
+          "Business Profile: verification takes anywhere from a few minutes to two weeks depending on the method. Once verified, the listing appears almost immediately, though ranking within the map pack improves over months as reviews and consistency build.",
+          "Website: expect several weeks before Google indexes a new site properly, and three to six months before it ranks for anything with real competition. Less competitive suburb-level terms can move faster.",
+          "Anyone promising page one in thirty days is either targeting a term nobody searches or guessing. There is no mechanism that delivers it."
+        ]
+      }
+    ],
+    "takeaways": [
+      "Map results and organic results are separate systems — the Business Profile drives one, your website drives the other.",
+      "Your Google Business Profile is free, takes about twenty minutes, and is the highest-return first step for most local businesses.",
+      "Get your primary category right. It is the strongest relevance signal you control and you only get one.",
+      "Keep NAP identical character for character everywhere. \"St\" and \"Street\" are two different businesses to Google.",
+      "Reviews drive map pack ranking. The bar in most suburbs is far lower than people assume — never buy them.",
+      "Verify the site in Search Console and submit a sitemap, or Google is guessing which pages matter.",
+      "The profile gets you found. The website gets you chosen. You need both."
+    ]
+  },
+  {
     "slug": "how-to-choose-a-web-developer",
     "title": "How to Choose a Web Developer for Your Small Business",
-    "metaTitle": "How to Choose a Web Developer for Your Small Business (2026 Guide)",
+    "metaTitle": "How to Choose a Web Developer (2026 AU Guide)",
     "metaDescription": "A practical guide to hiring the right web developer for your small business — what to look for, the questions to ask, red flags to avoid, and how to compare quotes fairly.",
     "keywords": [
       "how to choose a web developer",
@@ -71,7 +179,7 @@ export const GUIDES = [
   {
     "slug": "website-builder-vs-web-developer",
     "title": "Website Builder vs Web Developer: Which Do You Actually Need?",
-    "metaTitle": "Website Builder vs Web Developer: Which Do You Actually Need? (2026)",
+    "metaTitle": "Website Builder vs Web Developer: Which to Pick",
     "metaDescription": "DIY website builder or hire a web developer? An honest guide to the trade-offs in cost, time, performance, SEO and ownership — so you make the right call for your business.",
     "keywords": [
       "website builder vs web developer",
@@ -134,7 +242,7 @@ export const GUIDES = [
   {
     "slug": "freelance-web-developer-rates-australia",
     "title": "Freelance Web Developer Rates in Australia: What You Should Expect to Pay",
-    "metaTitle": "Freelance Web Developer Rates Australia 2026 | Hourly & Fixed Pricing",
+    "metaTitle": "Freelance Web Developer Rates Australia 2026",
     "metaDescription": "What freelance web developers actually charge in Australia — hourly rates by experience level, fixed-price ranges by project type, and how to tell a fair quote from a bad one.",
     "keywords": [
       "freelance web developer rates",

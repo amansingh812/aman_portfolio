@@ -37,6 +37,7 @@ export const BLOG_POSTS = [
   {
     slug: "signs-website-losing-customers",
     metaDescription: "Traffic but no enquiries? One of these five fixable issues is usually why — slow load, poor mobile, unclear message, weak CTAs or no trust signals.",
+    metaTitle: "5 Signs Your Website Is Losing You Customers",
     title: "5 Signs Your Business Website Is Losing You Customers (2026)",
     excerpt: "Visitors but no enquiries? One of five fixable issues is usually why — slow load, bad mobile, unclear message, weak CTAs, or missing trust signals.",
     category: "Conversion",
@@ -48,6 +49,7 @@ export const BLOG_POSTS = [
   {
     slug: "small-business-website-checklist",
     metaDescription: "Everything a small business website needs in 2026 — pages, mobile, speed, SEO, trust and lead capture. A practical Australian checklist, no fluff.",
+    metaTitle: "Small Business Website Checklist Australia 2026",
     title: "Small Business Website Checklist for 2026 (Australia)",
     excerpt: "Everything a small business website needs in 2026 — a practical Australian checklist covering core pages, mobile, speed, SEO, trust and lead capture.",
     category: "Checklist",
@@ -79,6 +81,18 @@ export const BLOG_POSTS = [
     readingTime: "8 min read",
     href: "/blog/how-long-to-build-a-website/",
     image: "/assets/imgs/page/blog/how-long-to-build-a-website.webp",
+  },
+  {
+    slug: "average-cost-website-design-small-business",
+    metaDescription: "What website design actually costs Australian small businesses in 2026. Real market averages by provider type, the five-year total, and how to compare quotes.",
+    metaTitle: "Average Cost of Website Design for Small Business AU",
+    title: "The Average Cost of Website Design for Small Business in Australia (2026)",
+    excerpt: "The Australian market average sits between $6,500 and $10,000 for a small business website. Here is what that money buys, what it does not, and why identical briefs come back with quotes ten times apart.",
+    category: "Pricing Guide",
+    date: "2026-09-01",
+    readingTime: "11 min read",
+    href: "/blog/average-cost-website-design-small-business/",
+    image: "/assets/imgs/page/blog/average-cost-website-design-small-business.webp",
   },
   {
     slug: "tradie-website-cost",
@@ -156,7 +170,7 @@ export const BLOG_POSTS = [
   {
     slug: "wordpress-vs-nextjs-speed-australia",
     metaDescription: "WordPress vs Next.js performance compared for Australian small business sites — real PageSpeed scores, Core Web Vitals, and what the gap means for your Google rankings.",
-    metaTitle: "WordPress vs Next.js Speed: Real PageSpeed Scores for AU Sites (2026)",
+    metaTitle: "WordPress vs Next.js Speed: Real AU PageSpeed Data",
     title: "WordPress vs Next.js: Which is Faster for Australian Small Business Sites? (2026)",
     excerpt: "We ran PageSpeed tests on real Australian WordPress and Next.js sites. The average gap is 35 points on mobile. Here is what that means for your Google rankings.",
     category: "Performance",
@@ -168,7 +182,7 @@ export const BLOG_POSTS = [
   {
     slug: "tradie-suburb-pages-seo",
     metaDescription: "Why suburb pages beat broad city terms for tradie SEO in Australia — with real keyword data, page structure, and examples for plumbers, electricians and builders.",
-    metaTitle: "Why Tradie Websites Need Suburb Pages (Not Just a Service Area)",
+    metaTitle: "Why Tradie Websites Need Suburb Pages for SEO",
     title: "Why Tradie Websites Need Suburb Pages (Not Just a Service Area)",
     excerpt: "Broad terms like 'plumber Melbourne' are owned by directories. The keyword 'plumber Moonee Ponds' is not. Here is why suburb pages are the fastest SEO win for Australian tradies.",
     category: "SEO",
@@ -180,7 +194,7 @@ export const BLOG_POSTS = [
   {
     slug: "wcag-audit-process-ndis-websites",
     metaDescription: "How we audit NDIS provider websites for WCAG 2.1 AA compliance — the exact 8-step process, free tools, and what fails most often.",
-    metaTitle: "How We Audit NDIS Websites for WCAG 2.1 AA: Our 8-Step Process",
+    metaTitle: "How We Audit NDIS Websites for WCAG 2.1 AA",
     title: "How We Audit NDIS Websites for WCAG 2.1 AA Compliance: Our 8-Step Process",
     excerpt: "Every NDIS website we build goes through an 8-step accessibility audit before launch. Here is exactly what we check, what fails most often, and the free tools you can use yourself.",
     category: "Accessibility",

@@ -1240,6 +1240,124 @@ export const BLOG_CONTENT = {
       }
     ]
   },
+  "average-cost-website-design-small-business": {
+    lead:
+      "The honest answer, before the caveats: the Australian market average for a small business website in 2026 sits between $6,500 and $10,000 AUD. But that single number hides a spread from $500 to $50,000 for briefs that read almost identically — and understanding what moves you along that line is worth more than the average itself.",
+    content: [
+      {"type": "h2", "text": "The short answer, by who you hire"},
+      {"type": "p", "html": "Most cost guides give you one range and stop. That is not much use, because the biggest variable is not the website — it is who builds it. Here is the 2026 Australian market, broken down by provider type."},
+      {"type": "table",
+        "headers": ["Who builds it", "Typical AUD range", "What you usually get"],
+        "rows": [
+          ["DIY platform (Wix, Squarespace)", "$500 – $3,000", "You do the work. Platform fee $15–58/month, forever."],
+          ["Freelancer", "$500 – $2,000 basic", "One person, variable quality, up to $10,000 for complex builds"],
+          ["Small studio", "$3,000 – $7,000+", "Custom build, direct contact, less overhead"],
+          ["Full agency", "$10,000 – $50,000+", "Account management, formal process, strategy layer"],
+          ["Standard 6–10 page professional site", "$5,000 – $15,000", "The commonly cited sweet spot for an established SME"],
+          ["E-commerce", "$12,500 – $20,000+", "Product catalogue, payments, fulfilment integration"]
+        ]
+      },
+      {"type": "p", "html": "One figure that catches people out: on top of the build, hosting, maintenance, integrations and extras can add <strong>$8,000 to $35,000 in the first year</strong> for larger projects. The build price is rarely the whole price."},
+
+      {"type": "h2", "text": "Why the same brief gets quotes ten times apart"},
+      {"type": "p", "html": "If you send an identical five-page brief to six Australian providers, you will get back numbers between roughly $900 and $12,000. That is not because five of them are lying. It is because \"a website\" describes an outcome, not a scope of work."},
+      {"type": "p", "html": "Four things actually drive the difference:"},
+      {"type": "h3", "text": "1. Who is doing the building"},
+      {"type": "p", "html": "This is the largest single factor and it has almost nothing to do with the code. A $12,000 agency quote is not twelve thousand dollars of development. It typically breaks down closer to this:"},
+      {"type": "table",
+        "headers": ["Line item", "Roughly", "Do you benefit?"],
+        "rows": [
+          ["Design and development", "$2,000 – $3,000", "Yes — this is the website"],
+          ["Account and project management", "$2,000 – $3,000", "Sometimes, on complex projects"],
+          ["Sales, proposal and discovery time", "$1,500 – $2,500", "No — you are paying for the pitch"],
+          ["Office, tools and overhead recovery", "$2,000 – $3,000", "No"],
+          ["Margin", "$1,500 – $2,500", "No"]
+        ]
+      },
+      {"type": "p", "html": "None of that is dishonest. An agency with a Sydney office and eight salaried staff genuinely has those costs and has to recover them. But it is worth knowing that when you compare a $12,000 quote to a $3,000 one, you are often comparing similar amounts of actual building."},
+
+      {"type": "h3", "text": "2. Custom design versus a template"},
+      {"type": "p", "html": "A template build is a theme with your logo and colours dropped in. It is fast and cheap and it looks like the several thousand other businesses using the same theme. A custom design is drawn for your business. The gap is usually $1,000 to $3,000, and it is the single most visible difference to a visitor."},
+      {"type": "p", "html": "The trap is that many quotes do not say which one you are getting. Ask directly."},
+
+      {"type": "h3", "text": "3. Page count and functionality"},
+      {"type": "p", "html": "Page count is the honest variable — more pages is more work, straightforwardly. Functionality is where quotes balloon: a booking system, a customer login, a payment flow or a CRM integration each add real engineering. A five-page brochure site and a five-page site with online booking are not the same project, even though both are \"five pages\"."},
+
+      {"type": "h3", "text": "4. Whether SEO is included or sold separately"},
+      {"type": "p", "html": "This one costs Australian small businesses more than any other. A site built without semantic HTML, structured data, sensible URLs and fast loading has to be retrofitted later, and retrofitting is more expensive than building it right. Some quotes include this. Many quietly do not, then sell it back to you as a monthly retainer."},
+
+      {"type": "h2", "text": "The number nobody quotes: five-year total"},
+      {"type": "p", "html": "Comparing build prices is comparing the deposit, not the mortgage. Here is what the same small business site actually costs over five years on each route."},
+      {"type": "table",
+        "headers": ["Route", "Build", "Ongoing over 5 years", "Five-year total"],
+        "rows": [
+          ["Wix / Squarespace, self-built", "$0 – $500", "$900 – $3,480 platform fees", "$900 – $3,980"],
+          ["Freelancer, template build", "$500 – $2,000", "$1,200 – $4,000 hosting + fixes", "$1,700 – $6,000"],
+          ["WordPress agency build", "$2,000 – $4,000", "$4,700 – $14,100 hosting, plugins, maintenance", "$6,700 – $18,100"],
+          ["Full agency, custom", "$10,000 – $50,000", "$6,000 – $30,000 retainer", "$16,000 – $80,000"],
+          ["Fixed-price custom studio", "$1,900 – $3,500", "$0 – $15,000 optional retainer", "$1,900 – $18,500"]
+        ]
+      },
+      {"type": "p", "html": "Two things fall out of that table. The DIY route looks cheapest and is, in pure cash terms — but you own nothing at the end, and the fee never stops. And the WordPress route, which people choose <em>because</em> it seems economical, is frequently the second most expensive option over five years once plugin licences and mandatory security maintenance are counted."},
+      {"type": "p", "html": "We go through that in detail in <a href=\"/wordpress-vs-custom-website/\" class=\"color-green-900\">WordPress vs a custom website</a>."},
+
+      {"type": "h2", "text": "What you should be paying for"},
+      {"type": "p", "html": "Regardless of price bracket, these are not extras. If a quote treats them as add-ons, that is a signal about the quote:"},
+      {"type": "ul", "items": [
+        "<strong>Mobile-first build.</strong> Roughly 68% of Australian traffic is mobile. A site designed on desktop and squashed down afterwards is a site designed for the minority of your visitors.",
+        "<strong>Technical SEO.</strong> Semantic HTML, structured data, meta, sitemap, clean URLs. Built in during development, not bolted on.",
+        "<strong>Reasonable loading speed.</strong> Core Web Vitals have been a Google ranking factor since 2021. Ask for a PageSpeed score on a site they have already built.",
+        "<strong>A way to edit your own content.</strong> Paying a developer to change a phone number is a bad arrangement for everyone.",
+        "<strong>Analytics and Search Console configured.</strong> Otherwise you cannot tell whether any of this worked.",
+        "<strong>Ownership of the code and accounts.</strong> Repository, domain and hosting in your name."
+      ]},
+
+      {"type": "h2", "text": "Five red flags in a quote"},
+      {"type": "ol", "items": [
+        "<strong>No price until a call.</strong> Sometimes reasonable for complex work. For a five-page small business site it usually means the price depends on what they think you will pay.",
+        "<strong>Hourly billing with no cap.</strong> You are carrying all the risk of their estimate being wrong.",
+        "<strong>No mention of who owns the code.</strong> Ask explicitly. If the answer is vague, assume you do not.",
+        "<strong>A monthly fee that is required rather than optional.</strong> Check what happens to the site if you stop paying. Some builds go offline.",
+        "<strong>Nothing about SEO in the scope.</strong> It will be sold to you in six months once nothing ranks."
+      ]},
+
+      {"type": "h2", "text": "How to compare quotes fairly"},
+      {"type": "p", "html": "Send every provider the identical brief and ask each of them these five questions. The answers make a $3,000 quote and a $12,000 quote genuinely comparable for the first time."},
+      {"type": "ol", "items": [
+        "Is the design custom or based on a template?",
+        "What are the total costs in year one and year two, including hosting?",
+        "Who owns the code, the domain and the hosting account at the end?",
+        "What specifically is included for SEO?",
+        "Who actually writes the code, and where are they based?"
+      ]},
+      {"type": "p", "html": "The fifth one matters more than people expect. Plenty of quotes that present as local are delivered offshore, which is a perfectly workable arrangement — the problem is when it is not disclosed and you are paying a local premium for it. Our <a href=\"/freelancer-vs-web-design-agency/\" class=\"color-green-900\">freelancer vs agency comparison</a> goes further into this."},
+
+      {"type": "h2", "text": "So what should a small business actually spend?"},
+      {"type": "p", "html": "A rough guide, assuming the website is meant to bring in enquiries rather than exist as a business card:"},
+      {"type": "table",
+        "headers": ["Situation", "Sensible AUD range"],
+        "rows": [
+          ["Brand new, testing whether the business works", "$500 – $1,500"],
+          ["Established, website is a real lead source", "$1,900 – $6,000"],
+          ["Multi-location or multi-service", "$3,500 – $10,000"],
+          ["Selling online", "$4,500 – $20,000"],
+          ["Booking, portal or customer login required", "$4,500 – $25,000"]
+        ]
+      },
+      {"type": "p", "html": "Spending $15,000 on a site for a business turning over $200,000 is hard to justify. Spending $500 on a site that is meant to be your main sales channel is equally hard to justify. Match the spend to what the site has to do."},
+
+      {"type": "h2", "text": "Where we sit, disclosed"},
+      {"type": "p", "html": "For transparency, since this is our blog: our own prices are $800 for three to five pages, $1,900 for up to ten, $3,500 for unlimited pages and $4,500 for e-commerce, all AUD and published on the <a href=\"/pricing/\" class=\"color-green-900\">pricing page</a>. That sits below the $5,000 to $15,000 market band for a comparable page count, and the reason is the overhead table further up — no office, no sales layer, no discovery phase billed back to you."},
+      {"type": "p", "html": "That is one data point among the ranges above, not the point of the article. If you want the full commercial detail we keep it on <a href=\"/affordable-website-design-small-business/\" class=\"color-green-900\">affordable website design for small business</a> and <a href=\"/how-much-does-a-website-cost-australia/\" class=\"color-green-900\">what a website costs in Australia</a>. If you want to sanity-check any provider including us, the <a href=\"/small-business-website-checklist/\" class=\"color-green-900\">small business website checklist</a> is a neutral way to do it."},
+
+      {"type": "h2", "text": "Frequently asked questions"},
+      {"type": "faq", "q": "What is the average cost of website design for small business in Australia?", "a": "Between $6,500 and $10,000 AUD is the commonly cited market average in 2026, and $5,000 to $15,000 is the usual band for a 6 to 10 page professional site. The full spread runs from about $500 for a DIY platform build to $50,000 or more from a creative agency. Provider type moves the number more than the website itself does."},
+      {"type": "faq", "q": "Why are website quotes so different for the same brief?", "a": "Mostly overhead rather than work. A large agency quote includes account management, sales and discovery time, office costs and margin, which together often exceed the design and development portion. Custom versus template design, functionality such as booking or payments, and whether SEO is included account for most of the remainder."},
+      {"type": "faq", "q": "Is a cheap website worth it?", "a": "It depends entirely on what makes it cheap. Cheap because there is no agency overhead is fine. Cheap because it is a shared template, has no SEO, and locks you into a platform you cannot leave is expensive later — you pay again to fix it. Ask what specifically has been left out."},
+      {"type": "faq", "q": "How much should I budget for ongoing costs?", "a": "For a custom build: a domain at roughly $15 to $20 a year, hosting from free on modern platforms to about $60 a month, and optional maintenance from around $150 a month. For WordPress, add plugin licences and factor in that security maintenance is effectively mandatory rather than optional. Larger projects can see $8,000 to $35,000 in first-year extras once integrations are included."},
+      {"type": "faq", "q": "Do I need to pay monthly for a website?", "a": "No, though many arrangements are structured that way. A custom build with code you own can sit on free hosting with no monthly fee at all. Platform builders such as Wix and Squarespace charge $15 to $58 a month indefinitely and the site stops working if you stop paying. Always check what happens to the site when payments end."}
+    ]
+  },
   "tradie-website-cost": {
     lead:
       "A tradie website in Australia costs between AU$800 and AU$4,500. This guide breaks down what you get at each price, the ongoing costs most quotes leave out, and how to work out whether it pays for itself using your own job values.",

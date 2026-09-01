@@ -39,7 +39,7 @@
     <loc>https://buildfirstsite.com/blog/signs-website-losing-customers/</loc>
     <image:image>
       <image:loc>https://buildfirstsite.com/assets/imgs/page/blog/signs-website-losing-customers.webp</image:loc>
-      <image:title>5 Signs Your Business Website Is Losing You Customers (2026)</image:title>
+      <image:title>5 Signs Your Website Is Losing You Customers</image:title>
       <image:caption>Visitors but no enquiries? One of five fixable issues is usually why — slow load, bad mobile, unclear message, weak CTAs, or missing trust signals.</image:caption>
     </image:image>
   </url>
@@ -48,7 +48,7 @@
     <loc>https://buildfirstsite.com/blog/small-business-website-checklist/</loc>
     <image:image>
       <image:loc>https://buildfirstsite.com/assets/imgs/page/blog/small-business-website-checklist.webp</image:loc>
-      <image:title>Small Business Website Checklist for 2026 (Australia)</image:title>
+      <image:title>Small Business Website Checklist Australia 2026</image:title>
       <image:caption>Everything a small business website needs in 2026 — a practical Australian checklist covering core pages, mobile, speed, SEO, trust and lead capture.</image:caption>
     </image:image>
   </url>
@@ -68,6 +68,15 @@
       <image:loc>https://buildfirstsite.com/assets/imgs/page/blog/how-long-to-build-a-website.webp</image:loc>
       <image:title>How Long Does It Take to Build a Website? (2026)</image:title>
       <image:caption>Realistic timelines for a landing page, business site and e-commerce store in 2026 — plus what speeds a build up or slows it down in Australia.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://buildfirstsite.com/blog/average-cost-website-design-small-business/</loc>
+    <image:image>
+      <image:loc>https://buildfirstsite.com/assets/imgs/page/blog/average-cost-website-design-small-business.webp</image:loc>
+      <image:title>Average Cost of Website Design for Small Business AU</image:title>
+      <image:caption>The Australian market average sits between $6,500 and $10,000 for a small business website. Here is what that money buys, what it does not, and why identical briefs come back with quotes ten times apart.</image:caption>
     </image:image>
   </url>
 
@@ -108,6 +117,15 @@
   </url>
 
   <url>
+    <loc>https://buildfirstsite.com/blog/seo-for-ndis-providers/</loc>
+    <image:image>
+      <image:loc>https://buildfirstsite.com/assets/imgs/page/blog/seo-for-ndis-providers.webp</image:loc>
+      <image:title>SEO for NDIS Providers: A Practical 2026 Guide</image:title>
+      <image:caption>What actually moves rankings for NDIS providers in Australia — Google Business Profile, service pages, plain copy, and why accessibility is SEO work.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
     <loc>https://buildfirstsite.com/blog/best-ndis-website-designers/</loc>
     <image:image>
       <image:loc>https://buildfirstsite.com/assets/imgs/page/blog/best-ndis-website-designers.webp</image:loc>
@@ -120,7 +138,7 @@
     <loc>https://buildfirstsite.com/blog/wordpress-vs-nextjs-speed-australia/</loc>
     <image:image>
       <image:loc>https://buildfirstsite.com/assets/imgs/page/blog/wordpress-vs-nextjs-speed-australia.webp</image:loc>
-      <image:title>WordPress vs Next.js Speed: Real PageSpeed Scores for AU Sites (2026)</image:title>
+      <image:title>WordPress vs Next.js Speed: Real AU PageSpeed Data</image:title>
       <image:caption>We ran PageSpeed tests on real Australian WordPress and Next.js sites. The average gap is 35 points on mobile. Here is what that means for your Google rankings.</image:caption>
     </image:image>
   </url>
@@ -129,7 +147,7 @@
     <loc>https://buildfirstsite.com/blog/tradie-suburb-pages-seo/</loc>
     <image:image>
       <image:loc>https://buildfirstsite.com/assets/imgs/page/blog/tradie-suburb-pages-seo.webp</image:loc>
-      <image:title>Why Tradie Websites Need Suburb Pages (Not Just a Service Area)</image:title>
+      <image:title>Why Tradie Websites Need Suburb Pages for SEO</image:title>
       <image:caption>Broad terms like 'plumber Melbourne' are owned by directories. The keyword 'plumber Moonee Ponds' is not. Here is why suburb pages are the fastest SEO win for Australian tradies.</image:caption>
     </image:image>
   </url>
@@ -138,7 +156,7 @@
     <loc>https://buildfirstsite.com/blog/wcag-audit-process-ndis-websites/</loc>
     <image:image>
       <image:loc>https://buildfirstsite.com/assets/imgs/page/blog/wcag-audit-process-ndis-websites.webp</image:loc>
-      <image:title>How We Audit NDIS Websites for WCAG 2.1 AA: Our 8-Step Process</image:title>
+      <image:title>How We Audit NDIS Websites for WCAG 2.1 AA</image:title>
       <image:caption>Every NDIS website we build goes through an 8-step accessibility audit before launch. Here is exactly what we check, what fails most often, and the free tools you can use yourself.</image:caption>
     </image:image>
   </url>
