@@ -83,6 +83,18 @@ export const BLOG_POSTS = [
     image: "/assets/imgs/page/blog/how-long-to-build-a-website.webp",
   },
   {
+    slug: "what-small-business-website-actually-needs",
+    metaDescription: "The five things a small business website genuinely needs to bring in enquiries — and the expensive extras agencies sell that make no measurable difference.",
+    metaTitle: "What a Small Business Website Actually Needs",
+    title: "What a Small Business Website Actually Needs (and What It Doesn't)",
+    excerpt: "Five things decide whether a small business website brings in enquiries. Almost everything else agencies upsell is decoration. Here is the honest split.",
+    category: "Guide",
+    date: "2026-09-05",
+    readingTime: "9 min read",
+    href: "/blog/what-small-business-website-actually-needs/",
+    image: "/assets/imgs/page/blog/what-small-business-website-actually-needs.webp",
+  },
+  {
     slug: "average-cost-website-design-small-business",
     metaDescription: "What website design actually costs Australian small businesses in 2026. Real market averages by provider type, the five-year total, and how to compare quotes.",
     metaTitle: "Average Cost of Website Design for Small Business AU",

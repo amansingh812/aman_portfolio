@@ -1880,6 +1880,179 @@ export const LANDING_PAGES = [
         a: 'Because a large part of an agency quote is office lease, sales staff, account management and an unpaid discovery phase recovered across clients. We do not carry that overhead, so the price reflects the build rather than the business around it.' },
     ],
   }
+  ,
+  {
+    slug: 'small-business-website-redesign',
+    metaTitle: 'Small Business Website Redesign Australia',
+    metaDescription:
+      'Small business website redesign from $1,900 AUD. Keep your rankings, fix what is losing enquiries, own the code. Free homepage design before you commit.',
+    eyebrow: 'Redesign',
+    h1: 'Small Business Website Redesign',
+    lead:
+      'You already have a website. It is slow, it looks dated, or it simply is not bringing in enquiries — and you are not sure whether to patch it or start again. This page is about making that decision properly, and what a redesign costs if you go ahead.',
+    priceTiers: ['starter', 'business', 'unlimited'],
+    schemaType: 'Service',
+    breadcrumb: 'Website Redesign',
+    related: [
+      { href: '/affordable-website-design-small-business/', label: 'Affordable website design' },
+      { href: '/blog/signs-website-losing-customers/', label: 'Signs your site is losing customers' },
+      { href: '/pricing/', label: 'All packages and prices' },
+      { href: '/wordpress-vs-custom-website/', label: 'WordPress vs custom' },
+      { href: '/how-much-does-a-website-cost-australia/', label: 'What a website costs' },
+    ],
+    body: [
+      { type: 'h2', text: 'Redesign or rebuild? They are not the same thing' },
+      { type: 'p', html: 'People use the words interchangeably and they should not. A redesign changes how the site looks and reads while keeping the underlying platform. A rebuild replaces the platform underneath as well.' },
+      { type: 'p', html: 'The distinction matters because a redesign cannot fix a technical problem. If the site is slow because it is running a page builder and twenty plugins, a new coat of paint leaves it exactly as slow. You will have spent money and changed nothing that was costing you enquiries.' },
+      { type: 'table',
+        headers: ['If the problem is...', 'You need a...'],
+        rows: [
+          ['It looks dated but works fine', 'Redesign'],
+          ['Slow on mobile, poor PageSpeed', 'Rebuild'],
+          ['Nobody can find it on Google', 'Rebuild, usually'],
+          ['Content is wrong or thin', 'Redesign plus new copy'],
+          ['Cannot edit it without a developer', 'Rebuild'],
+          ['Locked into a platform you want to leave', 'Rebuild'],
+        ]
+      },
+      { type: 'p', html: 'We quote both the same way, so there is no incentive for us to push you toward the larger job. If a redesign genuinely solves it, we will say so.' },
+
+      { type: 'h2', text: 'How to tell whether your website is the problem' },
+      { type: 'p', html: 'Before spending anything, check three things. All three are free and take about ten minutes.' },
+      { type: 'ol', items: [
+        '<strong>Run PageSpeed Insights on mobile.</strong> Under 50 is a genuine problem — Core Web Vitals have been a ranking factor since 2021. Our <a href="/website-speed-checker/" class="color-green-900">speed checker</a> does this without the jargon.',
+        '<strong>Open your own site on your phone, on mobile data.</strong> Not on office wifi. Roughly 68% of Australian traffic is mobile and that is the experience most of your visitors actually get.',
+        '<strong>Search your business name plus your suburb in Google.</strong> If you do not appear, the issue may be your Google Business Profile rather than the website — that is covered in <a href="/guides/get-your-business-on-google/" class="color-green-900">how to get your business on Google</a>.',
+      ]},
+      { type: 'p', html: 'The symptoms worth acting on are set out in more detail in <a href="/blog/signs-website-losing-customers/" class="color-green-900">signs your website is losing you customers</a>.' },
+
+      { type: 'h2', text: 'The part people worry about: losing your Google rankings' },
+      { type: 'p', html: 'This is the most common reason businesses put off a redesign, and the concern is legitimate. Rankings are lost in redesigns regularly. They are lost for predictable reasons, all of which are avoidable.' },
+      { type: 'ul', items: [
+        '<strong>URLs changed with no redirects.</strong> Every old address must 301 to its new equivalent. Skip this and every page that ranked starts again from nothing.',
+        '<strong>Content cut in the name of a cleaner design.</strong> The text you removed is often exactly what was ranking. Keep it, restructure it.',
+        '<strong>Page titles rewritten for brand voice.</strong> If the old title matched what people search and the new one is clever instead, the match is gone.',
+        '<strong>The staging site left open to Google.</strong> A duplicate of your site competing with itself, then indexed instead of the real one.',
+        '<strong>Nobody checked afterwards.</strong> Search Console tells you within days if something broke. Most people never look.',
+      ]},
+      { type: 'p', html: 'We map every existing URL before touching anything, redirect the lot, and re-check indexing in Search Console after launch. It is unglamorous and it is the difference between a redesign that keeps your traffic and one that quietly resets it.' },
+
+      { type: 'h2', text: 'What a redesign costs' },
+      { type: 'p', html: 'Same published prices as a new build, because the work is comparable — often slightly less, since the content already exists. Up to ten pages is <strong>$1,900</strong>, unlimited pages <strong>$3,500</strong>, e-commerce <strong>$4,500</strong>. All AUD, fixed in writing before anything starts.' },
+      { type: 'p', html: 'Australian agencies typically quote $5,000 to $15,000 for a redesign of the same size. The gap is overhead rather than output, which we break down on the <a href="/affordable-website-design-small-business/" class="color-green-900">affordable website design page</a>.' },
+
+      { type: 'h2', text: 'What carries over, and what does not' },
+      { type: 'table',
+        headers: ['Asset', 'Carries over?'],
+        rows: [
+          ['Your domain name', 'Yes — you keep it'],
+          ['Existing Google rankings', 'Yes, if redirects are done properly'],
+          ['Your written content', 'Yes — we restructure rather than discard'],
+          ['Photos and logo', 'Yes'],
+          ['Google Business Profile and reviews', 'Yes — unaffected by the site'],
+          ['The old CMS and its plugins', 'No — that is usually the point'],
+          ['Old hosting account', 'No — you move to your own, free on Vercel for most sites'],
+        ]
+      },
+
+      { type: 'h2', text: 'See it before you commit' },
+      { type: 'p', html: 'Redesigns are harder to commit to than new builds, because you already have something and you are being asked to risk it. So we design your new homepage first, free, using your real content — you compare it directly against what you have now before spending anything. It is a design rather than a working site; the build starts only if you decide to go ahead. Ask from the <a href="/contact/" class="color-green-900">contact page</a>.' },
+
+      { type: 'h2', text: 'Common questions' },
+      { type: 'faq', q: 'Will a website redesign hurt my Google rankings?',
+        a: 'It can, and this is the main reason redesigns go wrong. Rankings drop when URLs change without 301 redirects, when content that was ranking gets cut, or when page titles are rewritten away from what people actually search. Done properly — full URL map, redirects in place, content kept, indexing checked in Search Console afterwards — rankings carry over and usually improve, because the new site is faster.' },
+      { type: 'faq', q: 'How much does a small business website redesign cost in Australia?',
+        a: 'Ours are published: $1,900 AUD for up to ten pages, $3,500 for unlimited pages, $4,500 for e-commerce. Australian agencies commonly quote $5,000 to $15,000 for the same scope. Redesigns sometimes come in slightly under a new build because the content already exists.' },
+      { type: 'faq', q: 'How long does a website redesign take?',
+        a: 'Two to three weeks for up to ten pages, three to four for larger sites. The biggest variable is how quickly you approve the design and supply any new content. Your existing site stays live the whole time — we build on a private staging link and switch over only when you are happy.' },
+      { type: 'faq', q: 'Can you redesign my WordPress site without rebuilding it?',
+        a: 'Yes, if the problem is genuinely visual. But if the site is slow, insecure or painful to edit, a redesign leaves all of that in place and you will be back in eighteen months. We will tell you honestly which one your situation calls for rather than quoting whichever is larger.' },
+      { type: 'faq', q: 'Do I lose my domain or email during a redesign?',
+        a: 'No. Your domain stays yours and email is unaffected — it runs on separate DNS records that we do not touch. The only change is where the website itself is hosted, and that happens in a single switchover once you have approved everything.' },
+    ],
+  }
+  ,
+  {
+    slug: 'website-design-quote',
+    metaTitle: 'Website Design Quote Australia | Fixed AUD Price',
+    metaDescription:
+      'Get a website design quote in one business day. Fixed AUD price in writing, prices published from $800, free homepage design before you commit.',
+    eyebrow: 'Get a quote',
+    h1: 'Website Design Quote — Fixed Price, One Business Day',
+    lead:
+      'You want a number. Most agencies want a discovery call first. Ours are already published, and a written quote for your specific project comes back within one business day — no meeting required unless you want one.',
+    priceTiers: ['starter', 'business', 'unlimited'],
+    schemaType: 'Service',
+    breadcrumb: 'Website Design Quote',
+    related: [
+      { href: '/pricing/', label: 'All packages and prices' },
+      { href: '/affordable-website-design-small-business/', label: 'Affordable website design' },
+      { href: '/hire-website-builder/', label: 'Website developers for small business' },
+      { href: '/how-long-does-it-take-to-build-a-website/', label: 'How long a build takes' },
+    ],
+    body: [
+      { type: 'h2', text: 'The prices before you ask' },
+      { type: 'p', html: 'Every quote we send starts from these figures. They are published so you can rule us in or out before spending any time on a conversation.' },
+      { type: 'p', html: 'Three to five pages <strong>$800</strong>. Up to ten pages <strong>$1,900</strong>. Unlimited pages <strong>$3,500</strong>. E-commerce or a web app <strong>$4,500</strong>. Custom software from <strong>$5,000</strong>. All AUD, GST not included, hosting covered for year one. The full breakdown is on the <a href="/pricing/" class="color-green-900">pricing page</a>.' },
+
+      { type: 'h2', text: 'What we need from you' },
+      { type: 'p', html: 'Four things. It takes about two minutes to write and you do not need to know anything technical.' },
+      { type: 'ol', items: [
+        '<strong>What the business does</strong>, in a sentence.',
+        '<strong>What the website needs to achieve</strong> — enquiries, bookings, online sales, or simply looking credible.',
+        '<strong>Roughly how many pages</strong>, or just a list of the things you want to explain.',
+        '<strong>Anything it must connect to</strong> — a booking system, a payment provider, a CRM.',
+      ]},
+      { type: 'p', html: 'If you are not sure about any of it, say so and we will work it out. A vague brief is normal and it is not a reason to delay asking.' },
+
+      { type: 'h2', text: 'What you get back' },
+      { type: 'ul', items: [
+        '<strong>A written scope</strong> listing exactly what is included, so there is nothing to argue about later.',
+        '<strong>One fixed AUD figure.</strong> Not a range, not an hourly estimate. It does not move unless you change the scope, and if you do we re-quote openly.',
+        '<strong>A delivery date.</strong>',
+        '<strong>A free homepage design</strong>, if you want one — your real business name, services and photos, so you can judge the work before spending anything. It is a design rather than a working site; the build starts only if you go ahead.',
+      ]},
+      { type: 'p', html: 'Within one business day. No obligation attached to any of it.' },
+
+      { type: 'h2', text: 'What the quote includes as standard' },
+      { type: 'p', html: 'These are not line items we add on. Every package has them, which is why the quote is one number rather than a menu.' },
+      { type: 'ul', items: [
+        'Custom design — not a template with your logo dropped in',
+        'Mobile-first build, because roughly 68% of Australian traffic is mobile',
+        'SEO wired in during the build: semantic HTML, structured data, meta, sitemap',
+        'A CMS so you can edit your own content',
+        'Analytics and Google Search Console configured',
+        'Full ownership of the code, domain and hosting account',
+        'Hosting included for the first year',
+      ]},
+
+      { type: 'h2', text: 'How to compare our quote against the others' },
+      { type: 'p', html: 'Get more than one. Then ask every provider the same five questions — the answers are what make a $3,000 quote and a $12,000 quote genuinely comparable.' },
+      { type: 'ol', items: [
+        'Is the design custom or a template?',
+        'What are the total costs in year one and year two, including hosting?',
+        'Who owns the code, domain and hosting account at the end?',
+        'What exactly is included for SEO?',
+        'Who writes the code, and where are they based?',
+      ]},
+      { type: 'p', html: 'We answer all five in the quote without being asked. The wider market context is in <a href="/blog/average-cost-website-design-small-business/" class="color-green-900">the average cost of website design for small business</a>.' },
+
+      { type: 'h2', text: 'Ready when you are' },
+      { type: 'p', html: 'Send the four things above from the <a href="/contact/" class="color-green-900">contact page</a> and you will have a scope, a fixed price and a date within one business day.' },
+
+      { type: 'h2', text: 'Common questions' },
+      { type: 'faq', q: 'How do I get a website design quote?',
+        a: 'Tell us what the business does, what the website needs to achieve, roughly how many pages, and anything it has to connect to. That is enough for a written scope with a fixed AUD price, back within one business day. No discovery call required unless you want one.' },
+      { type: 'faq', q: 'Is the quote free?',
+        a: 'Yes, and so is the homepage design if you want one. There is no charge and no obligation at any point before you decide to go ahead.' },
+      { type: 'faq', q: 'Will the price change once work starts?',
+        a: 'No. The figure is fixed in writing before anything begins and only changes if you ask for something outside the agreed scope — in which case we re-quote that openly rather than adding hours quietly. Payment is split 50% to start and 50% on launch.' },
+      { type: 'faq', q: 'Do I have to get on a call first?',
+        a: 'No. Some people prefer one and we are happy to book it, but a written quote does not depend on it. Our prices are published precisely so you can assess us without sitting through a sales conversation.' },
+      { type: 'faq', q: 'How quickly can you start?',
+        a: 'Usually within a week of approving the scope. A three to five page site takes five to seven business days from there, up to ten pages two to three weeks, e-commerce four to six weeks. Full detail is on how long a website takes to build.' },
+    ],
+  }
 
 ]
 

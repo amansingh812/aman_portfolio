@@ -1240,6 +1240,85 @@ export const BLOG_CONTENT = {
       }
     ]
   },
+  "what-small-business-website-actually-needs": {
+    lead:
+      "Most small business websites fail for the same handful of reasons, and almost none of them are the things people spend money worrying about. Five things decide whether a site produces enquiries. Nearly everything else on a typical proposal is decoration you are paying for.",
+    content: [
+      {"type": "h2", "text": "The five that actually matter"},
+      {"type": "p", "html": "Not five out of a hundred equally weighted factors. These five carry most of the outcome, and a site that gets them right with nothing else will out-perform a beautiful site that misses them."},
+
+      {"type": "h3", "text": "1. It loads fast on a phone, on mobile data"},
+      {"type": "p", "html": "Roughly 68% of Australian traffic is mobile, and a meaningful share of it is on patchy connections. A site that takes six seconds on a train has lost most of those visitors before they see anything. Core Web Vitals have also been a Google ranking factor since 2021, so slow costs you twice: fewer people arrive, and fewer of those who do stay."},
+      {"type": "p", "html": "This is the single most common failure and the least discussed in sales conversations, because it is invisible on the designer's laptop. Test your own site on your phone on mobile data, not office wifi. Or run it through our <a href=\"/website-speed-checker/\" class=\"color-green-900\">speed checker</a>."},
+
+      {"type": "h3", "text": "2. It is obvious what you do and where you do it"},
+      {"type": "p", "html": "A visitor decides in a few seconds whether they are in the right place. \"Crafting exceptional digital experiences\" tells them nothing. \"Emergency plumber, Moonee Ponds and surrounds\" tells them everything."},
+      {"type": "p", "html": "The same sentence does double duty: it is what convinces the visitor and it is what Google matches against the search. Clever headlines cost you both."},
+
+      {"type": "h3", "text": "3. Contacting you takes one action"},
+      {"type": "p", "html": "A phone number in the header that dials when tapped. A form that asks for three fields, not eleven. If you take bookings, a booking button that is visible without scrolling."},
+      {"type": "p", "html": "Local service buyers overwhelmingly call rather than fill in forms. Burying the number in a footer is a conversion decision, whether or not anyone framed it as one."},
+
+      {"type": "h3", "text": "4. There is some proof you are real"},
+      {"type": "p", "html": "Photos of actual work, actual premises, actual people. Reviews. A real address or service area. An ABN. Anything that distinguishes you from the thousands of template sites with stock photography and no verifiable detail."},
+      {"type": "p", "html": "This matters more for small businesses than for large ones, because the visitor has never heard of you and is deciding whether you exist."},
+
+      {"type": "h3", "text": "5. Google can read it properly"},
+      {"type": "p", "html": "Semantic HTML, a sensible page title per page, structured data, a sitemap, clean URLs. Unglamorous and invisible to visitors, and it decides whether anyone ever arrives."},
+      {"type": "p", "html": "The important part is that this is built in during development, not added afterwards. Retrofitting SEO into a finished site costs more than doing it correctly the first time, which is why it so often gets sold back to you as a monthly retainer."},
+
+      {"type": "h2", "text": "What you are probably being sold that does not move the needle"},
+      {"type": "p", "html": "None of these are scams. They are real things that real developers build. They just rarely change whether a small business gets more enquiries, and they are frequently what separates a $3,000 quote from a $12,000 one."},
+      {"type": "table",
+        "headers": ["Commonly upsold", "Honest assessment"],
+        "rows": [
+          ["Homepage slider or carousel", "Most visitors never see slide two. Often slows the page down."],
+          ["Custom animations throughout", "Nice. Adds weight. No measurable effect on enquiries."],
+          ["A blog nobody will write", "Powerful if maintained, dead weight if not. Be honest about which."],
+          ["Live chat widget", "Only if someone answers it. Unanswered chat is worse than none."],
+          ["Ten pages when four would do", "Thin pages dilute rather than add. Depth beats count."],
+          ["Bespoke illustration set", "Real photos of your actual work convert better and cost less."],
+          ["Video background", "Heaviest thing on most pages. Hurts the metric in point one."]
+        ]
+      },
+      {"type": "p", "html": "The test for any of these is simple: does it help a visitor decide to contact you? If the honest answer is no, it is decoration. Decoration is fine when the five essentials are already handled and you have budget left."},
+
+      {"type": "h2", "text": "How many pages does a small business actually need?"},
+      {"type": "p", "html": "Fewer than most proposals suggest. Four well-written pages beat twelve thin ones, both for visitors and for Google, which treats thin duplicated pages as a quality problem rather than a coverage win."},
+      {"type": "table",
+        "headers": ["Business type", "Pages that earn their place"],
+        "rows": [
+          ["Sole trader, one service, one area", "3-5: home, about, service, contact"],
+          ["Multi-service trade", "6-10: one page per service, plus suburb pages"],
+          ["Clinic or practice", "8-12: per treatment, per practitioner, booking"],
+          ["Retail moving online", "Depends on catalogue, not on page count"]
+        ]
+      },
+      {"type": "p", "html": "The exception is genuine service or location pages, where each one targets a different search and earns its own traffic — the reasoning is in <a href=\"/blog/tradie-suburb-pages-seo/\" class=\"color-green-900\">why tradie websites need suburb pages</a>."},
+
+      {"type": "h2", "text": "A ten-minute audit of your current site"},
+      {"type": "p", "html": "Free, and it will tell you more than most paid audits."},
+      {"type": "ol", "items": [
+        "Open it on your phone on mobile data. Time how long until you can read something.",
+        "Show the homepage to someone who does not know your business. Ask them what you do and where. If they hesitate, the headline is the problem.",
+        "Try to call yourself from the site in one tap.",
+        "Search your business name plus your suburb. If you do not appear, start with <a href=\"/guides/get-your-business-on-google/\" class=\"color-green-900\">getting your business on Google</a>.",
+        "Count how many pages exist versus how many say something distinct."
+      ]},
+      {"type": "p", "html": "If three or more of those fail, the issue is structural rather than cosmetic. <a href=\"/small-business-website-redesign/\" class=\"color-green-900\">Redesign versus rebuild</a> covers which one that calls for."},
+
+      {"type": "h2", "text": "The uncomfortable summary"},
+      {"type": "p", "html": "A fast, clear, contactable, credible, properly-marked-up four-page website will out-earn a beautiful twelve-page site that loads slowly and buries the phone number. That is not an argument for spending less — it is an argument for spending on the right five things first."},
+      {"type": "p", "html": "Our own prices are published on the <a href=\"/pricing/\" class=\"color-green-900\">pricing page</a>, and the full checklist version of this lives at <a href=\"/small-business-website-checklist/\" class=\"color-green-900\">the small business website checklist</a>. If you want the market context on pricing, <a href=\"/affordable-website-design-small-business/\" class=\"color-green-900\">affordable website design for small business</a> covers where the money actually goes."},
+
+      {"type": "h2", "text": "Frequently asked questions"},
+      {"type": "faq", "q": "What does a small business website really need?", "a": "Five things: it loads fast on mobile, it is immediately obvious what you do and where, contacting you takes one action, there is visible proof the business is real, and the code is structured so Google can read it. A site with those five and nothing else will out-perform a far more elaborate site that misses them."},
+      {"type": "faq", "q": "How many pages should a small business website have?", "a": "Three to five for a sole trader with one service and one area. Six to ten for a multi-service trade, including genuine suburb pages. Eight to twelve for a clinic with multiple treatments or practitioners. Four strong pages beat twelve thin ones — Google treats thin near-duplicate pages as a quality problem, not extra coverage."},
+      {"type": "faq", "q": "Do I need a blog on my small business website?", "a": "Only if you will actually write it. A blog updated monthly builds real search visibility. A blog with three posts from 2023 signals an abandoned business. If nobody is committed to writing, leave it out — an empty blog costs you more credibility than not having one."},
+      {"type": "faq", "q": "Is a slow website really that big a problem?", "a": "Yes, and it costs you twice. Visitors leave before the page renders, and Google has used Core Web Vitals as a ranking factor since 2021, so fewer people find you in the first place. It is the most common serious fault and the least visible, because it looks fine on the designer's laptop and office wifi."},
+      {"type": "faq", "q": "What should I skip to keep the cost down?", "a": "Homepage carousels, video backgrounds, animation throughout, bespoke illustration, live chat you will not answer, and pages that exist only to pad the count. None of them measurably increase enquiries for a typical small business. Spend the budget on speed, clarity and proof instead."}
+    ]
+  },
   "average-cost-website-design-small-business": {
     lead:
       "The honest answer, before the caveats: the Australian market average for a small business website in 2026 sits between $6,500 and $10,000 AUD. But that single number hides a spread from $500 to $50,000 for briefs that read almost identically — and understanding what moves you along that line is worth more than the average itself.",
