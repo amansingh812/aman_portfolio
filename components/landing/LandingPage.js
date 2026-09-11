@@ -20,6 +20,7 @@
 import Layout from "@/components/layout/Layout"
 import BlogContent from "@/components/blog/BlogContent"
 import Image from "next/image"
+import Breadcrumbs from "@/components/elements/Breadcrumbs"
 import Link from "next/link"
 import { SITE, NAP } from "@/content/site"
 import { BUILD_TIERS, RETAINER } from "@/content/pricing"
@@ -175,6 +176,10 @@ export default function LandingPage({ page }) {
                 <div className="container">
                     <div className="row">
                         <div className={page.image ? "col-lg-7" : "col-lg-9"}>
+                            {/* Same trail as the BreadcrumbList JSON-LD above —
+                                keep them in sync or the markup describes
+                                something the user cannot see. */}
+                            <Breadcrumbs items={[{ name: page.breadcrumb || page.metaTitle }]} />
                             <span className="tag-1 bg-6 color-green-900">{page.eyebrow}</span>
                             <h1 className="text-heading-1 color-gray-900 mt-25 mb-20">{page.h1}</h1>
                             <p className="text-body-lead-large color-gray-600 mb-40">{page.lead}</p>

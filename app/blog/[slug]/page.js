@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 import Layout from "@/components/layout/Layout"
+import Breadcrumbs from "@/components/elements/Breadcrumbs"
 import BlogContent from "@/components/blog/BlogContent"
 import Image from "next/image"
 import Link from "next/link"
@@ -154,6 +155,8 @@ export default async function BlogPost({ params }) {
                                 </div>
                             </div>
                             <div className="col-lg-8 col-md-8 col-sm-10 col-9">
+                                {/* Matches the BreadcrumbList JSON-LD above. */}
+                                <Breadcrumbs items={[{ name: "Blog", href: "/blog/" }, { name: post.title }]} />
                                 <div className="text-summary">
                                     {article.lead || post.excerpt}
                                 </div>

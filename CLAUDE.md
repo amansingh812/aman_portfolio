@@ -104,6 +104,29 @@ Next.js") was being quoted verbatim in cold outreach from freelancers, it sat in
 the sitewide footer, and it contradicted the direct-access positioning. Do not
 recreate it without an explicit instruction.
 
+### Prices — single source of truth
+
+**`content/pricing.js` is the only place a price is defined.** Do not hardcode a
+figure in a page, a doc, or this file without checking it there first.
+
+Current (verify before quoting anywhere):
+
+| Package | AUD |
+|---|---|
+| Starter — 3–5 pages | **$800** |
+| Business — up to 10 pages | **$1,900** |
+| Unlimited pages | **$3,500** |
+| E-commerce / Application | **$4,500** |
+| Custom software | **from $5,000** |
+| Care + SEO retainer | **$250/month** |
+
+This section drifted once already: §3 and §4 carried $600/$2,000/$150 for weeks
+after the pricing model changed, and a scheduled social-content run read those
+numbers, published a week of posts quoting them, and stated "pricing matches
+site" while it did not. Quoting a price the site does not honour is misleading
+conduct, not a typo. **If you touch prices, update `content/pricing.js` and this
+table in the same sitting.**
+
 ### Honesty constraints (non-negotiable)
 
 - **No invented testimonials, client names, review counts, or metrics.** Australian
@@ -186,13 +209,13 @@ Full analysis: **`docs/COMPETITOR-DEEP-DIVE-AUG-2026.md`**. Summary:
 
 | | **Us** | Havealook | Growth Digital | Aussify |
 |---|---|---|---|---|
-| Entry price | **$600** | $995 | undisclosed | $900 |
-| Business site | **$2,000** | $1,995 | undisclosed | $2,300 |
+| Entry price | **$800** | $995 | undisclosed | $900 |
+| Business site | **$1,900** | $1,995 | undisclosed | $2,300 |
 | Stack | **Next.js / AI** | static HTML + own CMS | Shopify | WordPress |
 | Own the code | **Yes** | No | No | Source files |
 | Google reviews | **0** ⚠️ | **300 @ 4.8★** | 60+ | few |
 | Indexed pages | ~34 | ~80 | **1** | ~32 |
-| Monthly retainer | $150 maint. | SEO (quote) | Ads | **$225–1,499 SEO** |
+| Monthly retainer | $250 Care+SEO | SEO (quote) | Ads | **$225–1,499 SEO** |
 
 - **Havealook** is the real threat: 20 years, 300 reviews, $500/referral program,
   40 blog posts, named SEO case studies. Their wedge is *"Australian owned, not
@@ -223,9 +246,10 @@ The next six months are **not** a redesign. They are **authority**.
 2. **Reviews from all four real clients** — HS Race Gear, Mobile Armour, Autozenly,
    LT Finance. *Aman is asking all four.* This is the #1 blocker; nothing else moves
    the needle as much. Bar is low: Aussify ranks with 2 Clutch reviews.
-3. **`/website-pricing-australia/`** — dedicated page. Why agencies charge $10k,
-   why we're $2k, what's included, timeline, comparison table, FAQs. Every
-   competitor puts a price in their `<title>`; we bury ours.
+3. ~~**`/website-pricing-australia/`**~~ — **DONE.** Shipped as `/pricing/`
+   (title now leads with "Small Business Website Design Packages | From $800")
+   plus `/affordable-website-design-small-business/` and
+   `/how-much-does-a-website-cost-australia/`. Price is in the title on all three.
 4. **Trust-layer audit** — relabel concept builds, remove unverifiable metrics.
 
 **Wave 2 — the moat (weeks 6–16)**
@@ -272,7 +296,7 @@ Every article targets someone close to hiring. **Never** write "What is SEO?" or
 
 **Wave 6 — recurring revenue**
 Productise the retainer: maintenance · SEO · hosting · AI updates · analytics ·
-speed optimisation. Aussify runs $225–$1,499/mo; our $150 maintenance is thin.
+speed optimisation. Aussify runs $225–$1,499/mo against our single $250 Care + SEO plan.
 Even 30% attach rate creates predictable income and keeps us improving the work.
 
 **Also worth doing:** a **referral program** (Havealook pays $500/conversion — the

@@ -16,6 +16,7 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import Layout from "@/components/layout/Layout"
+import Breadcrumbs from "@/components/elements/Breadcrumbs"
 import { SITE } from "@/content/site"
 import { GUIDES, getGuide } from "@/content/guides"
 
@@ -91,6 +92,7 @@ export default async function GuidePage({ params }) {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-9">
+                            <Breadcrumbs items={[{ name: "Guides", href: "/guides/" }, { name: g.title }]} />
                             <span className="tag-1 bg-6 color-green-900">Guide</span>
                             <h1 className="text-heading-1 color-gray-900 mt-25 mb-20">{g.title}</h1>
                             <p className="text-body-text color-gray-500 mb-30">

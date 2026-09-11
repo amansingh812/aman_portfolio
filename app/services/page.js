@@ -178,6 +178,79 @@ export default function ServicesPage() {
                 </div>
             </section>
 
+            {/* ── WHICH SERVICE DO YOU NEED ──
+                Google flagged /services/ as "Duplicate without user-selected
+                canonical" because the hub was only a card grid repeating the
+                same SERVICE_ITEMS descriptions used in the navbar and on each
+                child page — nothing here that could not be found there.
+
+                This table is the fix, and it is a real one: choosing BETWEEN
+                services is a job only a hub can do. A visitor who does not yet
+                know whether they need a website or an application cannot be
+                helped by either individual page. */}
+            <section className="section-box mt-70">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-10 mx-auto">
+                            <span className="tag-1 bg-6 color-green-900">Not sure which?</span>
+                            <h2 className="text-heading-2 color-gray-900 mt-25 mb-20">
+                                Which of these do you actually need?
+                            </h2>
+                            <p className="text-body-lead-large color-gray-600 mb-40">
+                                Most enquiries start with a business problem rather than a service
+                                name. Find the row that sounds like yours.
+                            </p>
+
+                            <div className="table-responsive">
+                                <table style={{ width: "100%", borderCollapse: "collapse" }}>
+                                    <thead>
+                                        <tr style={{ borderBottom: "2px solid #004E56" }}>
+                                            <th className="text-body-lead color-gray-900" style={{ padding: 16, textAlign: "left" }}>
+                                                If this sounds like you
+                                            </th>
+                                            <th className="text-body-lead color-gray-900" style={{ padding: 16, textAlign: "left" }}>
+                                                Start here
+                                            </th>
+                                            <th className="text-body-lead color-gray-900" style={{ padding: 16, textAlign: "right" }}>
+                                                From
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {[
+                                            ["People cannot find us, or the site looks dated", "Web Development", "/services/web-development/", "$800"],
+                                            ["We have a site but it brings in no enquiries", "Marketing & SEO", "/services/marketing-seo/", "$250/mo"],
+                                            ["We want to sell online", "Web Development", "/ecommerce-development/", "$4,500"],
+                                            ["Customers keep asking for an app", "Mobile App Development", "/services/mobile-app-development/", "$4,500"],
+                                            ["Staff waste hours on repetitive admin", "AI & Automation", "/services/ai-automation/", "$900"],
+                                            ["Our process does not fit any off-the-shelf tool", "Custom Software", "/services/custom-software/", "$5,000"],
+                                            ["The site works but nobody is looking after it", "Maintenance & Support", "/services/maintenance-support/", "$250/mo"],
+                                        ].map(([problem, service, href, price]) => (
+                                            <tr key={problem} style={{ borderBottom: "1px solid #E4E7EC" }}>
+                                                <td className="text-body-text color-gray-700" style={{ padding: 16 }}>{problem}</td>
+                                                <td style={{ padding: 16 }}>
+                                                    <Link href={href} className="color-green-900 text-heading-6">{service}</Link>
+                                                </td>
+                                                <td className="text-body-text color-gray-600" style={{ padding: 16, textAlign: "right" }}>{price}</td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <p className="text-body-text color-gray-600 mt-25">
+                                Still unsure? Describe the problem rather than the solution on the{" "}
+                                <Link href="/contact/" className="color-green-900">contact page</Link>{" "}
+                                and we will tell you which one it is — including when the answer is
+                                that you do not need us yet. Every figure above is published in full
+                                on the{" "}
+                                <Link href="/pricing/" className="color-green-900">pricing page</Link>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* ── BUILT EXCLUSIVELY FOR YOU ── */}
             <section className="section-box">
                 <div className="container mt-70">
