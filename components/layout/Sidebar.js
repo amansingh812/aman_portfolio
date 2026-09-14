@@ -3,7 +3,7 @@ import { useState } from "react"
 import Link from "next/link"
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import 'react-perfect-scrollbar/dist/css/styles.css'
-import { NAV, CTA, SITE } from "@/content/site"
+import { NAV, CTA, SITE, NAP } from "@/content/site"
 
 const Sidebar = ({ openClass }) => {
 	const [openSub, setOpenSub] = useState(null)
@@ -59,8 +59,15 @@ const Sidebar = ({ openClass }) => {
 							<Link href={CTA.primary.href} className="btn btn-default hover-up icon-arrow-right w-100">
 								{CTA.primary.label}
 							</Link>
+							{/* Call button gets equal weight to the quote button in the mobile
+							    menu: on a phone, tapping to call is a lower-effort action than
+							    filling a form, and this menu is where mobile visitors look for
+							    contact details. E.164 href with no spaces — see Footer.js. */}
+							<a href={`tel:${NAP.phoneE164}`} data-loc="mobile-menu" className="btn btn-black hover-up w-100 mt-15">
+								Call {SITE.phone}
+							</a>
 							<p className="mt-20 text-body-text color-gray-500">
-								<a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+								<a href={`mailto:${SITE.email}`} data-loc="mobile-menu">{SITE.email}</a>
 							</p>
 						</div>
 						<div className="site-copyright color-gray-400">

@@ -174,6 +174,7 @@ export const FOOTER_COLUMNS = [
       { label: 'Web Design Brisbane', href: '/web-design-brisbane/' },
       { label: 'Web Design Perth', href: '/web-design-perth/' },
       { label: 'Web Design Adelaide', href: '/web-design-adelaide/' },
+      { label: 'Web Design Canberra', href: '/web-design-canberra/' },
     ],
   },
   {

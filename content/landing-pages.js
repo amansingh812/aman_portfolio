@@ -1815,11 +1815,11 @@ export const LANDING_PAGES = [
     slug: 'affordable-website-design-small-business',
     metaTitle: 'Affordable Website Design for Small Business AU',
     metaDescription:
-      'Affordable website design for Australian small business from $800 AUD. Published fixed prices, free homepage design before you commit, and you own the code.',
+      'Affordable website design for Australian small business from $800 AUD. Fixed published prices, no monthly fee, and you own the code. Free homepage design first.',
     eyebrow: 'Affordable',
     h1: 'Affordable Website Design for Small Business',
     lead:
-      'Most Australian agencies will not tell you a price until you have sat through a discovery call. Ours start at $800 and every figure is published on this page. You also get a free homepage design before you spend anything.',
+      'Most Australian agencies will not tell you a price until you have sat through a discovery call. Ours start at $800, every figure is published on this page, and there is no monthly fee afterwards because you own the code. You also get a free homepage design before you spend anything.',
     priceTiers: ['starter', 'business', 'unlimited'],
     schemaType: 'Service',
     breadcrumb: 'Affordable Website Design',
@@ -1834,6 +1834,24 @@ export const LANDING_PAGES = [
       { type: 'h2', text: 'What affordable actually means here' },
       { type: 'p', html: 'Affordable is a word every agency uses and almost none of them define. Here is our definition: a fixed price you can read before you contact us, no monthly platform fee, and full ownership of the code so you are never paying to stay.' },
       { type: 'p', html: 'A three to five page site is <strong>$800</strong>. Up to ten pages is <strong>$1,900</strong>. Unlimited pages is <strong>$3,500</strong>. E-commerce is <strong>$4,500</strong>. Those are the numbers, in AUD, before GST. Nothing changes unless the scope changes, and if it does we re-quote openly rather than quietly adding hours.' },
+
+      { type: 'h2', text: 'Cheap is a five-year number, not a sticker price' },
+      { type: 'p', html: 'There are cheaper quotes than ours in Australia. Some start under $400. If the sticker price is the only number you compare, we lose that comparison, so here is the number that actually decides what a website costs you.' },
+      { type: 'p', html: 'A website has two costs: what you pay to have it built, and what you pay every month afterwards to keep it online and keep it yours. The second one is the one nobody puts on their pricing page, and across five years it is usually the larger of the two.' },
+      { type: 'p', html: 'Work it out for any quote you are holding, including ours:' },
+      { type: 'p', html: '<strong>Five-year cost = build price + (monthly fee &times; 60) + the cost of rebuilding if you ever need to leave.</strong>' },
+      { type: 'table',
+        headers: ['', 'Budget build on a locked platform', 'Build First Site'],
+        rows: [
+          ['Build price', 'Often $400 - $900', '$800 (3-5 pages)'],
+          ['Monthly platform or CMS fee', 'Usually charged, ongoing', 'None - you host it'],
+          ['Hosting', 'Bundled into the monthly fee', 'Year one included, then free on Vercel for most small business sites'],
+          ['Do you get the source code?', 'Usually not', 'Yes - the repository is yours on launch day'],
+          ['Cost to move to another developer', 'A full rebuild', 'Hand over the repo'],
+        ]
+      },
+      { type: 'p', html: 'We have deliberately left the dollar figure out of the middle column. Monthly fees vary by provider and change over time, and inventing a number to make our column look better would be dishonest. Do the sum yourself instead: <strong>find the monthly fee on the quote you are comparing, multiply it by 60, and add it to the build price.</strong> That is the real comparison. If a provider will not tell you the monthly fee, or cannot tell you what happens to your site if you stop paying it, that is the answer.' },
+      { type: 'p', html: 'The other half of the sum is the exit cost. A site you do not own cannot be moved. When you outgrow the provider, or they raise the price, or they close, the only option is to pay to build it again. That risk is worth more than the few hundred dollars of difference at the start, and it is why we hand over the GitHub repository on launch day rather than renting you access to your own website. More on what drives the build price itself: <a href="/how-much-does-a-website-cost-australia/" class="color-green-900">what a website costs in Australia</a>.' },
 
       { type: 'h2', text: 'See your homepage designed before you pay anything' },
       { type: 'p', html: 'Choosing a web designer is mostly guesswork. You look at their portfolio, you hope your project turns out the same, and you find out after you have paid a deposit.' },
@@ -2071,6 +2089,81 @@ export const LANDING_PAGES = [
         a: 'No. Some people prefer one and we are happy to book it, but a written quote does not depend on it. Our prices are published precisely so you can assess us without sitting through a sales conversation.' },
       { type: 'faq', q: 'How quickly can you start?',
         a: 'Usually within a week of approving the scope. A three to five page site takes five to seven business days from there, up to ten pages two to three weeks, e-commerce four to six weeks. Full detail is on how long a website takes to build.' },
+    ],
+  }
+  ,
+  {
+    slug: 'web-design-canberra',
+    metaTitle: 'Web Design Canberra 2026 | From $800',
+    metaDescription:
+      'Web design Canberra from $800 AUD. Fixed published prices, free homepage design before you commit, local SEO included, and you own the code.',
+    eyebrow: 'Canberra, ACT',
+    h1: 'Web Design Canberra — Modern Websites From $800',
+    lead:
+      'Canberra businesses pay Sydney-adjacent rates for web design without the Sydney market choice. Our prices are published on this page and start at $800, and we will design your homepage free before you spend anything.',
+    priceTiers: ['starter', 'business', 'unlimited', 'ecommerce'],
+    schemaType: 'Service',
+    breadcrumb: 'Web Design Canberra',
+    areaServed: { '@type': 'City', name: 'Canberra' },
+    geo: { region: 'AU-ACT', placename: 'Canberra', latitude: -35.2809, longitude: 149.1300 },
+    related: [
+      { href: '/pricing/', label: 'All packages and prices' },
+      { href: '/web-design-sydney/', label: 'Web design Sydney' },
+      { href: '/affordable-website-design-small-business/', label: 'Affordable website design' },
+      { href: '/website-design-quote/', label: 'Get a fixed quote' },
+      { href: '/how-much-does-a-website-cost-australia/', label: 'What a website costs' },
+    ],
+    body: [
+      { type: 'h2', text: 'What a website costs in Canberra in 2026' },
+      { type: 'p', html: 'Canberra sits in an awkward place on price. Local agencies commonly quote $4,000 to $10,000 for a business website — close to Sydney rates — while the market has far fewer studios competing, so quotes are less disciplined than they would be in Melbourne or Brisbane.' },
+      { type: 'p', html: 'Ours are published and fixed: <strong>$800</strong> for three to five pages, <strong>$1,900</strong> for up to ten, <strong>$3,500</strong> for unlimited pages, <strong>$4,500</strong> for e-commerce. AUD, before GST, in writing before work starts. The wider market numbers are in <a href="/how-much-does-a-website-cost-australia/" class="color-green-900">what a website costs in Australia</a>.' },
+
+      { type: 'h2', text: 'See your homepage designed before you pay anything' },
+      { type: 'p', html: 'Tell us what the business does and we will design your homepage using your real name, services and photos — free, no deposit, no obligation. It is a design rather than a working site; the build starts only if you decide to go ahead. Ask from the <a href="/contact/" class="color-green-900">contact page</a>.' },
+
+      { type: 'h2', text: 'Canberra industries we build for' },
+      { type: 'ul', items: [
+        '<strong>Government-adjacent consulting and services.</strong> Canberra has an unusually high concentration of consultancies, contractors and professional services firms whose clients include federal departments. Those buyers judge credibility quickly, and a dated website costs you before the first conversation.',
+        '<strong>Trades across the ACT and Queanbeyan.</strong> Belconnen, Gungahlin, Woden, Tuggeranong and across the NSW border — suburb-level search is where trade work actually gets found.',
+        '<strong>Allied health and clinics.</strong> Canberra has a large, well-serviced healthcare sector where online booking is now expected rather than a differentiator.',
+        '<strong>Hospitality in Braddon, Kingston and Manuka.</strong> Direct bookings rather than commission to a platform.',
+        '<strong>Education and training providers.</strong> A university city with a steady market for course and enrolment sites.',
+      ]},
+
+      { type: 'h2', text: 'Why Canberra search is winnable' },
+      { type: 'p', html: 'Canberra is a smaller search market than the eastern capitals, and that works in your favour. There are fewer businesses competing for the same local terms, so a properly built site with correct local schema and suburb-level pages can reach page one faster here than the same effort would in Sydney.' },
+      { type: 'p', html: 'We include Google Business Profile setup and local schema in every Canberra project — the two things with the largest effect on appearing in the Maps pack for ACT searches. If you want to do that part yourself first, <a href="/guides/get-your-business-on-google/" class="color-green-900">our guide to getting your business on Google</a> walks through it free.' },
+
+      { type: 'h2', text: 'Canberra suburbs and regions we work across' },
+      { type: 'p', html: 'We work with businesses across <strong>Canberra City, Belconnen, Gungahlin, Woden Valley, Tuggeranong, Braddon, Kingston, Manuka, Dickson, Fyshwick, Mitchell</strong> and across the border in <strong>Queanbeyan</strong> and the wider ACT region.' },
+      { type: 'p', html: 'Delivery is remote, so your location within the ACT makes no difference to what we build or what it costs.' },
+
+      { type: 'h2', text: 'The timezone question' },
+      { type: 'p', html: 'Canberra runs on AEST/AEDT, the same clock as Sydney and Melbourne. Your day-to-day contact is in Australia on Australian hours, and work happens overnight your time — so questions sent in the afternoon are usually answered by the following morning.' },
+
+      { type: 'h2', text: 'What is included at every price' },
+      { type: 'ul', items: [
+        'Custom design — not a template with your logo dropped in',
+        'Mobile-first build, because roughly 68% of Australian traffic is mobile',
+        'SEO wired in during development: semantic HTML, structured data, meta, sitemap',
+        'Google Business Profile setup and local schema for ACT search',
+        'A CMS so you can edit your own content',
+        'Full ownership of the code, domain and hosting account',
+        'Hosting included for the first year',
+      ]},
+      { type: 'p', html: 'Nothing is withheld to make a cheaper tier look worse — the full breakdown is on the <a href="/pricing/" class="color-green-900">pricing page</a>.' },
+
+      { type: 'h2', text: 'Canberra web design questions' },
+      { type: 'faq', q: 'How much does a website cost in Canberra?',
+        a: 'Our published prices are $800 AUD for three to five pages, $1,900 for up to ten pages, $3,500 for unlimited pages and $4,500 for e-commerce. Canberra agencies commonly quote $4,000 to $10,000 for equivalent scope. Every quote is fixed in writing before work starts.' },
+      { type: 'faq', q: 'Are you based in Canberra?',
+        a: 'No. We work with Canberra businesses remotely and say so plainly rather than implying a local office. Your contact is in Australia on AEST hours, you get a live staging link from the first week, and the price is lower than a local agency carrying premises costs.' },
+      { type: 'faq', q: 'Can you help my Canberra business rank in Google Maps?',
+        a: 'Google Business Profile setup and local schema markup are included in every Canberra project, and those are the two elements with the biggest effect on Maps visibility. We cannot promise a specific ranking and anyone who does is guessing — what we can promise is that the technical foundation will not be what holds you back.' },
+      { type: 'faq', q: 'How long does a Canberra website take to build?',
+        a: 'Five to seven business days for three to five pages, two to three weeks for up to ten, four to six weeks for e-commerce. The biggest variable is how quickly you supply content — builds that run long are almost always waiting on copy or photos rather than on development.' },
+      { type: 'faq', q: 'Do I own the website?',
+        a: 'Completely. Source code, repository and hosting account in your name, deployed to your own Vercel account where possible. You can move to another developer at any time and nothing breaks. Several Australian agencies build on proprietary systems that require a rebuild to leave, and that is rarely disclosed upfront.' },
     ],
   }
 
