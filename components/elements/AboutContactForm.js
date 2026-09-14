@@ -1,5 +1,6 @@
 'use client'
 import { useState } from "react"
+import { track, EVENTS } from "@/lib/analytics"
 
 export default function AboutContactForm() {
     const [status, setStatus] = useState("idle")
@@ -16,6 +17,10 @@ export default function AboutContactForm() {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ ...form, source: "About page" }),
             })
+            // Fire only on a confirmed successful send — counting
+            // failed submissions as conversions would inflate the
+            // one number we are trying to make trustworthy.
+            if (res.ok) track(EVENTS.GENERATE_LEAD, { form_location: "About page" })
             setStatus(res.ok ? "sent" : "error")
         } catch {
             setStatus("error")

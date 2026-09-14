@@ -36,16 +36,16 @@ const Footer = () => {
 					<div className="col-lg-2 col-md-4 col-sm-6 mb-30">
 						<h4 className="text-heading-5">Contact</h4>
 						<div className="mt-20 text-body-text color-gray-600 mb-10">
-							<a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+							<a href={`mailto:${SITE.email}`} data-loc="footer">{SITE.email}</a>
 						</div>
 						<div className="text-body-text color-gray-600 mb-10">
 							{/* href must be E.164 with no spaces — spaces in a tel: URI
 							    break click-to-call on some Android handsets. Display
 							    the readable version, dial the strict one. */}
-							<a href={`tel:${NAP.phoneE164}`}>{SITE.phone}</a>
+							<a href={`tel:${NAP.phoneE164}`} data-loc="footer">{SITE.phone}</a>
 						</div>
 						<div className="text-body-text color-gray-600">
-							<a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp →</a>
+							<a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer" data-loc="footer">WhatsApp →</a>
 						</div>
 					</div>
 				</div>

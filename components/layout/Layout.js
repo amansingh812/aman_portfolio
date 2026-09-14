@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import BackToTop from "../elements/BackToTop"
+import ConversionTracker from "../analytics/ConversionTracker"
 import Footer from "./Footer"
 import Header from "./Header"
 import Sidebar from "./Sidebar"
@@ -30,6 +31,9 @@ const Layout = ({ children, headerStyle }) => {
 			</main>
 			<Footer />
 			<BackToTop />
+			{/* One delegated listener for every phone / WhatsApp /
+			    Calendly / mailto link on the site. Renders nothing. */}
+			<ConversionTracker />
 		</>
 	)
 }
