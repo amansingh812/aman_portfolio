@@ -14,13 +14,36 @@ export async function generateMetadata({ params }) {
     const { slug } = await params;
     const p = getIndustryPage(slug);
     if (!p) return {};
+    const canonical = p.canonicalTo || `/industries/${p.slug}/`
     return {
-        title: p.metaTitle,
+        // ABSOLUTE — the root layout applies `%s | Build First Site`. Left as
+        // a plain string, all 8 industry titles rendered at 85-97 characters,
+        // past the point Google truncates, and `startups-saas` (whose metaTitle
+        // already ended in the brand) rendered it twice. This is the same fix
+        // already applied to blog, guides and landing pages; industries were
+        // missed.
+        title: { absolute: p.metaTitle },
         description: p.metaDescription,
         // `canonicalTo` defers to the matching commercial landing page where
         // one exists — Google already treats these as duplicates and picks the
         // landing page, so we declare that rather than compete with ourselves.
-        alternates: { canonical: p.canonicalTo || `/industries/${p.slug}/` },
+        alternates: { canonical },
+        // Without this block every industry page inherited the ROOT layout's
+        // openGraph, so a shared link previewed as the generic site card and
+        // carried `og:url = https://buildfirstsite.com/` — pointing at the
+        // homepage rather than the page being shared. Verified live on
+        // /industries/real-estate/ before fixing.
+        //
+        // og:url matches the canonical, not the request URL: where a page
+        // defers via canonicalTo, the shared link should resolve to the page we
+        // actually want ranked.
+        openGraph: {
+            title: p.metaTitle,
+            description: p.metaDescription,
+            url: `https://buildfirstsite.com${canonical}`,
+            type: "website",
+            locale: "en_AU",
+        },
     };
 }
 

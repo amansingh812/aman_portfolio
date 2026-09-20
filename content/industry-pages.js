@@ -133,7 +133,7 @@ export const INDUSTRY_PAGES = [
   {
     slug: "startups-saas",
     title: "Startups & SaaS",
-    metaTitle: "Startup & SaaS Development Australia | MVPs, Product Builds | Build First Site",
+    metaTitle: "Startup & SaaS Development Australia | MVPs, Product Builds",
     metaDescription: "MVP and SaaS development for Australian startups. Ship fast, iterate, scale. React, Next.js, AI. Fixed AUD pricing from $5,000.",
     hero: "Ship the MVP. Learn. Iterate.",
     intro: "Most startup ideas fail not because they are bad, but because they take too long and cost too much to test. We build MVPs and early-stage SaaS products fast, on a modern stack, so you can get in front of real users and learn before you run out of runway. Fixed pricing, full code ownership, no lock-in.",

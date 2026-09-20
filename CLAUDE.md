@@ -127,6 +127,39 @@ site" while it did not. Quoting a price the site does not honour is misleading
 conduct, not a typo. **If you touch prices, update `content/pricing.js` and this
 table in the same sitting.**
 
+### Template demo pages — the Sep 2026 incident
+
+**Before claiming the Agon template leftovers are gone, enumerate the routes.**
+
+On 21 Sep 2026, nine demo routes were still live in production, eleven weeks
+after a task marked "strip unused Agon demo pages" was closed as complete:
+`/page-about-1/`, `/page-service-1/`, `/page-contact/`, `/page-faqs-1/`,
+`/page-pricing-1/`, `/page-terms/`, `/blog-1/`, `/blog-2/`, `/blog-single/`.
+
+They were not in any sitemap and not in the nav, which is why they went
+unnoticed — and entirely reachable, which is why that did not matter. They
+carried testimonials attributed to **Louis Vuitton, Nintendo, Starbucks and
+Bank of America**, forty stock-photo staff profiles, "Countries / Offices" and
+"Constant Clients" counters, a "Join Our Team" CTA, and lorem ipsum.
+
+Worse, `/guides/` — linked from the footer Resources column on every page —
+was a one-line re-export of the demo blog grid. Every visitor who clicked
+"Guides" anywhere on the site got placeholder cards and a fictional author
+dated August 25, 2022.
+
+Two rules from this:
+
+1. **A route that is not in the sitemap is still public.** Absence from the
+   sitemap and nav hides a page from *us*, not from visitors, crawlers or
+   anyone who is sent the URL. Audit `find app -name page.js`, not the sitemap.
+2. **Never ship a template shell as a placeholder on a real route.** The
+   `/guides/` re-export was meant to be temporary and survived the entire
+   rebuild. If real content is not ready, the route does not go live.
+
+Fabricated testimonials are the §1 misleading-conduct risk, not a cosmetic
+defect — the fact that they arrived with a purchased template changes nothing
+about how Australian Consumer Law reads them.
+
 ### Honesty constraints (non-negotiable)
 
 - **No invented testimonials, client names, review counts, or metrics.** Australian

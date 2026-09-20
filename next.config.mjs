@@ -59,6 +59,36 @@ const nextConfig = {
       { source: '/web-design-denver/', destination: '/pricing/', permanent: true },
       { source: '/web-design-phoenix/', destination: '/pricing/', permanent: true },
       { source: '/web-design-nashville/', destination: '/pricing/', permanent: true },
+
+      // ── Agon template demo pages, removed 21 Sep 2026 ──────────────────
+      // Nine routes shipped with the Agon template and were never stripped
+      // (the earlier "strip unused demo pages" pass missed them). They were
+      // live on the production domain, crawlable, and carried:
+      //   - a "Join Our Team" CTA, which is the likeliest current source of
+      //     the freelancer cold outreach — /join/ is gone but this was not
+      //   - "+count Years in Business", "Countries / Offices", "Constant
+      //     Clients" counters implying an office network and a headcount
+      //   - 40 stock-photo staff profiles ("Theresa Webb, Marketing CEO")
+      //   - testimonials attributed to Louis Vuitton, Nintendo, Starbucks
+      //     and Bank of America
+      //   - lorem ipsum body copy
+      //
+      // The fabricated testimonials and client names are the serious part:
+      // CLAUDE.md §1 forbids them outright because Australian Consumer Law
+      // treats invented testimonials as misleading conduct. They were not
+      // in any sitemap and not linked from the real nav, but they were
+      // publicly reachable, which is what matters.
+      //
+      // 301 rather than 404 — Google had crawled at least /page-terms.
+      { source: '/page-about-1/', destination: '/about/', permanent: true },
+      { source: '/page-service-1/', destination: '/services/', permanent: true },
+      { source: '/page-contact/', destination: '/contact/', permanent: true },
+      { source: '/page-faqs-1/', destination: '/contact/', permanent: true },
+      { source: '/page-pricing-1/', destination: '/pricing/', permanent: true },
+      { source: '/page-terms/', destination: '/terms/', permanent: true },
+      { source: '/blog-1/', destination: '/blog/', permanent: true },
+      { source: '/blog-2/', destination: '/blog/', permanent: true },
+      { source: '/blog-single/', destination: '/blog/', permanent: true },
     ];
   },
 };
