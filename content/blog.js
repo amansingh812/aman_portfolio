@@ -24,9 +24,17 @@ export const BLOG_POSTS = [
   },
   {
     slug: "website-cost-australia",
+    // CANNIBALISATION FIX (21 Sep 2026). This post's metaTitle was
+    // character-for-character identical to /how-much-does-a-website-cost-australia/
+    // — two pages telling Google they answer the same query, on the same
+    // site, with no canonical between them. GSC showed both competing:
+    // the landing page at position 94 and this at 91.8. Retitled to a
+    // genuinely different angle (what changed this year) and pointed at
+    // the landing page, which is the one we want to own the head term.
+    canonicalTo: "/how-much-does-a-website-cost-australia/",
     metaDescription: "What a website really costs in Australia in 2026. DIY, freelancer and agency prices in AUD, ongoing costs, and what actually drives the number.",
-    metaTitle: "How Much Does a Website Cost in Australia? (2026)",
-    title: "How Much Does a Website Cost in Australia? (2026 Price Guide)",
+    metaTitle: "Website Cost Australia: What Changed in 2026",
+    title: "Website Cost in Australia: What Changed in 2026",
     excerpt: "A clear 2026 breakdown of website costs in Australia — DIY, freelancer and agency prices, ongoing costs, and what drives the price in real AUD numbers.",
     category: "Pricing Guide",
     date: "2026-07-20",
@@ -72,9 +80,14 @@ export const BLOG_POSTS = [
   },
   {
     slug: "how-long-to-build-a-website",
+    // Second duplicate-title pair found by the sitewide sweep on
+    // 21 Sep 2026 — identical metaTitle to the landing page at
+    // /how-long-does-it-take-to-build-a-website/. Same fix: give the
+    // post its own angle and let the landing page own the query.
+    canonicalTo: "/how-long-does-it-take-to-build-a-website/",
     metaDescription: "Realistic 2026 timelines for a landing page, business site and online store in Australia — plus what speeds a build up or slows it down.",
-    metaTitle: "How Long Does It Take to Build a Website? (2026)",
-    title: "How Long Does It Take to Build a Website? (2026 Australia Guide)",
+    metaTitle: "Website Build Timeline Australia: Week by Week",
+    title: "How Long a Website Build Actually Takes, Week by Week",
     excerpt: "Realistic timelines for a landing page, business site and e-commerce store in 2026 — plus what speeds a build up or slows it down in Australia.",
     category: "Guide",
     date: "2026-08-03",

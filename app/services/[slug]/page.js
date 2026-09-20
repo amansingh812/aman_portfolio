@@ -14,10 +14,25 @@ export async function generateMetadata({ params }) {
     const { slug } = await params;
     const s = getServicePage(slug);
     if (!s) return {};
+    const canonical = `/services/${s.slug}/`
     return {
-        title: s.metaTitle,
+        // ABSOLUTE \u2014 the root layout applies `%s | Build First Site`. Left as a
+        // plain string it appended the brand a second time to metaTitles that
+        // already ended in it: mobile-app-development rendered at 100 characters
+        // with the brand twice. Same defect that was in the industries route.
+        title: { absolute: s.metaTitle },
         description: s.metaDescription,
-        alternates: { canonical: `/services/${s.slug}/` },
+        alternates: { canonical },
+        // Without this, service pages inherited the ROOT layout's openGraph, so
+        // a shared link previewed as the generic site card with
+        // og:url = the homepage rather than the page being shared.
+        openGraph: {
+            title: s.metaTitle,
+            description: s.metaDescription,
+            url: `https://buildfirstsite.com${canonical}`,
+            type: "website",
+            locale: "en_AU",
+        },
     };
 }
 

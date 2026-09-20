@@ -738,6 +738,7 @@ export const LANDING_PAGES = [
     lead:
       'Short answer: a landing page starts at $800 AUD, a business website at $1,900 AUD, and a custom e-commerce store at $4,500 AUD. But there is a lot more to the picture.',
     priceTiers: [],
+    lastUpdated: '2026-09-21',
     schemaType: 'Article',
     breadcrumb: 'How Much Does a Website Cost in Australia?',
     related: [
@@ -831,6 +832,7 @@ export const LANDING_PAGES = [
     lead:
       'The honest answer is: it depends on your stage. This guide breaks down the real AUD cost over five years, SEO performance, and long-term trade-offs of Wix vs a custom-built website — so you can decide without a sales pitch.',
     priceTiers: [],
+    lastUpdated: '2026-09-21',
     schemaType: 'Article',
     breadcrumb: 'Wix vs Custom Website',
     related: [
@@ -917,6 +919,7 @@ export const LANDING_PAGES = [
     lead:
       'Everything your small business website needs before it goes live — from domain and hosting through to SEO, speed, legal pages, and analytics. Work through each section and you will have a site that actually works for your business.',
     priceTiers: [],
+    lastUpdated: '2026-09-21',
     schemaType: 'Article',
     breadcrumb: 'Small Business Website Checklist',
     related: [
@@ -1020,11 +1023,11 @@ export const LANDING_PAGES = [
     slug: 'hire-website-builder',
     image: '/assets/imgs/page/landing/hire-website-builder.webp',
     imageAlt: 'Working directly with a website builder reviewing a design together',
-    metaTitle: 'Website Developers for Small Business Australia',
+    metaTitle: 'Hire Someone to Build a Website in Australia (From $800)',
     metaDescription:
-      'Website developers for small business across Australia. Fixed prices from $800 AUD, custom Next.js builds, free homepage design, and you own the code.',
+      'Hire someone to build your website without going through Upwork or Fiverr. Fixed AUD prices from $800, free homepage design first, and you own the code.',
     eyebrow: 'Australia · Professional Website Builder',
-    h1: 'Need someone to build your website?',
+    h1: 'Hire someone to build your website',
     lead:
       'We are website developers for small business — no templates, no page builders, no monthly fees. Fixed prices from $800, and we will design your homepage free before you commit so you can judge the work on your own business first.',
     priceTiers: ['starter', 'business', 'ecommerce', 'custom-software'],
@@ -1038,6 +1041,43 @@ export const LANDING_PAGES = [
     body: [
       { type: 'h2', text: 'What website developers for small business should actually give you' },
       { type: 'p', html: 'Most small businesses do not need an agency. They need a developer who returns calls, quotes a fixed number, and hands over the code at the end. That is the whole job, and it is what this page is about. Our prices are published on the <a href="/pricing/" class="color-green-900">pricing page</a> and start at $800, and the <a href="/affordable-website-design-small-business/" class="color-green-900">affordable small business page</a> explains how that number is possible.' },
+      { type: 'h2', text: 'Where can you hire someone to build a website?' },
+      { type: 'p', html: 'There are four realistic routes in Australia, and the honest differences between them are rarely written down by the people selling each one. Here they are.' },
+      { type: 'table',
+        headers: ['Where', 'Typical price', 'What you are actually getting', 'Main risk'],
+        rows: [
+          ['Freelance marketplace (Upwork, Fiverr, Freelancer)', 'Lowest advertised', 'A bidding pool. You screen and manage the person yourself.', 'Quality varies enormously and the platform takes a cut of every dollar. Vetting is entirely on you.'],
+          ['Local task platform (Airtasker)', 'Low', 'Someone nearby who does websites among other things.', 'Rarely a specialist. Ongoing support after launch is unlikely.'],
+          ['Platform marketplace (Wix, Squarespace partners)', 'Mid', 'A certified builder \u2014 for that platform only.', 'The result is locked to that platform, and the monthly fee never stops.'],
+          ['Direct with a developer or small studio', 'Mid', 'One person accountable end to end.', 'You have to find a good one. Harder to compare on price alone.'],
+        ]
+      },
+      { type: 'p', html: 'We are the fourth. We are not going to pretend the marketplaces are useless \u2014 if you need a logo tweaked or one page changed, Fiverr is genuinely the right tool and we would rather you used it. The case for hiring directly is a business website you intend to keep for years, where somebody needs to still be there in month eight when you want a new page.' },
+
+      { type: 'h2', text: 'How much does it cost to hire someone to build a website?' },
+      { type: 'p', html: 'Our prices are published rather than quoted on request: <strong>$800</strong> for three to five pages, <strong>$1,900</strong> for up to ten, <strong>$3,500</strong> with no page cap, <strong>$4,500</strong> for e-commerce. AUD, before GST, fixed before work starts. The full breakdown is on the <a href="/pricing/" class="color-green-900">pricing page</a>, and <a href="/how-much-does-a-website-cost-australia/" class="color-green-900">what a website costs in Australia</a> covers the wider market including what agencies charge.' },
+      { type: 'p', html: 'Two costs people forget when comparing quotes. First, the monthly fee \u2014 a marketplace build on Wix or Squarespace carries one indefinitely, and over five years that usually exceeds the build price. Second, the exit cost: if you do not own the code, moving to another developer means building it again. Both are covered in the <a href="/affordable-website-design-small-business/" class="color-green-900">five-year cost comparison</a>.' },
+
+      { type: 'h2', text: 'What to have ready before you hire anyone' },
+      { type: 'p', html: 'The single biggest cause of a website project going over time and over budget is not the developer. It is starting without knowing what the site is for. Half an hour on this list will save you weeks:' },
+      { type: 'ol', items: [
+        '<strong>One sentence on what the site must do.</strong> Get enquiries, take bookings, sell products, or be somewhere credible to send people. These lead to different builds.',
+        '<strong>Your page list.</strong> Home, About, Services, Contact is four. Every service on its own page is more. Page count is what most fixed prices are based on, including ours.',
+        '<strong>Who writes the words.</strong> The most common reason a build stalls is waiting on content from the client. Decide upfront whether that is you or the developer.',
+        '<strong>Photos.</strong> Real photos of your work, premises or team beat stock every time. If you do not have them, budget for a photographer or say so early.',
+        '<strong>Anything it has to connect to.</strong> Booking system, payment gateway, CRM, accounting software. These change the quote and are expensive to bolt on afterwards.',
+      ]},
+
+      { type: 'h2', text: 'What to check before you pay a deposit' },
+      { type: 'ul', items: [
+        '<strong>Ask who owns the code.</strong> Get it in writing. If the answer is vague, or the site only works on their hosting, you are renting.',
+        '<strong>Open two of their past sites on your phone.</strong> Not the portfolio screenshots \u2014 the live sites. Most Australian traffic is mobile and this takes thirty seconds.',
+        '<strong>Ask what happens after launch.</strong> Who fixes a broken form in month three, and at what price.',
+        '<strong>Ask for a fixed number and a written scope.</strong> An hourly estimate with no cap is not a quote.',
+        '<strong>Check they will still be contactable.</strong> A marketplace account that goes quiet is a real risk and the platform will not rebuild your site for you.',
+      ]},
+      { type: 'p', html: 'A fuller version of this is in our guide on <a href="/guides/how-to-choose-a-web-developer/" class="color-green-900">how to choose a web developer</a>, and <a href="/freelancer-vs-web-design-agency/" class="color-green-900">freelancer vs agency</a> covers the trade-off if you are weighing a bigger shop.' },
+
       { type: 'h2', text: 'Why hire a website builder instead of doing it yourself?' },
       { type: 'p', html: '<a href="/wix-vs-custom-website/" class="color-green-900">Wix</a> and <a href="/squarespace-vs-custom-website/" class="color-green-900">Squarespace</a> look easy — until you need something they can\'t do. Here is what you actually get when you hire a professional website builder instead.' },
       { type: 'table', headers: ['', 'Hire Build First Site', 'DIY (Wix / Squarespace)'], rows: [
@@ -1072,6 +1112,14 @@ export const LANDING_PAGES = [
       { type: 'p', html: 'Before you hire anyone: <a href="/freelancer-vs-web-design-agency/" class="color-green-900">freelancer vs agency</a>, <a href="/how-much-does-a-website-cost-australia/" class="color-green-900">what a website costs</a>.' },
 
       { type: 'h2', text: 'Common questions' },
+      { type: 'faq', q: 'What is the average cost to hire someone to build a website?',
+        a: 'In Australia, roughly $800 to $5,000 AUD for a small business site built by an independent developer or small studio, and $5,000 to $15,000 from a full agency for the same scope. Marketplace freelancers advertise lower, often $200 to $1,500, with quality that varies more than the price does. Our published prices are $800 for three to five pages, $1,900 for up to ten, $3,500 uncapped and $4,500 for e-commerce, before GST.' },
+      { type: 'faq', q: 'Can I hire someone to build a website for me?',
+        a: 'Yes, and you do not need to understand any of the technical side to do it. Tell us what the business does and what you want the site to achieve, and you get a written scope with a fixed AUD price within one business day. We design your homepage before you commit to anything, so you can judge the work rather than the pitch.' },
+      { type: 'faq', q: 'Can ChatGPT build me a website?',
+        a: 'It can produce a working page, and for a personal project or a rough prototype that is genuinely useful. What it does not do is decide what your business needs the site to say, write copy that reflects how you actually sell, handle hosting and domains, set up the technical SEO, or be responsible when a form stops delivering enquiries six months later. AI is part of how we build too \u2014 it is a tool in the process, not a replacement for someone being accountable for the result.' },
+      { type: 'faq', q: 'Where can I hire someone to build a website near me?',
+        a: 'For most small business websites, proximity matters less than it used to \u2014 the work is done remotely and reviewed on a live link either way. What matters is a local point of contact in your timezone, which is what we have: your day-to-day contact is in Australia. We build for businesses in Sydney, Melbourne, Brisbane, Perth, Adelaide and Canberra, and you can see the city pages in the footer.' },
       { type: 'faq', q: 'Can I hire someone to build a website for my small business?',
         a: 'Yes, and that is exactly what we do. You tell us what the business needs, we send a written scope with a fixed AUD price within one business day, and we design your homepage free before you commit to anything. Prices start at $800 for three to five pages. You are hiring the person who writes the code, not an account manager.' },
       { type: 'faq', q: 'How much does it cost to hire a website builder in Australia?',
@@ -1098,6 +1146,7 @@ export const LANDING_PAGES = [
     lead:
       'The honest answer: 2–3 weeks for most business websites, 4–6 weeks for e-commerce, and longer for complex web apps. Here is what those timelines actually look like — and what makes projects run long.',
     priceTiers: [],
+    lastUpdated: '2026-09-21',
     schemaType: 'Article',
     breadcrumb: 'How Long Does It Take to Build a Website?',
     related: [

@@ -10,17 +10,22 @@ export default function BlogContent({ blocks }) {
     if (!blocks?.length) return null
 
     return (
-        <div className="single-detail-blocks">
+        // maxWidth caps the line length. The body column is col-lg-10, which
+        // is ~1100px on a desktop container — roughly 150 characters a line,
+        // about double the 50-75 that people actually read comfortably. Long
+        // measure is the main reason a well-written page still feels like hard
+        // work. Tables here are 3-4 columns and sit inside this width fine.
+        <div className="single-detail-blocks" style={{ maxWidth: 760, marginInline: "auto" }}>
             {blocks.map((b, i) => {
                 switch (b.type) {
                     case "h2":
-                        return <h2 key={i} className="text-heading-3 mt-40 mb-15">{b.text}</h2>
+                        return <h2 key={i} className="text-heading-3 mt-55 mb-20">{b.text}</h2>
                     case "h3":
-                        return <h3 key={i} className="text-heading-4 mt-30 mb-15">{b.text}</h3>
+                        return <h3 key={i} className="text-heading-4 mt-35 mb-15">{b.text}</h3>
                     case "p":
                         return (
                             <p key={i}
-                                className="text-body-lead color-gray-600 mb-15"
+                                className="text-body-lead color-gray-600 mb-20"
                                 dangerouslySetInnerHTML={{ __html: b.html }} />
                         )
                     case "ul":
@@ -40,13 +45,6 @@ export default function BlogContent({ blocks }) {
                                         dangerouslySetInnerHTML={{ __html: it }} />
                                 ))}
                             </ol>
-                        )
-                    case "image":
-                        return (
-                            <div key={i} className="mt-30 mb-30 text-center">
-                                <Image src={b.src} alt={b.alt || "Blog image"} width={b.width || 1200} height={b.height || 675} style={{ borderRadius: 12, maxWidth: '100%', height: 'auto' }} />
-                                {b.caption && <p className="text-body-small color-gray-500 mt-10" style={{ fontStyle: 'italic' }}>{b.caption}</p>}
-                            </div>
                         )
                     case "table":
                         return (
@@ -81,9 +79,13 @@ export default function BlogContent({ blocks }) {
                        describes content a user cannot see is a violation. */
                     case "faq":
                         return (
-                            <div key={i} className="mt-30 mb-30">
-                                <h3 className="text-heading-5 color-gray-900 mb-15">{b.q}</h3>
-                                <p className="text-body-text color-gray-600">{b.a}</p>
+                            <div
+                                key={i}
+                                className="pt-25 pb-5"
+                                style={{ borderTop: "1px solid #E4E7EC" }}
+                            >
+                                <h3 className="text-heading-6 color-gray-900 mb-10">{b.q}</h3>
+                                <p className="text-body-text color-gray-600 mb-0">{b.a}</p>
                             </div>
                         )
                     /* In-body image. `alt` is REQUIRED — a decorative image in

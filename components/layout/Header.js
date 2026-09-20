@@ -51,47 +51,55 @@ const Header = ({ handleOpen, headerStyle }) => {
 							</div>
 						</div>
 					</div>
-					{/* flexShrink: 0 on the right-hand column. Without it the nav
-					    (which has shrinkable whitespace) wins the flex negotiation and
-					    squeezes this column until the phone number wraps one digit
-					    group per line and the button breaks across two. The number and
-					    the button are fixed-size content — they should never be the
-					    thing that gives. */}
-					<div className="header-right" style={{ flexShrink: 0 }}>
+					{/* RIGHT-HAND COLUMN — sizing matters here.
+
+					    The first version of this rendered the full phone number
+					    as text next to a full-size "Get a quote" button. Between
+					    them they were wide enough that the row could not fit the
+					    container: first the number wrapped one digit group per
+					    line, and after that was forced with nowrap the whole
+					    header overflowed and gave every page a horizontal
+					    scrollbar. Both were my changes and both were the same
+					    mistake — adding width to a row that had none spare.
+
+					    Now: the phone is an icon only, and the CTA is compact.
+					    The number itself lives in the footer, on the contact
+					    page, and in the mobile menu's full-width Call button,
+					    so nothing is lost by not printing it in the header —
+					    the tap target and the tel: link are what actually
+					    matter here.
+
+					    minWidth: 0 lets the nav absorb any remaining pressure
+					    instead of pushing this column off-screen. */}
+					<div className="header-right" style={{ flexShrink: 0, minWidth: 0 }}>
 						<div className="block-signin d-flex align-items-center" style={{ flexWrap: 'nowrap' }}>
-							{/* Click-to-call. Local service buyers phone rather than fill in
-							    a form, and until now the only number on the site sat in the
-							    footer — below the fold on every page. The competitor that
-							    outranks us puts a dial button in the hero.
-
-							    The visible number is shown only at widths where it fits:
-							    hidden under 768 (icon only — the mobile menu carries a full
-							    Call button), shown 768-1199 while the nav is collapsed to a
-							    burger, hidden again 1200-1399 where the full desktop nav
-							    appears and space is tightest, shown from 1400 up. The icon and
-							    the tel: link are always present, so the number is always
-							    dialable even when the digits are not drawn.
-
-							    All of that is CSS breakpoints, never JS reading
-							    window.innerWidth, so server and client render identical markup
-							    and there is no hydration mismatch.
+							{/* Icon-only click-to-call. aria-label and title carry the
+							    number so screen readers announce it and hovering shows
+							    it — the information is present, just not drawn as text.
 
 							    href is E.164 with no spaces: spaces in a tel: URI break
-							    click-to-call on some Android handsets. Display readable, dial
-							    strict. data-loc feeds the GA4 phone_click event. */}
+							    click-to-call on some Android handsets.
+
+							    44x44 hit area meets the WCAG 2.5.8 minimum target size;
+							    an 18px icon on its own would not. data-loc feeds the GA4
+							    phone_click event. */}
 							<a
 								href={`tel:${NAP.phoneE164}`}
 								data-loc="header"
-								className="color-gray-900 text-body-lead mr-20 d-inline-flex align-items-center"
+								className="color-gray-900 d-inline-flex align-items-center justify-content-center mr-10"
 								aria-label={`Call Build First Site on ${SITE.phone}`}
-								style={{ whiteSpace: 'nowrap', flexShrink: 0 }}
+								title={SITE.phone}
+								style={{ width: 44, height: 44, flexShrink: 0 }}
 							>
-								<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false" style={{ flexShrink: 0 }}>
+								<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
 									<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
 								</svg>
-								<span className="ml-5 d-none d-md-inline d-xl-none d-xxl-inline">{SITE.phone}</span>
 							</a>
-							<Link href={CTA.primary.href} className="btn btn-default hover-up icon-arrow-right" style={{ whiteSpace: 'nowrap', flexShrink: 0 }}>
+							<Link
+								href={CTA.primary.href}
+								className="btn btn-default hover-up"
+								style={{ whiteSpace: 'nowrap', flexShrink: 0, padding: '10px 20px', fontSize: 15 }}
+							>
 								{CTA.primary.label}
 							</Link>
 						</div>

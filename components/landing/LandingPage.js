@@ -82,8 +82,38 @@ export default function LandingPage({ page }) {
 
     const faqs = (page.body || []).filter((b) => b.type === "faq")
 
+    // ARTICLE vs SERVICE — these need different property sets.
+    //
+    // Until 21 Sep 2026 this emitted `@type: page.schemaType` with the SERVICE
+    // shape underneath it regardless. So the four pages declaring
+    // `schemaType: 'Article'` output an Article carrying name/provider/
+    // areaServed and NO headline, datePublished, dateModified or author —
+    // every property Google actually requires. Verified in the live DOM:
+    // `datePublished: MISSING`. An invalid Article cannot produce a rich
+    // result and cannot put a date in the SERP, which matters because every
+    // page-one competitor for our cost queries is date-stamped and we were
+    // the only undated result (docs/COST-PAGE-DEEP-DIVE-2026-09-18.md §3).
+    const isArticle = page.schemaType === "Article"
+    const published = page.datePublished || "2026-08-08"
+    const modified = page.lastUpdated || published
+
     const jsonLd = [
-        {
+        isArticle
+            ? {
+                "@context": "https://schema.org",
+                "@type": "Article",
+                headline: page.metaTitle,
+                description: page.metaDescription,
+                url,
+                mainEntityOfPage: { "@type": "WebPage", "@id": url },
+                datePublished: published,
+                dateModified: modified,
+                author: { "@type": "Organization", name: "Build First Site", url: "https://buildfirstsite.com/" },
+                publisher: { "@id": "https://buildfirstsite.com/#organization" },
+                inLanguage: "en-AU",
+                ...(page.image && { image: `https://buildfirstsite.com${page.image}` }),
+            }
+            : {
             "@context": "https://schema.org",
             "@type": page.schemaType || "Service",
             name: page.metaTitle,
@@ -182,7 +212,24 @@ export default function LandingPage({ page }) {
                             <Breadcrumbs items={[{ name: page.breadcrumb || page.metaTitle }]} />
                             <span className="tag-1 bg-6 color-green-900">{page.eyebrow}</span>
                             <h1 className="text-heading-1 color-gray-900 mt-25 mb-20">{page.h1}</h1>
-                            <p className="text-body-lead-large color-gray-600 mb-40">{page.lead}</p>
+                            <p className="text-body-lead-large color-gray-600 mb-20">{page.lead}</p>
+                            {/* Visible date on guide-style pages. The schema
+                                carries dateModified, but a date a reader can
+                                see is the point: every page-one competitor for
+                                these queries shows one, and on a pricing page
+                                "is this still current?" is the first thing a
+                                reader needs answered. Rendered from the same
+                                value the schema uses so they can't drift. */}
+                            {isArticle && (
+                                <p className="text-body-text color-gray-500 mb-40">
+                                    Last updated{" "}
+                                    <time dateTime={modified}>
+                                        {new Date(modified).toLocaleDateString("en-AU", {
+                                            day: "numeric", month: "long", year: "numeric",
+                                        })}
+                                    </time>
+                                </p>
+                            )}
                             <Link href="/contact/" className="btn btn-black icon-arrow-right-white mr-15">
                                 Get a fixed quote
                             </Link>
@@ -191,24 +238,26 @@ export default function LandingPage({ page }) {
                                 Book a free call
                             </a>
                         </div>
+                        {/* ONE hero image. There were two of these blocks until
+                            21 Sep 2026 — a later edit added a second copy rather
+                            than editing the first, so every landing page with art
+                            rendered the same image twice on desktop, once beside
+                            the heading and once below the CTAs.
+
+                            The survivor is the one carrying `priority` (this is
+                            the LCP element) and it no longer hides below lg, so
+                            phones get the art too. Renders only when the page
+                            defines an image, so pages without art keep the wide
+                            text layout instead of an empty column. */}
                         {page.image && (
                             <div className="col-lg-5">
-                                <Image src={page.image} alt={page.imageAlt || page.h1} width={1200} height={675} style={{ width: '100%', height: 'auto', borderRadius: '16px', marginTop: '25px' }} />
-                            </div>
-                        )}
-                        {/* Hero image renders only when the page defines one, so
-                            pages without art keep the original wide-text layout
-                            instead of showing an empty column. `priority` is set
-                            because this is the LCP element when present. */}
-                        {page.image && (
-                            <div className="col-lg-5 d-none d-lg-block">
                                 <Image
                                     src={page.image}
                                     alt={page.imageAlt || page.h1}
                                     width={1200}
                                     height={675}
-                                    sizes="(max-width: 992px) 0px, 480px"
-                                    style={{ width: "100%", height: "auto", borderRadius: 16 }}
+                                    sizes="(max-width: 992px) 100vw, 480px"
+                                    style={{ width: "100%", height: "auto", borderRadius: 16, marginTop: 25 }}
                                     priority
                                 />
                             </div>
