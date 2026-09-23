@@ -108,7 +108,7 @@ export default function ContactPage() {
                                     </a>
                                 </p>
                                 <p className="text-body-text color-gray-600 mt-15">
-                                    <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer"
+                                    <a data-loc="contact-page" href={SITE.whatsapp} target="_blank" rel="noopener noreferrer"
                                         style={{ color: 'inherit', fontWeight: 500 }}>
                                         WhatsApp us →
                                     </a>

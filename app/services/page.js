@@ -83,7 +83,7 @@ export default function ServicesPage() {
                                     <Link href="/contact/" className="btn btn-black shape-square icon-arrow-right-white">
                                         Get a quote
                                     </Link>
-                                    <a href={SITE.calendly} target="_blank" rel="noopener noreferrer"
+                                    <a data-loc="services-hub" href={SITE.calendly} target="_blank" rel="noopener noreferrer"
                                         className="btn btn-link icon-triangle color-gray-900 ml-40">
                                         Book a free call
                                     </a>
@@ -336,7 +336,7 @@ export default function ServicesPage() {
                                             whether a DIY builder would actually serve you better.
                                         </p>
                                         <div className="mt-30">
-                                            <a href={SITE.calendly} target="_blank" rel="noopener noreferrer"
+                                            <a data-loc="services-hub" href={SITE.calendly} target="_blank" rel="noopener noreferrer"
                                                 className="btn btn-black icon-arrow-right-white mr-15">
                                                 Book a free call
                                             </a>

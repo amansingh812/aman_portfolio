@@ -233,7 +233,7 @@ export default function LandingPage({ page }) {
                             <Link href="/contact/" className="btn btn-black icon-arrow-right-white mr-15">
                                 Get a fixed quote
                             </Link>
-                            <a href={SITE.calendly} target="_blank" rel="noopener noreferrer"
+                            <a data-loc="landing-page" href={SITE.calendly} target="_blank" rel="noopener noreferrer"
                                 className="btn btn-default">
                                 Book a free call
                             </a>
@@ -369,7 +369,7 @@ export default function LandingPage({ page }) {
                                     style={{ background: "#83C5BE", color: "#004E56" }}>
                                     Get a fixed quote
                                 </Link>
-                                <a href={SITE.calendly} target="_blank" rel="noopener noreferrer"
+                                <a data-loc="landing-page" href={SITE.calendly} target="_blank" rel="noopener noreferrer"
                                     className="btn btn-default">
                                     Book a free call
                                 </a>

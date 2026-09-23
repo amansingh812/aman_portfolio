@@ -576,7 +576,7 @@ export default function Home() {
                                 <Link href="/contact/" className="btn btn-black icon-arrow-right-white mr-15">
                                     Contact us
                                 </Link>
-                                <a href={SITE.calendly} target="_blank" rel="noopener noreferrer"
+                                <a data-loc="homepage" href={SITE.calendly} target="_blank" rel="noopener noreferrer"
                                     className="btn btn-link icon-arrow-right color-gray-900 text-heading-6">
                                     Book a call
                                 </a>
@@ -612,7 +612,7 @@ export default function Home() {
                                             <Link href="/contact/" className="btn btn-black icon-arrow-right-white mr-15">
                                                 Get a quote
                                             </Link>
-                                            <a href={SITE.calendly} target="_blank" rel="noopener noreferrer"
+                                            <a data-loc="homepage" href={SITE.calendly} target="_blank" rel="noopener noreferrer"
                                                 className="btn btn-link icon-arrow-right color-gray-900">
                                                 Book a free call
                                             </a>

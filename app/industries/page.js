@@ -125,7 +125,7 @@ export default function IndustriesPage() {
                                     <Link href="/contact/" className="btn btn-black icon-arrow-right-white">
                                         Get a quote
                                     </Link>
-                                    <a href={SITE.calendly} target="_blank" rel="noopener noreferrer"
+                                    <a data-loc="industries-hub" href={SITE.calendly} target="_blank" rel="noopener noreferrer"
                                         className="btn btn-link icon-triangle color-gray-900 ml-40">
                                         Book a free call
                                     </a>
@@ -323,7 +323,7 @@ export default function IndustriesPage() {
                                             <Link href="/contact/" className="btn btn-black icon-arrow-right-white mr-15">
                                                 Get a quote
                                             </Link>
-                                            <a href={SITE.calendly} target="_blank" rel="noopener noreferrer"
+                                            <a data-loc="industries-hub" href={SITE.calendly} target="_blank" rel="noopener noreferrer"
                                                 className="btn btn-link icon-arrow-right color-gray-900">
                                                 Book a free call
                                             </a>

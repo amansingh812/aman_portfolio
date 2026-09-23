@@ -227,7 +227,7 @@ export default async function BlogPost({ params }) {
                                         into a written scope + AUD price within 24 hours.
                                     </p>
                                     <div className="mt-25">
-                                        <a href={SITE.calendly} target="_blank" rel="noopener noreferrer"
+                                        <a data-loc="blog-post" href={SITE.calendly} target="_blank" rel="noopener noreferrer"
                                             className="btn btn-black icon-arrow-right-white mr-15">
                                             Book a free call
                                         </a>

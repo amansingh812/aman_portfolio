@@ -259,7 +259,7 @@ export default function PricingPage() {
                                         {NEGOTIABLE_NOTE}
                                     </p>
                                 </div>
-                                <a href={SITE.calendly} target="_blank" rel="noopener noreferrer"
+                                <a data-loc="pricing-page" href={SITE.calendly} target="_blank" rel="noopener noreferrer"
                                     className="btn btn-black icon-arrow-right-white">
                                     Book a free call
                                 </a>
@@ -363,7 +363,7 @@ export default function PricingPage() {
                                 <Link href="/contact/" className="btn btn-black bfs-mint-btn mr-15">
                                     Get a fixed quote
                                 </Link>
-                                <a href={SITE.calendly} target="_blank" rel="noopener noreferrer"
+                                <a data-loc="pricing-page" href={SITE.calendly} target="_blank" rel="noopener noreferrer"
                                     className="btn btn-default">
                                     Book a free call
                                 </a>

@@ -405,7 +405,7 @@ export default async function CaseStudyPage({ params }) {
                                         Let's discuss how we can build a fast, zero-commission, modern custom web application tailored specifically for your Australian business growth.
                                     </p>
                                     <div className="mt-35 d-flex flex-wrap justify-content-center gap-15">
-                                        <a href={SITE.calendly} target="_blank" rel="noopener noreferrer"
+                                        <a data-loc="case-study" href={SITE.calendly} target="_blank" rel="noopener noreferrer"
                                             className="btn btn-black icon-arrow-right-white">
                                             Book a free call
                                         </a>

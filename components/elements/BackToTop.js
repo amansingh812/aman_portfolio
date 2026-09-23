@@ -4,6 +4,7 @@ function WhatsAppButton() {
     return (
         <a
             href={SITE.whatsapp}
+            data-loc="floating-button"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Chat with us on WhatsApp"

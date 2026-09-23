@@ -16,9 +16,36 @@ const DARK   = '#101828'
 const GRAY   = '#6B7280'
 const LIGHT  = '#F9FAFB'
 const BORDER = '#E5E7EB'
+const WHITE_SOFT = '#FBE3D6'   // legible on ORANGE; rgba() is unreliable in Outlook
+
+/**
+ * Render an email address for HTML mail.
+ *
+ * WHY THIS EXISTS: Gmail auto-linkifies any bare email address in the body and
+ * then styles it with its own blue + underline, which overrides whatever inline
+ * colour you set. In the orange header that produced blue-on-orange — illegible,
+ * and the thing that made the notification look amateur.
+ *
+ * Wrapping it in an explicit <a> we control leaves nothing for Gmail to
+ * linkify, so our colour survives. `text-decoration:none` kills the underline.
+ */
+function mailLink(addr, color) {
+    return `<a href="mailto:${addr}" style="color:${color};text-decoration:none;">${addr}</a>`
+}
 
 /* ── Template 1: Notification to contact@buildfirstsite.com ─────── */
 function notificationHtml({ name, email, phone, company, message, source }) {
+    // Melbourne time — the lead is Australian and so is whoever acts on it.
+    // Freshness is the single most useful thing to show in a lead alert, and it
+    // replaces the recipient's own address, which told them nothing.
+    // timeZoneName lets Intl emit AEST/AEDT itself. Hardcoding either one is
+    // wrong for half the year once Melbourne moves to daylight saving.
+    const receivedAt = new Intl.DateTimeFormat('en-AU', {
+        day: 'numeric', month: 'short', year: 'numeric',
+        hour: 'numeric', minute: '2-digit', timeZoneName: 'short',
+        timeZone: 'Australia/Melbourne',
+    }).format(new Date())
+    const firstName = (name || '').split(' ')[0] || 'them'
     const rows = [
         ['Name',    name],
         ['Company', company || '—'],
@@ -37,12 +64,12 @@ function notificationHtml({ name, email, phone, company, message, source }) {
       <!-- Header -->
       <tr><td style="background:${ORANGE};padding:28px 32px;">
         <table cellpadding="0" cellspacing="0"><tr>
-          <td style="width:40px;height:40px;border:3px solid rgba(255,255,255,0.5);text-align:center;vertical-align:middle;">
+          <td style="width:40px;height:40px;border:3px solid #F0A882;text-align:center;vertical-align:middle;">
             <span style="font-size:20px;font-weight:700;color:#fff;">B</span>
           </td>
           <td style="padding-left:14px;">
             <div style="color:#fff;font-size:15px;font-weight:600;">New enquiry — Build First Site</div>
-            <div style="color:rgba(255,255,255,0.7);font-size:12px;margin-top:2px;">contact@buildfirstsite.com</div>
+            <div style="color:${WHITE_SOFT};font-size:12px;margin-top:3px;">${receivedAt}</div>
           </td>
         </tr></table>
       </td></tr>
@@ -59,7 +86,7 @@ function notificationHtml({ name, email, phone, company, message, source }) {
           ${rows.map(([label, value]) => `
           <tr>
             <td style="color:${GRAY};padding:12px 0;border-bottom:1px solid ${BORDER};width:110px;vertical-align:top;">${label}</td>
-            <td style="color:${DARK};padding:12px 0 12px 16px;border-bottom:1px solid ${BORDER};font-weight:${label==='Email'?'400':'400'};${label==='Email'?`color:${ORANGE};`:''}vertical-align:top;">${value}</td>
+            <td style="color:${DARK};padding:12px 0 12px 16px;border-bottom:1px solid ${BORDER};vertical-align:top;">${label==='Email' ? mailLink(value, ORANGE) : value}</td>
           </tr>`).join('')}
           <tr>
             <td style="color:${GRAY};padding:12px 0;vertical-align:top;">Message</td>
@@ -70,13 +97,13 @@ function notificationHtml({ name, email, phone, company, message, source }) {
 
       <!-- CTA -->
       <tr><td style="padding:20px 32px;background:${LIGHT};border-top:1px solid ${BORDER};">
-        <a href="mailto:${email}" style="display:inline-block;background:${ORANGE};color:#fff;font-size:13px;font-weight:600;padding:10px 20px;border-radius:8px;text-decoration:none;">Reply to ${email}</a>
+        <a href="mailto:${email}" style="display:inline-block;background:${ORANGE};color:#fff;font-size:13px;font-weight:600;padding:10px 20px;border-radius:8px;text-decoration:none;">Reply to ${firstName}</a>
         ${phone ? `<a href="tel:${phone.replace(/\s/g,'')}" style="display:inline-block;margin-left:10px;border:1px solid ${BORDER};color:${GRAY};font-size:13px;padding:10px 20px;border-radius:8px;text-decoration:none;">${phone}</a>` : ''}
       </td></tr>
 
       <!-- Footer -->
       <tr><td style="padding:16px 32px;text-align:center;">
-        <p style="margin:0;font-size:12px;color:${GRAY};">Build First Site · contact@buildfirstsite.com</p>
+        <p style="margin:0;font-size:12px;color:${GRAY};">Build First Site · ${mailLink('contact@buildfirstsite.com', GRAY)}</p>
       </td></tr>
 
     </table>
@@ -99,17 +126,17 @@ function thankYouHtml({ name }) {
       <!-- Header -->
       <tr><td style="background:${ORANGE};padding:36px 32px;">
         <table width="100%" cellpadding="0" cellspacing="0"><tr>
-          <td style="width:44px;height:44px;border:3px solid rgba(255,255,255,0.5);text-align:center;vertical-align:middle;border-radius:4px;">
+          <td style="width:44px;height:44px;border:3px solid #F0A882;text-align:center;vertical-align:middle;border-radius:4px;">
             <span style="font-size:22px;font-weight:700;color:#fff;font-family:Georgia,serif;">B</span>
           </td>
           <td style="padding-left:14px;">
-            <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,0.85);letter-spacing:0.5px;text-transform:uppercase;">Build First Site</span>
+            <span style="font-size:13px;font-weight:600;color:#FBE3D6;letter-spacing:0.5px;text-transform:uppercase;">Build First Site</span>
           </td>
         </tr></table>
         <p style="margin:24px 0 0;font-size:26px;font-weight:700;color:#fff;line-height:1.35;">
           Thank you, ${firstName}.<br/>Your enquiry is with us.
         </p>
-        <p style="margin:10px 0 0;font-size:14px;color:rgba(255,255,255,0.8);line-height:1.6;">
+        <p style="margin:10px 0 0;font-size:14px;color:#FBE3D6;line-height:1.6;">
           We will review your message and respond with a written scope and fixed AUD quote within one business day.
         </p>
       </td></tr>
@@ -151,7 +178,7 @@ function thankYouHtml({ name }) {
 
       <!-- Footer -->
       <tr><td style="padding:16px 32px;text-align:center;">
-        <p style="margin:0;font-size:12px;color:${GRAY};">Build First Site · Australia · contact@buildfirstsite.com</p>
+        <p style="margin:0;font-size:12px;color:${GRAY};">Build First Site · Australia · ${mailLink('contact@buildfirstsite.com', GRAY)}</p>
       </td></tr>
 
     </table>

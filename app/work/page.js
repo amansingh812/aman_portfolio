@@ -72,7 +72,7 @@ export default function WorkPage() {
                                             <Link href="/contact/" className="btn btn-black icon-arrow-right-white mr-15">
                                                 Get a quote
                                             </Link>
-                                            <a href={SITE.calendly} target="_blank" rel="noopener noreferrer"
+                                            <a data-loc="portfolio-hub" href={SITE.calendly} target="_blank" rel="noopener noreferrer"
                                                 className="btn btn-link icon-arrow-right color-gray-900">
                                                 Book a free call
                                             </a>

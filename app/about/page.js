@@ -298,7 +298,7 @@ export default function AboutPage() {
                                         <Link href="/contact/" className="btn btn-green-900 icon-arrow-right-white text-heading-6 color-white">
                                             Get a quote
                                         </Link>
-                                        <a href={SITE.calendly} target="_blank" rel="noopener noreferrer"
+                                        <a data-loc="about-page" href={SITE.calendly} target="_blank" rel="noopener noreferrer"
                                             className="btn btn-link text-heading-6">
                                             Book a free call
                                         </a>
