@@ -120,6 +120,11 @@ Current (verify before quoting anywhere):
 | Custom software | **from $5,000** |
 | Care + SEO retainer | **$250/month** |
 
+Add-ons also live in `pricing.js` (`ADDONS`) and are published on the site:
+logo $290 · brand kit $490 · copywriting $140/page · extra page $180 ·
+AI chatbot from $900 · booking system from $700 · multi-language from $600 ·
+migration from $400.
+
 This section drifted once already: §3 and §4 carried $600/$2,000/$150 for weeks
 after the pricing model changed, and a scheduled social-content run read those
 numbers, published a week of posts quoting them, and stated "pricing matches
@@ -159,6 +164,90 @@ Two rules from this:
 Fabricated testimonials are the §1 misleading-conduct risk, not a cosmetic
 defect — the fact that they arrived with a purchased template changes nothing
 about how Australian Consumer Law reads them.
+
+### llms.txt is generated, never hand-written
+
+`public/llms.txt` and `public/llms-full.txt` are produced by
+`npm run llms` (`scripts/generate-llms-txt.mjs`) from `pricing.js`,
+`landing-pages.js`, `guides.js` and `site.js`. **Do not hand-edit them.**
+
+They were hand-written on 8 Jul 2026 and never revisited. By 24 Sep they were
+telling language models our landing pages cost **$600**, business sites
+**$2,000** and e-commerce **$4,000** — when the real figures were $800, $1,900
+and $4,500. They also listed three retired US city pages as live, and claimed we
+serve the United States and the United Kingdom.
+
+**Correction, same day.** When I fixed these I described llms.txt as "the
+document we hand to models that then quote it to prospects". That overstated
+it, and the repo should not carry the overstatement:
+
+- Google's AI optimization guide (15 May 2026) says llms.txt is **not needed**
+  for AI Overviews or AI Mode. Gary Illyes confirmed Google does not support it
+  and has no plans to; John Mueller likened it to the keywords meta tag.
+- No major provider — OpenAI, Anthropic, Google, Meta, Mistral — has committed
+  to using it in production answer surfaces.
+- Measured across ~515M LLM bot requests, traffic to `/llms.txt` is
+  statistically negligible.
+
+**So it is not an AI-visibility lever.** Keep it generated anyway, for one
+reason that stands on its own: it is a **public URL on our domain that was
+publishing prices the business does not charge** ($600 / $2,000 / $4,000
+against $800 / $1,900 / $4,500). That is the §1 misleading-conduct problem
+wherever it appears and whoever reads it. Fixing it was right; the reason I
+gave for fixing it was wrong.
+
+**Run `npm run llms` after any price change or page add/remove.**
+
+### What actually drives AI visibility
+
+Per Google's own guidance, generative AI features are **rooted in core Search
+ranking and quality systems** — the same fundamentals, not a separate
+discipline. There is no "GEO" trick that bypasses ranking.
+
+Primary sources, read these rather than agency blog posts:
+- <https://developers.google.com/search/docs/fundamentals/ai-optimization-guide>
+- <https://developers.google.com/search/docs/appearance/ai-features>
+
+**Search Console now has Search Generative AI performance reports** (rolled out
+to all sites 31 Aug 2026). AI visibility is measurable — check it rather than
+guessing.
+
+### Price audit — 24 Sep 2026
+
+A full sweep of every price figure in the repo against `content/pricing.js`.
+
+**Corrected:** I previously flagged the `from $900` AI & Automation figure in
+`content/home.js` as a rogue second source. That was wrong — it comes from
+`pricing.js` → `ADDONS` → *AI chatbot: from $900*. It is legitimate. It is
+still a hardcoded **copy** rather than an import, so it can drift, but the
+number is real.
+
+**Deleted:** `content/services.js`. It was dead code — imported by nothing —
+carrying an entirely different price model: *Web App MVP from AU$6,500, Full
+Web App from AU$12,000, Cross-Platform Mobile from AU$18,000*, against a
+published range of $800–$5,000. Harmless while unused and a live contradiction
+the moment anyone wired it up.
+
+**Still outside pricing.js and genuinely published** — `content/service-pages.js`
+renders at `/services/<slug>/` and quotes two figures that exist nowhere else:
+
+| Figure | Where | Status |
+|---|---|---|
+| `AU$500` SEO Audit | Marketing & SEO service page | Not in `pricing.js` |
+| `From AU$200` Pay Per Piece | Maintenance service page | Not in `pricing.js` |
+
+Both are live on the site. Either add them to `ADDONS` or remove them from the
+service pages — right now they are prices a customer can read that the source
+of truth does not know about.
+
+### The full published price list
+
+`BUILD_TIERS` — Starter $800 · Business $1,900 · Unlimited $3,500 ·
+E-Commerce $4,500 · Application $4,500 · Custom Software $5,000
+`RETAINER` — Care + SEO $250/month
+`ADDONS` — Logo design $290 · Brand kit $490 · Copywriting $140/page ·
+Extra page $180 · AI chatbot from $900 · Booking system from $700 ·
+Multi-language from $600 · Migration from Wix/WP from $400
 
 ### Honesty constraints (non-negotiable)
 
