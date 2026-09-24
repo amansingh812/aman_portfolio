@@ -240,6 +240,27 @@ Both are live on the site. Either add them to `ADDONS` or remove them from the
 service pages — right now they are prices a customer can read that the source
 of truth does not know about.
 
+### Third-party platform prices — `PLATFORM_PRICES`
+
+Competitor and platform figures (Wix, Squarespace, Shopify, hosting) now live
+in `content/pricing.js` as `PLATFORM_PRICES`, verified **24 Sep 2026**.
+**Quote from there.**
+
+A sweep that day found the same products quoted differently across pages:
+Shopify as *"$39–$399"* on one page and *"$52–$575"* on another; Wix as
+*"$20–$50"*, *"around $32"*, *"$15 to $58"* and *"$21–$55"* on four. Four direct
+contradictions were corrected.
+
+This matters more for us than for most sites. The entire positioning is *our
+numbers are real and you can check them*. Publishing two different figures for
+the same competitor product undercuts exactly that claim — and unlike our own
+prices, nobody internally notices when a competitor changes theirs.
+
+**Known debt:** the figures are still hardcoded as prose in page copy rather
+than read from `PLATFORM_PRICES`. Wiring them up is a refactor nobody has asked
+for yet. Until then, re-verify on the date in the export and grep before
+quoting a platform price.
+
 ### The full published price list
 
 `BUILD_TIERS` — Starter $800 · Business $1,900 · Unlimited $3,500 ·

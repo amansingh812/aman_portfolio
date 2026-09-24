@@ -182,6 +182,7 @@ export const FOOTER_COLUMNS = [
     links: [
       { label: 'Guides', href: '/guides/' },
       { label: 'What a Website Costs', href: '/how-much-does-a-website-cost-australia/' },
+      { label: 'Website Hosting Cost', href: '/website-hosting-cost-australia/' },
       { label: 'Affordable Web Design', href: '/affordable-website-design-small-business/' },
       { label: 'Website Redesign', href: '/small-business-website-redesign/' },
       { label: 'Get a Quote', href: '/website-design-quote/' },

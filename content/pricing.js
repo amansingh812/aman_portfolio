@@ -36,6 +36,30 @@
  * research the competition. That comparison lives in the blog post
  * /blog/best-web-design-agencies-australia/ where the intent is research.
  */
+/**
+ * Third-party platform prices, in AUD, verified 24 Sep 2026.
+ *
+ * WHY THIS EXISTS: these figures were hardcoded as prose across a dozen pages
+ * and had drifted badly. A sweep on 24 Sep found Shopify quoted as "$39-$399"
+ * on one page and "$52-$575" on another, Wix as "$20-$50", "around $32",
+ * "$15 to $58" and "$21-$55" on four different pages. Publishing two different
+ * numbers for the same competitor product undercuts the one thing this site
+ * claims as its advantage — that our numbers are real and checkable.
+ *
+ * These are the verified figures. Quote from here. Re-verify on the date below
+ * and bump it; platform pricing moves.
+ */
+export const PLATFORM_PRICES = {
+    verifiedOn: '2026-09-24',
+    wix:         { min: 21, max: 55,  note: 'business-capable plans; ecommerce Business ~$46' },
+    squarespace: { min: 17, max: 62,  note: 'Business ~$40 monthly, ~$28 on annual billing' },
+    shopify:     { min: 52, max: 575, note: 'Basic $52 monthly / $42 annual · Grow ~$149 · Advanced ~$575' },
+    siteground:  { min: 27, max: 65,  note: 'advertised from ~$6.99 — RENEWS at $26.99-$64.99' },
+    ventraip:    { min: 9,  max: 11,  note: 'AU-owned; renews close to advertised' },
+    vercel:      { min: 0,  max: 0,   note: 'Hobby free; Pro US$20/seat' },
+    cloudflare:  { min: 0,  max: 0,   note: 'Pages free — unlimited bandwidth, 500 builds/mo' },
+}
+
 export const COMPETITOR_PRICES_VERIFIED = '2026-08-07';
 
 /* ─────────────────────────────────────────────────────────────────────────

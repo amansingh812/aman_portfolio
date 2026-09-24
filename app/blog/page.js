@@ -61,6 +61,35 @@ export default function BlogPage() {
     /* Latest News section = the entire feed (up to 9 cards)         */
     const latestNews    = allPosts.slice(0, 9)
 
+    /* ── EVERY article, always ──────────────────────────────────────
+       This page used to render at most 9 unique items out of 22, with
+       no pagination and no "load more". Thirteen articles were reachable
+       only by direct URL — and several of them are sitting in Search
+       Console as "Discovered – currently not indexed", which is exactly
+       what happens to a page nothing links to. URL Inspection on
+       /blog/what-small-business-website-actually-needs/ reported
+       "Referring page: None detected" while the post was live and in the
+       sitemap.
+
+       The featured cards above are editorial. This list is the index, and
+       it is not allowed to be a subset. Grouped so it reads as a library
+       rather than a wall of links. */
+    const CATEGORY_ORDER = [
+        'Pricing Guide', 'Guide', 'Comparison', 'SEO',
+        'Industry', 'Accessibility', 'Performance',
+    ]
+    const grouped = allPosts.reduce((acc, p) => {
+        const key = p.category || 'Articles'
+        ;(acc[key] ||= []).push(p)
+        return acc
+    }, {})
+    const groups = Object.entries(grouped).sort(
+        (a, b) => {
+            const ai = CATEGORY_ORDER.indexOf(a[0]), bi = CATEGORY_ORDER.indexOf(b[0])
+            return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi) || a[0].localeCompare(b[0])
+        }
+    )
+
     return (
         <Layout>
 
@@ -205,6 +234,43 @@ export default function BlogPage() {
                         <Link href="/contact/" className="btn btn-black icon-arrow-right-white">
                             Suggest a topic
                         </Link>
+                    </div>
+                </div>
+            </section>
+
+            {/* ── EVERY ARTICLE — the actual index ── */}
+            <section className="section-box mt-40 mb-60">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-10 mx-auto">
+                            <h2 className="text-heading-3 color-gray-900 mb-10">Every guide</h2>
+                            <p className="text-body-text color-gray-600 mb-40">
+                                All {allPosts.length} articles and guides, grouped by topic.
+                            </p>
+                            {groups.map(([category, posts]) => (
+                                <div className="mb-40" key={category}>
+                                    <h3 className="text-heading-5 color-gray-900 mb-15">{category}</h3>
+                                    <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                                        {posts.map((post) => (
+                                            <li
+                                                key={`idx-${post.href}`}
+                                                className="pt-15 pb-15"
+                                                style={{ borderTop: '1px solid #E4E7EC' }}
+                                            >
+                                                <Link href={post.href} className="text-heading-6 color-gray-900">
+                                                    {post.title}
+                                                </Link>
+                                                {post.excerpt && (
+                                                    <p className="text-body-text color-gray-600 mt-5 mb-0">
+                                                        {post.excerpt}
+                                                    </p>
+                                                )}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
