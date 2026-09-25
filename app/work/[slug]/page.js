@@ -1,10 +1,30 @@
-/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable @next/next/no-img-element */
+/**
+ * /work/<slug>/ — case study template. Redesigned 26 Sep 2026 from the approved
+ * demo (docs/CASE-STUDY-REDESIGN-DEMO.html), same system as /services/<slug>/.
+ *
+ * Data: content/case-studies.js (the project) + content/case-study-extras.js
+ * (summary, use cases, flow diagram, context photo, hidden results, concept flag).
+ *
+ * REMOVED, and why (CLAUDE.md §1):
+ * - AU_MARKETING_HOOKS: per-project blurbs making claims with no source —
+ *   "loads in under 1.5 seconds", "a dramatic reduction in sizing inquiries",
+ *   and concept builds described as real businesses ("We engineered Harbour
+ *   Plumbing's local SEO presence").
+ * - The location badge and `locationCreated` in schema: HS Race Gear was stored
+ *   as Australia while its own site says Watertown, MA (§7 open question).
+ * - Results listed in extras.unverifiedResults are hidden until measured.
+ *
+ * Nothing here renders a placeholder. A section with no data is skipped.
+ */
 import Layout from "@/components/layout/Layout"
+import Breadcrumbs from "@/components/elements/Breadcrumbs"
 import Link from "next/link"
-import Image from "next/image"
 import { notFound } from "next/navigation"
 import { CASE_STUDIES, getCaseStudy } from "@/content/case-studies"
-import { SITE } from "@/content/site"
+import { getCaseStudyExtras } from "@/content/case-study-extras"
+import { CTA, SITE } from "@/content/site"
+import { BUILD_TIERS, ADDONS } from "@/content/pricing"
 
 export const dynamicParams = false
 
@@ -14,73 +34,157 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
     const { slug } = await params
-    const project = getCaseStudy(slug)
-    if (!project) return {}
+    const p = getCaseStudy(slug)
+    if (!p) return {}
+    const x = getCaseStudyExtras(slug)
+    const description = x.summary || p.metaDescription || p.tagline
     return {
-        title: `${project.metaTitle || project.name} | Build First Site`,
-        description: project.metaDescription || project.tagline,
-        alternates: { canonical: `/work/${project.slug}/` },
+        // metaTitle already ends in "| Build First Site"; absolute stops the
+        // root template appending the brand a second time.
+        title: { absolute: p.metaTitle || `${p.name} | Build First Site` },
+        description: p.metaDescription || description,
+        alternates: { canonical: `/work/${p.slug}/` },
         openGraph: {
-            title: project.name,
-            description: project.metaDescription || project.tagline,
-            url: `https://buildfirstsite.com/work/${project.slug}/`,
+            title: p.metaTitle || p.name,
+            description: p.metaDescription || description,
+            url: `https://buildfirstsite.com/work/${p.slug}/`,
             type: "article",
-            images: project.image ? [{ url: project.image, width: 1200, height: 630 }] : [],
+            locale: "en_AU",
+            images: p.image ? [{ url: p.image, width: 1200, height: 900 }] : [],
         },
     }
 }
 
-// Australian marketing hooks mapping
-const AU_MARKETING_HOOKS = {
-    "hs-race-gear": "In the high-stakes Australian motorsport market, precision and trust are paramount. By introducing custom made-to-measure sizing and an interactive 3D product preview, we helped HS Race Gear build immediate buyer confidence, resulting in a dramatic reduction in sizing inquiries and direct conversion growth.",
-    "mobile-armour": "Australian mobile commerce is growing rapidly, but slow loading speeds cost online retailers millions in abandoned carts. This Next.js rebuild ensures the site loads in under 1.5 seconds on standard Australian 4G/5G mobile connections, keeping customers engaged and maximizing conversions.",
-    "autozenlyai": "Australian marketing teams and agencies frequently struggle with fragmented software subscriptions that eat into business margins. AutoZenlyAI consolidates content writing, multi-platform scheduling, and analytics into a single dashboard, slashing overheads and streamlining operations.",
-    "aurelia-estates": "In the competitive Australian prestige property sector, your digital storefront is your reputation. Aurelia Estates provides a fast, immersive search experience with considered typography and fluid animations, designed specifically to match the expectations of high-end property buyers.",
-    "harbour-plumbing": "When an emergency strikes at 2 AM in Sydney, customers search for local help and call within seconds. We engineered Harbour Plumbing's local SEO presence and implemented a click-to-call mobile design to capture high-intent search traffic the moment it matters most.",
-    "marlow-vine": "With third-party booking platforms taking up to 10% commission per seat, Australian hospitality businesses are facing tighter margins than ever. Marlow & Vine's direct booking engine bypasses intermediaries, ensuring they retain 100% of their table revenue.",
-    "banish-shoes": "Australian consumer demand for sustainable, high-quality bespoke products is at an all-time high. Banish Shoes' direct-to-consumer WordPress storefront is built to handle custom specifications smoothly without recurring marketplace listing fees.",
-    "swarom": "E-commerce shoppers in Australia demand rapid personalization and seamless checkouts for gifts. Swarom's custom engraved jewellery options load fast on any mobile browser, helping capture last-minute holiday and birthday gift shoppers.",
-    "school-scout": "Choosing a school in Australia or India is a major decision with complex choices around fees, curriculum, and facilities. School Scout simplifies the process for parents by presenting data side-by-side, replacing dozens of open browser tabs with one clear comparison view."
+/* Tech → what it does for the business (outcome first, CLAUDE.md §0) */
+const TECH_ROLE = {
+    "Next.js": "fast pages", "Next.js 14": "fast pages", "Next.js 15": "fast pages",
+    "React": "interactive UI", "React 19": "interactive UI", "Three.js": "3D product viewer",
+    "MongoDB": "products and orders", "Stripe": "secure checkout", "OpenAI": "AI recs and chat",
+    "Tailwind": "consistent design", "Tailwind CSS": "consistent design", "FastAPI": "reliable backend",
+    "Redis": "on-time scheduling", "Claude": "AI writing", "GPT-4": "AI writing", "Gemini": "AI writing",
+    "Framer Motion": "polished motion", "Motion": "polished motion", "Formspree": "quote forms",
+    "JSON-LD": "search visibility", "react-router": "fast navigation", "WordPress": "easy editing",
+    "WooCommerce": "online store", "AI Matching": "smart shortlists",
 }
+
+const REAL_FIRST = ["hs-race-gear", "mobile-armour", "autozenlyai"]
+const hostOf = (u) => { try { return new URL(u).host.replace(/^www\./, "") } catch { return "" } }
+const tier = (id) => BUILD_TIERS.find((t) => t.id === id)
+const chatbot = ADDONS.find((a) => a.name === "AI chatbot")
+
+const CSS = `
+.cs{color:#344054}
+.cs h1,.cs h2,.cs h3,.cs h4{color:#101828}
+.cs-sec{padding:92px 0}
+.cs-h2{font-size:38px;line-height:1.2}
+.cs-lead{font-size:19px;line-height:1.7;color:#475467;max-width:720px}
+.cs-center{text-align:center}.cs-center .cs-lead{margin:14px auto 0}
+.cs-mint{background:#EEF6F2}
+.cs-hero{background:linear-gradient(180deg,#EEF6F2,#fff);padding:30px 0 70px}
+.cs-hero h1{font-size:50px;line-height:1.15;margin-top:18px}
+.cs-hero h1 span{color:#006D77}
+.cs-top{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:end;margin-top:14px}
+.cs-facts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.cs-fact{background:#fff;border:1px solid #E4E7EC;border-radius:14px;padding:16px 18px}
+.cs-fact small{display:block;font-size:12.5px;text-transform:uppercase;letter-spacing:.06em;color:#667085}
+.cs-fact b{color:#101828;font-size:16.5px;line-height:1.35;display:block}
+.cs-concept{display:inline-block;background:#FFF3EA;color:#B4461A;font-size:13px;font-weight:600;padding:6px 14px;border-radius:99px;margin-left:8px}
+.cs-browser{margin-top:48px;background:#fff;border-radius:16px;box-shadow:0 40px 80px rgba(16,24,40,.16);overflow:hidden;border:1px solid #E4E7EC;display:block}
+.cs-browser .bar{height:38px;background:#F2F4F7;display:flex;align-items:center;gap:7px;padding:0 14px}
+.cs-browser .bar i{width:11px;height:11px;border-radius:50%;background:#D0D5DD;display:block}
+.cs-browser .bar span{margin-left:12px;font-size:13px;color:#667085;background:#fff;border-radius:6px;padding:3px 12px}
+.cs-browser img{display:block;width:100%;height:560px;object-fit:cover;object-position:top;background:#fff}
+.cs-split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.cs-photo{border-radius:18px;overflow:hidden;margin:0}
+.cs-photo img{width:100%;height:440px;object-fit:cover;display:block}
+.cs-cap{font-size:13px;color:#667085;margin-top:8px}
+.cs-pull{border-left:4px solid #006D77;padding:4px 0 4px 20px;font-size:21px;font-weight:700;color:#101828;margin:26px 0 0;line-height:1.45}
+.cs-uses{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-top:52px}
+.cs-use{background:#fff;border:1px solid #E4E7EC;border-radius:16px;padding:30px}
+.cs-use .who{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:#006D77;font-weight:700}
+.cs-use h3{font-size:20px;margin:10px 0}
+.cs-use p{font-size:15.5px;line-height:1.6;color:#475467;margin:0}
+.cs-use .fix{margin-top:16px;padding-top:14px;border-top:1px solid #E4E7EC;font-size:15px;color:#101828}
+.cs-use .fix b{color:#006D77}
+.cs-build{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:50px}
+.cs-block{border:1px solid #E4E7EC;border-radius:16px;padding:32px;background:#fff}
+.cs-num{font-weight:700;color:#006D77;font-size:15px}
+.cs-block h3{font-size:23px;margin:8px 0 12px}
+.cs-block p{color:#475467;margin:0;line-height:1.7}
+.cs-block img{width:100%;border-radius:12px;margin-top:18px;border:1px solid #E4E7EC}
+.cs-arch{display:flex;align-items:stretch;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:48px}
+.cs-node{background:#fff;border:1.5px solid #006D77;border-radius:14px;padding:18px 20px;text-align:center;min-width:150px}
+.cs-node b{color:#101828;display:block}.cs-node small{color:#667085;font-size:13px}
+.cs-arrow{color:#006D77;font-size:26px;display:flex;align-items:center}
+.cs-results{background:#101828;padding:92px 0}
+.cs-results .cs-h2{color:#fff}.cs-results .cs-lead{color:#C3CAD5}
+.cs-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:48px}
+.cs-metric{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:28px}
+.cs-metric b{font-size:32px;color:#fff;display:block;line-height:1.15}
+.cs-metric span{color:#C3CAD5;font-size:15px;display:block;margin-top:8px}
+.cs-outcome{max-width:820px;margin:40px auto 0;text-align:center;color:#D0D5DD;font-size:18px;line-height:1.75}
+.cs-stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:40px}
+.cs-st{border:1px solid #E4E7EC;border-radius:14px;padding:18px;text-align:center;background:#fff}
+.cs-st b{color:#101828;display:block}.cs-st small{color:#667085;font-size:13px}
+.cs-rel{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.cs-rc{border:1px solid #E4E7EC;border-radius:16px;overflow:hidden;background:#fff;display:block;transition:border-color .2s}
+.cs-rc:hover{border-color:#006D77}
+.cs-rc img{width:100%;height:190px;object-fit:cover;object-position:top;display:block;background:#fff}
+.cs-rc div{padding:20px}.cs-rc h4{font-size:18px}.cs-rc p{font-size:14.5px;margin:6px 0 0;color:#667085}
+.cs-tag{font-size:12px;background:#FFF3EA;color:#B4461A;padding:2px 8px;border-radius:99px;margin-left:6px;font-weight:600;vertical-align:middle}
+.cs-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:30px}
+.cs-links a{border:1px solid #D0D5DD;border-radius:99px;padding:8px 16px;font-size:14.5px;color:#101828;background:#fff}
+.cs-cta{background:#101828;border-radius:24px;padding:60px;display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:center}
+.cs-cta h2{color:#fff;font-size:36px}.cs-cta p{color:#C3CAD5;margin:12px 0 0;font-size:17px;line-height:1.7}
+.cs-btn-w{background:#fff;color:#00545C;border-radius:10px;padding:15px 26px;font-weight:700;text-align:center;display:block}
+.cs-btn-o{color:#fff;border:1.5px solid rgba(255,255,255,.6);border-radius:10px;padding:14px 26px;font-weight:700;text-align:center;display:block}
+@media(max-width:991px){
+ .cs-top,.cs-split,.cs-cta{grid-template-columns:1fr}.cs-build,.cs-rel{grid-template-columns:1fr 1fr}
+ .cs-hero h1{font-size:36px}.cs-h2{font-size:30px}.cs-sec,.cs-results{padding:70px 0}
+ .cs-browser img{height:360px}.cs-photo img{height:320px}.cs-cta{padding:40px}.cs-arrow{display:none}
+}
+@media(max-width:575px){.cs-build,.cs-rel,.cs-facts{grid-template-columns:1fr}.cs-hero h1{font-size:30px}}
+`
 
 export default async function CaseStudyPage({ params }) {
     const { slug } = await params
-    const project = getCaseStudy(slug)
-    if (!project) notFound()
+    const p = getCaseStudy(slug)
+    if (!p) notFound()
+    const x = getCaseStudyExtras(slug)
+    const concept = !!x.concept
+    const hidden = new Set(x.unverifiedResults || [])
+    const results = (p.results || []).filter((r) => !hidden.has(r.label))
+    const summary = x.summary || p.tagline
 
-    // Find 3 other related case studies
-    const otherProjects = CASE_STUDIES
-        .filter((p) => p.slug !== slug)
-        .slice(0, 3)
+    // Related: real client work first, never the current page, max 3.
+    const ordered = [
+        ...REAL_FIRST.map(getCaseStudy).filter(Boolean),
+        ...CASE_STUDIES.filter((c) => !REAL_FIRST.includes(c.slug)),
+    ].filter((c) => c.slug !== slug).slice(0, 3)
 
-    // Cover styles
-    const coverGradient = {
-        background: `linear-gradient(135deg, ${project.cover?.from || '#101828'} 0%, ${project.cover?.to || '#1D2939'} 100%)`,
-        padding: "160px 0 100px"
-    }
+    // CTA price line — only from pricing.js
+    const isAI = (p.techStack || []).some((t) => /OpenAI|Claude|GPT|Gemini|AI/.test(t))
+    const ctaPrice = /E-?Commerce/i.test(p.industry)
+        ? `Online stores from ${tier("ecommerce")?.priceLabel}${isAI && chatbot ? `, and AI chatbots ${chatbot.price}` : ""}.`
+        : /SaaS|EdTech/i.test(p.industry)
+            ? `Applications from ${tier("application")?.priceLabel}; custom software ${tier("custom-software")?.priceLabel}.`
+            : `Websites from ${tier("starter")?.priceLabel}.`
 
-    const marketingHook = AU_MARKETING_HOOKS[slug] || "We build performant web platforms customized for the Australian business landscape, focusing on maximizing conversions, eliminating platform fees, and delivering premium design."
-
-    /* ── Structured data: CreativeWork / CaseStudy + BreadcrumbList ── */
     const url = `https://buildfirstsite.com/work/${slug}/`
     const jsonLd = [
         {
             "@context": "https://schema.org",
             "@type": "CreativeWork",
-            name: project.name,
-            headline: project.tagline,
-            description: project.metaDescription,
-            image: project.image,
-            genre: project.industry,
-            locationCreated: {
-                "@type": "Place",
-                "name": project.location
-            },
-            publisher: {
-                "@type": "Organization",
-                name: "Build First Site",
-                url: "https://buildfirstsite.com/",
-            },
+            "@id": `${url}#work`,
+            name: concept ? `${p.name} (concept build)` : p.name,
+            headline: p.tagline,
+            description: summary,
+            image: p.image,
+            genre: p.industry,
+            url,
+            creator: { "@id": `${SITE.url}/#organization` },
+            publisher: { "@id": `${SITE.url}/#organization` },
+            ...(p.liveUrl ? { mainEntityOfPage: url, sameAs: p.liveUrl } : {}),
             inLanguage: "en-AU",
         },
         {
@@ -88,406 +192,215 @@ export default async function CaseStudyPage({ params }) {
             "@type": "BreadcrumbList",
             itemListElement: [
                 { "@type": "ListItem", position: 1, name: "Home", item: "https://buildfirstsite.com/" },
-                { "@type": "ListItem", position: 2, name: "Portfolio", item: "https://buildfirstsite.com/work/" },
-                { "@type": "ListItem", position: 3, name: project.name, item: url },
+                { "@type": "ListItem", position: 2, name: "Work", item: "https://buildfirstsite.com/work/" },
+                { "@type": "ListItem", position: 3, name: p.name, item: url },
             ],
         },
     ]
 
     return (
-        <Layout headerStyle={"header-style-5 case-study-header"}>
-            <div>
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-                />
+        <Layout>
+            <style dangerouslySetInnerHTML={{ __html: CSS }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-                <style dangerouslySetInnerHTML={{ __html: `
-                    .case-study-header {
-                        position: absolute !important;
-                        left: 0;
-                        top: 0;
-                        width: 100%;
-                        z-index: 100;
-                        background: transparent !important;
-                        border-bottom: none !important;
-                    }
-                    .case-study-header .main-menu > li > a {
-                        color: rgba(255, 255, 255, 0.85) !important;
-                    }
-                    .case-study-header .main-menu > li > a:hover {
-                        color: #fff !important;
-                    }
-                    .case-study-header.stick {
-                        position: fixed !important;
-                        background-color: rgba(16, 24, 40, 0.95) !important;
-                        backdrop-filter: blur(8px);
-                        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-                    }
-                    
-                    @media (min-width: 992px) {
-                        .case-study-content {
-                            padding-right: 50px !important;
-                        }
-                    }
-                    @media (max-width: 991.98px) {
-                        .case-study-content {
-                            padding-right: 15px !important;
-                        }
-                    }
-                    
-                    .marketing-box {
-                        padding: 40px !important;
-                    }
-                    .sidebar-box {
-                        padding: 35px !important;
-                    }
-                    .approach-card {
-                        padding: 40px !important;
-                    }
-                    .outcome-box {
-                        padding: 50px !important;
-                    }
-                    .cta-box {
-                        padding: 50px !important;
-                    }
-                    
-                    @media (max-width: 575.98px) {
-                        .marketing-box {
-                            padding: 24px 20px !important;
-                        }
-                        .sidebar-box {
-                            padding: 24px 20px !important;
-                        }
-                        .approach-card {
-                            padding: 24px 20px !important;
-                        }
-                        .outcome-box {
-                            padding: 30px 20px !important;
-                        }
-                        .cta-box {
-                            padding: 35px 20px !important;
-                        }
-                    }
-                ` }} />
-
-                {/* ── HERO with Gradient cover ── */}
-                <section className="section-box">
-                    <div className="banner-hero" style={coverGradient}>
-                        <div className="container">
-                            <div className="row align-items-center">
-                                <div className="col-lg-8">
-                                    <div className="d-flex align-items-center gap-10 mb-20">
-                                        <span className="tag-1 bg-white color-gray-900" style={{ fontWeight: 700 }}>
-                                            {project.industry.toUpperCase()}
-                                        </span>
-                                        <span className="tag-1 bg-6 color-green-900" style={{ fontWeight: 600 }}>
-                                            📍 {project.location}
-                                        </span>
-                                    </div>
-                                    <h1 className="text-display-3 color-white mt-10">
-                                        {project.name}
-                                    </h1>
-                                    <p className="text-body-lead-large color-gray-200 mt-20" style={{ maxWidth: '720px' }}>
-                                        {project.tagline}
-                                    </p>
-                                    <div className="mt-40 d-flex flex-wrap align-items-center gap-15">
-                                        {project.liveUrl && (
-                                            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" 
-                                               className="btn btn-black icon-arrow-right-white" style={{ background: '#fff', color: '#101828' }}>
-                                                Visit Live Project
-                                            </a>
-                                        )}
-                                        <Link href="/work/" className="btn btn-link color-white icon-arrow-right">
-                                            Back to Portfolio
-                                        </Link>
-                                    </div>
-                                </div>
-                                <div className="col-lg-4 text-center d-none d-lg-block">
-                                    {project.cover?.mark && (
-                                        <div style={{
-                                            fontSize: '120px',
-                                            fontWeight: 900,
-                                            opacity: 0.15,
-                                            color: '#fff',
-                                            fontFamily: 'var(--chivo)',
-                                            letterSpacing: '-2px',
-                                            userSelect: 'none'
-                                        }}>
-                                            {project.cover.mark}
-                                        </div>
-                                    )}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* ── RESULTS / METRICS BAR ── */}
-                {project.results && project.results.length > 0 && (
-                    <section className="section-box" style={{ background: '#101828', padding: '40px 0' }}>
-                        <div className="container">
-                            <div className="row text-center justify-content-center">
-                                {project.results.map((res, index) => (
-                                    <div className="col-lg-3 col-md-6 col-6 mb-30 mb-lg-0" key={index}>
-                                        <h3 className="text-display-3 color-white" style={{ fontSize: '36px', fontWeight: 800 }}>
-                                            {res.value}
-                                        </h3>
-                                        <p className="text-body-small color-gray-400 mt-10">
-                                            {res.label}
-                                        </p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </section>
-                )}
-
-                {/* ── CHALLENGE & METADATA SIDEBAR ── */}
-                <section className="section-box mt-80 mb-50">
+            <div className="cs">
+                {/* 1. HERO */}
+                <section className="cs-hero">
                     <div className="container">
-                        <div className="row">
-                            <div className="col-lg-8 case-study-content">
-                                <span className="text-body-capitalized text-uppercase color-orange" style={{ color: '#E96A3D', fontWeight: 700 }}>
-                                    The Challenge
-                                </span>
-                                <h2 className="text-heading-2 mt-15 mb-30" style={{ color: '#0F5E4E' }}>
-                                    Understanding the problem
-                                </h2>
-                                <div className="text-body-excerpt color-gray-600">
-                                    {project.challenge.map((paragraph, index) => (
-                                        <p key={index} className="mb-20" style={{ lineHeight: '1.8' }}>
-                                            {paragraph}
-                                        </p>
-                                    ))}
-                                </div>
-
-                                {/* Custom Australian Marketing Hook */}
-                                <div className="mt-40 bdrd-16 marketing-box" style={{ background: '#F8F9FC', borderLeft: '4px solid #E96A3D' }}>
-                                    <h4 className="text-heading-5 color-gray-900 mb-15">The Marketing Angle</h4>
-                                    <p className="text-body-text color-gray-700 mb-0" style={{ lineHeight: '1.7' }}>
-                                        {marketingHook}
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* Sidebar Info */}
-                            <div className="col-lg-4 mt-50 mt-lg-0">
-                                <div className="bdrd-16 sidebar-box" style={{ background: '#F4E9DF', border: '1px solid #E4E7EC' }}>
-                                    <h4 className="text-heading-5 color-gray-900 mb-25">Project Details</h4>
-                                    
-                                    <div className="mb-25">
-                                        <span className="text-body-small color-gray-500 text-uppercase d-block mb-5">Timeline</span>
-                                        <span className="text-body-lead color-gray-900 font-semibold">{project.timeline}</span>
-                                    </div>
-
-                                    <div className="mb-25">
-                                        <span className="text-body-small color-gray-500 text-uppercase d-block mb-5">Services Delivered</span>
-                                        <div className="d-flex flex-wrap gap-5 mt-5">
-                                            {project.services.map((service, idx) => (
-                                                <span key={idx} className="tag-1 bg-white color-gray-800" style={{ fontSize: '12px' }}>
-                                                    {service}
-                                                </span>
-                                            ))}
-                                        </div>
-                                    </div>
-
-                                    <div className="mb-25">
-                                        <span className="text-body-small color-gray-500 text-uppercase d-block mb-5">Technology Stack</span>
-                                        <div className="d-flex flex-wrap gap-5 mt-5">
-                                            {project.techStack.map((tech, idx) => (
-                                                <span key={idx} className="tag-1 bg-white color-gray-800" style={{ fontSize: '12px' }}>
-                                                    {tech}
-                                                </span>
-                                            ))}
-                                        </div>
-                                    </div>
-
-                                    {project.liveUrl && (
-                                        <div className="mt-30">
-                                            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" 
-                                               className="btn btn-black w-100 text-center" style={{ padding: '12px 20px', display: 'block' }}>
-                                                View Live Website ↗
-                                            </a>
-                                        </div>
-                                    )}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* ── APPROACH / HOW WE SOLVED IT ── */}
-                {project.approach && project.approach.length > 0 && (
-                    <section className="section-box mt-70 pt-80 pb-80" style={{ background: '#F0F4FA' }}>
-                        <div className="container">
-                            <div className="text-center mb-60">
-                                <span className="text-body-capitalized text-uppercase color-orange" style={{ color: '#E96A3D', fontWeight: 700 }}>
-                                    Our Approach
-                                </span>
-                                <h2 className="text-heading-2 mt-15" style={{ color: '#0F5E4E' }}>
-                                    How we delivered results
-                                </h2>
-                            </div>
-                            
-                            <div className="row">
-                                {project.approach.map((step, index) => (
-                                    <div className="col-lg-6 mb-30" key={index}>
-                                        <div className="card-grid-style-2 hover-up approach-card" style={{ background: '#fff', borderRadius: '16px', height: '100%' }}>
-                                            <div className="d-flex align-items-center mb-20">
-                                                <span className="text-display-3 color-orange mr-20" style={{ fontSize: '32px', color: '#E96A3D', fontWeight: 800 }}>
-                                                    0{index + 1}
-                                                </span>
-                                                <h4 className="text-heading-4 color-gray-900 mb-0">
-                                                    {step.title}
-                                                </h4>
-                                            </div>
-                                            <p className="text-body-text color-gray-600" style={{ lineHeight: '1.6' }}>
-                                                {step.body}
-                                            </p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </section>
-                )}
-
-                {/* ── OUTCOME BLOCK ── */}
-                {project.outcome && (
-                    <section className="section-box mt-80 mb-80">
-                        <div className="container">
-                            <div className="row">
-                                <div className="col-lg-10 mx-auto">
-                                    <div className="bdrd-16 outcome-box" style={{ background: '#E7F1FA', border: '1px solid #B9D5EC' }}>
-                                        <div className="row align-items-center">
-                                            <div className="col-lg-2 text-center text-lg-start mb-30 mb-lg-0">
-                                                <div style={{
-                                                    width: '60px',
-                                                    height: '60px',
-                                                    borderRadius: '50%',
-                                                    background: '#0F5E4E',
-                                                    display: 'inline-flex',
-                                                    alignItems: 'center',
-                                                    justifyContent: 'center',
-                                                    color: '#fff',
-                                                    fontSize: '24px',
-                                                    fontWeight: 'bold'
-                                                }}>
-                                                    ✓
-                                                </div>
-                                            </div>
-                                            <div className="col-lg-10">
-                                                <h3 className="text-heading-3 mb-15" style={{ color: '#0F5E4E' }}>
-                                                    Final Outcome
-                                                </h3>
-                                                <p className="text-body-normal color-gray-800 mb-0" style={{ fontStyle: 'italic', lineHeight: '1.6' }}>
-                                                    "{project.outcome}"
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                )}
-
-                {/* ── CTA callout box ── */}
-                <section className="section-box mt-80 mb-80">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-10 mx-auto">
-                                <div className="mt-40 bdrd-16 text-center cta-box"
-                                    style={{ background: '#F4E9DF', border: '1px solid #E4E7EC' }}>
-                                    <h3 className="text-heading-2 color-gray-900">Want a site like this?</h3>
-                                    <p className="text-body-excerpt color-gray-700 mt-20" style={{ maxWidth: '650px', margin: '20px auto 0', lineHeight: '1.6' }}>
-                                        Let's discuss how we can build a fast, zero-commission, modern custom web application tailored specifically for your Australian business growth.
-                                    </p>
-                                    <div className="mt-35 d-flex flex-wrap justify-content-center gap-15">
-                                        <a data-loc="case-study" href={SITE.calendly} target="_blank" rel="noopener noreferrer"
-                                            className="btn btn-black icon-arrow-right-white">
-                                            Book a free call
+                        <Breadcrumbs items={[{ name: "Work", href: "/work/" }, { name: p.name }]} />
+                        <div className="cs-top">
+                            <div>
+                                <span className="tag-1">{concept ? "Concept build" : "Case study"} · {p.industry}</span>
+                                {concept && <span className="cs-concept">Not client work</span>}
+                                <h1>{p.name}: <span>{p.tagline}</span></h1>
+                                <p className="cs-lead" style={{ marginTop: 18 }}>{summary}</p>
+                                <div style={{ marginTop: 28, display: "flex", gap: 14, flexWrap: "wrap" }}>
+                                    {p.liveUrl && (
+                                        <a href={p.liveUrl} target="_blank" rel="noopener noreferrer" className="btn btn-black">
+                                            Visit {hostOf(p.liveUrl)} ↗
                                         </a>
-                                        <Link href="/contact/" className="btn btn-link icon-arrow-right color-gray-900" style={{ fontWeight: 600 }}>
-                                            Get a custom quote
-                                        </Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* ── RELATED PROJECTS ── */}
-                {otherProjects.length > 0 && (
-                    <section className="section-box mt-100 mb-100" style={{ borderTop: '1px solid #E4E7EC', paddingTop: '80px' }}>
-                        <div className="container">
-                            <div className="row align-items-center mb-50">
-                                <div className="col-lg-8">
-                                    <h3 className="text-heading-2 mb-10" style={{ color: '#0F5E4E' }}>Explore More Projects</h3>
-                                    <p className="text-body-excerpt color-gray-600">
-                                        See how we have helped other businesses succeed with clean design and robust engineering
-                                    </p>
-                                </div>
-                                <div className="col-lg-4 text-lg-end text-start pt-20">
-                                    <Link href="/work/" className="btn btn-black icon-arrow-right-white">
-                                        All Projects
+                                    )}
+                                    <Link href={CTA.primary.href} className="btn btn-link icon-arrow-right color-gray-900 text-heading-6">
+                                        Start a similar project
                                     </Link>
                                 </div>
                             </div>
-                            
-                            <div className="row">
-                                {otherProjects.map((p) => (
-                                    <div className="col-lg-4 col-md-6 mb-30" key={p.slug}>
-                                        <div className="hover-up" style={{
-                                            background: '#F1F4FB',
-                                            borderRadius: 22,
-                                            padding: 18,
-                                            height: '100%',
-                                            display: 'flex',
-                                            flexDirection: 'column',
-                                        }}>
-                                            <Link href={`/work/${p.slug}/`} style={{ display: 'block', borderRadius: 14, overflow: 'hidden' }}>
-                                                <img
-                                                    src={p.image}
-                                                    alt={p.name}
-                                                    style={{
-                                                        width: '100%',
-                                                        height: 200,
-                                                        objectFit: 'cover',
-                                                        objectPosition: 'top center',
-                                                        display: 'block',
-                                                        background: '#fff',
-                                                    }}
-                                                    loading="lazy"
-                                                />
-                                            </Link>
-                                            
-                                            <div className="mt-20 flex-grow-1">
-                                                <span className="text-body-small color-orange" style={{ color: '#E96A3D', fontWeight: 600 }}>
-                                                    {p.industry}
-                                                </span>
-                                                <h4 className="text-heading-5 color-gray-900 mt-5 mb-10">
-                                                    {p.name}
-                                                </h4>
-                                                <p className="text-body-small color-gray-600 mb-15">
-                                                    {p.tagline}
-                                                </p>
-                                            </div>
+                            <div className="cs-facts">
+                                <div className="cs-fact"><small>{concept ? "Concept" : "Client"}</small><b>{p.name}</b></div>
+                                <div className="cs-fact"><small>Industry</small><b>{p.industry}</b></div>
+                                {p.timeline && <div className="cs-fact"><small>Timeline</small><b>{p.timeline}</b></div>}
+                                {p.services?.length > 0 && <div className="cs-fact"><small>Delivered</small><b>{p.services.slice(0, 3).join(" · ")}</b></div>}
+                            </div>
+                        </div>
+                        {p.image && (
+                            <a className="cs-browser" href={p.liveUrl || "#"} target="_blank" rel="noopener noreferrer">
+                                <div className="bar"><i /><i /><i /><span>{hostOf(p.liveUrl)}</span></div>
+                                <img src={p.image} alt={`${p.name} homepage${concept ? " (concept build)" : ""}, built by Build First Site`}
+                                    width={1200} height={900} fetchPriority="high" />
+                            </a>
+                        )}
+                    </div>
+                </section>
 
-                                            <div className="mt-10">
-                                                <Link href={`/work/${p.slug}/`} style={{ color: '#0F5E4E', fontWeight: 600, fontSize: 13, textDecoration: 'none' }}>
-                                                    Read the case study →
-                                                </Link>
-                                            </div>
-                                        </div>
+                {/* 2. PROBLEM */}
+                {p.challenge?.length > 0 && (
+                    <section className="cs-sec">
+                        <div className={`container ${x.contextImage ? "cs-split" : ""}`}>
+                            <div style={x.contextImage ? undefined : { maxWidth: 820, margin: "0 auto" }}>
+                                <span className="tag-1">{concept ? "The brief" : "The problem"}</span>
+                                <h2 className="cs-h2" style={{ marginTop: 16 }}>What had to change</h2>
+                                {p.challenge.map((para, i) => (
+                                    <p key={i} style={{ marginTop: 18, lineHeight: 1.75 }}>{para}</p>
+                                ))}
+                            </div>
+                            {x.contextImage && (
+                                <figure className="cs-photo">
+                                    <img src={x.contextImage.src} alt={x.contextImage.alt} width={1400} height={930} loading="lazy" />
+                                    <figcaption className="cs-cap">Illustrative photo · Unsplash</figcaption>
+                                </figure>
+                            )}
+                        </div>
+                    </section>
+                )}
+
+                {/* 3. USE CASES */}
+                {x.useCases?.length > 0 && (
+                    <section className="cs-sec cs-mint">
+                        <div className="container">
+                            <div className="cs-center">
+                                <h2 className="cs-h2">Who it’s built for</h2>
+                                <p className="cs-lead">Each part of the build answers a real moment where the sale or the enquiry could be lost.</p>
+                            </div>
+                            <div className="cs-uses">
+                                {x.useCases.map((u) => (
+                                    <div className="cs-use" key={u.title}>
+                                        <div className="who">{u.who}</div>
+                                        <h3>{u.title}</h3>
+                                        <p>{u.body}</p>
+                                        <div className="fix"><b>Fix:</b> {u.fix}</div>
                                     </div>
                                 ))}
                             </div>
                         </div>
                     </section>
                 )}
+
+                {/* 4. WHAT WE BUILT */}
+                {p.approach?.length > 0 && (
+                    <section className="cs-sec">
+                        <div className="container">
+                            <div className="cs-center"><h2 className="cs-h2">What we built</h2></div>
+                            <div className="cs-build">
+                                {p.approach.map((a, i) => {
+                                    const shot = x.shots?.[i]
+                                    return (
+                                        <div className="cs-block" key={a.title}>
+                                            <div className="cs-num">{String(i + 1).padStart(2, "0")}</div>
+                                            <h3>{a.title}</h3>
+                                            <p>{a.body}</p>
+                                            {shot && <img src={shot.src} alt={shot.alt} loading="lazy" />}
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                        </div>
+                    </section>
+                )}
+
+                {/* 5. HOW IT FITS TOGETHER */}
+                {x.flow?.length > 0 && (
+                    <section className="cs-sec cs-mint">
+                        <div className="container">
+                            <div className="cs-center">
+                                <h2 className="cs-h2">How it fits together</h2>
+                                <p className="cs-lead">The path from a visitor arriving to the job being done.</p>
+                            </div>
+                            <div className="cs-arch">
+                                {x.flow.map((n, i) => (
+                                    <div key={n.t} style={{ display: "contents" }}>
+                                        {i > 0 && <span className="cs-arrow" aria-hidden="true">→</span>}
+                                        <div className="cs-node"><b>{n.t}</b><small>{n.s}</small></div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+                )}
+
+                {/* 6. RESULTS — only verifiable results; unmeasured ones hidden */}
+                {(results.length > 0 || p.outcome) && (
+                    <section className="cs-results">
+                        <div className="container">
+                            <div className="cs-center">
+                                <h2 className="cs-h2">{concept ? "What the concept delivers" : "Results"}</h2>
+                            </div>
+                            {results.length > 0 && (
+                                <div className="cs-metrics">
+                                    {results.map((r) => (
+                                        <div className="cs-metric" key={r.label}><b>{r.value}</b><span>{r.label}</span></div>
+                                    ))}
+                                </div>
+                            )}
+                            {p.outcome && <p className="cs-outcome">{p.outcome}</p>}
+                        </div>
+                    </section>
+                )}
+
+                {/* 7. BUILT WITH — each tool with what it does for the business */}
+                {p.techStack?.length > 0 && (
+                    <section className="cs-sec" style={{ paddingTop: 70, paddingBottom: 70 }}>
+                        <div className="container">
+                            <div className="cs-center"><h2 className="cs-h2">Built with</h2></div>
+                            <div className="cs-stack">
+                                {p.techStack.map((t) => (
+                                    <div className="cs-st" key={t}><b>{t}</b>{TECH_ROLE[t] && <small>{TECH_ROLE[t]}</small>}</div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+                )}
+
+                {/* 8. MORE WORK + SERVICE LINKS */}
+                <section className="cs-sec cs-mint">
+                    <div className="container">
+                        <div className="cs-center"><h2 className="cs-h2">More work</h2></div>
+                        <div className="cs-rel">
+                            {ordered.map((o) => {
+                                const oc = getCaseStudyExtras(o.slug).concept
+                                return (
+                                    <Link className="cs-rc" key={o.slug} href={`/work/${o.slug}/`}>
+                                        <img src={o.image} alt={`${o.name}${oc ? " concept build" : ""}`} width={800} height={600} loading="lazy" />
+                                        <div>
+                                            <h4>{o.name}{oc && <span className="cs-tag">Concept build</span>}</h4>
+                                            <p>{o.tagline}</p>
+                                        </div>
+                                    </Link>
+                                )
+                            })}
+                        </div>
+                        <div className="cs-links">
+                            {(x.relatedServices || []).map((l) => <Link key={l.href} href={l.href}>{l.label}</Link>)}
+                            <Link href="/pricing/">Pricing</Link>
+                            <Link href="/work/">All work</Link>
+                        </div>
+                    </div>
+                </section>
+
+                {/* 9. CTA — navy, matching the results band */}
+                <section className="cs-sec">
+                    <div className="container">
+                        <div className="cs-cta">
+                            <div>
+                                <h2>Want something like this?</h2>
+                                <p>Fixed AUD quote within 24 hours. {ctaPrice} You deal directly with the engineer who builds it.</p>
+                            </div>
+                            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                                <Link href={CTA.primary.href} className="cs-btn-w">Get a quote →</Link>
+                                <a href={SITE.calendly} target="_blank" rel="noopener noreferrer" data-loc={`work-${slug}-cta`} className="cs-btn-o">Book a free call</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </Layout>
     )

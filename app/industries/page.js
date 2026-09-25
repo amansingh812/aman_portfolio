@@ -29,7 +29,7 @@ export const metadata = {
 const INDUSTRIES = [
     {
         title: "Healthcare",
-        blurb: "Clinics, telehealth portals, patient booking. HIPAA-ready workflows, integrated with your PMS.",
+        blurb: "Clinics, telehealth pages and online booking, with privacy-aware forms built around the Australian Privacy Principles.",
         href: "/industries/healthcare/",
         image: "/assets/imgs/page/industries/industry-healthcare.png",
         bg: "bg-2",
@@ -122,8 +122,8 @@ export default function IndustriesPage() {
                                 </h1>
                                 <p className="text-body-lead-large color-gray-500 mt-30 pr-40">
                                     Healthcare needs bookings. Trades need quote forms. Real estate
-                                    needs listings. Retail needs Stripe. We&apos;ve built for all of it —
-                                    and we&apos;ll bring what we&apos;ve learned to yours.
+                                    needs listings. Retail needs Stripe. We&apos;ve built these features for
+                                    real clients — and we&apos;ll bring what we&apos;ve learned to yours.
                                 </p>
                                 <div className="mt-40">
                                     <Link href="/contact/" className="btn btn-black icon-arrow-right-white mr-10">

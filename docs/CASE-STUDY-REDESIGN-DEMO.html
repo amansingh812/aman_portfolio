@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DEMO — /work/mobile-armour/ redesign</title>
+<link href="https://fonts.bunny.net/css?family=chivo:400,700|noto-sans:400,500,700" rel="stylesheet">
+<style>
+:root{--teal:#006D77;--teal-d:#00545C;--mint:#DBECE5;--mint-l:#EEF6F2;--peach:#FFF3EA;--ink:#101828;--g700:#344054;--g600:#475467;--g500:#667085;--line:#E4E7EC;--orange:#D9541A}
+*{box-sizing:border-box}body{margin:0;font-family:"Noto Sans",sans-serif;color:var(--g700);font-size:17px;line-height:1.7}
+h1,h2,h3,h4{font-family:Chivo,sans-serif;color:var(--ink);margin:0;line-height:1.2}a{color:var(--teal)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}.demo-bar{background:#101828;color:#fff;font-size:13px;text-align:center;padding:8px}
+section{padding:92px 0}.h2{font-size:38px}.lead{font-size:19px;color:var(--g600);max-width:720px}.center{text-align:center}.center .lead{margin:14px auto 0}
+.mint{background:var(--mint-l)}.eyebrow{display:inline-block;background:var(--peach);color:#B4461A;font-size:14px;font-weight:500;padding:8px 18px;border-radius:99px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:15px 26px;border-radius:10px;font-weight:700;text-decoration:none;font-family:Chivo,sans-serif}
+.btn-dark{background:var(--ink);color:#fff}.btn-ghost{color:var(--ink);border:1.5px solid var(--ink)}
+.todo{background:#FFFBEB;border:1.5px dashed #F5B83D;color:#7A4B00;font-size:14px;padding:12px 16px;border-radius:10px;line-height:1.55}
+.todo b{color:#7A4B00}
+/* hero */
+.hero{background:linear-gradient(180deg,var(--mint-l),#fff);padding:26px 0 70px}
+.crumbs{font-size:14px;color:var(--g500)}
+.hero h1{font-size:52px;margin-top:18px}.hero h1 span{color:var(--teal)}
+.hero .top{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:end;margin-top:22px}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.fact{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px}.fact small{display:block;font-size:12.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--g500)}.fact b{font-family:Chivo;color:var(--ink);font-size:17px}
+.browser{margin-top:48px;background:#fff;border-radius:16px;box-shadow:0 40px 80px rgba(16,24,40,.16);overflow:hidden;border:1px solid var(--line)}
+.browser .bar{height:38px;background:#F2F4F7;display:flex;align-items:center;gap:7px;padding:0 14px}.browser .bar i{width:11px;height:11px;border-radius:50%;background:#D0D5DD}
+.browser .bar span{margin-left:12px;font-size:13px;color:var(--g500);background:#fff;border-radius:6px;padding:3px 12px}
+.browser img{display:block;width:100%;height:560px;object-fit:cover;object-position:top}
+/* at a glance */
+.glance{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:-40px;position:relative;background:#fff}
+.glance div{padding:22px 24px;border-right:1px solid var(--line)}.glance div:last-child{border:0}
+.glance small{display:block;font-size:13px;color:var(--g500)}.glance b{font-family:Chivo;color:var(--ink);font-size:16px}
+/* split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.photo{border-radius:18px;overflow:hidden}.photo img{width:100%;height:440px;object-fit:cover;display:block}
+figcaption{font-size:13px;color:var(--g500);margin-top:8px}
+.quote-pull{border-left:4px solid var(--teal);padding:4px 0 4px 20px;font-family:Chivo;font-size:22px;color:var(--ink);margin:26px 0;line-height:1.4}
+/* use cases */
+.uses{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
+.use{background:#fff;border:1px solid var(--line);border-radius:16px;padding:30px}
+.use .who{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--teal);font-weight:700}
+.use h3{font-size:20px;margin:10px 0}.use p{font-size:15.5px;color:var(--g600);margin:0}
+.use .fix{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:15px;color:var(--ink)}.use .fix b{color:var(--teal)}
+/* build blocks */
+.block{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding:44px 0;border-bottom:1px solid var(--line)}
+.block:nth-child(even) .vis{order:-1}
+.num{font-family:Chivo;font-weight:700;color:var(--teal);font-size:15px}.block h3{font-size:28px;margin:8px 0 12px}.block p{color:var(--g600);margin:0}
+.block ul{margin:14px 0 0;padding-left:20px;color:var(--g600);font-size:15.5px}
+.shotbox{border-radius:16px;border:2px dashed #D0D5DD;background:#F9FAFB;height:300px;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--g500);font-size:15px;padding:24px}
+.shotbox b{display:block;color:var(--ink);font-family:Chivo;margin-bottom:6px}
+/* architecture */
+.arch{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:48px}
+.node{background:#fff;border:1.5px solid var(--teal);border-radius:14px;padding:18px 22px;text-align:center;min-width:150px}.node b{font-family:Chivo;color:var(--ink);display:block}.node small{color:var(--g500);font-size:13px}
+.arrow{color:var(--teal);font-size:26px}
+/* results */
+.results{background:var(--ink);color:#fff}.results .h2{color:#fff}.results .lead{color:#C3CAD5}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px}
+.metric{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:28px}
+.metric b{font-family:Chivo;font-size:44px;color:#fff;display:block;line-height:1}.metric span{color:#C3CAD5;font-size:15px}
+.metric .flag{display:inline-block;margin-top:12px;font-size:12px;background:#F5B83D;color:#412402;padding:3px 8px;border-radius:6px;font-weight:700}
+/* timeline */
+.tl{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px;position:relative}
+.wk{background:#fff;border-radius:14px;border:1px solid var(--line);padding:24px}.wk small{color:var(--teal);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.06em}.wk h4{margin:8px 0 6px;font-size:18px}.wk p{margin:0;font-size:15px;color:var(--g600)}
+/* stack */
+.stack{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:40px}
+.st{border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center}.st b{font-family:Chivo;color:var(--ink);display:block}.st small{color:var(--g500);font-size:13px}
+/* related */
+.rel{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.rc{border:1px solid var(--line);border-radius:16px;overflow:hidden;text-decoration:none;color:var(--g700);background:#fff}.rc img{width:100%;height:190px;object-fit:cover;object-position:top;display:block}
+.rc div{padding:20px}.rc h4{font-size:18px}.rc p{font-size:14.5px;margin:6px 0 0;color:var(--g500)}
+.links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:30px}.links a{border:1px solid #D0D5DD;border-radius:99px;padding:8px 16px;font-size:14.5px;text-decoration:none;color:var(--ink)}
+.cta{background:var(--teal);border-radius:24px;padding:60px;display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:center}
+.cta h2{color:#fff;font-size:36px}.cta p{color:#D6EEEC;margin:12px 0 0}
+.bw{background:#fff;color:var(--teal-d);justify-content:center}.bo{color:#fff;border:1.5px solid rgba(255,255,255,.6);justify-content:center}
+@media(max-width:900px){.hero .top,.split,.block,.cta{grid-template-columns:1fr}.uses,.metrics,.tl,.rel{grid-template-columns:1fr 1fr}.glance{grid-template-columns:1fr 1fr}.stack{grid-template-columns:repeat(3,1fr)}.hero h1{font-size:36px}.block:nth-child(even) .vis{order:0}}
+</style>
+</head>
+<body>
+<div class="demo-bar">Design demo: /work/mobile-armour/ · yellow boxes = real facts or screenshots needed from you before this ships</div>
+
+<!-- 1 HERO -->
+<header class="hero"><div class="wrap">
+ <div class="crumbs">Home › Work › Mobile Armour</div>
+ <div class="top">
+  <div>
+   <span class="eyebrow">Case study · Retail / E-commerce</span>
+   <h1>Mobile Armour: <span>an AI-powered accessories store that sells smarter</span></h1>
+   <p class="lead" style="margin-top:18px">A large catalogue of phone accessories, rebuilt so shoppers find the right product for their exact device in seconds, and check out on their phone without friction.</p>
+   <div style="margin-top:28px;display:flex;gap:14px;flex-wrap:wrap"><a class="btn btn-dark" href="#">Visit mobilearmour.com.au ↗</a><a class="btn btn-ghost" href="#">Start a similar project</a></div>
+  </div>
+  <div class="facts">
+   <div class="fact"><small>Client</small><b>Mobile Armour</b></div>
+   <div class="fact"><small>Industry</small><b>Retail / E-commerce</b></div>
+   <div class="fact"><small>Timeline</small><b>4 weeks</b></div>
+   <div class="fact"><small>Delivered</small><b>Rebuild · AI · Chatbot</b></div>
+  </div>
+ </div>
+ <div class="browser"><div class="bar"><i></i><i></i><i></i><span>mobilearmour.com.au</span></div>
+  <img src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fmobilearmour.com.au?w=1400" alt="Mobile Armour homepage, rebuilt by Build First Site"></div>
+</div></header>
+
+<!-- 2 PROBLEM -->
+<section><div class="wrap split">
+ <div>
+  <span class="eyebrow">The problem</span>
+  <h2 class="h2" style="margin-top:16px">A working store that was losing sales in two places</h2>
+  <p style="margin-top:18px">Mobile Armour had a working store, but a slow one, and a catalogue big enough that shoppers struggled to find the right accessory for their exact device. Every extra second of load time and every dead-end search was a lost sale.</p>
+  <div class="quote-pull">“Faster and smarter”: help customers find the right product instantly, and make the store feel quick on the phones they actually shop from.</div>
+  <div class="todo"><b>Add from you:</b> what the old store ran on (Shopify? WordPress?), roughly how many products, and one real symptom the owner complained about. Two sentences is enough.</div>
+ </div>
+ <figure style="margin:0"><div class="photo"><img src="https://images.unsplash.com/photo-1542219550-76864b1bc385?w=1200&q=75&auto=format&fit=crop" alt="Assorted phone cases and accessories"></div>
+ <figcaption>Illustrative photo · Unsplash (free licence)</figcaption></figure>
+</div></section>
+
+<!-- 3 USE CASES -->
+<section class="mint"><div class="wrap">
+ <div class="center"><h2 class="h2">Three shoppers, three fixes</h2><p class="lead">Each part of the rebuild answers a real moment where the old store lost the sale.</p></div>
+ <div class="uses">
+  <div class="use"><div class="who">The unsure shopper</div><h3>“Will this fit my phone?”</h3><p>Doesn’t know their exact model number and gives up on a long category list.</p><div class="fix"><b>Fix:</b> a shopping assistant that answers compatibility questions in plain language.</div></div>
+  <div class="use"><div class="who">The browser</div><h3>“Show me what goes with this”</h3><p>Looking at a case, open to a screen protector or charger, but the old “related items” were static.</p><div class="fix"><b>Fix:</b> AI recommendations based on what they’re actually viewing.</div></div>
+  <div class="use"><div class="who">The on-the-go buyer</div><h3>“Just let me pay”</h3><p>Shopping on a phone, on mobile data, with little patience for slow pages.</p><div class="fix"><b>Fix:</b> a faster front end and a short Stripe checkout built for mobile.</div></div>
+ </div>
+</div></section>
+
+<!-- 4 WHAT WE BUILT -->
+<section><div class="wrap">
+ <div class="center"><h2 class="h2">What we built</h2></div>
+ <div>
+  <div class="block"><div><div class="num">01</div><h3>Conversational shopping assistant</h3><p>A built-in chatbot answers compatibility and product questions in natural language, guiding customers to the right item without them needing exact model numbers.</p><ul><li>Answers from the store’s own product data</li><li>Links straight to the matching product</li></ul></div>
+   <div class="vis"><div class="shotbox"><div><b>Real screenshot needed</b>The chatbot open on a phone, answering a real compatibility question.</div></div></div></div>
+  <div class="block"><div><div class="num">02</div><h3>AI product recommendations</h3><p>OpenAI powers contextual recommendations, surfacing the right accessories based on what a shopper is browsing instead of static “related items” lists.</p></div>
+   <div class="vis"><div class="shotbox"><div><b>Real screenshot needed</b>A product page with the recommendation strip visible.</div></div></div></div>
+  <div class="block"><div><div class="num">03</div><h3>Rebuilt for speed on mobile</h3><p>A modern Next.js front end with optimised images and code-splitting, built for the store’s mostly on-phone audience.</p></div>
+   <div class="vis"><div class="shotbox"><div><b>Real screenshot needed</b>PageSpeed Insights result for the live store (mobile).</div></div></div></div>
+  <div class="block"><div><div class="num">04</div><h3>A short Stripe checkout</h3><p>A streamlined Stripe checkout keeps the path from product to purchase short, with mobile-first UX.</p></div>
+   <div class="vis"><figure style="margin:0"><div class="photo"><img style="height:300px" src="https://images.unsplash.com/photo-1768987439370-bd60d3d0b28b?w=1200&q=75&auto=format&fit=crop" alt="Person shopping online on a phone"></div><figcaption>Illustrative photo · Unsplash (free licence)</figcaption></figure></div></div>
+ </div>
+ <div class="todo" style="margin-top:30px"><b>Work you did that isn’t on the page yet? Tick what’s true and I’ll write it up:</b> product schema / Google Shopping feed · admin panel for products and orders · order confirmation emails · GA4 e-commerce tracking · 301 redirects from the old store · image compression pipeline · SEO for product and category pages · hosting and domain setup · ongoing support after launch.</div>
+</div></section>
+
+<!-- 5 HOW IT WORKS -->
+<section class="mint"><div class="wrap">
+ <div class="center"><h2 class="h2">How it fits together</h2><p class="lead">What happens between a shopper opening the site and paying.</p></div>
+ <div class="arch">
+  <div class="node"><b>Shopper’s phone</b><small>browses, asks, buys</small></div><span class="arrow">→</span>
+  <div class="node"><b>Store front end</b><small>Next.js · Tailwind</small></div><span class="arrow">→</span>
+  <div class="node"><b>AI layer</b><small>OpenAI recs + chat</small></div><span class="arrow">→</span>
+  <div class="node"><b>Checkout</b><small>Stripe</small></div><span class="arrow">→</span>
+  <div class="node"><b>Orders and products</b><small>MongoDB</small></div>
+ </div>
+</div></section>
+
+<!-- 6 RESULTS -->
+<section class="results"><div class="wrap">
+ <div class="center"><h2 class="h2">Results</h2><p class="lead">Only numbers we can back up go here.</p></div>
+ <div class="metrics">
+  <div class="metric"><b>+20%</b><span>Engagement</span><br><span class="flag">Needs source</span></div>
+  <div class="metric"><b>−20%</b><span>Load time</span><br><span class="flag">Needs source</span></div>
+  <div class="metric"><b>AI</b><span>Product recommendations live</span></div>
+  <div class="metric"><b>24/7</b><span>Shopping assistant</span></div>
+ </div>
+ <div class="todo" style="margin-top:26px;background:#2B2F3A;border-color:#F5B83D;color:#FAC775"><b style="color:#FAC775">Before shipping:</b> how were +20% and −20% measured (GA4 before/after? PageSpeed?), over what period? If there's no source, these two are removed. Published figures without evidence are the §1 misleading-conduct risk.</div>
+</div></section>
+
+<!-- 7 TIMELINE -->
+<section><div class="wrap">
+ <div class="center"><h2 class="h2">Four weeks, start to launch</h2></div>
+ <div class="tl">
+  <div class="wk"><small>Week 1</small><h4>Audit and plan</h4><p>Old store reviewed, catalogue mapped, speed baseline taken.</p></div>
+  <div class="wk"><small>Week 2</small><h4>Store rebuild</h4><p>New front end, product and category pages.</p></div>
+  <div class="wk"><small>Week 3</small><h4>AI and chatbot</h4><p>Recommendations and assistant wired to product data.</p></div>
+  <div class="wk"><small>Week 4</small><h4>Checkout and launch</h4><p>Stripe, testing on real phones, go live.</p></div>
+ </div>
+ <div class="todo" style="margin-top:22px"><b>Confirm:</b> is this week-by-week split right? Adjust any week and I’ll use your version.</div>
+</div></section>
+
+<!-- 8 STACK AS OUTCOMES -->
+<section class="mint" style="padding-top:70px;padding-bottom:70px"><div class="wrap">
+ <div class="center"><h2 class="h2">Built with</h2></div>
+ <div class="stack">
+  <div class="st"><b>Next.js</b><small>fast mobile pages</small></div><div class="st"><b>OpenAI</b><small>recs and chat</small></div><div class="st"><b>Stripe</b><small>secure checkout</small></div><div class="st"><b>MongoDB</b><small>products and orders</small></div><div class="st"><b>Tailwind</b><small>consistent design</small></div>
+ </div>
+</div></section>
+
+<!-- 9 CLIENT WORDS -->
+<section style="padding-top:70px;padding-bottom:40px"><div class="wrap">
+ <div class="todo"><b>Client quote slot (optional):</b> only a verbatim quote from a named person at Mobile Armour who has agreed to be quoted. If you don’t have one yet, this section is hidden. A Google review from them would do double duty.</div>
+</div></section>
+
+<!-- 10 RELATED + LINKS -->
+<section><div class="wrap">
+ <div class="center"><h2 class="h2">More work</h2></div>
+ <div class="rel">
+  <a class="rc" href="#"><img src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fwww.hsracegear.com?w=800" alt="HS Race Gear"><div><h4>HS Race Gear</h4><p>Racing e-commerce with a 3D product viewer</p></div></a>
+  <a class="rc" href="#"><img src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fwww.autozenlyai.com?w=800" alt="AutoZenlyAI"><div><h4>AutoZenlyAI</h4><p>Six AI providers behind one scheduler</p></div></a>
+  <a class="rc" href="#"><img src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fharbour-plumbing-website.vercel.app?w=800" alt="Harbour Plumbing concept build"><div><h4>Harbour Plumbing <span style="font-size:12px;background:var(--peach);color:#B4461A;padding:2px 8px;border-radius:99px">Concept build</span></h4><p>A tradie site built to win jobs</p></div></a>
+ </div>
+ <div class="links"><a href="#">AI and automation</a><a href="#">E-commerce development</a><a href="#">AI chatbot pricing</a><a href="#">Web development</a><a href="#">What a website costs</a></div>
+</div></section>
+
+<!-- 11 CTA -->
+<section style="padding-top:20px"><div class="wrap"><div class="cta">
+ <div><h2>Want this for your store?</h2><p>Fixed AUD quote within 24 hours. E-commerce builds from $4,500, and AI chatbots from $900.</p></div>
+ <div style="display:flex;flex-direction:column;gap:12px"><a class="btn bw" href="#">Get a quote →</a><a class="btn bo" href="#">Book a free call</a></div>
+</div></div></section>
+</body>
+</html>

@@ -83,7 +83,7 @@ export const CASE_STUDIES = [
     "name": "Mobile Armour",
     "tagline": "An AI-powered accessories store that sells smarter",
     "metaTitle": "Mobile Armour — AI E-Commerce Case Study | Build First Site",
-    "metaDescription": "How we rebuilt Mobile Armour as an AI-powered e-commerce store with OpenAI product recommendations and a conversational shopping assistant — lifting engagement 20% and cutting load time 20%.",
+    "metaDescription": "How we rebuilt Mobile Armour as an AI-powered e-commerce store with OpenAI product recommendations and a conversational shopping assistant.",
     "industry": "Retail / E-Commerce",
     "location": "Australia",
     "liveUrl": "https://mobilearmour.com.au",
@@ -122,7 +122,7 @@ export const CASE_STUDIES = [
       },
       {
         "title": "Rebuilt for speed",
-        "body": "Migrating to a modern Next.js front end with optimised images and code-splitting cut load time by around 20% versus the previous build — a direct win for both conversion and SEO."
+        "body": "Migrating to a modern Next.js front end with optimised images and code-splitting makes the store feel quick on the phones its customers shop from — which matters for both conversion and SEO."
       },
       {
         "title": "Stripe payments",
@@ -239,8 +239,8 @@ export const CASE_STUDIES = [
     "projectId": "04",
     "name": "AURELIA Estates & Prestige",
     "tagline": "A luxury real-estate platform that feels the part",
-    "metaTitle": "AURELIA Estates — Luxury Real Estate Platform Case Study | Build First Site",
-    "metaDescription": "How we built AURELIA Estates & Prestige, a premium real-estate platform with high-end listings, advanced property search, and fast, polished UI that matches the properties it showcases.",
+    "metaTitle": "AURELIA Estates — Luxury Real Estate Concept Build | Build First Site",
+    "metaDescription": "A concept build: AURELIA Estates & Prestige, a premium real-estate platform with high-end listings, advanced property search, and fast, polished UI that matches the properties it showcases.",
     "industry": "Real Estate",
     "location": "Global",
     "liveUrl": "https://aurelia-real-estate-silk.vercel.app",
@@ -264,7 +264,7 @@ export const CASE_STUDIES = [
       "Framer Motion"
     ],
     "challenge": [
-      "In luxury real estate, the website is the shopfront — and a template that looks like every other agency site actively undermines a premium brand. AURELIA needed a platform whose design signalled the calibre of the properties it lists.",
+      "In luxury real estate, the website is the shopfront — and a template that looks like every other agency site actively undermines a premium brand. For this concept build we imagined AURELIA, a prestige agency needing a platform whose design signalled the calibre of the properties it lists.",
       "It also had to be genuinely useful: buyers needed to filter a high-end portfolio quickly and enquire about viewings without friction, all while the interface stayed fast and refined."
     ],
     "approach": [
@@ -303,7 +303,7 @@ export const CASE_STUDIES = [
         "value": "Fast load"
       }
     ],
-    "outcome": "AURELIA now has a platform that looks and performs like the properties it represents — a credible digital shopfront that turns browsers into viewing enquiries.",
+    "outcome": "The concept shows a platform that looks and performs like the properties it represents — a credible digital shopfront that turns browsers into viewing enquiries.",
     "keywords": [
       "real estate website design",
       "property platform developer",
@@ -316,8 +316,8 @@ export const CASE_STUDIES = [
     "projectId": "05",
     "name": "Harbour Plumbing Co.",
     "tagline": "A tradie website built to win jobs, not awards",
-    "metaTitle": "Harbour Plumbing — Tradie Website Case Study | Build First Site",
-    "metaDescription": "How we built a conversion-first website for a Sydney 24/7 emergency plumber in one week: trust-badge hero, quote-request form, click-to-call, and LocalBusiness + FAQ schema for local SEO.",
+    "metaTitle": "Harbour Plumbing — Tradie Website Concept Build | Build First Site",
+    "metaDescription": "A concept build showing how we design a conversion-first website for a 24/7 emergency plumber: trust-badge hero, quote-request form, click-to-call, and LocalBusiness + FAQ schema. Not client work.",
     "industry": "Trades / Home Services",
     "location": "Sydney, Australia",
     "liveUrl": "https://harbour-plumbing-website.vercel.app",
@@ -342,7 +342,7 @@ export const CASE_STUDIES = [
       "JSON-LD"
     ],
     "challenge": [
-      "When a pipe bursts at 2am, nobody scrolls — they call the first plumber who looks trustworthy and reachable. Harbour Plumbing needed a site that converts panicked, high-intent visitors into calls and quote requests immediately.",
+      "When a pipe bursts at 2am, nobody scrolls — they call the first plumber who looks trustworthy and reachable. In this concept build we designed a site for a sample emergency plumber, Harbour Plumbing, that converts panicked, high-intent visitors into calls and quote requests immediately.",
       "It also needed to show up in local search, because most of those visitors arrive from a \"plumber near me\" Google search rather than a bookmark."
     ],
     "approach": [
@@ -360,7 +360,7 @@ export const CASE_STUDIES = [
       },
       {
         "title": "Fast enough to keep the visitor",
-        "body": "A lean build scores Lighthouse 95+, so the page loads before an impatient, in-emergency visitor bounces to a competitor."
+        "body": "A lean build keeps the page light, so it loads before an impatient, in-emergency visitor bounces to a competitor."
       }
     ],
     "results": [
@@ -381,7 +381,7 @@ export const CASE_STUDIES = [
         "value": "Call + form"
       }
     ],
-    "outcome": "Harbour Plumbing went from no real web presence to a fast, trustworthy site engineered around a single goal — turning local searchers into phone calls — delivered in a week.",
+    "outcome": "The concept shows what a one-week tradie build looks like: a fast, trustworthy site engineered around a single goal, turning local searchers into phone calls. It is a spec build, not client work.",
     "keywords": [
       "tradie website design",
       "plumber website",
@@ -394,8 +394,8 @@ export const CASE_STUDIES = [
     "projectId": "06",
     "name": "Marlow & Vine",
     "tagline": "A hospitality site that keeps bookings commission-free",
-    "metaTitle": "Marlow & Vine — Restaurant Website Case Study | Build First Site",
-    "metaDescription": "How we built an editorial website for a Fitzroy café and wine bar with a tabbed menu (no PDFs), provider-agnostic direct table bookings, and Restaurant + Menu schema for local discovery.",
+    "metaTitle": "Marlow & Vine — Restaurant Website Concept Build | Build First Site",
+    "metaDescription": "A concept build: an editorial website for a sample Fitzroy café and wine bar with a tabbed menu (no PDFs), provider-agnostic direct table bookings, and Restaurant + Menu schema for local discovery.",
     "industry": "Hospitality",
     "location": "Fitzroy, Australia",
     "liveUrl": "https://marlow-vine-restaurant.vercel.app",
@@ -420,7 +420,7 @@ export const CASE_STUDIES = [
       "JSON-LD"
     ],
     "challenge": [
-      "Marlow & Vine, a Fitzroy brunch café and wine bar, wanted a site that looked as considered as the venue — and, crucially, one that kept table bookings direct instead of handing a commission to a third-party platform on every cover.",
+      "Marlow & Vine is a concept build: a sample Fitzroy brunch café and wine bar. The brief we set ourselves was a site that looked as considered as the venue — and, crucially, one that kept table bookings direct instead of handing a commission to a third-party platform on every cover.",
       "The old habit of uploading a menu PDF also had to go: PDFs are slow, unreadable on phones, and invisible to search engines."
     ],
     "approach": [
@@ -459,7 +459,7 @@ export const CASE_STUDIES = [
         "value": "Editorial"
       }
     ],
-    "outcome": "Marlow & Vine got a site as polished as the room — and one that protects its margins by keeping bookings direct and its menu discoverable in search.",
+    "outcome": "The concept shows a site as polished as the room, and one that protects its margins by keeping bookings direct and its menu discoverable in search.",
     "keywords": [
       "restaurant website design",
       "cafe website",

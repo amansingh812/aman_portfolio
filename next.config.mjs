@@ -59,6 +59,10 @@ const nextConfig = {
       { source: '/web-design-denver/', destination: '/pricing/', permanent: true },
       { source: '/web-design-phoenix/', destination: '/pricing/', permanent: true },
       { source: '/web-design-nashville/', destination: '/pricing/', permanent: true },
+      // Old static pages from the pre-migration sitemap. GSC still reports
+      // them as 404 (25 Sep 2026); send them to the matching service page.
+      { source: '/ai-chatbot-development-australia/', destination: '/services/ai-automation/', permanent: true },
+      { source: '/app-development-australia/', destination: '/services/mobile-app-development/', permanent: true },
 
       // ── Agon template demo pages, removed 21 Sep 2026 ──────────────────
       // Nine routes shipped with the Agon template and were never stripped

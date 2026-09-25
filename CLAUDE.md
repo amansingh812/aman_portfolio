@@ -236,9 +236,11 @@ renders at `/services/<slug>/` and quotes two figures that exist nowhere else:
 | `AU$500` SEO Audit | Marketing & SEO service page | Not in `pricing.js` |
 | `From AU$200` Pay Per Piece | Maintenance service page | Not in `pricing.js` |
 
-Both are live on the site. Either add them to `ADDONS` or remove them from the
-service pages — right now they are prices a customer can read that the source
-of truth does not know about.
+**Resolved 26 Sep 2026:** both removed in the service-page redesign. Service
+pages now hold only *references* into `pricing.js` (`{ tier }`, `{ addon }`,
+`{ retainer }`) and resolve them at render, so they cannot quote a figure the
+source of truth doesn't have. If the SEO audit or pay-per-piece work are real
+offers, add them to `ADDONS` and reference them from `content/service-pages.js`.
 
 ### Third-party platform prices — `PLATFORM_PRICES`
 
