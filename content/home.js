@@ -451,7 +451,7 @@ export const FAQS = [
   },
   {
     "q": "Do you work with international clients?",
-    "a": "Yes. Most of our work is for Australian businesses, with some clients in the US and UK. Your contact is based in Australia and works Australian hours; calls are scheduled in the AEST morning."
+    "a": "Yes — and with clients in the US and India as well. Your day-to-day contact is based in Australia and works Australian hours; calls are scheduled in the AEST morning."
   },
   {
     "q": "How long does a project take?",

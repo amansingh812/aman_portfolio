@@ -8,7 +8,7 @@ const FAQS = [
     },
     {
         q: "What makes you different from other Australian web agencies?",
-        a: "Most agencies in Australia quote $10,000–$50,000 for work we do at a fraction of that, then hide behind account managers and slow turnarounds. We publish fixed prices, build on a modern Next.js stack instead of patching old WordPress sites, and you deal directly with the person building your project — not a middleman relaying messages to an offshore team."
+        a: "Australian agencies commonly quote $5,000–$15,000 for a small business site, much of it covering account managers and overhead rather than the build. We publish fixed prices, build on a modern Next.js stack instead of patching old WordPress sites, and you deal directly with the engineer building your project — not an account manager relaying messages."
     },
     {
         q: "Will I actually own my website?",

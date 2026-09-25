@@ -525,6 +525,18 @@ Full procedure: **`docs/SEO-PLAYBOOK.md`**. Short version:
 
 ## 7. Open questions
 
+- **Homepage testimonials — unverified (raised 25 Sep 2026).** HS Race Gear is
+  stored as "Melbourne, AU" but its own site says Watertown, Massachusetts.
+  Banish Shoes and Swarom are not on the documented client list. Aman to confirm
+  each of the seven is a verbatim quote from a real, named person who agreed to
+  be quoted, or remove it. §1 — this is misleading-conduct exposure, not styling.
+- **No ABN / no legal entity anywhere on the site.** Blocks invoicing: an AU
+  payer must withhold 47% from an invoice over $75 with no ABN. Structure
+  decision (sole trader / partnership / Pty Ltd) pending an accountant.
+  See `docs/FOUNDER-WEEK-PLAN-2026-09-25.md`.
+- **Mobile stack claim is inconsistent** — homepage says Flutter, four other
+  places say React Native. Confirm which is true.
+
 - Which tool ships first — cost calculator or speed checker?
 - Do we have real measured before/after numbers for HS Race Gear and Mobile Armour?
   (Needed for the deep case studies.)

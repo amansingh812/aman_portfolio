@@ -128,7 +128,7 @@ export default function Home() {
                     <div className="container">
                         <div className="row align-items-center">
                             <div className="col-lg-7">
-                                <span className="tag-1">Accepting new projects — Q3 2026</span>
+                                <span className="tag-1">Free homepage design before you commit</span>
                                 <h1 className="text-display-2 mt-20">
                                     Sites that launch. Apps that scale.
                                     <span className="color-green-900"> Built for Australian businesses.</span>
@@ -263,8 +263,9 @@ export default function Home() {
                                 Built for your industry
                             </h2>
                             <p className="text-body-lead-large color-gray-600 mt-20">
-                                We've built sites for tradies, e-commerce brands, real estate agents, hospitality venues and more.
-                                Every build comes with industry-specific content and conversion patterns baked in.
+                                Client work so far is mostly e-commerce, SaaS and professional services. For trades,
+                                real estate and hospitality we have labelled concept builds, so you can judge the approach
+                                before you commit.
                             </p>
                         </div>
                         <div className="col-lg-2 col-sm-1 col-12" />
@@ -331,7 +332,7 @@ export default function Home() {
                             </div>
                             <h2 className="text-heading-2 color-gray-900 mb-20">
                                 End-to-end delivery by<br className="d-lg-block d-none" />
-                                professional developers
+                                the person who builds it
                             </h2>
                             <p className="text-body-lead-large color-gray-600 mb-30" style={{ maxWidth: 620 }}>
                                 Direct, coordinated delivery to design, build, launch and support your
@@ -384,7 +385,7 @@ export default function Home() {
                                 Recent work
                             </h2>
                             <p className="text-body-lead-large color-gray-600 mt-20">
-                                Products we&apos;ve designed, built and shipped for Australian businesses.
+                                Live products we&apos;ve designed, built and shipped — each on the client&apos;s own domain.
                             </p>
                         </div>
                     </div>

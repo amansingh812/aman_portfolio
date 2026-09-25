@@ -1794,7 +1794,7 @@ export const LANDING_PAGES = [
           ['Hourly rate (AUD)', '$50–120', '$120–250', '$60–140'],
           ['Typical 10-page site', '$1,500–4,000', '$5,000–15,000', '$1,900–3,500'],
           ['Who you talk to', 'The builder', 'An account manager', 'The builder'],
-          ['Who builds it', 'The person you hired', 'Often a junior or offshore team', 'The person you hired'],
+          ['Who builds it', 'The person you hired', 'Often a junior developer or a subcontractor you never meet', 'The person you hired'],
           ['Availability after launch', 'Variable', 'Contracted', 'Depends on the studio'],
           ['Project management', 'Usually none', 'Formal', 'Light'],
         ]

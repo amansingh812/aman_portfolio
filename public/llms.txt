@@ -13,9 +13,8 @@ and the client receives the repository, hosting and domain in their own name at
 launch, with no monthly platform fee and nothing preventing them moving to
 another developer.
 
-Clients work directly with the engineer who writes the code. The day-to-day
-client contact is in Australia; the engineering is done by the founder, who is
-based in India. This is stated plainly rather than implied otherwise.
+Clients work directly with the engineer who writes the code, with a day-to-day
+client contact based in Australia.
 
 ## Service area
 
