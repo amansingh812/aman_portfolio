@@ -105,74 +105,45 @@ export default function IndustriesPage() {
     return (
         <Layout>
 
-            {/* ── HERO with animated floating dashboard mockups ── */}
+            {/* ── HERO — the layout the homepage used until 25 Sep 2026
+                (banner-1: copy left, cut-out image right). Copy unchanged.
+                This also retires the template dashboards that sat here
+                ("68K+ User Activated", "22 Projects Completed This Year"),
+                which read as our own stats. ── */}
             <section className="section-box">
-                <div className="banner-hero bg-service-2">
+                <div className="banner-hero banner-1">
                     <div className="container">
-                        <div className="row">
-                            <div className="col-lg-12 text-center">
-                                <span className="tag-1 bg-6 color-green-900">Industries we build for</span>
-                                <h1 className="text-display-2 mt-30">
-                                    Websites built for<br className="d-lg-block d-none" />
+                        <div className="row align-items-center">
+                            <div className="col-lg-7">
+                                <span className="tag-1">Industries we build for</span>
+                                <h1 className="text-display-2 mt-20">
+                                    Websites built for{" "}
                                     <span className="color-green-900">how your industry works</span>
                                 </h1>
-                                <p className="text-body-lead-large color-gray-500 mt-40">
+                                <p className="text-body-lead-large color-gray-500 mt-30 pr-40">
                                     Healthcare needs bookings. Trades need quote forms. Real estate
                                     needs listings. Retail needs Stripe. We&apos;ve built for all of it —
                                     and we&apos;ll bring what we&apos;ve learned to yours.
                                 </p>
-                                <div className="mt-40 text-center">
-                                    <Link href="/contact/" className="btn btn-black icon-arrow-right-white">
+                                <div className="mt-40">
+                                    <Link href="/contact/" className="btn btn-black icon-arrow-right-white mr-10">
                                         Get a quote
                                     </Link>
                                     <a data-loc="industries-hub" href={SITE.calendly} target="_blank" rel="noopener noreferrer"
-                                        className="btn btn-link icon-triangle color-gray-900 ml-40">
+                                        className="btn btn-link icon-arrow-right color-gray-900 text-heading-6">
                                         Book a free call
                                     </a>
                                 </div>
                             </div>
-
-                            {/* Animated dashboard mockup — the whole block floats via
-                                `.shape-2` (hero-thumb-sm-animation, 4s alternate). */}
-                            <div className="col-lg-12 d-none d-lg-block">
-                                <div className="row">
-                                    <div className="col-lg-2" />
-                                    <div className="col-lg-8">
-                                        <div className="banner-imgs">
-                                            <div className="block-1 shape-2">
-                                                <Image
-                                                    width={0} height={0} sizes="100vw"
-                                                    style={{ width: "auto", height: "auto" }}
-                                                    src="/assets/imgs/page/services/2/banner2.png"
-                                                    alt="User activation stats"
-                                                />
-                                            </div>
-                                            <div className="block-2 shape-2">
-                                                <Image
-                                                    width={0} height={0} sizes="100vw"
-                                                    style={{ width: "auto", height: "auto" }}
-                                                    src="/assets/imgs/page/services/2/banner1.png"
-                                                    alt="Sketch content tracker"
-                                                />
-                                            </div>
-                                            <div className="block-3 shape-2">
-                                                <Image
-                                                    width={0} height={0} sizes="100vw"
-                                                    style={{ width: "auto", height: "auto" }}
-                                                    src="/assets/imgs/page/services/2/banner3.png"
-                                                    alt="Business feed analytics"
-                                                />
-                                            </div>
-                                            <Image
-                                                width={0} height={0} sizes="100vw"
-                                                style={{ width: "auto", height: "auto" }}
-                                                src="/assets/imgs/page/services/1/banner.png"
-                                                alt="Industry dashboard preview"
-                                            />
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-2" />
-                                </div>
+                            <div className="col-lg-5 d-none d-lg-block">
+                                <Image
+                                    width={520}
+                                    height={520}
+                                    className="img-responsive shape-2"
+                                    src="/assets/imgs/page/homepage1/banner.png"
+                                    alt="Web design and development studio"
+                                    priority
+                                />
                             </div>
                         </div>
                     </div>

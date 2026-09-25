@@ -179,7 +179,7 @@ export const GUIDES = [
   {
     "slug": "website-builder-vs-web-developer",
     "title": "Website Builder vs Web Developer: Which Do You Actually Need?",
-    "metaTitle": "Website Builder vs Web Developer: Which to Pick",
+    "metaTitle": "DIY Website Builder vs Web Developer: Which to Pick",
     "metaDescription": "DIY website builder or hire a web developer? An honest guide to the trade-offs in cost, time, performance, SEO and ownership — so you make the right call for your business.",
     "keywords": [
       "website builder vs web developer",

@@ -67,7 +67,7 @@ export default async function BlogPost({ params }) {
             headline: post.title,
             description: post.excerpt,
             datePublished: post.date,
-            dateModified: post.date,
+            dateModified: post.updated || post.date,
             mainEntityOfPage: { "@type": "WebPage", "@id": url },
             author: {
                 "@type": "Person",
@@ -163,32 +163,27 @@ export default async function BlogPost({ params }) {
                             </div>
                         </div>
 
+                        {/* BYLINE — one quiet line, no avatar.
+                            The previous block showed user-1.png, a stock photo of a
+                            stranger from the Agon template, captioned "Aman Singh".
+                            A fake face on a real name is the §1 misleading-conduct
+                            problem. Google's helpful-content guide still asks for
+                            bylines ("Do pages carry a byline, where one might be
+                            expected?"), so the name stays and links to /about/.
+                            "Updated" only appears when post.updated is set — never
+                            bump it without a substantive edit (Google flags
+                            date-changing for fake freshness). */}
                         <div className="row">
                             <div className="col-lg-2" />
                             <div className="col-lg-8">
-                                <div className="row">
-                                    <div className="col-lg-6 col-md-7 col-sm-7 col-7">
-                                        <div className="blog-img-user">
-                                            <div className="img-user img-user-round">
-                                                <Image
-                                                    width={0} height={0} sizes="100vw"
-                                                    style={{ width: "auto", height: "auto" }}
-                                                    src="/assets/imgs/page/blog/2/user-1.png"
-                                                    alt="Build First Site"
-                                                />
-                                            </div>
-                                            <h4 className="text-body-lead color-gray-900">
-                                                <Link href="/about/" className="color-gray-900">Aman Singh</Link>
-                                            </h4>
-                                            <p className="text-body-small color-gray-500">
-                                                Engineer, Build First Site · {fmtDate(post.date)}
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-6 col-md-5 col-sm-5 col-5 tag-mb text-end">
-                                        <span className="tag-1 bg-6 color-green-900 mt-40">{post.readingTime}</span>
-                                    </div>
-                                </div>
+                                <p className="text-body-small color-gray-500 mb-0" style={{ fontSize: 14 }}>
+                                    By <Link href="/about/" className="color-gray-900">Aman Singh</Link>
+                                    {" · "}
+                                    {post.updated
+                                        ? <>Updated <time dateTime={post.updated}>{fmtDate(post.updated)}</time></>
+                                        : <time dateTime={post.date}>{fmtDate(post.date)}</time>}
+                                    {post.readingTime ? <>{" · "}{post.readingTime}</> : null}
+                                </p>
                             </div>
                         </div>
 

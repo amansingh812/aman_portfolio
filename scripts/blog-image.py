@@ -14,7 +14,7 @@ photo, which keeps Largest Contentful Paint low on the blog template.
       --title "Best Web Design Agencies in Australia" \
       --sub  "2026 pricing compared" \
       --style stat \
-      --stats "600:Us|900:Aussify|995:Havealook|?:Growth Digital" \
+      --stats "800:Us|900:Aussify|995:Havealook|?:Growth Digital" \
       --unit "$"
 """
 import argparse, html, os, io

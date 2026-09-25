@@ -117,12 +117,6 @@ export default function BlogContent({ blocks }) {
                             <div key={i} className="box-quote mt-30 mb-30">
                                 <div className="text-quote">{b.text}</div>
                                 <div className="box-user">
-                                    <div className="img-user">
-                                        <Image width={0} height={0} sizes="100vw"
-                                            style={{ width: "auto", height: "auto" }}
-                                            src="/assets/imgs/page/blog/single/user-4.png"
-                                            alt="Build First Site" />
-                                    </div>
                                     <span className="text-heading-5 color-white">Build First Site</span>
                                 </div>
                             </div>

@@ -491,6 +491,11 @@ Organic sessions ↑ MoM · target keywords onto page 1 · **new referring domai
 10. Canonical via `alternates: { canonical: '/path/' }`.
 11. **Add the URL to `public/sitemap.xml`; bump `sitemap-index.xml` lastmod.**
 
+**Blog posts:** follow `docs/BLOG-CONTENT-STANDARD.md` — answer-first, one
+original data point, byline required, images self-hosted with licence noted.
+No word-count quotas (Google lists writing to a word count as a warning sign).
+Never AI-generate people, screenshots or metrics presented as real.
+
 ### Technical SEO baseline
 
 Lighthouse ≥ 90 mobile · CWV green · mobile-first (~68% of AU traffic) · HTTPS ·
@@ -534,8 +539,8 @@ Full procedure: **`docs/SEO-PLAYBOOK.md`**. Short version:
   payer must withhold 47% from an invoice over $75 with no ABN. Structure
   decision (sole trader / partnership / Pty Ltd) pending an accountant.
   See `docs/FOUNDER-WEEK-PLAN-2026-09-25.md`.
-- **Mobile stack claim is inconsistent** — homepage says Flutter, four other
-  places say React Native. Confirm which is true.
+- ~~**Mobile stack claim inconsistent**~~ — **resolved 25 Sep.** Aman builds in
+  both; every stack mention now reads "Flutter or React Native".
 
 - Which tool ships first — cost calculator or speed checker?
 - Do we have real measured before/after numbers for HS Race Gear and Mobile Armour?

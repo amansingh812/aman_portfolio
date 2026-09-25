@@ -186,13 +186,12 @@ export const FOOTER_COLUMNS = [
       { label: 'Affordable Web Design', href: '/affordable-website-design-small-business/' },
       { label: 'Website Redesign', href: '/small-business-website-redesign/' },
       { label: 'Get a Quote', href: '/website-design-quote/' },
-      { label: 'Wix vs Custom', href: '/wix-vs-custom-website/' },
-      { label: 'Website Checklist', href: '/small-business-website-checklist/' },
-      { label: 'NDIS Website Design', href: '/ndis-website-design/' },
-      { label: 'Dental Website Design', href: '/dental-website-design/' },
-      { label: 'WordPress vs Custom', href: '/wordpress-vs-custom-website/' },
-      { label: 'Webflow vs Custom', href: '/webflow-vs-custom-website/' },
-      { label: 'Freelancer vs Agency', href: '/freelancer-vs-web-design-agency/' },
+      // Removed from the footer 25 Sep 2026 to shorten the column:
+      // wix-vs-custom-website, small-business-website-checklist,
+      // ndis-website-design, dental-website-design, wordpress-vs-custom-website,
+      // webflow-vs-custom-website, freelancer-vs-web-design-agency.
+      // They stay live and in the sitemap; each must keep ≥1 inbound link
+      // from page content (checked the same day) so none become orphans.
     ],
   },
 ];

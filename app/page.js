@@ -63,7 +63,7 @@ const SERVICES = [
     {
         title: "Mobile App Development",
         icon: "/assets/imgs/page/services/1/icon-product.svg",
-        body: "Native iOS and Android apps from one Flutter codebase — one build, both stores.",
+        body: "iOS and Android apps from one codebase in Flutter or React Native — one build, both stores.",
         href: "/services/mobile-app-development/",
     },
     {
@@ -99,6 +99,9 @@ const PORTFOLIO = CASE_STUDIES.filter((cs) =>
 
 /* ─── page ────────────────────────────────────────────────────────────── */
 
+/* Hero floating cards read these — never hardcode the price or timeline. */
+const starter = BUILD_TIERS.find((t) => t.id === 'starter')
+
 export default function Home() {
     return (
         <Layout>
@@ -117,30 +120,41 @@ export default function Home() {
 .home-price-amt { display:flex; align-items:baseline;
   padding-bottom:22px; border-bottom:1px solid #E4E7EC; }
 .home-price-btn { margin-top:auto; width:100%; text-align:center; }
+.hero-float-card { background:#fff; border-radius:12px; box-shadow:0 47px 65px rgba(21,28,38,.1); }
 .home-price-retainer { background:#F4FAFB; border:1px solid #BEE1E6; border-radius:16px;
   padding:32px 36px; display:flex; align-items:center; justify-content:space-between;
   gap:26px; flex-wrap:wrap; }
 ` }} />
 
             {/* ═══════════════ 1. HERO ═══════════════ */}
+            {/* Layout and theme borrowed from the /industries/ hero
+                (bg-service-2: centred copy, soft background, floating
+                frames with the shape-2 float animation). Copy unchanged.
+
+                The industries hero fills those frames with Agon template
+                dashboards ("68K+ User Activated", "22 Projects Completed
+                This Year"). On the homepage those would read as OUR stats,
+                which is the §1 fake-metrics problem, so the frames here show
+                real client sites instead — the same live screenshots the
+                portfolio section already uses. */}
             <section id="home" className="section-box">
-                <div className="banner-hero banner-1">
+                <div className="banner-hero bg-service-2">
                     <div className="container">
-                        <div className="row align-items-center">
-                            <div className="col-lg-7">
+                        <div className="row">
+                            <div className="col-lg-12 text-center">
                                 <span className="tag-1">Free homepage design before you commit</span>
-                                <h1 className="text-display-2 mt-20">
+                                <h1 className="text-display-2 mt-30">
                                     Sites that launch. Apps that scale.
                                     <span className="color-green-900"> Built for Australian businesses.</span>
                                 </h1>
-                                <p className="text-body-lead-large color-gray-500 mt-30 pr-40">
+                                <p className="text-body-lead-large color-gray-500 mt-40" style={{ maxWidth: 760, marginInline: 'auto' }}>
                                     Websites, apps and AI-powered tools for Australian businesses —
                                     from first quote to ongoing support.
                                 </p>
                                 <p className="text-body-excerpt color-gray-600 mt-15">
                                     Fixed AUD pricing · Modern Next.js stack · Cross-platform iOS + Android
                                 </p>
-                                <div className="mt-40">
+                                <div className="mt-40 text-center">
                                     <Link href="/contact/" className="btn btn-black icon-arrow-right-white mr-10">
                                         Get a quote
                                     </Link>
@@ -149,15 +163,65 @@ export default function Home() {
                                     </Link>
                                 </div>
                             </div>
-                            <div className="col-lg-5 d-none d-lg-block">
-                                <Image
-                                    width={520}
-                                    height={520}
-                                    className="img-responsive shape-2"
-                                    src="/assets/imgs/page/homepage1/banner.png"
-                                    alt="Web design and development studio"
-                                    priority
-                                />
+
+                            <div className="col-lg-12 d-none d-lg-block">
+                                <div className="row">
+                                    <div className="col-lg-2" />
+                                    <div className="col-lg-8">
+                                        <div className="banner-imgs">
+                                            {/* Floating cards — same look as the template's
+                                                "68K+ User Activated" / "Sketch Content" /
+                                                "Business Feed" cards, rebuilt as HTML so the
+                                                numbers are REAL. Every figure comes from
+                                                content/pricing.js; nothing here is invented. */}
+                                            <div className="block-1 shape-2">
+                                                <div className="hero-float-card" style={{ padding: '26px 20px 18px', textAlign: 'center' }}>
+                                                    <svg width="30" height="30" viewBox="0 0 24 24" fill="#006D77" aria-hidden="true"><path d="M21.4 11.6 12.4 2.6A2 2 0 0 0 11 2H4a2 2 0 0 0-2 2v7c0 .55.22 1.05.59 1.42l9 9a2 2 0 0 0 2.82 0l7-7a2 2 0 0 0 0-2.82zM6.5 8A1.5 1.5 0 1 1 8 6.5 1.5 1.5 0 0 1 6.5 8z"/></svg>
+                                                    <div style={{ fontSize: 24, fontWeight: 500, color: '#101828', marginTop: 10 }}>{starter.priceLabel}</div>
+                                                    <div style={{ fontSize: 17, color: '#7E7A9A', marginTop: 4 }}>Websites from</div>
+                                                    <svg viewBox="0 0 200 50" style={{ width: '100%', marginTop: 8 }} aria-hidden="true"><path d="M5 25 C 35 5, 55 5, 75 25 S 115 45, 135 25 S 175 5, 195 25" fill="none" stroke="#006D77" strokeWidth="6" strokeLinecap="round"/></svg>
+                                                </div>
+                                            </div>
+                                            <div className="block-2 shape-2">
+                                                <div className="hero-float-card d-flex align-items-center" style={{ padding: '22px 22px', gap: 16 }}>
+                                                    <span style={{ width: 46, height: 46, borderRadius: '50%', background: '#FBE3E8', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                                                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B4235A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>
+                                                    </span>
+                                                    <div style={{ flex: 1, textAlign: 'left' }}>
+                                                        <div style={{ fontSize: 17, fontWeight: 600, color: '#101828' }}>You own the code</div>
+                                                        <div style={{ fontSize: 15, color: '#667085' }}>No lock-in, ever</div>
+                                                    </div>
+                                                    <span style={{ color: '#475467', fontSize: 22, lineHeight: 1 }} aria-hidden="true">⋮</span>
+                                                </div>
+                                            </div>
+                                            <div className="block-3 shape-2">
+                                                <div className="hero-float-card d-flex align-items-center" style={{ padding: '26px 26px', gap: 10, background: '#F8F9FC' }}>
+                                                    <div style={{ textAlign: 'left' }}>
+                                                        <span style={{ display: 'inline-block', background: '#006D77', color: '#fff', fontSize: 14, padding: '6px 16px', borderRadius: 999 }}>Starter build</span>
+                                                        <div style={{ fontSize: 20, color: '#101828', marginTop: 18 }}>{starter.delivery}</div>
+                                                        <div style={{ fontSize: 15, color: '#98A2B3', marginTop: 4 }}>Brief to live</div>
+                                                    </div>
+                                                    <svg viewBox="0 0 200 120" style={{ width: '58%', flexShrink: 0 }} aria-hidden="true">
+                                                        <defs><linearGradient id="heroFeed" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#D8A6F5"/><stop offset="1" stopColor="#D8A6F5" stopOpacity="0"/></linearGradient></defs>
+                                                        <path d="M5 105 C 25 70, 40 95, 55 80 S 70 20, 85 45 S 100 95, 115 60 S 130 5, 145 30 S 160 95, 175 80 S 190 70, 195 70 L 195 120 L 5 120 Z" fill="url(#heroFeed)"/>
+                                                        <path d="M5 105 C 25 70, 40 95, 55 80 S 70 20, 85 45 S 100 95, 115 60 S 130 5, 145 30 S 160 95, 175 80 S 190 70, 195 70" fill="none" stroke="#006D77" strokeWidth="4" strokeLinecap="round"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            {/* Centre mockup: a sample app dashboard (template art).
+                                                It illustrates "apps that scale" as a product UI;
+                                                the floating cards around it carry the real claims. */}
+                                            <Image
+                                                width={0} height={0} sizes="(max-width: 1200px) 66vw, 760px"
+                                                style={{ width: "100%", height: "auto" }}
+                                                src="/assets/imgs/page/services/1/banner.png"
+                                                alt="Example web app dashboard design"
+                                                priority
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="col-lg-2" />
+                                </div>
                             </div>
                         </div>
                     </div>

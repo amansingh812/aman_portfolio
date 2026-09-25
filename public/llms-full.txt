@@ -694,4 +694,4 @@ A: Between $0 and $65 AUD a month for a typical small business site, plus about 
 - Real client projects: hsracegear.com, mobilearmour.com.au, autozenlyai.com,
   planet.ltfinance.com
 
-_Generated from the site's own content files on 2026-09-24._
+_Generated from the site's own content files on 2026-09-25._

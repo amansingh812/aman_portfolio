@@ -28,16 +28,6 @@ const COLOR_BG = [
     "color-bg-8", "color-bg-1", "color-bg-5", "color-bg-10", "color-bg-3",
 ]
 
-/* Author avatars (all 6 stock avatars from /blog/2/) */
-const AVATARS = [
-    "/assets/imgs/page/blog/2/user-1.png",
-    "/assets/imgs/page/blog/2/user-2.png",
-    "/assets/imgs/page/blog/2/user-3.png",
-    "/assets/imgs/page/blog/2/user-4.png",
-    "/assets/imgs/page/blog/2/user-5.png",
-    "/assets/imgs/page/blog/2/user-6.png",
-]
-
 export default function BlogPage() {
     /* ── Combine BLOG_POSTS + GUIDES into a single feed, newest first ── */
     const guidePosts = GUIDES.map((g) => ({
@@ -48,6 +38,7 @@ export default function BlogPage() {
         date: g.datePublished,
         readingTime: g.readingTime,
         href: `/guides/${g.slug}/`,
+        image: g.image,
     }))
 
     const allPosts = [...BLOG_POSTS, ...guidePosts].sort(
@@ -136,8 +127,8 @@ export default function BlogPage() {
                                         <Link href={post.href}>
                                             <Image
                                                 width={0} height={0} sizes="100vw"
-                                                style={{ width: "auto", height: "auto" }}
-                                                src={`/assets/imgs/page/blog/2/img-${i + 1}.png`}
+                                                style={{ width: "100%", height: "auto", borderRadius: 12 }}
+                                                src={post.image || `/assets/imgs/page/blog/2/img-${i + 1}.png`}
                                                 alt={post.title}
                                             />
                                         </Link>
@@ -145,14 +136,6 @@ export default function BlogPage() {
                                     <Link href={post.href} className="text-heading-4">{post.title}</Link>
                                     <p className="text-body-text color-gray-500">{post.excerpt}</p>
                                     <div className="blog-img-user">
-                                        <div className="img-user img-user-round">
-                                            <Image
-                                                width={0} height={0} sizes="100vw"
-                                                style={{ width: "auto", height: "auto" }}
-                                                src={AVATARS[i]}
-                                                alt="Build First Site"
-                                            />
-                                        </div>
                                         <h4 className="text-heading-6 color-gray-900">Build First Site</h4>
                                         <p className="text-body-small color-gray-500">{fmtDate(post.date)}</p>
                                     </div>
@@ -166,14 +149,6 @@ export default function BlogPage() {
                                 <div className="card-list-style-1" key={post.slug}>
                                     <Link href={post.href} className="text-heading-6">{post.title}</Link>
                                     <div className="blog-img-user">
-                                        <div className="img-user img-user-round">
-                                            <Image
-                                                width={0} height={0} sizes="100vw"
-                                                style={{ width: "auto", height: "auto" }}
-                                                src={AVATARS[(i + 2) % AVATARS.length]}
-                                                alt="Build First Site"
-                                            />
-                                        </div>
                                         <h4 className="text-body-lead color-gray-500">Build First Site</h4>
                                         <p className="text-body-small color-gray-500">{fmtDate(post.date)}</p>
                                     </div>
@@ -181,8 +156,8 @@ export default function BlogPage() {
                                         <Link href={post.href}>
                                             <Image
                                                 width={0} height={0} sizes="100vw"
-                                                style={{ width: "auto", height: "auto" }}
-                                                src="/assets/imgs/page/blog/2/img-news-1.png"
+                                                style={{ width: "100%", height: "auto", borderRadius: 12 }}
+                                                src={post.image || "/assets/imgs/page/blog/2/img-news-1.png"}
                                                 alt={post.title}
                                             />
                                         </Link>

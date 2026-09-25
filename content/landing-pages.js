@@ -622,7 +622,7 @@ export const LANDING_PAGES = [
       { href: '/pricing/', label: 'All pricing' },
     ],
     body: [
-      { type: 'h2', text: 'What a website costs in Perth in 2026' },
+      { type: 'h2', text: 'Perth website design prices in 2026' },
       { type: 'p', html: 'Perth web design pricing is less competitive than the east coast because the market is smaller — with fewer studios bidding on each project, quotes are less disciplined. Local agency rates typically run $3,000 to $8,000 for a business website.' },
       { type: 'p', html: 'Our prices are published and fixed: <strong>$800</strong> for a three to five page site, <strong>$1,900</strong> for up to ten pages, <strong>$3,500</strong> for unlimited pages, and <strong>$4,500</strong> for e-commerce. Every quote is in writing before work starts.' },
       { type: 'p', html: 'Perth is also the most isolated capital city in the world, which has an SEO upside: less competition for local search terms. A well-built Perth website with proper local schema and suburb pages can rank significantly faster than the same site would in Sydney or Melbourne.' },

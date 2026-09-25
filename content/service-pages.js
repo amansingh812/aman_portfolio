@@ -35,9 +35,9 @@ export const SERVICE_PAGES = [
     slug: "mobile-app-development",
     title: "Mobile App Development",
     metaTitle: "Mobile App Development Australia | iOS & Android from AU$4,500",
-    metaDescription: "Cross-platform mobile apps for Australian businesses. React Native, one codebase, both app stores. Fixed AUD pricing from $4,500.",
+    metaDescription: "Cross-platform mobile apps for Australian businesses. Flutter or React Native, one codebase, both app stores. Fixed AUD pricing from $4,500.",
     hero: "One codebase. Both app stores. A fraction of the cost.",
-    intro: "We build cross-platform mobile apps with React Native — iOS and Android from a single codebase, at roughly half the cost of two separate native builds. Push notifications, offline support, camera access, and app store submission included. You own the code.",
+    intro: "We build cross-platform mobile apps with Flutter or React Native — iOS and Android from a single codebase, at roughly half the cost of two separate native builds. Push notifications, offline support, camera access, and app store submission included. You own the code.",
     capabilities: [
       { title: "Cross-platform apps", body: "React Native ships to both iOS and Android from one codebase. One team, one budget, two stores." },
       { title: "Progressive web apps", body: "When you do not need the app stores — PWAs install to the home screen, work offline, and cost less to build." },
