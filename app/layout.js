@@ -129,6 +129,11 @@ export default function RootLayout({ children }) {
                         gtag('js', new Date());
 
                         gtag('config', 'G-QYPW2B8CZS');
+                        // Second Google tag, added 26 Sep 2026 from the Google Ads
+                        // setup screen. One gtag.js loader serves both IDs, so
+                        // this is a config line rather than a second <script src>
+                        // (loading the library twice double-counts page views).
+                        gtag('config', 'G-C6TLV8TPD3');
                     `}
                 </Script>
             </head>
