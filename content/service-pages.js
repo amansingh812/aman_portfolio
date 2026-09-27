@@ -54,10 +54,12 @@ export const SERVICE_PAGES = [
     h1Accent: 'that need more enquiries',
     hero: 'Websites that load fast, rank well and turn visitors into customers. Custom-built, fixed AUD price, and you own every line of code.',
     chips: [
-      { pre: 'From', value: { tier: 'starter', field: 'priceLabel' } },
+      // Outcome chips, not prices (27 Sep 2026): price belongs after
+      // proof, not in the first screen. See docs/SERVICE-PAGE-REDESIGN.md.
       { pre: 'Starter live in', value: { tier: 'starter', field: 'delivery' } },
       { value: 'Free', post: 'homepage design first' },
       { pre: 'You', value: 'own the code' },
+      { value: 'Fixed AUD', post: 'quotes' },
     ],
     heroShot: 'hs-race-gear',
     intro: 'We build responsive, high-performance websites for Australian businesses, optimised for speed, SEO and mobile from day one. No templates, no page-builder lock-in and no monthly platform fees: a custom site built around your business, which you own outright.',
@@ -135,10 +137,12 @@ export const SERVICE_PAGES = [
     h1Accent: 'one codebase, both app stores',
     hero: 'iOS and Android apps built once in Flutter or React Native, for roughly half the cost of two separate native builds. Fixed AUD price, and the code is yours.',
     chips: [
-      { pre: 'Apps from', value: { tier: 'application', field: 'priceLabel' } },
+      // Outcome chips, not prices (27 Sep 2026): price belongs after
+      // proof, not in the first screen. See docs/SERVICE-PAGE-REDESIGN.md.
       { pre: 'Typical build', value: { tier: 'application', field: 'delivery' } },
       { value: 'iOS + Android', post: 'from one build' },
       { pre: 'You', value: 'own the code' },
+      { value: 'Fixed AUD', post: 'quotes' },
     ],
     heroShot: 'autozenlyai',
     intro: 'We build cross-platform mobile apps with Flutter or React Native: iOS and Android from a single codebase. Push notifications, offline support, camera access and app store submission are included. And if a web app or PWA would do the job for less, we will tell you on the first call.',
@@ -208,10 +212,12 @@ export const SERVICE_PAGES = [
     h1Accent: 'built around how you work',
     hero: 'Internal tools, client portals and automation that replace spreadsheets and manual steps. Scoped up front, fixed AUD price, and the code is yours.',
     chips: [
-      { pre: 'Projects', value: { tier: 'custom-software', field: 'priceLabel' } },
-      { pre: 'Apps and portals', value: { tier: 'application', field: 'priceLabel' } },
-      { value: 'Fixed quote', post: 'before we start' },
+      // Outcome chips, not prices (27 Sep 2026): price belongs after
+      // proof, not in the first screen. See docs/SERVICE-PAGE-REDESIGN.md.
+      { value: 'Working software', post: 'every week' },
+      { value: 'Written scope', post: 'before we start' },
       { pre: 'You', value: 'own the code' },
+      { value: 'Fixed AUD', post: 'quotes' },
     ],
     heroShot: 'autozenlyai',
     intro: 'Off-the-shelf tools make you work their way. Custom software works yours: it automates manual processes, connects systems that don’t talk to each other and gives your team one place to manage the work. We build internal tools, admin dashboards, client portals and automation workflows on a modern stack that you own.',
@@ -263,10 +269,12 @@ export const SERVICE_PAGES = [
     h1Accent: 'get found by customers already searching',
     hero: 'Technical SEO, local search and content that targets what your customers actually type into Google. Month to month, plain-English reporting, no lock-in.',
     chips: [
-      { pre: 'Care + SEO', value: { retainer: true } },
+      // Outcome chips, not prices (27 Sep 2026): price belongs after
+      // proof, not in the first screen. See docs/SERVICE-PAGE-REDESIGN.md.
       { pre: 'Month to', value: 'month' },
-      { value: 'Free', post: 'speed checker' },
+      { value: 'Plain-English', post: 'monthly report' },
       { value: 'No lock-in', post: 'contract' },
+      { value: 'Free', post: 'speed checker' },
     ],
     heroShot: 'harbour-plumbing',
     intro: 'Most small business websites are invisible on Google because nobody set up the basics. We fix that with technical SEO, local search optimisation, Google Business Profile setup, and content that targets what your customers actually search for. No jargon-filled reports and no mandatory retainer.',
@@ -327,10 +335,12 @@ export const SERVICE_PAGES = [
     h1Accent: 'that do a specific job',
     hero: 'AI that qualifies leads at 9pm, books appointments without a phone call and answers the questions your team handles every day. Built into your site, owned by you.',
     chips: [
-      { pre: 'AI chatbot', value: { addon: 'AI chatbot' } },
-      { pre: 'Full AI apps', value: { tier: 'application', field: 'priceLabel' } },
+      // Outcome chips, not prices (27 Sep 2026): price belongs after
+      // proof, not in the first screen. See docs/SERVICE-PAGE-REDESIGN.md.
+      { value: 'Answers 24/7', post: 'on your site' },
       { value: 'OpenAI, Claude', post: 'or Gemini' },
       { pre: 'You', value: 'own it' },
+      { value: 'Fixed AUD', post: 'quotes' },
     ],
     heroShot: 'mobile-armour',
     intro: 'We build AI into your business where it actually helps: qualifying leads, booking appointments, recommending products and answering the same questions your team handles every day. Custom-built on OpenAI, Claude or Gemini, integrated into your existing site, and owned by you.',
@@ -388,9 +398,11 @@ export const SERVICE_PAGES = [
     h1Accent: 'so your site stays fast and safe',
     hero: 'Hosting, security updates, backups, speed monitoring and a new page every month, handled for one fixed monthly price. Month to month, no lock-in.',
     chips: [
-      { pre: 'Care + SEO', value: { retainer: true } },
+      // Outcome chips, not prices (27 Sep 2026): price belongs after
+      // proof, not in the first screen. See docs/SERVICE-PAGE-REDESIGN.md.
       { pre: 'Cancel with', value: '30 days’ notice' },
       { value: 'Weekly', post: 'backups' },
+      { value: 'Hosting', post: 'included' },
       { value: 'Priority', post: 'support' },
     ],
     heroShot: 'hs-race-gear',

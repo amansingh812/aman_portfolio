@@ -19,7 +19,7 @@ import { notFound } from "next/navigation"
 import { CTA, SITE, INDUSTRY_ITEMS } from "@/content/site"
 import { INDUSTRY_PAGES, getIndustryPage } from "@/content/industry-pages"
 import { getCaseStudy } from "@/content/case-studies"
-import { Icon, SVC_CSS, resolveValue, pricingCard, extraLine } from "@/components/landing/ServiceKit"
+import { Icon, SVC_CSS, resolveValue, pricingCard, extraLine, PriceCard, PriceIntro } from "@/components/landing/ServiceKit"
 
 export async function generateStaticParams() {
     return INDUSTRY_PAGES.map((p) => ({ slug: p.slug }))
@@ -232,20 +232,11 @@ export default async function IndustryDetailPage({ params }) {
                         <div className="container">
                             <div className="svc-center">
                                 <h2 className="svc-h2">Fixed AUD pricing for {p.title.toLowerCase()}</h2>
-                                <p className="svc-lead">The price in your quote is the price you pay unless the scope changes.</p>
+                                <p className="svc-lead">What’s included, then what it costs. Every price is a starting point, and your written quote is fixed before you commit.</p>
                             </div>
-                            <div className="svc-tiers">
-                                {cards.map((c) => (
-                                    <div className={`svc-tier${c.featured ? " feat" : ""}`} key={c.key}>
-                                        {c.featured && <span className="svc-badge">Most popular</span>}
-                                        <h3>{c.name}</h3>
-                                        <div className="scope">{c.scope}</div>
-                                        <div className="svc-price">{c.price} <small>AUD{c.per ? ` ${c.per}` : ""}</small></div>
-                                        <ul>{c.lines.map((l) => <li key={l}>{l}</li>)}</ul>
-                                        {c.note && <p className="note">{c.note}</p>}
-                                        <Link href={CTA.primary.href} className={`btn ${c.featured ? "btn-black" : "btn-default"} w-100 text-center`} style={{ justifyContent: "center" }}>Get a quote</Link>
-                                    </div>
-                                ))}
+                            {cards.some((c) => c.build) && <PriceIntro />}
+                            <div className="svc-tiers" style={cards.length === 1 ? { maxWidth: 520, marginInline: "auto" } : undefined}>
+                                {cards.map((c) => <PriceCard key={c.key} c={c} />)}
                             </div>
                             {extras.length > 0 && (
                                 <div className="svc-extras">{extras.map((e) => <div key={e.label}><b>{e.value}</b>{e.label}</div>)}</div>

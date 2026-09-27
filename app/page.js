@@ -595,16 +595,18 @@ export default function Home() {
                                     <h3 className="text-heading-5 color-gray-900 mb-10">{t.name}</h3>
                                     <p className="text-body-small color-gray-500 mb-25">{t.scope}</p>
 
+                                    {/* What's included first, then the number (27 Sep 2026). */}
+                                    <p className="text-body-text color-gray-600 mb-10">{t.tagline}</p>
+                                    <p className="text-body-small color-gray-500 mb-25">
+                                        Delivery {t.delivery} · SEO built in · You own the code
+                                    </p>
+
+                                    <span className="text-body-small color-gray-500">From</span>
                                     <div className="home-price-amt">
                                         <span className="text-heading-2 color-green-900">{t.priceLabel}</span>
                                         <span className="text-body-small color-gray-500 ml-5">AUD</span>
                                     </div>
-
-                                    <p className="text-body-text color-gray-600 mt-20 mb-25">{t.tagline}</p>
-
-                                    <p className="text-body-small color-gray-500 mb-25">
-                                        Delivery {t.delivery}
-                                    </p>
+                                    <p className="text-body-small color-green-900 mt-5 mb-25">Fixed quote before you commit</p>
 
                                     <Link href="/pricing/"
                                         className="btn btn-default icon-arrow-right home-price-btn">

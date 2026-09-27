@@ -2,7 +2,12 @@
 import { useState } from "react"
 import { track, EVENTS } from "@/lib/analytics"
 
-export default function ContactPageForm() {
+/**
+ * `source` / `formLocation` identify which page sent the lead, in the email
+ * notification and in the GA4 generate_lead event (which Google Ads imports
+ * as a conversion). `wrapperClass` lets landing pages use a wider column.
+ */
+export default function ContactPageForm({ source = "Contact page", wrapperClass = "col-lg-8" } = {}) {
     const [status, setStatus] = useState("idle")
     const [form, setForm] = useState({ name: "", company: "", email: "", phone: "", message: "" })
 
@@ -15,12 +20,12 @@ export default function ContactPageForm() {
             const res = await fetch("/api/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ ...form, source: "Contact page" }),
+                body: JSON.stringify({ ...form, source }),
             })
             // Fire only on a confirmed successful send — counting
             // failed submissions as conversions would inflate the
             // one number we are trying to make trustworthy.
-            if (res.ok) track(EVENTS.GENERATE_LEAD, { form_location: "Contact page" })
+            if (res.ok) track(EVENTS.GENERATE_LEAD, { form_location: source })
             setStatus(res.ok ? "sent" : "error")
         } catch {
             setStatus("error")
@@ -29,7 +34,7 @@ export default function ContactPageForm() {
 
     if (status === "sent") {
         return (
-            <div className="col-lg-8">
+            <div className={wrapperClass}>
                 <div className="p-40 bdrd-16 text-center" style={{ background: '#FEF3ED' }}>
                     <div style={{ fontSize: 40, marginBottom: 16 }}>✓</div>
                     <h3 className="text-heading-3 color-gray-900">Message sent!</h3>
@@ -44,7 +49,7 @@ export default function ContactPageForm() {
 
     if (status === "error") {
         return (
-            <div className="col-lg-8">
+            <div className={wrapperClass}>
                 <div className="p-40 bdrd-16 text-center" style={{ background: '#FEF2F2' }}>
                     <h3 className="text-heading-4 color-gray-900">Something went wrong</h3>
                     <p className="text-body-text color-gray-600 mt-15">
@@ -57,7 +62,7 @@ export default function ContactPageForm() {
     }
 
     return (
-        <div className="col-lg-8">
+        <div className={wrapperClass}>
             <form onSubmit={handleSubmit}>
                 <div className="row">
                     <div className="col-lg-6">

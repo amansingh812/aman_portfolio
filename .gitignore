@@ -65,3 +65,25 @@ Google_keyWords/
 # public/assets/imgs/page/{blog,landing}/ by hand. Never deploy these:
 # anything under public/ is served by Vercel and this folder is ~187MB.
 public/assets/imgs/images_seo/
+
+# Claude AI configurations and instructions
+CLAUDE.md
+.claude/
+
+# Internal documentation & demo files
+docs/
+doc/
+
+# Content planning and markdown documentation (keep README.md if added)
+*.md
+!README.md
+X-CONTENT-*.md
+
+# Documents, PDFs and office files
+*.pdf
+*.doc
+*.docx
+*.xls
+*.xlsx
+*.ppt
+*.pptx

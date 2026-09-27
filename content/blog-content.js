@@ -649,7 +649,7 @@ export const BLOG_CONTENT = {
       },
       {
         "type": "p",
-        "html": "If your site scores under 60 on mobile and you're on Wix or WordPress, the honest answer is that the platform is part of the problem. A custom-built website on Vercel eliminates the speed issue, the CTA can be built in properly from day one, and it comes with GSC and sitemap submission on launch day. We build business websites from $1,900 AUD fixed price — check our <a href=\"/pricing/\">transparent pricing guide</a> or <a href=\"/contact/\">contact us for a quote</a>."
+        "html": "If your site scores under 60 on mobile and you're on Wix or WordPress, the honest answer is that the platform is part of the problem. A custom-built website on Vercel eliminates the speed issue, the CTA can be built in properly from day one, and it comes with GSC and sitemap submission on launch day. If you want to see what a rebuild would involve for your business, <a href=\"/contact/\">ask for a free homepage design</a> before you decide anything."
       },
       {
         "type": "p",
@@ -1069,7 +1069,7 @@ export const BLOG_CONTENT = {
       {
         "type": "faq",
         "q": "How much does fixing website conversion leaks cost in Australia?",
-        "a": "Minor fixes like adding tap-to-call buttons or updating headlines can be done in an afternoon. If your website is constrained by slow mobile page builders like Wix or legacy WordPress setups, a full modern rebuild typically ranges from $800 for a landing page to $1,900 for a multi-page business website."
+        "a": "Minor fixes like adding tap-to-call buttons or updating headlines can be done in an afternoon. If your website is constrained by slow mobile page builders like Wix or legacy WordPress setups, a full modern rebuild is the better fix. Our <a href=\"/how-much-does-a-website-cost-australia/\">website cost guide</a> breaks down what that costs in Australia."
       },
       {
         "type": "faq",
@@ -1236,7 +1236,7 @@ export const BLOG_CONTENT = {
       {
         "type": "faq",
         "q": "How much does a website meeting all these checklist items cost in Australia?",
-        "a": "A professional 5-to-10 page business website meeting all speed, mobile UX, SEO, and schema requirements typically costs between $1,900 and $3,500 AUD with a specialized small studio. View our <a href=\"/pricing/\">transparent AUD pricing packages</a>."
+        "a": "A professional 5-to-10 page business website meeting all speed, mobile UX, SEO, and schema requirements costs less than most people expect when it is built in from the start rather than retrofitted. Our <a href=\"/how-much-does-a-website-cost-australia/\">website cost guide</a> has the current Australian ranges."
       }
     ]
   },
@@ -1863,7 +1863,7 @@ export const BLOG_CONTENT = {
       {"type": "p", "html": "<strong>Important caveat:</strong> automated tools catch roughly 30 to 40 percent of WCAG issues. They cannot judge whether your alt text is meaningful or whether your language is clear. A clean Lighthouse score is a starting point, not a pass."},
       {"type": "h2", "text": "What this usually costs to fix"},
       {"type": "p", "html": "It depends entirely on what you are starting from."},
-      {"type": "ul", "items": ["<strong>Retrofitting an existing site</strong> is the expensive path. If accessibility was not considered during the build, contrast, semantics and keyboard behaviour are woven through every template. Budget several thousand dollars, and accept that some issues cannot be fully fixed without a rebuild.", "<strong>Building it in from the start</strong> costs close to nothing extra. Semantic HTML, proper contrast and keyboard support are how a site should be built anyway. At BuildFirstSite, WCAG 2.1 AA is included in every build rather than sold as an add-on — sites start at $800 and go to $4,500 for larger builds. Full figures are on our <a href=\"/pricing/\">pricing page</a>.", "<strong>Accessibility overlay widgets</strong> — the floating accessibility button you see on some sites — do not make a site compliant. They are widely criticised by disability advocates and have been named in US litigation. Avoid them."]},
+      {"type": "ul", "items": ["<strong>Retrofitting an existing site</strong> is the expensive path. If accessibility was not considered during the build, contrast, semantics and keyboard behaviour are woven through every template. Budget several thousand dollars, and accept that some issues cannot be fully fixed without a rebuild.", "<strong>Building it in from the start</strong> costs close to nothing extra. Semantic HTML, proper contrast and keyboard support are how a site should be built anyway. At BuildFirstSite, WCAG 2.1 AA is included in every build rather than sold as an add-on. What a compliant NDIS site costs is covered in our <a href=\"/blog/ndis-website-cost/\">NDIS website cost guide</a>.", "<strong>Accessibility overlay widgets</strong> — the floating accessibility button you see on some sites — do not make a site compliant. They are widely criticised by disability advocates and have been named in US litigation. Avoid them."]},
       {"type": "h2", "text": "Where most NDIS provider sites fail"},
       {"type": "p", "html": "From reviewing provider websites, the same five issues recur. None are hard to fix."},
       {"type": "table", "headers": ["Issue", "Why it happens", "Impact"], "rows": [["Low contrast text", "Brand colours chosen before checking contrast", "Fails 1.4.3 — most common failure"], ["Focus outline removed", "A designer removed it as \"ugly\"", "Site unusable by keyboard"], ["PDF-only documents", "Service guides published as scanned PDFs", "Often unreadable by screen readers"], ["Placeholder used as label", "Modern minimal form design", "Field purpose lost once typing starts"], ["Jargon-heavy copy", "Written for auditors, not participants", "Excludes cognitive disability users"]]},

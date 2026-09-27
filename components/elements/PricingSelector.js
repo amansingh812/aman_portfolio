@@ -97,7 +97,7 @@ export default function PricingSelector() {
                                         <span className="text-body-small bfsp-scope">{t.scope}</span>
                                     </span>
 
-                                    <span className="text-heading-4 bfsp-price">{t.priceLabel}</span>
+                                    <span className="text-heading-4 bfsp-price">{/^from/i.test(t.priceLabel) ? t.priceLabel : <><small style={{ fontSize: 13, fontWeight: 400, marginRight: 4 }}>from</small>{t.priceLabel}</>}</span>
                                 </button>
                             )
                         })}

@@ -213,24 +213,39 @@ export default async function BlogPost({ params }) {
                                     </div>
                                 </div>
 
-                                {/* ── CTA callout box ── */}
-                                <div className="mt-60 p-40 bdrd-16"
-                                    style={{ background: '#F4E9DF', border: '1px solid #E4E7EC' }}>
-                                    <h4 className="text-heading-3">Ready to build?</h4>
-                                    <p className="text-body-lead color-gray-700 mt-15">
-                                        Book a free 30-minute call and we&apos;ll turn your idea
-                                        into a written scope + AUD price within 24 hours.
-                                    </p>
-                                    <div className="mt-25">
-                                        <a data-loc="blog-post" href={SITE.calendly} target="_blank" rel="noopener noreferrer"
-                                            className="btn btn-black icon-arrow-right-white mr-15">
-                                            Book a free call
-                                        </a>
-                                        <Link href="/contact/" className="btn btn-link icon-arrow-right color-gray-900">
-                                            Send a message
-                                        </Link>
+                                {/* ── Soft end-of-post CTA (27 Sep 2026) ──
+                                    One gentle next step instead of a sales box. Readers of a
+                                    how-to or checklist are still researching; a free design
+                                    is a low-commitment ask. Pricing Guide posts get a quote
+                                    ask, because those readers came for a number. */}
+                                {post.category === "Pricing Guide" ? (
+                                    <div className="mt-60 p-40 bdrd-16" style={{ background: '#EEF6F2', border: '1px solid #DBECE5' }}>
+                                        <h4 className="text-heading-4">Want a number for your own site?</h4>
+                                        <p className="text-body-lead color-gray-700 mt-15">
+                                            Tell us what the business does and what the site needs to achieve.
+                                            You’ll get a written scope and a fixed AUD quote within one business day.
+                                        </p>
+                                        <div className="mt-25">
+                                            <Link href="/contact/" className="btn btn-black icon-arrow-right-white mr-15">Get a fixed quote</Link>
+                                            <Link href="/pricing/" className="btn btn-link icon-arrow-right color-gray-900">See all packages</Link>
+                                        </div>
                                     </div>
-                                </div>
+                                ) : (
+                                    <div className="mt-60 p-40 bdrd-16" style={{ background: '#EEF6F2', border: '1px solid #DBECE5' }}>
+                                        <h4 className="text-heading-4">Want to see this applied to your business?</h4>
+                                        <p className="text-body-lead color-gray-700 mt-15">
+                                            We’ll design your homepage free, with your real business name and services,
+                                            so you can judge the work before deciding anything.
+                                        </p>
+                                        <div className="mt-25">
+                                            <Link href="/contact/" className="btn btn-black icon-arrow-right-white mr-15">Get a free homepage design</Link>
+                                            <Link href="/how-much-does-a-website-cost-australia/" className="btn btn-link icon-arrow-right color-gray-900">See what a site like this would cost</Link>
+                                        </div>
+                                        <p className="text-body-small color-gray-500 mt-20 mb-0">
+                                            Prefer to talk? <a data-loc="blog-post" href={SITE.calendly} target="_blank" rel="noopener noreferrer" className="color-green-900">Book a free call</a>.
+                                        </p>
+                                    </div>
+                                )}
                             </div>
                         </div>
                     </div>

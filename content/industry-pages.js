@@ -30,10 +30,12 @@ export const INDUSTRY_PAGES = [
     h1Accent: 'that earns trust and fills appointments',
     hero: 'Clinic and allied-health websites built around the patient journey: find you, trust you, book. Fast on a phone, privacy-aware, and yours to own.',
     chips: [
-      { pre: 'From', value: { tier: 'business', field: 'priceLabel' } },
-      { pre: 'Booking', value: { addon: 'Booking system' } },
+      // Outcome chips, not prices (27 Sep 2026): price belongs after
+      // proof, not in the first screen. See docs/SERVICE-PAGE-REDESIGN.md.
+      { value: 'Online', post: 'booking' },
       { value: 'Privacy Act', post: 'aware builds' },
       { pre: 'You', value: 'own the code' },
+      { value: 'Fixed AUD', post: 'quotes' },
     ],
     contextImage: U('photo-1629909614456-6b1c5c94cecc', 'Calm clinic waiting area with a couch and plant'),
     intro: 'Patients choose a clinic the way they choose any service: they search, glance at reviews and book with whoever makes it easiest. A fast, mobile-friendly site with online booking does more for a practice than a beautiful site with a buried phone number.',
@@ -80,10 +82,12 @@ export const INDUSTRY_PAGES = [
     h1Accent: 'that sells the listing, not just shows it',
     hero: 'Property search, listing galleries and enquiry flows that capture serious buyers, so your site works as hard as your agents do.',
     chips: [
-      { pre: 'From', value: { tier: 'business', field: 'priceLabel' } },
-      { pre: 'Platforms', value: { tier: 'application', field: 'priceLabel' } },
+      // Outcome chips, not prices (27 Sep 2026): price belongs after
+      // proof, not in the first screen. See docs/SERVICE-PAGE-REDESIGN.md.
       { value: 'Fast', post: 'property search' },
+      { value: 'Enquiries', post: 'from every listing' },
       { pre: 'You', value: 'own the code' },
+      { value: 'Fixed AUD', post: 'quotes' },
     ],
     contextImage: U('photo-1613490493576-7fde63acd811', 'Modern luxury home exterior'),
     intro: 'Buyers search online before they speak to an agent. Your website is the first inspection, so it has to load fast, look the part and make enquiring effortless.',
@@ -129,10 +133,12 @@ export const INDUSTRY_PAGES = [
     h1Accent: 'built to win jobs, not awards',
     hero: 'Trust up front, click-to-call everywhere, quote forms that work on a phone, and local SEO so you show up when someone searches “near me”.',
     chips: [
-      { pre: 'From', value: { tier: 'starter', field: 'priceLabel' } },
+      // Outcome chips, not prices (27 Sep 2026): price belongs after
+      // proof, not in the first screen. See docs/SERVICE-PAGE-REDESIGN.md.
       { pre: 'Live in', value: { tier: 'starter', field: 'delivery' } },
       { value: 'Click-to-call', post: 'on every section' },
       { pre: 'You', value: 'own the code' },
+      { value: 'Fixed AUD', post: 'quotes' },
     ],
     contextImage: U('photo-1676210134188-4c05dd172f89', 'Tradie working on a pipe in a wall'),
     intro: 'When a pipe bursts at 2am, nobody scrolls. They call the first tradie who looks trustworthy and reachable. We build tradie sites around that moment.',
@@ -178,10 +184,12 @@ export const INDUSTRY_PAGES = [
     h1Accent: 'with direct bookings and a menu people can read',
     hero: 'Keep bookings direct, put the menu on a real page instead of a PDF, and give events their own pages that bring people in.',
     chips: [
-      { pre: 'From', value: { tier: 'starter', field: 'priceLabel' } },
-      { pre: 'Booking', value: { addon: 'Booking system' } },
+      // Outcome chips, not prices (27 Sep 2026): price belongs after
+      // proof, not in the first screen. See docs/SERVICE-PAGE-REDESIGN.md.
+      { value: 'Direct', post: 'bookings' },
       { value: 'No PDF', post: 'menus' },
       { pre: 'You', value: 'own the code' },
+      { value: 'Fixed AUD', post: 'quotes' },
     ],
     contextImage: U('photo-1596411710034-7e373bf7438d', 'Wine bottles on a wooden bar shelf'),
     intro: 'Every booking through a marketplace can cost you commission on a guest you earned yourself. A site with direct booking, a searchable menu and event pages keeps more of that margin.',
@@ -227,10 +235,12 @@ export const INDUSTRY_PAGES = [
     h1Accent: 'platforms students and parents actually use',
     hero: 'Course discovery, enrolment forms and student portals designed for the people who use them, not just the admin who approves them.',
     chips: [
-      { pre: 'Sites from', value: { tier: 'business', field: 'priceLabel' } },
-      { pre: 'Portals', value: { tier: 'application', field: 'priceLabel' } },
+      // Outcome chips, not prices (27 Sep 2026): price belongs after
+      // proof, not in the first screen. See docs/SERVICE-PAGE-REDESIGN.md.
       { value: 'WCAG', post: 'accessibility built in' },
+      { value: 'Student', post: 'portals' },
       { pre: 'You', value: 'own the code' },
+      { value: 'Fixed AUD', post: 'quotes' },
     ],
     contextImage: U('photo-1515378791036-0648a3ef77b2', 'Student studying on a laptop'),
     intro: 'Whether you run a school, a training organisation or online courses, your website is how students find you and often how they learn. It needs clear course discovery, simple enrolment and portals that work on a phone.',
@@ -276,10 +286,12 @@ export const INDUSTRY_PAGES = [
     h1Accent: 'stores you own, with no per-sale platform fees',
     hero: 'Custom product pages, Stripe checkout, inventory and search, on a store you own outright. You keep control of your margins and your customer data.',
     chips: [
-      { pre: 'Stores from', value: { tier: 'ecommerce', field: 'priceLabel' } },
+      // Outcome chips, not prices (27 Sep 2026): price belongs after
+      // proof, not in the first screen. See docs/SERVICE-PAGE-REDESIGN.md.
       { pre: 'Built in', value: { tier: 'ecommerce', field: 'delivery' } },
       { value: '$0', post: 'per-sale platform fee' },
       { pre: 'You', value: 'own the code' },
+      { value: 'Fixed AUD', post: 'quotes' },
     ],
     contextImage: U('photo-1768987439370-bd60d3d0b28b', 'Person shopping online on a phone'),
     intro: 'Hosted store platforms charge a monthly fee and often a cut of each sale. A custom store costs more up front but you own it outright, and the only ongoing costs are hosting and Stripe’s card fees.',
@@ -325,10 +337,12 @@ export const INDUSTRY_PAGES = [
     h1Accent: 'professional, secure and built to generate enquiries',
     hero: 'Sites that look the part, handle sensitive information carefully, and bring in qualified enquiries, with the disclaimers and privacy wording your industry expects.',
     chips: [
-      { pre: 'Sites from', value: { tier: 'business', field: 'priceLabel' } },
-      { pre: 'Client portals', value: { tier: 'application', field: 'priceLabel' } },
+      // Outcome chips, not prices (27 Sep 2026): price belongs after
+      // proof, not in the first screen. See docs/SERVICE-PAGE-REDESIGN.md.
       { value: 'Encrypted', post: 'intake forms' },
+      { value: 'Client', post: 'portals' },
       { pre: 'You', value: 'own the code' },
+      { value: 'Fixed AUD', post: 'quotes' },
     ],
     contextImage: U('photo-1778873750399-338b94f7feda', 'Hand signing a document at a desk'),
     intro: 'Advisers, accountants and law firms work under strict rules on what they say and how they handle client information. The site has to build trust fast without making claims you can’t make.',
@@ -374,10 +388,12 @@ export const INDUSTRY_PAGES = [
     h1Accent: 'ship it, learn, iterate',
     hero: 'We build MVPs and early-stage SaaS products properly, so you can get in front of real users and learn before you run out of runway. Fixed price, full code ownership.',
     chips: [
-      { pre: 'Products', value: { tier: 'custom-software', field: 'priceLabel' } },
-      { pre: 'Simple apps', value: { tier: 'application', field: 'priceLabel' } },
+      // Outcome chips, not prices (27 Sep 2026): price belongs after
+      // proof, not in the first screen. See docs/SERVICE-PAGE-REDESIGN.md.
+      { value: 'Weekly', post: 'working releases' },
       { value: 'AI-ready', post: 'from day one' },
       { pre: 'You', value: 'own the code' },
+      { value: 'Fixed AUD', post: 'quotes' },
     ],
     contextImage: U('photo-1598520106830-8c45c2035460', 'Product diagrams on a glass whiteboard'),
     intro: 'Most startup ideas are tested too slowly and too expensively. We build the core workflow as a real product, with login, billing and admin, so you learn from real users rather than a demo.',

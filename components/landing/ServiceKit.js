@@ -5,7 +5,9 @@
  * Classes are prefixed `svc-`; theme = Chivo/Noto Sans, #006D77, #DBECE5,
  * navy #101828 for dark bands. No emoji icons.
  */
-import { BUILD_TIERS, RETAINER, ADDONS, PLATFORM_PRICES } from "@/content/pricing"
+import Link from "next/link"
+import { CTA } from "@/content/site"
+import { BUILD_TIERS, RETAINER, ADDONS, PLATFORM_PRICES, MARKET_CONTEXT } from "@/content/pricing"
 /* ── Inline SVG line icons (no emoji — they render differently per device) ── */
 export const ICONS = {
     monitor: <><rect x="3" y="4" width="18" height="13" rx="2" /><path d="M8 21h8M12 17v4" /></>,
@@ -100,6 +102,18 @@ export const SVC_CSS = `
 .svc-tier li{padding:6px 0 6px 26px;position:relative;line-height:1.5}
 .svc-tier li:before{content:"";position:absolute;left:0;top:12px;width:14px;height:8px;border-left:2px solid #006D77;border-bottom:2px solid #006D77;transform:rotate(-45deg)}
 .svc-tier .note{font-size:13px;color:#667085;margin:-12px 0 18px}
+.svc-incl{font-size:12.5px;text-transform:uppercase;letter-spacing:.06em;color:#006D77;font-weight:700;margin-top:18px}
+.svc-tier ul{margin-top:8px !important}
+.svc-price-block{border-top:1px solid #E4E7EC;padding-top:18px;margin-bottom:22px}
+.svc-from{font-size:14px;color:#667085;display:block}
+.svc-price-block .svc-price{margin-top:0}
+.svc-fixed{font-size:13.5px;color:#006D77;font-weight:500;margin-top:6px}
+.svc-ctx{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px}
+.svc-ctx div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:18px 20px;color:#D6EEEC;font-size:14px}
+.svc-ctx small{display:block;text-transform:uppercase;letter-spacing:.06em;font-size:12px;color:#9FD3D8}
+.svc-ctx b{display:block;color:#fff;font-size:22px;margin:4px 0}
+.svc-ctx a{color:#fff;text-decoration:underline}
+@media(max-width:767px){.svc-ctx{grid-template-columns:1fr}}
 .svc-extras{margin-top:40px;background:rgba(255,255,255,.08);border-radius:16px;padding:24px 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;font-size:14.5px;color:#D6EEEC}
 .svc-extras b{display:block;color:#fff;font-size:17px}
 .svc-pnote{text-align:center;margin-top:28px;font-size:15px;color:#D6EEEC}
@@ -174,19 +188,22 @@ export function pricingCard(ref) {
     if (ref.retainer) {
         return {
             key: "retainer", name: RETAINER.name, scope: "Monthly plan",
-            price: RETAINER.priceLabel, per: RETAINER.period,
+            price: RETAINER.priceLabel, per: RETAINER.period, from: false,
             lines: RETAINER.features.slice(0, 6), note: RETAINER.note,
         }
     }
     if (ref.addon) {
         const a = addonByName(ref.addon)
         if (!a) return null
-        return { key: a.name, name: a.name, scope: "Add-on", price: a.price, lines: [a.note, "Fixed quote before we start", "You own the result"] }
+        return { key: a.name, name: a.name, scope: "Add-on", price: a.price, from: false, lines: [a.note, "Fixed quote before we start", "You own the result"] }
     }
     const t = tierById(ref.tier)
     if (!t) return null
     return {
-        key: t.id, name: t.name, scope: t.scope, price: t.priceLabel, featured: t.featured,
+        key: t.id, name: t.name, scope: t.scope, featured: t.featured,
+        // "from $X" reads as a starting point, not a bill. Skip when the label
+        // already says "from" (Custom Software: "from $5,000").
+        price: t.priceLabel, from: !/^from/i.test(t.priceLabel), build: true,
         lines: [
             t.delivery === "Scoped per project" ? "Timeline scoped per project" : `Typical delivery: ${t.delivery}`,
             t.tagline,
@@ -202,3 +219,54 @@ export function extraLine(ref) {
     const t = tierById(ref.tier); return t && { value: t.priceLabel, label: `${t.name} · ${t.scope}` }
 }
 
+
+/* ── Price framing (27 Sep 2026) ───────────────────────────────────────────
+ * Order inside every card: what's included → then the number → then
+ * "fixed quote before you commit". Above the cards, a context strip gives the
+ * reference points (agency range, five-year DIY cost) BEFORE the reader meets
+ * our figure. All numbers come from content/pricing.js.
+ */
+const fmt = (n) => `$${n.toLocaleString("en-AU")}`
+export function priceContext() {
+    const w = PLATFORM_PRICES.wix, y = MARKET_CONTEXT.diyYears, a = MARKET_CONTEXT.agencyCustomSite
+    return [
+        { label: "Typical agency quote", value: `${fmt(a.min)}–${fmt(a.max)}`, note: "for a custom small-business site", href: a.source },
+        { label: `DIY builder over ${y} years`, value: `${fmt(w.min * 12 * y)}–${fmt(w.max * 12 * y)}`, note: "and you never own the site", href: "/wix-vs-custom-website/" },
+        { label: "What a fixed price replaces", value: "Hourly billing", note: "and open-ended monthly platform fees" },
+    ]
+}
+
+export function PriceIntro() {
+    return (
+        <div className="svc-ctx">
+            {priceContext().map((c) => (
+                <div key={c.label}>
+                    <small>{c.label}</small>
+                    <b>{c.value}</b>
+                    <span>{c.note}{c.href ? <> · <Link href={c.href}>why</Link></> : null}</span>
+                </div>
+            ))}
+        </div>
+    )
+}
+
+export function PriceCard({ c }) {
+    return (
+        <div className={`svc-tier${c.featured ? " feat" : ""}`}>
+            {c.featured && <span className="svc-badge">Most popular</span>}
+            <h3>{c.name}</h3>
+            <div className="scope">{c.scope}</div>
+            <div className="svc-incl">What’s included</div>
+            <ul>{c.lines.map((l) => <li key={l}>{l}</li>)}</ul>
+            <div className="svc-price-block">
+                {c.from && <span className="svc-from">From</span>}
+                <div className="svc-price">{c.price} <small>AUD{c.per ? ` ${c.per}` : ""}</small></div>
+                <div className="svc-fixed">Fixed quote before you commit</div>
+            </div>
+            {c.note && <p className="note">{c.note}</p>}
+            <Link href={CTA.primary.href} className={`btn ${c.featured ? "btn-black" : "btn-default"} w-100 text-center`} style={{ justifyContent: "center" }}>
+                Get a quote
+            </Link>
+        </div>
+    )
+}

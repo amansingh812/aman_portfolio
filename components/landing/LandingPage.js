@@ -24,6 +24,8 @@ import Breadcrumbs from "@/components/elements/Breadcrumbs"
 import Link from "next/link"
 import { SITE, NAP } from "@/content/site"
 import { BUILD_TIERS, RETAINER } from "@/content/pricing"
+import { priceContext } from "@/components/landing/ServiceKit"
+import ContactPageForm from "@/components/elements/ContactPageForm"
 
 export function buildMetadata(page) {
     if (!page) return {}
@@ -266,6 +268,27 @@ export default function LandingPage({ page }) {
                 </div>
             </section>
 
+            {/* ── INLINE QUOTE FORM (top) — only on pages with `inlineForm: true`.
+                Paid clicks land here (docs/GOOGLE-ADS-PLAN-2026-09-27.md); sending
+                visitors on to /contact/ cost a step on every enquiry. ── */}
+            {page.inlineForm && (
+                <section className="section-box mt-80" id="quote">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-10 mx-auto">
+                                <div className="p-40 bdrd-16" style={{ background: "#EEF6F2", border: "1px solid #DBECE5" }}>
+                                    <h2 className="text-heading-3 color-gray-900">Get a fixed quote within one business day</h2>
+                                    <p className="text-body-lead color-gray-600 mt-10 mb-30">Tell us what the business does and what the site needs to achieve. You’ll get a written scope, a fixed AUD price and a free homepage design if you want one. No call needed.</p>
+                                    <div className="row">
+                                        <ContactPageForm source={`${page.breadcrumb || page.slug} (top form)`} wrapperClass="col-lg-12" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            )}
+
             {/* ── PRICING (live from content/pricing.js) ── */}
             {tiers.length > 0 && (
                 <section className="section-box mt-80">
@@ -273,15 +296,24 @@ export default function LandingPage({ page }) {
                         <div className="row">
                             <div className="col-lg-10 mx-auto">
                                 <span className="tag-1 bg-6 color-green-900">Pricing</span>
-                                <h2 className="text-heading-2 color-gray-900 mt-25 mb-30">
+                                <h2 className="text-heading-2 color-gray-900 mt-25 mb-15">
                                     Fixed prices, published
                                 </h2>
+                                {/* Price framing (27 Sep 2026): what's included first, then the
+                                    number, with honest reference points from pricing.js. */}
+                                <p className="text-body-text color-gray-600 mb-30">
+                                    What’s included, then what it costs. For context, a custom small-business
+                                    site from an Australian agency is commonly quoted at {priceContext()[0].value},
+                                    and a DIY builder costs {priceContext()[1].value} over five years without
+                                    you ever owning the site. Every figure below is a starting point, and your
+                                    written quote is fixed before you commit.
+                                </p>
                                 <div className="table-responsive">
                                     <table style={{ width: "100%", borderCollapse: "collapse" }}>
                                         <thead>
                                             <tr style={{ borderBottom: "2px solid #004E56" }}>
                                                 <th className="text-body-lead color-gray-900" style={{ padding: 16, textAlign: "left" }}>Package</th>
-                                                <th className="text-body-lead color-gray-900" style={{ padding: 16, textAlign: "left" }}>Scope</th>
+                                                <th className="text-body-lead color-gray-900" style={{ padding: 16, textAlign: "left" }}>What’s included</th>
                                                 <th className="text-body-lead color-gray-900" style={{ padding: 16, textAlign: "left" }}>Delivery</th>
                                                 <th className="text-body-lead color-gray-900" style={{ padding: 16, textAlign: "right" }}>Price</th>
                                             </tr>
@@ -296,7 +328,9 @@ export default function LandingPage({ page }) {
                                                     <td className="text-body-text color-gray-600" style={{ padding: 18 }}>{t.scope}</td>
                                                     <td className="text-body-text color-gray-600" style={{ padding: 18 }}>{t.delivery}</td>
                                                     <td style={{ padding: 18, textAlign: "right" }}>
+                                                        {!/^from/i.test(t.priceLabel) && <span className="text-body-small color-gray-500 d-block">From</span>}
                                                         <span className="text-heading-5 color-green-900">{t.priceLabel}</span>
+                                                        <span className="text-body-small color-gray-500 d-block">fixed quote</span>
                                                     </td>
                                                 </tr>
                                             ))}
@@ -329,6 +363,27 @@ export default function LandingPage({ page }) {
                     </div>
                 </div>
             </section>
+
+            {/* ── INLINE QUOTE FORM (bottom) — only on pages with `inlineForm: true`.
+                Paid clicks land here (docs/GOOGLE-ADS-PLAN-2026-09-27.md); sending
+                visitors on to /contact/ cost a step on every enquiry. ── */}
+            {page.inlineForm && (
+                <section className="section-box mt-80" id="quote-bottom">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-10 mx-auto">
+                                <div className="p-40 bdrd-16" style={{ background: "#EEF6F2", border: "1px solid #DBECE5" }}>
+                                    <h2 className="text-heading-3 color-gray-900">Ready when you are</h2>
+                                    <p className="text-body-lead color-gray-600 mt-10 mb-30">Send the details and you’ll have a scope, a fixed price and a date within one business day.</p>
+                                    <div className="row">
+                                        <ContactPageForm source={`${page.breadcrumb || page.slug} (bottom form)`} wrapperClass="col-lg-12" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            )}
 
             {/* ── RELATED ── */}
             {page.related?.length > 0 && (

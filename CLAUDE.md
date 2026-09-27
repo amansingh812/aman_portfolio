@@ -498,6 +498,15 @@ original data point, byline required, images self-hosted with licence noted.
 No word-count quotas (Google lists writing to a word count as a warning sign).
 Never AI-generate people, screenshots or metrics presented as real.
 
+**Price placement (27 Sep 2026):** prices stay public, but they come *after*
+the outcome and the proof, never in a service or industry hero. Every price
+card shows what's included first, then "From $X", then "Fixed quote before
+you commit", with the market context strip (`MARKET_CONTEXT` +
+`PLATFORM_PRICES` in `pricing.js`) above the cards. Blog posts carry our
+package prices only if the post is about cost; everything else ends with the
+soft "free homepage design" CTA. Pricing and cost pages keep price at the top,
+because that's what the searcher came for.
+
 ### Technical SEO baseline
 
 Lighthouse ≥ 90 mobile · CWV green · mobile-first (~68% of AU traffic) · HTTPS ·

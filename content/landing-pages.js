@@ -430,6 +430,7 @@ export const LANDING_PAGES = [
   },
   {
     slug: 'web-design-melbourne',
+    inlineForm: true, // paid-traffic landing page: form on the page
     image: '/assets/imgs/page/landing/web-design-melbourne.webp',
     imageAlt: 'Melbourne skyline behind a local business website built for the local market',
     metaTitle: 'Web Design Melbourne 2026 | From $800',
@@ -2048,6 +2049,7 @@ export const LANDING_PAGES = [
   ,
   {
     slug: 'website-design-quote',
+    inlineForm: true, // paid-traffic landing page: form on the page
     metaTitle: 'Website Design Quote Australia | Fixed AUD Price',
     metaDescription:
       'Get a website design quote in one business day. Fixed AUD price in writing, prices published from $800, free homepage design before you commit.',
