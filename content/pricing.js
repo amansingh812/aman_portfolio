@@ -14,14 +14,26 @@
  * audit what they are missing; a scope-based list makes them pick a size.
  * The second conversation is much easier to have.
  *
- * ── POSITIONING ──────────────────────────────────────────────────────────
- * We price at PARITY with the established Australian agencies, not below.
- * Undercutting was considered and rejected: at $810 against Havealook's $995
- * the buyer does not think "great value", they think "why is it cheaper?"
+ * ── POSITIONING (revised 2 Oct 2026) ─────────────────────────────────────
+ * Aug 2026: priced at parity with established agencies.
+ * Oct 2026: Aman chose a low-entry, free-first model for the ads test:
+ *   1. FREE first: homepage design before any payment (FREE_DESIGN).
+ *   2. LOW entry: a one-page Launch site at $490, so "from $490" is the
+ *      first number a buyer sees. Starter ($800) stays the recommended tier.
+ *   3. SMALL payments: Starter and up can be paid in 4 instalments.
+ *   4. LOW monthly: Care at $79/month alongside Care + SEO at $250.
+ * The core tiers did not move. Research (2 Oct 2026): AU freelancers
+ * $1,000–$3,000, small studios $2,500–$6,000, Havealook $995 incl. GST.
  *
- * We win on what is verifiable — modern stack, genuinely faster sites, SEO
- * built in at development time, you own the code, AI-ready, direct access to
- * the engineer. Never make "cheaper than X" the headline.
+ * HONESTY GUARDRAILS for this model (Australian Consumer Law):
+ *   - No strikethrough "was" prices we never charged.
+ *   - No countdown timers or invented scarcity ("2 spots left").
+ *   - "Recommended" is a recommendation, not "most popular" — we have no
+ *     data that makes any tier the most popular.
+ *
+ * We still win on what is verifiable — modern stack, genuinely faster sites,
+ * SEO built in, you own the code, direct access to the engineer. Never make
+ * "cheaper than X" the headline.
  *
  * Prices are a starting point and negotiable on scope — see NEGOTIABLE_NOTE.
  *
@@ -120,6 +132,17 @@ export const FULL_INCLUSIONS = [
 
 export const BUILD_TIERS = [
   {
+    id: 'launch',
+    name: 'Launch',
+    price: 490,
+    priceLabel: '$490',
+    scope: '1-page website',
+    tagline: 'One page that gets the phone ringing.',
+    delivery: '3–5 days',
+    tag: 'Lowest entry',
+    featured: false,
+  },
+  {
     id: 'starter',
     name: 'Starter',
     price: 800,
@@ -127,8 +150,9 @@ export const BUILD_TIERS = [
     scope: '3–5 pages',
     tagline: 'A credible presence, live in a week.',
     delivery: '5–7 days',
-    tag: 'Basic start plan',
-    featured: false,
+    tag: 'Recommended',
+    featured: true,
+    payments: 4,
   },
   {
     id: 'business',
@@ -138,8 +162,8 @@ export const BUILD_TIERS = [
     scope: 'Up to 10 pages',
     tagline: 'Room to explain everything you do.',
     delivery: '2–3 weeks',
-    tag: 'Most popular',
-    featured: true,
+    featured: false,
+    payments: 4,
   },
   {
     id: 'unlimited',
@@ -150,6 +174,7 @@ export const BUILD_TIERS = [
     tagline: 'Multi-service, multi-location, no page cap.',
     delivery: '3–4 weeks',
     featured: false,
+    payments: 4,
   },
   {
     id: 'ecommerce',
@@ -160,6 +185,7 @@ export const BUILD_TIERS = [
     tagline: 'Sell online on a platform you control.',
     delivery: '4–6 weeks',
     featured: false,
+    payments: 4,
   },
   {
     id: 'application',
@@ -170,6 +196,7 @@ export const BUILD_TIERS = [
     tagline: 'Dashboards, portals and booking systems.',
     delivery: '4–8 weeks',
     featured: false,
+    payments: 4,
   },
   {
     id: 'custom-software',
@@ -183,13 +210,46 @@ export const BUILD_TIERS = [
   },
 ];
 
-/* ─────────────────────────────────────────────────────────────────────────
-   MONTHLY — one plan, not a ladder
+/** Lowest build price, for "Websites from $X" copy. Never hardcode it. */
+export const ENTRY_TIER = BUILD_TIERS.reduce((a, b) => (b.price < a.price ? b : a));
 
-   Competitors run three or four SEO tiers. We run one, because a small
-   studio should promise one thing it can genuinely deliver every month
-   rather than four it cannot.
+/** "4 × $200" for tiers that can be paid in instalments, else null. */
+export const instalmentLabel = (t) =>
+  t && t.payments ? `${t.payments} × $${Math.ceil(t.price / t.payments).toLocaleString('en-AU')}` : null;
+
+/**
+ * The free homepage design: the first thing every ad and CTA offers.
+ * It is a visual design, not a working site; say "design", never "demo site".
+ */
+export const FREE_DESIGN = {
+  turnaround: '2 business days',
+  promise: 'See your homepage designed free. Pay only if you love it.',
+  short: 'Free homepage design before you pay',
+};
+
+/* ─────────────────────────────────────────────────────────────────────────
+   MONTHLY — two plans (Oct 2026)
+
+   Care ($79) is the low-friction default: hosting, updates, backups and small
+   edits. Care + SEO ($250) adds the monthly growth work. Two plans, not four:
+   a small studio should promise only what it can deliver every month.
    ───────────────────────────────────────────────────────────────────────── */
+
+export const CARE_PLAN = {
+  id: 'care',
+  name: 'Care',
+  price: 79,
+  priceLabel: '$79',
+  period: '/month',
+  tagline: 'Hosting, updates and small edits, handled.',
+  features: [
+    'Hosting, SSL and uptime monitoring',
+    'Weekly backups',
+    'Security and dependency updates',
+    'Up to 30 minutes of small edits a month',
+  ],
+  note: 'Optional. Month to month, cancel with 30 days notice.',
+};
 
 export const RETAINER = {
   id: 'care-seo',
@@ -211,6 +271,9 @@ export const RETAINER = {
   ],
   note: 'Optional. Month to month, cancel with 30 days notice, no lock-in.',
 };
+
+/** Both monthly plans, cheapest first, for rendering. */
+export const MONTHLY_PLANS = [CARE_PLAN, RETAINER];
 
 /* ─────────────────────────────────────────────────────────────────────────
    ADD-ONS
@@ -294,7 +357,15 @@ export const PRICING_FAQS = [
   },
   {
     q: 'Is the price fixed once we start?',
-    a: 'Yes. You get a written scope and an AUD figure before any work begins, and that number does not change unless you ask for something outside the agreed scope — in which case we re-quote it openly rather than quietly adding hours. Payment is split 50% to start and 50% on launch.',
+    a: 'Yes. You get a written scope and an AUD figure before any work begins, and that number does not change unless you ask for something outside the agreed scope — in which case we re-quote it openly rather than quietly adding hours. Payment is split 50% to start and 50% on launch, or on Starter and above you can pay in 4 equal monthly instalments (Starter is 4 × $200).',
+  },
+  {
+    q: 'Can I see the design before I pay anything?',
+    a: 'Yes. We design your homepage free, using your real business name, services and photos, usually within 2 business days. If you do not love it, you walk away and pay nothing. It is a design rather than a working site; the build starts only if you decide to go ahead.',
+  },
+  {
+    q: 'Why is the one-page Launch site only $490?',
+    a: 'Because a single, well-built page is often all a new business or a tradie needs to start getting calls: what you do, where you work, proof, and a quote form or call button. It is the same custom build and you still own the code, so when you outgrow it we add pages rather than start again.',
   },
   {
     q: 'Do I actually own the website?',
@@ -306,7 +377,7 @@ export const PRICING_FAQS = [
   },
   {
     q: 'Do I have to take the monthly plan?',
-    a: 'No. Care + SEO is optional and cancels with 30 days notice. There is no lock-in and no penalty. Most clients take it because a site that is never updated stops ranking within months, but if you would rather manage it yourself we will show you how at handover.',
+    a: 'No. Both monthly plans are optional and cancel with 30 days notice, with no lock-in and no penalty. Care ($79/month) covers hosting, updates, backups and small edits. Care + SEO ($250/month) adds a new page or post every month and ongoing SEO work. If you would rather manage the site yourself, we will show you how at handover.',
   },
   {
     q: 'How does the timezone work if the engineer is in India?',

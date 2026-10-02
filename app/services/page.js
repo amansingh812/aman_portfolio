@@ -25,7 +25,7 @@ const SERVICES = [
     {
         title: "Web Development",
         icon: "/assets/imgs/page/services/1/icon-web.svg",
-        body: "Responsive, fast websites and web apps on a modern Next.js / React stack. Sites from AU$800.",
+        body: "Responsive, fast websites and web apps on a modern Next.js / React stack. Sites from AU$490.",
         href: "/services/web-development/",
     },
     {
@@ -218,7 +218,7 @@ export default function ServicesPage() {
                                     </thead>
                                     <tbody>
                                         {[
-                                            ["People cannot find us, or the site looks dated", "Web Development", "/services/web-development/", "$800"],
+                                            ["People cannot find us, or the site looks dated", "Web Development", "/services/web-development/", "$490"],
                                             ["We have a site but it brings in no enquiries", "Marketing & SEO", "/services/marketing-seo/", "$250/mo"],
                                             ["We want to sell online", "Web Development", "/ecommerce-development/", "$4,500"],
                                             ["Customers keep asking for an app", "Mobile App Development", "/services/mobile-app-development/", "$4,500"],

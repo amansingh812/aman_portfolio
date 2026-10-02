@@ -4,7 +4,7 @@ import { useState } from "react"
 const FAQS = [
     {
         q: "How much does a website cost?",
-        a: "We publish our prices upfront, in AUD, before you make any commitment. Three to five page sites from $800, up to ten pages $1,900, unlimited pages $3,500, e-commerce and applications $4,500, and custom software from $5,000. You get a written quote that doesn't move unless the scope does — no hourly billing surprises at the end."
+        a: "We publish our prices upfront, in AUD, before you make any commitment. One-page sites $490, three to five page sites from $800, up to ten pages $1,900, unlimited pages $3,500, e-commerce and applications $4,500, and custom software from $5,000. You get a written quote that doesn't move unless the scope does — no hourly billing surprises at the end."
     },
     {
         q: "What makes you different from other Australian web agencies?",

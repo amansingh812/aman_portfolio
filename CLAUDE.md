@@ -113,12 +113,24 @@ Current (verify before quoting anywhere):
 
 | Package | AUD |
 |---|---|
-| Starter — 3–5 pages | **$800** |
-| Business — up to 10 pages | **$1,900** |
-| Unlimited pages | **$3,500** |
-| E-commerce / Application | **$4,500** |
+| Launch — 1-page site (added 2 Oct 2026) | **$490** |
+| Starter — 3–5 pages (Recommended) | **$800** or 4 × $200 |
+| Business — up to 10 pages | **$1,900** or 4 × $475 |
+| Unlimited pages | **$3,500** or 4 × $875 |
+| E-commerce / Application | **$4,500** or 4 × $1,125 |
 | Custom software | **from $5,000** |
+| Care (added 2 Oct 2026) | **$79/month** |
 | Care + SEO retainer | **$250/month** |
+
+**Free-first model (2 Oct 2026).** Aman chose a low-entry pricing model for
+the ads test: free homepage design first (`FREE_DESIGN`, ~2 business days),
+"from $490" as the headline number (`ENTRY_TIER` — never hardcode it),
+instalments on Starter and up (`instalmentLabel()`), and a $79 Care plan.
+Guardrails: no fake "was" prices, no countdown timers, no invented scarcity,
+and "Recommended", never "Most popular" (we have no data for it).
+**Open:** GST. The site says "GST not included", but with no ABN Aman is
+likely not GST-registered and cannot charge GST. Confirm with the accountant,
+then change the line to "No GST added" if so.
 
 Add-ons also live in `pricing.js` (`ADDONS`) and are published on the site:
 logo $290 · brand kit $490 · copywriting $140/page · extra page $180 ·
@@ -265,9 +277,9 @@ quoting a platform price.
 
 ### The full published price list
 
-`BUILD_TIERS` — Starter $800 · Business $1,900 · Unlimited $3,500 ·
+`BUILD_TIERS` — Launch $490 · Starter $800 · Business $1,900 · Unlimited $3,500 ·
 E-Commerce $4,500 · Application $4,500 · Custom Software $5,000
-`RETAINER` — Care + SEO $250/month
+`CARE_PLAN` — Care $79/month · `RETAINER` — Care + SEO $250/month
 `ADDONS` — Logo design $290 · Brand kit $490 · Copywriting $140/page ·
 Extra page $180 · AI chatbot from $900 · Booking system from $700 ·
 Multi-language from $600 · Migration from Wix/WP from $400
@@ -354,13 +366,13 @@ Full analysis: **`docs/COMPETITOR-DEEP-DIVE-AUG-2026.md`**. Summary:
 
 | | **Us** | Havealook | Growth Digital | Aussify |
 |---|---|---|---|---|
-| Entry price | **$800** | $995 | undisclosed | $900 |
+| Entry price | **$490** (1 page) · $800 (3–5 pages) | $995 | undisclosed | $900 |
 | Business site | **$1,900** | $1,995 | undisclosed | $2,300 |
 | Stack | **Next.js / AI** | static HTML + own CMS | Shopify | WordPress |
 | Own the code | **Yes** | No | No | Source files |
 | Google reviews | **0** ⚠️ | **300 @ 4.8★** | 60+ | few |
 | Indexed pages | ~34 | ~80 | **1** | ~32 |
-| Monthly retainer | $250 Care+SEO | SEO (quote) | Ads | **$225–1,499 SEO** |
+| Monthly retainer | $79 Care · $250 Care+SEO | SEO (quote) | Ads | **$225–1,499 SEO** |
 
 - **Havealook** is the real threat: 20 years, 300 reviews, $500/referral program,
   40 blog posts, named SEO case studies. Their wedge is *"Australian owned, not

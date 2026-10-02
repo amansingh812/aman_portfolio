@@ -19,10 +19,14 @@
  */
 import Link from "next/link"
 import { useState } from "react"
-import { BUILD_TIERS, ALWAYS_INCLUDED } from "@/content/pricing"
+import { BUILD_TIERS, ALWAYS_INCLUDED, instalmentLabel, FREE_DESIGN } from "@/content/pricing"
+
+// Default to the recommended (featured) tier, not a hardcoded index — the
+// tier list grew a $490 Launch tier at position 0 in Oct 2026.
+const DEFAULT_INDEX = Math.max(0, BUILD_TIERS.findIndex((t) => t.featured))
 
 export default function PricingSelector() {
-    const [active, setActive] = useState(1) // Business is the default
+    const [active, setActive] = useState(DEFAULT_INDEX)
     const tier = BUILD_TIERS[active]
 
     return (
@@ -57,11 +61,15 @@ export default function PricingSelector() {
                         </ul>
 
                         <div className="bfsp-foot">
-                            <p className="text-body-small mb-20 bfsp-muted">
+                            <p className="text-body-small mb-10 bfsp-muted">
                                 Delivery <span className="bfsp-white">{tier.delivery}</span>
+                                {instalmentLabel(tier) && (
+                                    <> · or pay <span className="bfsp-white">{instalmentLabel(tier)}</span></>
+                                )}
                             </p>
+                            <p className="text-body-small mb-20 bfsp-muted">{FREE_DESIGN.short}</p>
                             <Link href="/contact/" className="btn btn-black bfsp-cta">
-                                Get a quote for {tier.name}
+                                Get my free homepage design
                             </Link>
                         </div>
                     </div>
@@ -97,7 +105,12 @@ export default function PricingSelector() {
                                         <span className="text-body-small bfsp-scope">{t.scope}</span>
                                     </span>
 
-                                    <span className="text-heading-4 bfsp-price">{/^from/i.test(t.priceLabel) ? t.priceLabel : <><small style={{ fontSize: 13, fontWeight: 400, marginRight: 4 }}>from</small>{t.priceLabel}</>}</span>
+                                    <span className="bfsp-pricecol">
+                                        <span className="text-heading-4 bfsp-price">{/^from/i.test(t.priceLabel) ? t.priceLabel : <><small style={{ fontSize: 13, fontWeight: 400, marginRight: 4 }}>from</small>{t.priceLabel}</>}</span>
+                                        {instalmentLabel(t) && (
+                                            <span className="text-body-small bfsp-scope">or {instalmentLabel(t)}</span>
+                                        )}
+                                    </span>
                                 </button>
                             )
                         })}
@@ -166,6 +179,7 @@ const css = `
 .bfsp-tag { padding:6px 14px !important; font-size:12px !important; line-height:12px !important; }
 .bfsp-item.is-sel .bfsp-tag { background:var(--mint) !important; color:var(--teal) !important; }
 
+.bfsp-pricecol { flex:0 0 auto; display:flex; flex-direction:column; align-items:flex-end; gap:4px; }
 .bfsp-price { flex:0 0 auto; color:#101828; margin:0; white-space:nowrap; }
 .bfsp-item.is-sel .bfsp-price { color:#fff; }
 

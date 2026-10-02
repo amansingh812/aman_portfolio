@@ -7,7 +7,7 @@
  */
 import Link from "next/link"
 import { CTA } from "@/content/site"
-import { BUILD_TIERS, RETAINER, ADDONS, PLATFORM_PRICES, MARKET_CONTEXT } from "@/content/pricing"
+import { BUILD_TIERS, RETAINER, CARE_PLAN, ADDONS, PLATFORM_PRICES, MARKET_CONTEXT, instalmentLabel } from "@/content/pricing"
 /* ── Inline SVG line icons (no emoji — they render differently per device) ── */
 export const ICONS = {
     monitor: <><rect x="3" y="4" width="18" height="13" rx="2" /><path d="M8 21h8M12 17v4" /></>,
@@ -166,11 +166,13 @@ export const SVC_CSS = `
 const tierById = (id) => BUILD_TIERS.find((t) => t.id === id)
 const addonByName = (n) => ADDONS.find((a) => a.name === n)
 const retainerLabel = `${RETAINER.priceLabel}${RETAINER.period}`
+const careLabel = `${CARE_PLAN.priceLabel}${CARE_PLAN.period}`
 
 export function resolveValue(v) {
     if (v == null) return ""
     if (typeof v === "string") return v
     if (v.retainer) return retainerLabel
+    if (v.care) return careLabel
     if (v.addon) return addonByName(v.addon)?.price ?? ""
     if (v.platform) {
         const p = PLATFORM_PRICES[v.platform]
@@ -189,7 +191,15 @@ export function pricingCard(ref) {
         return {
             key: "retainer", name: RETAINER.name, scope: "Monthly plan",
             price: RETAINER.priceLabel, per: RETAINER.period, from: false,
-            lines: RETAINER.features.slice(0, 6), note: RETAINER.note,
+            lines: RETAINER.features.slice(0, 6),
+            note: `${RETAINER.note} Or ${CARE_PLAN.name} at ${careLabel}: hosting, updates and small edits.`,
+        }
+    }
+    if (ref.care) {
+        return {
+            key: "care", name: CARE_PLAN.name, scope: "Monthly plan",
+            price: CARE_PLAN.priceLabel, per: CARE_PLAN.period, from: false,
+            lines: CARE_PLAN.features, note: CARE_PLAN.note,
         }
     }
     if (ref.addon) {
@@ -204,6 +214,7 @@ export function pricingCard(ref) {
         // "from $X" reads as a starting point, not a bill. Skip when the label
         // already says "from" (Custom Software: "from $5,000").
         price: t.priceLabel, from: !/^from/i.test(t.priceLabel), build: true,
+        tag: t.tag, instalments: instalmentLabel(t),
         lines: [
             t.delivery === "Scoped per project" ? "Timeline scoped per project" : `Typical delivery: ${t.delivery}`,
             t.tagline,
@@ -214,7 +225,7 @@ export function pricingCard(ref) {
 }
 
 export function extraLine(ref) {
-    if (ref.retainer) return { value: retainerLabel, label: `${RETAINER.name} (optional)` }
+    if (ref.retainer) return { value: `from ${careLabel}`, label: `${CARE_PLAN.name} or ${RETAINER.name} (optional)` }
     if (ref.addon) { const a = addonByName(ref.addon); return a && { value: a.price, label: a.name } }
     const t = tierById(ref.tier); return t && { value: t.priceLabel, label: `${t.name} · ${t.scope}` }
 }
@@ -253,7 +264,7 @@ export function PriceIntro() {
 export function PriceCard({ c }) {
     return (
         <div className={`svc-tier${c.featured ? " feat" : ""}`}>
-            {c.featured && <span className="svc-badge">Most popular</span>}
+            {c.featured && <span className="svc-badge">{c.tag || "Recommended"}</span>}
             <h3>{c.name}</h3>
             <div className="scope">{c.scope}</div>
             <div className="svc-incl">What’s included</div>
@@ -261,7 +272,8 @@ export function PriceCard({ c }) {
             <div className="svc-price-block">
                 {c.from && <span className="svc-from">From</span>}
                 <div className="svc-price">{c.price} <small>AUD{c.per ? ` ${c.per}` : ""}</small></div>
-                <div className="svc-fixed">Fixed quote before you commit</div>
+                {c.instalments && <div className="svc-fixed" style={{ color: "#475467" }}>or {c.instalments}</div>}
+                <div className="svc-fixed">{c.build ? "Free homepage design before you pay" : "Fixed quote before you commit"}</div>
             </div>
             {c.note && <p className="note">{c.note}</p>}
             <Link href={CTA.primary.href} className={`btn ${c.featured ? "btn-black" : "btn-default"} w-100 text-center`} style={{ justifyContent: "center" }}>

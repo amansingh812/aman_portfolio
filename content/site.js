@@ -16,7 +16,7 @@ export const SITE = {
   name: 'Build First Site',
   url: 'https://buildfirstsite.com',
   description:
-    'Web design and development for Australian small businesses. Fixed prices in AUD from $800, modern Next.js builds, and you own the code. You work directly with the engineer, with a local contact in Australia.',
+    'Web design and development for Australian small businesses. Fixed prices in AUD from $490, modern Next.js builds, and you own the code. You work directly with the engineer, with a local contact in Australia.',
   email: 'contact@buildfirstsite.com',
   calendly: 'https://calendly.com/amanpd0/30min',
   phone: '+61 413 146 498',

@@ -33,12 +33,12 @@ import Layout from "@/components/layout/Layout"
 import Link from "next/link"
 import PricingSelector from "@/components/elements/PricingSelector"
 import { SITE } from "@/content/site"
-import { BUILD_TIERS, RETAINER, PRICING_FAQS, NEGOTIABLE_NOTE } from "@/content/pricing"
+import { BUILD_TIERS, RETAINER, CARE_PLAN, MONTHLY_PLANS, PRICING_FAQS, NEGOTIABLE_NOTE, instalmentLabel } from "@/content/pricing"
 
 export const metadata = {
-    title: "Small Business Website Design Packages | From $800",
+    title: "Small Business Website Design Packages | From $490",
     description:
-        "Fixed AUD pricing by scope: 3–5 pages $800, up to 10 pages $1,900, unlimited $3,500, e-commerce and apps $4,500, custom software from $5,000. Care + SEO $250/month. You own the code.",
+        "Free homepage design first, then fixed AUD prices: 1-page site $490, 3–5 pages $800 (or 4 × $200), up to 10 pages $1,900, e-commerce $4,500. Care from $79/month. You own the code.",
     keywords: [
         "website pricing australia",
         "how much does a website cost australia",
@@ -115,7 +115,7 @@ export default function PricingPage() {
             serviceType: "Web design, development and custom software",
             provider: { "@type": "Organization", name: SITE.name, url: SITE.url },
             areaServed: { "@type": "Country", name: "Australia" },
-            offers: [...BUILD_TIERS, RETAINER].map((t) => ({
+            offers: [...BUILD_TIERS, ...MONTHLY_PLANS].map((t) => ({
                 "@type": "Offer",
                 name: t.name,
                 description: t.tagline,
@@ -188,7 +188,7 @@ export default function PricingPage() {
                     <div className="row">
                         <div className="col-lg-8 mx-auto text-center">
                             <p className="text-body-small color-gray-500 mt-30">
-                                All prices AUD · GST not included · Hosting included for year one
+                                All prices AUD · GST not included · Hosting included for year one · Starter and up payable in 4 instalments
                             </p>
                         </div>
                     </div>
@@ -205,7 +205,7 @@ export default function PricingPage() {
                                 Small business website design packages
                             </h2>
                             <p className="text-body-lead-large color-gray-600 mb-50">
-                                All six packages, side by side. Same build quality, same inclusions. Pick the size that matches
+                                All {BUILD_TIERS.length} packages, side by side. Same build quality, same inclusions. Pick the size that matches
                                 what you need.
                             </p>
                         </div>
@@ -231,7 +231,7 @@ export default function PricingPage() {
                                                     {t.featured && (
                                                         <span className="tag-1 bg-6 color-green-900 ml-10"
                                                             style={{ padding: "6px 14px", fontSize: 12, lineHeight: "12px" }}>
-                                                            Most popular
+                                                            {t.tag || "Recommended"}
                                                         </span>
                                                     )}
                                                     <p className="text-body-small color-gray-500 mt-5 mb-0">
@@ -242,6 +242,9 @@ export default function PricingPage() {
                                                 <td className="text-body-text color-gray-600">{t.delivery}</td>
                                                 <td className="num">
                                                     <span className="text-heading-5 color-green-900">{t.priceLabel}</span>
+                                                    {instalmentLabel(t) && (
+                                                        <p className="text-body-small color-gray-500 mt-5 mb-0">or {instalmentLabel(t)}</p>
+                                                    )}
                                                 </td>
                                             </tr>
                                         ))}
@@ -276,18 +279,34 @@ export default function PricingPage() {
                         <div className="col-lg-8 mx-auto text-center">
                             <span className="tag-1 bg-6 color-green-900">Monthly</span>
                             <h2 className="text-heading-2 color-gray-900 mt-25 mb-20">
-                                One plan. Not four tiers.
+                                Two plans. Both optional.
                             </h2>
                             <p className="text-body-lead-large color-gray-600 mb-50">
-                                Competitors run three or four SEO tiers. We run one, because a
-                                small studio should promise one thing it can genuinely
-                                deliver every month rather than four it cannot.
+                                Care keeps the site hosted, updated and backed up. Care + SEO
+                                adds the monthly work that moves you up Google. Cancel either
+                                with 30 days notice.
                             </p>
                         </div>
                     </div>
 
                     <div className="row">
                         <div className="col-lg-10 mx-auto">
+                            <div className="bfs-note mb-30">
+                                <div style={{ flex: "1 1 420px" }}>
+                                    <span className="tag-1 bg-6 color-green-900">{CARE_PLAN.name}</span>
+                                    <h3 className="text-heading-4 color-gray-900 mt-15 mb-10">
+                                        {CARE_PLAN.priceLabel}
+                                        <span className="text-body-text color-gray-500">{CARE_PLAN.period}</span>
+                                    </h3>
+                                    <p className="text-body-text color-gray-600 mb-10">{CARE_PLAN.tagline}</p>
+                                    <p className="text-body-small color-gray-500 mb-0">
+                                        {CARE_PLAN.features.join(" · ")}
+                                    </p>
+                                </div>
+                                <Link href="/contact/" className="btn btn-black icon-arrow-right-white">
+                                    Add Care
+                                </Link>
+                            </div>
                             <div className="bfs-ret">
                                 <div className="bfs-ret-l">
                                     <span className="text-body-small bfs-tint">ONGOING</span>

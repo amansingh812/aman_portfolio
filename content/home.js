@@ -10,7 +10,7 @@ export const HERO = {
   "h1Accent": "Australian businesses",
   "h1Trail": "more enquiries.",
   "sub": "A senior engineer who builds everything, and a local contact in Australia. Fixed prices in AUD, published upfront. You own the code.",
-  "priceAnchor": "Websites from $800 · Up to 10 pages $1,900 · E-commerce from $4,500",
+  "priceAnchor": "Websites from $490 · Up to 10 pages $1,900 · E-commerce from $4,500",
   "primaryCta": {
     "label": "Get a free quote",
     "href": "#contact"
@@ -210,7 +210,7 @@ export const OBJECTIONS = [
   },
   {
     "q": "What if I only need something small?",
-    "a": "A 3–5 page site starts at $800. If what you need is genuinely simpler than a custom build — sometimes a DIY builder is the right answer for a brand-new business — we will tell you that rather than sell you something you do not need yet."
+    "a": "A one-page site starts at $490 and a 3–5 page site at $800. If what you need is genuinely simpler than a custom build — sometimes a DIY builder is the right answer for a brand-new business — we will tell you that rather than sell you something you do not need yet."
   }
 ];
 

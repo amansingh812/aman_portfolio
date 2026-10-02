@@ -33,14 +33,14 @@ import Link from "next/link"
 import Image from "next/image"
 import { CTA, SITE, REVIEWS } from "@/content/site"
 import { CASE_STUDIES } from "@/content/case-studies"
-import { BUILD_TIERS } from "@/content/pricing"
+import { BUILD_TIERS, ENTRY_TIER, instalmentLabel } from "@/content/pricing"
 
 export const metadata = {
     // ABSOLUTE — the brand is already the first words here, so letting the root
     // `%s | Build First Site` template append it would render it twice.
     title: { absolute: "Build First Site — Web, App & AI Development Australia" },
     description:
-        "Websites, apps and AI systems built for Australian businesses. Fixed AUD pricing from $800, modern Next.js stack, full code ownership.",
+        "Websites, apps and AI systems built for Australian businesses. Free homepage design first, fixed AUD pricing from $490, full code ownership.",
     alternates: { canonical: "/" },
     openGraph: {
         title: "Build First Site — Fixed AUD Prices, Modern Stack",
@@ -101,6 +101,7 @@ const PORTFOLIO = CASE_STUDIES.filter((cs) =>
 
 /* Hero floating cards read these — never hardcode the price or timeline. */
 const starter = BUILD_TIERS.find((t) => t.id === 'starter')
+const entry = ENTRY_TIER
 
 export default function Home() {
     return (
@@ -177,7 +178,7 @@ export default function Home() {
                                             <div className="block-1 shape-2">
                                                 <div className="hero-float-card" style={{ padding: '26px 20px 18px', textAlign: 'center' }}>
                                                     <svg width="30" height="30" viewBox="0 0 24 24" fill="#006D77" aria-hidden="true"><path d="M21.4 11.6 12.4 2.6A2 2 0 0 0 11 2H4a2 2 0 0 0-2 2v7c0 .55.22 1.05.59 1.42l9 9a2 2 0 0 0 2.82 0l7-7a2 2 0 0 0 0-2.82zM6.5 8A1.5 1.5 0 1 1 8 6.5 1.5 1.5 0 0 1 6.5 8z"/></svg>
-                                                    <div style={{ fontSize: 24, fontWeight: 500, color: '#101828', marginTop: 10 }}>{starter.priceLabel}</div>
+                                                    <div style={{ fontSize: 24, fontWeight: 500, color: '#101828', marginTop: 10 }}>{entry.priceLabel}</div>
                                                     <div style={{ fontSize: 17, color: '#7E7A9A', marginTop: 4 }}>Websites from</div>
                                                     <svg viewBox="0 0 200 50" style={{ width: '100%', marginTop: 8 }} aria-hidden="true"><path d="M5 25 C 35 5, 55 5, 75 25 S 115 45, 135 25 S 175 5, 195 25" fill="none" stroke="#006D77" strokeWidth="6" strokeLinecap="round"/></svg>
                                                 </div>
@@ -583,13 +584,13 @@ export default function Home() {
 
                     <div className="row">
                         {BUILD_TIERS.filter((t) =>
-                            ['starter', 'business', 'unlimited'].includes(t.id)
+                            ['launch', 'starter', 'business'].includes(t.id)
                         ).map((t) => (
                             <div className="col-lg-4 col-md-6 col-sm-12 mb-30" key={t.id}>
                                 <div className={`home-price-card${t.featured ? " is-featured" : ""}`}>
                                     {t.featured && (
                                         <span className="tag-1 bg-6 color-green-900 home-price-chip">
-                                            Most popular
+                                            {t.tag || "Recommended"}
                                         </span>
                                     )}
                                     <h3 className="text-heading-5 color-gray-900 mb-10">{t.name}</h3>
@@ -606,7 +607,9 @@ export default function Home() {
                                         <span className="text-heading-2 color-green-900">{t.priceLabel}</span>
                                         <span className="text-body-small color-gray-500 ml-5">AUD</span>
                                     </div>
-                                    <p className="text-body-small color-green-900 mt-5 mb-25">Fixed quote before you commit</p>
+                                    <p className="text-body-small color-green-900 mt-5 mb-25">
+                                        {instalmentLabel(t) ? `or ${instalmentLabel(t)} · ` : ""}Free design before you pay
+                                    </p>
 
                                     <Link href="/pricing/"
                                         className="btn btn-default icon-arrow-right home-price-btn">

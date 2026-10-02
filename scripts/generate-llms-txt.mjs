@@ -23,7 +23,7 @@ import path from 'node:path'
 const root = process.cwd()
 const out = (p) => path.join(root, 'public', p)
 
-const { BUILD_TIERS, RETAINER } = await import('../content/pricing.js')
+const { BUILD_TIERS, RETAINER, CARE_PLAN, FREE_DESIGN, instalmentLabel } = await import('../content/pricing.js')
 const { LANDING_PAGES } = await import('../content/landing-pages.js')
 const { GUIDES } = await import('../content/guides.js')
 const { SITE, NAP, SERVICE_ITEMS } = await import('../content/site.js')
@@ -43,7 +43,7 @@ const guides = GUIDES.map((g) => `- [${g.title}](${BASE}/guides/${g.slug}/)`).jo
 const services = SERVICE_ITEMS.map((s) => `- [${s.label}](${BASE}${s.href}): ${s.desc}`).join('\n')
 
 const pricing = BUILD_TIERS
-    .map((t) => `- **${t.name}** — ${t.scope}: ${money(t.price)} AUD, ${t.delivery}`)
+    .map((t) => `- **${t.name}** — ${t.scope}: ${money(t.price)} AUD${instalmentLabel(t) ? ` (or ${instalmentLabel(t)})` : ''}, ${t.delivery}`)
     .join('\n')
 
 const llms = `# Build First Site
@@ -74,7 +74,9 @@ We do not operate in the United States or the United Kingdom.
 ## Pricing (AUD, before GST)
 
 ${pricing}
+- **${CARE_PLAN.name}** — optional hosting, updates, backups and small edits: ${money(CARE_PLAN.price)} AUD${CARE_PLAN.period}, cancel with 30 days notice
 - **${RETAINER.name}** — optional ongoing care and SEO: ${money(RETAINER.price)} AUD${RETAINER.period}, cancel with 30 days notice
+- **Free homepage design** — designed before any payment, usually within ${FREE_DESIGN.turnaround}; pay only if you go ahead
 
 All prices are published in full at ${BASE}/pricing/ and are fixed before work
 begins. A free homepage design is offered before any commitment or deposit.

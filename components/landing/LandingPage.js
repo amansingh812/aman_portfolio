@@ -23,7 +23,7 @@ import Image from "next/image"
 import Breadcrumbs from "@/components/elements/Breadcrumbs"
 import Link from "next/link"
 import { SITE, NAP } from "@/content/site"
-import { BUILD_TIERS, RETAINER } from "@/content/pricing"
+import { BUILD_TIERS, RETAINER, CARE_PLAN, instalmentLabel } from "@/content/pricing"
 import { priceContext } from "@/components/landing/ServiceKit"
 import ContactPageForm from "@/components/elements/ContactPageForm"
 
@@ -330,7 +330,7 @@ export default function LandingPage({ page }) {
                                                     <td style={{ padding: 18, textAlign: "right" }}>
                                                         {!/^from/i.test(t.priceLabel) && <span className="text-body-small color-gray-500 d-block">From</span>}
                                                         <span className="text-heading-5 color-green-900">{t.priceLabel}</span>
-                                                        <span className="text-body-small color-gray-500 d-block">fixed quote</span>
+                                                        <span className="text-body-small color-gray-500 d-block">{instalmentLabel(t) ? `or ${instalmentLabel(t)}` : "fixed quote"}</span>
                                                     </td>
                                                 </tr>
                                             ))}
@@ -338,8 +338,9 @@ export default function LandingPage({ page }) {
                                     </table>
                                 </div>
                                 <p className="text-body-text color-gray-600 mt-25">
-                                    Ongoing <strong>{RETAINER.name} is {RETAINER.priceLabel}{RETAINER.period}</strong> —
-                                    optional, cancel with 30 days notice.{" "}
+                                    Ongoing <strong>{CARE_PLAN.name} from {CARE_PLAN.priceLabel}{CARE_PLAN.period}</strong>,
+                                    or {RETAINER.name} at {RETAINER.priceLabel}{RETAINER.period}. Both optional, cancel with 30 days notice.
+                                    Your homepage is designed free before you pay anything.{" "}
                                     <Link href="/pricing/" className="color-green-900">See all pricing →</Link>
                                 </p>
                                 <p className="text-body-small color-gray-500">
