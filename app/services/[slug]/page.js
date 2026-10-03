@@ -30,8 +30,13 @@ import { SERVICE_PAGES, getServicePage, CITY_LINKS } from "@/content/service-pag
 import { getCaseStudy } from "@/content/case-studies"
 import { Icon, SVC_CSS as CSS, resolveValue, pricingCard, extraLine, PriceCard, PriceIntro } from "@/components/landing/ServiceKit"
 
+/* ai-automation has its own route (app/services/ai-automation/page.js, Sprint 2)
+ * with a different layout. Excluded here so the two never compete for the
+ * same URL. Its SERVICE_PAGES entry stays for cross-links and the services hub. */
+const OWN_ROUTE = new Set(["ai-automation"])
+
 export async function generateStaticParams() {
-    return SERVICE_PAGES.map((s) => ({ slug: s.slug }))
+    return SERVICE_PAGES.filter((s) => !OWN_ROUTE.has(s.slug)).map((s) => ({ slug: s.slug }))
 }
 
 export const dynamicParams = false

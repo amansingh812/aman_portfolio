@@ -23,7 +23,7 @@ import path from 'node:path'
 const root = process.cwd()
 const out = (p) => path.join(root, 'public', p)
 
-const { BUILD_TIERS, RETAINER, CARE_PLAN, FREE_DESIGN, instalmentLabel } = await import('../content/pricing.js')
+const { PUBLIC_TIERS: BUILD_TIERS, RETAINER, CARE_PLAN, FREE_DESIGN, TYPICAL_RANGE, AUTOMATION_OFFERS, instalmentLabel } = await import('../content/pricing.js')
 const { LANDING_PAGES } = await import('../content/landing-pages.js')
 const { GUIDES } = await import('../content/guides.js')
 const { SITE, NAP, SERVICE_ITEMS } = await import('../content/site.js')
@@ -78,7 +78,11 @@ ${pricing}
 - **${RETAINER.name}** — optional ongoing care and SEO: ${money(RETAINER.price)} AUD${RETAINER.period}, cancel with 30 days notice
 - **Free homepage design** — designed before any payment, usually within ${FREE_DESIGN.turnaround}; pay only if you go ahead
 
-All prices are published in full at ${BASE}/pricing/ and are fixed before work
+### Automation (priced per business: free audit, then a fixed written quote)
+
+${AUTOMATION_OFFERS.map((o) => `- [${o.name}](https://buildfirstsite.com${o.href}): ${o.outcome}`).join('\n')}
+
+Website prices are published in full at ${BASE}/pricing/ and are fixed before work
 begins. A free homepage design is offered before any commitment or deposit.
 
 ## Services

@@ -1,10 +1,10 @@
 'use client'
 import { useState } from "react"
-import { track, EVENTS } from "@/lib/analytics"
+import { track, EVENTS, LEAD_SOURCES } from "@/lib/analytics"
 
 export default function AboutContactForm() {
     const [status, setStatus] = useState("idle")
-    const [form, setForm] = useState({ name: "", company: "", email: "", phone: "", message: "" })
+    const [form, setForm] = useState({ name: "", company: "", email: "", phone: "", message: "", heardFrom: "" })
 
     const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
 
@@ -15,12 +15,12 @@ export default function AboutContactForm() {
             const res = await fetch("/api/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ ...form, source: "About page" }),
+                body: JSON.stringify({ ...form, source: "About page", page: window.location.pathname + window.location.search }),
             })
             // Fire only on a confirmed successful send — counting
             // failed submissions as conversions would inflate the
             // one number we are trying to make trustworthy.
-            if (res.ok) track(EVENTS.GENERATE_LEAD, { form_location: "About page" })
+            if (res.ok) track(EVENTS.GENERATE_LEAD, { form_location: "About page", lead_source: form.heardFrom || "not answered" })
             setStatus(res.ok ? "sent" : "error")
         } catch {
             setStatus("error")
@@ -78,6 +78,16 @@ export default function AboutContactForm() {
                     <div className="col-lg-12">
                         <div className="form-group">
                             <textarea className="form-control" name="message" placeholder="Tell us about your project" rows={4} value={form.message} onChange={handleChange} />
+                        </div>
+                    </div>
+                    <div className="col-lg-12">
+                        <div className="form-group">
+                            <select className="form-control" name="heardFrom" aria-label="How did you hear about us?"
+                                value={form.heardFrom} onChange={handleChange}
+                                style={{ color: form.heardFrom ? '#101828' : '#667085' }}>
+                                <option value="" style={{ color: '#667085' }}>How did you hear about us? (optional)</option>
+                                {LEAD_SOURCES.map((o) => <option key={o} value={o} style={{ color: '#101828' }}>{o}</option>)}
+                            </select>
                         </div>
                     </div>
                     <div className="col-lg-12 mt-15">

@@ -113,21 +113,43 @@ Current (verify before quoting anywhere):
 
 | Package | AUD |
 |---|---|
-| Launch — 1-page site (added 2 Oct 2026) | **$490** |
-| Starter — 3–5 pages (Recommended) | **$800** or 4 × $200 |
-| Business — up to 10 pages | **$1,900** or 4 × $475 |
-| Unlimited pages | **$3,500** or 4 × $875 |
-| E-commerce / Application | **$4,500** or 4 × $1,125 |
-| Custom software | **from $5,000** |
-| Care (added 2 Oct 2026) | **$79/month** |
+| Starter — 3–5 pages | **$800** or 4 × $200 |
+| Business — up to 10 pages (**Recommended**, the core offer) | **$1,900** or 4 × $475 |
+| Growth — 10+ pages (id `unlimited`, renamed 6 Oct 2026) | **$3,500** or 4 × $875 |
+| E-commerce / Application (custom projects) | **from $4,500** |
+| Custom software (custom projects) | **from $5,000** |
+| Launch — 1-page site | $490, **quote-only** (`public: false`, never in grids or "from" copy) |
+| Care | **$79/month** |
 | Care + SEO retainer | **$250/month** |
 
-**Free-first model (2 Oct 2026).** Aman chose a low-entry pricing model for
-the ads test: free homepage design first (`FREE_DESIGN`, ~2 business days),
-"from $490" as the headline number (`ENTRY_TIER` — never hardcode it),
-instalments on Starter and up (`instalmentLabel()`), and a $79 Care plan.
+**Automation (`AUTOMATION_OFFERS`, added 4 Oct 2026) — prices are INTERNAL,
+never published** (Aman, 4 Oct: "don't show price upfront, let users come for
+the enquiry"). Internal starting points for consistent quotes: lead reply $490 ·
+report $390 · win-back $590 · data sync $690 · AI chatbot $900. Public pages,
+structured data and llms.txt say "fixed written price after the free automation
+audit". Built on the client's own tools; we do not resell a platform
+subscription. Message/AI usage fees are paid by the client to the provider.
+Each automation has its own page (content/automation-pages.js, template
+components/automation/AutomationPage.js): /lead-follow-up-automation/ ·
+/automated-business-reports/ · /customer-reactivation-automation/ ·
+/crm-integration-data-sync/ · /ai-chatbot-for-business/. Hub:
+/services/ai-automation/. Conversion page: /free-automation-audit/.
+**Open:** the website add-on "AI chatbot from $900" (`ADDONS`) is still shown on
+website service pages and /ai-web-development/; decide whether it stays public.
+
+**Hybrid pricing model (6 Oct 2026, Sprint 1).** Show enough price to remove
+uncertainty, use the call for scope, then a fixed written quote. The first
+number a buyer sees is the reference range **"most projects $800–$3,500"**
+(`TYPICAL_RANGE`), then three packages (`PRIMARY_TIERS`), then custom projects
+with published "from" figures (`CUSTOM_PROJECTS`). Free homepage design first
+(`FREE_DESIGN`, ~2 business days, page `/free-homepage-design/`), instalments on
+Starter and up (`instalmentLabel()`), Care $79/month.
+History: on 2 Oct we led with "from $490"; reverted 6 Oct because a low anchor
+makes the real quote feel expensive. `ENTRY_TIER` is computed from public tiers
+only, so it is $800 — never hardcode it.
 Guardrails: no fake "was" prices, no countdown timers, no invented scarcity,
-and "Recommended", never "Most popular" (we have no data for it).
+"Recommended" never "Most popular" (no data for it). Language is about scope
+("Can my project be customised?"), never bargaining ("negotiable").
 **Open:** GST. The site says "GST not included", but with no ABN Aman is
 likely not GST-registered and cannot charge GST. Confirm with the accountant,
 then change the line to "No GST added" if so.
@@ -277,9 +299,10 @@ quoting a platform price.
 
 ### The full published price list
 
-`BUILD_TIERS` — Launch $490 · Starter $800 · Business $1,900 · Unlimited $3,500 ·
+`BUILD_TIERS` — Starter $800 · Business $1,900 · Growth $3,500 · (Launch $490, quote-only) ·
 E-Commerce $4,500 · Application $4,500 · Custom Software $5,000
 `CARE_PLAN` — Care $79/month · `RETAINER` — Care + SEO $250/month
+`AUTOMATION_OFFERS` — INTERNAL ONLY (not published): Lead reply $490 · Report $390 · Win-back $590 · Data sync $690 · AI chatbot $900
 `ADDONS` — Logo design $290 · Brand kit $490 · Copywriting $140/page ·
 Extra page $180 · AI chatbot from $900 · Booking system from $700 ·
 Multi-language from $600 · Migration from Wix/WP from $400
@@ -366,7 +389,7 @@ Full analysis: **`docs/COMPETITOR-DEEP-DIVE-AUG-2026.md`**. Summary:
 
 | | **Us** | Havealook | Growth Digital | Aussify |
 |---|---|---|---|---|
-| Entry price | **$490** (1 page) · $800 (3–5 pages) | $995 | undisclosed | $900 |
+| Entry price | **$800** (most projects $800–$3,500) | $995 | undisclosed | $900 |
 | Business site | **$1,900** | $1,995 | undisclosed | $2,300 |
 | Stack | **Next.js / AI** | static HTML + own CMS | Shopify | WordPress |
 | Own the code | **Yes** | No | No | Source files |
@@ -565,6 +588,14 @@ Full procedure: **`docs/SEO-PLAYBOOK.md`**. Short version:
 - ~~**Mobile stack claim inconsistent**~~ — **resolved 25 Sep.** Aman builds in
   both; every stack mention now reads "Flutter or React Native".
 
+- **Backlog (added 3 Oct 2026): "Meet the engineer" section** for the homepage
+  and /about/, modelled on a competitor's "Hey, I'm Dru" block: real photo,
+  first-person intro, 4 short promises (edit it yourself · custom, never
+  templated · SEO for Google & AI · same-day reply), "More about me" link.
+  Rules: Aman's **real photo** (no AI or stock person), true location (India,
+  with the AU contact named), only experience claims Aman can back, and no
+  "same-day reply" promise unless he can keep it. Not scheduled; do after the
+  pricing + automation releases.
 - Which tool ships first — cost calculator or speed checker?
 - Do we have real measured before/after numbers for HS Race Gear and Mobile Armour?
   (Needed for the deep case studies.)

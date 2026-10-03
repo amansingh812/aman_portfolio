@@ -16,7 +16,7 @@ export const SITE = {
   name: 'Build First Site',
   url: 'https://buildfirstsite.com',
   description:
-    'Web design and development for Australian small businesses. Fixed prices in AUD from $490, modern Next.js builds, and you own the code. You work directly with the engineer, with a local contact in Australia.',
+    'Web design and development for Australian small businesses. Fixed prices in AUD from $800, modern Next.js builds, and you own the code. You work directly with the engineer, with a local contact in Australia.',
   email: 'contact@buildfirstsite.com',
   calendly: 'https://calendly.com/amanpd0/30min',
   phone: '+61 413 146 498',
@@ -132,11 +132,40 @@ export const INDUSTRY_ITEMS = [
  */
 export const NAV = [
   { label: 'Home', href: '/' },
-  { label: 'About', href: '/about/' },
-  { label: 'Services', href: '/services/' },
-  { label: 'Industries', href: '/industries/' },
-  { label: 'Portfolio', href: '/work/' },
+  /* Two tracks (Sprint 2, 4 Oct 2026): websites stay the primary entry,
+   * automation is the second growth track. Industries left the main nav and
+   * live in the footer column + "Who we work with" (pages unchanged, still
+   * indexed and linked). Each automation has its own page (4 Oct 2026);
+   * only link pages that are live. */
+  {
+    label: 'Websites',
+    href: '/services/web-development/',
+    children: [
+      { label: 'Website design & development', href: '/services/web-development/' },
+      { label: 'Online stores', href: '/ecommerce-development/' },
+      { label: 'Mobile apps', href: '/services/mobile-app-development/' },
+      { label: 'Custom software', href: '/services/custom-software/' },
+      { label: 'SEO & marketing', href: '/services/marketing-seo/' },
+      { label: 'Care & maintenance', href: '/services/maintenance-support/' },
+      { label: 'Free homepage design', href: '/free-homepage-design/' },
+    ],
+  },
+  {
+    label: 'AI & Automation',
+    href: '/services/ai-automation/',
+    children: [
+      { label: 'All automations', href: '/services/ai-automation/' },
+      { label: 'Lead follow-up', href: '/lead-follow-up-automation/' },
+      { label: 'Automated reports', href: '/automated-business-reports/' },
+      { label: 'Customer reactivation', href: '/customer-reactivation-automation/' },
+      { label: 'CRM integration & data sync', href: '/crm-integration-data-sync/' },
+      { label: 'AI chatbot', href: '/ai-chatbot-for-business/' },
+      { label: 'Free automation audit', href: '/free-automation-audit/' },
+    ],
+  },
   { label: 'Pricing', href: '/pricing/' },
+  { label: 'Work', href: '/work/' },
+  { label: 'About', href: '/about/' },
   { label: 'Contact', href: '/contact/' },
 ];
 
@@ -149,11 +178,19 @@ export const CTA = {
 export const FOOTER_COLUMNS = [
   {
     title: 'Services',
-    links: SERVICE_ITEMS.map(s => ({ label: s.label, href: s.href })),
+    links: [
+      ...SERVICE_ITEMS.map(s => ({ label: s.label, href: s.href })),
+      { label: 'Free Automation Audit', href: '/free-automation-audit/' },
+    ],
   },
   {
     title: 'Industries',
-    links: INDUSTRY_ITEMS.slice(0, 6).map(i => ({ label: i.label, href: i.href })),
+    // Industries left the main nav on 4 Oct 2026; this column (plus the hub
+    // link) keeps every industry page linked from every page.
+    links: [
+      ...INDUSTRY_ITEMS.slice(0, 6).map(i => ({ label: i.label, href: i.href })),
+      { label: 'All industries', href: '/industries/' },
+    ],
   },
   {
     title: 'Company',
@@ -186,6 +223,7 @@ export const FOOTER_COLUMNS = [
       { label: 'Affordable Web Design', href: '/affordable-website-design-small-business/' },
       { label: 'Website Redesign', href: '/small-business-website-redesign/' },
       { label: 'Get a Quote', href: '/website-design-quote/' },
+      { label: 'Free Homepage Design', href: '/free-homepage-design/' },
       // Removed from the footer 25 Sep 2026 to shorten the column:
       // wix-vs-custom-website, small-business-website-checklist,
       // ndis-website-design, dental-website-design, wordpress-vs-custom-website,

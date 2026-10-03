@@ -33,8 +33,13 @@ function mailLink(addr, color) {
     return `<a href="mailto:${addr}" style="color:${color};text-decoration:none;">${addr}</a>`
 }
 
+/** Escape user input before it goes into HTML email. */
+function esc(s) {
+    return s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
+}
+
 /* ── Template 1: Notification to contact@buildfirstsite.com ─────── */
-function notificationHtml({ name, email, phone, company, message, source }) {
+function notificationHtml({ name, email, phone, company, message, source, heardFrom, website, page }) {
     // Melbourne time — the lead is Australian and so is whoever acts on it.
     // Freshness is the single most useful thing to show in a lead alert, and it
     // replaces the recipient's own address, which told them nothing.
@@ -52,6 +57,9 @@ function notificationHtml({ name, email, phone, company, message, source }) {
         ['Email',   email],
         ['Phone',   phone  || '—'],
         ['Source',  source],
+        ['Heard via', heardFrom || '—'],
+        ['Website', website || '—'],
+        ['Page',    page || '—'],
     ]
     return `<!DOCTYPE html>
 <html lang="en">
@@ -90,7 +98,7 @@ function notificationHtml({ name, email, phone, company, message, source }) {
           </tr>`).join('')}
           <tr>
             <td style="color:${GRAY};padding:12px 0;vertical-align:top;">Message</td>
-            <td style="color:${DARK};padding:12px 0 12px 16px;line-height:1.7;vertical-align:top;">${message || '—'}</td>
+            <td style="color:${DARK};padding:12px 0 12px 16px;line-height:1.7;vertical-align:top;white-space:pre-line;">${message || '—'}</td>
           </tr>
         </table>
       </td></tr>
@@ -190,26 +198,50 @@ function thankYouHtml({ name }) {
 /* ── API Route ──────────────────────────────────────────────────── */
 export async function POST(request) {
     try {
-        const { name, email, phone, company, message, source } = await request.json()
+        const raw = await request.json()
 
-        if (!name || !email) {
+        if (!raw?.name || !raw?.email) {
             return Response.json({ error: 'Name and email are required.' }, { status: 400 })
         }
+        // Basic shape check: the address also receives our auto-reply.
+        if (!/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(String(raw.email))) {
+            return Response.json({ error: 'Please enter a valid email address.' }, { status: 400 })
+        }
+
+        // Every field is HTML-escaped and length-capped before it goes into an
+        // email. Without this, anyone could put links/markup in "name" and
+        // have our domain deliver it, in our branded auto-reply, to any
+        // address they typed (added 6 Oct 2026).
+        const clean = (v, max = 200) => esc(String(v ?? '').slice(0, max)).trim()
+        const name = clean(raw.name, 100)
+        const email = clean(raw.email, 200)
+        const phone = clean(raw.phone, 40)
+        const company = clean(raw.company, 120)
+        const message = clean(raw.message, 5000)
+        const source = clean(raw.source, 120)
+        const heardFrom = clean(raw.heardFrom, 60)
+        const website = clean(raw.website, 200)
+        const page = clean(raw.page, 300)
+        // Plain-text versions for headers (subject/replyTo are not HTML).
+        const plain = (v, max) => String(v ?? '').replace(/[\r\n<>]/g, ' ').slice(0, max).trim()
+        const nameText = plain(raw.name, 100)
+        const companyText = plain(raw.company, 120)
+        const emailText = plain(raw.email, 200)
 
         await Promise.all([
             // 1. Notification to us
             transporter.sendMail({
                 from: `"Build First Site" <${process.env.GMAIL_USER}>`,
                 to: process.env.GMAIL_USER,
-                replyTo: email,
-                subject: `New enquiry from ${name}${company ? ` · ${company}` : ''}`,
-                html: notificationHtml({ name, email, phone, company, message, source: source || 'buildfirstsite.com' }),
+                replyTo: emailText,
+                subject: `New enquiry from ${nameText}${companyText ? ` · ${companyText}` : ''}`,
+                html: notificationHtml({ name, email, phone, company, message, source: source || 'buildfirstsite.com', heardFrom, website, page }),
             }),
             // 2. Thank-you to the enquirer
             transporter.sendMail({
                 from: `"Build First Site" <${process.env.GMAIL_USER}>`,
-                to: email,
-                subject: `Thanks for reaching out, ${name.split(' ')[0]}`,
+                to: emailText,
+                subject: `Thanks for reaching out, ${nameText.split(' ')[0]}`,
                 html: thankYouHtml({ name }),
             }),
         ])

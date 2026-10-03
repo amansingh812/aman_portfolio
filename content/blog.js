@@ -122,7 +122,7 @@ export const BLOG_POSTS = [
   {
     slug: "tradie-website-cost",
     metaDescription: "What a tradie website costs in Australia in 2026 — plumbers, electricians and builders. Real AUD prices and how to tell if it pays for itself.",
-    metaTitle: "Tradie Website Cost Australia 2026: $490–$4,500",
+    metaTitle: "Tradie Website Cost Australia 2026: $800–$4,500",
     title: "How Much Does a Tradie Website Cost in Australia? (2026)",
     excerpt: "What a tradie website costs in Australia in 2026 — for plumbers, electricians, builders and trades. Real AUD prices and how to tell if it pays for itself.",
     category: "Pricing Guide",

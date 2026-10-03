@@ -238,7 +238,7 @@ export default async function BlogPost({ params }) {
                                             so you can judge the work before deciding anything.
                                         </p>
                                         <div className="mt-25">
-                                            <Link href="/contact/" className="btn btn-black icon-arrow-right-white mr-15">Get a free homepage design</Link>
+                                            <Link href="/free-homepage-design/" data-event="free_design_cta" data-package="blog-post" className="btn btn-black icon-arrow-right-white mr-15">Get a free homepage design</Link>
                                             <Link href="/how-much-does-a-website-cost-australia/" className="btn btn-link icon-arrow-right color-gray-900">See what a site like this would cost</Link>
                                         </div>
                                         <p className="text-body-small color-gray-500 mt-20 mb-0">

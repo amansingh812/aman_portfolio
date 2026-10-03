@@ -2,7 +2,8 @@
 /**
  * Global conversion-intent tracker.
  *
- * Catches clicks on phone, WhatsApp, Calendly and email links ANYWHERE on the
+ * Catches clicks on phone, WhatsApp, Calendly and email links, plus any
+ * element with a data-event attribute, ANYWHERE on the
  * site using one document-level listener, rather than wiring an onClick onto
  * each link individually.
  *
@@ -25,6 +26,17 @@ export default function ConversionTracker() {
         const onClick = (e) => {
             // closest() so a click on a child (icon, span) inside the link
             // still resolves to the anchor.
+            // Named events: any element with data-event="..." (e.g. the
+            // pricing cards and homepage path buttons). data-package carries
+            // which one. Checked before the link types below.
+            const named = e.target?.closest?.("[data-event]")
+            if (named) {
+                track(named.dataset.event, {
+                    package: named.dataset.package || "unknown",
+                    link_location: named.dataset.loc || "unknown",
+                })
+            }
+
             const a = e.target?.closest?.("a[href]")
             if (!a) return
 

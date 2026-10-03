@@ -61,8 +61,12 @@ const nextConfig = {
       { source: '/web-design-nashville/', destination: '/pricing/', permanent: true },
       // Old static pages from the pre-migration sitemap. GSC still reports
       // them as 404 (25 Sep 2026); send them to the matching service page.
-      { source: '/ai-chatbot-development-australia/', destination: '/services/ai-automation/', permanent: true },
+      // Re-pointed 4 Oct 2026: the AI chatbot now has its own page.
+      { source: '/ai-chatbot-development-australia/', destination: '/ai-chatbot-for-business/', permanent: true },
       { source: '/app-development-australia/', destination: '/services/mobile-app-development/', permanent: true },
+      // Googlebot read the string '/month' (Care plan `period`) out of the page's
+      // JS payload as a URL and logged a 404 (GSC, 19 Sep 2026). Harmless; redirected to clear it.
+      { source: '/month/', destination: '/pricing/', permanent: true },
 
       // ── Agon template demo pages, removed 21 Sep 2026 ──────────────────
       // Nine routes shipped with the Agon template and were never stripped

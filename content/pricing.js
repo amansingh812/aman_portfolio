@@ -14,16 +14,22 @@
  * audit what they are missing; a scope-based list makes them pick a size.
  * The second conversation is much easier to have.
  *
- * ── POSITIONING (revised 2 Oct 2026) ─────────────────────────────────────
- * Aug 2026: priced at parity with established agencies.
- * Oct 2026: Aman chose a low-entry, free-first model for the ads test:
- *   1. FREE first: homepage design before any payment (FREE_DESIGN).
- *   2. LOW entry: a one-page Launch site at $490, so "from $490" is the
- *      first number a buyer sees. Starter ($800) stays the recommended tier.
- *   3. SMALL payments: Starter and up can be paid in 4 instalments.
- *   4. LOW monthly: Care at $79/month alongside Care + SEO at $250.
- * The core tiers did not move. Research (2 Oct 2026): AU freelancers
- * $1,000–$3,000, small studios $2,500–$6,000, Havealook $995 incl. GST.
+ * ── POSITIONING (revised 6 Oct 2026, Sprint 1) ──────────────────────────
+ * Hybrid model: show enough price to remove uncertainty, use the discovery
+ * call for scope, then a fixed written quote.
+ *   1. REFERENCE RANGE first: "most projects $800–$3,500" (TYPICAL_RANGE).
+ *      We tried "from $490" on 2 Oct and reverted it on 6 Oct: a low anchor
+ *      makes the real quote ($1,900 for most) feel expensive.
+ *   2. THREE primary packages (PRIMARY_TIERS): Starter, Business
+ *      (Recommended, the core offer), Growth. Everything bigger is a custom
+ *      project with a published "from" figure (CUSTOM_PROJECTS).
+ *   3. FREE homepage design before any payment (FREE_DESIGN).
+ *   4. SMALL payments: Starter and up can be paid in 4 instalments.
+ *   5. LOW monthly: Care $79/month alongside Care + SEO $250.
+ *   Launch ($490, one page) still exists but is quote-only (public: false):
+ *   it never appears in grids or "from" copy.
+ * Research (2 Oct 2026): AU freelancers $1,000–$3,000, small studios
+ * $2,500–$6,000, Havealook $995 incl. GST.
  *
  * HONESTY GUARDRAILS for this model (Australian Consumer Law):
  *   - No strikethrough "was" prices we never charged.
@@ -139,8 +145,9 @@ export const BUILD_TIERS = [
     scope: '1-page website',
     tagline: 'One page that gets the phone ringing.',
     delivery: '3–5 days',
-    tag: 'Lowest entry',
     featured: false,
+    // Quote-only since 6 Oct 2026: never in grids, never the "from" price.
+    public: false,
   },
   {
     id: 'starter',
@@ -150,9 +157,11 @@ export const BUILD_TIERS = [
     scope: '3–5 pages',
     tagline: 'A credible presence, live in a week.',
     delivery: '5–7 days',
-    tag: 'Recommended',
-    featured: true,
+    featured: false,
     payments: 4,
+    primary: true,
+    bestFor: 'New businesses · Sole traders · Simple service businesses',
+    includes: ['3–5 pages', 'Custom design', 'Edit it yourself (CMS)', 'SEO foundations', 'Analytics', 'Mobile-first', 'You own the code'],
   },
   {
     id: 'business',
@@ -160,21 +169,30 @@ export const BUILD_TIERS = [
     price: 1900,
     priceLabel: '$1,900',
     scope: 'Up to 10 pages',
-    tagline: 'Room to explain everything you do.',
+    tagline: 'A stronger site built to bring in enquiries.',
     delivery: '2–3 weeks',
-    featured: false,
+    tag: 'Recommended',
+    featured: true,
     payments: 4,
+    primary: true,
+    bestFor: 'Established service businesses · Professional practices · Local businesses',
+    includes: ['Up to 10 pages', 'Custom design', 'Edit it yourself (CMS)', 'SEO + structured data', 'Analytics', 'Enquiry-focused page structure', 'You own the code'],
   },
   {
+    // id kept as 'unlimited' so existing references keep working; renamed
+    // to Growth on 6 Oct 2026.
     id: 'unlimited',
-    name: 'Unlimited',
+    name: 'Growth',
     price: 3500,
     priceLabel: '$3,500',
-    scope: 'Unlimited pages',
-    tagline: 'Multi-service, multi-location, no page cap.',
+    scope: '10+ pages',
+    tagline: 'For bigger sites: multiple services, locations or features.',
     delivery: '3–4 weeks',
     featured: false,
     payments: 4,
+    primary: true,
+    bestFor: 'Growing businesses · Multiple locations · Larger service businesses',
+    includes: ['10+ pages, no cap', 'Advanced content structure', 'Custom features', 'Advanced SEO foundations', 'Forms and integrations', 'Performance tuning', 'You own the code'],
   },
   {
     id: 'ecommerce',
@@ -210,8 +228,24 @@ export const BUILD_TIERS = [
   },
 ];
 
-/** Lowest build price, for "Websites from $X" copy. Never hardcode it. */
-export const ENTRY_TIER = BUILD_TIERS.reduce((a, b) => (b.price < a.price ? b : a));
+/** Tiers shown publicly (Launch is quote-only). */
+export const PUBLIC_TIERS = BUILD_TIERS.filter((t) => t.public !== false);
+
+/** The three packages on the pricing page and homepage. */
+export const PRIMARY_TIERS = BUILD_TIERS.filter((t) => t.primary);
+
+/** Bigger builds: shown with a "from" figure, scoped on a call. */
+export const CUSTOM_PROJECTS = BUILD_TIERS.filter((t) => ['ecommerce', 'application', 'custom-software'].includes(t.id));
+
+/** Lowest PUBLIC build price, for "Websites from $X" copy. Never hardcode it. */
+export const ENTRY_TIER = PUBLIC_TIERS.reduce((a, b) => (b.price < a.price ? b : a));
+
+/** The reference range buyers see first: "Most projects $800–$3,500". */
+export const TYPICAL_RANGE = {
+  min: PRIMARY_TIERS[0].price,
+  max: PRIMARY_TIERS[PRIMARY_TIERS.length - 1].price,
+  label: `${PRIMARY_TIERS[0].priceLabel}–${PRIMARY_TIERS[PRIMARY_TIERS.length - 1].priceLabel}`,
+};
 
 /** "4 × $200" for tiers that can be paid in instalments, else null. */
 export const instalmentLabel = (t) =>
@@ -276,6 +310,101 @@ export const RETAINER = {
 export const MONTHLY_PLANS = [CARE_PLAN, RETAINER];
 
 /* ─────────────────────────────────────────────────────────────────────────
+   AUTOMATION — starting prices, INTERNAL ONLY (Sprint 2, 4 Oct 2026)
+
+   PRICES ARE NOT PUBLISHED (Aman, 4 Oct 2026): automation pages show no
+   figure. Visitors come through the free audit, and every build gets a fixed
+   written quote. These numbers exist so quotes are consistent and so we never
+   quote below cost. Do not render `price`/`priceLabel` on any public page,
+   in structured data or in llms.txt; use the `outcome`, `includes` and `href`
+   fields instead. (Website packages stay public; this applies to automation.) Each one
+   runs on tools the client already owns (D5: open stack, no platform
+   subscription we resell). Optional Care ($79/month) covers monitoring and
+   fixes when a connected tool changes.
+
+   AU research (3 Oct 2026): agency automation builds start at $1,200–$1,500
+   setup + $150–$350/month (WebGlobals), packaged programs A$8,500+. These
+   prices are deliberately for the sole trader / small-team end of the market.
+   ───────────────────────────────────────────────────────────────────────── */
+
+export const AUTOMATION_OFFERS = [
+  {
+    id: 'lead-reply',
+    name: 'Instant lead reply & routing',
+    short: 'Lead follow-up',
+    price: 490,
+    priceLabel: '$490',
+    outcome: 'Every enquiry gets a reply in seconds, and the details land on your phone and in your lead list.',
+    includes: ['Up to 2 lead sources (website form, Facebook lead form, missed call)', 'Instant branded reply by email or SMS', 'Alert to your phone (WhatsApp, SMS or email)', 'Lead added to a Google Sheet or your CRM'],
+    notIncluded: ['SMS/WhatsApp message fees (paid to the provider)', 'A new CRM subscription'],
+    delivery: '3–5 business days',
+    href: '/lead-follow-up-automation/',
+    icon: 'bell',
+    flow: ['New enquiry', 'Instant reply', 'Alert on your phone', 'Saved to your list'],
+  },
+  {
+    id: 'report',
+    name: 'Automated morning report',
+    short: 'Reports',
+    price: 390,
+    priceLabel: '$390',
+    outcome: 'Yesterday\'s leads, sales and ad spend in your inbox before you start work.',
+    includes: ['One report from up to 3 data sources', 'Daily or weekly schedule', 'Sent to email or WhatsApp', 'Plain-English summary, not a spreadsheet dump'],
+    notIncluded: ['Live dashboards (quoted separately)'],
+    delivery: '3–5 business days',
+    href: '/automated-business-reports/',
+    icon: 'chart',
+    flow: ['Sales + leads', 'Summarised', 'Inbox at 7am'],
+  },
+  {
+    id: 'win-back',
+    name: 'Customer win-back sequence',
+    short: 'Re-engagement',
+    price: 590,
+    priceLabel: '$590',
+    outcome: 'Customers who went quiet get a well-timed, personal message, sent with consent and an unsubscribe.',
+    includes: ['Up to 3 messages by email or SMS', 'Trigger based on last visit or purchase', 'Consent, sender ID and unsubscribe built in (Spam Act 2003)', 'Replies routed back to you'],
+    notIncluded: ['Lists without consent (we will tell you if a list does not qualify)', 'Message sending fees'],
+    delivery: '5–7 business days',
+    href: '/customer-reactivation-automation/',
+    icon: 'refresh',
+    flow: ['Gone quiet', 'Personal message', 'Booked again'],
+  },
+  {
+    id: 'data-sync',
+    name: 'Data sync between your tools',
+    short: 'Data sync',
+    price: 690,
+    priceLabel: '$690',
+    outcome: 'Your forms, spreadsheet and CRM finally agree. One change updates everywhere.',
+    includes: ['Sync between 2–3 tools', 'Duplicate clean-up on the way in', 'Error alerts if a sync fails', 'Written documentation of the workflow'],
+    notIncluded: ['Migrating years of historical data (quoted separately)'],
+    delivery: '5–7 business days',
+    href: '/crm-integration-data-sync/',
+    icon: 'flow',
+    flow: ['Form', 'CRM', 'Sheet', 'Invoice'],
+  },
+  {
+    id: 'ai-replies',
+    name: 'AI chatbot & AI-written replies',
+    short: 'AI assistant',
+    // Same figure as ADDONS "AI chatbot" — keep them in step.
+    price: 900,
+    priceLabel: '$900',
+    outcome: 'Answers common questions 24/7 and drafts replies in your tone, handing over to a person when needed.',
+    includes: ['Trained on your services, prices and FAQs', 'On your website, or drafting email replies for you to approve', 'Hands over to a person, with the conversation attached', 'Every conversation logged'],
+    notIncluded: ['AI usage fees (paid directly to the AI provider)', 'Phone/voice answering'],
+    delivery: '1–2 weeks',
+    href: '/ai-chatbot-for-business/',
+    icon: 'chat',
+    flow: ['Question', 'AI answers', 'Hands to you'],
+  },
+];
+
+/** Lowest automation price. INTERNAL (quotes, sanity checks) — never rendered. */
+export const AUTOMATION_ENTRY = AUTOMATION_OFFERS.reduce((a, b) => (b.price < a.price ? b : a));
+
+/* ─────────────────────────────────────────────────────────────────────────
    ADD-ONS
    ───────────────────────────────────────────────────────────────────────── */
 
@@ -298,11 +427,12 @@ export const ADDONS = [
    POSITIONING
    ───────────────────────────────────────────────────────────────────────── */
 
+// Scope language, not bargaining language (6 Oct 2026): the conversation is
+// "what does my project need?", never "can I get a discount?".
 export const NEGOTIABLE_NOTE =
-  'These are starting prices for the scope described. If your project sits ' +
-  'between two packages, or you only need part of one, tell us — we would ' +
-  'rather quote the job you actually have than sell you a package that ' +
-  'does not fit.';
+  'The prices above are starting points for the scope described. Once we ' +
+  'understand your business, we recommend the simplest scope that does the ' +
+  'job and give you a fixed written price before any work begins.';
 
 /**
  * NOT rendered on /pricing/ — the "why us" grid was removed so the page
@@ -348,8 +478,8 @@ export const VALUE_PILLARS = [
 
 export const PRICING_FAQS = [
   {
-    q: 'Are these prices negotiable?',
-    a: 'They are starting prices for the scope described, and yes — we are happy to talk. If your project sits between two packages, or you need most of one but not all of it, tell us on the call and we will quote the job you actually have. What we will not do is quote a low number and then discover extra costs halfway through.',
+    q: 'Can my project be customised?',
+    a: 'Absolutely. The prices above are starting points for the scope described. Once we understand your business and what the site needs to do, we recommend the right scope, including what you can leave out to stay within budget, and give you a fixed written price before work begins.',
   },
   {
     q: 'Why is every feature included in every package?',
@@ -364,10 +494,6 @@ export const PRICING_FAQS = [
     a: 'Yes. We design your homepage free, using your real business name, services and photos, usually within 2 business days. If you do not love it, you walk away and pay nothing. It is a design rather than a working site; the build starts only if you decide to go ahead.',
   },
   {
-    q: 'Why is the one-page Launch site only $490?',
-    a: 'Because a single, well-built page is often all a new business or a tradie needs to start getting calls: what you do, where you work, proof, and a quote form or call button. It is the same custom build and you still own the code, so when you outgrow it we add pages rather than start again.',
-  },
-  {
     q: 'Do I actually own the website?',
     a: 'Completely. You get the full source code, the repository, and the hosting account in your name. You can move to another developer at any time and nothing breaks. This matters more than it sounds: several Australian agencies build on their own proprietary CMS and hosting, which means leaving them requires rebuilding from scratch. That is rarely disclosed upfront.',
   },
@@ -379,6 +505,14 @@ export const PRICING_FAQS = [
     q: 'Do I have to take the monthly plan?',
     a: 'No. Both monthly plans are optional and cancel with 30 days notice, with no lock-in and no penalty. Care ($79/month) covers hosting, updates, backups and small edits. Care + SEO ($250/month) adds a new page or post every month and ongoing SEO work. If you would rather manage the site yourself, we will show you how at handover.',
   },
+];
+
+/**
+ * Trust questions, moved off /pricing/ on 6 Oct 2026. The pricing page answers
+ * cost → what you get → which fits → what next → why it is low-risk; these
+ * objections belong where someone is checking who we are. Rendered on /about/.
+ */
+export const ABOUT_FAQS = [
   {
     q: 'How does the timezone work if the engineer is in India?',
     a: 'Your day-to-day contact is in Australia and works Australian hours. The practical effect of the time difference is usually positive — work happens overnight your time, so you often wake up to progress. For anything that needs the engineer directly, we schedule calls in the AEST morning.',

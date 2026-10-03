@@ -31,16 +31,17 @@ import TechStack from "@/components/home/TechStack"
 import ClientReviews from "@/components/slider/ClientReviews"
 import Link from "next/link"
 import Image from "next/image"
-import { CTA, SITE, REVIEWS } from "@/content/site"
+import { CTA, SITE, REVIEWS, INDUSTRY_ITEMS } from "@/content/site"
 import { CASE_STUDIES } from "@/content/case-studies"
-import { BUILD_TIERS, ENTRY_TIER, instalmentLabel } from "@/content/pricing"
+import { BUILD_TIERS, PRIMARY_TIERS, ENTRY_TIER, TYPICAL_RANGE, AUTOMATION_OFFERS, instalmentLabel } from "@/content/pricing"
+import { AutomationCard, AUTO_CSS, Icon } from "@/components/automation/AutomationUI"
 
 export const metadata = {
     // ABSOLUTE — the brand is already the first words here, so letting the root
     // `%s | Build First Site` template append it would render it twice.
     title: { absolute: "Build First Site — Web, App & AI Development Australia" },
     description:
-        "Websites, apps and AI systems built for Australian businesses. Free homepage design first, fixed AUD pricing from $490, full code ownership.",
+        "Websites, apps and AI systems built for Australian businesses. Professional websites for Australian businesses: most projects $800–$3,500, fixed written quote, free homepage design first, and you own the code.",
     alternates: { canonical: "/" },
     openGraph: {
         title: "Build First Site — Fixed AUD Prices, Modern Stack",
@@ -145,24 +146,32 @@ export default function Home() {
                             <div className="col-lg-12 text-center">
                                 <span className="tag-1">Free homepage design before you commit</span>
                                 <h1 className="text-display-2 mt-30">
-                                    Sites that launch. Apps that scale.
-                                    <span className="color-green-900"> Built for Australian businesses.</span>
+                                    Professional websites
+                                    <span className="color-green-900"> built for Australian businesses.</span>
                                 </h1>
                                 <p className="text-body-lead-large color-gray-500 mt-40" style={{ maxWidth: 760, marginInline: 'auto' }}>
-                                    Websites, apps and AI-powered tools for Australian businesses —
-                                    from first quote to ongoing support.
+                                    Clear pricing, custom design, no hidden fees, and you own your
+                                    website. When you're ready, we automate the follow-up too.
                                 </p>
                                 <p className="text-body-excerpt color-gray-600 mt-15">
-                                    Fixed AUD pricing · Modern Next.js stack · Cross-platform iOS + Android
+                                    Most projects {TYPICAL_RANGE.label} · Fixed written quote · Free homepage design first
                                 </p>
+                                {/* Two paths (6 Oct 2026): websites stay the primary
+                                    entry; automation is the second growth track.
+                                    cta_path_click tells us which one visitors pick. */}
                                 <div className="mt-40 text-center">
-                                    <Link href="/contact/" className="btn btn-black icon-arrow-right-white mr-10">
-                                        Get a quote
+                                    <Link href="/pricing/" data-event="cta_path_click" data-package="website"
+                                        className="btn btn-black icon-arrow-right-white mr-10 mb-10">
+                                        I need a website
                                     </Link>
-                                    <Link href="/work/" className="btn btn-link icon-arrow-right color-gray-900 text-heading-6">
-                                        See our work
+                                    <Link href="/services/ai-automation/" data-event="cta_path_click" data-package="automation"
+                                        className="btn btn-default icon-arrow-right mb-10">
+                                        I want to automate my business
                                     </Link>
                                 </div>
+                                <p className="text-body-small color-gray-500 mt-15">
+                                    <Link href="/work/" className="color-gray-900">See our work →</Link>
+                                </p>
                             </div>
 
                             <div className="col-lg-12 d-none d-lg-block">
@@ -317,72 +326,62 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* ═══════════════ 4. INDUSTRIES TEASER ═══════════════ */}
-            <section className="section-box">
+            {/* ═══════════════ 4. WHAT CAN WE AUTOMATE? ═══════════════
+                Replaced the Industries teaser on 4 Oct 2026 (Sprint 2):
+                automation is the second growth track. Cards and prices come
+                from AUTOMATION_OFFERS in content/pricing.js. Industry pages
+                stay linked through the "Who we work with" strip below and the
+                footer column. */}
+            <style dangerouslySetInnerHTML={{ __html: AUTO_CSS }} />
+            <section className="section-box" id="automation">
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-2 col-sm-1 col-12" />
-                        <div className="col-lg-8 col-sm-10 col-12 text-center mt-100">
-                            <span className="tag-1 bg-6 color-green-900">Industries</span>
+                        <div className="col-lg-8 mx-auto text-center mt-100">
+                            <span className="tag-1 bg-6 color-green-900">AI &amp; Automation</span>
                             <h2 className="text-heading-1 color-gray-900 mt-20 mb-10">
-                                Built for your industry
+                                What can we automate?
                             </h2>
                             <p className="text-body-lead-large color-gray-600 mt-20">
-                                Client work so far is mostly e-commerce, SaaS and professional services. For trades,
-                                real estate and hospitality we have labelled concept builds, so you can judge the approach
-                                before you commit.
+                                Small systems, built on the tools you already use, that answer
+                                enquiries, send your numbers and keep customers coming back.
+                                Fixed price after a free audit.
                             </p>
                         </div>
-                        <div className="col-lg-2 col-sm-1 col-12" />
                     </div>
-                </div>
-                <div className="container mt-70 mb-lg-50">
-                    <div className="row">
-                        <div className="col-lg-6 col-sm-12 mb-30">
-                            <Link href="/industries/finance-legal/" className="text-decoration-none">
-                                <div className="bg-2 box-square hover-up" style={{ overflow: 'hidden' }}>
-                                    <h4 className="text-heading-4 color-gray-900 mb-15">
-                                        Finance &amp; Legal
-                                    </h4>
-                                    <p className="text-body-text-md color-gray-600">
-                                        Professional sites for accountants, financial advisers, mortgage brokers and law firms — trust-first design that converts.
-                                    </p>
-                                    <div className="box-image-inner bg-color-1">
-                                        <Image
-                                            width={0} height={0} sizes="100vw"
-                                            style={{ width: "100%", height: "auto" }}
-                                            src="/assets/imgs/page/industries/industry-finance-legal.png"
-                                            alt="Finance and legal website design Australia"
-                                        />
+                    <div className="row mt-50">
+                        {AUTOMATION_OFFERS.map((o) => (
+                            <div key={o.id} className="col-lg-4 col-md-6 mb-30">
+                                <AutomationCard offer={o} loc="homepage" />
+                            </div>
+                        ))}
+                        <div className="col-lg-4 col-md-6 mb-30">
+                            <Link href="/free-automation-audit/" className="text-decoration-none d-block h-100"
+                                data-event="automation_audit_cta" data-package="homepage">
+                                <div className="h-100 hover-up" style={{ background: '#006D77', borderRadius: 18, padding: 28 }}>
+                                    <div className="ac-top">
+                                        <span className="ac-ic" style={{ background: 'rgba(255,255,255,.14)', color: '#83C5BE' }}><Icon name="sparkle" /></span>
+                                        <h3 className="text-heading-5 mb-0" style={{ color: '#fff' }}>Free automation audit</h3>
                                     </div>
-                                </div>
-                            </Link>
-                        </div>
-                        <div className="col-lg-6 col-sm-12 mb-30">
-                            <Link href="/industries/hospitality/" className="text-decoration-none">
-                                <div className="bg-6 box-square hover-up" style={{ overflow: 'hidden' }}>
-                                    <h4 className="text-heading-4 color-gray-900 mb-15">
-                                        Hospitality
-                                    </h4>
-                                    <p className="text-body-text-md color-gray-600">
-                                        Restaurant, café, bar and venue sites built to drive bookings and walk-ins — with menus, reservations and Google Maps integration.
+                                    <p className="text-body-text mb-15" style={{ color: '#BEE1E6' }}>
+                                        Not sure where to start? Answer four questions and get a written map of
+                                        what to automate first.
                                     </p>
-                                    <div className="box-image-inner bg-color-2">
-                                        <Image
-                                            width={0} height={0} sizes="100vw"
-                                            style={{ width: "100%", height: "auto" }}
-                                            src="/assets/imgs/page/industries/industry-hospitality.png"
-                                            alt="Hospitality and restaurant website design Australia"
-                                        />
-                                    </div>
+                                    <span className="text-heading-6" style={{ color: '#83C5BE' }}>Start the audit →</span>
                                 </div>
                             </Link>
                         </div>
                     </div>
-                    <div className="text-center mt-40 mb-20">
-                        <Link href="/industries/" className="btn btn-black icon-arrow-right-white">
-                            Explore all industries
-                        </Link>
+
+                    {/* Who we work with — keeps the industry pages linked from the homepage. */}
+                    <div className="text-center mt-30 mb-20">
+                        <p className="text-body-small color-gray-500 mb-15">Who we work with</p>
+                        {INDUSTRY_ITEMS.map((i) => (
+                            <Link key={i.href} href={i.href}
+                                className="d-inline-block mr-10 mb-10 text-body-small color-gray-900"
+                                style={{ border: '1px solid #E4E7EC', borderRadius: 50, padding: '8px 16px' }}>
+                                {i.label}
+                            </Link>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -572,20 +571,19 @@ export default function Home() {
                         <div className="col-lg-8 mx-auto text-center mb-50">
                             <span className="tag-1 bg-6 color-green-900">Pricing</span>
                             <h2 className="text-heading-1 color-gray-900 mt-20 mb-20">
-                                Priced by size, not by features
+                                Know roughly what your website will cost before we talk
                             </h2>
                             <p className="text-body-lead-large color-gray-600">
-                                Every package includes the same thing — custom design, a CMS you
-                                can edit, SEO built in, and full ownership of the code. The only
-                                variable is how big the build is.
+                                Most websites we build cost between <strong>{TYPICAL_RANGE.label}</strong>.
+                                Every package includes the essentials. Once we understand what you
+                                need, we recommend the right scope and give you a fixed written price
+                                before work begins.
                             </p>
                         </div>
                     </div>
 
                     <div className="row">
-                        {BUILD_TIERS.filter((t) =>
-                            ['launch', 'starter', 'business'].includes(t.id)
-                        ).map((t) => (
+                        {PRIMARY_TIERS.map((t) => (
                             <div className="col-lg-4 col-md-6 col-sm-12 mb-30" key={t.id}>
                                 <div className={`home-price-card${t.featured ? " is-featured" : ""}`}>
                                     {t.featured && (
@@ -611,7 +609,7 @@ export default function Home() {
                                         {instalmentLabel(t) ? `or ${instalmentLabel(t)} · ` : ""}Free design before you pay
                                     </p>
 
-                                    <Link href="/pricing/"
+                                    <Link href="/pricing/" data-event="pricing_package_click" data-package={t.id}
                                         className="btn btn-default icon-arrow-right home-price-btn">
                                         See what&apos;s included
                                     </Link>
@@ -621,8 +619,12 @@ export default function Home() {
                     </div>
 
                     <div className="text-center mt-10">
+                        <p className="text-body-text color-gray-600 mb-25">
+                            <strong>Custom projects:</strong> online stores, booking systems, portals,
+                            CRM integrations and AI are quoted on what you need.
+                        </p>
                         <Link href="/pricing/" className="btn btn-default icon-arrow-right">
-                            View all plans
+                            See full pricing
                         </Link>
                         <p className="text-body-small color-gray-500 mt-25">
                             All prices AUD · GST not included · Hosting included for year one

@@ -127,7 +127,7 @@ export const INDUSTRY_PAGES = [
     slug: 'construction-trades',
     title: 'Construction & Trades',
     metaTitle: 'Tradie Website Design Australia | Plumber, Electrician, Builder Sites',
-    metaDescription: 'Websites for Australian tradies: plumbers, electricians, builders, landscapers. Click-to-call, quote forms, local SEO. Fixed pricing from AU$490.',
+    metaDescription: 'Websites for Australian tradies: plumbers, electricians, builders, landscapers. Click-to-call, quote forms, local SEO. Fixed pricing from AU$800.',
     eyebrow: 'Trades · Australia',
     h1: 'Tradie website design',
     h1Accent: 'built to win jobs, not awards',
@@ -157,7 +157,7 @@ export const INDUSTRY_PAGES = [
       { t: 'Books the job', s: 'You get the details' },
     ],
     proof: { kind: 'concept', slugs: ['harbour-plumbing'], note: 'Harbour Plumbing is a concept build that shows our tradie approach. We haven’t published a tradie client case study yet.' },
-    pricing: [{ tier: 'launch' }, { tier: 'starter' }, { tier: 'business' }],
+    pricing: [{ tier: 'starter' }, { tier: 'business' }],
     pricingExtras: [{ addon: 'Booking system' }, { addon: 'Copywriting' }, { retainer: true }],
     faqs: [
       { q: 'How much does a tradie website cost?', a: 'A 3–5 page tradie site is $800 and live in 5–7 days. Up to 10 pages is $1,900.', href: '/blog/tradie-website-cost/', link: 'Tradie website cost guide' },
@@ -208,7 +208,7 @@ export const INDUSTRY_PAGES = [
       { t: 'Returns', s: 'Events and specials' },
     ],
     proof: { kind: 'concept', slugs: ['marlow-vine'], note: 'Marlow & Vine is a concept build showing our hospitality approach. We haven’t published a hospitality client case study yet.' },
-    pricing: [{ tier: 'launch' }, { tier: 'starter' }, { tier: 'business' }],
+    pricing: [{ tier: 'starter' }, { tier: 'business' }],
     pricingExtras: [{ addon: 'Booking system' }, { addon: 'Multi-language' }, { retainer: true }],
     faqs: [
       { q: 'How much does a restaurant website cost?', a: 'A 3–5 page site is $800; up to 10 pages with events and multiple menus is $1,900. A booking system is an add-on from $700.', href: '/pricing/', link: 'See pricing' },

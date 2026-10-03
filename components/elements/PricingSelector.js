@@ -19,10 +19,10 @@
  */
 import Link from "next/link"
 import { useState } from "react"
-import { BUILD_TIERS, ALWAYS_INCLUDED, instalmentLabel, FREE_DESIGN } from "@/content/pricing"
+import { PRIMARY_TIERS as BUILD_TIERS, ALWAYS_INCLUDED, instalmentLabel, FREE_DESIGN } from "@/content/pricing"
 
 // Default to the recommended (featured) tier, not a hardcoded index — the
-// tier list grew a $490 Launch tier at position 0 in Oct 2026.
+// list changes (6 Oct 2026: three primary packages only, Business recommended).
 const DEFAULT_INDEX = Math.max(0, BUILD_TIERS.findIndex((t) => t.featured))
 
 export default function PricingSelector() {
@@ -68,7 +68,7 @@ export default function PricingSelector() {
                                 )}
                             </p>
                             <p className="text-body-small mb-20 bfsp-muted">{FREE_DESIGN.short}</p>
-                            <Link href="/contact/" className="btn btn-black bfsp-cta">
+                            <Link href="/free-homepage-design/" data-event="pricing_package_click" data-package={tier.id} className="btn btn-black bfsp-cta">
                                 Get my free homepage design
                             </Link>
                         </div>

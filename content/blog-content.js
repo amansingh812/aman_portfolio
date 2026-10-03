@@ -1439,10 +1439,10 @@ export const BLOG_CONTENT = {
   },
   "tradie-website-cost": {
     lead:
-      "A tradie website in Australia costs between AU$490 and AU$4,500. This guide breaks down what you get at each price, the ongoing costs most quotes leave out, and how to work out whether it pays for itself using your own job values.",
+      "A tradie website in Australia costs between AU$800 and AU$4,500. This guide breaks down what you get at each price, the ongoing costs most quotes leave out, and how to work out whether it pays for itself using your own job values.",
     content: [
       {"type": "h2", "text": "What a tradie website costs in Australia"},
-      {"type": "p", "html": "A tradie website in Australia costs between <strong>AU$490 and AU$4,500</strong> depending on how many pages you need and whether you want online booking or payments. A one-page site with a call button and quote form starts at <strong>$490</strong>, and a three to five page site for a plumber, electrician or builder at <strong>$800</strong>. A larger site with service-area pages and a booking system runs <strong>$1,900 to $3,500</strong>."},
+      {"type": "p", "html": "A tradie website in Australia costs between <strong>AU$800 and AU$4,500</strong> depending on how many pages you need and whether you want online booking or payments. A simple three to five page site for a plumber, electrician or builder starts at <strong>$800</strong>. A larger site with service-area pages and a booking system runs <strong>$1,900 to $3,500</strong>."},
       {"type": "p", "html": "Those are BuildFirstSite's published prices, fixed in writing before work starts. Most Australian agencies quote $3,000 to $10,000 for the same scope, and many will not give you a number until you sit through a sales call."},
       {"type": "table", "headers": ["What you need", "Pages", "Price (AUD)", "Build time"], "rows": [["Just get me online — name, services, phone", "3–5", "$800", "5–7 days"], ["Service pages, gallery, quote form", "Up to 10", "$1,900", "2–3 weeks"], ["Multiple trades or suburbs, no page limit", "Unlimited", "$3,500", "3–4 weeks"], ["Online booking, payments, job management", "Custom app", "$4,500", "4–8 weeks"]]},
       {"type": "p", "html": "Prices exclude GST. Hosting is included for the first year. Ongoing Care is <strong>$79/month</strong> and Care + SEO <strong>$250/month</strong>, both optional — see <a href=\"/pricing/\">full pricing</a>."},
@@ -1748,7 +1748,7 @@ export const BLOG_CONTENT = {
       },
       {
         "type": "p",
-        "html": "We quote <strong>fixed prices</strong> — you know the number before any work starts. One-page sites from AU$490, 3–5 page sites AU$800, business websites at AU$1,900, e-commerce from AU$4,500. Every build includes responsive design, SEO basics, 30 days of free support, and <strong>full code ownership</strong> — no lock-in, ever. You also get a live staging link so you can watch progress in real time. Based in Australia, we work with businesses in <a class=\"text-orange-600 hover:underline\" href=\"/web-design-sydney/\">Sydney</a>, <a class=\"text-orange-600 hover:underline\" href=\"/web-design-melbourne/\">Melbourne</a> and across the country."
+        "html": "We quote <strong>fixed prices</strong> — you know the number before any work starts. Starter sites from AU$800, business websites at AU$1,900, e-commerce from AU$4,500. Every build includes responsive design, SEO basics, 30 days of free support, and <strong>full code ownership</strong> — no lock-in, ever. You also get a live staging link so you can watch progress in real time. Based in Australia, we work with businesses in <a class=\"text-orange-600 hover:underline\" href=\"/web-design-sydney/\">Sydney</a>, <a class=\"text-orange-600 hover:underline\" href=\"/web-design-melbourne/\">Melbourne</a> and across the country."
       },
       {
         "type": "h2",
@@ -1968,7 +1968,7 @@ export const BLOG_CONTENT = {
       {"type": "p", "html": "Neither is automatically better. The question is which weakness you can live with."},
       {"type": "h2", "text": "Who is operating in this space"},
       {"type": "p", "html": "These are Australian agencies actively marketing NDIS website design, listed alphabetically rather than ranked. Details are what they publish about themselves — verify anything that matters to your decision."},
-      {"type": "table", "headers": ["Agency", "Focus", "What stands out"], "rows": [["Aussify", "Generalist with NDIS pages", "Publishes prices. Also runs \"best NDIS agencies\" listicles that place themselves first"], ["Build First Site (us)", "Generalist, accessibility-first", "Prices published from $490. WCAG 2.1 AA in every build. No NDIS clients yet"], ["2Brownies", "NDIS specialist", "Claims 200+ NDIS provider sites built"], ["NDIS Website Designs", "NDIS specialist, exact-match domain", "Entire business is NDIS providers"], ["Participant Connect", "NDIS specialist", "Positions around the participant journey"], ["Velacore", "NDIS specialist", "Markets on compliance and accessibility"]]},
+      {"type": "table", "headers": ["Agency", "Focus", "What stands out"], "rows": [["Aussify", "Generalist with NDIS pages", "Publishes prices. Also runs \"best NDIS agencies\" listicles that place themselves first"], ["Build First Site (us)", "Generalist, accessibility-first", "Prices published from $800. WCAG 2.1 AA in every build. No NDIS clients yet"], ["2Brownies", "NDIS specialist", "Claims 200+ NDIS provider sites built"], ["NDIS Website Designs", "NDIS specialist, exact-match domain", "Entire business is NDIS providers"], ["Participant Connect", "NDIS specialist", "Positions around the participant journey"], ["Velacore", "NDIS specialist", "Markets on compliance and accessibility"]]},
       {"type": "p", "html": "We have not audited these sites, so this is not a quality ranking. Use the criteria below to assess any of them, including us."},
       {"type": "h2", "text": "The five questions that actually separate them"},
       {"type": "p", "html": "Ask every agency on your shortlist these. The answers sort the field faster than any list can."},

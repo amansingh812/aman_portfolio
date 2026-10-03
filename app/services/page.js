@@ -25,7 +25,7 @@ const SERVICES = [
     {
         title: "Web Development",
         icon: "/assets/imgs/page/services/1/icon-web.svg",
-        body: "Responsive, fast websites and web apps on a modern Next.js / React stack. Sites from AU$490.",
+        body: "Responsive, fast websites and web apps on a modern Next.js / React stack. Sites from AU$800.",
         href: "/services/web-development/",
     },
     {
@@ -218,11 +218,11 @@ export default function ServicesPage() {
                                     </thead>
                                     <tbody>
                                         {[
-                                            ["People cannot find us, or the site looks dated", "Web Development", "/services/web-development/", "$490"],
+                                            ["People cannot find us, or the site looks dated", "Web Development", "/services/web-development/", "$800"],
                                             ["We have a site but it brings in no enquiries", "Marketing & SEO", "/services/marketing-seo/", "$250/mo"],
                                             ["We want to sell online", "Web Development", "/ecommerce-development/", "$4,500"],
                                             ["Customers keep asking for an app", "Mobile App Development", "/services/mobile-app-development/", "$4,500"],
-                                            ["Staff waste hours on repetitive admin", "AI & Automation", "/services/ai-automation/", "$900"],
+                                            ["Staff waste hours on repetitive admin", "AI & Automation", "/services/ai-automation/", "Free audit"],
                                             ["Our process does not fit any off-the-shelf tool", "Custom Software", "/services/custom-software/", "$5,000"],
                                             ["The site works but nobody is looking after it", "Maintenance & Support", "/services/maintenance-support/", "$250/mo"],
                                         ].map(([problem, service, href, price]) => (
@@ -242,9 +242,11 @@ export default function ServicesPage() {
                                 Still unsure? Describe the problem rather than the solution on the{" "}
                                 <Link href="/contact/" className="color-green-900">contact page</Link>{" "}
                                 and we will tell you which one it is — including when the answer is
-                                that you do not need us yet. Every figure above is published in full
-                                on the{" "}
-                                <Link href="/pricing/" className="color-green-900">pricing page</Link>.
+                                that you do not need us yet. Website and care prices are published in
+                                full on the{" "}
+                                <Link href="/pricing/" className="color-green-900">pricing page</Link>;
+                                automation is quoted after a{" "}
+                                <Link href="/free-automation-audit/" className="color-green-900">free audit</Link>.
                             </p>
                         </div>
                     </div>

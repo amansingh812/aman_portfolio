@@ -6,6 +6,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { CTA, SITE } from "@/content/site"
 import { BLOG_POSTS } from "@/content/blog"
+import { ABOUT_FAQS } from "@/content/pricing"
 
 export const metadata = {
     title: "About Us — How We Work",
@@ -294,6 +295,16 @@ export default function AboutPage() {
                             <div className="row">
                                 <div className="col-lg-12 mt-50">
                                     <Accordion />
+                                    {/* Trust questions moved here from /pricing/ on
+                                        6 Oct 2026 (ABOUT_FAQS in content/pricing.js). */}
+                                    <div className="mt-50">
+                                        {ABOUT_FAQS.map((f) => (
+                                            <div key={f.q} className="pt-30 pb-30" style={{ borderBottom: "1px solid #E4E7EC" }}>
+                                                <h3 className="text-heading-6 color-gray-900 mb-15">{f.q}</h3>
+                                                <p className="text-body-text color-gray-600 mb-0">{f.a}</p>
+                                            </div>
+                                        ))}
+                                    </div>
                                     <div className="mt-100 text-center">
                                         <Link href="/contact/" className="btn btn-green-900 icon-arrow-right-white text-heading-6 color-white">
                                             Get a quote

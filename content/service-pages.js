@@ -47,8 +47,8 @@ export const SERVICE_PAGES = [
   {
     slug: 'web-development',
     title: 'Web Development',
-    metaTitle: 'Web Development Australia | Modern Websites from AU$490',
-    metaDescription: 'Custom websites for Australian businesses that load fast, rank on Google and win enquiries. Fixed AUD pricing from $490, free homepage design, you own the code.',
+    metaTitle: 'Web Development Australia | Modern Websites from AU$800',
+    metaDescription: 'Custom websites for Australian businesses that load fast, rank on Google and win enquiries. Fixed AUD pricing from $800, free homepage design, you own the code.',
     eyebrow: 'Web development · Australia',
     h1: 'Web development for Australian businesses',
     h1Accent: 'that need more enquiries',
@@ -86,7 +86,7 @@ export const SERVICE_PAGES = [
       { href: '/wix-vs-custom-website/', label: 'Wix vs custom' },
       { href: '/webflow-vs-custom-website/', label: 'Webflow vs custom' },
     ],
-    pricing: [{ tier: 'launch' }, { tier: 'starter' }, { tier: 'business' }, { tier: 'ecommerce' }],
+    pricing: [{ tier: 'starter' }, { tier: 'business' }, { tier: 'ecommerce' }],
     pricingExtras: [{ tier: 'unlimited' }, { addon: 'Booking system' }, { addon: 'AI chatbot' }, { retainer: true }],
     pricingLinks: [
       { href: '/pricing/', label: 'All packages and add-ons' },
@@ -110,7 +110,7 @@ export const SERVICE_PAGES = [
       ],
     },
     faqs: [
-      { q: 'How much does a website cost in Australia?', a: 'Our fixed prices start at $490 for a one-page site, $800 for 3–5 pages, $1,900 for up to 10 pages and $4,500 for an online store. All prices are in AUD and every package includes SEO setup and full code ownership.', href: '/how-much-does-a-website-cost-australia/', link: 'Full cost guide' },
+      { q: 'How much does a website cost in Australia?', a: 'Our fixed prices start at $800 for 3–5 pages, $1,900 for up to 10 pages and $4,500 for an online store. All prices are in AUD and every package includes SEO setup and full code ownership.', href: '/how-much-does-a-website-cost-australia/', link: 'Full cost guide' },
       { q: 'How long does a website take to build?', a: 'A Starter site takes 5–7 days, a Business site 2–3 weeks and an online store 4–6 weeks from the day we have your content.' },
       { q: 'Do I own the website?', a: 'Yes. The code repository, hosting account and domain are handed to you on completion. No lock-in.' },
       { q: 'Can you redesign my existing site without losing rankings?', a: 'Yes. We keep your URLs where possible and map 301 redirects where they change, so the rankings you have carry over.', href: '/small-business-website-redesign/', link: 'Website redesign' },
@@ -130,10 +130,10 @@ export const SERVICE_PAGES = [
   {
     slug: 'mobile-app-development',
     title: 'Mobile App Development',
-    metaTitle: 'Mobile App Development Australia | iOS & Android from AU$4,500',
-    metaDescription: 'Cross-platform mobile apps for Australian businesses. Flutter or React Native, one codebase, both app stores. Fixed AUD pricing from $4,500, and you own the code.',
+    metaTitle: 'Build Your App in Australia | iOS & Android from AU$4,500',
+    metaDescription: 'Want to build an app? App developers for Australian businesses: one Flutter or React Native codebase for iOS and Android. Fixed AUD price from $4,500, and you own the code.',
     eyebrow: 'Mobile apps · iOS and Android',
-    h1: 'Mobile app development in Australia',
+    h1: 'Build your app: mobile app development in Australia',
     h1Accent: 'one codebase, both app stores',
     hero: 'iOS and Android apps built once in Flutter or React Native, for roughly half the cost of two separate native builds. Fixed AUD price, and the code is yours.',
     chips: [
