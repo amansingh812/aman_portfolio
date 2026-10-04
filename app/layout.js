@@ -134,6 +134,12 @@ export default function RootLayout({ children }) {
                         // this is a config line rather than a second <script src>
                         // (loading the library twice double-counts page views).
                         gtag('config', 'G-C6TLV8TPD3');
+                        // Google Ads tag (account 178-878-0646), added 5 Oct 2026.
+                        // Without it Ads flags "Conversion tracking setup is
+                        // incomplete" and can't do remarketing or auto-tag
+                        // attribution. Lead conversions themselves are still
+                        // imported from GA4 (generate_lead, phone_click, etc.).
+                        gtag('config', 'AW-18378564873');
                     `}
                 </Script>
             </head>

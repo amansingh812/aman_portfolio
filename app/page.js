@@ -390,15 +390,13 @@ export default function Home() {
             <section id="services" className="section-box mt-50">
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-12 col-sm-12 col-12">
-                            <div className="text-start mb-25">
-                                <span className="tag-1 bg-6 color-green-900">Services</span>
-                            </div>
-                            <h2 className="text-heading-2 color-gray-900 mb-20">
+                        <div className="col-lg-8 mx-auto text-center mb-40">
+                            <span className="tag-1 bg-6 color-green-900">Services</span>
+                            <h2 className="text-heading-2 color-gray-900 mt-20 mb-20">
                                 End-to-end delivery by<br className="d-lg-block d-none" />
                                 the person who builds it
                             </h2>
-                            <p className="text-body-lead-large color-gray-600 mb-30" style={{ maxWidth: 620 }}>
+                            <p className="text-body-lead-large color-gray-600 mb-30">
                                 Direct, coordinated delivery to design, build, launch and support your
                                 work across web, mobile, marketing and AI.
                             </p>
@@ -431,7 +429,7 @@ export default function Home() {
                             </div>
                         ))}
                     </div>
-                    <div className="text-start mt-10 mb-20">
+                    <div className="text-center mt-10 mb-20">
                         <Link href="/services/" className="btn btn-black icon-arrow-right-white">
                             See all services
                         </Link>
