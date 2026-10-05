@@ -19,6 +19,7 @@
  */
 import Layout from "@/components/layout/Layout"
 import Breadcrumbs from "@/components/elements/Breadcrumbs"
+import ProjectThumb from "@/components/portfolio/ProjectThumb"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { CASE_STUDIES, getCaseStudy } from "@/content/case-studies"
@@ -93,7 +94,7 @@ const CSS = `
 .cs-browser .bar{height:38px;background:#F2F4F7;display:flex;align-items:center;gap:7px;padding:0 14px}
 .cs-browser .bar i{width:11px;height:11px;border-radius:50%;background:#D0D5DD;display:block}
 .cs-browser .bar span{margin-left:12px;font-size:13px;color:#667085;background:#fff;border-radius:6px;padding:3px 12px}
-.cs-browser img{display:block;width:100%;height:560px;object-fit:cover;object-position:top;background:#fff}
+.cs-browser .pt-frame{display:block;width:100%;height:560px;object-fit:cover;object-position:top;background:#fff}
 .cs-split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
 .cs-photo{border-radius:18px;overflow:hidden;margin:0}
 .cs-photo img{width:100%;height:440px;object-fit:cover;display:block}
@@ -129,7 +130,7 @@ const CSS = `
 .cs-rel{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
 .cs-rc{border:1px solid #E4E7EC;border-radius:16px;overflow:hidden;background:#fff;display:block;transition:border-color .2s}
 .cs-rc:hover{border-color:#006D77}
-.cs-rc img{width:100%;height:190px;object-fit:cover;object-position:top;display:block;background:#fff}
+.cs-rc .pt-frame{width:100%;height:190px;object-fit:cover;object-position:top;display:block;background:#fff}
 .cs-rc div{padding:20px}.cs-rc h4{font-size:18px}.cs-rc p{font-size:14.5px;margin:6px 0 0;color:#667085}
 .cs-tag{font-size:12px;background:#FFF3EA;color:#B4461A;padding:2px 8px;border-radius:99px;margin-left:6px;font-weight:600;vertical-align:middle}
 .cs-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:30px}
@@ -141,7 +142,7 @@ const CSS = `
 @media(max-width:991px){
  .cs-top,.cs-split,.cs-cta{grid-template-columns:1fr}.cs-build,.cs-rel{grid-template-columns:1fr 1fr}
  .cs-hero h1{font-size:36px}.cs-h2{font-size:30px}.cs-sec,.cs-results{padding:70px 0}
- .cs-browser img{height:360px}.cs-photo img{height:320px}.cs-cta{padding:40px}.cs-arrow{display:none}
+ .cs-browser .pt-frame{height:360px}.cs-photo img{height:320px}.cs-cta{padding:40px}.cs-arrow{display:none}
 }
 @media(max-width:575px){.cs-build,.cs-rel,.cs-facts{grid-template-columns:1fr}.cs-hero h1{font-size:30px}}
 `
@@ -235,8 +236,8 @@ export default async function CaseStudyPage({ params }) {
                         {p.image && (
                             <a className="cs-browser" href={p.liveUrl || "#"} target="_blank" rel="noopener noreferrer">
                                 <div className="bar"><i /><i /><i /><span>{hostOf(p.liveUrl)}</span></div>
-                                <img src={p.image} alt={`${p.name} homepage${concept ? " (concept build)" : ""}, built by Build First Site`}
-                                    width={1200} height={900} fetchPriority="high" />
+                                <ProjectThumb slug={p.slug} remote={p.image} name={p.name} aspect="4 / 3" eager
+                                    alt={`${p.name} homepage${concept ? " (concept build)" : ""}, built by Build First Site`} />
                             </a>
                         )}
                     </div>
@@ -369,7 +370,7 @@ export default async function CaseStudyPage({ params }) {
                                 const oc = getCaseStudyExtras(o.slug).concept
                                 return (
                                     <Link className="cs-rc" key={o.slug} href={`/work/${o.slug}/`}>
-                                        <img src={o.image} alt={`${o.name}${oc ? " concept build" : ""}`} width={800} height={600} loading="lazy" />
+                                        <ProjectThumb slug={o.slug} remote={o.image} name={o.name} aspect="4 / 3" alt={`${o.name}${oc ? " concept build" : ""}`} />
                                         <div>
                                             <h4>{o.name}{oc && <span className="cs-tag">Concept build</span>}</h4>
                                             <p>{o.tagline}</p>

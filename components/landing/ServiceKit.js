@@ -62,7 +62,7 @@ export const SVC_CSS = `
 .svc-browser .bar{height:34px;background:#F2F4F7;display:flex;align-items:center;gap:6px;padding:0 12px}
 .svc-browser .bar i{width:10px;height:10px;border-radius:50%;background:#D0D5DD;display:block}
 .svc-browser .bar span{margin-left:10px;font-size:12px;color:#667085;background:#fff;border-radius:6px;padding:3px 10px}
-.svc-browser img{display:block;width:100%;height:360px;object-fit:cover;object-position:top;background:#fff}
+.svc-browser .pt-frame{display:block;width:100%;height:360px;object-fit:cover;object-position:top;background:#fff}
 .svc-floater{position:absolute;left:-24px;bottom:-24px;background:#fff;border-radius:12px;box-shadow:0 24px 48px rgba(16,24,40,.14);padding:14px 18px;font-size:14px;line-height:1.5}
 .svc-floater b{color:#101828}
 .svc-proof{padding:26px 0;border-top:1px solid #E4E7EC;border-bottom:1px solid #E4E7EC}
@@ -78,7 +78,7 @@ export const SVC_CSS = `
 .svc-more{font-weight:500;font-size:15px;color:#006D77}
 .svc-split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
 .svc-photo{border-radius:18px;overflow:hidden;box-shadow:0 30px 60px rgba(16,24,40,.12);border:1px solid #E4E7EC;background:#fff}
-.svc-photo img{width:100%;display:block;height:460px;object-fit:cover;object-position:top}
+.svc-photo .pt-frame{width:100%;display:block;height:460px;object-fit:cover;object-position:top}
 .svc-steps{margin-top:26px}
 .svc-step{display:grid;grid-template-columns:44px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid #E4E7EC}
 .svc-step .n{width:44px;height:44px;border-radius:50%;background:#006D77;color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
@@ -119,7 +119,7 @@ export const SVC_CSS = `
 .svc-pnote{text-align:center;margin-top:28px;font-size:15px;color:#D6EEEC}
 .svc-pnote a{color:#fff;text-decoration:underline;margin:0 6px}
 .svc-case{display:grid;grid-template-columns:1.1fr .9fr;border:1px solid #E4E7EC;border-radius:20px;overflow:hidden;background:#fff}
-.svc-case .shot img{width:100%;height:100%;min-height:380px;object-fit:cover;object-position:top;display:block;background:#fff}
+.svc-case .shot .pt-frame{width:100%;height:100%;min-height:380px;object-fit:cover;object-position:top;display:block;background:#fff}
 .svc-case .txt{padding:44px}
 .svc-tags{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 24px}
 .svc-tags span{background:#DBECE5;color:#00545C;font-size:13px;padding:5px 11px;border-radius:8px}
@@ -156,7 +156,7 @@ export const SVC_CSS = `
  .svc-hero-grid,.svc-split,.svc-case,.svc-faq,.svc-cta{grid-template-columns:1fr}
  .svc-cards,.svc-outs,.svc-guides{grid-template-columns:1fr 1fr}
  .svc-hero h1{font-size:38px}.svc-h2{font-size:30px}.svc-sec,.svc-pricing{padding:70px 0}
- .svc-floater{display:none}.svc-photo img{height:320px}.svc-cta{padding:40px}
+ .svc-floater{display:none}.svc-photo .pt-frame{height:320px}.svc-cta{padding:40px}
 }
 @media(max-width:575px){.svc-cards,.svc-outs,.svc-guides{grid-template-columns:1fr}.svc-hero h1{font-size:32px}}
 `

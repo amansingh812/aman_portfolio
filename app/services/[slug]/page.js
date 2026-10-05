@@ -23,6 +23,7 @@
  */
 import Layout from "@/components/layout/Layout"
 import Breadcrumbs from "@/components/elements/Breadcrumbs"
+import ProjectThumb from "@/components/portfolio/ProjectThumb"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { CTA, SITE, SERVICE_ITEMS } from "@/content/site"
@@ -159,8 +160,8 @@ export default async function ServiceDetailPage({ params }) {
                                 <div className="d-none d-lg-block" style={{ position: "relative" }}>
                                     <Link href={`/work/${hero.slug}/`} className="svc-browser d-block" aria-label={`${hero.name} case study`}>
                                         <div className="bar"><i /><i /><i /><span>{hostOf(hero.liveUrl)}</span></div>
-                                        <img src={hero.image} alt={`${hero.name} website${heroIsConcept ? " (concept build)" : ""} built by Build First Site`}
-                                            width={1200} height={900} fetchPriority="high" />
+                                        <ProjectThumb slug={hero.slug} remote={hero.image} name={hero.name} aspect="4 / 3" eager
+                                            alt={`${hero.name} website${heroIsConcept ? " (concept build)" : ""} built by Build First Site`} />
                                     </Link>
                                     <div className="svc-floater">
                                         <b>{heroIsConcept ? "Concept build" : "Live client build"}</b><br />
@@ -208,13 +209,13 @@ export default async function ServiceDetailPage({ params }) {
                     <div className="container svc-split">
                         {cs ? (
                             <Link href={`/work/${cs.slug}/`} className="svc-photo d-block">
-                                <img src={cs.image} alt={`${cs.name} ${csIsConcept ? "concept build" : "website"} by Build First Site`}
-                                    width={1200} height={900} loading="lazy" />
+                                <ProjectThumb slug={cs.slug} remote={cs.image} name={cs.name} aspect="4 / 3"
+                                    alt={`${cs.name} ${csIsConcept ? "concept build" : "website"} by Build First Site`} />
                             </Link>
                         ) : hero ? (
                             <Link href={`/work/${hero.slug}/`} className="svc-photo d-block">
-                                <img src={hero.image} alt={`${hero.name} website built by Build First Site`}
-                                    width={1200} height={900} loading="lazy" />
+                                <ProjectThumb slug={hero.slug} remote={hero.image} name={hero.name} aspect="4 / 3"
+                                    alt={`${hero.name} website built by Build First Site`} />
                             </Link>
                         ) : <div />}
                         <div>
@@ -295,7 +296,7 @@ export default async function ServiceDetailPage({ params }) {
                         <div className="container">
                             <div className="svc-case">
                                 <div className="shot">
-                                    <img src={cs.image} alt={`${cs.name} homepage`} width={1200} height={900} loading="lazy" />
+                                    <ProjectThumb slug={cs.slug} remote={cs.image} name={cs.name} aspect="4 / 3" alt={`${cs.name} homepage`} />
                                 </div>
                                 <div className="txt">
                                     {csIsConcept

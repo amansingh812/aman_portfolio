@@ -29,6 +29,7 @@ import Layout from "@/components/layout/Layout"
 import Accordion from "@/components/elements/Accordion"
 import TechStack from "@/components/home/TechStack"
 import ClientReviews from "@/components/slider/ClientReviews"
+import ProjectThumb from "@/components/portfolio/ProjectThumb"
 import Link from "next/link"
 import Image from "next/image"
 import { CTA, SITE, REVIEWS, INDUSTRY_ITEMS } from "@/content/site"
@@ -461,15 +462,11 @@ export default function Home() {
                                 }}>
                                     <a href={p.liveUrl} target="_blank" rel="noopener noreferrer"
                                         style={{ display: 'block', borderRadius: 14, overflow: 'hidden' }}>
-                                        <img
-                                            src={p.image}
+                                        <ProjectThumb
+                                            slug={p.slug}
+                                            remote={p.image}
+                                            name={p.name}
                                             alt={`${p.name} — live website`}
-                                            style={{
-                                                width: '100%', height: 220,
-                                                objectFit: 'cover', objectPosition: 'top center',
-                                                display: 'block', background: '#fff',
-                                            }}
-                                            loading="lazy"
                                         />
                                     </a>
                                     <div className="d-flex justify-content-between align-items-center mt-20"

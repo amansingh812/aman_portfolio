@@ -14,6 +14,7 @@
  */
 import Layout from "@/components/layout/Layout"
 import Breadcrumbs from "@/components/elements/Breadcrumbs"
+import ProjectThumb from "@/components/portfolio/ProjectThumb"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { CTA, SITE, INDUSTRY_ITEMS } from "@/content/site"
@@ -216,8 +217,8 @@ export default async function IndustryDetailPage({ params }) {
                                 <div className="ind-proof-grid">
                                     {proofWork.map((w) => (
                                         <Link key={w.slug} href={`/work/${w.slug}/`}>
-                                            <img src={w.image} alt={`${w.name}${kind === "concept" ? " concept build" : " website"} by Build First Site`}
-                                                width={1200} height={900} loading="lazy" />
+                                            <ProjectThumb slug={w.slug} remote={w.image} name={w.name} aspect="4 / 3"
+                                                alt={`${w.name}${kind === "concept" ? " concept build" : " website"} by Build First Site`} />
                                         </Link>
                                     ))}
                                 </div>

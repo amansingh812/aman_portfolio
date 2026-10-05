@@ -2,6 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState } from "react"
 import Link from "next/link"
+import ProjectThumb from "@/components/portfolio/ProjectThumb"
 
 /**
  * ThemeForest-style portfolio gallery.
@@ -105,18 +106,11 @@ export default function PortfolioGallery({ projects }) {
                                 {/* Screenshot thumbnail */}
                                 <a href={p.liveUrl} target="_blank" rel="noopener noreferrer"
                                     style={{ display: 'block', borderRadius: 14, overflow: 'hidden' }}>
-                                    <img
-                                        src={p.image}
+                                    <ProjectThumb
+                                        slug={p.slug}
+                                        remote={p.image}
+                                        name={p.name}
                                         alt={`${p.name} — live website screenshot`}
-                                        style={{
-                                            width: '100%',
-                                            height: 250,
-                                            objectFit: 'cover',
-                                            objectPosition: 'top center',
-                                            display: 'block',
-                                            background: '#fff',
-                                        }}
-                                        loading="lazy"
                                     />
                                 </a>
 
