@@ -194,7 +194,7 @@ export const LANDING_PAGES = [
       { type: 'p', html: 'Worth saying plainly. If your team needs to edit content daily without touching code — a busy blog, a large content-marketing operation with multiple non-technical writers — a headless CMS on top of Next.js or, in some cases, a well-run <a href="/wordpress-vs-custom-website/" class="color-green-900">WordPress</a> install can be the more practical choice. We will tell you if that is a better fit before we quote a build.' },
 
       { type: 'h2', text: 'What it costs' },
-      { type: 'p', html: 'A business site of up to 10 pages is <strong>$1,900</strong>, delivered in 2–3 weeks. Multi-service or multi-location sites with no page cap are <strong>$3,500</strong>. Applications — dashboards, portals, booking systems, custom platforms — are scoped per project from <strong>$5,000</strong>.' },
+      { type: 'p', html: 'A business site of up to 10 pages is <strong>$1,900</strong>, delivered in 2–3 weeks. Multi-service or multi-location sites of ten pages or more are <strong>$3,500</strong>. Applications — dashboards, portals, booking systems, custom platforms — are scoped per project from <strong>$5,000</strong>.' },
       { type: 'p', html: 'Hosting on Vercel is typically free to low-cost for a business site, scaling with traffic. No CMS licence, no plugin subscriptions, no page-builder fee.' },
 
       { type: 'h2', text: 'How we build it' },
@@ -214,7 +214,7 @@ export const LANDING_PAGES = [
 
       { type: 'h2', text: 'Common questions' },
       { type: 'faq', q: 'How much does Next.js development cost in Australia?',
-        a: 'A business site of up to 10 pages is AU$1,900, delivered in 2 to 3 weeks. Multi-service or multi-location sites with no page cap are AU$3,500. Applications like dashboards, portals or booking systems are scoped per project from AU$5,000.' },
+        a: 'A business site of up to 10 pages is AU$1,900, delivered in 2 to 3 weeks. Multi-service or multi-location sites of ten pages or more are AU$3,500. Applications like dashboards, portals or booking systems are scoped per project from AU$5,000.' },
       { type: 'faq', q: 'Is Next.js actually better for SEO than WordPress?',
         a: 'Next.js renders pages on the server, so Google indexes the full HTML immediately without relying on JavaScript execution, and Core Web Vitals scores are strong by default. WordPress can be made to perform well too, but usually needs several plugins layered on to get there — each one a maintenance cost and a possible failure point.' },
       { type: 'faq', q: 'Can you migrate my existing WordPress or Wix site to Next.js?',
@@ -280,6 +280,9 @@ export const LANDING_PAGES = [
         'Linked back to your main service page and Google Business Profile',
       ]},
 
+      { type: 'h2', text: 'Tradie web design in Melbourne' },
+      { type: 'p', html: 'Our Australian contact is in Melbourne\'s north, so a lot of our tradie conversations start in Preston, Reservoir, Coburg and the surrounding suburbs. Melbourne trades face a crowded search page for broad terms, which is exactly why suburb sections and a strong Google Business Profile matter more there than anywhere. If you are a Melbourne tradie, see <a href="/web-design-melbourne/" class="color-green-900">web design Melbourne</a> for local pricing and the suburbs we cover, or ask for a <a href="/free-homepage-design/" class="color-green-900">free homepage design</a> for your trade.' },
+
       { type: 'h2', text: 'What types of tradies we build for' },
       { type: 'p', html: 'Plumbers, electricians, builders, plasterers, painters, tilers, carpenters, roofers, HVAC technicians, pest controllers, cleaners and landscapers. The website structure is similar across trades — the service-area pages, the emergency CTA, the licence display — but the content is written for your specific trade, not repurposed from a template.' },
 
@@ -287,11 +290,11 @@ export const LANDING_PAGES = [
       { type: 'p', html: 'If you have just started and have no Google Business Profile, set that up first. It is free, it puts you on Maps, and for a lot of trades it generates more calls in month one than a website will. We would rather tell you that than sell you something you do not need yet. Come back when you are competing for jobs people compare before calling.' },
 
       { type: 'h2', text: 'What it costs' },
-      { type: 'p', html: 'A three to five page tradie site is <strong>$800</strong>, up to ten pages with service-area pages is <strong>$1,900</strong>, and unlimited pages is <strong>$3,500</strong>. A booking system adds from $700. Every quote is fixed in writing before work starts.' },
+      { type: 'p', html: 'A three to five page tradie site is <strong>$800</strong>, up to ten pages with service-area pages is <strong>$1,900</strong>, and ten pages or more is <strong>$3,500</strong>, each payable in four instalments. A booking system adds from $700. Every quote is fixed in writing before work starts.' },
 
       { type: 'h2', text: 'Common questions' },
       { type: 'faq', q: 'How much does a tradie website cost?',
-        a: 'A three to five page tradie site is $800, up to ten pages with service-area pages is $1,900, and unlimited pages is $3,500 (<a href="/pricing/" class="color-green-900">all packages</a>). Add a booking system from $700. Every quote is fixed in writing before work starts.' },
+        a: 'A three to five page tradie site is $800, up to ten pages with service-area pages is $1,900, and ten pages or more is $3,500 (<a href="/pricing/" class="color-green-900">all packages</a>), each payable in four instalments. Add a booking system from $700. Every quote is fixed in writing before work starts.' },
       { type: 'faq', q: 'Do tradies need a website?',
         a: 'Not always, and not first. A free Google Business Profile should come before a website for a brand new sole trader. A website earns its keep once you are competing for jobs where people compare two or three tradies, quoting work over $5,000, or paying for ads and sending that traffic to a Facebook page.' },
       { type: 'faq', q: 'How long does a tradie website take?',
@@ -410,14 +413,14 @@ export const LANDING_PAGES = [
       { type: 'p', html: 'If your problem is buyer volume, a website is the wrong tool — the portals own that traffic and always will. A website earns its keep on the vendor side, where the decision is about trust rather than inventory. If you are winning plenty of listings and just need more buyers, spend the money on the portals instead. We would rather say that than take the project.' },
 
       { type: 'h2', text: 'What it costs' },
-      { type: 'p', html: 'A three to five page agent site is <strong>$800</strong>, up to ten pages with suburb pages and appraisal forms is <strong>$1,900</strong>, and unlimited pages is <strong>$3,500</strong>. CRM integration for live listings is quoted as a custom build from $4,500.' },
+      { type: 'p', html: 'A three to five page agent site is <strong>$800</strong>, up to ten pages with suburb pages and appraisal forms is <strong>$1,900</strong>, and ten pages or more is <strong>$3,500</strong>. CRM integration for live listings is quoted as a custom build from $4,500.' },
 
       { type: 'h2', text: 'Further reading' },
       { type: 'p', html: 'Related reading for agents: <a href="/web-design-sydney/" class="color-green-900">web design Sydney</a>, <a href="/how-much-does-a-website-cost-australia/" class="color-green-900">what a website costs in Australia</a>, <a href="/small-business-website-checklist/" class="color-green-900">website checklist</a>.' },
 
       { type: 'h2', text: 'Common questions' },
       { type: 'faq', q: 'How much does a real estate website cost in Australia?',
-        a: 'A three to five page agent site is $800, up to ten pages with suburb pages and appraisal forms is $1,900, and unlimited pages is $3,500 (<a href="/pricing/" class="color-green-900">all packages</a>). CRM integration for live listings is quoted as a custom build from $4,500.' },
+        a: 'A three to five page agent site is $800, up to ten pages with suburb pages and appraisal forms is $1,900, and ten pages or more is $3,500 (<a href="/pricing/" class="color-green-900">all packages</a>). CRM integration for live listings is quoted as a custom build from $4,500.' },
       { type: 'faq', q: 'Can my listings sync automatically from my CRM?',
         a: 'Usually yes, depending on your CRM and whether it exposes an API or feed. This is quoted as a custom build because the work depends entirely on the system you already use. We will tell you upfront if your CRM makes it impractical.' },
       { type: 'faq', q: 'Should I build suburb pages for every area I cover?',
@@ -433,11 +436,16 @@ export const LANDING_PAGES = [
     inlineForm: true, // paid-traffic landing page: form on the page
     image: '/assets/imgs/page/landing/web-design-melbourne.webp',
     imageAlt: 'Melbourne skyline behind a local business website built for the local market',
-    metaTitle: 'Web Design & Web Developer Melbourne | From $800',
+    /* Sprint A (7 Oct 2026). GSC 28 days: "web developer melbourne" pos 25,
+       "website design melbourne price" 31.6, "web design st kilda" 12,
+       "south yarra" 20, "brunswick" 16, "preston" 3.4, "melbourne cbd" 10,
+       "tradie web design melbourne" 19. Suburbs are SECTIONS here, not
+       separate pages (CLAUDE.md §4: no scaled suburb/city pages). */
+    metaTitle: 'Web Design & Web Developer Melbourne | Prices From $800',
     metaDescription:
-      'Web design and web development for Melbourne businesses, from $800 AUD. Fast custom sites, local SEO included, you own the code. Fixed price, quote in one business day.',
+      'Melbourne web design and web developer with published prices: $800, $1,900 or $3,500. Custom sites, local SEO, you own the code. Free homepage design first.',
     eyebrow: 'MELBOURNE, VICTORIA',
-    h1: 'Web Design Melbourne — Modern Websites From $800',
+    h1: 'Web Design Melbourne: a Web Developer With Published Prices',
     lead:
       'Most Melbourne web design agencies gate their pricing behind a discovery call. Ours starts at $800 and is published right here. Modern Next.js builds, local SEO included, and the source code is yours on launch day — no retainer, no lock-in.',
     priceTiers: ['starter', 'business', 'unlimited', 'ecommerce', 'application', 'custom-software'],
@@ -450,6 +458,8 @@ export const LANDING_PAGES = [
     related: [
       { href: '/tradie-website-design/', label: 'Tradie websites' },
       { href: '/restaurant-website-design/', label: 'Restaurant websites' },
+      { href: '/hire-website-builder/', label: 'Hire someone to build a website' },
+      { href: '/free-homepage-design/', label: 'Free homepage design' },
       { href: '/pricing/', label: 'All pricing' },
     ],
     body: [
@@ -469,18 +479,43 @@ export const LANDING_PAGES = [
         '<strong>Retail and e-commerce.</strong> Stripe checkout, real inventory and order management — without paying a platform commission on every sale you make.',
       ]},
 
-      { type: 'h2', text: 'A web developer for Melbourne, without the agency overhead' },
-      { type: 'p', html: 'You deal directly with the engineer who writes your code, and your day-to-day contact is in Melbourne. No account managers, no hand-offs, and no office rent built into your quote. That is how a custom site starts at $800 here, against $5,000+ from a CBD agency.' },
+      { type: 'h2', text: 'Website design prices in Melbourne (2026)' },
+      { type: 'p', html: 'Most Melbourne studios will not put a number on a page. Ours are below, in AUD, and every quote is fixed in writing before work starts. Each package can be paid in four instalments, and we design your homepage free before you commit.' },
+      { type: 'table',
+        headers: ['What you need', 'Price (AUD)', 'Delivery', 'Instalments'],
+        rows: [
+          ['Starter site, 3–5 pages', '$800', '5–7 days', '4 × $200'],
+          ['Business site, up to 10 pages', '$1,900', '2–3 weeks', '4 × $475'],
+          ['Growth site, 10+ pages', '$3,500', '3–4 weeks', '4 × $875'],
+          ['Online store or web app', 'from $4,500', '4–8 weeks', 'Available'],
+        ]
+      },
+      { type: 'p', html: 'Full package details are on the <a href="/pricing/" class="color-green-900">pricing page</a>, and <a href="/how-much-does-a-website-cost-australia/" class="color-green-900">what a website costs in Australia</a> explains why Melbourne quotes for the same scope range so widely.' },
 
-      { type: 'h2', text: 'Areas we work with across Melbourne' },
-      { type: 'p', html: 'Your contact is Melbourne-based, so a first meeting in person is easy. After that, most projects run over calls and a live staging link, which suits most people better than driving across town.' },
+      { type: 'h2', text: 'Hiring a web developer in Melbourne, without the agency overhead' },
+      { type: 'p', html: 'When you search for a web developer in Melbourne you mostly find agencies: a salesperson, an account manager and a project coordinator between you and whoever writes the code. Here you deal directly with the engineer who builds your site, and your day-to-day contact is in Melbourne for meetings and calls. No hand-offs and no office rent built into your quote. That is how a custom site starts at $800 here, against $5,000+ from a CBD agency.' },
       { type: 'ul', items: [
-        '<strong>Inner north:</strong> Brunswick, Coburg, Preston, Northcote, Fitzroy, Carlton',
-        '<strong>Inner south and bayside:</strong> St Kilda, South Yarra, Prahran, Elwood, Brighton',
-        '<strong>CBD and inner city:</strong> Melbourne CBD, Southbank, Docklands, Richmond',
-        '<strong>East:</strong> Hawthorn, Camberwell, Box Hill, Glen Waverley',
-        '<strong>West and beyond:</strong> Footscray, Williamstown, Dandenong, Frankston, Geelong',
+        '<strong>Web design and web development in one place.</strong> The same person designs the pages and builds them, so nothing gets lost between a designer\'s mock-up and a developer\'s interpretation.',
+        '<strong>Modern build, not a page-builder theme.</strong> Next.js and React, which is why the sites load fast on a phone over 4G.',
+        '<strong>More than brochure sites.</strong> Booking systems, customer portals, online stores and <a href="/services/ai-automation/" class="color-green-900">automations</a> that answer enquiries for you.',
       ]},
+
+      { type: 'h2', text: 'Web design across Melbourne\'s suburbs' },
+      { type: 'p', html: 'Your contact is Melbourne-based, so a first meeting in person is easy anywhere in the metro area. After that, most projects run over calls and a live preview link. What changes from suburb to suburb is not the price but what your customers are searching for, so here is what we focus on in the areas we hear from most.' },
+      { type: 'h3', text: 'St Kilda and Elwood' },
+      { type: 'p', html: 'Hospitality, wellness and short-stay businesses dominate around Fitzroy Street and Acland Street, and most customers find them on a phone while already nearby. For St Kilda web design that means menus and service lists as real pages rather than PDFs, booking without platform commission, and a Google Business Profile that matches the site hour for hour.' },
+      { type: 'h3', text: 'South Yarra, Prahran and Toorak' },
+      { type: 'p', html: 'Chapel Street and Toorak Road are full of salons, clinics, boutiques and studios competing on presentation. A South Yarra business website has to look as considered as the shopfront and take bookings or orders directly. Online stores here are usually worth building on your own checkout rather than paying a platform a cut of every sale.' },
+      { type: 'h3', text: 'Brunswick, Coburg and Northcote' },
+      { type: 'p', html: 'Independent cafés, makers, studios and trades along Sydney Road, Lygon Street and High Street. These businesses often sell to locals and online at the same time, so we build sites that combine a simple shop or enquiry form with strong local search for the suburb name.' },
+      { type: 'h3', text: 'Preston and Reservoir' },
+      { type: 'p', html: 'Trades, home services, family businesses and the shops around High Street and the Preston Market. Here the job of the website is a phone call: tap-to-call on every screen, the suburbs you cover listed plainly, and a quote form that asks the right questions. Our Melbourne contact is based in this part of the north.' },
+      { type: 'h3', text: 'Melbourne CBD, Southbank and Docklands' },
+      { type: 'p', html: 'Professional services, consultants, accountants and law practices, plus hospitality aimed at office workers. CBD sites need to read as credible in the first few seconds and make booking a consultation simple. They also face the most competition in search, so the structure and page speed have to be right from launch.' },
+      { type: 'p', html: 'We also work with businesses in Richmond, Fitzroy, Carlton, Hawthorn, Camberwell, Box Hill, Glen Waverley, Footscray, Williamstown, Dandenong, Frankston and Geelong. Wherever you are, the price and the process are the same.' },
+
+      { type: 'h2', text: 'Tradie web design in Melbourne' },
+      { type: 'p', html: 'A large share of the Melbourne businesses we hear from are trades: plumbers, electricians, builders and landscapers. Their sites need one thing above everything else, which is turning a search into a phone call. Tap-to-call fixed on mobile, service-area sections for the suburbs you actually cover, and a quote form that asks for job type, suburb and photos. The full approach is on our <a href="/tradie-website-design/" class="color-green-900">tradie website design</a> page.' },
 
       { type: 'h2', text: 'Sites we have actually shipped' },
       { type: 'p', html: 'Real client work on their own domains. Open any of them and run a speed test — we would rather you checked than took our word for it. <a href="https://www.hsracegear.com" target="_blank" rel="noopener noreferrer" class="color-green-900">HS Race Gear</a> — motorsport e-commerce, large product catalogue. <a href="https://mobilearmour.com.au" target="_blank" rel="noopener noreferrer" class="color-green-900">Mobile Armour</a> — Australian retail, speed and SEO rebuild. <a href="https://www.autozenlyai.com" target="_blank" rel="noopener noreferrer" class="color-green-900">Autozenly AI</a> — AI SaaS, admin dashboard and platform. <a href="https://planet.ltfinance.com" target="_blank" rel="noopener noreferrer" class="color-green-900">LT Finance</a> — enterprise fintech platform.' },
@@ -489,8 +524,12 @@ export const LANDING_PAGES = [
       { type: 'p', html: 'Also useful if you are comparing options: <a href="/pricing/" class="color-green-900">our fixed prices</a>, <a href="/tradie-website-design/" class="color-green-900">tradie websites</a>, <a href="/wordpress-vs-custom-website/" class="color-green-900">WordPress vs custom</a>.' },
 
       { type: 'h2', text: 'Melbourne web design questions' },
-      { type: 'faq', q: 'How much does a website cost in Melbourne?',
-        a: 'Our prices are published: $800 for a three to five page site, $1,900 for up to ten pages, $3,500 for unlimited pages, and $4,500 for e-commerce or an application. Melbourne agencies commonly quote $5,000 to $15,000 for the same scope. Every quote is fixed in writing before work starts.' },
+      { type: 'faq', q: 'How much does website design cost in Melbourne?',
+        a: 'Our prices are published: $800 for a three to five page site, $1,900 for up to ten pages, $3,500 for ten or more pages, and from $4,500 for e-commerce or an application. Each can be paid in four instalments. Melbourne agencies commonly quote $5,000 to $15,000 for the same scope. Every quote is fixed in writing before work starts.' },
+      { type: 'faq', q: 'How do I hire a web developer in Melbourne?',
+        a: 'Send a short description of your business and what the site needs to do through the form on this page, or book a free call. Within one business day you get a written scope with a fixed AUD price, and we design your homepage free before you commit. You work directly with the developer building the site, with a Melbourne-based contact for meetings.' },
+      { type: 'faq', q: 'What is the difference between a web designer and a web developer?',
+        a: 'A web designer decides how the site looks and how people move through it; a web developer builds it so it works, loads fast and can be found on Google. Many Melbourne agencies split the two between different people. Here the same person does both, which removes the hand-off where most projects lose time.' },
       { type: 'faq', q: 'Do you work with businesses in Preston, Brunswick, St Kilda or South Yarra?',
         a: 'Yes. We work with businesses right across Melbourne, including the inner north and inner south. The first meeting can be in person; after that most of the work runs over calls and a live preview link, so your suburb makes no difference to price or timing.' },
       { type: 'faq', q: 'Can you set up our Google Business Profile in Melbourne?',
@@ -549,7 +588,7 @@ export const LANDING_PAGES = [
 
       { type: 'h2', text: 'Sydney web design questions' },
       { type: 'faq', q: 'How much does a website cost in Sydney?',
-        a: 'Our prices are published: $800 for a three to five page site, $1,900 for up to ten pages, $3,500 for unlimited pages, and $4,500 for e-commerce or an application. Sydney agencies commonly quote several times that for the same scope. Every quote is fixed in writing before work starts.' },
+        a: 'Our prices are published: $800 for a three to five page site, $1,900 for up to ten pages, $3,500 for ten pages or more, and $4,500 for e-commerce or an application. Sydney agencies commonly quote several times that for the same scope. Every quote is fixed in writing before work starts.' },
       { type: 'faq', q: 'Are you based in Sydney?',
         a: 'No. Build First Site is based in Melbourne and works with Sydney businesses remotely. We say that plainly rather than implying a local office. You get a live staging link from the first week and calls whenever you want them, and the price is lower than a local agency with premises to pay for.' },
       { type: 'faq', q: 'How long does a Sydney website take to build?',
@@ -604,7 +643,7 @@ export const LANDING_PAGES = [
 
       { type: 'h2', text: 'Brisbane web design questions' },
       { type: 'faq', q: 'How much does a website cost in Brisbane?',
-        a: 'Our prices are published: $800 for a three to five page site, $1,900 for up to ten pages, $3,500 for unlimited pages, and $4,500 for e-commerce or an application. Brisbane agencies commonly quote several times that for the same scope. Every quote is fixed in writing before work starts.' },
+        a: 'Our prices are published: $800 for a three to five page site, $1,900 for up to ten pages, $3,500 for ten pages or more, and $4,500 for e-commerce or an application. Brisbane agencies commonly quote several times that for the same scope. Every quote is fixed in writing before work starts.' },
       { type: 'faq', q: 'Are you based in Brisbane?',
         a: 'No. Build First Site is based in Melbourne and works with Brisbane businesses remotely. We say that plainly rather than implying a local office. You get a live staging link from the first week and calls whenever you want them, and the price is lower than a local agency with premises to pay for.' },
       { type: 'faq', q: 'How long does a Brisbane website take to build?',
@@ -639,7 +678,7 @@ export const LANDING_PAGES = [
     body: [
       { type: 'h2', text: 'Perth website design prices in 2026' },
       { type: 'p', html: 'Perth web design pricing is less competitive than the east coast because the market is smaller — with fewer studios bidding on each project, quotes are less disciplined. Local agency rates typically run $3,000 to $8,000 for a business website.' },
-      { type: 'p', html: 'Our prices are published and fixed: <strong>$800</strong> for a three to five page site, <strong>$1,900</strong> for up to ten pages, <strong>$3,500</strong> for unlimited pages, and <strong>$4,500</strong> for e-commerce. Every quote is in writing before work starts.' },
+      { type: 'p', html: 'Our prices are published and fixed: <strong>$800</strong> for a three to five page site, <strong>$1,900</strong> for up to ten pages, <strong>$3,500</strong> for ten pages or more, and <strong>$4,500</strong> for e-commerce. Every quote is in writing before work starts.' },
       { type: 'p', html: 'Perth is also the most isolated capital city in the world, which has an SEO upside: less competition for local search terms. A well-built Perth website with proper local schema and suburb pages can rank significantly faster than the same site would in Sydney or Melbourne.' },
 
       { type: 'h2', text: 'Perth industries we build for' },
@@ -667,7 +706,7 @@ export const LANDING_PAGES = [
 
       { type: 'h2', text: 'Perth web design questions' },
       { type: 'faq', q: 'How much does a website cost in Perth?',
-        a: 'Our prices are published: $800 for a three to five page site, $1,900 for up to ten pages, $3,500 for unlimited pages, and $4,500 for e-commerce or an application. Perth agencies commonly quote several times that for the same scope. Every quote is fixed in writing before work starts.' },
+        a: 'Our prices are published: $800 for a three to five page site, $1,900 for up to ten pages, $3,500 for ten pages or more, and $4,500 for e-commerce or an application. Perth agencies commonly quote several times that for the same scope. Every quote is fixed in writing before work starts.' },
       { type: 'faq', q: 'Are you based in Perth?',
         a: 'No. Build First Site is based in Melbourne and works with Perth businesses remotely. We say that plainly rather than implying a local office. You get a live staging link from the first week and calls scheduled for the Perth morning, and the price is lower than a local agency with premises to pay for.' },
       { type: 'faq', q: 'How long does a Perth website take to build?',
@@ -702,7 +741,7 @@ export const LANDING_PAGES = [
     body: [
       { type: 'h2', text: 'What a website costs in Adelaide in 2026' },
       { type: 'p', html: 'Adelaide agency pricing typically runs $2,500 to $6,000 for a business website — below the eastern capitals, but still variable depending on what is actually inside the quote. The cheaper end is usually a template with your logo dropped in, hosting you do not control, and SEO sold separately as a monthly retainer.' },
-      { type: 'p', html: 'Our prices are published and fixed: <strong>$800</strong> for a three to five page site, <strong>$1,900</strong> for up to ten pages, <strong>$3,500</strong> for unlimited pages, and <strong>$4,500</strong> for e-commerce. Every quote is in writing before work starts. No surprises at handover.' },
+      { type: 'p', html: 'Our prices are published and fixed: <strong>$800</strong> for a three to five page site, <strong>$1,900</strong> for up to ten pages, <strong>$3,500</strong> for ten pages or more, and <strong>$4,500</strong> for e-commerce. Every quote is in writing before work starts. No surprises at handover.' },
       { type: 'p', html: 'A cheap website that nobody finds is not cheap — it is a smaller amount of money that produces nothing. We set out the real numbers in <a href="/how-much-does-a-website-cost-australia/" class="color-green-900">what a website costs in Australia</a>. The measure is not what you spend, it is what you get back.' },
 
       { type: 'h2', text: 'Adelaide industries we build for' },
@@ -730,7 +769,7 @@ export const LANDING_PAGES = [
 
       { type: 'h2', text: 'Adelaide web design questions' },
       { type: 'faq', q: 'How much does a website cost in Adelaide?',
-        a: 'Our prices are published: $800 for a three to five page site, $1,900 for up to ten pages, $3,500 for unlimited pages, and $4,500 for e-commerce or an application. Adelaide agencies commonly quote several times that for the same scope. Every quote is fixed in writing before work starts.' },
+        a: 'Our prices are published: $800 for a three to five page site, $1,900 for up to ten pages, $3,500 for ten pages or more, and $4,500 for e-commerce or an application. Adelaide agencies commonly quote several times that for the same scope. Every quote is fixed in writing before work starts.' },
       { type: 'faq', q: 'Are you based in Adelaide?',
         a: 'No. Build First Site is based in Melbourne and works with Adelaide businesses remotely. We say that plainly rather than implying a local office. You get a live staging link from the first week and calls whenever you want them, and the price is lower than a local agency with premises to pay for.' },
       { type: 'faq', q: 'How long does an Adelaide website take to build?',
@@ -814,9 +853,9 @@ export const LANDING_PAGES = [
 
       { type: 'h2', text: 'Common questions' },
             { type: 'faq', q: 'How much does a website cost australia?',
-        a: 'The Australian market average for a small business site sits between $6,500 and $10,000, with DIY platforms from $500 and agencies reaching $50,000. Our published prices are $800 for three to five pages, $1,900 for up to ten, $3,500 for unlimited and $4,500 for e-commerce, all AUD before GST.' },
+        a: 'The Australian market average for a small business site sits between $6,500 and $10,000, with DIY platforms from $500 and agencies reaching $50,000. Our published prices are $800 for three to five pages, $1,900 for up to ten, $3,500 for ten pages or more and $4,500 for e-commerce, all AUD before GST.' },
       { type: 'faq', q: 'How much does a website cost for small business?',
-        a: 'For an Australian small business, $800 to $4,500 AUD covers almost every realistic case: $800 for a three to five page presence, $1,900 for up to ten pages, $3,500 with no page cap, $4,500 for an online store. Agencies commonly quote $5,000 to $15,000 for the same scope, and most of that gap is overhead rather than build work.' },
+        a: 'For an Australian small business, $800 to $4,500 AUD covers almost every realistic case: $800 for a three to five page presence, $1,900 for up to ten pages, $3,500 for ten pages or more, $4,500 for an online store. Agencies commonly quote $5,000 to $15,000 for the same scope, and most of that gap is overhead rather than build work.' },
       { type: 'faq', q: 'How much to build a website australia?',
         a: 'Building costs $800 to $4,500 AUD with us depending on page count and whether you need e-commerce. Across the wider market, expect $500 to $3,000 for a DIY platform build, $500 to $2,000 from a freelancer for something basic, $3,000 to $7,000 from a small studio and $10,000 upward from a full agency.' },
       { type: 'faq', q: 'How much does it cost to host a website?',
@@ -1037,8 +1076,11 @@ export const LANDING_PAGES = [
     image: '/assets/imgs/page/landing/hire-website-builder.webp',
     imageAlt: 'Working directly with a website builder reviewing a design together',
     metaTitle: 'Hire Someone to Build a Website in Australia (From $800)',
+    /* Sprint A (7 Oct 2026). GSC: "hire someone to build a website" pos 39.5,
+       "pay someone to build a website" 26, "small business website builder" 11.4,
+       "hire a website builder" 6.5, "build a small business website" 10. */
     metaDescription:
-      'Hire someone to build your website without going through Upwork or Fiverr. Fixed AUD prices from $800, free homepage design first, and you own the code.',
+      'Hire or pay someone to build your small business website in Australia. Fixed AUD prices from $800, free homepage design first, and you own the code.',
     eyebrow: 'Australia · Professional Website Builder',
     h1: 'Hire someone to build your website',
     lead:
@@ -1068,8 +1110,22 @@ export const LANDING_PAGES = [
       { type: 'p', html: 'We are the fourth. We are not going to pretend the marketplaces are useless \u2014 if you need a logo tweaked or one page changed, Fiverr is genuinely the right tool and we would rather you used it. The case for hiring directly is a business website you intend to keep for years, where somebody needs to still be there in month eight when you want a new page.' },
 
       { type: 'h2', text: 'How much does it cost to hire someone to build a website?' },
-      { type: 'p', html: 'Our prices are published rather than quoted on request: <strong>$800</strong> for three to five pages, <strong>$1,900</strong> for up to ten, <strong>$3,500</strong> with no page cap, <strong>$4,500</strong> for e-commerce. AUD, before GST, fixed before work starts. The full breakdown is on the <a href="/pricing/" class="color-green-900">pricing page</a>, and <a href="/how-much-does-a-website-cost-australia/" class="color-green-900">what a website costs in Australia</a> covers the wider market including what agencies charge.' },
+      { type: 'p', html: 'Our prices are published rather than quoted on request: <strong>$800</strong> for three to five pages, <strong>$1,900</strong> for up to ten, <strong>$3,500</strong> for ten pages or more, <strong>$4,500</strong> for e-commerce. Each can be split into four instalments. AUD, before GST, fixed before work starts. The full breakdown is on the <a href="/pricing/" class="color-green-900">pricing page</a>, and <a href="/how-much-does-a-website-cost-australia/" class="color-green-900">what a website costs in Australia</a> covers the wider market including what agencies charge.' },
       { type: 'p', html: 'Two costs people forget when comparing quotes. First, the monthly fee \u2014 a marketplace build on Wix or Squarespace carries one indefinitely, and over five years that usually exceeds the build price. Second, the exit cost: if you do not own the code, moving to another developer means building it again. Both are covered in the <a href="/affordable-website-design-small-business/" class="color-green-900">five-year cost comparison</a>, and <a href="/website-hosting-cost-australia/" class="color-green-900">what website hosting costs</a> has the platform-by-platform numbers.' },
+
+      { type: 'h2', text: 'Paying someone to build a website: what the money should buy' },
+      { type: 'p', html: 'When you pay someone to build a website, the price should cover more than the pages. Before you agree to any quote, check that it includes all of these, in writing:' },
+      { type: 'ul', items: [
+        '<strong>A fixed price and a written scope.</strong> Which pages, which features, how many rounds of changes.',
+        '<strong>Design that is yours, not a reskinned template.</strong> Ask to see the homepage before you pay the bulk of the fee. We design yours free first.',
+        '<strong>The basics of being found.</strong> Page titles, structured data, a sitemap, mobile speed and Google Business Profile setup.',
+        '<strong>The code, domain and hosting in your name.</strong> Otherwise you are renting the site, not buying it.',
+        '<strong>Support after launch.</strong> Who fixes a broken form in month three, and what it costs.',
+      ]},
+      { type: 'p', html: 'If a quote leaves any of these out, it is not cheaper; the cost has just moved to later.' },
+
+      { type: 'h2', text: 'Looking for a small business website builder?' },
+      { type: 'p', html: '"Website builder" means two different things. One is a do-it-yourself tool such as Wix or Squarespace, where you pay monthly and build the site yourself. The other is a person who builds it for you. If you have the time and a simple need, a DIY tool is a reasonable start, and our <a href="/wix-vs-custom-website/" class="color-green-900">Wix vs custom comparison</a> is honest about when it is enough. If you would rather spend that time running the business, you want the second kind, and that is what we are. The table further down compares the two side by side.' },
 
       { type: 'h2', text: 'What to have ready before you hire anyone' },
       { type: 'p', html: 'The single biggest cause of a website project going over time and over budget is not the developer. It is starting without knowing what the site is for. Half an hour on this list will save you weeks:' },
@@ -1097,7 +1153,7 @@ export const LANDING_PAGES = [
         ['Design', '✓ Custom-built for your brand', 'Template — looks like thousands of other sites'],
         ['Page speed', '✓ 90–100 Lighthouse score', 'Often 40–60 on mobile'],
         ['SEO', '✓ Schema, sitemap, semantic HTML included', 'Basic — limited structured data'],
-        ['Monthly cost', '✓ $0/mo — host on Vercel free tier', '$20–50/mo forever'],
+        ['Monthly cost', '✓ $0/mo — host on Vercel free tier', '$17–62/mo for as long as you keep it'],
         ['Code ownership', '✓ Full GitHub repo on launch day', 'Platform owns everything'],
         ['E-commerce fees', '✓ Only Stripe\'s processing fee — nothing to us', 'Up to 3% platform fee + monthly plan'],
         ['Custom features', '✓ Anything is possible', 'Limited to what the platform offers'],
@@ -1106,7 +1162,7 @@ export const LANDING_PAGES = [
 
       { type: 'h2', text: 'Every type of website, built right' },
       { type: 'ul', items: [
-        '<strong>Landing pages</strong> — from $800 AUD, ~2 weeks. Single-page sites for product launches, Google Ads campaigns, or service promos. Conversion-focused, fast, mobile-first.',
+        '<strong>Starter websites</strong> — from $800 AUD, 5–7 days. Three to five pages for new businesses, sole traders and simple service businesses. Fast, mobile-first, SEO foundations included.',
         '<strong>Business websites</strong> — from $1,900 AUD, 2–3 weeks. Multi-page websites for services, professional firms, trades, hospitality, and local businesses. SEO-optimised from day one.',
         '<strong>E-commerce stores</strong> — from $4,500 AUD, 4–6 weeks. Custom online stores with Stripe checkout, product management, and admin dashboard. No Shopify monthly fees.',
         '<strong>AI web applications</strong> — from $5,000 AUD, scoped per project. SaaS products, AI chatbots, automation tools. Integrated with OpenAI, Claude and Gemini — production-ready, not demos.',
@@ -1115,10 +1171,10 @@ export const LANDING_PAGES = [
       { type: 'h2', text: 'Getting your website built — five steps' },
       { type: 'ol', items: [
         '<strong>Tell us about your project.</strong> Fill in the contact form or book a free 30-minute call. Tell us what you need, your timeline, and your budget.',
-        '<strong>Receive a fixed-price proposal.</strong> You get a detailed proposal with scope, price, and timeline within 24 hours. No hourly rates, no scope creep.',
-        '<strong>50% deposit to start.</strong> Once you approve, pay 50% upfront. Work begins immediately.',
+        '<strong>Receive a fixed-price proposal.</strong> You get a written proposal with scope, fixed price and timeline within one business day, plus your homepage designed free. No hourly rates, no scope creep.',
+        '<strong>Pay the first instalment to start.</strong> Packages can be split into four payments. Work begins once you approve the scope.',
         '<strong>Review your site on a live staging link.</strong> You watch your site take shape in real time, with revisions included and feedback handled directly.',
-        '<strong>Launch and full code handover.</strong> Pay the final 50%, your site goes live, and you receive the full GitHub repo. It is yours — forever.',
+        '<strong>Launch and full code handover.</strong> Your site goes live and you receive the full code repository. It is yours, permanently.',
       ]},
 
       { type: 'h2', text: 'Further reading' },
@@ -1126,19 +1182,21 @@ export const LANDING_PAGES = [
 
       { type: 'h2', text: 'Common questions' },
       { type: 'faq', q: 'What is the average cost to hire someone to build a website?',
-        a: 'In Australia, roughly $800 to $5,000 AUD for a small business site built by an independent developer or small studio, and $5,000 to $15,000 from a full agency for the same scope. Marketplace freelancers advertise lower, often $200 to $1,500, with quality that varies more than the price does. Our published prices are $800 for three to five pages, $1,900 for up to ten, $3,500 uncapped and $4,500 for e-commerce, before GST.' },
+        a: 'In Australia, roughly $800 to $5,000 AUD for a small business site built by an independent developer or small studio, and $5,000 to $15,000 from a full agency for the same scope. Marketplace freelancers advertise lower, often $200 to $1,500, with quality that varies more than the price does. Our published prices are $800 for three to five pages, $1,900 for up to ten, $3,500 for ten or more and $4,500 for e-commerce, payable in four instalments.' },
+      { type: 'faq', q: 'Is it worth paying someone to build a website?',
+        a: 'For a business, usually yes, once you count your own time. A DIY builder costs roughly $17 to $62 a month on Wix or Squarespace business plans for as long as you keep the site, plus the 40 to 100 hours it takes to learn and build, and you still own nothing at the end. Paying a developer a fixed price once gets you a faster site that you own outright. If you are just testing an idea, a DIY tool is fine to start with.' },
       { type: 'faq', q: 'Can I hire someone to build a website for me?',
         a: 'Yes, and you do not need to understand any of the technical side to do it. Tell us what the business does and what you want the site to achieve, and you get a written scope with a fixed AUD price within one business day. We design your homepage before you commit to anything, so you can judge the work rather than the pitch.' },
       { type: 'faq', q: 'Can ChatGPT build me a website?',
         a: 'It can produce a working page, and for a personal project or a rough prototype that is genuinely useful. What it does not do is decide what your business needs the site to say, write copy that reflects how you actually sell, handle hosting and domains, set up the technical SEO, or be responsible when a form stops delivering enquiries six months later. AI is part of how we build too \u2014 it is a tool in the process, not a replacement for someone being accountable for the result.' },
       { type: 'faq', q: 'Where can I hire someone to build a website near me?',
-        a: 'For most small business websites, proximity matters less than it used to \u2014 the work is done remotely and reviewed on a live link either way. What matters is a local point of contact in your timezone, which is what we have: your day-to-day contact is in Australia. We build for businesses in Sydney, Melbourne, Brisbane, Perth, Adelaide and Canberra, and you can see the city pages in the footer.' },
+        a: 'For most small business websites, proximity matters less than it used to \u2014 the work is done remotely and reviewed on a live link either way. What matters is a local point of contact in your timezone, which is what we have: your day-to-day contact is in Australia. We build for businesses across Australia, including <a href="/web-design-melbourne/" class="color-green-900">web design in Melbourne</a> and <a href="/web-design-sydney/" class="color-green-900">web design in Sydney</a>, plus Brisbane, Perth, Adelaide and Canberra.' },
       { type: 'faq', q: 'Can I hire someone to build a website for my small business?',
         a: 'Yes, and that is exactly what we do. You tell us what the business needs, we send a written scope with a fixed AUD price within one business day, and we design your homepage free before you commit to anything. Prices start at $800 for three to five pages. You are hiring the person who writes the code, not an account manager.' },
       { type: 'faq', q: 'How much does it cost to hire a website builder in Australia?',
-        a: 'At Build First Site, a landing page starts from $800 AUD, a full business website from $1,900 AUD, and a custom e-commerce store from $4,500 AUD. All prices are fixed upfront — no hourly billing, no hidden extras.' },
+        a: 'At Build First Site, a three to five page website starts from $800 AUD, a business website of up to ten pages from $1,900 AUD, and a custom e-commerce store from $4,500 AUD. All prices are fixed upfront — no hourly billing, no hidden extras.' },
       { type: 'faq', q: 'How long does it take to get a website built?',
-        a: 'Landing pages: around 2 weeks. Business websites: 2–3 weeks. E-commerce stores: 4–6 weeks. Custom applications: scoped per project. Timelines are locked in your proposal before work starts.' },
+        a: 'Starter sites (3–5 pages): 5–7 days. Business websites: 2–3 weeks. E-commerce stores: 4–6 weeks. Custom applications: scoped per project. Timelines are locked in your proposal before work starts.' },
       { type: 'faq', q: 'Will I own the website after it is built?',
         a: 'Yes, completely. You receive the full GitHub repository on your launch day. Host it on Vercel (free tier covers most business sites), AWS, or your own server. No ongoing fees to us.' },
       { type: 'faq', q: 'Do I need to know anything about websites?',
@@ -1530,7 +1588,7 @@ export const LANDING_PAGES = [
       { type: 'faq', q: 'Does my NDIS website legally have to be accessible?',
         a: 'WCAG 2.1 AA is not a legal mandate written explicitly into Australian law, but the Disability Discrimination Act 1992 prohibits discriminating against people with disabilities in the provision of services — and a non-accessible website does exactly that. The Australian Human Rights Commission has investigated digital accessibility complaints. NDIS providers who receive Commonwealth funding have additional obligations. The safe answer: build to WCAG 2.1 AA from the start.' },
       { type: 'faq', q: 'How much does an NDIS website cost?',
-        a: 'Our Business package is $1,900 AUD for up to ten pages, which covers a standard NDIS provider site with one page per service type. The Unlimited package at $3,500 covers suburb pages, more service categories, and no page limit. See our detailed breakdown at /blog/ndis-website-cost/.' },
+        a: 'Our Business package is $1,900 AUD for up to ten pages, which covers a standard NDIS provider site with one page per service type. The Growth package at $3,500 covers ten pages or more: suburb pages and more service categories. See our detailed breakdown at /blog/ndis-website-cost/.' },
       { type: 'faq', q: 'Can you help me rank for NDIS-related searches?',
         a: 'Yes. We build NDIS websites with the page structure, local schema, and service-specific content that search engines reward. We also have a full guide to SEO for NDIS providers on our blog covering the specific keywords and page types that generate participant enquiries.' },
       { type: 'faq', q: 'Do I need to be a Registered Provider to get a website from you?',
@@ -1566,7 +1624,7 @@ export const LANDING_PAGES = [
       { type: 'p', html: 'Neither serves your patients well. A patient searching for a dentist on their phone at 9pm needs a fast page, an obvious phone number, and a booking link — not a slow-loading slider and a generic stock photo of someone smiling. That is what we build.' },
 
       { type: 'h2', text: 'Dental website cost in Australia (2026)' },
-      { type: 'p', html: 'Dental marketing agencies typically charge $3,000–$8,000 for a practice website, plus $200–$500/month for hosting and a CMS licence they own. Our prices are fixed and published: <strong>$1,900</strong> for a Business package (up to ten pages — home, about, services, contact, and individual treatment pages), or <strong>$3,500</strong> for unlimited pages.' },
+      { type: 'p', html: 'Dental marketing agencies typically charge $3,000–$8,000 for a practice website, plus $200–$500/month for hosting and a CMS licence they own. Our prices are fixed and published: <strong>$1,900</strong> for a Business package (up to ten pages — home, about, services, contact, and individual treatment pages), or <strong>$3,500</strong> for ten pages or more.' },
       { type: 'p', html: 'You own the source code. Hosting on Vercel is free. No ongoing platform fee, no proprietary CMS, no lock-in. The $0 hosting situation means you will be ahead on total cost within 12 months of a typical dental agency quote.' },
 
       { type: 'h2', text: 'AHPRA compliance on dental websites' },
@@ -1593,7 +1651,7 @@ export const LANDING_PAGES = [
 
       { type: 'h2', text: 'Dental website design questions' },
       { type: 'faq', q: 'How much does a dental website cost in Australia?',
-        a: 'Our Business package is $1,900 AUD for up to ten pages — home, about, services overview, individual treatment pages, and contact. Unlimited pages are $3,500. Hosting is free on Vercel. Dental marketing agencies typically charge $3,000–$8,000 plus a monthly retainer. We publish the price before any conversation.' },
+        a: 'Our Business package is $1,900 AUD for up to ten pages — home, about, services overview, individual treatment pages, and contact. Ten pages or more is $3,500. Hosting is free on Vercel. Dental marketing agencies typically charge $3,000–$8,000 plus a monthly retainer. We publish the price before any conversation.' },
       { type: 'faq', q: 'Can you integrate online booking into our dental website?',
         a: 'Yes. We integrate with HotDoc, Cliniko, Dental4Windows, and any booking system that provides an embed code or API. Online booking is the single biggest conversion improvement for most dental websites — patients who cannot book immediately often do not call back.' },
       { type: 'faq', q: 'Are patient testimonials allowed on dental websites under AHPRA guidelines?',
@@ -1875,7 +1933,7 @@ export const LANDING_PAGES = [
   ,
   {
     slug: 'affordable-website-design-small-business',
-    metaTitle: 'Affordable Website Design for Small Business AU',
+    metaTitle: 'Affordable Website Design for Small Business | From $800',
     metaDescription:
       'Affordable website design for Australian small business from $800 AUD. Fixed published prices, no monthly fee, and you own the code. Free homepage design first.',
     eyebrow: 'Affordable',
@@ -1895,7 +1953,7 @@ export const LANDING_PAGES = [
     body: [
       { type: 'h2', text: 'What affordable actually means here' },
       { type: 'p', html: 'Affordable is a word every agency uses and almost none of them define. Here is our definition: a fixed price you can read before you contact us, no monthly platform fee, and full ownership of the code so you are never paying to stay.' },
-      { type: 'p', html: 'A three to five page site is <strong>$800</strong>. Up to ten pages is <strong>$1,900</strong>. Unlimited pages is <strong>$3,500</strong>. E-commerce is <strong>$4,500</strong>. Those are the numbers, in AUD, before GST. Nothing changes unless the scope changes, and if it does we re-quote openly rather than quietly adding hours.' },
+      { type: 'p', html: 'A three to five page site is <strong>$800</strong>. Up to ten pages is <strong>$1,900</strong>. Ten pages or more is <strong>$3,500</strong>. E-commerce is <strong>$4,500</strong>. Those are the numbers, in AUD, before GST. Nothing changes unless the scope changes, and if it does we re-quote openly rather than quietly adding hours.' },
 
       { type: 'h2', text: 'Cheap is a five-year number, not a sticker price' },
       { type: 'p', html: 'There are cheaper quotes than ours in Australia. Some start under $400. If the sticker price is the only number you compare, we lose that comparison \u2014 so here is the number that actually decides what a website costs you.' },
@@ -1958,7 +2016,7 @@ export const LANDING_PAGES = [
       { type: 'faq', q: 'How much is a landing page?',
         a: 'A single landing page falls inside our Starter package at $800 AUD, which covers three to five pages — so a one-page build costs the same as a small site and you may as well use the pages. Across the market a standalone landing page runs roughly $500 to $2,500 depending on whether the design is custom and whether copy is included.' },
       { type: 'faq', q: 'How much does a small business website cost in Australia?',
-        a: 'Ours are published: $800 AUD for three to five pages, $1,900 for up to ten pages, $3,500 for unlimited pages, and $4,500 for e-commerce. Australian agencies commonly quote $3,000 to $10,000 for the same scope. Every quote is fixed in writing before work starts.' },
+        a: 'Ours are published: $800 AUD for three to five pages, $1,900 for up to ten pages, $3,500 for ten pages or more, and $4,500 for e-commerce. Australian agencies commonly quote $3,000 to $10,000 for the same scope. Every quote is fixed in writing before work starts.' },
       { type: 'faq', q: 'Is the free homepage design really free?',
         a: 'Yes. You tell us about the business, we design your homepage using your real content, and you look at it. No deposit, no commitment, no obligation to continue. It is a design rather than a working site - the build begins only if you decide to go ahead.' },
       { type: 'faq', q: 'Is a cheap website going to look cheap?',
@@ -2027,7 +2085,7 @@ export const LANDING_PAGES = [
       { type: 'p', html: 'We map every existing URL before touching anything, redirect the lot, and re-check indexing in Search Console after launch. It is unglamorous and it is the difference between a redesign that keeps your traffic and one that quietly resets it.' },
 
       { type: 'h2', text: 'What a redesign costs' },
-      { type: 'p', html: 'Same published prices as a new build, because the work is comparable — often slightly less, since the content already exists. Up to ten pages is <strong>$1,900</strong>, unlimited pages <strong>$3,500</strong>, e-commerce <strong>$4,500</strong>. All AUD, fixed in writing before anything starts.' },
+      { type: 'p', html: 'Same published prices as a new build, because the work is comparable — often slightly less, since the content already exists. Up to ten pages is <strong>$1,900</strong>, ten pages or more <strong>$3,500</strong>, e-commerce <strong>$4,500</strong>. All AUD, fixed in writing before anything starts.' },
       { type: 'p', html: 'Australian agencies typically quote $5,000 to $15,000 for a redesign of the same size. The gap is overhead rather than output, which we break down on the <a href="/affordable-website-design-small-business/" class="color-green-900">affordable website design page</a>.' },
 
       { type: 'h2', text: 'What carries over, and what does not' },
@@ -2051,7 +2109,7 @@ export const LANDING_PAGES = [
       { type: 'faq', q: 'Will a website redesign hurt my Google rankings?',
         a: 'It can, and this is the main reason redesigns go wrong. Rankings drop when URLs change without 301 redirects, when content that was ranking gets cut, or when page titles are rewritten away from what people actually search. Done properly — full URL map, redirects in place, content kept, indexing checked in Search Console afterwards — rankings carry over and usually improve, because the new site is faster.' },
       { type: 'faq', q: 'How much does a small business website redesign cost in Australia?',
-        a: 'Ours are published: $1,900 AUD for up to ten pages, $3,500 for unlimited pages, $4,500 for e-commerce. Australian agencies commonly quote $5,000 to $15,000 for the same scope. Redesigns sometimes come in slightly under a new build because the content already exists.' },
+        a: 'Ours are published: $1,900 AUD for up to ten pages, $3,500 for ten pages or more, $4,500 for e-commerce. Australian agencies commonly quote $5,000 to $15,000 for the same scope. Redesigns sometimes come in slightly under a new build because the content already exists.' },
       { type: 'faq', q: 'How long does a website redesign take?',
         a: 'Two to three weeks for up to ten pages, three to four for larger sites. The biggest variable is how quickly you approve the design and supply any new content. Your existing site stays live the whole time — we build on a private staging link and switch over only when you are happy.' },
       { type: 'faq', q: 'Can you redesign my WordPress site without rebuilding it?',
@@ -2083,7 +2141,7 @@ export const LANDING_PAGES = [
     body: [
       { type: 'h2', text: 'The prices before you ask' },
       { type: 'p', html: 'Every quote we send starts from these figures. They are published so you can rule us in or out before spending any time on a conversation.' },
-      { type: 'p', html: 'Three to five pages <strong>$800</strong>. Up to ten pages <strong>$1,900</strong>. Unlimited pages <strong>$3,500</strong>. E-commerce or a web app <strong>$4,500</strong>. Custom software from <strong>$5,000</strong>. All AUD, GST not included, hosting covered for year one. The full breakdown is on the <a href="/pricing/" class="color-green-900">pricing page</a>.' },
+      { type: 'p', html: 'Three to five pages <strong>$800</strong>. Up to ten pages <strong>$1,900</strong>. Ten pages or more <strong>$3,500</strong>. E-commerce or a web app <strong>$4,500</strong>. Custom software from <strong>$5,000</strong>. All AUD, GST not included, hosting covered for year one. The full breakdown is on the <a href="/pricing/" class="color-green-900">pricing page</a>.' },
 
       { type: 'h2', text: 'What we need from you' },
       { type: 'p', html: 'Four things. It takes about two minutes to write and you do not need to know anything technical.' },
@@ -2168,7 +2226,7 @@ export const LANDING_PAGES = [
     body: [
       { type: 'h2', text: 'What a website costs in Canberra in 2026' },
       { type: 'p', html: 'Canberra sits in an awkward place on price. Local agencies commonly quote $4,000 to $10,000 for a business website — close to Sydney rates — while the market has far fewer studios competing, so quotes are less disciplined than they would be in Melbourne or Brisbane.' },
-      { type: 'p', html: 'Ours are published and fixed: <strong>$800</strong> for three to five pages, <strong>$1,900</strong> for up to ten, <strong>$3,500</strong> for unlimited pages, <strong>$4,500</strong> for e-commerce. AUD, before GST, in writing before work starts. The wider market numbers are in <a href="/how-much-does-a-website-cost-australia/" class="color-green-900">what a website costs in Australia</a>.' },
+      { type: 'p', html: 'Ours are published and fixed: <strong>$800</strong> for three to five pages, <strong>$1,900</strong> for up to ten, <strong>$3,500</strong> for ten pages or more, <strong>$4,500</strong> for e-commerce. AUD, before GST, in writing before work starts. The wider market numbers are in <a href="/how-much-does-a-website-cost-australia/" class="color-green-900">what a website costs in Australia</a>.' },
 
       { type: 'h2', text: 'See your homepage designed before you pay anything' },
       { type: 'p', html: 'Tell us what the business does and we will design your homepage using your real name, services and photos — free, no deposit, no obligation. It is a design rather than a working site; the build starts only if you decide to go ahead. Ask from the <a href="/contact/" class="color-green-900">contact page</a>.' },
@@ -2207,7 +2265,7 @@ export const LANDING_PAGES = [
 
       { type: 'h2', text: 'Canberra web design questions' },
       { type: 'faq', q: 'How much does a website cost in Canberra?',
-        a: 'Our published prices are $800 AUD for three to five pages, $1,900 for up to ten pages, $3,500 for unlimited pages and $4,500 for e-commerce. Canberra agencies commonly quote $4,000 to $10,000 for equivalent scope. Every quote is fixed in writing before work starts.' },
+        a: 'Our published prices are $800 AUD for three to five pages, $1,900 for up to ten pages, $3,500 for ten pages or more and $4,500 for e-commerce. Canberra agencies commonly quote $4,000 to $10,000 for equivalent scope. Every quote is fixed in writing before work starts.' },
       { type: 'faq', q: 'Are you based in Canberra?',
         a: 'No. We work with Canberra businesses remotely and say so plainly rather than implying a local office. Your contact is in Australia on AEST hours, you get a live staging link from the first week, and the price is lower than a local agency carrying premises costs.' },
       { type: 'faq', q: 'Can you help my Canberra business rank in Google Maps?',

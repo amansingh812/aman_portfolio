@@ -57,7 +57,7 @@ export const INDUSTRY_PAGES = [
     pricing: [{ tier: 'business' }, { tier: 'unlimited' }],
     pricingExtras: [{ addon: 'Booking system' }, { addon: 'AI chatbot' }, { retainer: true }],
     faqs: [
-      { q: 'How much does a clinic website cost?', a: 'A clinic site with up to 10 pages is $1,900, and larger multi-practitioner sites with no page cap are $3,500. Online booking is an add-on from $700.', href: '/pricing/', link: 'See pricing' },
+      { q: 'How much does a clinic website cost?', a: 'A clinic site with up to 10 pages is $1,900, and larger multi-practitioner sites with ten or more pages are $3,500. Online booking is an add-on from $700.', href: '/pricing/', link: 'See pricing' },
       { q: 'Can patients book online?', a: 'Yes. We connect to your practice software if it offers an API, or add a standalone booking system with reminders.' },
       { q: 'Is patient data handled securely?', a: 'Forms are encrypted in transit, collect only what you need, and send to accounts you control. We explain where every form submission goes before launch.' },
       { q: 'Do you build NDIS or dental sites?', a: 'Yes, those have their own pages with the specific requirements.', href: '/ndis-website-design/', link: 'NDIS website design' },

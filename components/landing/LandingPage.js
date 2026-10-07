@@ -232,7 +232,8 @@ export default function LandingPage({ page }) {
                                     </time>
                                 </p>
                             )}
-                            <Link href="/contact/" className="btn btn-black icon-arrow-right-white mr-15">
+                            {/* Pages with an inline form scroll to it; others go to /contact/. */}
+                            <Link href={page.inlineForm ? "#quote" : "/contact/"} className="btn btn-black icon-arrow-right-white mr-15">
                                 Get a fixed quote
                             </Link>
                             <a data-loc="landing-page" href={SITE.calendly} target="_blank" rel="noopener noreferrer"
@@ -267,27 +268,6 @@ export default function LandingPage({ page }) {
                     </div>
                 </div>
             </section>
-
-            {/* ── INLINE QUOTE FORM (top) — only on pages with `inlineForm: true`.
-                Paid clicks land here (docs/GOOGLE-ADS-PLAN-2026-09-27.md); sending
-                visitors on to /contact/ cost a step on every enquiry. ── */}
-            {page.inlineForm && (
-                <section className="section-box mt-80" id="quote">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-10 mx-auto">
-                                <div className="p-40 bdrd-16" style={{ background: "#EEF6F2", border: "1px solid #DBECE5" }}>
-                                    <h2 className="text-heading-3 color-gray-900">Get a fixed quote within one business day</h2>
-                                    <p className="text-body-lead color-gray-600 mt-10 mb-30">Tell us what the business does and what the site needs to achieve. You’ll get a written scope, a fixed AUD price and a free homepage design if you want one. No call needed.</p>
-                                    <div className="row">
-                                        <ContactPageForm source={`${page.breadcrumb || page.slug} (top form)`} wrapperClass="col-lg-12" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            )}
 
             {/* ── PRICING (live from content/pricing.js) ── */}
             {tiers.length > 0 && (
@@ -365,11 +345,13 @@ export default function LandingPage({ page }) {
                 </div>
             </section>
 
-            {/* ── INLINE QUOTE FORM (bottom) — only on pages with `inlineForm: true`.
-                Paid clicks land here (docs/GOOGLE-ADS-PLAN-2026-09-27.md); sending
-                visitors on to /contact/ cost a step on every enquiry. ── */}
+            {/* ── INLINE QUOTE FORM — only on pages with `inlineForm: true`.
+                ONE form, after the prices, body and FAQs. Until 8 Oct 2026 there
+                was a second identical form directly under the hero; Aman flagged
+                the page as asking twice. The hero "Get a fixed quote" button now
+                scrolls here (#quote) instead. ── */}
             {page.inlineForm && (
-                <section className="section-box mt-80" id="quote-bottom">
+                <section className="section-box mt-80" id="quote" style={{ scrollMarginTop: 110 }}>
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-10 mx-auto">
@@ -377,7 +359,7 @@ export default function LandingPage({ page }) {
                                     <h2 className="text-heading-3 color-gray-900">Ready when you are</h2>
                                     <p className="text-body-lead color-gray-600 mt-10 mb-30">Send the details and you’ll have a scope, a fixed price and a date within one business day.</p>
                                     <div className="row">
-                                        <ContactPageForm source={`${page.breadcrumb || page.slug} (bottom form)`} wrapperClass="col-lg-12" />
+                                        <ContactPageForm source={`${page.breadcrumb || page.slug} (page form)`} wrapperClass="col-lg-12" />
                                     </div>
                                 </div>
                             </div>
