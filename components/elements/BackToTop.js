@@ -1,3 +1,6 @@
+'use client'
+/* Client component: the hover handlers below need it. It used to inherit
+   client status from Layout; Layout became a server component on 7 Oct 2026. */
 import { SITE } from '@/content/site'
 
 function WhatsAppButton() {

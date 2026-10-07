@@ -1,8 +1,8 @@
 'use client'
 import { useState } from "react"
 import Link from "next/link"
-import PerfectScrollbar from 'react-perfect-scrollbar'
-import 'react-perfect-scrollbar/dist/css/styles.css'
+/* react-perfect-scrollbar removed 7 Oct 2026: it shipped JS + CSS on every
+   page for the mobile menu; native overflow scrolling does the same job. */
 import { NAV, CTA, SITE, NAP } from "@/content/site"
 
 const Sidebar = ({ openClass }) => {
@@ -10,7 +10,7 @@ const Sidebar = ({ openClass }) => {
 
 	return (
 		<div className={`mobile-header-active mobile-header-wrapper-style perfect-scrollbar ${openClass}`}>
-			<PerfectScrollbar className="mobile-header-wrapper-inner">
+			<div className="mobile-header-wrapper-inner" style={{ height: "100%", overflowY: "auto", WebkitOverflowScrolling: "touch" }}>
 				<div className="mobile-header-top">
 					<div className="user-account">
 						<div className="content">
@@ -75,7 +75,7 @@ const Sidebar = ({ openClass }) => {
 						</div>
 					</div>
 				</div>
-			</PerfectScrollbar>
+			</div>
 		</div>
 	)
 }

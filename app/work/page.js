@@ -84,10 +84,10 @@ export default function WorkPage() {
                                                 style={{ width: "auto", height: "auto" }}
                                                 src="/assets/imgs/template/chart.png" alt="Analytics" />
                                         </div>
-                                        <Image width={0} height={0} sizes="100vw"
+                                        <Image width={0} height={0} sizes="(max-width: 992px) 60vw, 420px"
                                             style={{ width: "auto", height: "auto" }}
                                             className="img-responsive img-newsletter"
-                                            src="/assets/imgs/template/img-newsletter.png" alt="Book a call" />
+                                            src="/assets/imgs/template/img-newsletter.webp" alt="Book a call" />
                                     </div>
                                 </div>
                             </div>

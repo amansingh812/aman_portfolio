@@ -227,7 +227,12 @@ export default function Home() {
                                                 style={{ width: "100%", height: "auto" }}
                                                 src="/assets/imgs/page/services/1/banner.png"
                                                 alt="Example web app dashboard design"
-                                                priority
+                                                /* Not `priority`: this block is d-none below lg, and
+                                                   priority preloads it on phones too, competing with the
+                                                   real mobile LCP (the H1). Lazy + high fetch priority
+                                                   loads it straight away on desktop and never on mobile. */
+                                                loading="lazy"
+                                                fetchPriority="high"
                                             />
                                         </div>
                                     </div>
@@ -251,9 +256,9 @@ export default function Home() {
                             <div className="inner-image">
                                 <Image
                                     className="bdrd-16 img-responsive"
-                                    width={0} height={0} sizes="100vw"
+                                    width={0} height={0} sizes="(max-width: 992px) 100vw, 50vw"
                                     style={{ width: "100%", height: "auto" }}
-                                    src="/assets/imgs/page/homepage2/img-2.png"
+                                    src="/assets/imgs/page/homepage2/img-2.webp"
                                     alt="Build First Site — web development studio at work"
                                 />
                                 <div className="block-chart">
@@ -691,10 +696,10 @@ export default function Home() {
                                                 style={{ width: "auto", height: "auto" }}
                                                 src="/assets/imgs/template/chart.png" alt="Analytics" />
                                         </div>
-                                        <Image width={0} height={0} sizes="100vw"
+                                        <Image width={0} height={0} sizes="(max-width: 992px) 60vw, 420px"
                                             style={{ width: "auto", height: "auto" }}
                                             className="img-responsive img-newsletter"
-                                            src="/assets/imgs/template/img-newsletter.png" alt="Book a call" />
+                                            src="/assets/imgs/template/img-newsletter.webp" alt="Book a call" />
                                     </div>
                                 </div>
                             </div>

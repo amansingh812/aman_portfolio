@@ -1,31 +1,18 @@
-'use client'
-import { useState } from 'react'
+/**
+ * Site chrome. Server component since 7 Oct 2026 (performance pass 2):
+ * it used to be 'use client' only to hold the mobile-menu state, which made
+ * Header, Footer and every page wrapper hydrate as client JavaScript. That
+ * state now lives in components/layout/MobileMenu.js.
+ */
 import BackToTop from "../elements/BackToTop"
 import ConversionTracker from "../analytics/ConversionTracker"
 import Footer from "./Footer"
 import Header from "./Header"
-import Sidebar from "./Sidebar"
 
 const Layout = ({ children, headerStyle }) => {
-	const [openClass, setOpenClass] = useState('')
-
-	const handleOpen = () => {
-		document.body.classList.add("mobile-menu-active")
-		setOpenClass("sidebar-visible")
-	}
-
-	const handleRemove = () => {
-		if (openClass === "sidebar-visible") {
-			setOpenClass("")
-			document.body.classList.remove("mobile-menu-active")
-		}
-	}
 	return (
 		<>
-			<div className={openClass && "body-overlay-1"} onClick={handleRemove} />
-
-			<Header handleOpen={handleOpen} headerStyle={headerStyle} />
-			<Sidebar openClass={openClass} />
+			<Header headerStyle={headerStyle} />
 			<main className="main">
 				{children}
 			</main>

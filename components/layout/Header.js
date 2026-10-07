@@ -1,20 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
 import Image from "next/image"
 import Link from "next/link"
-import { useEffect, useState } from "react"
 import { NAV, CTA, SITE, NAP } from "@/content/site"
+import MobileMenu from "./MobileMenu"
+import StickyHeader from "./StickyHeader"
 
-const Header = ({ handleOpen, headerStyle }) => {
-	const [scroll, setScroll] = useState(false)
-
-	useEffect(() => {
-		const onScroll = () => setScroll(window.scrollY > 100)
-		window.addEventListener("scroll", onScroll, { passive: true })
-		return () => window.removeEventListener("scroll", onScroll)
-	}, [])
-
+/* Server component since 7 Oct 2026 (performance pass 2). The only
+   interactive parts are the burger menu (MobileMenu) and the scroll
+   "stick" class (StickyHeader); both are small client islands. */
+const Header = ({ headerStyle }) => {
 	return (
-		<header className={scroll ? `${headerStyle || ''} header sticky-bar stick` : `${headerStyle || ''} header sticky-bar`}>
+		<header className={`${headerStyle || ''} header sticky-bar`}>
+			<StickyHeader />
 			<div className="container">
 				<div className="main-header">
 					<div className="header-left">
@@ -23,7 +20,7 @@ const Header = ({ handleOpen, headerStyle }) => {
 								{headerStyle ? (
 									<Image width={300} height={64} alt="Build First Site" src="/assets/imgs/template/logo-white.svg" />
 								) : (
-									<Image width={885} height={230} alt="Build First Site" src="/assets/imgs/New_logo/logo.png" style={{ height: '48px', width: 'auto' }} priority />
+									<Image width={185} height={48} alt="Build First Site" src="/assets/imgs/New_logo/logo.webp" style={{ height: '48px', width: 'auto' }} priority />
 								)}
 							</Link>
 						</div>
@@ -46,9 +43,7 @@ const Header = ({ handleOpen, headerStyle }) => {
 									))}
 								</ul>
 							</nav>
-							<div className="burger-icon burger-icon-white d-block d-xl-none" onClick={handleOpen}>
-								<span className="burger-icon-top" /><span className="burger-icon-mid" /><span className="burger-icon-bottom" />
-							</div>
+							<MobileMenu />
 						</div>
 					</div>
 					{/* RIGHT-HAND COLUMN — sizing matters here.

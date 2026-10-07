@@ -32,13 +32,17 @@ export const AUTO_CSS = `
 .ac:hover .ac-ic { transform:rotate(-6deg) scale(1.06); }
 .ac-ic svg { width:26px; height:26px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
 .ac-flow { display:flex; align-items:center; flex-wrap:wrap; gap:6px; margin:4px 0 16px; }
-.ac-node { font-size:12px; font-weight:600; padding:5px 10px; border-radius:50px; background:#F2F4F7; color:#344054;
-  animation:ac-lit 4.8s infinite; }
+.ac-node { position:relative; isolation:isolate; font-size:12px; font-weight:600; padding:5px 10px; border-radius:50px; background:#F2F4F7; color:#344054; }
+/* Highlight is an overlay that fades (opacity = GPU-composited). Until 7 Oct 2026
+   this animated background/color directly, which Lighthouse flagged as a
+   non-composited animation on every card. */
+.ac-node::before { content:""; position:absolute; inset:0; border-radius:inherit; background:#DBECE5; opacity:0; z-index:-1;
+  animation:ac-lit 4.8s infinite; animation-delay:var(--d,0s); }
 .ac-arrow { position:relative; width:18px; height:2px; background:#D0D5DD; border-radius:2px; overflow:hidden; }
 .ac-arrow::after { content:""; position:absolute; top:-1px; left:-6px; width:6px; height:4px; border-radius:2px;
   background:#006D77; animation:ac-run 1.6s linear infinite; }
-@keyframes ac-run { to { left:20px; } }
-@keyframes ac-lit { 0%,18%{ background:#DBECE5; color:#006D77; } 25%,100%{ background:#F2F4F7; color:#344054; } }
+@keyframes ac-run { to { transform:translateX(26px); } }
+@keyframes ac-lit { 0%,18%{ opacity:1; } 25%,100%{ opacity:0; } }
 .ac-more { margin-top:auto; font-size:14px; font-weight:600; color:#006D77; }
 .ac-more span { display:inline-block; transition:transform .2s ease; }
 .ac:hover .ac-more span { transform:translateX(4px); }
@@ -47,23 +51,28 @@ export const AUTO_CSS = `
 .fs-4 { grid-template-columns:repeat(4,1fr); } .fs-3 { grid-template-columns:repeat(3,1fr); }
 @media (max-width:991px){ .fs-4,.fs-3{ grid-template-columns:1fr 1fr; } }
 @media (max-width:575px){ .fs-4,.fs-3{ grid-template-columns:1fr; } }
-.fs-step { position:relative; background:#fff; border:1px solid #E4E7EC; border-radius:16px; padding:24px 22px;
-  animation:fs-lit 6s infinite; }
-.fs-n { width:38px; height:38px; border-radius:50%; background:#006D77; color:#fff; display:grid; place-items:center;
-  font-weight:700; margin-bottom:14px; box-shadow:0 0 0 0 rgba(0,109,119,.35); animation:fs-pulse 6s infinite; }
-@keyframes fs-lit { 0%,22%{ border-color:#83C5BE; box-shadow:0 10px 30px rgba(0,109,119,.12); } 30%,100%{ border-color:#E4E7EC; box-shadow:none; } }
-@keyframes fs-pulse { 0%{ box-shadow:0 0 0 0 rgba(0,109,119,.35); } 15%{ box-shadow:0 0 0 10px rgba(0,109,119,0); } 100%{ box-shadow:0 0 0 0 rgba(0,109,119,0); } }
+.fs-step { position:relative; background:#fff; border:1px solid #E4E7EC; border-radius:16px; padding:24px 22px; }
+/* Lit state and pulse ring are overlays animated with opacity/transform only. */
+.fs-step::before { content:""; position:absolute; inset:-1px; border-radius:16px; border:1px solid #83C5BE;
+  box-shadow:0 10px 30px rgba(0,109,119,.12); opacity:0; pointer-events:none;
+  animation:fs-lit 6s infinite; animation-delay:var(--d,0s); }
+.fs-n { position:relative; width:38px; height:38px; border-radius:50%; background:#006D77; color:#fff; display:grid; place-items:center;
+  font-weight:700; margin-bottom:14px; }
+.fs-n::after { content:""; position:absolute; inset:0; border-radius:50%; border:2px solid rgba(0,109,119,.35); opacity:0;
+  pointer-events:none; animation:fs-pulse 6s infinite; animation-delay:var(--d,0s); }
+@keyframes fs-lit { 0%,22%{ opacity:1; } 30%,100%{ opacity:0; } }
+@keyframes fs-pulse { 0%{ transform:scale(1); opacity:1; } 15%{ transform:scale(1.55); opacity:0; } 100%{ opacity:0; } }
 .fs-step:not(:last-child)::after { content:"→"; position:absolute; right:-15px; top:34px; color:#83C5BE; font-weight:800; z-index:1; }
 @media (max-width:991px){ .fs-step::after{ display:none; } }
 
 @media (prefers-reduced-motion:reduce){
   .ac, .ac-ic, .ac-more span { transition:none; }
-  .ac-node, .ac-arrow::after, .fs-step, .fs-n { animation:none; }
+  .ac-node::before, .ac-arrow::after, .fs-step::before, .fs-n::after { animation:none; }
 }
 `
 
 /** Stagger the highlight so steps light up one after another. */
-const delay = (i, n, total) => ({ animationDelay: `${(i * total) / n}s` })
+const delay = (i, n, total) => ({ "--d": `${(i * total) / n}s` })
 
 export function AutomationCard({ offer, track = "automation_card_click", loc = "card" }) {
     const [bg, fg] = TINT[offer.id] || ["#F4FAFB", "#006D77"]

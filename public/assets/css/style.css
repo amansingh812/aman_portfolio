@@ -27,14 +27,15 @@ TABLE CONTENT
 ***/
 /* @import url(https://fonts.bunny.net/css?family=chivo:400,700|noto-sans:400,700); */
 @import url(../css/vendors/normalize.css);
-@import url(../css/vendors/bootstrap.min.css);
+/* Bootstrap trimmed 7 Oct 2026: 153 KB -> 32 KB. Full file kept as vendors/bootstrap.min.css; regenerate with node scripts/purge-bootstrap.mjs */
+@import url(../css/vendors/bootstrap.purged.css);
 @import url(../css/vendors/uicons-regular-rounded.css);
 @import url(../css/vendors/swiper-bundle.min.css);
-@import url(../css/vendors/magnific-popup.css);
-@import url(../css/vendors/select2.min.css);
-@import url(../css/vendors/perfect-scrollbar.css);
-@import url(../css/vendors/animate.min.css);
-@import url(../css/vendors/slick.css);
+/* @import url(../css/vendors/magnific-popup.css); removed 7 Oct 2026: not used by any live component */
+/* @import url(../css/vendors/select2.min.css); removed 7 Oct 2026: not used by any live component */
+/* @import url(../css/vendors/perfect-scrollbar.css); removed 7 Oct 2026 with react-perfect-scrollbar */
+/* @import url(../css/vendors/animate.min.css); removed 7 Oct 2026: not used by any live component */
+/* @import url(../css/vendors/slick.css); removed 7 Oct 2026: not used by any live component */
 @font-face {
   font-family: "uicons-regular-rounded";
   src: url("../fonts/uicons/uicons-regular-rounded.eot#iefix") format("embedded-opentype"), url("../fonts/uicons/uicons-regular-rounded.woff2") format("woff2"), url("../fonts/uicons/uicons-regular-rounded.woff") format("woff");
