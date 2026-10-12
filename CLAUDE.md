@@ -104,6 +104,10 @@ Next.js") was being quoted verbatim in cold outreach from freelancers, it sat in
 the sitewide footer, and it contradicted the direct-access positioning. Do not
 recreate it without an explicit instruction.
 
+### Price in marketing — changed 10 Oct 2026
+
+**Social, ads, cold outreach and launch videos do not mention prices.** Aman: "we want to work like a business, not pricing." Lead with what we build (websites · apps & portals · automation) and the outcome. The website keeps `/pricing/` and the cost pages, but price is not the hook anywhere else. Entry plan stays **Launch $490, quote-only**, for sales calls.
+
 ### Prices — single source of truth
 
 **`content/pricing.js` is the only place a price is defined.** Do not hardcode a
@@ -571,6 +575,40 @@ Full procedure: **`docs/SEO-PLAYBOOK.md`**. Short version:
 6. Internal links **in and out**, including the footer.
 7. Update `public/sitemap.xml` + `sitemap-index.xml`.
 8. Type-check/lint, then tell Aman to run `npm run build` locally.
+
+---
+
+## 6b. Project skills and design QA (added 9 Oct 2026)
+
+`.claude/skills/` holds the project skills; the list is in `docs/CLAUDE-SKILLS.md`. They are:
+- **Impeccable**: design critique, audit and polish.
+- **Grill Me**: pressure-test decisions before building.
+- **Brag-slim**: launch videos.
+- **Corey Haines marketing skills**: cold-email, prospecting, free-tools, cro, copywriting, seo/ai-seo, referrals and others.
+
+Context files:
+- **`PRODUCT.md`** says who the site is for. Impeccable reads it.
+- **`.agents/product-marketing.md`** holds positioning and outbound rules. Every marketing skill and every lead/cold-email agent reads it. Keep it in sync with this file and `pricing.js`. If they disagree, this file wins.
+
+Accessibility fixes from the first Impeccable pass live in **`app/a11y.css`**: focus ring, tag contrast, skip link and touch targets. Don't delete it, and don't re-add `outline:none` anywhere. The report is `docs/IMPECCABLE-CRITIQUE-2026-10.md`.
+
+New pages must pass contrast of 4.5:1 for text. Avoid these pairs:
+
+| Text | Background | Ratio |
+|---|---|---|
+| #006D77 | #BEE1E6 | 4.37 |
+| #006D77 | #83C5BE | 3.10 |
+| #BEE1E6 | #006D77 | 4.37 |
+| #98A2B3 | white | 2.58 |
+
+Use these instead:
+
+| Text | Background |
+|---|---|
+| #005F68 | #BEE1E6 |
+| #004349 | #83C5BE |
+| #E6F3F5 | #006D77 |
+| #667085 | white |
 
 ---
 

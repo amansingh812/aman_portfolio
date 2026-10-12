@@ -145,7 +145,7 @@ export default function Home() {
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-12 text-center">
-                                <span className="tag-1">Free homepage design before you commit</span>
+                                <span className="tag-1" style={{ color: "#A8411A" }}>Free homepage design before you commit</span>
                                 <h1 className="text-display-2 mt-30">
                                     Professional websites
                                     <span className="color-green-900"> built for Australian businesses.</span>
@@ -189,7 +189,7 @@ export default function Home() {
                                                 <div className="hero-float-card" style={{ padding: '26px 20px 18px', textAlign: 'center' }}>
                                                     <svg width="30" height="30" viewBox="0 0 24 24" fill="#006D77" aria-hidden="true"><path d="M21.4 11.6 12.4 2.6A2 2 0 0 0 11 2H4a2 2 0 0 0-2 2v7c0 .55.22 1.05.59 1.42l9 9a2 2 0 0 0 2.82 0l7-7a2 2 0 0 0 0-2.82zM6.5 8A1.5 1.5 0 1 1 8 6.5 1.5 1.5 0 0 1 6.5 8z"/></svg>
                                                     <div style={{ fontSize: 24, fontWeight: 500, color: '#101828', marginTop: 10 }}>{entry.priceLabel}</div>
-                                                    <div style={{ fontSize: 17, color: '#7E7A9A', marginTop: 4 }}>Websites from</div>
+                                                    <div style={{ fontSize: 17, color: '#667085', marginTop: 4 }}>Websites from</div>
                                                     <svg viewBox="0 0 200 50" style={{ width: '100%', marginTop: 8 }} aria-hidden="true"><path d="M5 25 C 35 5, 55 5, 75 25 S 115 45, 135 25 S 175 5, 195 25" fill="none" stroke="#006D77" strokeWidth="6" strokeLinecap="round"/></svg>
                                                 </div>
                                             </div>
@@ -210,7 +210,7 @@ export default function Home() {
                                                     <div style={{ textAlign: 'left' }}>
                                                         <span style={{ display: 'inline-block', background: '#006D77', color: '#fff', fontSize: 14, padding: '6px 16px', borderRadius: 999 }}>Starter build</span>
                                                         <div style={{ fontSize: 20, color: '#101828', marginTop: 18 }}>{starter.delivery}</div>
-                                                        <div style={{ fontSize: 15, color: '#98A2B3', marginTop: 4 }}>Brief to live</div>
+                                                        <div style={{ fontSize: 15, color: '#667085', marginTop: 4 }}>Brief to live</div>
                                                     </div>
                                                     <svg viewBox="0 0 200 120" style={{ width: '58%', flexShrink: 0 }} aria-hidden="true">
                                                         <defs><linearGradient id="heroFeed" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#D8A6F5"/><stop offset="1" stopColor="#D8A6F5" stopOpacity="0"/></linearGradient></defs>
@@ -368,11 +368,11 @@ export default function Home() {
                                         <span className="ac-ic" style={{ background: 'rgba(255,255,255,.14)', color: '#83C5BE' }}><Icon name="sparkle" /></span>
                                         <h3 className="text-heading-5 mb-0" style={{ color: '#fff' }}>Free automation audit</h3>
                                     </div>
-                                    <p className="text-body-text mb-15" style={{ color: '#BEE1E6' }}>
+                                    <p className="text-body-text mb-15" style={{ color: '#E6F3F5' }}>
                                         Not sure where to start? Answer four questions and get a written map of
                                         what to automate first.
                                     </p>
-                                    <span className="text-heading-6" style={{ color: '#83C5BE' }}>Start the audit →</span>
+                                    <span className="text-heading-6" style={{ color: '#E6F3F5' }}>Start the audit →</span>
                                 </div>
                             </Link>
                         </div>
@@ -669,13 +669,13 @@ export default function Home() {
                             <div className="bg-6 box-newsletter position-relative">
                                 <div className="row">
                                     <div className="col-lg-7 col-md-8">
-                                        <span className="text-body-capitalized color-gray-500 text-uppercase">
+                                        <span className="text-body-capitalized color-gray-600 text-uppercase">
                                             Ready when you are
                                         </span>
                                         <h4 className="text-heading-2 mb-10 mt-10">
                                             Ready to build?
                                         </h4>
-                                        <p className="text-body-text color-gray-500">
+                                        <p className="text-body-text color-gray-600">
                                             Tell us what you&apos;re trying to build — we&apos;ll come back with
                                             a written scope, an AUD price and a delivery date within
                                             one business day.

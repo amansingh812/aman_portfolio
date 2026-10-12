@@ -116,8 +116,11 @@ const ClientReviews = () => {
   transition:border-color .2s, background .2s; }
 .rv-btn:hover { border-color:#83C5BE; background:#F4FAFB; }
 .rv-dots { display:flex; gap:8px; margin-left:8px; }
-.rv-dot { width:9px; height:9px; border-radius:50%; border:0; padding:0;
+.rv-dot { position:relative; width:9px; height:9px; border-radius:50%; border:0; padding:0;
   background:#D0D5DD; cursor:pointer; transition:background .2s, width .2s; }
+/* 44px invisible hit area around the 9px dot (Impeccable audit, 9 Oct 2026). */
+.rv-dot::after { content:""; position:absolute; left:50%; top:50%; width:44px; height:44px;
+  transform:translate(-50%,-50%); }
 .rv-dot[aria-current="true"] { background:#006D77; width:26px; border-radius:999px; }
 
 /* ≥992px: two reviews side by side. Below this the second card is hidden and

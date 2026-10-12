@@ -441,9 +441,13 @@ export const LANDING_PAGES = [
        "south yarra" 20, "brunswick" 16, "preston" 3.4, "melbourne cbd" 10,
        "tradie web design melbourne" 19. Suburbs are SECTIONS here, not
        separate pages (CLAUDE.md §4: no scaled suburb/city pages). */
+    /* 12 Oct 2026 (GSC 3m): avg pos 46.9. preston 3.4, brunswick 9.5, st kilda 14.4,
+       tradie web design melbourne 19.2, south yarra 22.2, web developer melbourne 25.6.
+       Deepened St Kilda + South Yarra, added Richmond/Fitzroy and Footscray sections. */
     metaTitle: 'Web Design & Web Developer Melbourne | Prices From $800',
     metaDescription:
       'Melbourne web design and web developer with published prices: $800, $1,900 or $3,500. Custom sites, local SEO, you own the code. Free homepage design first.',
+    lastUpdated: '2026-10-12',
     eyebrow: 'MELBOURNE, VICTORIA',
     h1: 'Web Design Melbourne: a Web Developer With Published Prices',
     lead:
@@ -492,7 +496,7 @@ export const LANDING_PAGES = [
       },
       { type: 'p', html: 'Full package details are on the <a href="/pricing/" class="color-green-900">pricing page</a>, and <a href="/how-much-does-a-website-cost-australia/" class="color-green-900">what a website costs in Australia</a> explains why Melbourne quotes for the same scope range so widely.' },
 
-      { type: 'h2', text: 'Hiring a web developer in Melbourne, without the agency overhead' },
+      { type: 'h2', text: 'Web developer in Melbourne: hire direct, without the agency overhead' },
       { type: 'p', html: 'When you search for a web developer in Melbourne you mostly find agencies: a salesperson, an account manager and a project coordinator between you and whoever writes the code. Here you deal directly with the engineer who builds your site, and your day-to-day contact is in Melbourne for meetings and calls. No hand-offs and no office rent built into your quote. That is how a custom site starts at $800 here, against $5,000+ from a CBD agency.' },
       { type: 'ul', items: [
         '<strong>Web design and web development in one place.</strong> The same person designs the pages and builds them, so nothing gets lost between a designer\'s mock-up and a developer\'s interpretation.',
@@ -504,15 +508,21 @@ export const LANDING_PAGES = [
       { type: 'p', html: 'Your contact is Melbourne-based, so a first meeting in person is easy anywhere in the metro area. After that, most projects run over calls and a live preview link. What changes from suburb to suburb is not the price but what your customers are searching for, so here is what we focus on in the areas we hear from most.' },
       { type: 'h3', text: 'St Kilda and Elwood' },
       { type: 'p', html: 'Hospitality, wellness and short-stay businesses dominate around Fitzroy Street and Acland Street, and most customers find them on a phone while already nearby. For St Kilda web design that means menus and service lists as real pages rather than PDFs, booking without platform commission, and a Google Business Profile that matches the site hour for hour.' },
+      { type: 'p', html: 'Trade here swings with the weather, the beach and events on the foreshore, so the details that change most often (opening hours, specials, class timetables) should be editable by you in minutes, not via an email to an agency. Many visitors are tourists and backpackers searching "near me", which rewards clear location pages, map links and fast loading on patchy mobile data.' },
       { type: 'h3', text: 'South Yarra, Prahran and Toorak' },
       { type: 'p', html: 'Chapel Street and Toorak Road are full of salons, clinics, boutiques and studios competing on presentation. A South Yarra business website has to look as considered as the shopfront and take bookings or orders directly. Online stores here are usually worth building on your own checkout rather than paying a platform a cut of every sale.' },
+      { type: 'p', html: 'For appointment-based businesses (hair, beauty, skin clinics, personal training), the website should push people to book, not to call: live availability, deposits for no-show protection where it makes sense, and reminders that cut empty slots. For clinics we also keep advertising compliance in mind, since health services cannot use testimonials the way a boutique can.' },
       { type: 'h3', text: 'Brunswick, Coburg and Northcote' },
       { type: 'p', html: 'Independent cafés, makers, studios and trades along Sydney Road, Lygon Street and High Street. These businesses often sell to locals and online at the same time, so we build sites that combine a simple shop or enquiry form with strong local search for the suburb name.' },
       { type: 'h3', text: 'Preston and Reservoir' },
       { type: 'p', html: 'Trades, home services, family businesses and the shops around High Street and the Preston Market. Here the job of the website is a phone call: tap-to-call on every screen, the suburbs you cover listed plainly, and a quote form that asks the right questions. Our Melbourne contact is based in this part of the north.' },
+      { type: 'h3', text: 'Richmond, Fitzroy and Collingwood' },
+      { type: 'p', html: 'Swan Street, Bridge Road, Brunswick Street and Smith Street mix hospitality, independent retail, creative studios and a growing number of small tech and design businesses. Brand matters here, so a Richmond or Fitzroy website should not look like a template. It also has to handle event bookings, gift cards or online orders without sending customers to a third-party page that looks nothing like the brand.' },
+      { type: 'h3', text: 'Footscray and the inner west' },
+      { type: 'p', html: 'Footscray, Yarraville, Seddon and Williamstown are full of family-run restaurants, grocers, trades and service businesses, many serving customers in more than one language. A Footscray business website often benefits from key pages in a second language, clear prices or menus, and a simple way to call or message straight from the page.' },
       { type: 'h3', text: 'Melbourne CBD, Southbank and Docklands' },
       { type: 'p', html: 'Professional services, consultants, accountants and law practices, plus hospitality aimed at office workers. CBD sites need to read as credible in the first few seconds and make booking a consultation simple. They also face the most competition in search, so the structure and page speed have to be right from launch.' },
-      { type: 'p', html: 'We also work with businesses in Richmond, Fitzroy, Carlton, Hawthorn, Camberwell, Box Hill, Glen Waverley, Footscray, Williamstown, Dandenong, Frankston and Geelong. Wherever you are, the price and the process are the same.' },
+      { type: 'p', html: 'We also work with businesses in Carlton, Hawthorn, Camberwell, Box Hill, Glen Waverley, Dandenong, Frankston and Geelong. Wherever you are, the price and the process are the same.' },
 
       { type: 'h2', text: 'Tradie web design in Melbourne' },
       { type: 'p', html: 'A large share of the Melbourne businesses we hear from are trades: plumbers, electricians, builders and landscapers. Their sites need one thing above everything else, which is turning a search into a phone call. Tap-to-call fixed on mobile, service-area sections for the suburbs you actually cover, and a quote form that asks for job type, suburb and photos. The full approach is on our <a href="/tradie-website-design/" class="color-green-900">tradie website design</a> page.' },
@@ -530,7 +540,7 @@ export const LANDING_PAGES = [
         a: 'Send a short description of your business and what the site needs to do through the form on this page, or book a free call. Within one business day you get a written scope with a fixed AUD price, and we design your homepage free before you commit. You work directly with the developer building the site, with a Melbourne-based contact for meetings.' },
       { type: 'faq', q: 'What is the difference between a web designer and a web developer?',
         a: 'A web designer decides how the site looks and how people move through it; a web developer builds it so it works, loads fast and can be found on Google. Many Melbourne agencies split the two between different people. Here the same person does both, which removes the hand-off where most projects lose time.' },
-      { type: 'faq', q: 'Do you work with businesses in Preston, Brunswick, St Kilda or South Yarra?',
+      { type: 'faq', q: 'Do you work with businesses in Preston, Brunswick, St Kilda, South Yarra, Richmond or Footscray?',
         a: 'Yes. We work with businesses right across Melbourne, including the inner north and inner south. The first meeting can be in person; after that most of the work runs over calls and a live preview link, so your suburb makes no difference to price or timing.' },
       { type: 'faq', q: 'Can you set up our Google Business Profile in Melbourne?',
         a: 'Yes. Google Business Profile setup is included with every build: categories, service areas, hours and the link back to your site. It is the single biggest factor for showing up in Google Maps results for your suburb.' },
@@ -568,7 +578,7 @@ export const LANDING_PAGES = [
     body: [
       { type: 'h2', text: 'Why Sydney web design quotes are the highest in Australia' },
       { type: 'p', html: 'Sydney has the most expensive commercial rents in the country, and agency pricing reflects it. A five-page business website that costs $2,000 in Adelaide is routinely quoted at $8,000 to $15,000 in the Sydney CBD. The build is the same. What differs is the overhead sitting behind it — office space in Surry Hills or North Sydney, an account manager, a project coordinator and a sales team all get costed into your quote before anyone writes a line of code.' },
-      { type: 'p', html: 'That overhead buys you a meeting room. It does not make the website faster, rank better or convert more visitors — the <a href="/freelancer-vs-web-design-agency/" class="color-green-900">freelancer vs agency comparison</a> breaks down where the money actually goes. We work remotely from Melbourne, which is why our prices are published and start at $800.' },
+      { type: 'p', html: 'That overhead buys you a meeting room. It does not make the website faster, rank better or convert more visitors — the <a href="/freelancer-vs-web-design-agency/" class="color-green-900">freelancer vs agency comparison</a> breaks down where the money actually goes. We work remotely, with your day-to-day contact based in Melbourne, which is why our prices are published and start at $800.' },
       { type: 'p', html: 'Sydney is also the most crowded market for web designers in Australia, which is genuinely good news for you — you can compare our <a href="/pricing/" class="color-green-900">published prices</a> against any quote you receive: it means you can compare several published quotes before committing. Ask every one of them for a fixed price in writing, and ask whether you own the code.' },
 
       { type: 'h2', text: 'What we build for Sydney businesses' },
@@ -1079,8 +1089,12 @@ export const LANDING_PAGES = [
     /* Sprint A (7 Oct 2026). GSC: "hire someone to build a website" pos 39.5,
        "pay someone to build a website" 26, "small business website builder" 11.4,
        "hire a website builder" 6.5, "build a small business website" 10. */
+    /* 12 Oct 2026 (GSC 3m AU): avg pos 36.9. "need someone to make me a website" 8.7,
+       "small business website builder" 10.9, "website developers australia" 12,
+       "website developers for small business" 24.5, "hire someone to build a website" 30.4. */
     metaDescription:
-      'Hire or pay someone to build your small business website in Australia. Fixed AUD prices from $800, free homepage design first, and you own the code.',
+      'Need someone to make you a website? Hire website developers for small business in Australia: fixed AUD prices, free homepage design first, and you own the code.',
+    lastUpdated: '2026-10-12',
     eyebrow: 'Australia · Professional Website Builder',
     h1: 'Hire someone to build your website',
     lead:
@@ -1096,6 +1110,24 @@ export const LANDING_PAGES = [
     body: [
       { type: 'h2', text: 'What website developers for small business should actually give you' },
       { type: 'p', html: 'Most small businesses do not need an agency. They need a developer who returns calls, quotes a fixed number, and hands over the code at the end. That is the whole job, and it is what this page is about. Our prices are published on the <a href="/pricing/" class="color-green-900">pricing page</a> and start at $800, and the <a href="/affordable-website-design-small-business/" class="color-green-900">affordable small business page</a> explains how that number is possible.' },
+      { type: 'h2', text: 'Website developers for small business in Australia: who you actually deal with' },
+      { type: 'p', html: 'When you search for website developers in Australia you mostly find agencies, where a salesperson takes the brief and the build is passed along the chain. With us there is no chain. You deal directly with the engineer who writes your code, and your day-to-day contact for calls and paperwork is in Australia. That is why a quote comes back in one business day and a change request does not need a meeting.' },
+      { type: 'ul', items: [
+        '<strong>One accountable builder</strong> from the first call to launch, and after it.',
+        '<strong>Built for small business budgets:</strong> fixed price per scope, no hourly billing, and you can pay in instalments.',
+        '<strong>Small business features that matter:</strong> click-to-call, quote and booking forms, Google Business Profile setup, and fast loading on phones, where most Australian visitors are.',
+        '<strong>Proof you can check:</strong> the <a href="/work/" class="color-green-900">live sites we have built</a>, not mock-ups.',
+      ]},
+
+      { type: 'h2', text: 'Need someone to make you a website? Start here' },
+      { type: 'p', html: 'If you have never hired anyone for this before, the process is shorter than people expect:' },
+      { type: 'ol', items: [
+        '<strong>Send a two-line brief:</strong> what the business does and what the site should get people to do (call, book, buy, enquire). Use the <a href="/free-homepage-design/" class="color-green-900">free homepage design form</a> or <a href="/contact/" class="color-green-900">contact us</a>.',
+        '<strong>See your homepage designed</strong> in about two business days, before you pay anything.',
+        '<strong>Get a fixed written quote</strong> for the full site, with pages and timeline listed.',
+        '<strong>Approve, review on a live link, launch.</strong> The code, domain and hosting are in your name.',
+      ]},
+
       { type: 'h2', text: 'Where can you hire someone to build a website?' },
       { type: 'p', html: 'There are four realistic routes in Australia, and the honest differences between them are rarely written down by the people selling each one. Here they are.' },
       { type: 'table',
@@ -1181,6 +1213,10 @@ export const LANDING_PAGES = [
       { type: 'p', html: 'Before you hire anyone: <a href="/freelancer-vs-web-design-agency/" class="color-green-900">freelancer vs agency</a>, <a href="/how-much-does-a-website-cost-australia/" class="color-green-900">what a website costs</a>.' },
 
       { type: 'h2', text: 'Common questions' },
+      { type: 'faq', q: 'How do I find good website developers for my small business in Australia?',
+        a: 'Look past the portfolio screenshots. Open two or three of their live sites on your phone, ask who owns the code at the end, ask for a fixed written price instead of an hourly estimate, and ask who will fix things after launch. A good small business developer answers all four in writing. We publish our prices, show live client sites, hand over the full code, and design your homepage free before you commit.' },
+      { type: 'faq', q: 'I need someone to make me a website. Where do I start?',
+        a: 'Write two lines: what your business does, and what you want visitors to do (call, book, buy or enquire). Send that through our free homepage design form. You see your homepage designed in about two business days, then get a fixed written quote for the whole site. There is nothing to pay until you approve the quote.' },
       { type: 'faq', q: 'What is the average cost to hire someone to build a website?',
         a: 'In Australia, roughly $800 to $5,000 AUD for a small business site built by an independent developer or small studio, and $5,000 to $15,000 from a full agency for the same scope. Marketplace freelancers advertise lower, often $200 to $1,500, with quality that varies more than the price does. Our published prices are $800 for three to five pages, $1,900 for up to ten, $3,500 for ten or more and $4,500 for e-commerce, payable in four instalments.' },
       { type: 'faq', q: 'Is it worth paying someone to build a website?',

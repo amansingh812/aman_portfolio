@@ -12,8 +12,9 @@ import Header from "./Header"
 const Layout = ({ children, headerStyle }) => {
 	return (
 		<>
+			<a href="#main-content" className="skip-link">Skip to content</a>
 			<Header headerStyle={headerStyle} />
-			<main className="main">
+			<main className="main" id="main-content">
 				{children}
 			</main>
 			<Footer />

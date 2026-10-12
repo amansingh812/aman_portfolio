@@ -1,0 +1,57 @@
+/*
+ * Accessibility fixes from the Impeccable critique/audit, 9 Oct 2026
+ * (docs/IMPECCABLE-CRITIQUE-2026-10.md). Loaded after the Agon template CSS.
+ * Rule: keep the look; only fix contrast, focus and touch targets.
+ */
+
+/* 1. Keyboard focus. The template sets `*:focus { outline:none !important }`
+      site-wide, so keyboard users could not see where they were (WCAG 2.4.7).
+      :focus-visible only shows for keyboard, so mouse users see no change. */
+:focus-visible {
+  outline: 2px solid #006D77 !important;
+  outline-offset: 3px !important;
+}
+.ap-hero :focus-visible,
+.ap-cta :focus-visible,
+.pr-custom :focus-visible,
+.bfs-cta-box :focus-visible,
+.footer-dark :focus-visible {
+  outline-color: #ffffff !important;
+}
+
+/* 2. Teal eyebrow tags: #006D77 on #BEE1E6 was 4.37:1 at 12–14px.
+      #005F68 is the same teal, one step darker: 5.32:1. */
+.tag-1.bg-6.color-green-900,
+.home-price-chip,
+.pr-badge {
+  color: #005F68 !important;
+}
+
+/* 3. Skip link (hidden until focused). */
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -60px;
+  z-index: 100000;
+  background: #101828;
+  color: #fff !important;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+.skip-link:focus { top: 12px; }
+
+/* 4. Touch targets on phones (≥44px hit area, icons unchanged). */
+.burger-icon {
+  box-sizing: content-box;
+  padding: 12px 10px;
+  margin: -12px -10px;
+}
+@media (max-width: 767px) {
+  .footer a.color-gray-900,
+  .footer a.color-gray-500,
+  .footer .menu-footer a {
+    display: inline-block;
+    padding: 6px 0;
+  }
+}

@@ -33,6 +33,10 @@ export function buildAutomationMetadata(page) {
 }
 
 const css = `
+/* Hero CTA: #B8461A keeps the orange but passes contrast (5.34:1); hover uses the template light style. */
+.ap-cta-orange { background-color:#B8461A !important; border-color:#B8461A !important; color:#fff !important; }
+.ap-cta-orange:hover { background-color:#F2F4F7 !important; border-color:#F2F4F7 !important; color:#101828 !important; }
+@media (max-width:575px){ .ap-hero h1{ font-size:38px !important; line-height:44px !important; } }
 .ap-hero { background:radial-gradient(1000px 440px at 85% 0%, rgba(0,109,119,.45), transparent 60%), #101828; padding:36px 0 80px; }
 .ap-hero .crumbs a, .ap-hero .crumbs span { color:#98A2B3 !important; }
 .ap-grid { display:grid; grid-template-columns:1.15fr .85fr; gap:50px; align-items:center; margin-top:26px; }
@@ -146,7 +150,7 @@ export default function AutomationPage({ page }) {
                             <p className="text-body-lead-large ap-muted mb-25">{page.lead}</p>
                             <div className="mb-25">{page.heroPoints.map((p) => <span key={p} className="ap-pill">✓ {p}</span>)}</div>
                             <Link href="/free-automation-audit/" data-event="automation_audit_cta" data-package={page.slug}
-                                className="btn btn-black icon-arrow-right-white mr-10 mb-10" style={{ background: "#D9541A", borderColor: "#D9541A" }}>
+                                className="btn btn-black icon-arrow-right-white mr-10 mb-10 ap-cta-orange">
                                 Get my free automation audit
                             </Link>
                             <a data-loc={`automation-${page.slug}`} href={SITE.calendly} target="_blank" rel="noopener noreferrer" className="btn ap-ghost mb-10">
@@ -294,6 +298,17 @@ export default function AutomationPage({ page }) {
                                 <p className="text-body-text color-gray-600 mb-0">{f.a}</p>
                             </div>
                         ))}
+                        {page.readMore?.length > 0 && (
+                            <p className="text-body-text color-gray-600 mt-30 mb-0">
+                                Further reading:{" "}
+                                {page.readMore.map((r, i) => (
+                                    <span key={r.href}>
+                                        {i > 0 && " · "}
+                                        <Link href={r.href} className="color-green-900">{r.label}</Link>
+                                    </span>
+                                ))}
+                            </p>
+                        )}
                     </div></div>
                 </div>
             </section>
@@ -322,11 +337,11 @@ export default function AutomationPage({ page }) {
                 <div className="container">
                     <div className="ap-cta">
                         <h2 className="text-heading-2 ap-white mb-15">See what this would look like for your business</h2>
-                        <p className="text-body-lead-large mb-30" style={{ color: "#BEE1E6" }}>
+                        <p className="text-body-lead-large mb-30" style={{ color: "#E6F3F5" }}>
                             Answer four questions and get a written automation map with a fixed price. Free, no obligation.
                         </p>
                         <Link href="/free-automation-audit/" data-event="automation_audit_cta" data-package={`${page.slug}-cta`}
-                            className="btn mr-10 mb-10" style={{ background: "#83C5BE", color: "#006D77" }}>
+                            className="btn mr-10 mb-10" style={{ background: "#83C5BE", color: "#004349" }}>
                             Get my free automation audit
                         </Link>
                         <Link href="/contact/" className="btn btn-default mb-10">Get a quote</Link>

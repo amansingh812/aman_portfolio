@@ -77,7 +77,7 @@ export default function ContactPageForm({
                 <div className="p-40 bdrd-16 text-center" style={{ background: '#FEF2F2' }}>
                     <h3 className="text-heading-4 color-gray-900">Something went wrong</h3>
                     <p className="text-body-text color-gray-600 mt-15">
-                        Please email us directly at contact@buildfirstsite.com
+                        Please email us directly at <a href="mailto:contact@buildfirstsite.com">contact@buildfirstsite.com</a>
                     </p>
                     <button className="btn btn-black mt-20" onClick={() => setStatus("idle")}>Try again</button>
                 </div>
@@ -92,12 +92,14 @@ export default function ContactPageForm({
                     <div className="col-lg-6">
                         <div className="form-group">
                             <input className="form-control" name="name" placeholder="Your name" required
+                                aria-label="Your name" autoComplete="name"
                                 value={form.name} onChange={handleChange} />
                         </div>
                     </div>
                     <div className="col-lg-6">
                         <div className="form-group">
-                            <input className="form-control" name="company"
+                            <input className="form-control" name="company" autoComplete="organization"
+                                aria-label={isDesign ? "Business name" : "Company (optional)"}
                                 placeholder={isDesign ? "Business name" : "Company (optional)"}
                                 required={isDesign}
                                 value={form.company} onChange={handleChange} />
@@ -106,19 +108,22 @@ export default function ContactPageForm({
                     <div className="col-lg-6">
                         <div className="form-group">
                             <input className="form-control" type="email" name="email" placeholder="Your email" required
+                                aria-label="Your email" autoComplete="email"
                                 value={form.email} onChange={handleChange} />
                         </div>
                     </div>
                     <div className="col-lg-6">
                         <div className="form-group">
-                            <input className="form-control" name="phone" placeholder="Phone number"
+                            <input className="form-control" type="tel" inputMode="tel" name="phone" placeholder="Phone number"
+                                aria-label="Phone number (optional)" autoComplete="tel"
                                 value={form.phone} onChange={handleChange} />
                         </div>
                     </div>
                     {isDesign && (
                         <div className="col-lg-12">
                             <div className="form-group">
-                                <input className="form-control" name="website"
+                                <input className="form-control" type="url" inputMode="url" name="website" autoComplete="url"
+                                    aria-label="Current website, if you have one (optional)"
                                     placeholder="Current website, if you have one (optional)"
                                     value={form.website} onChange={handleChange} />
                             </div>
@@ -127,6 +132,7 @@ export default function ContactPageForm({
                     <div className="col-lg-12">
                         <div className="form-group">
                             <textarea className="form-control" name="message"
+                                aria-label={isDesign ? "What your business does and what the website should help with" : "About your project"}
                                 placeholder={isDesign
                                     ? "What does your business do, and what should the website help with?"
                                     : "Tell us about your project — what you want to build, timeline, budget"}

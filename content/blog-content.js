@@ -1,10 +1,10 @@
 export const BLOG_CONTENT = {
   "best-web-design-agencies-australia": {
-    "lead": "Four Australian web design agencies, compared on published prices, technology and code ownership. We're one of the four — so here's our weakness up front, and every figure linked to its source.",
+    "lead": "Six Australian web design agencies, compared on published prices, technology and code ownership. We're one of the four — so here's our weakness up front, and every figure linked to its source.",
     "content": [
       {
         "type": "p",
-        "html": "Comparison · Australia · Updated August 2026"
+        "html": "Comparison · Australia · Updated October 2026"
       },
       {
         "type": "p",
@@ -12,7 +12,7 @@ export const BLOG_CONTENT = {
       },
       {
         "type": "p",
-        "html": "We compared four Australian agencies on the things that actually decide the outcome: what they charge, what technology they build on, whether you end up owning the site, and how much verifiable proof exists that they do good work. Prices were checked on <strong>7 August 2026</strong> and agencies change them, so verify before you commit."
+        "html": "We compared six Australian agencies on the things that actually decide the outcome: what they charge, what technology they build on, whether you end up owning the site, and how much verifiable proof exists that they do good work. Prices were re-checked on <strong>12 October 2026</strong> and agencies change them, so verify before you commit."
       },
       {
         "type": "h2",
@@ -20,7 +20,7 @@ export const BLOG_CONTENT = {
       },
       {
         "type": "p",
-        "html": "Three of the four publish a price list. One doesn't. That alone tells you something about how each of them sells."
+        "html": "Five of the six publish a price list. One doesn't. That alone tells you something about how each of them sells."
       },
       {
         "type": "table",
@@ -48,10 +48,24 @@ export const BLOG_CONTENT = {
           ],
           [
             "Havealook",
-            "$995",
+            "$995 (incl. hosting & GST)",
             "$1,995",
             "Quote",
             "Static HTML + own CMS"
+          ],
+          [
+            "Alta Image (Melbourne)",
+            "$1,295 (2–3 pages)",
+            "$1,695–$2,995",
+            "From $2,495",
+            "CMS (platform not stated)"
+          ],
+          [
+            "Let's Build A Website (Sydney)",
+            "$1,250 (5 pages)",
+            "Quote",
+            "Quote",
+            "WordPress"
           ],
           [
             "Growth Digital",
@@ -64,7 +78,7 @@ export const BLOG_CONTENT = {
       },
       {
         "type": "p",
-        "html": "The headline range for a standard small business website in Australia is roughly <strong>$2,000 to $2,300</strong> across the agencies that publish figures. That's a useful anchor, because larger Australian agencies routinely quote $10,000 to $50,000 for work in the same category. If you've been quoted five figures for a brochure site, this table is your evidence that you're being overcharged."
+        "html": "The headline range for a standard small business website in Australia is roughly <strong>$1,250 to $2,300</strong> across the agencies that publish figures. That's a useful anchor, because larger Australian agencies routinely quote $10,000 to $50,000 for work in the same category. If you've been quoted five figures for a brochure site, this table is your evidence that you're being overcharged."
       },
       {
         "type": "h2",
@@ -202,15 +216,47 @@ export const BLOG_CONTENT = {
       },
       {
         "type": "h2",
+        "text": "Alta Image — Melbourne packages with a wide middle"
+      },
+      {
+        "type": "p",
+        "html": "<strong>Melbourne · fixed packages published on their pricing page</strong>"
+      },
+      {
+        "type": "p",
+        "html": "Alta Image publishes a clear ladder on its <a href=\"https://altaimage.com.au/web-design-prices-melbourne/\" rel=\"nofollow noopener\" target=\"_blank\">pricing page</a>: <strong>$1,295</strong> for a 2–3 page \"Quick Web Launch\" with a CMS, forms and SEO basics, <strong>$1,695</strong> for 3–4 pages, <strong>$1,895</strong> for an extended design, <strong>$2,995</strong> for their lead-generation package, and online stores <strong>from $2,495</strong>. Redesigns and bespoke builds are quoted. For a Melbourne business that wants a fixed price and a CMS to edit, it is an easy package to compare."
+      },
+      {
+        "type": "p",
+        "html": "<strong>The thing to ask about:</strong> the page counts are small for the price (2–4 pages at the lower tiers), and the pricing page does not say which CMS the site is built on or whether you can move it to another host. Ask both before you sign."
+      },
+      {
+        "type": "h2",
+        "text": "Let's Build A Website — Sydney WordPress builds"
+      },
+      {
+        "type": "p",
+        "html": "<strong>Sydney · WordPress · small business package published</strong>"
+      },
+      {
+        "type": "p",
+        "html": "Their <a href=\"https://www.letsbuildawebsite.com.au/small-business-website-design/\" rel=\"nofollow noopener\" target=\"_blank\">small business page</a> lists a custom-designed <strong>5-page WordPress site for $1,250</strong> with a contact form, social media links, professional images and a 14-day delivery. It is one of the clearer entry prices in Sydney, where most agencies only quote."
+      },
+      {
+        "type": "p",
+        "html": "<strong>The thing to ask about:</strong> WordPress sites need plugin and security updates for as long as they run. Ask who does that, what it costs per month, and whether hosting is included, so you compare the full yearly cost rather than the build price alone."
+      },
+      {
+        "type": "h2",
         "text": "Build First Site — that's us"
       },
       {
         "type": "p",
-        "html": "<strong>Australian contact, engineering by the founder · Next.js and React · no Google reviews yet</strong>"
+        "html": "<strong>Australian contact, engineering by the founder · Next.js and React · a newer studio with far fewer reviews</strong>"
       },
       {
         "type": "p",
-        "html": "We'll state our weakness first, because you'd find it anyway: <strong>Build First Site has no Google reviews.</strong> Havealook has 300. If review volume is your deciding factor, they win and we're not going to pretend otherwise."
+        "html": "We'll state our weakness first, because you'd find it anyway: <strong>Build First Site is newer and has only a handful of Google reviews.</strong> Havealook has 300. If review volume is your deciding factor, they win and we're not going to pretend otherwise."
       },
       {
         "type": "p",
@@ -312,6 +358,11 @@ export const BLOG_CONTENT = {
         "type": "faq",
         "q": "How much should a small business website cost in Australia in 2026?",
         "a": "Based on published prices from the agencies compared here, a standard small business website costs between $995 and $2,300. E-commerce sites run from roughly $4,000. Quotes of $10,000 or more are common from larger agencies but are not the market rate for a straightforward business site."
+      },
+      {
+        "type": "faq",
+        "q": "Which Australian web design agencies publish their prices?",
+        "a": "Of the six compared here, five publish prices on their own websites: Build First Site, Aussify Web Design, Havealook, Alta Image and Let's Build A Website. Growth Digital publishes pricing models but no figures. Published entry prices ranged from $800 to $1,295 when checked on 12 October 2026."
       },
       {
         "type": "faq",
@@ -661,7 +712,7 @@ export const BLOG_CONTENT = {
       },
       {
         "type": "p",
-        "html": "We audit and rebuild Australian small business websites. Fixed price, 2–3 week delivery, full code ownership. Free quote within 24 hours."
+        "html": "We audit and rebuild Australian small business websites. Fixed price, 2–3 week delivery, full code ownership. Free quote within 24 hours. If you would rather <a href=\"/hire-website-builder/\" class=\"color-green-900\">hire someone to build the website</a> than fix these yourself, that page explains what to ask before you pay anyone."
       },
       {
         "type": "p",
@@ -1199,7 +1250,7 @@ export const BLOG_CONTENT = {
       },
       {
         "type": "p",
-        "html": "A website is not a static object set up once and forgotten. Continuous health monitoring ensures your platform stays secure, compliant, and indexed correctly on search engines."
+        "html": "A website is not a static object set up once and forgotten. Continuous health monitoring ensures your platform stays secure, compliant, and indexed correctly on search engines. If you plan to <a href=\"/hire-website-builder/\" class=\"color-green-900\">hire a website developer for your small business</a>, ask who handles this after launch before you sign."
       },
       {
         "type": "ul",
@@ -1427,7 +1478,7 @@ export const BLOG_CONTENT = {
 
       {"type": "h2", "text": "Where we sit, disclosed"},
       {"type": "p", "html": "For transparency, since this is our blog: our own prices are $800 for three to five pages, $1,900 for up to ten, $3,500 for ten pages or more and $4,500 for e-commerce, all AUD and published on the <a href=\"/pricing/\" class=\"color-green-900\">pricing page</a>. That sits below the $5,000 to $15,000 market band for a comparable page count, and the reason is the overhead table further up — no office, no sales layer, no discovery phase billed back to you."},
-      {"type": "p", "html": "That is one data point among the ranges above, not the point of the article. If you want the full commercial detail we keep it on <a href=\"/affordable-website-design-small-business/\" class=\"color-green-900\">affordable website design for small business</a> and <a href=\"/how-much-does-a-website-cost-australia/\" class=\"color-green-900\">what a website costs in Australia</a>. If you want to sanity-check any provider including us, the <a href=\"/small-business-website-checklist/\" class=\"color-green-900\">small business website checklist</a> is a neutral way to do it."},
+      {"type": "p", "html": "If you are at the point of choosing someone, our guide to <a href=\"/hire-website-builder/\" class=\"color-green-900\">hiring someone to build a website</a> lists what a quote should include. That is one data point among the ranges above, not the point of the article. If you want the full commercial detail we keep it on <a href=\"/affordable-website-design-small-business/\" class=\"color-green-900\">affordable website design for small business</a> and <a href=\"/how-much-does-a-website-cost-australia/\" class=\"color-green-900\">what a website costs in Australia</a>. If you want to sanity-check any provider including us, the <a href=\"/small-business-website-checklist/\" class=\"color-green-900\">small business website checklist</a> is a neutral way to do it."},
 
       {"type": "h2", "text": "Frequently asked questions"},
       {"type": "faq", "q": "What is the average cost of website design for small business in Australia?", "a": "Between $6,500 and $10,000 AUD is the commonly cited market average in 2026, and $5,000 to $15,000 is the usual band for a 6 to 10 page professional site. The full spread runs from about $500 for a DIY platform build to $50,000 or more from a creative agency. Provider type moves the number more than the website itself does."},
@@ -2136,6 +2187,95 @@ export const BLOG_CONTENT = {
       {"type": "faq", "q": "Is WCAG 2.1 AA legally required for NDIS provider websites?", "a": "Not explicitly mandated in one law, but the Disability Discrimination Act 1992 prohibits discriminating against people with disabilities in the provision of services. The Australian Human Rights Commission has investigated digital accessibility complaints. Building to WCAG 2.1 AA is the legally safe position."},
       {"type": "faq", "q": "How long does a WCAG audit take?", "a": "For a 10-page NDIS website, our 8-step audit takes 4–6 hours for the first pass and 1–2 hours for the re-audit after fixes. Automated tools handle step 1 in minutes. Keyboard and screen reader tests take the most time."},
       {"type": "faq", "q": "Can automated tools like axe catch all WCAG issues?", "a": "No. Automated tools catch around 30–40% of WCAG 2.1 AA issues. The other 60–70% require human judgement — does the alt text actually describe the image? Is the keyboard navigation order logical? Automated tools are step one, not the whole process."}
+    ]
+  },
+
+  "ai-receptionist-australia-cost": {
+    lead:
+      "An AI receptionist in Australia costs about $95 to $600 a month on published plans, plus setup fees of up to $3,500 on some. A full-time human receptionist costs over $5,000 a month in salary alone. But if your real problem is missed calls rather than call volume, a missed-call text-back can cover it for around $20 a month in running costs.",
+    content: [
+      {"type": "p", "html": "AI &amp; Automation · Australia · Prices checked 8 October 2026 · By Aman Singh"},
+      {"type": "p", "html": "<strong>Disclosure up front:</strong> we don't sell an AI receptionist subscription. We build websites and small automations, including missed-call text-back. That means we have no plan to push in the comparison below, but we do have a bias towards the simpler option. Every price links to the provider's own page so you can check it."},
+
+      {"type": "h2", "text": "Key takeaways"},
+      {"type": "ul", "items": [
+        "Published AI receptionist plans in Australia start around <strong>$95/month</strong> and run to <strong>$600/month</strong> for higher call allowances. Several add a one-off setup or training fee.",
+        "Most plans include a <strong>minute allowance</strong> (for example 600 minutes) and charge per minute after that. Check the overage rate, not just the headline price.",
+        "A full-time receptionist costs <strong>$60,000–$70,000 a year</strong> on SEEK's October 2026 figures, before 12% super and leave.",
+        "If you miss calls a few times a day while on the tools, a <strong>missed-call text-back</strong> often recovers the lead for a fraction of the cost. If you get dozens of calls a day that need bookings, an AI receptionist earns its fee.",
+        "Searches for \"ai receptionist\" in Australia run at about <strong>880 a month, up 39% year on year</strong> (Google Keyword Planner, our pull on 8 Oct 2026). Lots of businesses are asking this question right now."
+      ]},
+
+      {"type": "h2", "text": "How much does an AI receptionist cost in Australia?"},
+      {"type": "p", "html": "These are the published plans we could verify on 8 October 2026. We left out providers that only quote on a call, because \"contact us\" is not a price."},
+      {"type": "table", "headers": ["Provider", "Monthly price (AUD)", "One-off fee", "What's included", "Source"],
+        "rows": [
+          ["Chaty AI", "From $95", "Not stated", "Entry plan; aimed at tour and experience operators", "<a href=\"https://www.chaty.ai/pricing.html\" rel=\"nofollow noopener\" target=\"_blank\">chaty.ai</a>"],
+          ["AI Dental Receptionist", "From $169", "Not stated", "Professional plan for dental practices", "<a href=\"https://dentalreception.com.au/pricing\" rel=\"nofollow noopener\" target=\"_blank\">dentalreception.com.au</a>"],
+          ["Nexwin AI Receptionist, Business", "$249 + GST", "Free setup (as published)", "600 call minutes, then $0.49/min; up to 5 simultaneous calls", "<a href=\"https://nexwin.com.au/pricing.html\" rel=\"nofollow noopener\" target=\"_blank\">nexwin.com.au</a>"],
+          ["Nexwin AI Receptionist, Pro", "$499 + GST", "Free setup (as published)", "1,200 call minutes, then $0.39/min; CRM integration", "<a href=\"https://nexwin.com.au/pricing.html\" rel=\"nofollow noopener\" target=\"_blank\">nexwin.com.au</a>"],
+          ["LANA AI Receptionist", "$300 / $399 / $600", "$1,000 / $1,500 / $3,500 training", "Three tiers aimed at trade businesses", "<a href=\"https://www.lanasoftware.com.au/ai-receptionist-pricing/\" rel=\"nofollow noopener\" target=\"_blank\">lanasoftware.com.au</a>"],
+          ["Full-time receptionist", "About $5,000–$5,800", "Recruitment, training", "Business hours, one call at a time; plus 12% super and leave", "<a href=\"https://au.seek.com/career-advice/role/receptionist/salary\" rel=\"nofollow noopener\" target=\"_blank\">SEEK salary guide</a>"]
+        ]
+      },
+      {"type": "image", "src": "/assets/imgs/page/blog/ai-receptionist-australia-cost.webp", "alt": "Bar chart of monthly costs in AUD: missed-call text-back about $20, Chaty AI $95, AI Dental Receptionist $169, Nexwin $249 plus GST, LANA $300 plus $1,000 setup, full-time receptionist over $5,000", "caption": "Monthly cost of answering the phone, from published prices checked 8 Oct 2026", "width": 1200, "height": 675},
+      {"type": "p", "html": "Two things change the real number more than the headline price:"},
+      {"type": "ul", "items": [
+        "<strong>Minutes, not calls.</strong> Most plans meter talk time. A 600-minute allowance sounds like a lot until a few long quoting calls a day eat it. Work out your average call length from your phone bill before you pick a tier.",
+        "<strong>GST.</strong> Some providers quote ex-GST, some don't say. Add 10% to any \"+ GST\" price when you compare."
+      ]},
+
+      {"type": "h2", "text": "What an AI receptionist actually does"},
+      {"type": "p", "html": "An AI receptionist answers your business number with a synthetic voice, holds a conversation, and acts on it. The better ones can:"},
+      {"type": "ul", "items": [
+        "Answer every call, 24/7, including several at once",
+        "Answer common questions from information you give it (hours, service area, rough pricing)",
+        "Book a job or appointment straight into your calendar",
+        "Transfer urgent calls to a person",
+        "Send you a written summary and transcript of every call"
+      ]},
+      {"type": "p", "html": "What it can't do well yet: handle an upset customer with real judgement, quote a complex job, or recover gracefully when the caller goes off-script. Most providers sell a \"warm transfer to a human\" option for exactly this reason."},
+
+      {"type": "h2", "text": "What a missed-call text-back does (and what it costs)"},
+      {"type": "p", "html": "A missed-call text-back is much simpler. When a call to your business goes unanswered, the caller gets an SMS within about a minute: \"Sorry we missed you, it's Dave from Smith Plumbing. What do you need a hand with?\" Their reply lands on your phone, so you call back knowing what the job is."},
+      {"type": "p", "html": "It doesn't talk to anyone. It just stops the caller ringing the next business on the list while you finish the job you're on. That is usually where the lead is lost: not because nobody answered, but because nobody got back to them before a competitor did."},
+      {"type": "p", "html": "Running cost is small. On Twilio's published Australian list prices, a mobile number is <strong>US$8.25 a month</strong> and each outbound SMS is <strong>US$0.0515</strong> (<a href=\"https://www.twilio.com/en-us/sms/pricing/au\" rel=\"nofollow noopener\" target=\"_blank\">Twilio AU pricing</a>, checked 8 Oct 2026). At 100 missed calls a month that is about US$13, or roughly A$20. You pay that to the SMS provider directly. Setting it up is a one-off build, which we quote as a fixed written price after a <a href=\"/free-automation-audit/\">free automation audit</a>."},
+
+      {"type": "h2", "text": "AI receptionist or missed-call text-back: which do you need?"},
+      {"type": "table", "headers": ["Your situation", "Better fit", "Why"],
+        "rows": [
+          ["Sole trader, 5–15 calls a day, often on the tools", "Missed-call text-back", "The problem is speed of reply, not volume. A text in under a minute holds the lead until you can call."],
+          ["Callers mostly want to book a standard appointment", "AI receptionist", "It can finish the booking on the call, which a text can't."],
+          ["30+ calls a day, nobody on the front desk", "AI receptionist", "Volume and simultaneous calls are where it beats a person on cost."],
+          ["Calls are complex quotes or emergencies", "Text-back, then call back yourself", "AI voice handles off-script conversations poorly. The caller needs you."],
+          ["Most enquiries arrive by web form, not phone", "Neither first: fix the form reply", "An instant reply to form leads usually matters more. See <a href=\"/lead-follow-up-automation/\">lead follow-up automation</a>."]
+        ]
+      },
+      {"type": "p", "html": "Plenty of businesses end up with both: text-back for missed calls during the day, and an AI receptionist for after-hours bookings once call volume justifies it."},
+
+      {"type": "h2", "text": "Questions to ask before you sign up for an AI receptionist"},
+      {"type": "ol", "items": [
+        "<strong>What happens when I run out of minutes?</strong> Get the overage rate in writing.",
+        "<strong>Is the price ex-GST?</strong>",
+        "<strong>Is there a setup or training fee, and is there a lock-in contract?</strong>",
+        "<strong>Where are call recordings stored, and who can access them?</strong> Recordings contain personal information, so the Privacy Act 1988 applies. Ask where the data is processed.",
+        "<strong>Does it connect to what I already use</strong> (Google Calendar, ServiceM8, Simpro, a CRM), or do I re-enter bookings by hand?",
+        "<strong>Can I hear a recorded call from a business like mine?</strong> Every provider has a demo; ask for one in your trade."
+      ]},
+
+      {"type": "h2", "text": "Who this isn't for"},
+      {"type": "p", "html": "If your phone rings twice a week, you don't need either. Turn on voicemail-to-text, put a clear contact form on your website, and spend the money elsewhere. And if your business depends on a relationship with every caller (a solicitor, a specialist clinician), an AI voice answering first can do more harm than a short wait."},
+
+      {"type": "h2", "text": "Where to go from here"},
+      {"type": "p", "html": "If missed calls and slow replies are costing you work, start with our <a href=\"/lead-follow-up-automation/\">lead follow-up automation</a> page, which covers missed-call text-back and instant form replies. For questions customers type rather than ring about, see the <a href=\"/ai-chatbot-for-business/\">AI chatbot for business</a> page. Everything we build is listed on the <a href=\"/services/ai-automation/\">AI &amp; automation services</a> hub. Not sure which you need? The <a href=\"/free-automation-audit/\">free automation audit</a> takes a few minutes and you get a written answer."},
+
+      {"type": "h2", "text": "Frequently asked questions"},
+      {"type": "faq", "q": "How much does an AI receptionist cost in Australia?", "a": "Published plans checked on 8 October 2026 run from about $95 a month to $600 a month. Some providers add a one-off setup or training fee of $1,000 to $3,500. Most plans include a monthly minute allowance and charge per minute above it, so your call length matters as much as the plan price."},
+      {"type": "faq", "q": "Is an AI receptionist cheaper than hiring a receptionist?", "a": "Yes, by a wide margin. SEEK puts the average Australian receptionist salary at $60,000 to $70,000 a year in October 2026, which is over $5,000 a month before 12% super and leave. A mid-range AI receptionist plan costs $250 to $500 a month. The trade-off is judgement: a person handles difficult or unusual calls far better."},
+      {"type": "faq", "q": "What is a missed-call text-back?", "a": "An automation that sends an SMS to anyone whose call to your business goes unanswered, usually within a minute. The caller replies by text, you see what they need, and you call back. It doesn't answer the call; it stops the caller moving on to a competitor while you're busy."},
+      {"type": "faq", "q": "Can an AI receptionist book jobs into my calendar?", "a": "Most of the Australian providers we checked can book straight into Google Calendar, and some connect to trade software such as ServiceM8 or Simpro. Confirm the exact integration for your software before you sign up."},
+      {"type": "faq", "q": "Are AI receptionist calls covered by Australian privacy law?", "a": "Call recordings and transcripts contain personal information, so a business covered by the Privacy Act 1988 needs to handle them accordingly. Ask the provider where recordings are stored and processed, how long they're kept, and how you can delete them."},
+      {"type": "faq", "q": "Do I need an AI receptionist if I'm a sole trader?", "a": "Often not at first. If you get under about 15 calls a day and the problem is missing them while working, a missed-call text-back usually recovers most of those leads at a much lower cost. An AI receptionist makes more sense once call volume or after-hours bookings are the bottleneck."}
     ]
   },
 

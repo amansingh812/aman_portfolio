@@ -87,8 +87,8 @@ const css = `
 @media (max-width:860px){ .pr-risk{ grid-template-columns:1fr; } }
 .pr-box { background:#fff; border:1px solid #E4E7EC; border-radius:16px; padding:30px; height:100%; }
 .bfs-white { color:#fff !important; }
-.bfs-tint { color:#BEE1E6 !important; }
-.bfs-mint-btn { background:#83C5BE !important; color:#006D77 !important; }
+.bfs-tint { color:#E6F3F5 !important; }
+.bfs-mint-btn { background:#83C5BE !important; color:#004349 !important; }
 .bfs-faq-item { border-bottom:1px solid #E4E7EC; padding:30px 0; }
 .bfs-cta-box { background:#006D77; border-radius:16px; padding:64px 48px; text-align:center; }
 `
@@ -431,6 +431,7 @@ export default function PricingPage() {
                                         what a website costs in Australia
                                     </Link>{" · "}
                                     <Link href="/services/" className="bfs-tint">what we build</Link>{" · "}
+                                    <Link href="/hire-website-builder/" className="bfs-tint">hire someone to build a website</Link>{" · "}
                                     <Link href="/work/" className="bfs-tint">our work</Link>
                                 </p>
                             </div>

@@ -128,9 +128,12 @@ export default function FreeHomepageDesignPage() {
                                     <li className="text-body-text color-gray-900">Designed for your real business, not a template</li>
                                     <li className="text-body-text color-gray-900">Most full projects {TYPICAL_RANGE.label} AUD, fixed in writing</li>
                                 </ul>
+                                {/* Phones: the form sits ~870px down, so give a jump to it
+                                    (Impeccable critique, 9 Oct 2026). Hidden on desktop. */}
+                                <a href="#fd-form" className="btn btn-black icon-arrow-right-white mt-30 d-lg-none">Get my free homepage design</a>
                             </div>
                             <div className="col-lg-6">
-                                <div className="fd-form">
+                                <div className="fd-form" id="fd-form" style={{ scrollMarginTop: 110 }}>
                                     <h2 className="text-heading-4 color-gray-900 mb-20">Get my free homepage design</h2>
                                     <div className="row">
                                         <ContactPageForm

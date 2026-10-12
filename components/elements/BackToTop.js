@@ -5,7 +5,12 @@ import { SITE } from '@/content/site'
 
 function WhatsAppButton() {
     return (
+        <>
+        {/* Smaller and tucked into the corner on phones so it covers less of the
+            page's buttons and text (Impeccable audit, 9 Oct 2026). */}
+        <style>{`@media (max-width:767px){ .wa-float{ width:48px !important; height:48px !important; bottom:16px !important; right:16px !important; } .wa-float svg{ width:26px; height:26px; } }`}</style>
         <a
+            className="wa-float"
             href={SITE.whatsapp}
             data-loc="floating-button"
             target="_blank"
@@ -36,7 +41,7 @@ function WhatsAppButton() {
                 e.currentTarget.style.boxShadow = '0 4px 16px rgba(37,211,102,0.45)'
             }}
         >
-            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path
                     d="M15 2C7.82 2 2 7.82 2 15c0 2.3.62 4.45 1.7 6.3L2 28l6.87-1.67A12.93 12.93 0 0015 28c7.18 0 13-5.82 13-13S22.18 2 15 2z"
                     fill="#fff"
@@ -47,6 +52,7 @@ function WhatsAppButton() {
                 />
             </svg>
         </a>
+        </>
     )
 }
 

@@ -52,15 +52,15 @@ const Footer = () => {
 				<div className="footer-bottom mt-20">
 					<div className="row">
 						<div className="col-md-6">
-							<span className="color-gray-400 text-body-lead">© {new Date().getFullYear()} Build First Site</span>
-							<Link href="/privacy/" className="text-body-text color-gray-400 ml-50">Privacy policy</Link>
-							<Link href="/terms/" className="text-body-text color-gray-400 ml-50">Terms of service</Link>
+							<span className="color-gray-500 text-body-lead">© {new Date().getFullYear()} Build First Site</span>
+							<Link href="/privacy/" className="text-body-text color-gray-500 ml-50">Privacy policy</Link>
+							<Link href="/terms/" className="text-body-text color-gray-500 ml-50">Terms of service</Link>
 						</div>
 						<div className="col-md-6 text-center text-lg-end text-md-end">
 							<div className="footer-social">
-								<a href={SITE.social.linkedin} target="_blank" rel="noopener noreferrer" className="icon-socials icon-linkedin" />
-								<a href={SITE.social.github} target="_blank" rel="noopener noreferrer" className="icon-socials icon-github" />
-								<a href={SITE.social.x} target="_blank" rel="noopener noreferrer" className="icon-socials icon-twitter" />
+								<a href={SITE.social.linkedin} target="_blank" rel="noopener noreferrer" className="icon-socials icon-linkedin" aria-label="Build First Site on LinkedIn" />
+								<a href={SITE.social.github} target="_blank" rel="noopener noreferrer" className="icon-socials icon-github" aria-label="Build First Site on GitHub" />
+								<a href={SITE.social.x} target="_blank" rel="noopener noreferrer" className="icon-socials icon-twitter" aria-label="Build First Site on X" />
 							</div>
 						</div>
 					</div>

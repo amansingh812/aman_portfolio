@@ -78,6 +78,7 @@ export const AUTOMATION_PAGES = [
       { q: 'What does it cost?', a: 'It depends on how many lead sources you have and where the leads should go. You get a fixed written price after the free automation audit, before any work starts. Message fees, if any, are paid directly to the provider.' },
     ],
     related: ['crm-integration-data-sync', 'ai-chatbot-for-business', 'customer-reactivation-automation'],
+    readMore: [{ href: '/blog/ai-receptionist-australia-cost/', label: 'AI receptionist vs missed-call text-back: real AUD costs compared' }],
   },
 
   /* ───────────────────────────── REPORTS ───────────────────────────── */
@@ -310,6 +311,7 @@ export const AUTOMATION_PAGES = [
       { q: 'What does it cost to set up?', a: 'It depends on how much information it needs to learn and where enquiries should go. You get a fixed written price after the free automation audit, before any work starts.' },
     ],
     related: ['lead-follow-up-automation', 'crm-integration-data-sync', 'customer-reactivation-automation'],
+    readMore: [{ href: '/blog/ai-receptionist-australia-cost/', label: 'What an AI phone receptionist costs in Australia' }],
   },
 ]
 

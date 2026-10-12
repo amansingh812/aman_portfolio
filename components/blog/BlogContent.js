@@ -66,7 +66,12 @@ export default function BlogContent({ blocks }) {
                                         {b.rows.map((row, r) => (
                                             <tr key={r} style={{ borderTop: '1px solid #E4E7EC' }}>
                                                 {row.map((c, k) => (
-                                                    <td key={k} className="text-body-text color-gray-700" style={{ padding: '14px 20px' }}>{c}</td>
+                                                    /* Cells containing a link render as HTML (source links in
+                                                       price tables); everything else stays plain text. */
+                                                    typeof c === "string" && c.includes("<a ")
+                                                        ? <td key={k} className="text-body-text color-gray-700" style={{ padding: '14px 20px' }}
+                                                            dangerouslySetInnerHTML={{ __html: c }} />
+                                                        : <td key={k} className="text-body-text color-gray-700" style={{ padding: '14px 20px' }}>{c}</td>
                                                 ))}
                                             </tr>
                                         ))}

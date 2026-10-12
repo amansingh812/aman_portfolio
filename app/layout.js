@@ -1,4 +1,5 @@
 import '../public/assets/css/style.css'
+import './a11y.css'
 import '../public/assets/css/modal.css'
 import "../public/assets/css/swiper-custom.css";
 import { Chivo, Noto_Sans } from 'next/font/google'
