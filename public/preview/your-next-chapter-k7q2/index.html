@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Your Next Chapter · Clickable prototype</title>
+<style>
+:root{
+  --ivory:#FAF7EF; --paper:#FFFDF8; --sand:#F2ECE0; --line:#DDD8CB; --line-2:#E9E4D8;
+  --sage:#65715F; --sage-d:#4E5949; --sage-l:#E6EADF; --sage-xl:#F1F3EC;
+  --ink:#191D18; --muted:#596356; --soft:#7A7F72;
+  --taupe:#8A6F5A; --taupe-l:#EFE6DC; --blush:#EBDCCF; --gold:#A8844E;
+  --ok:#3F7A4F; --warn:#9A6A1E;
+  --serif:"Cormorant Garamond","Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --r:14px; --r-lg:22px;
+  --shadow:0 1px 2px rgba(25,29,24,.05),0 8px 24px rgba(25,29,24,.06);
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:var(--sans);color:var(--ink);background:#E9E5DA;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--sage-d);outline-offset:2px;border-radius:6px}
+
+/* ---------- prototype chrome ---------- */
+.proto-bar{position:sticky;top:0;z-index:50;display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:10px 16px;background:#191D18;color:#F1EEE6;font-size:13px}
+.proto-bar b{font-family:var(--serif);font-size:17px;letter-spacing:.06em;font-weight:600}
+.proto-bar .tag{border:1px solid #4a5046;border-radius:99px;padding:2px 10px;color:#C9CDBF}
+.seg{display:inline-flex;background:#2B302A;border-radius:99px;padding:3px}
+.seg button{border:0;background:transparent;color:#C9CDBF;padding:6px 14px;border-radius:99px;cursor:pointer;font-size:13px}
+.seg button.on{background:#F1EEE6;color:#191D18}
+.proto-bar select{background:#2B302A;color:#F1EEE6;border:1px solid #4a5046;border-radius:8px;padding:6px 10px;font-size:13px;max-width:260px}
+.proto-bar .sp{flex:1}
+.stage{display:flex;justify-content:center;align-items:flex-start;padding:24px 12px 24px;overflow:hidden}
+.device{width:100%;max-width:1280px;background:var(--ivory);border-radius:14px;overflow:hidden;box-shadow:0 20px 60px rgba(25,29,24,.18);position:relative}
+.device.web .browser{display:flex}
+.browser{display:none;align-items:center;gap:8px;padding:10px 14px;background:#EFEBE2;border-bottom:1px solid var(--line)}
+.browser i{width:11px;height:11px;border-radius:50%;background:#D6CFC2;display:inline-block}
+.browser .url{flex:1;margin-left:10px;background:#FFFDF8;border:1px solid var(--line);border-radius:8px;padding:4px 12px;font-size:12px;color:var(--soft)}
+.device.mobile{max-width:390px;border-radius:44px;border:10px solid #191D18;height:844px;box-shadow:0 30px 80px rgba(25,29,24,.3)}
+.device.mobile .notch{display:block}
+.notch{display:none;position:absolute;top:8px;left:50%;transform:translateX(-50%);width:110px;height:28px;background:#191D18;border-radius:20px;z-index:40}
+.viewport{container-type:inline-size;height:100%;overflow:auto;position:relative}
+.device.web{width:1280px;max-width:none;flex:none;transform-origin:top center}
+.device.web .viewport{height:780px}
+.device.mobile .viewport{padding-top:34px}
+
+/* ---------- app ---------- */
+.app{min-height:100%;display:flex;flex-direction:column}
+.top{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;border-bottom:1px solid var(--line-2);background:rgba(250,247,239,.92);position:sticky;top:0;z-index:20;backdrop-filter:blur(6px)}
+.brand{font-family:var(--serif);letter-spacing:.24em;font-size:15px;font-weight:600;text-transform:uppercase;cursor:pointer;white-space:nowrap}
+.nav{display:flex;gap:22px;align-items:center;font-size:15px}
+.nav a{cursor:pointer;text-decoration:none;color:var(--muted)}
+.nav a.on{color:var(--ink);text-decoration:underline;text-underline-offset:6px;text-decoration-color:var(--sage)}
+.avatar{width:34px;height:34px;border-radius:50%;background:var(--taupe-l);display:grid;place-items:center;font-family:var(--serif);font-weight:600;color:var(--taupe);cursor:pointer}
+.main{flex:1}
+.wrap{max-width:1080px;margin:0 auto;padding:40px 28px}
+.narrow{max-width:620px;margin:0 auto;padding:44px 24px 56px}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--soft)}
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:500;letter-spacing:-.01em;margin:0}
+h1{font-size:clamp(40px,6.2cqw,76px);line-height:1.02}
+h2{font-size:clamp(30px,3.6cqw,44px);line-height:1.08}
+h3{font-size:24px;line-height:1.2}
+p{margin:0}
+.lead{font-size:19px;color:var(--muted);margin-top:14px}
+.muted{color:var(--muted)} .soft{color:var(--soft)} .small{font-size:14px} .tiny{font-size:12.5px}
+.row{display:flex;gap:12px;align-items:center}
+.between{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.stack>*+*{margin-top:18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid transparent;border-radius:99px;padding:15px 28px;font-size:16px;cursor:pointer;text-decoration:none;transition:transform .15s ease,background .15s ease}
+.btn:active{transform:scale(.98)}
+.btn.primary{background:var(--sage);color:#fff}
+.btn.primary:hover{background:var(--sage-d)}
+.btn.ghost{background:transparent;border-color:var(--ink);color:var(--ink)}
+.btn.light{background:var(--paper);border-color:var(--line);color:var(--ink)}
+.btn.block{width:100%}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.link{background:none;border:0;padding:0;color:var(--ink);text-decoration:underline;text-underline-offset:4px;cursor:pointer;font-size:15px}
+.back{display:inline-flex;gap:6px;align-items:center;color:var(--muted);cursor:pointer;background:none;border:0;padding:0;font-size:15px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:24px}
+.chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:99px;padding:6px 12px;font-size:13.5px;background:var(--paper);white-space:nowrap}
+.chip.on{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.badge{display:inline-block;font-size:12px;border-radius:99px;padding:3px 10px;background:var(--sand);color:var(--muted);white-space:nowrap}
+.badge.ok{background:#E3EEE3;color:#2F5E3B} .badge.warn{background:#F6EBD6;color:#7A5214} .badge.sage{background:var(--sage-l);color:var(--sage-d)}
+.sample{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--taupe)}
+hr.rule{border:0;border-top:1px solid var(--line);margin:18px 0}
+
+/* art frames */
+.art{position:relative;overflow:hidden;background:linear-gradient(160deg,#E9DDCF 0%,#D9C6B2 45%,#B9A28A 100%)}
+.art svg{position:absolute;inset:0;width:100%;height:100%}
+.art svg *{vector-effect:non-scaling-stroke}
+.art::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 30% 15%,rgba(255,255,255,.35),transparent 60%);pointer-events:none}
+.arch{border-radius:999px 999px 18px 18px}
+.round{border-radius:var(--r-lg)}
+
+/* home */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:56px 28px 64px;max-width:1180px;margin:0 auto}
+.hero .art{aspect-ratio:4/5;max-height:600px}
+.steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.stepc{padding:28px;border-top:1px solid var(--ink)}
+.stepc .n{font-family:var(--serif);font-size:44px;color:var(--taupe)}
+.band{background:var(--sand);border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2)}
+.paths{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.pathc{cursor:pointer;text-align:left}
+.pathc .art{aspect-ratio:3/4}
+.pathc .t{font-family:var(--serif);font-size:22px;margin-top:12px}
+.footer{background:var(--ink);color:#D9DBD2;padding:44px 28px}
+.footer .brand{color:#F1EEE6}
+
+/* options */
+.opts{display:grid;gap:12px;margin-top:28px}
+.opts.grid2{grid-template-columns:1fr 1fr}
+.opt{display:flex;align-items:center;gap:16px;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;cursor:pointer;text-align:left;width:100%;transition:border-color .15s,box-shadow .15s}
+.opt:hover{border-color:var(--sage)}
+.opt.on{border-color:var(--sage);box-shadow:inset 0 0 0 1px var(--sage);background:var(--sage-xl)}
+.opt .ic{width:44px;height:44px;border-radius:50%;background:var(--sand);display:grid;place-items:center;flex:none}
+.opt .t{font-family:var(--serif);font-size:22px;line-height:1.15}
+.opt .s{color:var(--muted);font-size:14.5px}
+.opt .chev{margin-left:auto;color:var(--soft)}
+.opt.disabled{opacity:.6}
+.radio{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--soft);flex:none;display:grid;place-items:center}
+.opt.on .radio{border-color:var(--sage)} .opt.on .radio::after{content:"";width:12px;height:12px;border-radius:50%;background:var(--sage)}
+.checkbox{width:22px;height:22px;border-radius:6px;border:1.5px solid var(--soft);flex:none;display:grid;place-items:center;color:#fff;font-size:14px}
+.opt.on .checkbox{background:var(--sage);border-color:var(--sage)}
+.progress{display:flex;gap:6px;margin:18px 0 6px}
+.progress i{flex:1;height:3px;border-radius:3px;background:var(--line)}
+.progress i.on{background:var(--sage)}
+.money{font-family:var(--serif);font-size:56px;text-align:center;margin:28px 0 6px}
+input[type=range]{width:100%;accent-color:var(--sage);height:28px}
+.field{display:block;margin-top:16px}
+.field span{display:block;font-size:14px;color:var(--muted);margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--paper);font-size:16px}
+.field input:focus,.field textarea:focus{border-color:var(--sage);outline:none;box-shadow:0 0 0 3px var(--sage-l)}
+
+/* dashboard */
+.dash{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:22px}
+.kv{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line-2);gap:12px}
+.kv:last-child{border-bottom:0}
+.next{display:grid;grid-template-columns:200px 1fr;gap:22px;align-items:center}
+.next .art{height:200px}
+.donut-wrap{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.legend{display:grid;gap:6px;font-size:14px;flex:1;min-width:180px}
+.legend div{display:flex;align-items:center;gap:8px}
+.legend i{width:10px;height:10px;border-radius:3px;display:inline-block;flex:none}
+.legend b{margin-left:auto;font-weight:500}
+.count{display:flex;gap:18px}
+.count div{text-align:center}
+.count b{display:block;font-family:var(--serif);font-size:36px;font-weight:500;line-height:1}
+.timeline{display:grid;gap:0}
+.tl{display:flex;gap:14px;padding:10px 0}
+.tl .dot{width:12px;height:12px;border-radius:50%;border:2px solid var(--sage);margin-top:6px;flex:none}
+.tl.done .dot{background:var(--sage)}
+.tabbar{display:none;position:sticky;bottom:0;background:var(--paper);border-top:1px solid var(--line);padding:8px 6px 14px;justify-content:space-around;z-index:20}
+.tabbar a{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;color:var(--soft);cursor:pointer;text-decoration:none;min-width:56px}
+.tabbar a.on{color:var(--sage-d);font-weight:600}
+
+/* directory */
+.filters{display:flex;gap:8px;overflow:auto;padding-bottom:4px;scrollbar-width:none}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.sup{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;cursor:pointer;transition:box-shadow .15s}
+.sup:hover{box-shadow:var(--shadow)}
+.sup .art{height:200px}
+.sup .body{padding:16px 18px 18px}
+.save{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;background:rgba(255,253,248,.92);border:0;display:grid;place-items:center;cursor:pointer;z-index:2}
+.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px;height:380px}
+.gallery .art:nth-child(1){grid-row:span 2}
+.prof{display:grid;grid-template-columns:1.4fr .6fr;gap:28px;margin-top:28px}
+.sheet{position:absolute;inset:0;background:rgba(25,29,24,.42);display:flex;align-items:flex-end;justify-content:center;z-index:60}
+.sheet .panel{background:var(--paper);width:100%;max-width:560px;border-radius:24px 24px 0 0;padding:26px 24px 30px;max-height:92%;overflow:auto}
+.toast{position:absolute;pointer-events:none;left:50%;bottom:26px;transform:translateX(-50%);background:var(--ink);color:var(--ivory);padding:12px 18px;border-radius:12px;font-size:14px;z-index:70;box-shadow:var(--shadow);white-space:nowrap}
+
+/* admin */
+#root{min-height:100%;display:flex;flex-direction:column}
+#root>*{flex:1}
+.admin{display:grid;grid-template-columns:240px minmax(0,1fr);min-height:100%}
+.side{background:#1E231D;color:#C9CDBF;padding:22px 14px}
+.side .brand{color:#F1EEE6;font-size:13px;padding:0 10px}
+.side a{display:flex;gap:10px;align-items:center;padding:10px 12px;border-radius:10px;cursor:pointer;color:#C9CDBF;text-decoration:none;font-size:14.5px;margin-top:4px}
+.side a.on{background:#2F362D;color:#fff}
+.side .sec{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#7F8577;margin:22px 12px 6px}
+.adm{padding:28px 32px;background:#F7F4EC;min-width:0}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.kpi{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px}
+.kpi b{display:block;font-family:var(--serif);font-size:38px;font-weight:500;line-height:1.1}
+.tbl{width:100%;border-collapse:collapse;font-size:14.5px;background:var(--paper)}
+.tbl th{text-align:left;font-weight:500;color:var(--soft);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;padding:12px 14px;border-bottom:1px solid var(--line)}
+.tbl td{padding:13px 14px;border-bottom:1px solid var(--line-2);vertical-align:middle}
+.tblwrap{border:1px solid var(--line);border-radius:16px;overflow:auto;background:var(--paper)}
+.heat td.h{text-align:center;font-weight:500}
+.mini-btn{white-space:nowrap;border:1px solid var(--line);background:var(--paper);border-radius:99px;padding:6px 12px;font-size:13px;cursor:pointer}
+.mini-btn.dark{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.split2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.bars{display:flex;gap:10px;align-items:flex-end;height:150px;padding-top:10px}
+.bars div{flex:1;background:var(--sage-l);border-radius:8px 8px 3px 3px;position:relative}
+.bars div.on{background:var(--sage)}
+.bars span{position:absolute;bottom:-22px;left:0;right:0;text-align:center;font-size:11.5px;color:var(--soft)}
+.stepper{display:flex;gap:8px;margin:12px 0 24px;flex-wrap:wrap}
+.stepper span{font-size:13px;padding:6px 12px;border-radius:99px;background:var(--sand);color:var(--muted)}
+.stepper span.on{background:var(--ink);color:var(--ivory)}
+.upload{border:1.5px dashed var(--line);border-radius:16px;padding:28px;text-align:center;color:var(--muted);background:var(--paper)}
+
+/* ---------- responsive by container (works in the phone frame and on real phones) ---------- */
+@container (max-width: 760px){
+  .top{padding:14px 18px}
+  .nav .hide-m{display:none}
+  .wrap{padding:26px 18px}
+  .narrow{padding:26px 18px 40px}
+  .hero{grid-template-columns:1fr;gap:26px;padding:18px 18px 40px}
+  .hero .art{aspect-ratio:auto;height:300px;max-height:none;order:-1}
+  .steps3,.grid3,.dash,.prof,.split2{grid-template-columns:1fr}
+  .paths{grid-template-columns:1fr 1fr}
+  .opts.grid2{grid-template-columns:1fr}
+  .next{grid-template-columns:1fr}
+  .next .art{height:170px}
+  .gallery{height:240px;grid-template-columns:2fr 1fr}
+  .gallery .art:nth-child(n+4){display:none}
+  .tabbar{display:flex}
+  .admin{grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr}
+  .side{display:flex;gap:4px;overflow:auto;padding:10px;align-items:center}
+  .side .brand,.side .sec{display:none}
+  .side a{white-space:nowrap;margin:0}
+  .adm{padding:18px}
+  .kpis{grid-template-columns:1fr 1fr}
+  .money{font-size:46px}
+  .opt .t{font-size:20px}
+  .footer{padding:32px 18px}
+}
+#overlay{position:absolute;inset:0;pointer-events:none;z-index:60}
+#overlay>*{pointer-events:auto}
+#overlay>.toast{pointer-events:none}
+@media (max-width:700px){.stage{padding:0}.device.mobile{max-width:none;width:100%;border:0;border-radius:0;height:calc(100dvh - 104px);box-shadow:none}.device.mobile .notch{display:none}.device.mobile .viewport{padding-top:0}.proto-bar select{max-width:100%;flex:1 1 100%}}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="proto-bar" role="toolbar" aria-label="Prototype controls">
+  <b>YOUR NEXT CHAPTER</b><span class="tag">Clickable prototype · sample data</span>
+  <span class="sp"></span>
+  <div class="seg" role="group" aria-label="Device">
+    <button id="dWeb" class="on" onclick="setDevice('web')">Web</button>
+    <button id="dMob" onclick="setDevice('mobile')">Mobile</button>
+  </div>
+  <div class="seg" role="group" aria-label="Audience">
+    <button id="aCouple" class="on" onclick="go('home')">Couples</button>
+    <button id="aSupplier" onclick="go('sup-join')">Suppliers</button>
+    <button id="aAdmin" onclick="go('admin')">Admin</button>
+  </div>
+  <select id="jump" aria-label="Jump to screen" onchange="go(this.value)"></select>
+</div>
+<div class="stage">
+  <div class="device web" id="device">
+    <div class="notch"></div>
+    <div class="browser"><i></i><i></i><i></i><span class="url" id="url">yournextchapter.com.au</span></div>
+    <div class="viewport" id="vp"><div id="root"></div></div>
+    <div id="overlay"></div>
+  </div>
+</div>
+<script>
+/* ===================== state (in memory only) ===================== */
+const S = {
+  screen:'home', device:'web',
+  name:'', email:'', partner:'', signedIn:false,
+  path:'propose', proposeMode:'ring', area:'Melbourne',
+  ring:5000, ringDone:false, photo:2000, photoDone:false, venue:3000, venueDone:false,
+  extras:{Flowers:{on:true,v:1500},'Car hire':{on:false,v:600},'Hotel room':{on:false,v:450},Catering:{on:false,v:1200}},
+  wPref:30000, wMax:40000, dest:'Yarra Valley', when:'Spring 2027', guests:'80–100',
+  started:['Venue'],
+  cat:'Rings', saved:{}, booked:{}, contacted:{}, notify:{}, sheet:null, toast:'',
+  supStep:0, supCats:['Photography'], supAreas:['Melbourne','Yarra Valley'],
+  adminSupFilter:'All'
+};
+const AREAS=['Melbourne','Yarra Valley','Mornington Peninsula','Dandenong Ranges','Regional Victoria'];
+const CATS=['Rings','Photography','Venues','Flowers','Car hire','Hotels','Catering'];
+const fmt=n=>'$'+Math.round(n).toLocaleString('en-AU');
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* Sample suppliers: invented for the prototype, labelled on screen */
+const SUP=[
+ {id:'s1',name:'Collins Lane Jewellers',cat:'Rings',area:'Melbourne',from:2500,tag:'Custom engagement rings',art:'ring',rating:'New'},
+ {id:'s9',name:'Hart & Hearth Jewellers',cat:'Rings',area:'Melbourne',from:3200,tag:'Vintage and heirloom resets',art:'ring',rating:'New'},
+ {id:'s2',name:'Fern & Facet',cat:'Rings',area:'Melbourne',from:3800,tag:'Lab-grown and ethical stones',art:'ring2',rating:'New'},
+ {id:'s3',name:'Valley Light Studio',cat:'Photography',area:'Yarra Valley',from:1800,tag:'Proposals and elopements',art:'camera',rating:'New'},
+ {id:'s4',name:'Bayside Frames',cat:'Photography',area:'Melbourne',from:1200,tag:'Secret proposal shoots',art:'camera2',rating:'New'},
+ {id:'s5',name:'The Olive Courtyard',cat:'Venues',area:'Yarra Valley',from:3000,tag:'Private garden for two',art:'venue',rating:'New'},
+ {id:'s6',name:'Rosebud Cliff House',cat:'Venues',area:'Mornington Peninsula',from:2600,tag:'Sunset deck, ocean view',art:'venue2',rating:'New'},
+ {id:'s7',name:'Wild Stem Florals',cat:'Flowers',area:'Melbourne',from:450,tag:'Proposal styling and arches',art:'flower',rating:'New'},
+ {id:'s8',name:'Grand Tour Cars',cat:'Car hire',area:'Melbourne',from:600,tag:'Vintage chauffeured cars',art:'car',rating:'New'},
+];
+
+/* ===================== line-art "photos" ===================== */
+function art(kind,cls='',style=''){
+  const pal={ring:['#EADFD3','#C9B39C'],ring2:['#E6E1D3','#A9A88F'],camera:['#E3E0D2','#A6AA93'],camera2:['#ECE1D6','#BFA48E'],venue:['#E7E3D2','#9FA88F'],venue2:['#E4E2DA','#9DA9AA'],flower:['#EEDFD8','#C7A497'],car:['#E9E2D5','#B6A089'],hero:['#EFE5D7','#B79F86'],court:['#ECE4D3','#A3A68C'],honey:['#E8E4D8','#9EAFB0'],party:['#EEE0D4','#C2A08C'],plan:['#E9E5D6','#A9AE97']}[kind]||['#EADFD3','#BFA48E'];
+  const s='rgba(255,255,255,.85)', w=1.6;
+  const draw={
+    ring:`<circle cx="50" cy="58" r="16" fill="none" stroke="${s}" stroke-width="${w}"/><path d="M42 42l8-10 8 10z" fill="none" stroke="${s}" stroke-width="${w}"/><circle cx="72" cy="30" r="1.2" fill="${s}"/><circle cx="28" cy="34" r="1" fill="${s}"/>`,
+    ring2:`<circle cx="44" cy="58" r="14" fill="none" stroke="${s}" stroke-width="${w}"/><circle cx="58" cy="58" r="14" fill="none" stroke="${s}" stroke-width="${w}"/>`,
+    camera:`<rect x="28" y="40" width="44" height="30" rx="5" fill="none" stroke="${s}" stroke-width="${w}"/><circle cx="50" cy="55" r="9" fill="none" stroke="${s}" stroke-width="${w}"/><path d="M40 40l4-6h12l4 6" fill="none" stroke="${s}" stroke-width="${w}"/>`,
+    camera2:`<path d="M20 74c10-14 20-20 30-20s20 6 30 20" fill="none" stroke="${s}" stroke-width="${w}"/><circle cx="50" cy="38" r="8" fill="none" stroke="${s}" stroke-width="${w}"/>`,
+    venue:`<path d="M30 78V46a20 20 0 0 1 40 0v32" fill="none" stroke="${s}" stroke-width="${w}"/><path d="M38 78V50a12 12 0 0 1 24 0v28" fill="none" stroke="${s}" stroke-width="${w}"/><path d="M20 78h60" stroke="${s}" stroke-width="${w}"/>`,
+    venue2:`<path d="M10 64c14-8 26-8 40 0s26 8 40 0" fill="none" stroke="${s}" stroke-width="${w}"/><circle cx="66" cy="34" r="9" fill="none" stroke="${s}" stroke-width="${w}"/><path d="M10 74c14-6 26-6 40 0s26 6 40 0" fill="none" stroke="${s}" stroke-width="${w}"/>`,
+    flower:`<path d="M50 82V46" stroke="${s}" stroke-width="${w}"/><circle cx="50" cy="38" r="8" fill="none" stroke="${s}" stroke-width="${w}"/><path d="M50 62c-8-2-14-8-14-14M50 70c8-2 14-8 14-14" fill="none" stroke="${s}" stroke-width="${w}"/><circle cx="36" cy="30" r="5" fill="none" stroke="${s}" stroke-width="${w}"/><circle cx="64" cy="30" r="5" fill="none" stroke="${s}" stroke-width="${w}"/>`,
+    car:`<path d="M24 64h52M28 64l6-14h30l8 14" fill="none" stroke="${s}" stroke-width="${w}"/><circle cx="36" cy="68" r="5" fill="none" stroke="${s}" stroke-width="${w}"/><circle cx="66" cy="68" r="5" fill="none" stroke="${s}" stroke-width="${w}"/>`,
+    hero:`<path d="M18 92V48a32 32 0 0 1 64 0v44" fill="none" stroke="${s}" stroke-width="1.2"/><path d="M50 84V60" stroke="${s}" stroke-width="1.2"/><circle cx="50" cy="54" r="5" fill="none" stroke="${s}" stroke-width="1.2"/><path d="M50 74c-7-1-12-6-12-11M50 79c7-1 12-6 12-11" fill="none" stroke="${s}" stroke-width="1.2"/><path d="M30 92c4-8 8-10 12-10M70 92c-4-8-8-10-12-10" fill="none" stroke="${s}" stroke-width="1.2"/>`,
+    court:`<path d="M14 90V50a36 36 0 0 1 72 0v40" fill="none" stroke="${s}" stroke-width="1.2"/><path d="M26 90V52a24 24 0 0 1 48 0v38" fill="none" stroke="${s}" stroke-width="1.2"/><path d="M36 70h28M40 70v12M60 70v12" fill="none" stroke="${s}" stroke-width="1.2"/>`,
+    honey:`<path d="M10 70c14-8 26-8 40 0s26 8 40 0" fill="none" stroke="${s}" stroke-width="${w}"/><circle cx="50" cy="40" r="12" fill="none" stroke="${s}" stroke-width="${w}"/>`,
+    party:`<path d="M38 80l6-34h12l6 34M44 46c0-8 12-8 12 0" fill="none" stroke="${s}" stroke-width="${w}"/><circle cx="30" cy="30" r="2" fill="${s}"/><circle cx="70" cy="26" r="2" fill="${s}"/><circle cx="62" cy="40" r="1.4" fill="${s}"/>`,
+    plan:`<rect x="32" y="26" width="36" height="48" rx="4" fill="none" stroke="${s}" stroke-width="${w}"/><path d="M40 40h20M40 50h20M40 60h12" stroke="${s}" stroke-width="${w}"/>`
+  }[kind]||'';
+  return `<div class="art ${cls}" style="background:linear-gradient(165deg,${pal[0]} 0%,${pal[1]} 100%);${style}" role="img" aria-label="Illustration placeholder for a ${kind} photo"><svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" aria-hidden="true">${draw}</svg></div>`;
+}
+const I={
+  chev:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 6l6 6-6 6"/></svg>',
+  back:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 6l-6 6 6 6"/></svg>',
+  heart:f=>`<svg width="18" height="18" viewBox="0 0 24 24" fill="${f?'#8A6F5A':'none'}" stroke="#8A6F5A" stroke-width="1.6"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg>`,
+  pin:'<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-6-6-6-11a6 6 0 0 1 12 0c0 5-6 11-6 11z"/><circle cx="12" cy="10" r="2"/></svg>',
+  ring:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#596356" stroke-width="1.4"><circle cx="12" cy="15" r="6"/><path d="M9 7l3-4 3 4z"/></svg>',
+  glass:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#596356" stroke-width="1.4"><path d="M8 3h8l-1 7a3 3 0 0 1-6 0zM12 13v8M9 21h6"/></svg>',
+  list:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#596356" stroke-width="1.4"><path d="M9 6h11M9 12h11M9 18h11M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2"/></svg>',
+  party:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#596356" stroke-width="1.4"><path d="M4 20l5-13 8 8zM14 4v2M19 9h2M17 6l1.5-1.5"/></svg>',
+  sun:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#596356" stroke-width="1.4"><path d="M3 18h18M7 18a5 5 0 0 1 10 0M12 7V4M5 11l-2-1M19 11l2-1"/></svg>',
+  home:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z"/></svg>',
+  search:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg>',
+  user:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>',
+  savedI:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg>',
+  plan:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 9h6M9 13h6M9 17h3"/></svg>'
+};
+
+/* ===================== screens registry ===================== */
+const SCREENS=[
+ ['home','Couple · Home'],['start','Couple · Where does your story begin?'],['propose','Couple · Proposal: where to start'],['area','Couple · Proposal: area'],
+ ['ring','Couple · Proposal: ring budget'],['photo','Couple · Proposal: photographer'],['venue','Couple · Proposal: venue'],['extras','Couple · Proposal: extras'],
+ ['w-budget','Couple · Engaged: budget'],['w-dest','Couple · Engaged: destination'],['w-when','Couple · Engaged: when'],['w-guests','Couple · Engaged: guests'],
+ ['started','Couple · Started planning'],['save','Couple · Save your plan (sign-up)'],['check','Couple · Check your email'],
+ ['dash','Couple · Dashboard'],['find','Couple · Find suppliers'],['supplier','Couple · Supplier profile'],['empty','Couple · No suppliers yet (notify me)'],
+ ['list','Couple · Your list'],['invite','Couple · Invite your partner'],['account','Couple · Account'],
+ ['sup-join','Supplier · List your business'],['sup-onboard','Supplier · Onboarding'],['sup-dash','Supplier · Dashboard'],
+ ['admin','Admin · Overview'],['admin-suppliers','Admin · Suppliers'],['admin-couples','Admin · Couples'],['admin-demand','Admin · Notify-me demand'],['admin-settings','Admin · Categories & regions']
+];
+
+/* ===================== layout helpers ===================== */
+function topbar(){
+  const on=s=>S.screen===s?'on':'';
+  return `<header class="top"><span class="brand" onclick="go('home')">Your Next Chapter</span>
+  <nav class="nav" aria-label="Main">
+    ${S.signedIn?`<a class="hide-m ${on('dash')}" onclick="go('dash')">Dashboard</a><a class="hide-m ${on('find')}" onclick="go('find')">Find</a><a class="hide-m ${on('list')}" onclick="go('list')">List</a><span class="avatar" onclick="go('account')" title="Account">${esc((S.name||'J')[0].toUpperCase())}</span>`
+    :`<a class="hide-m" onclick="go('sup-join')">For suppliers</a><a onclick="go('save')">Log in</a>`}
+  </nav></header>`;
+}
+function tabbar(){
+  if(!S.signedIn) return '';
+  const on=s=>S.screen===s?'on':'';
+  return `<nav class="tabbar" aria-label="App"><a class="${on('dash')}" onclick="go('dash')">${I.plan}Plan</a><a class="${on('find')}" onclick="go('find')">${I.search}Find</a><a class="${on('list')}" onclick="go('list')">${I.savedI}List</a><a class="${on('account')}" onclick="go('account')">${I.user}You</a></nav>`;
+}
+function shell(inner,{bar=true,tabs=true}={}){return `<div class="app">${bar?topbar():''}<main class="main" id="main">${inner}</main>${tabs?tabbar():''}</div>`}
+function backBtn(to){return `<button class="back" onclick="go('${to}')">${I.back} Back</button>`}
+function prog(n,of){let h='';for(let i=1;i<=of;i++)h+=`<i class="${i<=n?'on':''}"></i>`;return `<div class="progress" aria-hidden="true">${h}</div><p class="tiny soft">Step ${n} of ${of}</p>`}
+function footerBlock(){return `<footer class="footer"><div class="between" style="flex-wrap:wrap;align-items:flex-start;gap:28px;max-width:1080px;margin:0 auto"><div><div class="brand">Your Next Chapter</div><p class="small" style="margin-top:10px;max-width:320px">For every couple. For your kind of celebration.</p></div><div class="small" style="display:grid;gap:6px"><a onclick="go('propose')" style="cursor:pointer">Proposal</a><a onclick="go('w-budget')" style="cursor:pointer">Wedding</a><a onclick="toast('Honeymoon planning is coming soon')" style="cursor:pointer">Honeymoon</a></div><div class="small" style="display:grid;gap:6px"><a onclick="go('sup-join')" style="cursor:pointer">List your business</a><span>Privacy</span><span>Terms</span></div></div></footer>`}
+
+/* ===================== couple screens ===================== */
+const V={};
+V.home=()=>shell(`
+ <section class="hero">
+  <div>
+   <p class="eyebrow">Proposal · Wedding · Honeymoon</p>
+   <h1 style="margin-top:16px">Something beautiful starts here.</h1>
+   <p class="lead">From the first yes to your honeymoon. One clear step at a time.</p>
+   <div class="row" style="margin-top:30px;flex-wrap:wrap"><button class="btn primary" onclick="go('start')">Let's get started ${I.chev}</button><button class="link" onclick="go('save')">I already have a plan</button></div>
+   <p class="small soft" style="margin-top:22px">Free for couples · Local suppliers in Melbourne and regional Victoria</p>
+  </div>
+  ${art('court','arch')}
+ </section>
+ <section class="band"><div class="wrap">
+  <p class="eyebrow">How it works</p><h2 style="margin-top:10px;max-width:620px">A plan that fits your budget, not a list of a thousand vendors.</h2>
+  <div class="steps3" style="margin-top:30px">
+   <div class="stepc"><div class="n">01</div><h3>Tell us where you are</h3><p class="muted" style="margin-top:8px">Planning to propose, engaged, or already planning. A few quick questions, no account needed.</p></div>
+   <div class="stepc"><div class="n">02</div><h3>See your plan take shape</h3><p class="muted" style="margin-top:8px">Your budget split across the day, and the one thing to sort next.</p></div>
+   <div class="stepc"><div class="n">03</div><h3>Meet local suppliers</h3><p class="muted" style="margin-top:8px">Only people near you, within your budget. They contact you only if you ask.</p></div>
+  </div></div></section>
+ <section class="wrap">
+  <div class="between" style="flex-wrap:wrap"><div><p class="eyebrow">Start wherever you are</p><h2 style="margin-top:10px">Your story, your pace.</h2></div><button class="btn ghost" onclick="go('start')">Choose your path</button></div>
+  <div class="paths" style="margin-top:26px">
+   ${[['ring','Planning to propose','propose'],['plan','We’re engaged','w-budget'],['venue','Started planning','started'],['party','Bucks & Hens','soon'],['honey','Honeymoon','soon']].map(([a,t,g])=>`<button class="pathc" style="background:none;border:0;padding:0;cursor:pointer" onclick="${g==='soon'?"toast('Coming soon')":`pick('${g}')`}">${art(a,'arch')}<div class="t">${t}</div>${g==='soon'?'<span class="badge">Coming soon</span>':''}</button>`).join('')}
+  </div>
+ </section>
+ <section class="band"><div class="wrap" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;align-items:center">
+  <div><p class="eyebrow">For suppliers</p><h2 style="margin-top:10px">Meet couples who are ready, near you.</h2><p class="lead">Jewellers, photographers, venues and florists across Victoria.</p><button class="btn light" style="margin-top:22px" onclick="go('sup-join')">List your business</button></div>
+  ${art('flower','round','height:260px')}
+ </div></section>
+ ${footerBlock()}`,{tabs:false});
+
+V.start=()=>shell(`<div class="narrow">${backBtn('home')}
+ <p class="eyebrow" style="margin-top:22px">Let's make it yours</p><h2 style="margin-top:10px">Where does your story begin?</h2><p class="lead">Start wherever you are. We'll guide the next step.</p>
+ <div class="opts grid2">
+  ${opt('ring',"I'm planning to propose",'Find a ring or plan the moment',"pick('propose')")}
+  ${opt('glass',"We're engaged",'Help us find our first step',"pick('w-budget')")}
+  ${opt('list',"We've started planning",'Pick up where we left off',"pick('started')")}
+  ${opt('party','Bucks & Hens','Celebrate before the big day',"toast('Bucks & Hens is coming soon')",true)}
+  ${opt('sun',"Let's plan our honeymoon",'Start with the getaway',"toast('Honeymoon planning is coming soon')",true)}
+ </div><p class="eyebrow" style="text-align:center;margin-top:34px">Your story. Your pace.</p></div>`);
+function opt(ic,t,s,on,soon){return `<button class="opt ${soon?'disabled':''}" onclick="${on}"><span class="ic">${I[ic]}</span><span><span class="t" style="display:block">${t}</span><span class="s">${s}</span>${soon?' <span class="badge">Coming soon</span>':''}</span><span class="chev">${I.chev}</span></button>`}
+
+V.propose=()=>shell(`<div class="narrow">${backBtn('start')}<p class="eyebrow" style="margin-top:22px">Planning your proposal</p><h2 style="margin-top:10px">Where would you like to start?</h2><p class="lead">A few quick choices. You can change anything later.</p>
+ <div class="opts">${optSel('ring','Find a ring','Ring, photographer and venue',S.proposeMode==='ring',"S.proposeMode='ring';go('area')")}${optSel('glass','Plan the proposal','Photographer and venue',S.proposeMode==='plan',"S.proposeMode='plan';go('area')")}</div></div>`);
+function optSel(ic,t,s,on,click){return `<button class="opt ${on?'on':''}" onclick="${click}"><span class="ic">${I[ic]}</span><span><span class="t" style="display:block">${t}</span><span class="s">${s}</span></span><span class="chev">${I.chev}</span></button>`}
+
+V.area=()=>shell(`<div class="narrow">${backBtn('propose')}<p class="eyebrow" style="margin-top:22px">Planning your proposal</p><h2 style="margin-top:10px">Where are you planning to propose?</h2><p class="lead">We'll show suppliers in your area.</p>
+ <div class="opts" role="radiogroup">${AREAS.map(a=>`<button class="opt ${S.area===a?'on':''}" role="radio" aria-checked="${S.area===a}" onclick="S.area='${a}';render()"><span class="radio"></span><span class="t" style="font-size:20px">${a}</span></button>`).join('')}</div>
+ <button class="btn primary block" style="margin-top:26px" onclick="go(S.proposeMode==='ring'?'ring':'photo')">Next</button><p style="text-align:center;margin-top:14px"><button class="link" onclick="S.area='Melbourne';go(S.proposeMode==='ring'?'ring':'photo')">Not sure yet</button></p></div>`);
+
+function budgetStep({key,doneKey,title,sub,max,check,n,of,next,back}){
+  const v=S[key];
+  return shell(`<div class="narrow">${backBtn(back)}<p class="eyebrow" style="margin-top:22px">Planning your proposal</p>${prog(n,of)}
+  <h2 style="margin-top:14px">${title}</h2><p class="lead">${sub}</p>
+  <div class="card" style="margin-top:26px">
+   <div class="money" id="moneyOut">${fmt(v)}${v>=max?'+':''}</div>
+   <input type="range" min="0" max="${max}" step="100" value="${Math.min(v,max)}" aria-label="${title}" oninput="S['${key}']=+this.value;document.getElementById('moneyOut').textContent=fmt(this.value)+(+this.value>=${max}?'+':'');document.getElementById('amt').value=this.value">
+   <div class="between tiny soft"><span>$0</span><span>${fmt(max)}+</span></div>
+   <label class="field"><span>Or enter a custom amount</span><input id="amt" inputmode="numeric" value="${v}" oninput="S['${key}']=+this.value.replace(/\\D/g,'')||0;document.getElementById('moneyOut').textContent=fmt(S['${key}'])"></label>
+   <button class="opt ${S[doneKey]?'on':''}" style="margin-top:16px;padding:14px 16px" onclick="S['${doneKey}']=!S['${doneKey}'];render()"><span class="checkbox">${S[doneKey]?'✓':''}</span><span class="small">${check}</span></button>
+  </div>
+  <button class="btn primary block" style="margin-top:22px" onclick="go('${next}')">Next</button><p style="text-align:center;margin-top:14px"><button class="link" onclick="go('${next}')">Not sure yet</button></p></div>`);
+}
+V.ring=()=>budgetStep({key:'ring',doneKey:'ringDone',title:'What feels comfortable for your ring?',sub:'A rough figure is plenty. You can change it later.',max:15000,check:"We've already found one",n:1,of:4,next:'photo',back:'area'});
+V.photo=()=>budgetStep({key:'photo',doneKey:'photoDone',title:'Photographer?',sub:'How much would you like to spend on someone to capture the moment?',max:10000,check:"We've already organised this",n:S.proposeMode==='ring'?2:1,of:S.proposeMode==='ring'?4:3,next:'venue',back:S.proposeMode==='ring'?'ring':'area'});
+V.venue=()=>budgetStep({key:'venue',doneKey:'venueDone',title:'Venue?',sub:"How much would you like to spend on the place you'll pop the question?",max:20000,check:"We've already organised this",n:S.proposeMode==='ring'?3:2,of:S.proposeMode==='ring'?4:3,next:'extras',back:'photo'});
+V.extras=()=>shell(`<div class="narrow">${backBtn('venue')}<p class="eyebrow" style="margin-top:22px">Optional extras</p>${prog(S.proposeMode==='ring'?4:3,S.proposeMode==='ring'?4:3)}<h2 style="margin-top:14px">Fancy anything else?</h2><p class="lead">Tick only what you'd like. Skip the rest.</p>
+ <div class="opts">${Object.entries(S.extras).map(([k,o])=>`<div class="opt ${o.on?'on':''}" style="display:block;cursor:default"><div class="row" style="cursor:pointer" onclick="S.extras['${k}'].on=!S.extras['${k}'].on;render()"><span class="checkbox">${o.on?'✓':''}</span><span class="t" style="font-size:20px">${k}</span>${o.on?`<span style="margin-left:auto" class="serif" id="ex-${k.replace(/\W/g,'')}">${fmt(o.v)}</span>`:''}</div>${o.on?`<input type="range" min="0" max="5000" step="50" value="${o.v}" aria-label="${k} budget" style="margin-top:10px" oninput="S.extras['${k}'].v=+this.value;document.getElementById('ex-${k.replace(/\W/g,'')}').textContent=fmt(this.value)">`:''}</div>`).join('')}</div>
+ <button class="btn primary block" style="margin-top:26px" onclick="go(S.signedIn?'dash':'save')">See my plan</button></div>`);
+
+function qStep({eyebrow,title,sub,n,of,key,options,next,back,know}){
+  return shell(`<div class="narrow">${backBtn(back)}<p class="eyebrow" style="margin-top:22px">${eyebrow}</p>${prog(n,of)}<h2 style="margin-top:14px">${title}</h2><p class="lead">${sub}</p>
+  <div class="opts">${options.map(o=>`<button class="opt ${S[key]===o?'on':''}" onclick="S['${key}']='${o}';render()"><span class="radio"></span><span class="t" style="font-size:20px">${o}</span></button>`).join('')}
+  ${know?`<button class="opt ${S[key]===know?'on':''}" onclick="S['${key}']='${know}';render()"><span class="radio"></span><span class="t" style="font-size:20px">${know}</span></button>`:''}</div>
+  <button class="btn primary block" style="margin-top:26px" onclick="go('${next}')">Next</button><p style="text-align:center;margin-top:14px"><button class="link" onclick="go('${next}')">Not sure yet</button></p></div>`);
+}
+V['w-budget']=()=>shell(`<div class="narrow">${backBtn('start')}<p class="eyebrow" style="margin-top:22px">Your first step</p>${prog(1,4)}<h2 style="margin-top:14px">What feels comfortable for your wedding?</h2><p class="lead">Choose a preferred spend and a comfortable maximum.</p>
+ <div class="card" style="margin-top:26px"><div class="between"><span class="muted">Preferred</span><span class="serif" style="font-size:30px" id="wp">${fmt(S.wPref)}</span></div><input type="range" min="5000" max="120000" step="1000" value="${S.wPref}" aria-label="Preferred spend" oninput="S.wPref=+this.value;document.getElementById('wp').textContent=fmt(this.value)">
+ <hr class="rule"><div class="between"><span class="muted">Maximum</span><span class="serif" style="font-size:30px" id="wm">${fmt(S.wMax)}</span></div><input type="range" min="5000" max="150000" step="1000" value="${S.wMax}" aria-label="Maximum spend" oninput="S.wMax=+this.value;document.getElementById('wm').textContent=fmt(this.value)"></div>
+ <button class="btn primary block" style="margin-top:22px" onclick="S.path='wedding';go('w-dest')">Next</button></div>`);
+V['w-dest']=()=>qStep({eyebrow:"Let's give your day a starting point",title:'Do you have a destination in mind?',sub:'A rough idea is plenty. You can change it later.',n:2,of:4,key:'dest',options:['Melbourne metro','Yarra Valley','Mornington Peninsula','Regional Victoria','Interstate','International'],know:"We're open",next:'w-when',back:'w-budget'});
+V['w-when']=()=>qStep({eyebrow:"Let's give your day a starting point",title:'When are you thinking?',sub:'Pick a season, or tell us the date.',n:3,of:4,key:'when',options:['Spring 2027','Summer 2027–28','Autumn 2028','Winter 2028','Later than that'],know:'We already know the date',next:'w-guests',back:'w-dest'});
+V['w-guests']=()=>qStep({eyebrow:"Let's give your day a starting point",title:'How many guests are you thinking?',sub:'A rough number helps us suggest venues.',n:4,of:4,key:'guests',options:['Under 30','30–50','50–80','80–100','100–150','150+'],next:S.signedIn?'dash':'save',back:'w-when'});
+V.started=()=>{const all=['Venue','Catering','Photography','Attire & rings','Flowers & styling','Entertainment','Guest list','Invitations','Hair & makeup','Transport'];
+ const sug={Venue:['Catering','Photography','Guest list'],Photography:['Venue','Hair & makeup','Flowers & styling']};const s=(sug[S.started[0]]||['Venue','Photography','Guest list']).filter(x=>!S.started.includes(x)).slice(0,3);
+ return shell(`<div class="narrow">${backBtn('start')}<p class="eyebrow" style="margin-top:22px">Pick up where you left off</p><h2 style="margin-top:10px">What have you started planning?</h2><p class="lead">Tick everything that's under way.</p>
+ <div class="filters" style="flex-wrap:wrap;margin-top:24px">${all.map(a=>`<button class="chip ${S.started.includes(a)?'on':''}" onclick="toggleStarted('${a}')">${S.started.includes(a)?'✓ ':''}${a}</button>`).join('')}</div>
+ <div class="card" style="margin-top:26px"><p class="eyebrow">Suggested next</p>${s.map((x,i)=>`<div class="kv"><span><b style="font-weight:500">${i+1}. ${x}</b><br><span class="small muted">${{Catering:'Most venues set the menu options and minimums.',Photography:'Good photographers book 12–18 months ahead.','Guest list':'Numbers decide venue size and catering cost.',Venue:'Everything else follows the venue date.','Hair & makeup':'Trials need booking early in peak season.','Flowers & styling':'Styling follows the venue look.'}[x]||'A good next step.'}</span></span></div>`).join('')}</div>
+ <button class="btn primary block" style="margin-top:22px" onclick="S.path='wedding';go(S.signedIn?'dash':'save')">Continue</button></div>`)};
+function toggleStarted(a){const i=S.started.indexOf(a);i<0?S.started.push(a):S.started.splice(i,1);render()}
+
+V.save=()=>shell(`<div class="narrow" style="max-width:520px">${backBtn('home')}
+ <div style="text-align:center;margin-top:18px">${art('ring','arch','width:120px;height:150px;margin:0 auto')}<p class="eyebrow" style="margin-top:20px">Make it yours</p><h2 style="margin-top:10px">Save your plan. Start your story.</h2><p class="lead">Keep your choices together and pick up whenever you're ready.</p></div>
+ <label class="field"><span>First name</span><input id="fn" value="${esc(S.name)}" placeholder="Your first name" autocomplete="given-name"></label>
+ <label class="field"><span>Email address</span><input id="em" type="email" value="${esc(S.email)}" placeholder="you@example.com" autocomplete="email"></label>
+ <button class="btn primary block" style="margin-top:22px" onclick="S.name=document.getElementById('fn').value||'James';S.email=document.getElementById('em').value||'james@example.com';go('check')">Save our plan</button>
+ <p class="tiny soft" style="text-align:center;margin-top:12px">Free to get started. We'll email you a secure sign-in link, no password. By continuing you agree to the Terms and Privacy Policy.</p></div>`,{tabs:false});
+V.check=()=>shell(`<div class="narrow" style="max-width:520px;text-align:center"><div class="art arch" style="width:120px;height:150px;margin:20px auto 0;background:linear-gradient(165deg,#E6EADF,#A9AE97)"><svg viewBox="0 0 100 100"><rect x="26" y="34" width="48" height="34" rx="4" fill="none" stroke="#fff" stroke-width="1.6"/><path d="M26 36l24 18 24-18" fill="none" stroke="#fff" stroke-width="1.6"/></svg></div>
+ <h2 style="margin-top:22px">Check your email</h2><p class="lead">We sent a sign-in link to <b>${esc(S.email)}</b>. It works for 30 minutes.</p>
+ <button class="btn primary block" style="margin-top:26px" onclick="S.signedIn=true;go('dash');toast('Signed in. Your plan is saved.')">Open the link (demo)</button><p style="margin-top:14px"><button class="link" onclick="toast('New link sent')">Send it again</button></p></div>`,{tabs:false});
+
+function donut(parts,total){let a=0;const R=58,C=2*Math.PI*R;return `<svg width="170" height="170" viewBox="0 0 170 170" role="img" aria-label="Budget split"><circle cx="85" cy="85" r="${R}" fill="none" stroke="#EEE9DD" stroke-width="22"/>${parts.map(p=>{const l=p.v/total*C;const s=`<circle cx="85" cy="85" r="${R}" fill="none" stroke="${p.c}" stroke-width="22" stroke-dasharray="${l} ${C-l}" stroke-dashoffset="${-a}" transform="rotate(-90 85 85)"/>`;a+=l;return s}).join('')}<text x="85" y="82" text-anchor="middle" font-family="Georgia,serif" font-size="22" fill="#191D18">${fmt(total)}</text><text x="85" y="102" text-anchor="middle" font-size="11" fill="#7A7F72">total plan</text></svg>`}
+V.dash=()=>{
+ const isP=S.path==='propose';
+ const items=isP?[['Ring',S.ring,S.ringDone],['Photographer',S.photo,S.photoDone],['Venue',S.venue,S.venueDone],...Object.entries(S.extras).filter(([k,o])=>o.on).map(([k,o])=>[k,o.v,false])]:[];
+ const total=items.reduce((t,i)=>t+i[1],0);
+ const nextItem=isP?items.find(i=>!i[2]&&!S.booked[i[0]]):null;
+ const cols=['#65715F','#8A6F5A','#A8844E','#B9C1AE','#D7C2AE','#4E5949','#C9B39C','#9EAFB0'];
+ const wparts=[['Venue',.30],['Catering',.25],['Photography',.10],['Attire & rings',.10],['Flowers & styling',.08],['Entertainment',.07],['Bucks & hens',.04],['Other',.06]].map((p,i)=>({k:p[0],v:S.wPref*p[1],c:cols[i]}));
+ const pparts=items.map((i,k)=>({k:i[0],v:i[1],c:cols[k]}));
+ const savedN=Object.keys(S.saved).length;
+ return shell(`<div class="wrap">
+ <div class="between" style="flex-wrap:wrap;align-items:flex-end"><div><p class="eyebrow">${isP?'Your proposal':'Your wedding'}</p><h2 style="margin-top:8px">Welcome, ${esc(S.name||'there')}.</h2><p class="lead" style="margin-top:6px">${isP?'Your proposal is taking shape.':'Your wedding is taking shape.'}</p></div>
+ <div class="count"><div><b>${savedN}</b><span class="tiny soft">saved</span></div><div><b>${Object.keys(S.booked).length}</b><span class="tiny soft">booked</span></div></div></div>
+ <div class="dash" style="margin-top:26px">
+  <div class="stack">
+   <div class="card">
+    <div class="between"><h3>${isP?'Our proposal':'Our wedding'}</h3><span class="row small"><button class="link" onclick="go('${isP?'ring':'w-budget'}')">Edit</button>${isP?`<button class="link" onclick="go('extras')">Extras</button>`:''}</span></div>
+    <p class="small muted row" style="margin-top:6px;gap:6px">${I.pin} ${isP?S.area:S.dest} · <button class="link small" onclick="S.sheet='area';render()">Change location</button></p>
+    <hr class="rule">
+    ${isP?items.map(i=>`<div class="kv"><span>${i[0]} ${i[2]||S.booked[i[0]]?'<span class="badge" style="margin-left:6px">Already organised</span>':''}</span><span>${fmt(i[1])}</span></div>`).join('')+`<div class="kv" style="border-top:1px solid var(--ink);margin-top:4px"><b>Total</b><b>${fmt(total)}</b></div>`
+    :`<div class="kv"><span>Budget</span><span>${fmt(S.wPref)} – ${fmt(S.wMax)}</span></div><div class="kv"><span>Where</span><span>${S.dest}</span></div><div class="kv"><span>When</span><span>${S.when}</span></div><div class="kv"><span>Guests</span><span>${S.guests}</span></div>`}
+   </div>
+   ${isP&&nextItem?`<div class="card next">${art(nextItem[0]==='Ring'?'ring':nextItem[0]==='Photographer'?'camera':nextItem[0]==='Venue'?'venue':'flower','round')}<div><p class="eyebrow">Your next step</p><h3 style="margin-top:8px;font-size:30px">Find a ${nextItem[0].toLowerCase()}.</h3><p class="muted" style="margin-top:6px">Browse ${nextItem[0]==='Ring'?'ring stores':nextItem[0].toLowerCase()+'s'} near ${S.area}, within ${fmt(nextItem[1])}.</p><button class="btn primary" style="margin-top:18px" onclick="S.cat='${{Ring:'Rings',Photographer:'Photography',Venue:'Venues',Flowers:'Flowers','Car hire':'Car hire','Hotel room':'Hotels',Catering:'Catering'}[nextItem[0]]}';go('find')">Find a ${nextItem[0].toLowerCase()}</button></div></div>`:''}
+   ${!isP?`<div class="card next">${art('venue','round')}<div><p class="eyebrow">Your next step</p><h3 style="margin-top:8px;font-size:30px">Find your venue.</h3><p class="muted" style="margin-top:6px">Venues in ${S.dest} for ${S.guests} guests.</p><button class="btn primary" style="margin-top:18px" onclick="S.cat='Venues';go('find')">Explore venues</button></div></div>`:''}
+   <div class="card"><div class="between"><h3>Where your money is going</h3><button class="link small" onclick="go('${isP?'ring':'w-budget'}')">Edit</button></div>
+    <div class="donut-wrap" style="margin-top:14px">${donut(isP?pparts:wparts,isP?total:S.wPref)}<div class="legend">${(isP?pparts:wparts).map(p=>`<div><i style="background:${p.c}"></i>${p.k}<b>${fmt(p.v)}</b></div>`).join('')}${!isP?`<div style="border-top:1px solid var(--line);padding-top:6px;margin-top:4px"><span class="muted">Still to plan</span><b>${fmt(S.wMax-S.wPref)}</b></div>`:''}</div></div></div>
+  </div>
+  <div class="stack">
+   <div class="card" style="background:var(--sage);color:#fff;border-color:var(--sage)"><p class="eyebrow" style="color:#E6EADF">Plan together</p><h3 style="margin-top:8px;color:#fff">${S.partner?esc(S.partner)+' is invited':'Invite your partner'}</h3><p class="small" style="margin-top:6px;color:#EEF1E9">${S.partner?'You both see the same plan and list.':'Share your plan and decide together.'}</p><button class="btn light" style="margin-top:16px" onclick="go('invite')">${S.partner?'Manage':'Invite'}</button></div>
+   <div class="card"><h3>Your timeline</h3><div class="timeline" style="margin-top:10px">
+    ${(isP?[['Set your budget',true],['Choose your area',true],['Find the ring',S.booked.Ring||S.ringDone],['Book a photographer',S.booked.Photographer||S.photoDone],['Lock in the venue',S.booked.Venue||S.venueDone],['The moment',false]]:[['Set your budget',true],['Pick a season',true],['Book the venue',false],['Photographer',false],['Send save-the-dates',false]]).map(t=>`<div class="tl ${t[1]?'done':''}"><span class="dot"></span><span class="small">${t[0]}</span></div>`).join('')}</div></div>
+   <div class="card"><div class="between"><h3>Saved suppliers</h3><button class="link small" onclick="go('list')">View list</button></div><p class="small muted" style="margin-top:6px">${savedN?savedN+' saved so far.':'Nothing saved yet. Tap the heart on any supplier.'}</p></div>
+  </div>
+ </div></div>`);
+};
+function areaSheet(){return `<div class="sheet" onclick="if(event.target===this){S.sheet=null;render()}"><div class="panel"><h3>Change location</h3><p class="small muted" style="margin-top:4px">Suppliers will update to your new area.</p><div class="opts" style="margin-top:14px">${AREAS.map(a=>`<button class="opt ${S.area===a?'on':''}" onclick="S.area='${a}';S.sheet=null;render();toast('Showing suppliers near ${a}')"><span class="radio"></span><span>${a}</span></button>`).join('')}</div></div></div>`}
+
+V.find=()=>{
+ const list=SUP.filter(s=>s.cat===S.cat);const near=list.filter(s=>s.area===S.area);const show=near.length?near:list;
+ const budget={Rings:S.ring,Photography:S.photo,Venues:S.venue,Flowers:S.extras.Flowers.v}[S.cat];
+ return shell(`<div class="wrap"><p class="eyebrow">Find suppliers</p><h2 style="margin-top:8px">${S.cat==='Rings'?'Ring stores':S.cat} near ${S.area}</h2>${budget?`<p class="lead" style="margin-top:6px">Based on your budget of ${fmt(budget)}</p>`:''}
+ <div class="filters" style="margin-top:20px">${CATS.map(c=>`<button class="chip ${S.cat===c?'on':''}" onclick="S.cat='${c}';render()">${c}</button>`).join('')}</div>
+ <div class="row small muted" style="margin-top:12px;gap:6px">${I.pin}${S.area} · <button class="link small" onclick="S.sheet='area';render()">Change</button></div>
+ ${show.length?`${!near.length?`<div class="card" style="margin-top:18px;background:var(--sand)"><b style="font-weight:500">We're building our ${S.area} directory.</b> <span class="muted">Showing ${S.cat.toLowerCase()} elsewhere in Victoria.</span></div>`:''}
+ <div class="grid3" style="margin-top:20px">${show.map(s=>supCard(s)).join('')}</div><p class="sample" style="margin-top:16px">Sample listings for the prototype · not real businesses</p>`
+ :`<div class="card" style="margin-top:22px;text-align:center;padding:40px 24px">${art('plan','arch','width:110px;height:140px;margin:0 auto')}<h3 style="margin-top:18px">We're launching our ${S.cat.toLowerCase()} directory soon.</h3><p class="muted" style="margin-top:8px">Get a note when local ${S.cat.toLowerCase()} near ${S.area} join.</p><button class="btn primary" style="margin-top:20px" onclick="notifyMe()">${S.notify[S.cat+S.area]?'You’re on the list ✓':'Notify me'}</button></div>`}
+ </div>`)};
+function supCard(s){return `<div class="sup" onclick="S.cur='${s.id}';go('supplier')"><div style="position:relative">${art(s.art,'', 'height:210px')}<button class="save" aria-label="Save ${esc(s.name)}" onclick="event.stopPropagation();toggleSave('${s.id}')">${I.heart(S.saved[s.id])}</button></div><div class="body"><div class="between"><span class="serif" style="font-size:22px">${esc(s.name)}</span></div><p class="small muted">${esc(s.tag)}</p><div class="between" style="margin-top:10px"><span class="small row" style="gap:4px">${I.pin}${s.area}</span><span class="small">From <b style="font-weight:500">${fmt(s.from)}</b></span></div></div></div>`}
+function toggleSave(id){S.saved[id]?delete S.saved[id]:(S.saved[id]=true);const s=SUP.find(x=>x.id===id);toast(S.saved[id]?'Saved to your list':'Removed from your list');render()}
+function notifyMe(){S.notify[S.cat+S.area]=true;toast(`Thanks! We'll email you when a ${S.cat.toLowerCase()} supplier near ${S.area} joins.`);render()}
+V.empty=()=>{S.cat='Hotels';return V.find()};
+V.supplier=()=>{const s=SUP.find(x=>x.id===S.cur)||SUP[0];
+ return shell(`<div class="wrap">${backBtn('find')}
+ <div class="gallery" style="margin-top:18px">${art(s.art,'round')}${art('court','round')}${art('flower','round')}${art('hero','round')}${art('venue2','round')}</div>
+ <div class="prof"><div><p class="sample">Sample listing</p><h2 style="margin-top:6px">${esc(s.name)}</h2><p class="lead" style="margin-top:6px">${esc(s.tag)}</p>
+  <div class="row" style="margin-top:14px;flex-wrap:wrap;gap:8px"><span class="chip">${I.pin}${s.area}</span><span class="chip">${s.cat}</span><span class="chip">From ${fmt(s.from)}</span></div>
+  <hr class="rule"><h3>About</h3><p class="muted" style="margin-top:8px">A short story from the supplier: who they are, their style, and what a proposal or wedding with them looks like. Written by the supplier and approved by Your Next Chapter before it goes live.</p>
+  <h3 style="margin-top:26px">Price guide</h3><div class="card" style="margin-top:10px;padding:8px 20px"><div class="kv"><span>Starting from</span><span>${fmt(s.from)}</span></div><div class="kv"><span>Typical couples spend</span><span>${fmt(s.from*1.6)}</span></div><div class="kv"><span>Travels to</span><span>${s.area}, Melbourne</span></div></div>
+ </div>
+ <div><div class="card" style="position:sticky;top:90px"><h3>Interested?</h3><p class="small muted" style="margin-top:6px">They only see your details if you send an enquiry.</p><button class="btn primary block" style="margin-top:16px" onclick="S.sheet='enquire';render()">Send an enquiry</button><button class="btn light block" style="margin-top:10px" onclick="toggleSave('${s.id}')">${S.saved[s.id]?'Saved ✓':'Save to list'}</button><p class="small" style="margin-top:14px"><button class="link small" onclick="toast('Opens their website')">Visit website</button></p></div></div></div>
+ </div>`)};
+function enquireSheet(s){return `<div class="sheet" onclick="if(event.target===this){S.sheet=null;render()}"><div class="panel"><p class="eyebrow">Enquiry</p><h3 style="margin-top:6px">${esc(s.name)}</h3>
+ <div class="card" style="margin-top:14px;padding:8px 18px;background:var(--sand)"><div class="kv small"><span>Budget</span><span>${fmt({Rings:S.ring,Photography:S.photo,Venues:S.venue}[s.cat]||s.from)}</span></div><div class="kv small"><span>Area</span><span>${S.area}</span></div><div class="kv small"><span>Timing</span><span>Within 3 months</span></div></div>
+ <label class="field"><span>Message</span><textarea rows="4">Hi! I'm planning a proposal in ${S.area} and love your work. Could you share availability and options?</textarea></label>
+ <label class="field"><span>Best way to reach you</span><select><option>Email</option><option>Phone</option></select></label>
+ <button class="btn primary block" style="margin-top:18px" onclick="S.contacted['${s.id}']=true;S.saved['${s.id}']=true;S.sheet=null;render();toast('Enquiry sent. Replies arrive by email.')">Send enquiry</button></div></div>`}
+
+V.list=()=>{const ids=Object.keys(S.saved);
+ return shell(`<div class="wrap"><p class="eyebrow">Your list</p><h2 style="margin-top:8px">Suppliers you love.</h2>
+ ${ids.length?`<div class="stack" style="margin-top:22px">${ids.map(id=>{const s=SUP.find(x=>x.id===id);const st=S.booked[s.id]?'Booked':S.contacted[s.id]?'Contacted':'Saved';return `<div class="card" style="display:grid;grid-template-columns:110px 1fr;gap:18px;align-items:center;padding:14px">${art(s.art,'round','height:100px')}<div><div class="between" style="flex-wrap:wrap"><span class="serif" style="font-size:22px">${esc(s.name)}</span><span class="badge ${st==='Booked'?'ok':st==='Contacted'?'sage':''}">${st}</span></div><p class="small muted">${s.cat} · ${s.area} · from ${fmt(s.from)}</p><div class="row small" style="margin-top:10px;flex-wrap:wrap;gap:14px"><button class="link small" onclick="S.cur='${s.id}';go('supplier')">View</button><button class="link small" onclick="S.cur='${s.id}';S.sheet='enquire';go('supplier')">Contact</button><label class="row" style="gap:6px;cursor:pointer"><input type="checkbox" ${S.booked[s.id]?'checked':''} onchange="S.booked['${s.id}']=this.checked;render()"> We've booked them</label><button class="link small" onclick="toggleSave('${s.id}')">Remove</button></div></div></div>`}).join('')}</div>`
+ :`<div class="card" style="margin-top:22px;text-align:center;padding:44px 24px">${art('flower','arch','width:110px;height:140px;margin:0 auto')}<h3 style="margin-top:18px">Nothing here yet.</h3><p class="muted" style="margin-top:6px">Suppliers you save will appear here.</p><button class="btn primary" style="margin-top:18px" onclick="go('find')">Find suppliers</button></div>`}
+ </div>`)};
+V.invite=()=>shell(`<div class="narrow" style="max-width:540px">${backBtn('dash')}<p class="eyebrow" style="margin-top:22px">Plan together</p><h2 style="margin-top:10px">Invite your partner</h2><p class="lead">They'll see the same plan, budget and list. You can remove access any time.</p>
+ <label class="field"><span>Their first name</span><input id="pn" value="${esc(S.partner)}" placeholder="First name"></label><label class="field"><span>Their email</span><input type="email" placeholder="partner@example.com"></label>
+ <button class="btn primary block" style="margin-top:20px" onclick="S.partner=document.getElementById('pn').value||'Alex';go('dash');toast('Invite sent to '+S.partner)">Send invite</button>
+ <div class="card" style="margin-top:18px"><div class="between"><span class="small">Or share a private link</span><button class="mini-btn" onclick="toast('Link copied')">Copy link</button></div></div>
+ <p class="tiny soft" style="margin-top:14px">Proposal plans stay private: a partner can only be invited to a wedding or honeymoon plan.</p></div>`);
+V.account=()=>shell(`<div class="narrow" style="max-width:560px"><p class="eyebrow">Account</p><h2 style="margin-top:10px">${esc(S.name||'You')}</h2><p class="muted">${esc(S.email||'you@example.com')}</p>
+ <div class="card" style="margin-top:22px;padding:8px 20px"><div class="kv"><span>Email updates about my plan</span><span class="badge ok">On</span></div><div class="kv"><span>Notify-me alerts</span><span>${Object.keys(S.notify).length} active</span></div><div class="kv"><span>Partner</span><span>${esc(S.partner||'Not invited')}</span></div><div class="kv"><span>Download my data</span><button class="link small">Request</button></div><div class="kv"><span>Delete my account</span><button class="link small">Delete</button></div></div>
+ <button class="btn light block" style="margin-top:20px" onclick="resetAll()">Reset demo and sign out</button></div>`);
+
+/* ===================== supplier screens ===================== */
+V['sup-join']=()=>shell(`<section class="hero"><div><p class="eyebrow">For wedding and proposal suppliers</p><h1 style="margin-top:16px;font-size:clamp(38px,5.4cqw,64px)">Meet couples who are ready to book, near you.</h1><p class="lead">Couples tell us their area and budget before they see you. You hear from them only when they ask.</p><div class="row" style="margin-top:28px;flex-wrap:wrap"><button class="btn primary" onclick="S.supStep=0;go('sup-onboard')">List your business</button><button class="link" onclick="go('sup-dash')">Supplier log in</button></div></div>${art('camera','arch')}</section>
+ <section class="band"><div class="wrap"><div class="steps3"><div class="stepc"><div class="n">01</div><h3>Create your listing</h3><p class="muted" style="margin-top:8px">Photos, price guide, the areas you cover. About 10 minutes.</p></div><div class="stepc"><div class="n">02</div><h3>We check and approve it</h3><p class="muted" style="margin-top:8px">Every listing is reviewed so couples see real, local businesses.</p></div><div class="stepc"><div class="n">03</div><h3>Receive enquiries</h3><p class="muted" style="margin-top:8px">Couples with a matching budget and area enquire directly.</p></div></div>
+ <div class="card" style="margin-top:28px;text-align:center"><p class="eyebrow">Founding suppliers</p><h3 style="margin-top:8px">Listing plans and pricing: to be confirmed by James</h3><p class="muted small" style="margin-top:6px">Placeholder until the supplier pricing is decided.</p></div></div></section>${footerBlock()}`,{tabs:false});
+V['sup-onboard']=()=>{const steps=['Business','Services','Areas','Photos','Price guide','Review'];const n=S.supStep;
+ const body=[
+  `<label class="field"><span>Business name</span><input placeholder="e.g. Valley Light Studio"></label><label class="field"><span>ABN</span><input placeholder="11 digits"></label><label class="field"><span>Contact email</span><input type="email" placeholder="hello@business.com.au"></label><label class="field"><span>Website or Instagram</span><input placeholder="https://"></label>`,
+  `<p class="muted">What do you offer? Pick all that apply.</p><div class="filters" style="flex-wrap:wrap;margin-top:14px">${CATS.map(c=>`<button class="chip ${S.supCats.includes(c)?'on':''}" onclick="tgl(S.supCats,'${c}')">${c}</button>`).join('')}</div><label class="field"><span>One line about you</span><input placeholder="Proposals and elopements in the Yarra Valley"></label>`,
+  `<p class="muted">Where do you work? Couples only see you in these areas.</p><div class="opts">${AREAS.map(a=>`<button class="opt ${S.supAreas.includes(a)?'on':''}" onclick="tgl(S.supAreas,'${a}')"><span class="checkbox">${S.supAreas.includes(a)?'✓':''}</span><span>${a}</span></button>`).join('')}</div>`,
+  `<div class="upload">${art('camera','round','height:120px;max-width:200px;margin:0 auto 14px')}<b style="font-weight:500">Drop 4–12 photos here</b><br><span class="small">JPG or PNG, at least 1600px wide. The first one is your cover.</span><br><button class="mini-btn dark" style="margin-top:14px">Choose photos</button></div>`,
+  `<label class="field"><span>Starting price (AUD)</span><input inputmode="numeric" placeholder="1800"></label><label class="field"><span>What's included at that price</span><textarea rows="3" placeholder="2 hours, edited gallery within 2 weeks"></textarea></label><label class="field"><span>Typical spend</span><input placeholder="2,500–4,000"></label>`,
+  `<div class="card" style="padding:0;overflow:hidden">${art('camera','', 'height:180px')}<div style="padding:18px"><span class="serif" style="font-size:24px">Valley Light Studio</span><p class="small muted">Proposals and elopements · Yarra Valley, Melbourne · from $1,800</p></div></div><p class="small muted" style="margin-top:12px">We review new listings within 2 business days. You'll get an email when you're live.</p>`
+ ][n];
+ return shell(`<div class="narrow">${n?`<button class="back" onclick="S.supStep--;render()">${I.back} Back</button>`:backBtn('sup-join')}<p class="eyebrow" style="margin-top:22px">List your business</p><div class="stepper">${steps.map((s,i)=>`<span class="${i===n?'on':''}">${i+1}. ${s}</span>`).join('')}</div><h2>${['Tell us about your business','What you offer','Where you work','Show your work','Your price guide','Review and submit'][n]}</h2><div style="margin-top:14px">${body}</div>
+ <button class="btn primary block" style="margin-top:24px" onclick="${n<5?'S.supStep++;render()':"go('sup-dash');toast('Submitted for review')"}">${n<5?'Continue':'Submit for review'}</button></div>`,{tabs:false})};
+function tgl(arr,v){const i=arr.indexOf(v);i<0?arr.push(v):arr.splice(i,1);render()}
+V['sup-dash']=()=>shell(`<div class="wrap"><div class="between" style="flex-wrap:wrap"><div><p class="eyebrow">Supplier dashboard</p><h2 style="margin-top:8px">Valley Light Studio</h2></div><span class="badge warn">In review · usually 2 business days</span></div>
+ <p class="sample" style="margin-top:14px">Sample numbers for the prototype</p>
+ <div class="kpis" style="margin-top:10px"><div class="kpi"><span class="small muted">Profile views</span><b>214</b><span class="tiny soft">last 30 days</span></div><div class="kpi"><span class="small muted">Saved by couples</span><b>18</b></div><div class="kpi"><span class="small muted">Enquiries</span><b>6</b></div><div class="kpi"><span class="small muted">Couples in your areas</span><b>140</b><span class="tiny soft">with a photo budget</span></div></div>
+ <div class="split2" style="margin-top:20px"><div class="card"><h3>Enquiries</h3>${[['Sarah & Tom','Proposal · Yarra Valley · $2,000','New'],['Priya','Proposal · Melbourne · $1,500','Replied'],['Mia & Jack','Wedding · Spring 2027 · 80–100 guests','New']].map(e=>`<div class="kv"><span><b style="font-weight:500">${e[0]}</b><br><span class="small muted">${e[1]}</span></span><span class="badge ${e[2]==='New'?'sage':''}">${e[2]}</span></div>`).join('')}<button class="btn light" style="margin-top:12px" onclick="toast('Opens the enquiry inbox')">Open inbox</button></div>
+ <div class="card"><h3>Your listing</h3><div class="kv"><span>Categories</span><span>${S.supCats.join(', ')}</span></div><div class="kv"><span>Areas</span><span>${S.supAreas.join(', ')}</span></div><div class="kv"><span>Photos</span><span>8 of 12</span></div><div class="kv"><span>Plan</span><span>Founding supplier (TBC)</span></div><button class="btn light" style="margin-top:12px" onclick="S.supStep=0;go('sup-onboard')">Edit listing</button></div></div></div>`,{tabs:false});
+
+/* ===================== admin screens ===================== */
+function adminShell(active,inner){const a=s=>active===s?'on':'';return `<div class="admin"><aside class="side"><div class="brand">Your Next Chapter</div><div class="sec">Admin</div>
+ <a class="${a('admin')}" onclick="go('admin')">Overview</a><a class="${a('admin-suppliers')}" onclick="go('admin-suppliers')">Suppliers</a><a class="${a('admin-couples')}" onclick="go('admin-couples')">Couples</a><a class="${a('admin-demand')}" onclick="go('admin-demand')">Notify-me demand</a><a class="${a('admin-settings')}" onclick="go('admin-settings')">Categories & regions</a><div class="sec">Site</div><a onclick="go('home')">View site</a></aside><div class="adm">${inner}<p class="sample" style="margin-top:22px">All figures are sample data for the prototype</p></div></div>`}
+V.admin=()=>adminShell('admin',`<div class="between" style="flex-wrap:wrap"><div><p class="eyebrow">Admin</p><h2 style="margin-top:6px">Good morning, James.</h2></div><span class="chip">Last 30 days</span></div>
+ <div class="kpis" style="margin-top:20px"><div class="kpi"><span class="small muted">Couples signed up</span><b>312</b><span class="tiny" style="color:var(--ok)">+48 this week</span></div><div class="kpi"><span class="small muted">Plans started</span><b>540</b><span class="tiny soft">58% save their plan</span></div><div class="kpi"><span class="small muted">Suppliers live</span><b>27</b><span class="tiny soft">4 waiting for review</span></div><div class="kpi"><span class="small muted">Enquiries sent</span><b>96</b><span class="tiny soft">to suppliers</span></div></div>
+ <div class="split2" style="margin-top:18px"><div class="card"><h3>New plans by path</h3><div class="bars" style="margin-top:12px">${[['Propose',62],['Engaged',90],['Started',40],['Bucks',8],['Honey',5]].map((b,i)=>`<div class="${i===1?'on':''}" style="height:${b[1]}%"><span>${b[0]}</span></div>`).join('')}</div><div style="height:26px"></div></div>
+ <div class="card"><div class="between"><h3>Needs your attention</h3></div><div class="kv"><span>4 suppliers waiting for review</span><button class="mini-btn dark" onclick="go('admin-suppliers')">Review</button></div><div class="kv"><span>38 couples waiting for a florist in Yarra Valley</span><button class="mini-btn" onclick="go('admin-demand')">See demand</button></div><div class="kv"><span>2 listings with expired photos</span><button class="mini-btn">Email them</button></div></div></div>`);
+V['admin-suppliers']=()=>{const rows=[['Valley Light Studio','Photography','Yarra Valley','Pending review'],['Rosebud Cliff House','Venues','Mornington Peninsula','Pending review'],['Collins Lane Jewellers','Rings','Melbourne','Live'],['Wild Stem Florals','Flowers','Melbourne','Live'],['Grand Tour Cars','Car hire','Melbourne','Paused'],['Fern & Facet','Rings','Melbourne','Live']];
+ const f=S.adminSupFilter;const shown=rows.filter(r=>f==='All'||r[3]===f);
+ return adminShell('admin-suppliers',`<div class="between" style="flex-wrap:wrap"><h2>Suppliers</h2><button class="btn primary" onclick="toast('Opens a blank listing form')">Add supplier</button></div>
+ <div class="filters" style="margin-top:16px">${['All','Pending review','Live','Paused'].map(x=>`<button class="chip ${f===x?'on':''}" onclick="S.adminSupFilter='${x}';render()">${x}</button>`).join('')}</div>
+ <div class="tblwrap" style="margin-top:14px"><table class="tbl"><thead><tr><th>Business</th><th>Category</th><th>Area</th><th>Status</th><th></th></tr></thead><tbody>${shown.map(r=>`<tr><td><b style="font-weight:500">${r[0]}</b></td><td>${r[1]}</td><td>${r[2]}</td><td><span class="badge ${r[3]==='Live'?'ok':r[3]==='Pending review'?'warn':''}">${r[3]}</span></td><td style="white-space:nowrap">${r[3]==='Pending review'?`<button class="mini-btn dark" onclick="toast('${r[0]} approved and live')">Approve</button> <button class="mini-btn" onclick="toast('Change request sent')">Request changes</button>`:`<button class="mini-btn">Edit</button>`}</td></tr>`).join('')}</tbody></table></div>`)};
+V['admin-couples']=()=>adminShell('admin-couples',`<h2>Couples</h2><div class="tblwrap" style="margin-top:16px"><table class="tbl"><thead><tr><th>Name</th><th>Path</th><th>Area</th><th>Budget</th><th>Saved</th><th>Joined</th></tr></thead><tbody>${[['Sarah','Proposal','Yarra Valley','$10,500',3,'12 Oct'],['Mia & Jack','Wedding','Melbourne','$35,000',7,'11 Oct'],['Priya','Proposal','Melbourne','$6,200',2,'10 Oct'],['Ella & Sam','Started planning','Mornington Peninsula','$48,000',5,'9 Oct']].map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div><p class="small muted" style="margin-top:12px">Couples' contact details are only shared with a supplier when the couple sends an enquiry.</p>`);
+V['admin-demand']=()=>{const cats=['Rings','Photography','Venues','Flowers','Car hire'];const data={Melbourne:[22,18,30,26,9],'Yarra Valley':[6,24,41,38,4],'Mornington Peninsula':[4,15,27,12,3],'Dandenong Ranges':[2,9,14,8,1],'Regional Victoria':[3,7,11,6,2]};
+ const shade=v=>`background:rgba(101,113,95,${Math.min(.85,v/45)});color:${v>24?'#fff':'#191D18'}`;
+ return adminShell('admin-demand',`<h2>Notify-me demand</h2><p class="muted" style="margin-top:6px">Couples waiting for a supplier, by category and area. Darker means more couples waiting: recruit there first.</p>
+ <div class="tblwrap" style="margin-top:16px"><table class="tbl heat"><thead><tr><th>Area</th>${cats.map(c=>`<th style="text-align:center">${c}</th>`).join('')}</tr></thead><tbody>${Object.entries(data).map(([a,vs])=>`<tr><td>${a}</td>${vs.map(v=>`<td class="h" style="${shade(v)}">${v}</td>`).join('')}</tr>`).join('')}</tbody></table></div>
+ <div class="card" style="margin-top:16px"><b style="font-weight:500">Top gap: Venues in Yarra Valley (41 couples).</b> <span class="muted">When a matching supplier goes live, everyone waiting gets an email automatically.</span></div>`)};
+V['admin-settings']=()=>adminShell('admin-settings',`<h2>Categories & regions</h2><div class="split2" style="margin-top:16px"><div class="card"><div class="between"><h3>Categories</h3><button class="mini-btn">Add</button></div>${CATS.map(c=>`<div class="kv"><span>${c}</span><span class="badge ok">Shown</span></div>`).join('')}</div><div class="card"><div class="between"><h3>Regions</h3><button class="mini-btn">Add</button></div>${AREAS.map(a=>`<div class="kv"><span>${a}</span><span class="badge ok">Live</span></div>`).join('')}<div class="kv"><span>Sydney</span><span class="badge">Later</span></div></div></div>`);
+
+/* ===================== router ===================== */
+function pick(p){if(p==='propose'){S.path='propose';go('propose')}else if(p==='w-budget'){S.path='wedding';go('w-budget')}else if(p==='started'){S.path='wedding';go('started')}}
+function go(sc){S.screen=sc;if(!(sc==='supplier'&&S.sheet==='enquire'))S.sheet=null;render();const vp=document.getElementById('vp');vp.scrollTop=0;window.scrollTo(0,0)}
+function toast(m){S.toast=m;render();clearTimeout(window._t);window._t=setTimeout(()=>{S.toast='';render()},2600)}
+function resetAll(){Object.assign(S,{name:'',email:'',partner:'',signedIn:false,saved:{},booked:{},contacted:{},notify:{}});go('home')}
+function fit(){const d=document.getElementById('device'),st=document.querySelector('.stage');if(S.device!=='web'){d.style.transform='';st.style.height='';return}const sc=Math.min(1,(st.clientWidth-24)/1280);d.style.transform=sc<1?`scale(${sc})`:'';st.style.height=(d.offsetHeight*sc+48)+'px'}
+window.addEventListener('resize',fit);
+function setDevice(d){S.device=d;document.getElementById('device').className='device '+d;setTimeout(fit,0);document.getElementById('dWeb').classList.toggle('on',d==='web');document.getElementById('dMob').classList.toggle('on',d==='mobile')}
+function render(){
+  const v=V[S.screen]||V.home;
+  document.getElementById('root').innerHTML=v();
+  document.getElementById('overlay').innerHTML=(S.sheet==='area'?areaSheet():'')+(S.sheet==='enquire'?enquireSheet(SUP.find(x=>x.id===S.cur)||SUP[0]):'')+(S.toast?`<div class="toast" role="status">${esc(S.toast)}</div>`:'');
+  const aud=S.screen.startsWith('admin')?'aAdmin':S.screen.startsWith('sup-')?'aSupplier':'aCouple';
+  ['aCouple','aSupplier','aAdmin'].forEach(id=>document.getElementById(id).classList.toggle('on',id===aud));
+  document.getElementById('jump').value=S.screen;
+  document.getElementById('url').textContent='yournextchapter.com.au/'+(S.screen==='home'?'':S.screen.startsWith('admin')?'admin/'+S.screen.replace('admin','').replace('-',''):S.screen);
+}
+document.getElementById('jump').innerHTML=SCREENS.map(([k,l])=>`<option value="${k}">${l}</option>`).join('');
+// sensible demo defaults when jumping straight into signed-in screens
+const _go=go;go=function(sc){if(['dash','find','list','invite','account','supplier'].includes(sc)&&!S.signedIn){S.signedIn=true;S.name=S.name||'James';S.email=S.email||'james@example.com'}_go(sc)};
+(function(){const h=decodeURIComponent(location.hash.slice(1)).split('/');if(h[1]==='mobile'||window.innerWidth<700)setDevice('mobile');if(h[0]&&V[h[0]])go(h[0]);else render();fit();})();
+</script>
+</body>
+</html>

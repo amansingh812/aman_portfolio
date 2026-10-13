@@ -116,3 +116,6 @@ brand/_vid/
 
 # Agent context
 .agents/
+
+# Client work (prototypes, briefs) — not part of the website
+clients/
