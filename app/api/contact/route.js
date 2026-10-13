@@ -160,7 +160,7 @@ function thankYouHtml({ name }) {
       <tr><td style="padding:28px 32px;border-bottom:1px solid ${BORDER};text-align:center;">
         <a href="tel:+61413146498" style="display:inline-block;background:${ORANGE};color:#fff;font-size:13px;font-weight:600;padding:12px 24px;border-radius:8px;text-decoration:none;">Call us: +61 413 146 498</a>
         <div style="height:12px;"></div>
-        <a href="https://calendly.com/amanpd0/30min" style="display:inline-block;border:1px solid ${BORDER};color:${GRAY};font-size:13px;padding:12px 24px;border-radius:8px;text-decoration:none;">Book a free call</a>
+        <a href="https://calendly.com/buildfirstsite28/" style="display:inline-block;border:1px solid ${BORDER};color:${GRAY};font-size:13px;padding:12px 24px;border-radius:8px;text-decoration:none;">Book a free call</a>
       </td></tr>
 
       <!-- What happens next -->

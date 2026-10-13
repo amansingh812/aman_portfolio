@@ -17,7 +17,7 @@ export const HERO = {
   },
   "secondaryCta": {
     "label": "Book a free call",
-    "href": "https://calendly.com/amanpd0/30min"
+    "href": "https://calendly.com/buildfirstsite28/"
   },
   "facts": [
     {

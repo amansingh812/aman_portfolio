@@ -242,7 +242,7 @@ A: Send a short description of your business and what the site needs to do throu
 **Q: What is the difference between a web designer and a web developer?**
 A: A web designer decides how the site looks and how people move through it; a web developer builds it so it works, loads fast and can be found on Google. Many Melbourne agencies split the two between different people. Here the same person does both, which removes the hand-off where most projects lose time.
 
-**Q: Do you work with businesses in Preston, Brunswick, St Kilda or South Yarra?**
+**Q: Do you work with businesses in Preston, Brunswick, St Kilda, South Yarra, Richmond or Footscray?**
 A: Yes. We work with businesses right across Melbourne, including the inner north and inner south. The first meeting can be in person; after that most of the work runs over calls and a live preview link, so your suburb makes no difference to price or timing.
 
 **Q: Can you set up our Google Business Profile in Melbourne?**
@@ -410,6 +410,12 @@ A: Every small business website should have at minimum: a Homepage, About page, 
 
 ### Hire Someone to Build a Website in Australia (From $800)
 https://buildfirstsite.com/hire-website-builder/
+
+**Q: How do I find good website developers for my small business in Australia?**
+A: Look past the portfolio screenshots. Open two or three of their live sites on your phone, ask who owns the code at the end, ask for a fixed written price instead of an hourly estimate, and ask who will fix things after launch. A good small business developer answers all four in writing. We publish our prices, show live client sites, hand over the full code, and design your homepage free before you commit.
+
+**Q: I need someone to make me a website. Where do I start?**
+A: Write two lines: what your business does, and what you want visitors to do (call, book, buy or enquire). Send that through our free homepage design form. You see your homepage designed in about two business days, then get a fixed written quote for the whole site. There is nothing to pay until you approve the quote.
 
 **Q: What is the average cost to hire someone to build a website?**
 A: In Australia, roughly $800 to $5,000 AUD for a small business site built by an independent developer or small studio, and $5,000 to $15,000 from a full agency for the same scope. Marketplace freelancers advertise lower, often $200 to $1,500, with quality that varies more than the price does. Our published prices are $800 for three to five pages, $1,900 for up to ten, $3,500 for ten or more and $4,500 for e-commerce, payable in four instalments.
@@ -719,4 +725,4 @@ A: Between $0 and $65 AUD a month for a typical small business site, plus about 
 - Real client projects: hsracegear.com, mobilearmour.com.au, autozenlyai.com,
   planet.ltfinance.com
 
-_Generated from the site's own content files on 2026-10-07._
+_Generated from the site's own content files on 2026-10-12._

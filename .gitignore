@@ -87,3 +87,32 @@ X-CONTENT-*.md
 *.xlsx
 *.ppt
 *.pptx
+
+# ---- Repo clean-up (13 Oct 2026): keep only what production needs ----
+# Social / launch videos and the scripts + audio that make them (local only)
+brag-output/
+social/
+*.mp4
+*.mov
+*.wav
+*.aiff
+*.mp3
+
+# Old builds, backups and one-off scripts
+content-backup/
+_v1-backup/
+_unused-assets/
+*.bak
+preview.html
+replace_*.cjs
+metadata.json
+Dockerfile
+.dockerignore
+test.*
+
+# Brand working files (Upwork thumbnails, video assets)
+brand/_upwork/
+brand/_vid/
+
+# Agent context
+.agents/
