@@ -47,6 +47,12 @@ const Footer = () => {
 						<div className="text-body-text color-gray-600">
 							<a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer" data-loc="footer">WhatsApp →</a>
 						</div>
+						<div className="text-body-text color-gray-600 mt-10">
+							<a href={SITE.googleReviews} target="_blank" rel="noopener" data-loc="footer-google">Our Google reviews →</a>
+						</div>
+						<div className="text-body-text color-gray-600 mt-10">
+							<a href={SITE.googleReviewWrite} target="_blank" rel="noopener" data-loc="footer-review">Leave us a review →</a>
+						</div>
 					</div>
 				</div>
 				<div className="footer-bottom mt-20">

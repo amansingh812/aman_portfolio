@@ -25,7 +25,17 @@ export const SITE = {
     linkedin: 'https://www.linkedin.com/in/aman-singh-b3a7251a2',
     github: 'https://github.com/amansingh812',
     x: 'https://x.com/buildfirstsite',
+    /** Verified Google Business Profile (Maps CID, stable). Used in sameAs. */
+    google: 'https://maps.google.com/?cid=4960891190149780761',
   },
+  /**
+   * Google review links (verified profile, 15 Oct 2026). Do NOT put the review
+   * link in sameAs, and do NOT mark up the star rating with aggregateRating:
+   * reviews hosted on Google are not ours to mark up (self-serving reviews).
+   * Link to them instead and let Google show them.
+   */
+  googleReviews: 'https://maps.google.com/?cid=4960891190149780761',
+  googleReviewWrite: 'https://g.page/r/CRkVPuZAoNhEEBM/review',
 };
 
 /**

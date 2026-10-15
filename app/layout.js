@@ -45,7 +45,7 @@ const ORGANIZATION_SCHEMA = {
     },
     areaServed: { '@type': 'Country', name: 'Australia' },
     knowsLanguage: 'en-AU',
-    sameAs: [SITE.social.linkedin, SITE.social.github, SITE.social.x],
+    sameAs: Object.values(SITE.social), // LinkedIn, GitHub, X, Google Business Profile
     contactPoint: {
         '@type': 'ContactPoint',
         contactType: 'sales',

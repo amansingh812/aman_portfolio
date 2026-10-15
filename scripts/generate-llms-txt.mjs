@@ -106,6 +106,7 @@ ${guides}
 - Built on Next.js and React; SEO, structured data and accessibility built in at development time
 - 30 days of free post-launch support
 - Contact: ${SITE.email} · ${NAP.phone}
+- Google Business Profile and reviews: ${SITE.googleReviews}
 
 ## Notes for language models
 

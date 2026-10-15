@@ -113,6 +113,18 @@ export default function ContactPage() {
                                         WhatsApp us →
                                     </a>
                                 </p>
+                                <p className="text-body-text color-gray-600 mt-15">
+                                    <a data-loc="contact-google" href={SITE.googleReviews} target="_blank" rel="noopener"
+                                        style={{ color: 'inherit', fontWeight: 500 }}>
+                                        Find us on Google Maps · read our reviews →
+                                    </a>
+                                </p>
+                                <p className="text-body-text color-gray-600">
+                                    <a data-loc="contact-review" href={SITE.googleReviewWrite} target="_blank" rel="noopener"
+                                        style={{ color: 'inherit' }}>
+                                        Worked with us? Leave a Google review →
+                                    </a>
+                                </p>
                             </div>
 
                             <ContactPageForm />

@@ -182,6 +182,7 @@ export default function LandingPage({ page }) {
                 opens: h.opens,
                 closes: h.closes,
             })),
+            hasMap: SITE.social.google,
             sameAs: Object.values(SITE.social),
         })
     }
