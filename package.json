@@ -11,7 +11,8 @@
     "sitemap:images": "node scripts/generate-image-sitemap.mjs",
     "llms": "node scripts/generate-llms-txt.mjs",
     "shots": "node scripts/capture-work-screenshots.mjs",
-    "css:purge": "node scripts/purge-bootstrap.mjs"
+    "css:purge": "node scripts/purge-bootstrap.mjs",
+    "indexnow": "node scripts/indexnow.mjs"
   },
   "dependencies": {
     "next": "14.2.14",

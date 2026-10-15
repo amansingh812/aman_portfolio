@@ -198,6 +198,7 @@ export const FOOTER_COLUMNS = [
       { label: 'About Us', href: '/about/' },
       { label: 'Pricing', href: '/pricing/' },
       { label: 'Hire a Website Builder', href: '/hire-website-builder/' },
+      { label: 'Lovable Prototype to App', href: '/lovable-prototype-to-production/' },
       { label: 'Portfolio', href: '/work/' },
       // Blog is footer-only since it left the navbar — keep this link.
       { label: 'Blog', href: '/blog/' },

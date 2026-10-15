@@ -68,7 +68,7 @@ export const LANDING_PAGES = [
       { type: 'p', html: 'If a form with conditional logic solves your problem, we will build that instead and charge you less. A chatbot that hallucinates your refund policy costs more than it saves.' },
 
       { type: 'h2', text: 'What it costs' },
-      { type: 'p', html: 'A focused AI feature added to an existing site — a trained chatbot, a single automation — starts at <strong>$900</strong> (<a href="/pricing/" class="color-green-900">all packages</a>). A full application with AI at its centre is <strong>$4,500</strong>. Custom platforms are scoped per project from <strong>$5,000</strong>.' },
+      { type: 'p', html: 'A focused AI feature added to an existing site — a trained chatbot, a single automation — starts at <strong>$900</strong> (<a href="/pricing/" class="color-green-900">all packages</a>). A full application with AI at its centre is <strong>$4,500</strong>. Custom platforms are scoped per project from <strong>$5,000</strong>. If you have already built a prototype in Lovable, Bolt or Replit, we can <a href="/lovable-prototype-to-production/" class="color-green-900">turn it into a production app</a>.' },
       { type: 'p', html: 'Ongoing model costs are separate and belong to you: expect roughly $20 to $200 a month in API usage depending on volume. We set it up in your own account so you control the spend and can see exactly what it costs.' },
 
       { type: 'h2', text: 'How we build it' },
@@ -194,7 +194,7 @@ export const LANDING_PAGES = [
       { type: 'p', html: 'Worth saying plainly. If your team needs to edit content daily without touching code — a busy blog, a large content-marketing operation with multiple non-technical writers — a headless CMS on top of Next.js or, in some cases, a well-run <a href="/wordpress-vs-custom-website/" class="color-green-900">WordPress</a> install can be the more practical choice. We will tell you if that is a better fit before we quote a build.' },
 
       { type: 'h2', text: 'What it costs' },
-      { type: 'p', html: 'A business site of up to 10 pages is <strong>$1,900</strong>, delivered in 2–3 weeks. Multi-service or multi-location sites of ten pages or more are <strong>$3,500</strong>. Applications — dashboards, portals, booking systems, custom platforms — are scoped per project from <strong>$5,000</strong>.' },
+      { type: 'p', html: 'A business site of up to 10 pages is <strong>$1,900</strong>, delivered in 2–3 weeks. Multi-service or multi-location sites of ten pages or more are <strong>$3,500</strong>. Applications such as dashboards, portals and booking systems start at <strong>$4,500</strong>, and custom software is scoped per project from <strong>$5,000</strong>. Already have a prototype from an AI builder? See <a href="/lovable-prototype-to-production/" class="color-green-900">turning a Lovable prototype into a real product</a>.' },
       { type: 'p', html: 'Hosting on Vercel is typically free to low-cost for a business site, scaling with traffic. No CMS licence, no plugin subscriptions, no page-builder fee.' },
 
       { type: 'h2', text: 'How we build it' },
@@ -214,7 +214,7 @@ export const LANDING_PAGES = [
 
       { type: 'h2', text: 'Common questions' },
       { type: 'faq', q: 'How much does Next.js development cost in Australia?',
-        a: 'A business site of up to 10 pages is AU$1,900, delivered in 2 to 3 weeks. Multi-service or multi-location sites of ten pages or more are AU$3,500. Applications like dashboards, portals or booking systems are scoped per project from AU$5,000.' },
+        a: 'A business site of up to 10 pages is AU$1,900, delivered in 2 to 3 weeks. Multi-service or multi-location sites of ten pages or more are AU$3,500. Applications like dashboards, portals or booking systems start at AU$4,500, and custom software is scoped per project from AU$5,000.' },
       { type: 'faq', q: 'Is Next.js actually better for SEO than WordPress?',
         a: 'Next.js renders pages on the server, so Google indexes the full HTML immediately without relying on JavaScript execution, and Core Web Vitals scores are strong by default. WordPress can be made to perform well too, but usually needs several plugins layered on to get there — each one a maintenance cost and a possible failure point.' },
       { type: 'faq', q: 'Can you migrate my existing WordPress or Wix site to Next.js?',
@@ -2497,6 +2497,78 @@ export const LANDING_PAGES = [
     ],
   },
 
+  {
+    slug: 'lovable-prototype-to-production',
+    metaTitle: 'Lovable Prototype to Production App | Australia',
+    metaDescription:
+      'Built a prototype in Lovable, Bolt or Replit? We keep your screens and build the real product: logins, database, security, emails and admin. Fixed quote, you own the code.',
+    eyebrow: 'Web Applications',
+    h1: 'Turn your Lovable prototype into a real product',
+    lead:
+      'Lovable, Bolt and Replit are a fast way to get an idea onto screens. Turning that prototype into something real customers can sign up to and pay for needs accounts, a proper database, security, emails and a way to run it. We keep the screens you have designed, build what the prototype is missing, and hand you code you own.',
+    lastUpdated: '2026-10-14',
+    inlineForm: true,
+    priceTiers: ['application', 'custom-software'],
+    schemaType: 'Service',
+    breadcrumb: 'Lovable prototype to production',
+    related: [
+      { href: '/nextjs-development/', label: 'Next.js development' },
+      { href: '/ai-web-development/', label: 'AI web development' },
+      { href: '/hire-website-builder/', label: 'Hire a website builder' },
+      { href: '/pricing/', label: 'All pricing' },
+    ],
+    body: [
+      { type: 'h2', text: 'What a prototype usually needs before real customers use it' },
+      { type: 'p', html: 'Most AI-built prototypes look finished long before they are. These are the gaps we check for first:' },
+      { type: 'ul', items: [
+        '<strong>Saving that only lives in the browser.</strong> Answers and plans are often kept on the visitor\'s own device, so nothing reaches you and nothing survives a new phone.',
+        '<strong>Sign-up buttons that do not create accounts.</strong> A "save your plan" screen is not the same as secure sign-in, password-free email links and a partner or team invite.',
+        '<strong>Database rules.</strong> If the prototype uses Supabase, the row-level security rules decide who can read whose data. They are easy to get wrong and hard to notice until something leaks.',
+        '<strong>An admin side.</strong> Someone has to approve listings, see sign-ups and fix records without asking a developer.',
+        '<strong>Emails, payments and integrations.</strong> Sign-in links, notifications, Stripe, calendars and CRMs need real accounts, error handling and testing.',
+        '<strong>Pages Google can find.</strong> Prototype screens are rarely built to rank. Search pages, metadata, sitemaps and page speed are added at build time.',
+      ]},
+
+      { type: 'h2', text: 'What we keep and what we rebuild' },
+      { type: 'table', headers: ['Keep from your prototype', 'Rebuild properly'], rows: [
+        ['Your screens, layout and design tokens', 'Saving: a real database instead of the browser'],
+        ['Your wording and question flows', 'Sign-in, accounts and permissions'],
+        ['The logic you have worked out (budgets, steps, rules)', 'Admin panel and data management'],
+        ['Your brand, colours and fonts', 'Emails, payments and integrations'],
+        ['Anything the review shows is already solid', 'Security, testing, hosting and SEO'],
+      ]},
+      { type: 'p', html: 'We read your existing code before recommending anything. A full rewrite is never the default, and if your prototype is better kept in Lovable for now, we will tell you.' },
+
+      { type: 'h2', text: 'How it works' },
+      { type: 'ol', items: [
+        '<strong>Send us your Lovable link</strong> (or invite us to the project) and a few lines on who it is for.',
+        '<strong>Within 2 business days</strong> you get a written list of what to keep, what to rebuild, a timeline and a fixed price.',
+        '<strong>Weekly working builds.</strong> You get a link to try on your phone every week, not a big reveal at the end.',
+        '<strong>Launch on your accounts.</strong> The repository, hosting, database and domain are in your name from day one.',
+      ]},
+
+      { type: 'h2', text: 'What it costs' },
+      { type: 'p', html: 'Web applications such as portals, dashboards, directories and booking platforms start at <strong>$4,500</strong>, and larger custom software from <strong>$5,000</strong>. Your exact price is fixed in writing after we review the prototype, so you know the cost before any work starts.' },
+      { type: 'p', html: 'Running costs are paid by you directly to the providers. For a typical early-stage app, hosting, database and email come to roughly US$45 to US$70 a month at launch. See <a href="/website-hosting-cost-australia/" class="color-green-900">what hosting costs</a> for the detail.' },
+
+      { type: 'h2', text: 'When you should keep building in Lovable' },
+      { type: 'p', html: 'If the app is an internal tool for a handful of people, holds no personal or payment data, and you are still changing your mind about the idea every week, staying in Lovable is often the cheaper choice. Move to a production build once you are ready for real users, real data or payments.' },
+
+      { type: 'h2', text: 'Common questions' },
+      { type: 'faq', q: 'Can you work with my existing Lovable code?',
+        a: 'Yes. Lovable projects are React and TypeScript with Tailwind, and the code can be exported to GitHub or downloaded. We review it first, keep what is sound, and rebuild only the parts that need it.' },
+      { type: 'faq', q: 'Will my design change?',
+        a: 'Not unless you want it to. Your screens, colours, fonts and wording carry across. The work is mostly underneath: accounts, data, security, emails and admin.' },
+      { type: 'faq', q: 'Do you also take over Bolt, Replit, v0 or Cursor projects?',
+        a: 'Yes. The approach is the same for any AI-built prototype: review the code, list the gaps, then quote a fixed price for the production build.' },
+      { type: 'faq', q: 'Do I own the code?',
+        a: 'Yes. The repository, hosting, database and domain sit in accounts you control, and the code is yours. Nothing is locked to us.' },
+      { type: 'faq', q: 'How long does it take?',
+        a: 'A focused first version usually takes 4 to 8 weeks, depending on how much of the prototype can be kept and how quickly content and feedback arrive. The written review gives you a week-by-week plan before you commit.' },
+      { type: 'faq', q: 'Do you work with Supabase?',
+        a: 'Yes. Many Lovable projects already use Supabase for the database and sign-in. We check and fix its access rules, set up backups, and keep it in your account.' },
+    ],
+  },
 ]
 
 export function getLandingPage(slug) {

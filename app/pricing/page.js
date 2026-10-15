@@ -398,7 +398,7 @@ export default function PricingPage() {
                                 </div>
                             ))}
                             <p className="text-body-small color-gray-500 mt-30">
-                                Questions about who we are, where we work or why we have no reviews yet
+                                Questions about who we are, where we work or why we have only a few reviews so far
                                 are answered on the <Link href="/about/" className="color-green-900">about page</Link>.
                             </p>
                         </div>

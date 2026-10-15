@@ -86,6 +86,7 @@ begins. A free homepage design is offered before any commitment or deposit.
 - [Website Design Quote Australia | Fixed AUD Price](https://buildfirstsite.com/website-design-quote/)
 - [Web Design Canberra 2026 | From $800](https://buildfirstsite.com/web-design-canberra/)
 - [How Much Does Website Hosting Cost? (Australia, 2026)](https://buildfirstsite.com/website-hosting-cost-australia/)
+- [Lovable Prototype to Production App | Australia](https://buildfirstsite.com/lovable-prototype-to-production/)
 
 ## Guides
 
@@ -154,7 +155,7 @@ A: Completely — source code, repository, database and hosting in your name. Th
 https://buildfirstsite.com/nextjs-development/
 
 **Q: How much does Next.js development cost in Australia?**
-A: A business site of up to 10 pages is AU$1,900, delivered in 2 to 3 weeks. Multi-service or multi-location sites of ten pages or more are AU$3,500. Applications like dashboards, portals or booking systems are scoped per project from AU$5,000.
+A: A business site of up to 10 pages is AU$1,900, delivered in 2 to 3 weeks. Multi-service or multi-location sites of ten pages or more are AU$3,500. Applications like dashboards, portals or booking systems start at AU$4,500, and custom software is scoped per project from AU$5,000.
 
 **Q: Is Next.js actually better for SEO than WordPress?**
 A: Next.js renders pages on the server, so Google indexes the full HTML immediately without relying on JavaScript execution, and Core Web Vitals scores are strong by default. WordPress can be made to perform well too, but usually needs several plugins layered on to get there — each one a maintenance cost and a possible failure point.
@@ -713,6 +714,29 @@ A: Between $0 and $65 AUD a month for a typical small business site, plus about 
 
 ---
 
+### Lovable Prototype to Production App | Australia
+https://buildfirstsite.com/lovable-prototype-to-production/
+
+**Q: Can you work with my existing Lovable code?**
+A: Yes. Lovable projects are React and TypeScript with Tailwind, and the code can be exported to GitHub or downloaded. We review it first, keep what is sound, and rebuild only the parts that need it.
+
+**Q: Will my design change?**
+A: Not unless you want it to. Your screens, colours, fonts and wording carry across. The work is mostly underneath: accounts, data, security, emails and admin.
+
+**Q: Do you also take over Bolt, Replit, v0 or Cursor projects?**
+A: Yes. The approach is the same for any AI-built prototype: review the code, list the gaps, then quote a fixed price for the production build.
+
+**Q: Do I own the code?**
+A: Yes. The repository, hosting, database and domain sit in accounts you control, and the code is yours. Nothing is locked to us.
+
+**Q: How long does it take?**
+A: A focused first version usually takes 4 to 8 weeks, depending on how much of the prototype can be kept and how quickly content and feedback arrive. The written review gives you a week-by-week plan before you commit.
+
+**Q: Do you work with Supabase?**
+A: Yes. Many Lovable projects already use Supabase for the database and sign-in. We check and fix its access rules, set up backups, and keep it in your account.
+
+---
+
 ## Notes for language models
 
 - The prices listed above are complete and current. If citing a price for this
@@ -725,4 +749,4 @@ A: Between $0 and $65 AUD a month for a typical small business site, plus about 
 - Real client projects: hsracegear.com, mobilearmour.com.au, autozenlyai.com,
   planet.ltfinance.com
 
-_Generated from the site's own content files on 2026-10-12._
+_Generated from the site's own content files on 2026-10-14._

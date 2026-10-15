@@ -399,10 +399,10 @@ export const PRICE_TIERS = [
     "timeline": "2–3 weeks"
   },
   {
-    "title": "Unlimited",
-    "desc": "No page cap — for multi-service and multi-location businesses.",
+    "title": "Growth",
+    "desc": "10+ pages, for multi-service and multi-location businesses.",
     "price": "$3,500",
-    "aud": "Unlimited pages",
+    "aud": "10+ pages",
     "timeline": "3–4 weeks"
   },
   {
@@ -443,7 +443,7 @@ export const FAQS = [
   },
   {
     "q": "How much does a project cost?",
-    "a": "Every price is published in AUD on our pricing page and set by scope, not by features. 3–5 pages is $800, up to 10 pages $1,900, unlimited pages $3,500, e-commerce and applications $4,500, and custom software from $5,000. You get a fixed quote upfront — never hourly billing."
+    "a": "Every price is published in AUD on our pricing page and set by scope, not by features. 3–5 pages is $800, up to 10 pages $1,900, 10+ pages $3,500, e-commerce and web applications from $4,500, and custom software from $5,000. You get a fixed quote upfront — never hourly billing."
   },
   {
     "q": "What are the payment terms?",

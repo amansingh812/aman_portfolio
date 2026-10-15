@@ -518,7 +518,7 @@ export const ABOUT_FAQS = [
     a: 'Your day-to-day contact is in Australia and works Australian hours. The practical effect of the time difference is usually positive — work happens overnight your time, so you often wake up to progress. For anything that needs the engineer directly, we schedule calls in the AEST morning.',
   },
   {
-    q: 'You have no Google reviews. Why should I trust you?',
-    a: 'A fair question, and we are not going to pretend otherwise — the established agencies have hundreds of reviews and we have none yet, because we are new. What we can offer instead is verifiable work: hsracegear.com, mobilearmour.com.au, autozenlyai.com and planet.ltfinance.com are all live sites we built, and you can inspect their speed and code yourself. You can also talk directly to the engineer before committing to anything.',
+    q: 'You only have a few reviews. Why should I trust you?',
+    a: 'A fair question, and we are not going to pretend otherwise — the established agencies have hundreds of reviews and we have a handful so far, because we are newer. What we can offer instead is verifiable work: hsracegear.com, mobilearmour.com.au, autozenlyai.com and planet.ltfinance.com are all live sites we built, and you can inspect their speed and code yourself. You can also talk directly to the engineer before committing to anything.',
   },
 ];
