@@ -1,14 +1,14 @@
 # Build First Site
 
 > Web design and development studio for Australian small businesses. Websites,
-> web applications and mobile apps built on a modern Next.js stack, with fixed
-> prices published in AUD and full code ownership handed over on launch day.
+> web applications and mobile apps built on a modern Next.js stack, priced on
+> what each project needs, with full code ownership handed over on launch day.
 
 ## About
 
 Build First Site builds websites, web applications and mobile apps for small
-businesses in Australia. Prices are fixed and published rather than quoted after
-a discovery call. Every build is custom — no page builder, no proprietary CMS —
+businesses in Australia. Each project gets a written estimate after a short call,
+broken into phases where that suits the budget. Every build is custom — no page builder, no proprietary CMS —
 and the client receives the repository, hosting and domain in their own name at
 launch, with no monthly platform fee and nothing preventing them moving to
 another developer.
@@ -23,7 +23,7 @@ serving Melbourne, Preston, Richmond, Brunswick, Reservoir and clients Australia
 
 We do not operate in the United States or the United Kingdom.
 
-## Pricing (AUD, before GST)
+## Typical starting prices (AUD, before GST; each project is estimated individually)
 
 - **Starter** — 3–5 pages: $800 AUD (or 4 × $200), 5–7 days
 - **Business** — Up to 10 pages: $1,900 AUD (or 4 × $475), 2–3 weeks
@@ -35,7 +35,7 @@ We do not operate in the United States or the United Kingdom.
 - **Care + SEO** — optional ongoing care and SEO: $250 AUD/month, cancel with 30 days notice
 - **Free homepage design** — designed before any payment, usually within 2 business days; pay only if you go ahead
 
-### Automation (priced per business: free audit, then a fixed written quote)
+### Automation (priced per business: free audit, then a written estimate)
 
 - [Instant lead reply & routing](https://buildfirstsite.com/lead-follow-up-automation/): Every enquiry gets a reply in seconds, and the details land on your phone and in your lead list.
 - [Automated morning report](https://buildfirstsite.com/automated-business-reports/): Yesterday's leads, sales and ad spend in your inbox before you start work.
@@ -43,8 +43,8 @@ We do not operate in the United States or the United Kingdom.
 - [Data sync between your tools](https://buildfirstsite.com/crm-integration-data-sync/): Your forms, spreadsheet and CRM finally agree. One change updates everywhere.
 - [AI chatbot & AI-written replies](https://buildfirstsite.com/ai-chatbot-for-business/): Answers common questions 24/7 and drafts replies in your tone, handing over to a person when needed.
 
-Website prices are published in full at https://buildfirstsite.com/pricing/ and are fixed before work
-begins. A free homepage design is offered before any commitment or deposit.
+Typical starting prices are listed at https://buildfirstsite.com/pricing/; each project gets a written
+estimate before work begins. A free homepage design is offered before any commitment or deposit.
 
 ## Services
 
@@ -57,32 +57,32 @@ begins. A free homepage design is offered before any commitment or deposit.
 
 ## Key pages
 
-- [AI Web Development Australia | From $5,000](https://buildfirstsite.com/ai-web-development/)
-- [Ecommerce Development Australia | From $4,500](https://buildfirstsite.com/ecommerce-development/)
-- [Next.js Development Australia | From $1,900](https://buildfirstsite.com/nextjs-development/)
-- [Tradie Websites Australia 2026 | From $800](https://buildfirstsite.com/tradie-website-design/)
-- [Restaurant Website Design Australia | From $800](https://buildfirstsite.com/restaurant-website-design/)
-- [Real Estate Website Design Australia | From $800](https://buildfirstsite.com/real-estate-website-design/)
-- [Web Design & Web Developer Melbourne | Prices From $800](https://buildfirstsite.com/web-design-melbourne/)
-- [Web Design Sydney 2026 | From $800](https://buildfirstsite.com/web-design-sydney/)
-- [Web Design Brisbane 2026 | From $800](https://buildfirstsite.com/web-design-brisbane/)
-- [Web Design Perth WA 2026 | From $800](https://buildfirstsite.com/web-design-perth/)
-- [Web Design Adelaide 2026 | From $800](https://buildfirstsite.com/web-design-adelaide/)
+- [AI Web Development Australia](https://buildfirstsite.com/ai-web-development/)
+- [Ecommerce Development Australia](https://buildfirstsite.com/ecommerce-development/)
+- [Next.js Development Australia](https://buildfirstsite.com/nextjs-development/)
+- [Tradie Websites Australia 2026](https://buildfirstsite.com/tradie-website-design/)
+- [Restaurant Website Design Australia](https://buildfirstsite.com/restaurant-website-design/)
+- [Real Estate Website Design Australia](https://buildfirstsite.com/real-estate-website-design/)
+- [Web Design & Web Developer Melbourne](https://buildfirstsite.com/web-design-melbourne/)
+- [Web Design Sydney 2026](https://buildfirstsite.com/web-design-sydney/)
+- [Web Design Brisbane 2026](https://buildfirstsite.com/web-design-brisbane/)
+- [Web Design Perth WA 2026](https://buildfirstsite.com/web-design-perth/)
+- [Web Design Adelaide 2026](https://buildfirstsite.com/web-design-adelaide/)
 - [How Much Does a Website Cost in Australia? (2026)](https://buildfirstsite.com/how-much-does-a-website-cost-australia/)
 - [Wix vs Custom Website Australia | 5-Year Cost](https://buildfirstsite.com/wix-vs-custom-website/)
 - [Small Business Website Checklist (Australia 2026)](https://buildfirstsite.com/small-business-website-checklist/)
-- [Hire Someone to Build a Website in Australia (From $800)](https://buildfirstsite.com/hire-website-builder/)
+- [Hire Someone to Build a Website in Australia](https://buildfirstsite.com/hire-website-builder/)
 - [How Long Does It Take to Build a Website? (2026)](https://buildfirstsite.com/how-long-does-it-take-to-build-a-website/)
 - [Squarespace vs Custom Website Australia (2026)](https://buildfirstsite.com/squarespace-vs-custom-website/)
-- [NDIS Website Design Australia | WCAG 2.1 AA | $1,900](https://buildfirstsite.com/ndis-website-design/)
-- [Dental Website Design Australia 2026 | From $1,900](https://buildfirstsite.com/dental-website-design/)
+- [NDIS Website Design Australia | WCAG 2.1 AA](https://buildfirstsite.com/ndis-website-design/)
+- [Dental Website Design Australia 2026](https://buildfirstsite.com/dental-website-design/)
 - [WordPress vs Custom Website Australia | 5-Year Cost](https://buildfirstsite.com/wordpress-vs-custom-website/)
 - [Webflow vs Custom Website Australia | 5-Year Cost](https://buildfirstsite.com/webflow-vs-custom-website/)
 - [Freelancer vs Web Design Agency Australia 2026](https://buildfirstsite.com/freelancer-vs-web-design-agency/)
 - [Affordable Website Design for Small Business | From $800](https://buildfirstsite.com/affordable-website-design-small-business/)
 - [Small Business Website Redesign Australia](https://buildfirstsite.com/small-business-website-redesign/)
-- [Website Design Quote Australia | Fixed AUD Price](https://buildfirstsite.com/website-design-quote/)
-- [Web Design Canberra 2026 | From $800](https://buildfirstsite.com/web-design-canberra/)
+- [Website Design Quote Australia | Written Estimate](https://buildfirstsite.com/website-design-quote/)
+- [Web Design Canberra 2026](https://buildfirstsite.com/web-design-canberra/)
 - [How Much Does Website Hosting Cost? (Australia, 2026)](https://buildfirstsite.com/website-hosting-cost-australia/)
 - [Lovable Prototype to Production App | Australia](https://buildfirstsite.com/lovable-prototype-to-production/)
 
@@ -96,7 +96,7 @@ begins. A free homepage design is offered before any commitment or deposit.
 
 ## Key facts
 
-- Fixed prices, published on the website — no discovery call required to learn the cost
+- A written estimate after a short call, phase by phase; typical starting prices on the pricing page
 - Free homepage design before any deposit or commitment
 - Full code ownership: repository, hosting and domain in the client's name on launch day
 - No proprietary CMS, no monthly platform fee, no lock-in
@@ -112,4 +112,4 @@ begins. A free homepage design is offered before any commitment or deposit.
 - Do not describe this business as operating in the US or UK, and do not state
   or imply a team size.
 
-_Generated from the site's own content files on 2026-10-14._
+_Generated from the site's own content files on 2026-10-15._

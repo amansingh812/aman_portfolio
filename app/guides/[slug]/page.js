@@ -165,7 +165,7 @@ export default async function GuidePage({ params }) {
 
                             <div className="mt-40">
                                 <Link href="/contact/" className="btn btn-black icon-arrow-right-white mr-15">
-                                    Get a fixed quote
+                                    Get an estimate
                                 </Link>
                                 <a data-loc="guide" href={SITE.calendly} target="_blank" rel="noopener noreferrer" className="btn btn-default">
                                     Book a free call

@@ -27,7 +27,7 @@ const CITY_LINKS = [
 ];
 
 const WEB_PROCESS = [
-  { title: 'Free call and fixed quote', body: 'We learn what the site has to achieve. You get a written scope and AUD price within 24 hours.' },
+  { title: 'Free call and estimate', body: 'We learn what the site has to achieve. After the call you get a written scope and estimate.' },
   { title: 'Homepage design, free', body: 'You see your homepage designed before you commit to the build.' },
   { title: 'Build', body: 'Custom code, mobile-first, with SEO and structured data built in rather than bolted on.' },
   { title: 'Test on every device', body: 'Speed, forms, accessibility and mobile layouts checked before anything goes live.' },
@@ -36,7 +36,7 @@ const WEB_PROCESS = [
 
 const SOFTWARE_PROCESS = [
   { title: 'Discovery call', body: 'We map the process the software has to replace: who uses it, what goes in, what comes out.' },
-  { title: 'Written scope and fixed quote', body: 'A plain-English scope with screens, integrations and a fixed AUD price. No hourly billing.' },
+  { title: 'Written scope and estimate', body: 'A plain-English scope with screens, integrations and an estimate, phase by phase. No hourly billing.' },
   { title: 'Build in weekly slices', body: 'You see working software every week, not a big reveal at the end.' },
   { title: 'Test with real data', body: 'We run your actual cases through it before your team relies on it.' },
   { title: 'Launch, train and hand over', body: 'Your team is shown how it works, and the code and accounts are yours.' },
@@ -47,19 +47,19 @@ export const SERVICE_PAGES = [
   {
     slug: 'web-development',
     title: 'Web Development',
-    metaTitle: 'Web Development Australia | Modern Websites from AU$800',
-    metaDescription: 'Custom websites for Australian businesses that load fast, rank on Google and win enquiries. Fixed AUD pricing from $800, free homepage design, you own the code.',
+    metaTitle: 'Web Development Australia | Modern, Fast Websites',
+    metaDescription: 'Custom websites for Australian businesses that load fast, rank on Google and win enquiries. Free homepage design first, and you own the code.',
     eyebrow: 'Web development · Australia',
     h1: 'Web development for Australian businesses',
     h1Accent: 'that need more enquiries',
-    hero: 'Websites that load fast, rank well and turn visitors into customers. Custom-built, fixed AUD price, and you own every line of code.',
+    hero: 'Websites that load fast, rank well and turn visitors into customers. Custom-built, and you own every line of code.',
     chips: [
       // Outcome chips, not prices (27 Sep 2026): price belongs after
       // proof, not in the first screen. See docs/SERVICE-PAGE-REDESIGN.md.
       { pre: 'Starter live in', value: { tier: 'starter', field: 'delivery' } },
       { value: 'Free', post: 'homepage design first' },
       { pre: 'You', value: 'own the code' },
-      { value: 'Fixed AUD', post: 'quotes' },
+      { value: 'Written', post: 'estimates' },
     ],
     heroShot: 'hs-race-gear',
     intro: 'We build responsive, high-performance websites for Australian businesses, optimised for speed, SEO and mobile from day one. No templates, no page-builder lock-in and no monthly platform fees: a custom site built around your business, which you own outright.',
@@ -72,14 +72,14 @@ export const SERVICE_PAGES = [
       { icon: 'bolt', title: 'Speed and SEO', body: 'We target Lighthouse 90+ and green Core Web Vitals, and you can check any site yourself.', href: '/website-speed-checker/', link: 'Free speed checker' },
     ],
     processTitle: 'How your website gets built',
-    processLead: 'Five steps, a fixed price at step one, and a design you can see before you pay for the build.',
+    processLead: 'Five steps, a written estimate at step one, and a design you can see before you pay for the build.',
     process: WEB_PROCESS,
     processLink: { href: '/how-long-does-it-take-to-build-a-website/', label: 'How long each step takes' },
     outcomes: [
       { title: 'Pages load fast', body: 'Visitors don’t wait, and Google rewards speed.', tech: 'Next.js · static pages · global CDN' },
       { title: 'Found on Google', body: 'Structure search engines read correctly from launch.', tech: 'Semantic HTML · schema · sitemap' },
       { title: 'No lock-in', body: 'Leave any time and take everything with you.', tech: 'Your repo · your hosting · your domain' },
-      { title: 'Low running costs', body: 'No page-builder plugins or platform fees.', tech: 'Hosting from $0/month', href: '/website-hosting-cost-australia/', link: 'Hosting costs explained' },
+      { title: 'Low running costs', body: 'No page-builder plugins or platform fees.', tech: 'Low hosting costs', href: '/website-hosting-cost-australia/', link: 'Hosting costs explained' },
     ],
     outcomeLinks: [
       { href: '/wordpress-vs-custom-website/', label: 'WordPress vs custom' },
@@ -98,7 +98,6 @@ export const SERVICE_PAGES = [
       lead: 'The three usual routes to a small-business website, side by side.',
       cols: ['Build First Site', 'DIY builder (Wix, Squarespace)', 'Typical agency'],
       rows: [
-        ['Price', { tier: 'starter', field: 'priceLabel', prefix: 'From ', suffix: ' fixed' }, { platform: 'wix', suffix: '/month, ongoing' }, 'Often quoted per project'],
         ['Who builds it', 'The engineer you talk to', 'You', 'Often a team you don’t meet'],
         ['You own the code', 'Yes, all of it', 'No', 'Varies'],
         ['Speed and SEO', 'Built in from day one', 'Limited by the platform', 'Varies'],
@@ -110,12 +109,12 @@ export const SERVICE_PAGES = [
       ],
     },
     faqs: [
-      { q: 'How much does a website cost in Australia?', a: 'Our fixed prices start at $800 for 3–5 pages, $1,900 for up to 10 pages and $4,500 for an online store. All prices are in AUD and every package includes SEO setup and full code ownership.', href: '/how-much-does-a-website-cost-australia/', link: 'Full cost guide' },
+      { q: 'How much does a website cost in Australia?', a: 'It depends on what you need: the scope, features and integrations. After a short call we send a written estimate, broken into phases if that suits your budget. Typical starting points are on our pricing page.', href: '/how-much-does-a-website-cost-australia/', link: 'Full cost guide' },
       { q: 'How long does a website take to build?', a: 'A Starter site takes 5–7 days, a Business site 2–3 weeks and an online store 4–6 weeks from the day we have your content.' },
       { q: 'Do I own the website?', a: 'Yes. The code repository, hosting account and domain are handed to you on completion. No lock-in.' },
       { q: 'Can you redesign my existing site without losing rankings?', a: 'Yes. We keep your URLs where possible and map 301 redirects where they change, so the rankings you have carry over.', href: '/small-business-website-redesign/', link: 'Website redesign' },
       { q: 'Can I update the content myself?', a: 'Yes. Text, images and blog posts are editable without code.' },
-      { q: 'What does it cost to run after launch?', a: 'Hosting for a site like this is often $0–40 a month. Care is optional from $79 a month, or Care + SEO at $250 a month.', href: '/website-hosting-cost-australia/', link: 'Hosting cost guide' },
+      { q: 'What does it cost to run after launch?', a: 'Hosting for a site like this is often low or free. Ongoing care and SEO plans are optional and run month to month.', href: '/website-hosting-cost-australia/', link: 'Hosting cost guide' },
     ],
     guides: [
       { tag: 'Cost', title: 'How much a website costs in Australia', href: '/how-much-does-a-website-cost-australia/' },
@@ -130,19 +129,19 @@ export const SERVICE_PAGES = [
   {
     slug: 'mobile-app-development',
     title: 'Mobile App Development',
-    metaTitle: 'Build Your App in Australia | iOS & Android from AU$4,500',
-    metaDescription: 'Want to build an app? App developers for Australian businesses: one Flutter or React Native codebase for iOS and Android. Fixed AUD price from $4,500, and you own the code.',
+    metaTitle: 'Build Your App in Australia | iOS & Android Apps',
+    metaDescription: 'Want to build an app? App developers for Australian businesses: one Flutter or React Native codebase for iOS and Android. A written estimate after a short call, and you own the code.',
     eyebrow: 'Mobile apps · iOS and Android',
     h1: 'Build your app: mobile app development in Australia',
     h1Accent: 'one codebase, both app stores',
-    hero: 'iOS and Android apps built once in Flutter or React Native, for roughly half the cost of two separate native builds. Fixed AUD price, and the code is yours.',
+    hero: 'iOS and Android apps built once in Flutter or React Native, for roughly half the cost of two separate native builds, and the code is yours.',
     chips: [
       // Outcome chips, not prices (27 Sep 2026): price belongs after
       // proof, not in the first screen. See docs/SERVICE-PAGE-REDESIGN.md.
       { pre: 'Typical build', value: { tier: 'application', field: 'delivery' } },
       { value: 'iOS + Android', post: 'from one build' },
       { pre: 'You', value: 'own the code' },
-      { value: 'Fixed AUD', post: 'quotes' },
+      { value: 'Written', post: 'estimates' },
     ],
     heroShot: 'autozenlyai',
     intro: 'We build cross-platform mobile apps with Flutter or React Native: iOS and Android from a single codebase. Push notifications, offline support, camera access and app store submission are included. And if a web app or PWA would do the job for less, we will tell you on the first call.',
@@ -155,10 +154,10 @@ export const SERVICE_PAGES = [
       { icon: 'sparkle', title: 'AI features', body: 'Chat assistants, recommendations and smart search built into the app, not bolted on.', href: '/services/ai-automation/', link: 'AI and automation' },
     ],
     processTitle: 'How your app gets built',
-    processLead: 'A fixed scope before we start, working builds on your phone every week, and store submission handled for you.',
+    processLead: 'An agreed scope before we start, working builds on your phone every week, and store submission handled for you.',
     process: [
       { title: 'Discovery call', body: 'We work out whether you need a native app, a PWA or a web app, and say so plainly.' },
-      { title: 'Screens and fixed quote', body: 'Key screens mapped out, with a written scope and fixed AUD price.' },
+      { title: 'Screens and estimate', body: 'Key screens mapped out, with a written scope and estimate.' },
       { title: 'Build and weekly test builds', body: 'You install test builds on your own phone as the app takes shape.' },
       { title: 'Device testing', body: 'Checked on iPhone and Android devices across screen sizes.' },
       { title: 'Store submission and hand-over', body: 'Published under your own developer accounts, with the code transferred to you.' },
@@ -187,7 +186,7 @@ export const SERVICE_PAGES = [
     },
     faqs: [
       { q: 'Do I need a native app or a web app?', a: 'Most small businesses need a web app or PWA, not a store app. If your users need push notifications, offline use or the app stores, a cross-platform app is the right fit. We tell you which on the first call.' },
-      { q: 'How much does an app cost in Australia?', a: 'A standard application is $4,500. Anything larger is custom software from $5,000, quoted against your requirements. Fixed quotes either way.', href: '/pricing/', link: 'See pricing' },
+      { q: 'How much does an app cost in Australia?', a: 'It depends on what you need: the scope, features and integrations. After a short call we send a written estimate, broken into phases if that suits your budget. Typical starting points are on our pricing page.', href: '/pricing/', link: 'See pricing' },
       { q: 'How long does it take to build an app?', a: 'A standard application typically takes 4–8 weeks. Larger custom builds are scoped per project.' },
       { q: 'Do you build for both iOS and Android?', a: 'Yes. One Flutter or React Native codebase ships to both stores. One build, one price.' },
       { q: 'Flutter or React Native: which do you use?', a: 'Both. We pick per project: React Native when the app shares code with a React website, Flutter when you want pixel-identical design on both platforms.' },
@@ -205,19 +204,19 @@ export const SERVICE_PAGES = [
   {
     slug: 'custom-software',
     title: 'Custom Software Development',
-    metaTitle: 'Custom Software Development Australia | From AU$5,000',
-    metaDescription: 'Custom software for Australian businesses: internal tools, client portals, dashboards and workflow automation. Fixed AUD quote from $5,000, and you own the code.',
+    metaTitle: 'Custom Software Development Australia | Portals & Tools',
+    metaDescription: 'Custom software for Australian businesses: internal tools, client portals, dashboards and workflow automation. Scoped with you, estimated phase by phase, and you own the code.',
     eyebrow: 'Custom software · Australia',
     h1: 'Custom software development in Australia',
     h1Accent: 'built around how you work',
-    hero: 'Internal tools, client portals and automation that replace spreadsheets and manual steps. Scoped up front, fixed AUD price, and the code is yours.',
+    hero: 'Internal tools, client portals and automation that replace spreadsheets and manual steps. Scoped with you up front, and the code is yours.',
     chips: [
       // Outcome chips, not prices (27 Sep 2026): price belongs after
       // proof, not in the first screen. See docs/SERVICE-PAGE-REDESIGN.md.
       { value: 'Working software', post: 'every week' },
       { value: 'Written scope', post: 'before we start' },
       { pre: 'You', value: 'own the code' },
-      { value: 'Fixed AUD', post: 'quotes' },
+      { value: 'Written', post: 'estimates' },
     ],
     heroShot: 'autozenlyai',
     intro: 'Off-the-shelf tools make you work their way. Custom software works yours: it automates manual processes, connects systems that don’t talk to each other and gives your team one place to manage the work. We build internal tools, admin dashboards, client portals and automation workflows on a modern stack that you own.',
@@ -230,7 +229,7 @@ export const SERVICE_PAGES = [
       { icon: 'phone', title: 'Mobile companion apps', body: 'Put the same system in your team’s pocket on iOS and Android.', href: '/services/mobile-app-development/', link: 'Mobile apps' },
     ],
     processTitle: 'How your software gets built',
-    processLead: 'You see working software every week, and the price is fixed before any code is written.',
+    processLead: 'You see working software every week, and the estimate is agreed before any code is written.',
     process: SOFTWARE_PROCESS,
     outcomes: [
       { title: 'Hours back each week', body: 'Manual steps handled by the system instead of your team.', tech: 'Automation · scheduled jobs' },
@@ -244,7 +243,7 @@ export const SERVICE_PAGES = [
     caseStudy: 'autozenlyai',
     faqs: [
       { q: 'What kind of software do you build?', a: 'Internal tools, admin dashboards, client portals, workflow automation and API integrations: anything that replaces a manual process.' },
-      { q: 'How much does custom software cost?', a: 'Standard applications such as portals and booking systems are $4,500. Larger custom software starts from $5,000 and is quoted against a written scope.', href: '/pricing/', link: 'See pricing' },
+      { q: 'How much does custom software cost?', a: 'It depends on what you need: the scope, features and integrations. After a short call we send a written estimate, broken into phases if that suits your budget. Typical starting points are on our pricing page.', href: '/pricing/', link: 'See pricing' },
       { q: 'Can it connect to our existing systems?', a: 'Usually, yes. We integrate with CRMs, accounting software, payment platforms, calendars and most tools that have an API.' },
       { q: 'Is custom software better than an off-the-shelf tool?', a: 'Not always. If an existing tool fits your process, use it. Custom software pays off when you’re working around a tool every day or paying per seat for features you don’t use.' },
       { q: 'Who owns the software?', a: 'You do. The code repository, database and hosting accounts are handed over on completion.' },
@@ -262,8 +261,8 @@ export const SERVICE_PAGES = [
   {
     slug: 'marketing-seo',
     title: 'Marketing & SEO',
-    metaTitle: 'SEO Services Australia for Small Business | From $250/month',
-    metaDescription: 'SEO, local search, Google Business Profile and content for Australian small businesses. Month-to-month Care + SEO from $250/month, no lock-in contract.',
+    metaTitle: 'SEO Services Australia for Small Business',
+    metaDescription: 'SEO, local search, Google Business Profile and content for Australian small businesses. Month-to-month SEO care, no lock-in contract.',
     eyebrow: 'SEO and marketing · Australia',
     h1: 'SEO and marketing for Australian small businesses',
     h1Accent: 'get found by customers already searching',
@@ -309,7 +308,7 @@ export const SERVICE_PAGES = [
     caseStudy: 'harbour-plumbing',
     faqs: [
       { q: 'How long does SEO take to work?', a: 'Expect meaningful movement in 3–6 months. Anyone promising page one by next quarter is either lucky or not being straight with you.' },
-      { q: 'How much does SEO cost in Australia?', a: 'Our Care + SEO plan is $250 a month, month to month, cancel with 30 days’ notice. It includes technical SEO, on-page work, one new page or post a month and a monthly report.', href: '/pricing/', link: 'See what’s included' },
+      { q: 'How much does SEO cost in Australia?', a: 'It depends on how competitive your market is and how much new content you need. Our Care + SEO plan runs month to month with 30 days’ notice, and includes technical SEO, on-page work, one new page or post a month and a monthly report.', href: '/pricing/', link: 'See what’s included' },
       { q: 'Do I need a new website for SEO?', a: 'Not always. We can optimise an existing site if it’s fast and mobile-friendly. If it isn’t, we’ll tell you.' },
       { q: 'Do you guarantee rankings?', a: 'No. Nobody controls Google’s results, and a guarantee is a warning sign. We commit to the work and report honestly on what moves.' },
       { q: 'Do I have to sign a contract?', a: 'No. The plan is month to month with 30 days’ notice.' },
@@ -328,8 +327,8 @@ export const SERVICE_PAGES = [
   {
     slug: 'ai-automation',
     title: 'AI & Automation',
-    metaTitle: 'AI Chatbot & Automation Development Australia | From $900',
-    metaDescription: 'AI chatbots, lead qualification, booking automation and workflow AI for Australian businesses, built on OpenAI, Claude or Gemini. Fixed AUD pricing from $900.',
+    metaTitle: 'AI Chatbot & Automation Development Australia',
+    metaDescription: 'AI chatbots, lead qualification, booking automation and workflow AI for Australian businesses, built on OpenAI, Claude or Gemini. Estimated after a free review of your workflow.',
     eyebrow: 'AI and automation · Australia',
     h1: 'AI chatbots and automation for Australian businesses',
     h1Accent: 'that do a specific job',
@@ -340,7 +339,7 @@ export const SERVICE_PAGES = [
       { value: 'Answers 24/7', post: 'on your site' },
       { value: 'OpenAI, Claude', post: 'or Gemini' },
       { pre: 'You', value: 'own it' },
-      { value: 'Fixed AUD', post: 'quotes' },
+      { value: 'Written', post: 'estimates' },
     ],
     heroShot: 'mobile-armour',
     intro: 'We build AI into your business where it actually helps: qualifying leads, booking appointments, recommending products and answering the same questions your team handles every day. Custom-built on OpenAI, Claude or Gemini, integrated into your existing site, and owned by you.',
@@ -372,7 +371,7 @@ export const SERVICE_PAGES = [
     pricingLinks: [{ href: '/pricing/', label: 'All packages and add-ons' }],
     caseStudy: 'mobile-armour',
     faqs: [
-      { q: 'How much does an AI chatbot cost?', a: 'An AI chatbot trained on your content starts from $900. Larger AI applications, such as qualify-and-book flows, start at $4,500, and custom AI platforms from $5,000.', href: '/pricing/', link: 'See pricing' },
+      { q: 'How much does an AI chatbot cost?', a: 'It depends on how much the chatbot needs to learn and what it should do with enquiries. After a free review of your workflow we send a written estimate, broken into phases if that suits your budget.', href: '/pricing/', link: 'See pricing' },
       { q: 'Will it make things up?', a: 'It answers from the information you supply and is instructed to say when it doesn’t know. You get full transcripts.' },
       { q: 'Are there ongoing costs?', a: 'You pay the AI provider directly for usage, typically a modest monthly amount. There’s no ongoing fee to us after the build.' },
       { q: 'Which AI model do you use?', a: 'OpenAI, Claude or Gemini, chosen for the job. We can put more than one behind the same product.' },
@@ -391,12 +390,12 @@ export const SERVICE_PAGES = [
   {
     slug: 'maintenance-support',
     title: 'Maintenance & Support',
-    metaTitle: 'Website Maintenance & Support Australia | From $79/month',
-    metaDescription: 'Website hosting, security, backups, updates and SEO for Australian businesses. Care from $79/month, or Care + SEO at $250/month. Month to month, cancel with 30 days’ notice.',
+    metaTitle: 'Website Maintenance & Support Australia | Care Plans',
+    metaDescription: 'Website hosting, security, backups, updates and SEO for Australian businesses. Month to month, cancel with 30 days’ notice.',
     eyebrow: 'Maintenance and support',
     h1: 'Website maintenance and support in Australia',
     h1Accent: 'so your site stays fast and safe',
-    hero: 'Hosting, security updates, backups, speed monitoring and a new page every month, handled for one fixed monthly price. Month to month, no lock-in.',
+    hero: 'Hosting, security updates, backups, speed monitoring and a new page every month, handled for one monthly plan. Month to month, no lock-in.',
     chips: [
       // Outcome chips, not prices (27 Sep 2026): price belongs after
       // proof, not in the first screen. See docs/SERVICE-PAGE-REDESIGN.md.
@@ -436,7 +435,7 @@ export const SERVICE_PAGES = [
     pricingLinks: [{ href: '/pricing/', label: 'All packages and add-ons' }],
     caseStudy: null,
     faqs: [
-      { q: 'How much does website maintenance cost?', a: 'Care is $79 a month and covers hosting, security, backups, updates and small edits. Our Care + SEO plan is $250 a month and covers hosting, security, backups, updates, SEO, one new page or post a month and a monthly report.', href: '/pricing/', link: 'See what’s included' },
+      { q: 'How much does website maintenance cost?', a: 'Our Care plan covers hosting, security, backups, updates and small edits. Care + SEO adds SEO work, one new page or post a month and a monthly report. Both run month to month, and current plan prices are on our pricing page.', href: '/pricing/', link: 'See what’s included' },
       { q: 'Do I have to sign a contract?', a: 'No. The plan is month to month and you can cancel with 30 days’ notice.' },
       { q: 'What if I only need something small?', a: 'Small one-off jobs are quoted individually. A text change doesn’t need a monthly plan.' },
       { q: 'Can you look after a site you didn’t build?', a: 'Usually, yes. We review it first and tell you honestly if it needs work before we can maintain it.' },

@@ -86,7 +86,9 @@ export default async function IndustryDetailPage({ params }) {
     const url = `https://buildfirstsite.com${p.canonicalTo || `/industries/${p.slug}/`}`
     const proofWork = (p.proof?.slugs || []).map(getCaseStudy).filter(Boolean)
     const kind = p.proof?.kind || "none"
-    const cards = (p.pricing || []).map(pricingCard).filter(Boolean)
+    /* Price cards hidden (Aman, 15 Oct 2026): prices live on /pricing/ and cost
+       pages only. Estimates follow a conversation, phase by phase. */
+    const cards = []
     const extras = (p.pricingExtras || []).map(extraLine).filter(Boolean)
     const others = INDUSTRY_ITEMS.filter((i) => i.href !== `/industries/${p.slug}/`)
 
@@ -135,7 +137,7 @@ export default async function IndustryDetailPage({ params }) {
                                 <h1>{p.h1} <span>{p.h1Accent}</span></h1>
                                 <p className="svc-lead" style={{ marginTop: 22 }}>{p.hero}</p>
                                 <div className="svc-ctas">
-                                    <Link href={CTA.primary.href} className="btn btn-black icon-arrow-right-white">Get a fixed quote</Link>
+                                    <Link href={CTA.primary.href} className="btn btn-black icon-arrow-right-white">Get an estimate</Link>
                                     <a href={SITE.calendly} target="_blank" rel="noopener noreferrer" data-loc={`industry-${p.slug}-hero`}
                                         className="btn btn-link icon-arrow-right color-gray-900 text-heading-6">Book a free call</a>
                                 </div>
@@ -232,8 +234,8 @@ export default async function IndustryDetailPage({ params }) {
                     <section className="svc-pricing">
                         <div className="container">
                             <div className="svc-center">
-                                <h2 className="svc-h2">Fixed AUD pricing for {p.title.toLowerCase()}</h2>
-                                <p className="svc-lead">What’s included, then what it costs. Every price is a starting point, and your written quote is fixed before you commit.</p>
+                                <h2 className="svc-h2">Starting prices for {p.title.toLowerCase()}</h2>
+                                <p className="svc-lead">What’s included, then what it costs. Every price is a starting point; your estimate follows a short call.</p>
                             </div>
                             {cards.some((c) => c.build) && <PriceIntro />}
                             <div className="svc-tiers" style={cards.length === 1 ? { maxWidth: 520, marginInline: "auto" } : undefined}>
@@ -297,7 +299,7 @@ export default async function IndustryDetailPage({ params }) {
                         <div className="svc-cta">
                             <div>
                                 <h2>Tell us about your {p.title.toLowerCase()} project</h2>
-                                <p>You’ll get a written scope and fixed AUD quote within 24 hours, and you deal directly with the engineer who builds it.</p>
+                                <p>We reply within one business day, talk it through, then send a written scope and estimate. You deal directly with the engineer who builds it.</p>
                             </div>
                             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
                                 <Link href={CTA.primary.href} className="svc-btn-white">Get a quote →</Link>

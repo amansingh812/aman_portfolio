@@ -11,11 +11,11 @@ import { ABOUT_FAQS } from "@/content/pricing"
 export const metadata = {
     title: "About Us — How We Work",
     description:
-        "BuildFirstSite is a software development studio specialising in high-performance websites, custom web applications, AI solutions, and scalable business software. We help startups, small businesses, and growing companies turn ideas into reliable digital products. Fixed AUD pricing, modern Next.js stack, full code ownership — no lock-in.",
+        "BuildFirstSite is a software development studio specialising in high-performance websites, custom web applications, AI solutions, and scalable business software. We help startups, small businesses, and growing companies turn ideas into reliable digital products. Modern Next.js stack, full code ownership — no lock-in.",
     alternates: { canonical: "/about/" },
     openGraph: {
         title: "About Build First Site — Web & Software Development Studio",
-        description: "High-performance websites, custom web apps and AI solutions for Australian businesses. Fixed prices, modern stack, you own the code.",
+        description: "High-performance websites, custom web apps and AI solutions for Australian businesses. Modern stack, and you own the code.",
         url: "https://buildfirstsite.com/about/",
     },
 }
@@ -39,7 +39,7 @@ export default function AboutPage() {
                                 </h1>
                                 <p className="text-body-lead-large color-gray-500 mt-40 pr-40">
                                     We design and build websites, web apps, and AI-powered software
-                                    for Australian businesses — with fixed pricing, a modern stack,
+                                    for Australian businesses — with clear estimates, a modern stack,
                                     and zero lock-in.
                                 </p>
                                 <div className="mt-40">
@@ -67,10 +67,10 @@ export default function AboutPage() {
                                             <div className="item-icon none-bd">
                                                 <span className="icon-left">
                                                     <Image width={0} height={0} sizes="100vw" style={{ width: "auto", height: "auto" }}
-                                                        src="/assets/imgs/page/about/2/icon-project-done.svg" alt="Fixed pricing" />
+                                                        src="/assets/imgs/page/about/2/icon-project-done.svg" alt="Clear estimates" />
                                                 </span>
                                                 <h4 className="text-heading-4"><span className="text-heading-3 color-green-900">AUD</span></h4>
-                                                <p className="text-body-text color-gray-500">Fixed prices upfront</p>
+                                                <p className="text-body-text color-gray-500">Written estimate upfront</p>
                                             </div>
                                             <div className="item-icon none-bd">
                                                 <span className="icon-left">
@@ -135,9 +135,9 @@ export default function AboutPage() {
                                     <div className="text-center block-step">
                                         <div className="mb-30">
                                             <Image width={0} height={0} sizes="100vw" style={{ width: "auto", height: "auto" }}
-                                                src="/assets/imgs/page/about/2/icon-connect.svg" alt="Fixed quote" />
+                                                src="/assets/imgs/page/about/2/icon-connect.svg" alt="Written estimate" />
                                         </div>
-                                        <h3 className="text-heading-5 mb-10">Fixed Quote</h3>
+                                        <h3 className="text-heading-5 mb-10">Written Estimate</h3>
                                         <p className="text-body-text color-gray-500">Written scope + AUD price in 24 h</p>
                                     </div>
                                 </li>
@@ -207,7 +207,7 @@ export default function AboutPage() {
                                 <li>Modern stack — Next.js, React, built to last</li>
                                 <li>Fast, SEO-optimised, mobile-first by default</li>
                                 <li>Custom-built around your business, not a template</li>
-                                <li>Fixed pricing, clear timelines, no surprises</li>
+                                <li>Written estimates, clear timelines, no surprises</li>
                                 <li>Long-term support and continuous improvements</li>
                                 <li>Scales with your business from day one</li>
                             </ul>

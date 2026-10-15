@@ -36,7 +36,7 @@ import {
 export const metadata = {
     title: "Small Business Website Design Packages | From $800",
     description:
-        `Website pricing without the guesswork: most projects ${TYPICAL_RANGE.label} AUD. Starter $800, Business $1,900, Growth $3,500, fixed written quote, free homepage design first, and you own the code.`,
+        `Website pricing without the guesswork: most projects ${TYPICAL_RANGE.label} AUD. Starter $800, Business $1,900, Growth $3,500, a written estimate after a short call, free homepage design first, and you own the code.`,
     keywords: [
         "website design packages australia",
         "website pricing australia",
@@ -47,7 +47,7 @@ export const metadata = {
     alternates: { canonical: "/pricing/" },
     openGraph: {
         title: "Small Business Website Design Packages Australia",
-        description: `Most projects ${TYPICAL_RANGE.label}. Fixed written quote before you commit, and a free homepage design first.`,
+        description: `Most projects ${TYPICAL_RANGE.label}. A written estimate before you commit, and a free homepage design first.`,
         url: "https://buildfirstsite.com/pricing/",
         type: "website",
     },
@@ -150,7 +150,7 @@ export default function PricingPage() {
                             </div>
                             <p className="text-body-lead-large color-gray-600 mb-50">
                                 The exact price depends on the size of the site. Every package includes
-                                the essentials, and you get a fixed written scope and price before
+                                the essentials, and you get a written scope and estimate before
                                 any work begins.
                             </p>
                         </div>
@@ -191,7 +191,7 @@ export default function PricingPage() {
                                                 Delivery {t.delivery}
                                             </p>
                                             <p className="text-body-small color-green-900 mt-5 mb-0">
-                                                Fixed written quote before you commit
+                                                Written estimate before you commit
                                             </p>
                                         </div>
 
@@ -230,7 +230,7 @@ export default function PricingPage() {
                                     <p className="text-body-text bfs-tint mb-30">
                                         Online stores, booking systems, customer portals, CRM integrations,
                                         AI features and custom software. We work out what you need, recommend
-                                        the simplest solution, and give you a fixed project price.
+                                        the simplest solution, and send a written estimate, phase by phase.
                                     </p>
                                     <Link href="/contact/" data-event="pricing_package_click" data-package="custom"
                                         className="btn btn-black bfs-mint-btn">
@@ -304,7 +304,7 @@ export default function PricingPage() {
                     <div className="row">
                         <div className="col-lg-8 mx-auto text-center">
                             <span className="tag-1 bg-6 color-green-900">What happens next</span>
-                            <h2 className="text-heading-2 color-gray-900 mt-25 mb-50">From first message to a fixed price</h2>
+                            <h2 className="text-heading-2 color-gray-900 mt-25 mb-50">From first message to a written estimate</h2>
                         </div>
                     </div>
                     <div className="row">
@@ -328,9 +328,9 @@ export default function PricingPage() {
                                 </div>
                                 <div className="pr-box">
                                     <div className="pr-step-n">3</div>
-                                    <h3 className="text-heading-5 color-gray-900 mb-10">Get a fixed written price</h3>
+                                    <h3 className="text-heading-5 color-gray-900 mb-10">Get a written estimate</h3>
                                     <p className="text-body-text color-gray-600 mb-0">
-                                        Recommended scope, one fixed AUD figure and a delivery date. It only
+                                        Recommended scope, an AUD estimate broken into phases, and a delivery date. It only
                                         changes if you ask for something new.
                                     </p>
                                 </div>
@@ -361,9 +361,9 @@ export default function PricingPage() {
                                     </p>
                                 </div>
                                 <div className="pr-box">
-                                    <h3 className="text-heading-5 color-gray-900 mb-10">One fixed price</h3>
+                                    <h3 className="text-heading-5 color-gray-900 mb-10">A clear written estimate</h3>
                                     <p className="text-body-text color-gray-600 mb-0">
-                                        No hourly billing. The quote is in writing and does not move unless
+                                        No hourly billing. The estimate is in writing and only changes if
                                         the scope does.
                                     </p>
                                 </div>

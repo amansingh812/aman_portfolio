@@ -18,7 +18,7 @@ import { AUTOMATION_OFFERS } from "@/content/pricing"
 
 const URL = `https://buildfirstsite.com${A.path}`
 const TITLE = "Free Automation Audit for Small Business | Build First Site"
-const DESC = `Answer four questions and get a written map of the three automations that would save your business the most time, with a fixed AUD price for each. Free, within ${A.turnaround}.`
+const DESC = `Answer four questions and get a written map of the three automations that would save your business the most time, with an estimate for each. Free, within ${A.turnaround}.`
 
 export const metadata = {
     title: { absolute: TITLE },
@@ -78,13 +78,13 @@ export default function FreeAutomationAuditPage() {
                             <h1 className="text-heading-1 color-gray-900 mt-25 mb-20">Your free automation audit</h1>
                             <p className="text-body-lead-large color-gray-600">
                                 Answer four questions. Within {A.turnaround} you get a written map of the three
-                                automations that would save you the most time, with a fixed price for each.
+                                automations that would save you the most time, with an estimate for each.
                             </p>
                             <ul className="fa-list">
                                 <li className="text-body-text color-gray-900">No call needed unless you want one</li>
                                 <li className="text-body-text color-gray-900">Built around tools you already pay for</li>
                                 <li className="text-body-text color-gray-900">If something isn't worth automating, we'll say so</li>
-                                <li className="text-body-text color-gray-900">A fixed price in writing for each recommendation</li>
+                                <li className="text-body-text color-gray-900">A written estimate for each recommendation</li>
                             </ul>
                             <p className="text-body-small color-gray-500 mt-25">
                                 What we typically recommend:{" "}

@@ -23,7 +23,7 @@ export const AUTOMATION_HUB = {
   path: '/services/ai-automation/',
   metaTitle: 'AI Automation Agency Australia for Small Business | Free Audit',
   metaDescription:
-    'AI and business automation for Australian small businesses: instant lead replies, morning reports, win-back messages, data sync and AI chatbots on the tools you already use. Free automation audit, fixed price.',
+    'AI and business automation for Australian small businesses: instant lead replies, morning reports, win-back messages, data sync and AI chatbots on the tools you already use. Free automation audit, then an estimate.',
   eyebrow: 'AI & business automation · Australia',
   h1: 'Every enquiry answered. Every report sent.',
   h1Accent: 'Without you.',
@@ -51,7 +51,7 @@ export const AUTOMATION_HUB = {
 
   steps: [
     { title: 'Tell us what eats your time', body: 'Four quick questions in plain English. No call needed unless you want one.' },
-    { title: 'Get your automation map', body: 'A written list of what to automate first, ranked by time saved, with a fixed AUD price for each.' },
+    { title: 'Get your automation map', body: 'A written list of what to automate first, ranked by time saved, with an estimate for each.' },
     { title: 'We build, test and watch it', body: 'Live in days on the tools you already use. We test it with you, launch together, and monitor it if you want us to.' },
   ],
 
@@ -70,8 +70,8 @@ export const AUTOMATION_HUB = {
   faqs: [
     { q: 'What does an AI automation agency actually do?', a: 'We look at the steps you repeat every day (replying to enquiries, chasing quotes, building reports, copying data between apps) and build small systems that do them for you, on the tools you already use. You get the workflow documented and you own every account.' },
     { q: 'I\'m not technical. Can I still automate things?', a: 'Yes. You tell us what you do by hand; we build it, test it with you and hand it over. You don\'t need to log into anything new unless you want to.' },
-    { q: 'How much does business automation cost?', a: 'It depends on how many tools are involved and what the automation needs to do, so we price each one after the free audit: you get a fixed written price before any work starts, with no hourly billing. Message or AI usage fees, if any, are paid directly to the provider.' },
-    { q: 'What happens if a tool changes and the automation breaks?', a: 'That is the main reason do-it-yourself automations fail quietly. On the optional Care plan we monitor every workflow and fix it when a connected tool changes. Without Care, we fix it at a fixed price.' },
+    { q: 'How much does business automation cost?', a: 'It depends on how many tools are involved and what the automation needs to do, so we price each one after the free audit: you get a written estimate before any work starts, with no hourly billing. Message or AI usage fees, if any, are paid directly to the provider.' },
+    { q: 'What happens if a tool changes and the automation breaks?', a: 'That is the main reason do-it-yourself automations fail quietly. On the optional Care plan we monitor every workflow and fix it when a connected tool changes. Without Care, we estimate the fix before doing it.' },
     { q: 'Is it legal to message past customers automatically?', a: 'In Australia, yes, if you follow the Spam Act 2003: you need consent, the message must identify your business, and it must include a working unsubscribe. We build all three in, and we will tell you if a list doesn\'t qualify.' },
     { q: 'Who owns the automations and the data?', a: 'You do. Accounts sit in your name, data stays in your tools, and you get documentation of every workflow. There is no platform subscription you have to keep paying us for.' },
     { q: 'Does AI answer my customers on its own?', a: 'Only if you want it to. An AI chatbot answers common questions from the information you give it and hands over to a person when it is unsure. For email, it can draft replies in your tone for you to approve before anything is sent.' },
@@ -111,7 +111,7 @@ export const AUTOMATION_AUDIT = {
     },
   ],
   faqs: [
-    { q: 'What do I get from the audit?', a: 'A short written map of the three automations that would save you the most time, what each one would do, which of your tools it uses, and a fixed AUD price for each. If something isn\'t worth automating, we say so.' },
+    { q: 'What do I get from the audit?', a: 'A short written map of the three automations that would save you the most time, what each one would do, which of your tools it uses, and an estimate for each. If something isn\'t worth automating, we say so.' },
     { q: 'Is it really free?', a: 'Yes. No card, no obligation. Most people use it to decide whether automation is worth it before spending anything.' },
     { q: 'Do I need a call?', a: 'No. The four questions are enough for a first map. If you\'d rather talk it through, you can book a free call instead.' },
   ],

@@ -9,7 +9,7 @@ export const HERO = {
   "h1Lead": "Websites that bring",
   "h1Accent": "Australian businesses",
   "h1Trail": "more enquiries.",
-  "sub": "A senior engineer who builds everything, and a local contact in Australia. Fixed prices in AUD, published upfront. You own the code.",
+  "sub": "A senior engineer who builds everything, and a local contact in Australia. You own the code.",
   "priceAnchor": "Websites from $800 · Up to 10 pages $1,900 · E-commerce from $4,500",
   "primaryCta": {
     "label": "Get a free quote",
@@ -155,8 +155,8 @@ export const PROCESS = {
       "body": "Thirty minutes to understand what you actually need. If a cheaper option would serve you better, we say so on this call."
     },
     {
-      "title": "Fixed quote in 24 hours",
-      "body": "A written scope and a fixed price in AUD. Clear about what is included and what is not, so the number does not move later."
+      "title": "Written estimate",
+      "body": "A written scope and estimate, phase by phase. Clear about what is included and what is not, so the number does not move later."
     },
     {
       "title": "Build in the open",
@@ -216,7 +216,7 @@ export const OBJECTIONS = [
 
 export const FINAL_CTA = {
   "heading": "Tell us what your business needs",
-  "body": "A fixed-price quote within 24 hours, and an honest answer if we think there is a cheaper way to get you there."
+  "body": "A written estimate after a short call, and an honest answer if we think there is a cheaper way to get you there."
 };
 
 /** Projects. isConcept === true means spec work, NOT a client — must be labelled in UI. */

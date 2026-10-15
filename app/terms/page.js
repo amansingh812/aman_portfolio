@@ -18,7 +18,7 @@ import { SITE, NAP } from "@/content/site"
 export const metadata = {
     title: "Terms of Service",
     description:
-        "Build First Site terms of service — scope, fixed pricing, payment, code ownership and your rights under Australian Consumer Law. Plain English.",
+        "Build First Site terms of service — scope, pricing, payment, code ownership and your rights under Australian Consumer Law. Plain English.",
     alternates: { canonical: "/terms/" },
     robots: { index: true, follow: true },
 }
@@ -37,7 +37,7 @@ export default function Terms() {
                             <p className="text-body-small color-gray-500 mb-40">Last updated {UPDATED}</p>
 
                             <p className="text-body-lead-large color-gray-600 mb-40">
-                                Short version: we agree a fixed price in writing before starting, you
+                                Short version: we agree the scope and price in writing before starting, you
                                 pay half up front and half on launch, and you own everything we build.
                                 The detail is below.
                             </p>
@@ -53,8 +53,8 @@ export default function Terms() {
 
                             <h2 className="text-heading-3 color-gray-900 mt-50 mb-20">2. Quotes and scope</h2>
                             <p className="text-body-text color-gray-600 mb-20">
-                                Before any work starts you receive a written scope and a fixed price in
-                                Australian dollars. That price does not change unless you ask for
+                                Before any work starts you receive a written scope and an estimate in
+                                Australian dollars, which becomes the agreed price once you accept it. That price does not change unless you ask for
                                 something outside the agreed scope, in which case we quote the change
                                 openly and you decide before we proceed. We do not add hours to an
                                 invoice without telling you.

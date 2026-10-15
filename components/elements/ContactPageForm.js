@@ -64,7 +64,7 @@ export default function ContactPageForm({
                         Check your inbox — we have sent you a confirmation.{" "}
                         {isDesign
                             ? "We will be in touch within one business day to start your homepage design."
-                            : "We will reply with a fixed AUD quote within one business day."}
+                            : "We will reply within one business day to talk through your project."}
                     </p>
                 </div>
             </div>

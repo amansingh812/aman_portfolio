@@ -205,7 +205,7 @@ export function pricingCard(ref) {
     if (ref.addon) {
         const a = addonByName(ref.addon)
         if (!a) return null
-        return { key: a.name, name: a.name, scope: "Add-on", price: a.price, from: false, lines: [a.note, "Fixed quote before we start", "You own the result"] }
+        return { key: a.name, name: a.name, scope: "Add-on", price: a.price, from: false, lines: [a.note, "Estimate before we start", "You own the result"] }
     }
     const t = tierById(ref.tier)
     if (!t) return null
@@ -243,7 +243,7 @@ export function priceContext() {
     return [
         { label: "Typical agency quote", value: `${fmt(a.min)}–${fmt(a.max)}`, note: "for a custom small-business site", href: a.source },
         { label: `DIY builder over ${y} years`, value: `${fmt(w.min * 12 * y)}–${fmt(w.max * 12 * y)}`, note: "and you never own the site", href: "/wix-vs-custom-website/" },
-        { label: "What a fixed price replaces", value: "Hourly billing", note: "and open-ended monthly platform fees" },
+        { label: "What a written estimate replaces", value: "Hourly billing", note: "and open-ended monthly platform fees" },
     ]
 }
 
@@ -273,7 +273,7 @@ export function PriceCard({ c }) {
                 {c.from && <span className="svc-from">From</span>}
                 <div className="svc-price">{c.price} <small>AUD{c.per ? ` ${c.per}` : ""}</small></div>
                 {c.instalments && <div className="svc-fixed" style={{ color: "#475467" }}>or {c.instalments}</div>}
-                <div className="svc-fixed">{c.build ? "Free homepage design before you pay" : "Fixed quote before you commit"}</div>
+                <div className="svc-fixed">{c.build ? "Free homepage design before you pay" : "Estimate before you commit"}</div>
             </div>
             {c.note && <p className="note">{c.note}</p>}
             <Link href={CTA.primary.href} className={`btn ${c.featured ? "btn-black" : "btn-default"} w-100 text-center`} style={{ justifyContent: "center" }}>

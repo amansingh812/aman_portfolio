@@ -144,7 +144,7 @@ export default function AutomationHubPage() {
                             </Link>
                             <a href="#what" className="btn au-ghost mb-10">See what we automate</a>
                             <p className="text-body-small au-dim mt-25 mb-0">
-                                {H.assurances.join(" · ")} · Fixed price after a free audit
+                                {H.assurances.join(" · ")} · Estimate after a free audit
                             </p>
                         </div>
                         <div className="au-feed" aria-label="Example of automations running for a small business">
@@ -203,7 +203,7 @@ export default function AutomationHubPage() {
                         <span className="tag-1 bg-6 color-green-900">What we automate</span>
                         <h2 className="text-heading-2 color-gray-900 mt-20">Small systems that save you hours every week</h2>
                         <p className="text-body-lead-large color-gray-600 mt-15">
-                            Each one has its own page explaining how it works. The free audit tells you which to do first, with a fixed price.
+                            Each one has its own page explaining how it works. The free audit tells you which to do first, with an estimate.
                         </p>
                     </div></div>
                     <div className="au-grid3">
@@ -217,7 +217,7 @@ export default function AutomationHubPage() {
                             <h3 className="text-heading-5 au-white mb-10">Free automation audit</h3>
                             <p className="text-body-text mb-20" style={{ color: "#BEE1E6" }}>
                                 Not sure where to start? Answer four questions and get a written map of the
-                                three automations that would save you the most time, with a fixed price for each.
+                                three automations that would save you the most time, with an estimate for each.
                             </p>
                             <Link href="/free-automation-audit/" data-event="automation_audit_cta" data-package="hub-card"
                                 className="btn mt-auto" style={{ background: "#83C5BE", color: "#006D77", alignSelf: "flex-start" }}>
@@ -226,7 +226,7 @@ export default function AutomationHubPage() {
                         </div>
                     </div>
                     <p className="text-body-small color-gray-500 text-center mt-30">
-                        Fixed AUD quote before we start · You own every account and workflow ·
+                        Written estimate before we start · You own every account and workflow ·
                         Optional Care plan keeps it running ·
                         Bigger builds: <Link href="/services/custom-software/" className="color-green-900">custom software</Link>
                     </p>
@@ -323,7 +323,7 @@ export default function AutomationHubPage() {
                             Book a free call
                         </a>
                         <p className="text-body-small mt-20 mb-0" style={{ color: "#BEE1E6" }}>
-                            Your day-to-day contact is in Australia · Fixed AUD quotes · Month to month
+                            Your day-to-day contact is in Australia · Written estimates · Month to month
                         </p>
                     </div>
                 </div>

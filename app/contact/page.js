@@ -7,13 +7,13 @@ import Link from "next/link"
 import { SITE } from "@/content/site"
 
 export const metadata = {
-    title: "Contact Us — Fixed AUD Quote in 24 Hours",
+    title: "Contact Us — Tell Us About Your Project",
     description:
-        "Tell us what you're building. We reply with a fixed AUD quote in one business day. Or book a free 30-minute call — no obligation.",
+        "Tell us what you're building. We reply within one business day to talk it through, then send a written estimate. Or book a free 30-minute call — no obligation.",
     alternates: { canonical: "/contact/" },
     openGraph: {
         title: "Contact Build First Site",
-        description: "Get a fixed AUD quote in one business day, or book a free call.",
+        description: "Tell us about your project and get a written estimate, or book a free call.",
         url: "https://buildfirstsite.com/contact/",
     },
 }
@@ -69,7 +69,7 @@ export default function ContactPage() {
                         <p className="text-body-text color-gray-500">
                             Tell us what you&apos;re trying to build. We&apos;ll come back with a
                             <br className="d-lg-block d-none" />
-                            written scope + fixed AUD price within one business day.
+                            written scope and estimate after a short call.
                         </p>
                     </div>
                 </div>
@@ -86,7 +86,7 @@ export default function ContactPage() {
                                 <p className="text-body-text color-gray-600 mt-20">
                                     The right build at the right price saves you months of headache.
                                     <br className="d-lg-block d-none" />
-                                    Share your idea below — we&apos;ll turn it into a fixed AUD quote.
+                                    Share your idea below — we&apos;ll talk it through and send a written estimate.
                                 </p>
                             </div>
 
@@ -189,7 +189,7 @@ export default function ContactPage() {
                     <div className="row mt-60">
                         {[
                             { n: "01", h: "We read your message", b: "Usually within a few hours, always within one business day." },
-                            { n: "02", h: "We reply with a written quote", b: "Fixed AUD price, clear scope, delivery date. No hourly rates, no surprises." },
+                            { n: "02", h: "We reply and talk it through", b: "A short call, then a written estimate with scope and timeline, phase by phase. No hourly rates, no surprises." },
                             { n: "03", h: "You decide", b: "No pressure, no follow-up calls. Say yes and we start — say no and that's fine too." },
                         ].map((s) => (
                             <div className="col-lg-4 col-md-6 mb-30" key={s.n}>

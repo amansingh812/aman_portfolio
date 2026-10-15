@@ -49,14 +49,14 @@ const pricing = BUILD_TIERS
 const llms = `# Build First Site
 
 > Web design and development studio for Australian small businesses. Websites,
-> web applications and mobile apps built on a modern Next.js stack, with fixed
-> prices published in AUD and full code ownership handed over on launch day.
+> web applications and mobile apps built on a modern Next.js stack, priced on
+> what each project needs, with full code ownership handed over on launch day.
 
 ## About
 
 Build First Site builds websites, web applications and mobile apps for small
-businesses in Australia. Prices are fixed and published rather than quoted after
-a discovery call. Every build is custom — no page builder, no proprietary CMS —
+businesses in Australia. Each project gets a written estimate after a short call,
+broken into phases where that suits the budget. Every build is custom — no page builder, no proprietary CMS —
 and the client receives the repository, hosting and domain in their own name at
 launch, with no monthly platform fee and nothing preventing them moving to
 another developer.
@@ -71,19 +71,19 @@ serving ${NAP.serviceAreas.join(', ')} and clients Australia-wide.
 
 We do not operate in the United States or the United Kingdom.
 
-## Pricing (AUD, before GST)
+## Typical starting prices (AUD, before GST; each project is estimated individually)
 
 ${pricing}
 - **${CARE_PLAN.name}** — optional hosting, updates, backups and small edits: ${money(CARE_PLAN.price)} AUD${CARE_PLAN.period}, cancel with 30 days notice
 - **${RETAINER.name}** — optional ongoing care and SEO: ${money(RETAINER.price)} AUD${RETAINER.period}, cancel with 30 days notice
 - **Free homepage design** — designed before any payment, usually within ${FREE_DESIGN.turnaround}; pay only if you go ahead
 
-### Automation (priced per business: free audit, then a fixed written quote)
+### Automation (priced per business: free audit, then a written estimate)
 
 ${AUTOMATION_OFFERS.map((o) => `- [${o.name}](https://buildfirstsite.com${o.href}): ${o.outcome}`).join('\n')}
 
-Website prices are published in full at ${BASE}/pricing/ and are fixed before work
-begins. A free homepage design is offered before any commitment or deposit.
+Typical starting prices are listed at ${BASE}/pricing/; each project gets a written
+estimate before work begins. A free homepage design is offered before any commitment or deposit.
 
 ## Services
 
@@ -99,7 +99,7 @@ ${guides}
 
 ## Key facts
 
-- Fixed prices, published on the website — no discovery call required to learn the cost
+- A written estimate after a short call, phase by phase; typical starting prices on the pricing page
 - Free homepage design before any deposit or commitment
 - Full code ownership: repository, hosting and domain in the client's name on launch day
 - No proprietary CMS, no monthly platform fee, no lock-in

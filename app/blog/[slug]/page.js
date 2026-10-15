@@ -223,10 +223,10 @@ export default async function BlogPost({ params }) {
                                         <h4 className="text-heading-4">Want a number for your own site?</h4>
                                         <p className="text-body-lead color-gray-700 mt-15">
                                             Tell us what the business does and what the site needs to achieve.
-                                            You’ll get a written scope and a fixed AUD quote within one business day.
+                                            We reply within one business day, talk it through, then send a written scope and estimate.
                                         </p>
                                         <div className="mt-25">
-                                            <Link href="/contact/" className="btn btn-black icon-arrow-right-white mr-15">Get a fixed quote</Link>
+                                            <Link href="/contact/" className="btn btn-black icon-arrow-right-white mr-15">Get an estimate</Link>
                                             <Link href="/pricing/" className="btn btn-link icon-arrow-right color-gray-900">See all packages</Link>
                                         </div>
                                     </div>

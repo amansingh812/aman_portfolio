@@ -393,7 +393,7 @@ export default async function CaseStudyPage({ params }) {
                         <div className="cs-cta">
                             <div>
                                 <h2>Want something like this?</h2>
-                                <p>Fixed AUD quote within 24 hours. {ctaPrice} You deal directly with the engineer who builds it.</p>
+                                <p>Tell us what you need and we will send a written estimate after a short call. You deal directly with the engineer who builds it.</p>
                             </div>
                             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
                                 <Link href={CTA.primary.href} className="cs-btn-w">Get a quote →</Link>

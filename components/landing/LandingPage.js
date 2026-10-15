@@ -78,7 +78,10 @@ export default function LandingPage({ page }) {
     const url = `https://buildfirstsite.com/${page.slug}/`
 
     /* Only the tiers this page cares about, pulled live from pricing.js */
-    const tiers = page.priceTiers?.length
+    /* Prices show ONLY on price-intent pages (page.showPrices). Aman, 15 Oct 2026:
+       visitors come for their problem, not a price tag; the estimate follows a
+       conversation, phase by phase. /pricing/ and cost pages keep the numbers. */
+    const tiers = page.showPrices && page.priceTiers?.length
         ? BUILD_TIERS.filter((t) => page.priceTiers.includes(t.id))
         : []
 
@@ -234,7 +237,7 @@ export default function LandingPage({ page }) {
                             )}
                             {/* Pages with an inline form scroll to it; others go to /contact/. */}
                             <Link href={page.inlineForm ? "#quote" : "/contact/"} className="btn btn-black icon-arrow-right-white mr-15">
-                                Get a fixed quote
+                                Get an estimate
                             </Link>
                             <a data-loc="landing-page" href={SITE.calendly} target="_blank" rel="noopener noreferrer"
                                 className="btn btn-default">
@@ -277,7 +280,7 @@ export default function LandingPage({ page }) {
                             <div className="col-lg-10 mx-auto">
                                 <span className="tag-1 bg-6 color-green-900">Pricing</span>
                                 <h2 className="text-heading-2 color-gray-900 mt-25 mb-15">
-                                    Fixed prices, published
+                                    Starting prices
                                 </h2>
                                 {/* Price framing (27 Sep 2026): what's included first, then the
                                     number, with honest reference points from pricing.js. */}
@@ -285,8 +288,9 @@ export default function LandingPage({ page }) {
                                     What’s included, then what it costs. For context, a custom small-business
                                     site from an Australian agency is commonly quoted at {priceContext()[0].value},
                                     and a DIY builder costs {priceContext()[1].value} over five years without
-                                    you ever owning the site. Every figure below is a starting point, and your
-                                    written quote is fixed before you commit.
+                                    you ever owning the site. Every figure below is a starting point. Your
+                                    estimate depends on what your project needs, and we send it in writing,
+                                    phase by phase, after we have talked it through.
                                 </p>
                                 <div className="table-responsive">
                                     <table style={{ width: "100%", borderCollapse: "collapse" }}>
@@ -310,7 +314,7 @@ export default function LandingPage({ page }) {
                                                     <td style={{ padding: 18, textAlign: "right" }}>
                                                         {!/^from/i.test(t.priceLabel) && <span className="text-body-small color-gray-500 d-block">From</span>}
                                                         <span className="text-heading-5 color-green-900">{t.priceLabel}</span>
-                                                        <span className="text-body-small color-gray-500 d-block">{instalmentLabel(t) ? `or ${instalmentLabel(t)}` : "fixed quote"}</span>
+                                                        <span className="text-body-small color-gray-500 d-block">{instalmentLabel(t) ? `or ${instalmentLabel(t)}` : "starting price"}</span>
                                                     </td>
                                                 </tr>
                                             ))}
@@ -348,7 +352,7 @@ export default function LandingPage({ page }) {
             {/* ── INLINE QUOTE FORM — only on pages with `inlineForm: true`.
                 ONE form, after the prices, body and FAQs. Until 8 Oct 2026 there
                 was a second identical form directly under the hero; Aman flagged
-                the page as asking twice. The hero "Get a fixed quote" button now
+                the page as asking twice. The hero "Get an estimate" button now
                 scrolls here (#quote) instead. ── */}
             {page.inlineForm && (
                 <section className="section-box mt-80" id="quote" style={{ scrollMarginTop: 110 }}>
@@ -357,7 +361,7 @@ export default function LandingPage({ page }) {
                             <div className="col-lg-10 mx-auto">
                                 <div className="p-40 bdrd-16" style={{ background: "#EEF6F2", border: "1px solid #DBECE5" }}>
                                     <h2 className="text-heading-3 color-gray-900">Ready when you are</h2>
-                                    <p className="text-body-lead color-gray-600 mt-10 mb-30">Send the details and you’ll have a scope, a fixed price and a date within one business day.</p>
+                                    <p className="text-body-lead color-gray-600 mt-10 mb-30">Send the details and we’ll get back to you within one business day to talk through your project.</p>
                                     <div className="row">
                                         <ContactPageForm source={`${page.breadcrumb || page.slug} (page form)`} wrapperClass="col-lg-12" />
                                     </div>
@@ -396,16 +400,16 @@ export default function LandingPage({ page }) {
                         <div className="col-lg-10 mx-auto">
                             <div style={{ background: "#006D77", borderRadius: 16, padding: "56px 44px", textAlign: "center" }}>
                                 <h2 className="text-heading-2 mb-20" style={{ color: "#fff" }}>
-                                    Get a fixed price
+                                    Tell us about your project
                                 </h2>
                                 <p className="text-body-lead-large mb-40"
                                     style={{ color: "#BEE1E6", maxWidth: 620, margin: "0 auto 40px" }}>
-                                    Tell us what the business needs to do and we will send back a written
-                                    scope with a fixed AUD price within one business day.
+                                    Tell us what the business needs to do. We will talk it through, then send
+                                    a plan and an estimate, phase by phase.
                                 </p>
                                 <Link href="/contact/" className="btn btn-black mr-15"
                                     style={{ background: "#83C5BE", color: "#004E56" }}>
-                                    Get a fixed quote
+                                    Get an estimate
                                 </Link>
                                 <a data-loc="landing-page" href={SITE.calendly} target="_blank" rel="noopener noreferrer"
                                     className="btn btn-default">

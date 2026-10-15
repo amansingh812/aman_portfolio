@@ -8,11 +8,11 @@ import { SITE } from "@/content/site"
 export const metadata = {
     title: "Services — Web, Apps, AI & Software",
     description:
-        "Everything we build for Australian businesses — websites, mobile apps, custom software, marketing, AI automation and ongoing support. Fixed AUD pricing.",
+        "Everything we build for Australian businesses — websites, mobile apps, custom software, marketing, AI automation and ongoing support. Written estimate after a short call.",
     alternates: { canonical: "/services/" },
     openGraph: {
         title: "Our Services | Build First Site",
-        description: "Web, mobile, AI and custom software for Australian businesses. Fixed AUD pricing.",
+        description: "Web, mobile, AI and custom software for Australian businesses. You own the code.",
         url: "https://buildfirstsite.com/services/",
     },
 }
@@ -25,7 +25,7 @@ const SERVICES = [
     {
         title: "Web Development",
         icon: "/assets/imgs/page/services/1/icon-web.svg",
-        body: "Responsive, fast websites and web apps on a modern Next.js / React stack. Sites from AU$800.",
+        body: "Responsive, fast websites and web apps on a modern Next.js / React stack.",
         href: "/services/web-development/",
     },
     {
@@ -55,7 +55,7 @@ const SERVICES = [
     {
         title: "Maintenance & Support",
         icon: "/assets/imgs/page/services/1/icon-support.svg",
-        body: "Updates, monitoring, backups, security patches and content changes. From AU$250/month, no long lock-in.",
+        body: "Updates, monitoring, backups, security patches and content changes. Month to month, no long lock-in.",
         href: "/services/maintenance-support/",
     },
 ]
@@ -76,8 +76,8 @@ export default function ServicesPage() {
                                 </h1>
                                 <p className="text-body-lead-large color-gray-500 mt-40 pr-40">
                                     Websites, mobile apps, custom software, AI systems and ongoing
-                                    support — delivered with fixed AUD
-                                    pricing and no agency layers between you and the code.
+                                    support — delivered with written estimates
+                                    and no agency layers between you and the code.
                                 </p>
                                 <div className="mt-40">
                                     <Link href="/contact/" className="btn btn-black shape-square icon-arrow-right-white">
@@ -94,12 +94,12 @@ export default function ServicesPage() {
                                             <div className="item-icon none-bd">
                                                 <span className="icon-left">
                                                     <Image width={0} height={0} sizes="100vw" style={{ width: "auto", height: "auto" }}
-                                                        src="/assets/imgs/page/about/2/icon-project-done.svg" alt="Fixed pricing" />
+                                                        src="/assets/imgs/page/about/2/icon-project-done.svg" alt="Written estimates" />
                                                 </span>
                                                 <h4 className="text-heading-4">
                                                     <span className="text-heading-3 color-green-900">AUD</span>
                                                 </h4>
-                                                <p className="text-body-text color-gray-500">Fixed prices upfront</p>
+                                                <p className="text-body-text color-gray-500">Written estimate upfront</p>
                                             </div>
                                         </div>
                                     </div>
@@ -212,19 +212,19 @@ export default function ServicesPage() {
                                                 Start here
                                             </th>
                                             <th className="text-body-lead color-gray-900" style={{ padding: 16, textAlign: "right" }}>
-                                                From
+                                                Start with
                                             </th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         {[
-                                            ["People cannot find us, or the site looks dated", "Web Development", "/services/web-development/", "$800"],
-                                            ["We have a site but it brings in no enquiries", "Marketing & SEO", "/services/marketing-seo/", "$250/mo"],
-                                            ["We want to sell online", "Web Development", "/ecommerce-development/", "$4,500"],
-                                            ["Customers keep asking for an app", "Mobile App Development", "/services/mobile-app-development/", "$4,500"],
+                                            ["People cannot find us, or the site looks dated", "Web Development", "/services/web-development/", "Free homepage design"],
+                                            ["We have a site but it brings in no enquiries", "Marketing & SEO", "/services/marketing-seo/", "Free call"],
+                                            ["We want to sell online", "Web Development", "/ecommerce-development/", "Free call"],
+                                            ["Customers keep asking for an app", "Mobile App Development", "/services/mobile-app-development/", "Free call"],
                                             ["Staff waste hours on repetitive admin", "AI & Automation", "/services/ai-automation/", "Free audit"],
-                                            ["Our process does not fit any off-the-shelf tool", "Custom Software", "/services/custom-software/", "$5,000"],
-                                            ["The site works but nobody is looking after it", "Maintenance & Support", "/services/maintenance-support/", "$250/mo"],
+                                            ["Our process does not fit any off-the-shelf tool", "Custom Software", "/services/custom-software/", "Free call"],
+                                            ["The site works but nobody is looking after it", "Maintenance & Support", "/services/maintenance-support/", "Free call"],
                                         ].map(([problem, service, href, price]) => (
                                             <tr key={problem} style={{ borderBottom: "1px solid #E4E7EC" }}>
                                                 <td className="text-body-text color-gray-700" style={{ padding: 16 }}>{problem}</td>
@@ -271,9 +271,9 @@ export default function ServicesPage() {
                             <div className="line-bd-green mt-50" />
                             <div className="row">
                                 <div className="col-lg-6 col-sm-6 col-12 mt-50">
-                                    <h4 className="text-heading-6 icon-leaf">Fixed AUD pricing</h4>
+                                    <h4 className="text-heading-6 icon-leaf">Written estimates</h4>
                                     <p className="text-body-excerpt color-gray-600 mt-15">
-                                        A written quote before any work starts. It does not move unless the scope does.
+                                        A written estimate before any work starts, phase by phase. It only changes if the scope does.
                                     </p>
                                 </div>
                                 <div className="col-lg-6 col-sm-6 col-12 mt-50">

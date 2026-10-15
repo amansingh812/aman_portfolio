@@ -4,11 +4,11 @@ import { useState } from "react"
 const FAQS = [
     {
         q: "How much does a website cost?",
-        a: "We publish our prices upfront, in AUD, before you make any commitment. Three to five page sites from $800, up to ten pages $1,900, ten pages or more $3,500, e-commerce and applications $4,500, and custom software from $5,000. You get a written quote that doesn't move unless the scope does — no hourly billing surprises at the end."
+        a: "It depends on what your project needs: the number of pages, features such as bookings, payments or logins, and integrations. After a short call you get a written estimate, broken into phases if that suits your budget, so there are no hourly billing surprises at the end. Typical starting points are on our pricing page."
     },
     {
         q: "What makes you different from other Australian web agencies?",
-        a: "Australian agencies commonly quote $5,000–$15,000 for a small business site, much of it covering account managers and overhead rather than the build. We publish fixed prices, build on a modern Next.js stack instead of patching old WordPress sites, and you deal directly with the engineer building your project — not an account manager relaying messages."
+        a: "Australian agencies commonly quote $5,000–$15,000 for a small business site, much of it covering account managers and overhead rather than the build. We give clear written estimates, build on a modern Next.js stack instead of patching old WordPress sites, and you deal directly with the engineer building your project — not an account manager relaying messages."
     },
     {
         q: "Will I actually own my website?",
@@ -32,7 +32,7 @@ const FAQS = [
     },
     {
         q: "What happens after my website launches?",
-        a: "Every project includes 30 days of post-launch support at no extra cost. After that, our Care + SEO plan ($250/month) covers security updates, backups, uptime monitoring, and small content changes. No long lock-in — cancel any month."
+        a: "Every project includes 30 days of post-launch support at no extra cost. After that, our optional Care + SEO plan covers security updates, backups, uptime monitoring, and small content changes. No long lock-in — cancel any month."
     },
 ]
 

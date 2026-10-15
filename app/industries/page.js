@@ -9,11 +9,11 @@ import { SITE } from "@/content/site"
 export const metadata = {
     title: "Industries We Build For — Australia",
     description:
-        "Websites and apps built for Australian industries: healthcare, real estate, trades, hospitality, education, retail, finance and startups. Fixed AUD pricing.",
+        "Websites and apps built for Australian industries: healthcare, real estate, trades, hospitality, education, retail, finance and startups. You own the code.",
     alternates: { canonical: "/industries/" },
     openGraph: {
         title: "Industries — Build First Site",
-        description: "Websites and apps built for Australian industries. Fixed AUD pricing.",
+        description: "Websites and apps built for Australian industries. You own the code.",
         url: "https://buildfirstsite.com/industries/",
     },
 }
@@ -96,7 +96,7 @@ const INDUSTRIES = [
 /* Value strip in the "What we offer" section */
 const OFFERS = [
     { title: "Industry-aware design", body: "We start every project by studying the top 5 sites in your industry. What works, what fails, what's missing." },
-    { title: "AUD fixed pricing", body: "You get a written quote before any work starts. It does not move unless the scope does." },
+    { title: "Written estimates", body: "You get a written estimate before any work starts, phase by phase. It only changes if the scope does." },
     { title: "Modern stack", body: "Next.js, React, Tailwind, Node — the same modern stack used by large tech companies." },
     { title: "You own the code", body: "Full repo, hosting, domain, every account — yours on completion. No vendor lock-in." },
 ]

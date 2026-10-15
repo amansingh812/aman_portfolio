@@ -150,7 +150,7 @@ export const GUIDES = [
       {
         "heading": "The questions that reveal a professional",
         "body": [
-          "Ask how they handle SEO basics, page speed, and mobile. Ask what happens after launch — is there support, and what does it cost? Ask for a fixed price and a timeline in writing rather than an open-ended hourly arrangement. Clear, confident answers signal someone who has done this many times.",
+          "Ask how they handle SEO basics, page speed, and mobile. Ask what happens after launch — is there support, and what does it cost? Ask for a written estimate and a timeline rather than an open-ended hourly arrangement. Clear, confident answers signal someone who has done this many times.",
           "Also ask how you will see progress. A developer who gives you a live staging link to watch the site come together is far easier to work with than one who disappears for weeks and reveals a finished product you cannot influence."
         ]
       },
@@ -158,7 +158,7 @@ export const GUIDES = [
         "heading": "How to compare quotes fairly",
         "body": [
           "The cheapest quote is rarely the cheapest outcome. A low price often means a template, slow support, or a platform subscription you will pay forever. Compare what is actually included: design, number of pages, SEO setup, forms and integrations, revisions, post-launch support, and — crucially — ownership.",
-          "A slightly higher fixed price with clear scope, fast performance, and full ownership almost always beats a bargain quote that leaves you paying monthly and unable to make changes."
+          "A slightly higher price with clear scope, fast performance, and full ownership almost always beats a bargain quote that leaves you paying monthly and unable to make changes."
         ]
       },
       {
@@ -172,7 +172,7 @@ export const GUIDES = [
       "Define your business goal before choosing any developer or technology.",
       "Test their live sites on mobile — speed and UX reveal quality.",
       "Always confirm you will own the code with no lock-in.",
-      "Prefer a fixed price and timeline in writing over hourly, open-ended work.",
+      "Prefer a written estimate and timeline over hourly, open-ended work.",
       "Compare total value and ownership, not just the headline price."
     ]
   },
@@ -272,7 +272,7 @@ export const GUIDES = [
         "body": [
           "Hourly billing puts you and the developer on opposite sides. Every hour that the project runs long is revenue for them and cost for you, and you have almost no way to audit whether a task genuinely took nine hours. You also cannot budget: the number you are quoted is an estimate, and estimates in software have a well-earned reputation.",
           "The more useful question is not \"what is your hourly rate\" but \"what will this project cost, in writing, before we start\". A developer who can answer that has scoped the work properly and is carrying the estimation risk themselves. One who cannot may be planning to discover the scope on your budget.",
-          "This is why we quote fixed prices in AUD. It is not generosity — it forces us to actually understand the project before committing, which is where most bad outcomes get prevented."
+          "This is why we send a written estimate before starting. It is not generosity — it forces us to actually understand the project before committing, which is where most bad outcomes get prevented."
         ]
       },
       {
@@ -302,7 +302,7 @@ export const GUIDES = [
       {
         "heading": "Questions worth asking before you sign",
         "body": [
-          "Ask for a fixed price and timeline in writing. Ask who owns the code and the accounts on completion. Ask whether there is a mandatory ongoing fee. Ask to see live sites they built — then open those sites on your phone and check how fast they load. Ask what happens after launch and what support costs. Ask who you will actually be talking to day to day.",
+          "Ask for a written estimate and timeline. Ask who owns the code and the accounts on completion. Ask whether there is a mandatory ongoing fee. Ask to see live sites they built — then open those sites on your phone and check how fast they load. Ask what happens after launch and what support costs. Ask who you will actually be talking to day to day.",
           "The answers matter, but so does the manner. How someone handles the sales conversation is a reliable preview of how they will handle your project when something goes wrong."
         ]
       }

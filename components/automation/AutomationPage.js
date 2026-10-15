@@ -82,7 +82,7 @@ const css = `
 const WHY = [
     { icon: "user", title: "You deal with the builder", body: "The engineer who builds your automation is the one you talk to. Your day-to-day contact is in Australia." },
     { icon: "shield", title: "You own everything", body: "Accounts in your name, data in your tools, every workflow documented. No platform subscription to keep paying us for." },
-    { icon: "edit", title: "A fixed price, in writing", body: "No hourly billing. You get the scope and one fixed price after the free audit, before any work starts." },
+    { icon: "edit", title: "A written estimate", body: "No hourly billing. You get the scope and an estimate after the free audit, before any work starts." },
 ]
 
 export default function AutomationPage({ page }) {
@@ -255,7 +255,7 @@ export default function AutomationPage({ page }) {
                                 <li>Testing with you before it goes live</li>
                             </ul>
                             <p className="text-body-small color-gray-500 mt-15 mb-0">
-                                Typical set-up: {offer?.delivery}. Price: a fixed written quote after the{" "}
+                                Typical set-up: {offer?.delivery}. Price: a written estimate after the{" "}
                                 <Link href="/free-automation-audit/" className="color-green-900">free automation audit</Link>.
                             </p>
                         </div>
@@ -338,7 +338,7 @@ export default function AutomationPage({ page }) {
                     <div className="ap-cta">
                         <h2 className="text-heading-2 ap-white mb-15">See what this would look like for your business</h2>
                         <p className="text-body-lead-large mb-30" style={{ color: "#E6F3F5" }}>
-                            Answer four questions and get a written automation map with a fixed price. Free, no obligation.
+                            Answer four questions and get a written automation map with an estimate. Free, no obligation.
                         </p>
                         <Link href="/free-automation-audit/" data-event="automation_audit_cta" data-package={`${page.slug}-cta`}
                             className="btn mr-10 mb-10" style={{ background: "#83C5BE", color: "#004349" }}>

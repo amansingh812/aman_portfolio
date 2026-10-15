@@ -3,14 +3,14 @@
 # Build First Site
 
 > Web design and development studio for Australian small businesses. Websites,
-> web applications and mobile apps built on a modern Next.js stack, with fixed
-> prices published in AUD and full code ownership handed over on launch day.
+> web applications and mobile apps built on a modern Next.js stack, priced on
+> what each project needs, with full code ownership handed over on launch day.
 
 ## About
 
 Build First Site builds websites, web applications and mobile apps for small
-businesses in Australia. Prices are fixed and published rather than quoted after
-a discovery call. Every build is custom — no page builder, no proprietary CMS —
+businesses in Australia. Each project gets a written estimate after a short call,
+broken into phases where that suits the budget. Every build is custom — no page builder, no proprietary CMS —
 and the client receives the repository, hosting and domain in their own name at
 launch, with no monthly platform fee and nothing preventing them moving to
 another developer.
@@ -25,7 +25,7 @@ serving Melbourne, Preston, Richmond, Brunswick, Reservoir and clients Australia
 
 We do not operate in the United States or the United Kingdom.
 
-## Pricing (AUD, before GST)
+## Typical starting prices (AUD, before GST; each project is estimated individually)
 
 - **Starter** — 3–5 pages: $800 AUD (or 4 × $200), 5–7 days
 - **Business** — Up to 10 pages: $1,900 AUD (or 4 × $475), 2–3 weeks
@@ -37,7 +37,7 @@ We do not operate in the United States or the United Kingdom.
 - **Care + SEO** — optional ongoing care and SEO: $250 AUD/month, cancel with 30 days notice
 - **Free homepage design** — designed before any payment, usually within 2 business days; pay only if you go ahead
 
-### Automation (priced per business: free audit, then a fixed written quote)
+### Automation (priced per business: free audit, then a written estimate)
 
 - [Instant lead reply & routing](https://buildfirstsite.com/lead-follow-up-automation/): Every enquiry gets a reply in seconds, and the details land on your phone and in your lead list.
 - [Automated morning report](https://buildfirstsite.com/automated-business-reports/): Yesterday's leads, sales and ad spend in your inbox before you start work.
@@ -45,8 +45,8 @@ We do not operate in the United States or the United Kingdom.
 - [Data sync between your tools](https://buildfirstsite.com/crm-integration-data-sync/): Your forms, spreadsheet and CRM finally agree. One change updates everywhere.
 - [AI chatbot & AI-written replies](https://buildfirstsite.com/ai-chatbot-for-business/): Answers common questions 24/7 and drafts replies in your tone, handing over to a person when needed.
 
-Website prices are published in full at https://buildfirstsite.com/pricing/ and are fixed before work
-begins. A free homepage design is offered before any commitment or deposit.
+Typical starting prices are listed at https://buildfirstsite.com/pricing/; each project gets a written
+estimate before work begins. A free homepage design is offered before any commitment or deposit.
 
 ## Services
 
@@ -59,32 +59,32 @@ begins. A free homepage design is offered before any commitment or deposit.
 
 ## Key pages
 
-- [AI Web Development Australia | From $5,000](https://buildfirstsite.com/ai-web-development/)
-- [Ecommerce Development Australia | From $4,500](https://buildfirstsite.com/ecommerce-development/)
-- [Next.js Development Australia | From $1,900](https://buildfirstsite.com/nextjs-development/)
-- [Tradie Websites Australia 2026 | From $800](https://buildfirstsite.com/tradie-website-design/)
-- [Restaurant Website Design Australia | From $800](https://buildfirstsite.com/restaurant-website-design/)
-- [Real Estate Website Design Australia | From $800](https://buildfirstsite.com/real-estate-website-design/)
-- [Web Design & Web Developer Melbourne | Prices From $800](https://buildfirstsite.com/web-design-melbourne/)
-- [Web Design Sydney 2026 | From $800](https://buildfirstsite.com/web-design-sydney/)
-- [Web Design Brisbane 2026 | From $800](https://buildfirstsite.com/web-design-brisbane/)
-- [Web Design Perth WA 2026 | From $800](https://buildfirstsite.com/web-design-perth/)
-- [Web Design Adelaide 2026 | From $800](https://buildfirstsite.com/web-design-adelaide/)
+- [AI Web Development Australia](https://buildfirstsite.com/ai-web-development/)
+- [Ecommerce Development Australia](https://buildfirstsite.com/ecommerce-development/)
+- [Next.js Development Australia](https://buildfirstsite.com/nextjs-development/)
+- [Tradie Websites Australia 2026](https://buildfirstsite.com/tradie-website-design/)
+- [Restaurant Website Design Australia](https://buildfirstsite.com/restaurant-website-design/)
+- [Real Estate Website Design Australia](https://buildfirstsite.com/real-estate-website-design/)
+- [Web Design & Web Developer Melbourne](https://buildfirstsite.com/web-design-melbourne/)
+- [Web Design Sydney 2026](https://buildfirstsite.com/web-design-sydney/)
+- [Web Design Brisbane 2026](https://buildfirstsite.com/web-design-brisbane/)
+- [Web Design Perth WA 2026](https://buildfirstsite.com/web-design-perth/)
+- [Web Design Adelaide 2026](https://buildfirstsite.com/web-design-adelaide/)
 - [How Much Does a Website Cost in Australia? (2026)](https://buildfirstsite.com/how-much-does-a-website-cost-australia/)
 - [Wix vs Custom Website Australia | 5-Year Cost](https://buildfirstsite.com/wix-vs-custom-website/)
 - [Small Business Website Checklist (Australia 2026)](https://buildfirstsite.com/small-business-website-checklist/)
-- [Hire Someone to Build a Website in Australia (From $800)](https://buildfirstsite.com/hire-website-builder/)
+- [Hire Someone to Build a Website in Australia](https://buildfirstsite.com/hire-website-builder/)
 - [How Long Does It Take to Build a Website? (2026)](https://buildfirstsite.com/how-long-does-it-take-to-build-a-website/)
 - [Squarespace vs Custom Website Australia (2026)](https://buildfirstsite.com/squarespace-vs-custom-website/)
-- [NDIS Website Design Australia | WCAG 2.1 AA | $1,900](https://buildfirstsite.com/ndis-website-design/)
-- [Dental Website Design Australia 2026 | From $1,900](https://buildfirstsite.com/dental-website-design/)
+- [NDIS Website Design Australia | WCAG 2.1 AA](https://buildfirstsite.com/ndis-website-design/)
+- [Dental Website Design Australia 2026](https://buildfirstsite.com/dental-website-design/)
 - [WordPress vs Custom Website Australia | 5-Year Cost](https://buildfirstsite.com/wordpress-vs-custom-website/)
 - [Webflow vs Custom Website Australia | 5-Year Cost](https://buildfirstsite.com/webflow-vs-custom-website/)
 - [Freelancer vs Web Design Agency Australia 2026](https://buildfirstsite.com/freelancer-vs-web-design-agency/)
 - [Affordable Website Design for Small Business | From $800](https://buildfirstsite.com/affordable-website-design-small-business/)
 - [Small Business Website Redesign Australia](https://buildfirstsite.com/small-business-website-redesign/)
-- [Website Design Quote Australia | Fixed AUD Price](https://buildfirstsite.com/website-design-quote/)
-- [Web Design Canberra 2026 | From $800](https://buildfirstsite.com/web-design-canberra/)
+- [Website Design Quote Australia | Written Estimate](https://buildfirstsite.com/website-design-quote/)
+- [Web Design Canberra 2026](https://buildfirstsite.com/web-design-canberra/)
 - [How Much Does Website Hosting Cost? (Australia, 2026)](https://buildfirstsite.com/website-hosting-cost-australia/)
 - [Lovable Prototype to Production App | Australia](https://buildfirstsite.com/lovable-prototype-to-production/)
 
@@ -98,7 +98,7 @@ begins. A free homepage design is offered before any commitment or deposit.
 
 ## Key facts
 
-- Fixed prices, published on the website — no discovery call required to learn the cost
+- A written estimate after a short call, phase by phase; typical starting prices on the pricing page
 - Free homepage design before any deposit or commitment
 - Full code ownership: repository, hosting and domain in the client's name on launch day
 - No proprietary CMS, no monthly platform fee, no lock-in
@@ -114,11 +114,11 @@ The questions below are answered on the live site. The answers are the
 business's own published position, current as of the generation date at the
 foot of this file.
 
-### AI Web Development Australia | From $5,000
+### AI Web Development Australia
 https://buildfirstsite.com/ai-web-development/
 
 **Q: How much does AI web development cost in Australia?**
-A: A focused AI feature on an existing site starts at AU$900 — a trained chatbot or a single automation. A full application built around AI is AU$4,500. Custom AI platforms are scoped per project from AU$5,000. Model API usage is separate, typically AU$20 to $200 a month depending on volume, and runs in your own account so you control it.
+A: It depends on what you need: the number of pages, features such as bookings, payments or logins, and any integrations. After a short call we send a written estimate, broken into phases if that suits your budget. Typical starting points are on our <a href="/pricing/" class="color-green-900">pricing page</a>.
 
 **Q: Which AI models do you use?**
 A: Whichever fits the job. OpenAI, Claude and Gemini all have strengths, and for narrow tasks a smaller cheaper model often outperforms a flagship on both cost and speed. We pick based on the task and your budget rather than defaulting to one vendor, and we build so the model can be swapped later.
@@ -131,11 +131,11 @@ A: Completely — source code, repository and hosting in your name, with the mod
 
 ---
 
-### Ecommerce Development Australia | From $4,500
+### Ecommerce Development Australia
 https://buildfirstsite.com/ecommerce-development/
 
 **Q: How much does custom ecommerce development cost in Australia?**
-A: A standard store — up to roughly 100 products, Stripe checkout, inventory management and an admin dashboard — is AU$4,500, delivered in 4 to 6 weeks. Stores needing unlimited products, multi-currency support or custom features like AI recommendations are scoped per project from AU$5,000.
+A: It depends on what you need: the number of pages, features such as bookings, payments or logins, and any integrations. After a short call we send a written estimate, broken into phases if that suits your budget. Typical starting points are on our <a href="/pricing/" class="color-green-900">pricing page</a>.
 
 **Q: Do I pay a transaction fee on every sale?**
 A: No platform fee. Stripe's own processing fee still applies to every card transaction — roughly 1.7–2.9% plus a fixed amount, depending on card type — but that goes to Stripe for handling the payment, not to us or to a platform sitting in between.
@@ -151,11 +151,11 @@ A: Completely — source code, repository, database and hosting in your name. Th
 
 ---
 
-### Next.js Development Australia | From $1,900
+### Next.js Development Australia
 https://buildfirstsite.com/nextjs-development/
 
 **Q: How much does Next.js development cost in Australia?**
-A: A business site of up to 10 pages is AU$1,900, delivered in 2 to 3 weeks. Multi-service or multi-location sites of ten pages or more are AU$3,500. Applications like dashboards, portals or booking systems start at AU$4,500, and custom software is scoped per project from AU$5,000.
+A: It depends on what you need: the number of pages, features such as bookings, payments or logins, and any integrations. After a short call we send a written estimate, broken into phases if that suits your budget. Typical starting points are on our <a href="/pricing/" class="color-green-900">pricing page</a>.
 
 **Q: Is Next.js actually better for SEO than WordPress?**
 A: Next.js renders pages on the server, so Google indexes the full HTML immediately without relying on JavaScript execution, and Core Web Vitals scores are strong by default. WordPress can be made to perform well too, but usually needs several plugins layered on to get there — each one a maintenance cost and a possible failure point.
@@ -171,14 +171,14 @@ A: Completely — full source code and repository access in your name, deployed 
 
 ---
 
-### Tradie Websites Australia 2026 | From $800
+### Tradie Websites Australia 2026
 https://buildfirstsite.com/tradie-website-design/
 
 **Q: How much does a tradie website cost?**
-A: A three to five page tradie site is $800, up to ten pages with service-area pages is $1,900, and ten pages or more is $3,500 (<a href="/pricing/" class="color-green-900">all packages</a>), each payable in four instalments. Add a booking system from $700. Every quote is fixed in writing before work starts.
+A: It depends on what you need: the number of pages, features such as bookings, payments or logins, and any integrations. After a short call we send a written estimate, broken into phases if that suits your budget. Typical starting points are on our <a href="/pricing/" class="color-green-900">pricing page</a>.
 
 **Q: Do tradies need a website?**
-A: Not always, and not first. A free Google Business Profile should come before a website for a brand new sole trader. A website earns its keep once you are competing for jobs where people compare two or three tradies, quoting work over $5,000, or paying for ads and sending that traffic to a Facebook page.
+A: Not always, and not first. A free Google Business Profile should come before a website for a brand new sole trader. A website earns its keep once you are competing for jobs where people compare two or three tradies, or paying for ads that need somewhere better than a Facebook page to land.
 
 **Q: How long does a tradie website take?**
 A: Five to seven business days for a three to five page site, two to three weeks for a larger one. The usual delay is waiting on job photos and service descriptions, not development.
@@ -191,11 +191,11 @@ A: Completely — source code, repository and hosting account in your name. Seve
 
 ---
 
-### Restaurant Website Design Australia | From $800
+### Restaurant Website Design Australia
 https://buildfirstsite.com/restaurant-website-design/
 
 **Q: How much does a restaurant website cost in Australia?**
-A: A three to five page café site is $800, and up to ten pages with a booking system is $1,900 (<a href="/pricing/" class="color-green-900">see all pricing</a>). Online ordering with payments is $4,500. Every quote is fixed in writing before work starts.
+A: It depends on what you need: the number of pages, features such as bookings, payments or logins, and any integrations. After a short call we send a written estimate, broken into phases if that suits your budget. Typical starting points are on our <a href="/pricing/" class="color-green-900">pricing page</a>.
 
 **Q: Can I take bookings without paying commission?**
 A: Yes. A direct booking system on your own site has no per-cover fee. Most venues keep the platforms for discovery and move repeat customers to direct booking, which is where the savings compound.
@@ -211,11 +211,11 @@ A: Completely — source code, repository and hosting account in your name. You 
 
 ---
 
-### Real Estate Website Design Australia | From $800
+### Real Estate Website Design Australia
 https://buildfirstsite.com/real-estate-website-design/
 
 **Q: How much does a real estate website cost in Australia?**
-A: A three to five page agent site is $800, up to ten pages with suburb pages and appraisal forms is $1,900, and ten pages or more is $3,500 (<a href="/pricing/" class="color-green-900">all packages</a>). CRM integration for live listings is quoted as a custom build from $4,500.
+A: It depends on what you need: the number of pages, features such as bookings, payments or logins, and any integrations. After a short call we send a written estimate, broken into phases if that suits your budget. Typical starting points are on our <a href="/pricing/" class="color-green-900">pricing page</a>.
 
 **Q: Can my listings sync automatically from my CRM?**
 A: Usually yes, depending on your CRM and whether it exposes an API or feed. This is quoted as a custom build because the work depends entirely on the system you already use. We will tell you upfront if your CRM makes it impractical.
@@ -231,14 +231,14 @@ A: Completely — source code, repository and hosting account in your name, inde
 
 ---
 
-### Web Design & Web Developer Melbourne | Prices From $800
+### Web Design & Web Developer Melbourne
 https://buildfirstsite.com/web-design-melbourne/
 
 **Q: How much does website design cost in Melbourne?**
-A: Our prices are published: $800 for a three to five page site, $1,900 for up to ten pages, $3,500 for ten or more pages, and from $4,500 for e-commerce or an application. Each can be paid in four instalments. Melbourne agencies commonly quote $5,000 to $15,000 for the same scope. Every quote is fixed in writing before work starts.
+A: It depends on what you need: the number of pages, features such as bookings, payments or logins, and any integrations. After a short call we send a written estimate, broken into phases if that suits your budget. Typical starting points are on our <a href="/pricing/" class="color-green-900">pricing page</a>.
 
 **Q: How do I hire a web developer in Melbourne?**
-A: Send a short description of your business and what the site needs to do through the form on this page, or book a free call. Within one business day you get a written scope with a fixed AUD price, and we design your homepage free before you commit. You work directly with the developer building the site, with a Melbourne-based contact for meetings.
+A: Send a short description of your business and what the site needs to do through the form on this page, or book a free call. Within one business day you get a written scope and estimate, and we design your homepage free before you commit. You work directly with the developer building the site, with a Melbourne-based contact for meetings.
 
 **Q: What is the difference between a web designer and a web developer?**
 A: A web designer decides how the site looks and how people move through it; a web developer builds it so it works, loads fast and can be found on Google. Many Melbourne agencies split the two between different people. Here the same person does both, which removes the hand-off where most projects lose time.
@@ -263,11 +263,11 @@ A: Completely. You get the source code, the repository and the hosting account i
 
 ---
 
-### Web Design Sydney 2026 | From $800
+### Web Design Sydney 2026
 https://buildfirstsite.com/web-design-sydney/
 
 **Q: How much does a website cost in Sydney?**
-A: Our prices are published: $800 for a three to five page site, $1,900 for up to ten pages, $3,500 for ten pages or more, and $4,500 for e-commerce or an application. Sydney agencies commonly quote several times that for the same scope. Every quote is fixed in writing before work starts.
+A: It depends on what you need: the number of pages, features such as bookings, payments or logins, and any integrations. After a short call we send a written estimate, broken into phases if that suits your budget. Typical starting points are on our <a href="/pricing/" class="color-green-900">pricing page</a>.
 
 **Q: Are you based in Sydney?**
 A: No. Build First Site is based in Melbourne and works with Sydney businesses remotely. We say that plainly rather than implying a local office. You get a live staging link from the first week and calls whenever you want them, and the price is lower than a local agency with premises to pay for.
@@ -283,11 +283,11 @@ A: Completely. You get the source code, the repository and the hosting account i
 
 ---
 
-### Web Design Brisbane 2026 | From $800
+### Web Design Brisbane 2026
 https://buildfirstsite.com/web-design-brisbane/
 
 **Q: How much does a website cost in Brisbane?**
-A: Our prices are published: $800 for a three to five page site, $1,900 for up to ten pages, $3,500 for ten pages or more, and $4,500 for e-commerce or an application. Brisbane agencies commonly quote several times that for the same scope. Every quote is fixed in writing before work starts.
+A: It depends on what you need: the number of pages, features such as bookings, payments or logins, and any integrations. After a short call we send a written estimate, broken into phases if that suits your budget. Typical starting points are on our <a href="/pricing/" class="color-green-900">pricing page</a>.
 
 **Q: Are you based in Brisbane?**
 A: No. Build First Site is based in Melbourne and works with Brisbane businesses remotely. We say that plainly rather than implying a local office. You get a live staging link from the first week and calls whenever you want them, and the price is lower than a local agency with premises to pay for.
@@ -303,11 +303,11 @@ A: Completely. You get the source code, the repository and the hosting account i
 
 ---
 
-### Web Design Perth WA 2026 | From $800
+### Web Design Perth WA 2026
 https://buildfirstsite.com/web-design-perth/
 
 **Q: How much does a website cost in Perth?**
-A: Our prices are published: $800 for a three to five page site, $1,900 for up to ten pages, $3,500 for ten pages or more, and $4,500 for e-commerce or an application. Perth agencies commonly quote several times that for the same scope. Every quote is fixed in writing before work starts.
+A: It depends on what you need: the number of pages, features such as bookings, payments or logins, and any integrations. After a short call we send a written estimate, broken into phases if that suits your budget. Typical starting points are on our <a href="/pricing/" class="color-green-900">pricing page</a>.
 
 **Q: Are you based in Perth?**
 A: No. Build First Site is based in Melbourne and works with Perth businesses remotely. We say that plainly rather than implying a local office. You get a live staging link from the first week and calls scheduled for the Perth morning, and the price is lower than a local agency with premises to pay for.
@@ -323,11 +323,11 @@ A: Completely. You get the source code, the repository and the hosting account i
 
 ---
 
-### Web Design Adelaide 2026 | From $800
+### Web Design Adelaide 2026
 https://buildfirstsite.com/web-design-adelaide/
 
 **Q: How much does a website cost in Adelaide?**
-A: Our prices are published: $800 for a three to five page site, $1,900 for up to ten pages, $3,500 for ten pages or more, and $4,500 for e-commerce or an application. Adelaide agencies commonly quote several times that for the same scope. Every quote is fixed in writing before work starts.
+A: It depends on what you need: the number of pages, features such as bookings, payments or logins, and any integrations. After a short call we send a written estimate, broken into phases if that suits your budget. Typical starting points are on our <a href="/pricing/" class="color-green-900">pricing page</a>.
 
 **Q: Are you based in Adelaide?**
 A: No. Build First Site is based in Melbourne and works with Adelaide businesses remotely. We say that plainly rather than implying a local office. You get a live staging link from the first week and calls whenever you want them, and the price is lower than a local agency with premises to pay for.
@@ -402,30 +402,30 @@ https://buildfirstsite.com/small-business-website-checklist/
 A: A small business website needs: a custom domain name, reliable hosting, a mobile-responsive design, a clear homepage with your value proposition, an About page, a Services or Products page, a Contact page, an SSL certificate (HTTPS), Google Analytics, Google Search Console, basic SEO (title tags, meta descriptions, sitemap), fast page load speed, and a privacy policy.
 
 **Q: How much does it cost to set up a small business website in Australia?**
-A: A professional custom-built small business website in Australia costs $1,900–$5,000 AUD. A DIY website using Wix or Squarespace costs $20–50/month. A domain name costs $15–30/year. Hosting on Vercel is free for most small business sites.
+A: A DIY website using Wix or Squarespace costs $20–50/month. A domain name costs $15–30/year. Hosting on Vercel is free for most small business sites. Our own estimate depends on your project; typical starting points are on our <a href="/pricing/" class="color-green-900">pricing page</a>.
 
 **Q: What pages does a small business website need?**
 A: Every small business website should have at minimum: a Homepage, About page, Services/Products page, Contact page, and Privacy Policy. Most benefit from adding a FAQ page, Testimonials/Reviews section, and a Blog or Resources section for SEO.
 
 ---
 
-### Hire Someone to Build a Website in Australia (From $800)
+### Hire Someone to Build a Website in Australia
 https://buildfirstsite.com/hire-website-builder/
 
 **Q: How do I find good website developers for my small business in Australia?**
-A: Look past the portfolio screenshots. Open two or three of their live sites on your phone, ask who owns the code at the end, ask for a fixed written price instead of an hourly estimate, and ask who will fix things after launch. A good small business developer answers all four in writing. We publish our prices, show live client sites, hand over the full code, and design your homepage free before you commit.
+A: Look past the portfolio screenshots. Open two or three of their live sites on your phone, ask who owns the code at the end, ask for a written estimate with a clear scope instead of open-ended hourly billing, and ask who will fix things after launch. A good small business developer answers all four in writing. We publish our prices, show live client sites, hand over the full code, and design your homepage free before you commit.
 
 **Q: I need someone to make me a website. Where do I start?**
-A: Write two lines: what your business does, and what you want visitors to do (call, book, buy or enquire). Send that through our free homepage design form. You see your homepage designed in about two business days, then get a fixed written quote for the whole site. There is nothing to pay until you approve the quote.
+A: Write two lines: what your business does, and what you want visitors to do (call, book, buy or enquire). Send that through our free homepage design form. You see your homepage designed in about two business days, then get a written estimate for the whole site. There is nothing to pay until you approve the quote.
 
 **Q: What is the average cost to hire someone to build a website?**
-A: In Australia, roughly $800 to $5,000 AUD for a small business site built by an independent developer or small studio, and $5,000 to $15,000 from a full agency for the same scope. Marketplace freelancers advertise lower, often $200 to $1,500, with quality that varies more than the price does. Our published prices are $800 for three to five pages, $1,900 for up to ten, $3,500 for ten or more and $4,500 for e-commerce, payable in four instalments.
+A: It depends on what you need: the number of pages, features such as bookings, payments or logins, and any integrations. After a short call we send a written estimate, broken into phases if that suits your budget. Typical starting points are on our <a href="/pricing/" class="color-green-900">pricing page</a>.
 
 **Q: Is it worth paying someone to build a website?**
-A: For a business, usually yes, once you count your own time. A DIY builder costs roughly $17 to $62 a month on Wix or Squarespace business plans for as long as you keep the site, plus the 40 to 100 hours it takes to learn and build, and you still own nothing at the end. Paying a developer a fixed price once gets you a faster site that you own outright. If you are just testing an idea, a DIY tool is fine to start with.
+A: For a business, usually yes, once you count your own time. A DIY builder costs roughly $17 to $62 a month on Wix or Squarespace business plans for as long as you keep the site, plus the 40 to 100 hours it takes to learn and build, and you still own nothing at the end. Paying a developer once gets you a faster site that you own outright. If you are just testing an idea, a DIY tool is fine to start with.
 
 **Q: Can I hire someone to build a website for me?**
-A: Yes, and you do not need to understand any of the technical side to do it. Tell us what the business does and what you want the site to achieve, and you get a written scope with a fixed AUD price within one business day. We design your homepage before you commit to anything, so you can judge the work rather than the pitch.
+A: Yes, and you do not need to understand any of the technical side to do it. Tell us what the business does and what you want the site to achieve, and you get a written scope and estimate within one business day. We design your homepage before you commit to anything, so you can judge the work rather than the pitch.
 
 **Q: Can ChatGPT build me a website?**
 A: It can produce a working page, and for a personal project or a rough prototype that is genuinely useful. What it does not do is decide what your business needs the site to say, write copy that reflects how you actually sell, handle hosting and domains, set up the technical SEO, or be responsible when a form stops delivering enquiries six months later. AI is part of how we build too — it is a tool in the process, not a replacement for someone being accountable for the result.
@@ -434,10 +434,10 @@ A: It can produce a working page, and for a personal project or a rough prototyp
 A: For most small business websites, proximity matters less than it used to — the work is done remotely and reviewed on a live link either way. What matters is a local point of contact in your timezone, which is what we have: your day-to-day contact is in Australia. We build for businesses across Australia, including <a href="/web-design-melbourne/" class="color-green-900">web design in Melbourne</a> and <a href="/web-design-sydney/" class="color-green-900">web design in Sydney</a>, plus Brisbane, Perth, Adelaide and Canberra.
 
 **Q: Can I hire someone to build a website for my small business?**
-A: Yes, and that is exactly what we do. You tell us what the business needs, we send a written scope with a fixed AUD price within one business day, and we design your homepage free before you commit to anything. Prices start at $800 for three to five pages. You are hiring the person who writes the code, not an account manager.
+A: Yes, and that is exactly what we do. You tell us what the business needs, we send a written scope and estimate within one business day, and we design your homepage free before you commit to anything. You are hiring the person who writes the code, not an account manager.
 
 **Q: How much does it cost to hire a website builder in Australia?**
-A: At Build First Site, a three to five page website starts from $800 AUD, a business website of up to ten pages from $1,900 AUD, and a custom e-commerce store from $4,500 AUD. All prices are fixed upfront — no hourly billing, no hidden extras.
+A: It depends on what you need: the number of pages, features such as bookings, payments or logins, and any integrations. After a short call we send a written estimate, broken into phases if that suits your budget. Typical starting points are on our <a href="/pricing/" class="color-green-900">pricing page</a>.
 
 **Q: How long does it take to get a website built?**
 A: Starter sites (3–5 pages): 5–7 days. Business websites: 2–3 weeks. E-commerce stores: 4–6 weeks. Custom applications: scoped per project. Timelines are locked in your proposal before work starts.
@@ -466,7 +466,7 @@ A: Five to seven business days for three to five pages, two to three weeks for u
 A: Development itself is usually the shorter half. A ten-page business site takes roughly one week of build time; the two to three week timeline covers design approval, content, revisions and testing. Projects that run long are almost always waiting on copy or images rather than on code.
 
 **Q: How many hours does it take to design a website?**
-A: For a three to five page site, roughly 15 to 25 hours of design and 20 to 30 hours of build. Up to ten pages runs closer to 40 to 60 hours total. We quote a fixed price rather than hourly, so the hours are ours to manage — but that is the honest shape of the work if you are comparing against an hourly quote.
+A: For a three to five page site, roughly 15 to 25 hours of design and 20 to 30 hours of build. Up to ten pages runs closer to 40 to 60 hours total. We estimate per project rather than billing hourly, so the hours are ours to manage — but that is the honest shape of the work if you are comparing against an hourly quote.
 
 **Q: How long does it take to build a local business website?**
 A: A local business site — tradie, cafe, clinic, agent — is typically three to five pages plus suburb or service pages, so five to seven business days at the small end and two to three weeks with local SEO pages included. Google Business Profile setup happens alongside the build rather than after it.
@@ -502,14 +502,14 @@ A: WordPress sits between Squarespace and a fully custom build. It is free and f
 
 ---
 
-### NDIS Website Design Australia | WCAG 2.1 AA | $1,900
+### NDIS Website Design Australia | WCAG 2.1 AA
 https://buildfirstsite.com/ndis-website-design/
 
 **Q: Does my NDIS website legally have to be accessible?**
 A: WCAG 2.1 AA is not a legal mandate written explicitly into Australian law, but the Disability Discrimination Act 1992 prohibits discriminating against people with disabilities in the provision of services — and a non-accessible website does exactly that. The Australian Human Rights Commission has investigated digital accessibility complaints. NDIS providers who receive Commonwealth funding have additional obligations. The safe answer: build to WCAG 2.1 AA from the start.
 
 **Q: How much does an NDIS website cost?**
-A: Our Business package is $1,900 AUD for up to ten pages, which covers a standard NDIS provider site with one page per service type. The Growth package at $3,500 covers ten pages or more: suburb pages and more service categories. See our detailed breakdown at /blog/ndis-website-cost/.
+A: It depends on what you need: the number of pages, features such as bookings, payments or logins, and any integrations. After a short call we send a written estimate, broken into phases if that suits your budget. Typical starting points are on our <a href="/pricing/" class="color-green-900">pricing page</a>.
 
 **Q: Can you help me rank for NDIS-related searches?**
 A: Yes. We build NDIS websites with the page structure, local schema, and service-specific content that search engines reward. We also have a full guide to SEO for NDIS providers on our blog covering the specific keywords and page types that generate participant enquiries.
@@ -522,11 +522,11 @@ A: Typically two to four weeks for a Business package site, depending on how qui
 
 ---
 
-### Dental Website Design Australia 2026 | From $1,900
+### Dental Website Design Australia 2026
 https://buildfirstsite.com/dental-website-design/
 
 **Q: How much does a dental website cost in Australia?**
-A: Our Business package is $1,900 AUD for up to ten pages — home, about, services overview, individual treatment pages, and contact. Ten pages or more is $3,500. Hosting is free on Vercel. Dental marketing agencies typically charge $3,000–$8,000 plus a monthly retainer. We publish the price before any conversation.
+A: Dental marketing agencies typically charge $3,000–$8,000 plus a monthly retainer. Our estimate depends on the pages, booking integration and features your practice needs; after a short call we send it in writing, phase by phase. Typical starting points are on our <a href="/pricing/" class="color-green-900">pricing page</a>.
 
 **Q: Can you integrate online booking into our dental website?**
 A: Yes. We integrate with HotDoc, Cliniko, Dental4Windows, and any booking system that provides an embed code or API. Online booking is the single biggest conversion improvement for most dental websites — patients who cannot book immediately often do not call back.
@@ -558,7 +558,7 @@ A: Yes. We keep your URLs so existing search rankings carry over, set up redirec
 A: Nothing. You have full source code and repository access in your name, deployed to your own Vercel account where possible. Any developer can pick it up. There is no proprietary platform to be locked into.
 
 **Q: How much does a WordPress website cost in Australia?**
-A: A typical small business WordPress build runs $2,000 to $4,000 up front, plus $15 to $60 a month hosting, $500 to $1,500 in premium plugins over five years, and $50 to $150 a month maintenance if you want it kept patched. That lands between $6,700 and $18,100 across five years. Our fixed custom build is $1,900 for the same page count with free hosting on Vercel and no plugin fees.
+A: A typical small business WordPress build runs $2,000 to $4,000 up front, plus $15 to $60 a month hosting, $500 to $1,500 in premium plugins over five years, and $50 to $150 a month maintenance if you want it kept patched. That lands between $6,700 and $18,100 across five years. A custom build from us starts at $1,900 for the same page count with free hosting on Vercel and no plugin fees.
 
 **Q: Is WordPress cheaper than a custom website?**
 A: Cheaper up front sometimes, more expensive over five years almost always. Hosting, premium plugins and mandatory maintenance add up, while a static custom build has no plugin fees and free hosting on Vercel. The five-year table above shows the difference.
@@ -606,7 +606,7 @@ https://buildfirstsite.com/affordable-website-design-small-business/
 A: A single landing page falls inside our Starter package at $800 AUD, which covers three to five pages — so a one-page build costs the same as a small site and you may as well use the pages. Across the market a standalone landing page runs roughly $500 to $2,500 depending on whether the design is custom and whether copy is included.
 
 **Q: How much does a small business website cost in Australia?**
-A: Ours are published: $800 AUD for three to five pages, $1,900 for up to ten pages, $3,500 for ten pages or more, and $4,500 for e-commerce. Australian agencies commonly quote $3,000 to $10,000 for the same scope. Every quote is fixed in writing before work starts.
+A: Ours are published: $800 AUD for three to five pages, $1,900 for up to ten pages, $3,500 for ten pages or more, and $4,500 for e-commerce. Australian agencies commonly quote $3,000 to $10,000 for the same scope. Your own estimate depends on what your project needs.
 
 **Q: Is the free homepage design really free?**
 A: Yes. You tell us about the business, we design your homepage using your real content, and you look at it. No deposit, no commitment, no obligation to continue. It is a design rather than a working site - the build begins only if you decide to go ahead.
@@ -629,7 +629,7 @@ https://buildfirstsite.com/small-business-website-redesign/
 A: It can, and this is the main reason redesigns go wrong. Rankings drop when URLs change without 301 redirects, when content that was ranking gets cut, or when page titles are rewritten away from what people actually search. Done properly — full URL map, redirects in place, content kept, indexing checked in Search Console afterwards — rankings carry over and usually improve, because the new site is faster.
 
 **Q: How much does a small business website redesign cost in Australia?**
-A: Ours are published: $1,900 AUD for up to ten pages, $3,500 for ten pages or more, $4,500 for e-commerce. Australian agencies commonly quote $5,000 to $15,000 for the same scope. Redesigns sometimes come in slightly under a new build because the content already exists.
+A: Redesigns sometimes come in slightly under a new build because the content already exists. Our own estimate depends on your project; typical starting points are on our <a href="/pricing/" class="color-green-900">pricing page</a>.
 
 **Q: How long does a website redesign take?**
 A: Two to three weeks for up to ten pages, three to four for larger sites. The biggest variable is how quickly you approve the design and supply any new content. Your existing site stays live the whole time — we build on a private staging link and switch over only when you are happy.
@@ -642,17 +642,17 @@ A: No. Your domain stays yours and email is unaffected — it runs on separate D
 
 ---
 
-### Website Design Quote Australia | Fixed AUD Price
+### Website Design Quote Australia | Written Estimate
 https://buildfirstsite.com/website-design-quote/
 
 **Q: How do I get a website design quote?**
-A: Tell us what the business does, what the website needs to achieve, roughly how many pages, and anything it has to connect to. That is enough for a written scope with a fixed AUD price, back within one business day. No discovery call required unless you want one.
+A: Tell us what the business does, what the website needs to achieve, roughly how many pages, and anything it has to connect to. That is enough for a written scope and estimate, back within one business day. No discovery call required unless you want one.
 
 **Q: Is the quote free?**
 A: Yes, and so is the homepage design if you want one. There is no charge and no obligation at any point before you decide to go ahead.
 
 **Q: Will the price change once work starts?**
-A: No. The figure is fixed in writing before anything begins and only changes if you ask for something outside the agreed scope — in which case we re-quote that openly rather than adding hours quietly. Payment is split 50% to start and 50% on launch.
+A: The estimate is based on the agreed scope. It only changes if the scope changes, and if it does we re-estimate openly rather than adding hours quietly. Payment is split 50% to start and 50% on launch.
 
 **Q: Do I have to get on a call first?**
 A: No. Some people prefer one and we are happy to book it, but a written quote does not depend on it. Our prices are published precisely so you can assess us without sitting through a sales conversation.
@@ -662,11 +662,11 @@ A: Usually within a week of approving the scope. A three to five page site takes
 
 ---
 
-### Web Design Canberra 2026 | From $800
+### Web Design Canberra 2026
 https://buildfirstsite.com/web-design-canberra/
 
 **Q: How much does a website cost in Canberra?**
-A: Our published prices are $800 AUD for three to five pages, $1,900 for up to ten pages, $3,500 for ten pages or more and $4,500 for e-commerce. Canberra agencies commonly quote $4,000 to $10,000 for equivalent scope. Every quote is fixed in writing before work starts.
+A: It depends on what you need: the number of pages, features such as bookings, payments or logins, and any integrations. After a short call we send a written estimate, broken into phases if that suits your budget. Typical starting points are on our <a href="/pricing/" class="color-green-900">pricing page</a>.
 
 **Q: Are you based in Canberra?**
 A: No. We work with Canberra businesses remotely and say so plainly rather than implying a local office. Your contact is in Australia on AEST hours, you get a live staging link from the first week, and the price is lower than a local agency carrying premises costs.
@@ -724,7 +724,7 @@ A: Yes. Lovable projects are React and TypeScript with Tailwind, and the code ca
 A: Not unless you want it to. Your screens, colours, fonts and wording carry across. The work is mostly underneath: accounts, data, security, emails and admin.
 
 **Q: Do you also take over Bolt, Replit, v0 or Cursor projects?**
-A: Yes. The approach is the same for any AI-built prototype: review the code, list the gaps, then quote a fixed price for the production build.
+A: Yes. The approach is the same for any AI-built prototype: review the code, list the gaps, then send an estimate for the production build.
 
 **Q: Do I own the code?**
 A: Yes. The repository, hosting, database and domain sit in accounts you control, and the code is yours. Nothing is locked to us.
@@ -749,4 +749,4 @@ A: Yes. Many Lovable projects already use Supabase for the database and sign-in.
 - Real client projects: hsracegear.com, mobilearmour.com.au, autozenlyai.com,
   planet.ltfinance.com
 
-_Generated from the site's own content files on 2026-10-14._
+_Generated from the site's own content files on 2026-10-15._

@@ -15,14 +15,14 @@ import Layout from "@/components/layout/Layout"
 import Link from "next/link"
 import ContactPageForm from "@/components/elements/ContactPageForm"
 import { SITE } from "@/content/site"
-import { FREE_DESIGN, TYPICAL_RANGE, PRIMARY_TIERS } from "@/content/pricing"
+import { FREE_DESIGN } from "@/content/pricing"
 
 const URL = "https://buildfirstsite.com/free-homepage-design/"
 
 export const metadata = {
     title: { absolute: "Free Homepage Design Before You Pay | Build First Site" },
     description:
-        `See your homepage designed free, with your real business name and services, usually within ${FREE_DESIGN.turnaround}. Pay only if you go ahead. Fixed AUD quote, you own the code.`,
+        `See your homepage designed free, with your real business name and services, usually within ${FREE_DESIGN.turnaround}. Pay only if you go ahead. A written estimate, and you own the code.`,
     alternates: { canonical: "/free-homepage-design/" },
     openGraph: {
         title: "See your homepage designed free, before you pay",
@@ -35,7 +35,7 @@ export const metadata = {
 const STEPS = [
     { t: "Tell us about the business", b: "What you do, who you serve, and what the website should help with. Two minutes, no call needed." },
     { t: `See your homepage in ${FREE_DESIGN.turnaround}`, b: "A design of your homepage using your real business name, services and photos (or good placeholders if you don't have any yet)." },
-    { t: "Decide, with no pressure", b: "Love it? We send a fixed written price and a delivery date. Not for you? You walk away and owe nothing." },
+    { t: "Decide, with no pressure", b: "Love it? We talk it through and send a written estimate and a delivery date. Not for you? You walk away and owe nothing." },
 ]
 
 const YOU_GET = [
@@ -43,14 +43,14 @@ const YOU_GET = [
     "Your services, your suburbs, your call to action",
     "Desktop and mobile views",
     "A short note on the pages we'd recommend and why",
-    "A fixed AUD price if you want to go ahead",
+    "A written estimate if you want to go ahead",
 ]
 
 const FAQS = [
     { q: "Is it actually free?", a: "Yes. There is no deposit, no card and no obligation. We do it because seeing the work on your own business is the fastest way for you to decide whether we're the right fit." },
-    { q: "Is this a working website?", a: "No. It is a design of your homepage: what it will look like and say. The build starts only if you decide to go ahead, after you have a fixed written price." },
+    { q: "Is this a working website?", a: "No. It is a design of your homepage: what it will look like and say. The build starts only if you decide to go ahead, after you have a written estimate." },
     { q: `How long does it take?`, a: `Usually ${FREE_DESIGN.turnaround} from when we have the details we need. If we need anything else, we'll ask in one message rather than a back-and-forth.` },
-    { q: "What does the full website cost?", a: `Most projects are ${TYPICAL_RANGE.label} AUD. ${PRIMARY_TIERS.map((t) => `${t.name} (${t.scope}) from ${t.priceLabel}`).join(", ")}. The exact figure depends on the size of the site, and you get it in writing before anything starts.` },
+    { q: "What does the full website cost?", a: "It depends on the size of the site and the features it needs. After the design and a short call, you get a written estimate, broken into phases if that suits your budget. Typical starting points are on our pricing page." },
     { q: "Do I own the website if I go ahead?", a: "Yes. The code, domain and hosting are in your name. No proprietary platform, no lock-in." },
     { q: "Why would you do this for free?", a: "Because it's the honest way to sell a website. You judge real work instead of a sales pitch, and we only build for people who already like what they've seen." },
 ]
@@ -120,13 +120,13 @@ export default function FreeHomepageDesignPage() {
                                 </h1>
                                 <p className="text-body-lead-large color-gray-600 mb-30">
                                     Tell us about your business and we'll design your homepage, usually
-                                    within {FREE_DESIGN.turnaround}. If you love it, you get a fixed price.
+                                    within {FREE_DESIGN.turnaround}. If you love it, you get a written estimate.
                                     If not, you walk away and owe nothing.
                                 </p>
                                 <ul className="fd-list">
                                     <li className="text-body-text color-gray-900">No deposit, no card, no obligation</li>
                                     <li className="text-body-text color-gray-900">Designed for your real business, not a template</li>
-                                    <li className="text-body-text color-gray-900">Most full projects {TYPICAL_RANGE.label} AUD, fixed in writing</li>
+                                    <li className="text-body-text color-gray-900">A written estimate for the full site, phase by phase</li>
                                 </ul>
                                 {/* Phones: the form sits ~870px down, so give a jump to it
                                     (Impeccable critique, 9 Oct 2026). Hidden on desktop. */}

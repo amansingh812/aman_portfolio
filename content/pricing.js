@@ -432,7 +432,7 @@ export const ADDONS = [
 export const NEGOTIABLE_NOTE =
   'The prices above are starting points for the scope described. Once we ' +
   'understand your business, we recommend the simplest scope that does the ' +
-  'job and give you a fixed written price before any work begins.';
+  'job and send a written estimate, phase by phase, before any work begins.';
 
 /**
  * NOT rendered on /pricing/ — the "why us" grid was removed so the page
@@ -479,15 +479,15 @@ export const VALUE_PILLARS = [
 export const PRICING_FAQS = [
   {
     q: 'Can my project be customised?',
-    a: 'Absolutely. The prices above are starting points for the scope described. Once we understand your business and what the site needs to do, we recommend the right scope, including what you can leave out to stay within budget, and give you a fixed written price before work begins.',
+    a: 'Absolutely. The prices above are starting points for the scope described. Once we understand your business and what the site needs to do, we recommend the right scope, including what you can leave out to stay within budget, and send a written estimate, phase by phase, before work begins.',
   },
   {
     q: 'Why is every feature included in every package?',
     a: 'Because withholding a CMS or basic SEO to make a cheaper tier look worse is a sales tactic, not an engineering decision. The work of building those things properly is largely the same regardless of site size. What genuinely changes the cost is scope — how many pages, how much custom functionality — so that is what we price on.',
   },
   {
-    q: 'Is the price fixed once we start?',
-    a: 'Yes. You get a written scope and an AUD figure before any work begins, and that number does not change unless you ask for something outside the agreed scope — in which case we re-quote it openly rather than quietly adding hours. Payment is split 50% to start and 50% on launch, or on Starter and above you can pay in 4 equal monthly instalments (Starter is 4 × $200).',
+    q: 'Can the price change once we start?',
+    a: 'Only if the scope changes. You get a written scope and estimate before any work begins, and once you accept it that number does not change unless you ask for something outside the agreed scope — in which case we re-quote it openly rather than quietly adding hours. Payment is split 50% to start and 50% on launch, or on Starter and above you can pay in 4 equal monthly instalments (Starter is 4 × $200).',
   },
   {
     q: 'Can I see the design before I pay anything?',

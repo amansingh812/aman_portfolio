@@ -145,7 +145,7 @@ function thankYouHtml({ name }) {
           Thank you, ${firstName}.<br/>Your enquiry is with us.
         </p>
         <p style="margin:10px 0 0;font-size:14px;color:#FBE3D6;line-height:1.6;">
-          We will review your message and respond with a written scope and fixed AUD quote within one business day.
+          We will review your message and get back to you within one business day to talk it through, then send a written scope and estimate.
         </p>
       </td></tr>
 
@@ -169,7 +169,7 @@ function thankYouHtml({ name }) {
         <table width="100%" cellpadding="0" cellspacing="0">
           ${[
             ['01', 'We read your message', 'Usually within a few hours, always within one business day.'],
-            ['02', 'We send a fixed quote', 'AUD price, clear scope, delivery timeline. No surprises.'],
+            ['02', 'We send a written estimate', 'Scope, timeline and cost, phase by phase. No surprises.'],
             ['03', 'You decide', 'No pressure. Say yes and we start — say no and that\'s fine too.'],
           ].map(([n, h, b]) => `
           <tr>

@@ -76,7 +76,9 @@ export default async function ServiceDetailPage({ params }) {
     const heroIsConcept = hero && CONCEPT_SLUGS.has(hero.slug)
     const cs = s.caseStudy ? getCaseStudy(s.caseStudy) : null
     const csIsConcept = cs && CONCEPT_SLUGS.has(cs.slug)
-    const cards = (s.pricing || []).map(pricingCard).filter(Boolean)
+    /* Price cards hidden (Aman, 15 Oct 2026): prices live on /pricing/ and cost
+       pages only. Estimates follow a conversation, phase by phase. */
+    const cards = []
     const extras = (s.pricingExtras || []).map(extraLine).filter(Boolean)
     const others = SERVICE_ITEMS.filter((si) => !si.href.includes(`/${s.slug}/`))
     const realClients = ["hs-race-gear", "mobile-armour", "autozenlyai"].map(getCaseStudy).filter(Boolean)
@@ -141,7 +143,7 @@ export default async function ServiceDetailPage({ params }) {
                                 <p className="svc-lead" style={{ marginTop: 22 }}>{s.hero}</p>
                                 <div className="svc-ctas">
                                     <Link href={CTA.primary.href} className="btn btn-black icon-arrow-right-white">
-                                        Get a fixed quote
+                                        Get an estimate
                                     </Link>
                                     <a href={SITE.calendly} target="_blank" rel="noopener noreferrer" data-loc={`service-${s.slug}-hero`}
                                         className="btn btn-link icon-arrow-right color-gray-900 text-heading-6">
@@ -270,8 +272,8 @@ export default async function ServiceDetailPage({ params }) {
                     <section className="svc-pricing">
                         <div className="container">
                             <div className="svc-center">
-                                <h2 className="svc-h2">Fixed AUD pricing</h2>
-                                <p className="svc-lead">What’s included, then what it costs. Every price is a starting point, and your written quote is fixed before you commit.</p>
+                                <h2 className="svc-h2">Starting prices</h2>
+                                <p className="svc-lead">What’s included, then what it costs. Every price is a starting point; your estimate follows a short call.</p>
                             </div>
                             {cards.some((c) => c.build) && <PriceIntro />}
                             <div className="svc-tiers" style={cards.length === 1 ? { maxWidth: 520, marginInline: "auto" } : undefined}>
@@ -400,8 +402,8 @@ export default async function ServiceDetailPage({ params }) {
                     <div className="container">
                         <div className="svc-cta">
                             <div>
-                                <h2>Get a fixed quote within 24 hours</h2>
-                                <p>Tell us what you need. You’ll get a written scope and AUD price, and you deal directly with the engineer who builds it.</p>
+                                <h2>Tell us about your project</h2>
+                                <p>Tell us what you need. We talk it through, then send a written scope and estimate, and you deal directly with the engineer who builds it.</p>
                             </div>
                             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
                                 <Link href={CTA.primary.href} className="svc-btn-white">Get a quote →</Link>

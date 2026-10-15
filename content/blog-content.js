@@ -386,11 +386,11 @@ export const BLOG_CONTENT = {
       },
       {
         "type": "h2",
-        "text": "Want a fixed quote to compare against?"
+        "text": "Want an estimate to compare against?"
       },
       {
         "type": "p",
-        "html": "Tell us what you're building and we'll come back with a written scope and a fixed AUD price within one business day — no sales call required, and no obligation. If a competitor's quote is better for your situation, we'll say so."
+        "html": "Tell us what you're building and we'll talk it through and send a written scope and estimate, with no obligation. If a competitor's quote is better for your situation, we'll say so."
       },
       {
         "type": "p",
@@ -712,7 +712,7 @@ export const BLOG_CONTENT = {
       },
       {
         "type": "p",
-        "html": "We audit and rebuild Australian small business websites. Fixed price, 2–3 week delivery, full code ownership. Free quote within 24 hours. If you would rather <a href=\"/hire-website-builder/\" class=\"color-green-900\">hire someone to build the website</a> than fix these yourself, that page explains what to ask before you pay anyone."
+        "html": "We audit and rebuild Australian small business websites. 2–3 week delivery, full code ownership, and a written estimate after a short call. If you would rather <a href=\"/hire-website-builder/\" class=\"color-green-900\">hire someone to build the website</a> than fix these yourself, that page explains what to ask before you pay anyone."
       },
       {
         "type": "p",
@@ -940,7 +940,7 @@ export const BLOG_CONTENT = {
       {
         "type": "faq",
         "q": "How fast can Build First Site deliver my business website?",
-        "a": "We deliver single landing pages in 5 to 7 days, complete 5-10 page business websites in 2 to 3 weeks, and custom web applications or e-commerce stores in 4 to 6 weeks. View our <a href=\"/pricing/\">fixed AUD pricing packages</a> for full scope details."
+        "a": "We deliver single landing pages in 5 to 7 days, complete 5-10 page business websites in 2 to 3 weeks, and custom web applications or e-commerce stores in 4 to 6 weeks. See our <a href=\"/pricing/\">pricing page</a> for typical starting points."
       },
       {
         "type": "faq",
@@ -1071,7 +1071,7 @@ export const BLOG_CONTENT = {
       },
       {
         "type": "p",
-        "html": "<strong>The Fix:</strong> Choose one primary business goal for each page. Make the CTA button color stand out distinctly from your background, and review our <a href=\"/pricing/\">transparent fixed AUD packages</a> to see how we build high-converting conversion funnels."
+        "html": "<strong>The Fix:</strong> Choose one primary business goal for each page. Make the CTA button color stand out distinctly from your background, and <a href=\"/contact/\">tell us about your project</a> to see how we build pages that convert."
       },
       {
         "type": "h2",
@@ -1494,7 +1494,7 @@ export const BLOG_CONTENT = {
     content: [
       {"type": "h2", "text": "What a tradie website costs in Australia"},
       {"type": "p", "html": "A tradie website in Australia costs between <strong>AU$800 and AU$4,500</strong> depending on how many pages you need and whether you want online booking or payments. A simple three to five page site for a plumber, electrician or builder starts at <strong>$800</strong>. A larger site with service-area pages and a booking system runs <strong>$1,900 to $3,500</strong>."},
-      {"type": "p", "html": "Those are BuildFirstSite's published prices, fixed in writing before work starts. Most Australian agencies quote $3,000 to $10,000 for the same scope, and many will not give you a number until you sit through a sales call."},
+      {"type": "p", "html": "Those are BuildFirstSite's starting prices; your estimate is confirmed in writing before work starts. Most Australian agencies quote $3,000 to $10,000 for the same scope, and many will not give you a number until you sit through a sales call."},
       {"type": "table", "headers": ["What you need", "Pages", "Price (AUD)", "Build time"], "rows": [["Just get me online — name, services, phone", "3–5", "$800", "5–7 days"], ["Service pages, gallery, quote form", "Up to 10", "$1,900", "2–3 weeks"], ["Multiple trades or suburbs, no page limit", "Unlimited", "$3,500", "3–4 weeks"], ["Online booking, payments, job management", "Custom app", "$4,500", "4–8 weeks"]]},
       {"type": "p", "html": "Prices exclude GST. Hosting is included for the first year. Ongoing Care is <strong>$79/month</strong> and Care + SEO <strong>$250/month</strong>, both optional — see <a href=\"/pricing/\">full pricing</a>."},
       {"type": "h2", "text": "Do you actually need a website?"},
@@ -1525,7 +1525,7 @@ export const BLOG_CONTENT = {
       {"type": "p", "html": "Our real client work is at <a href=\"https://www.hsracegear.com\" target=\"_blank\" rel=\"noopener\">hsracegear.com</a> and <a href=\"https://mobilearmour.com.au\" target=\"_blank\" rel=\"noopener\">mobilearmour.com.au</a>. Neither is a trade business — we are not going to pretend otherwise. Open them and run a speed test if you want to see how we build."},
       {"type": "p", "html": "More detail on what is included is on our <a href=\"/tradie-website-design/\">tradie website design page</a>."},
       {"type": "h2", "text": "Common questions"},
-      {"type": "faq", "q": "How much does a tradie website cost in Australia?", "a": "Between AU$800 and AU$4,500 depending on scope. A three to five page site for a plumber, electrician or builder is $800. Up to ten pages with service-area pages and a quote form is $1,900. Ten pages or more is $3,500. Online booking or job management is $4,500. Prices exclude GST and are fixed in writing before work starts."},
+      {"type": "faq", "q": "How much does a tradie website cost in Australia?", "a": "Between AU$800 and AU$4,500 depending on scope. A three to five page site for a plumber, electrician or builder is $800. Up to ten pages with service-area pages and a quote form is $1,900. Ten pages or more is $3,500. Online booking or job management is $4,500. Prices exclude GST and are confirmed in a written estimate before work starts."},
       {"type": "faq", "q": "Can I build a tradie website myself with Wix or Squarespace?", "a": "Yes, and for a brand new sole trader that is a reasonable place to start. Expect to spend a weekend on it and roughly $20 to $40 a month forever. The trade-off is speed and ownership — builder platforms are slower on mobile, which matters when someone is searching for an emergency plumber, and you are renting the site rather than owning it."},
       {"type": "faq", "q": "How long does a tradie website take to build?", "a": "Five to seven business days for a three to five page site, two to three weeks for a larger one. The single biggest delay is content. Builds that run long are almost always waiting on job photos and service descriptions from the client, not on development."},
       {"type": "faq", "q": "Will a website get me on the first page of Google?", "a": "A website alone will not. Ranking depends on your Google Business Profile, reviews, and links from other sites, and it takes months. Anyone guaranteeing first-page rankings is guessing. What a well-built site does is remove the technical reasons Google might ignore you — speed, structure, schema and mobile usability are all included in our builds rather than sold separately."},
@@ -1799,7 +1799,7 @@ export const BLOG_CONTENT = {
       },
       {
         "type": "p",
-        "html": "We quote <strong>fixed prices</strong> — you know the number before any work starts. Starter sites from AU$800, business websites at AU$1,900, e-commerce from AU$4,500. Every build includes responsive design, SEO basics, 30 days of free support, and <strong>full code ownership</strong> — no lock-in, ever. You also get a live staging link so you can watch progress in real time. Based in Australia, we work with businesses in <a class=\"text-orange-600 hover:underline\" href=\"/web-design-sydney/\">Sydney</a>, <a class=\"text-orange-600 hover:underline\" href=\"/web-design-melbourne/\">Melbourne</a> and across the country."
+        "html": "We send <strong>written estimates</strong> — you know the number before any work starts. Starter sites from AU$800, business websites at AU$1,900, e-commerce from AU$4,500. Every build includes responsive design, SEO basics, 30 days of free support, and <strong>full code ownership</strong> — no lock-in, ever. You also get a live staging link so you can watch progress in real time. Based in Australia, we work with businesses in <a class=\"text-orange-600 hover:underline\" href=\"/web-design-sydney/\">Sydney</a>, <a class=\"text-orange-600 hover:underline\" href=\"/web-design-melbourne/\">Melbourne</a> and across the country."
       },
       {
         "type": "h2",
@@ -1843,8 +1843,8 @@ export const BLOG_CONTENT = {
         "type": "p",
         "html": "A tradie site with local SEO, quote form and click-to-call is typically AU$1,500–4,000. A café/restaurant with booking runs AU$2,500–6,000, and professional-services sites AU$3,000–7,000."
       },
-      {"type": "h2", "text": "Want our fixed price rather than the market range?"},
-      {"type": "p", "html": "This guide covers what websites cost across the Australian market — agencies, freelancers, platforms and everything in between. If you would rather skip the range and see one fixed number, our <a href=\"/how-much-does-a-website-cost-australia/\" class=\"color-green-900\">fixed AUD pricing page</a> lists every package with the scope it covers, and <a href=\"/pricing/\" class=\"color-green-900\">all six packages sit side by side here</a>. You can also <a href=\"/contact/\" class=\"color-green-900\">get a written quote</a> within one business day, and <a href=\"/about/\" class=\"color-green-900\">read who actually builds it</a> before you commit."}
+      {"type": "h2", "text": "Want our starting prices rather than the market range?"},
+      {"type": "p", "html": "This guide covers what websites cost across the Australian market — agencies, freelancers, platforms and everything in between. If you would rather skip the range and see our own numbers, our <a href=\"/how-much-does-a-website-cost-australia/\" class=\"color-green-900\">pricing page</a> lists every package with the scope it covers, and <a href=\"/pricing/\" class=\"color-green-900\">all six packages sit side by side here</a>. You can also <a href=\"/contact/\" class=\"color-green-900\">get a written quote</a> within one business day, and <a href=\"/about/\" class=\"color-green-900\">read who actually builds it</a> before you commit."}
     ]
   },
   "wordpress-vs-custom-website": {
@@ -1926,7 +1926,7 @@ export const BLOG_CONTENT = {
       {"type": "faq", "q": "How do I check if my NDIS website is accessible?", "a": "Run three tests. First, an automated scan with the free WAVE extension or Chrome Lighthouse. Second, unplug your mouse and try to complete your referral form using only the keyboard. Third, turn on NVDA or VoiceOver and listen to a page. Automated tools catch only 30 to 40 percent of issues, so the manual tests matter more than the score."},
       {"type": "faq", "q": "What reading level should NDIS website content be written at?", "a": "Year 7 to 9 for participant-facing pages. Write out acronyms on first use, keep sentences short, and use plain words. This is a WCAG consideration under the Understandable principle and also a practical one — content written for auditors rather than participants excludes the people you are trying to reach."},
     ,
-      {"type": "p", "html": "Planning a full NDIS provider website? Our <a href=\"/ndis-website-design/\">NDIS website design service</a> covers WCAG 2.1 AA compliance, fixed AUD pricing, and local SEO built in from day one."}
+      {"type": "p", "html": "Planning a full NDIS provider website? Our <a href=\"/ndis-website-design/\">NDIS website design service</a> covers WCAG 2.1 AA compliance and local SEO built in from day one."}
     ],
   },
   "ndis-website-cost": {
@@ -1936,7 +1936,7 @@ export const BLOG_CONTENT = {
       {"type": "h2", "text": "What an NDIS website costs"},
       {"type": "p", "html": "<strong>Between AU$800 and AU$4,500</strong> for a standard provider website, depending on how many services and pages you need. Agencies that specialise only in NDIS commonly quote <strong>$3,000 to $8,000</strong> for comparable scope."},
       {"type": "table", "headers": ["What you need", "Pages", "Price (AUD)", "Build time"], "rows": [["New provider — services, about, contact", "3–5", "$800", "5–7 days"], ["Multiple service types, referral forms", "Up to 10", "$1,900", "2–3 weeks"], ["Many services and locations", "10+", "$3,500", "3–4 weeks"], ["Participant portal, rostering, intake system", "Custom", "$4,500+", "4–8 weeks"]]},
-      {"type": "p", "html": "Those are BuildFirstSite's published prices, fixed in writing before work starts, with WCAG 2.1 AA accessibility included rather than charged as an extra. Full detail on our <a href=\"/pricing/\">pricing page</a>."},
+      {"type": "p", "html": "Those are BuildFirstSite's starting prices, confirmed in a written estimate before work starts, with WCAG 2.1 AA accessibility included rather than charged as an extra. Full detail on our <a href=\"/pricing/\">pricing page</a>."},
       {"type": "h2", "text": "Why NDIS quotes vary so much"},
       {"type": "p", "html": "Ask five agencies for an NDIS provider website and you will get quotes between $1,500 and $15,000 for what sounds like the same thing. Four things explain most of the gap."},
       {"type": "table", "headers": ["Factor", "Effect on price", "Worth paying for?"], "rows": [["Accessibility done properly", "$0 if built in, thousands if retrofitted", "Yes — and it should be included, not an add-on"], ["Number of service pages", "$120–180 per page", "Yes, if each service brings referrals"], ["Referral / intake workflow", "from $700", "Yes, if you handle intake manually today"], ["\"NDIS specialist\" branding", "Often $1,000–3,000 premium", "Only if they can show accessibility test results"]]},
@@ -1961,7 +1961,7 @@ export const BLOG_CONTENT = {
       {"type": "faq", "q": "Should I use an NDIS-specialist web agency?", "a": "Only if they can prove the specialisation. Several Australian agencies market exclusively to NDIS providers and charge a premium of $1,000 to $3,000 for that focus. Some genuinely understand accessibility; others are marketers who outsource development. Ask for a WCAG 2.1 AA audit of a site they built. The ones who do the work will have it."},
       {"type": "faq", "q": "How long does an NDIS website take to build?", "a": "Five to seven business days for a three to five page site, two to three weeks for up to ten pages, and three to four weeks for larger builds. The most common delay is content — service descriptions written in plain English take longer to produce than providers expect, particularly when existing material was written for auditors rather than participants."},
     ,
-      {"type": "p", "html": "Planning a full NDIS provider website? Our <a href=\"/ndis-website-design/\">NDIS website design service</a> covers WCAG 2.1 AA compliance, fixed AUD pricing, and local SEO built in from day one."}
+      {"type": "p", "html": "Planning a full NDIS provider website? Our <a href=\"/ndis-website-design/\">NDIS website design service</a> covers WCAG 2.1 AA compliance and local SEO built in from day one."}
     ],
   },
   "seo-for-ndis-providers": {
@@ -2002,7 +2002,7 @@ export const BLOG_CONTENT = {
       {"type": "faq", "q": "Should NDIS providers create a page for every suburb they serve?", "a": "No. Thirty near-identical suburb pages is exactly the scaled-content pattern Google's helpful content systems target, and a site-wide demotion would take your good pages down with it. Cover your service area properly within fewer, stronger pages, and only build a separate location page where you have a genuine physical presence or distinct service offering."},
       {"type": "faq", "q": "How long does SEO take for an NDIS provider?", "a": "Three to six months for meaningful ranking movement, longer in competitive metro markets. Google Business Profile improvements can show results within weeks because local search responds faster than organic. Content and authority take longer. Any agency guaranteeing first-page rankings within 30 days is either guessing or targeting terms nobody searches."},
     ,
-      {"type": "p", "html": "Planning a full NDIS provider website? Our <a href=\"/ndis-website-design/\">NDIS website design service</a> covers WCAG 2.1 AA compliance, fixed AUD pricing, and local SEO built in from day one."}
+      {"type": "p", "html": "Planning a full NDIS provider website? Our <a href=\"/ndis-website-design/\">NDIS website design service</a> covers WCAG 2.1 AA compliance and local SEO built in from day one."}
     ],
   },
   "best-ndis-website-designers": {
@@ -2239,7 +2239,7 @@ export const BLOG_CONTENT = {
       {"type": "h2", "text": "What a missed-call text-back does (and what it costs)"},
       {"type": "p", "html": "A missed-call text-back is much simpler. When a call to your business goes unanswered, the caller gets an SMS within about a minute: \"Sorry we missed you, it's Dave from Smith Plumbing. What do you need a hand with?\" Their reply lands on your phone, so you call back knowing what the job is."},
       {"type": "p", "html": "It doesn't talk to anyone. It just stops the caller ringing the next business on the list while you finish the job you're on. That is usually where the lead is lost: not because nobody answered, but because nobody got back to them before a competitor did."},
-      {"type": "p", "html": "Running cost is small. On Twilio's published Australian list prices, a mobile number is <strong>US$8.25 a month</strong> and each outbound SMS is <strong>US$0.0515</strong> (<a href=\"https://www.twilio.com/en-us/sms/pricing/au\" rel=\"nofollow noopener\" target=\"_blank\">Twilio AU pricing</a>, checked 8 Oct 2026). At 100 missed calls a month that is about US$13, or roughly A$20. You pay that to the SMS provider directly. Setting it up is a one-off build, which we quote as a fixed written price after a <a href=\"/free-automation-audit/\">free automation audit</a>."},
+      {"type": "p", "html": "Running cost is small. On Twilio's published Australian list prices, a mobile number is <strong>US$8.25 a month</strong> and each outbound SMS is <strong>US$0.0515</strong> (<a href=\"https://www.twilio.com/en-us/sms/pricing/au\" rel=\"nofollow noopener\" target=\"_blank\">Twilio AU pricing</a>, checked 8 Oct 2026). At 100 missed calls a month that is about US$13, or roughly A$20. You pay that to the SMS provider directly. Setting it up is a one-off build, which we estimate in writing after a <a href=\"/free-automation-audit/\">free automation audit</a>."},
 
       {"type": "h2", "text": "AI receptionist or missed-call text-back: which do you need?"},
       {"type": "table", "headers": ["Your situation", "Better fit", "Why"],

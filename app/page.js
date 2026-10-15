@@ -6,12 +6,12 @@
  * Restructured to match the wireframe anatomy the user shared:
  *   1. HERO             — powerful statement + primary CTA + animated mockup
  *   2. TECH STACK strip — social proof via the modern stack we ship with
- *   3. BENEFITS (3)     — Fixed AUD · Modern stack · You own the code
+ *   3. BENEFITS (3)     — Modern stack · You own the code
  *   4. INDUSTRIES TEASER
  *   5. SERVICES (6)     — end-to-end offer, links to individual service pages
  *   6. PORTFOLIO (3)    — 3 recent projects with LIVE DEMO buttons
  *   7. CLIENT REVIEWS    — empty until real quotes exist (see content/site.js REVIEWS)
- *   8. PRICING          — the 6 packages + monthly, from content/pricing.js
+ *   8. HOW PRICING WORKS — 4 steps, no prices (prices live on /pricing/ only)
  *   9. FAQ              — Accordion (existing component)
  *  10. FINAL CTA        — big rounded panel, Get a quote + Book a call
  *
@@ -34,7 +34,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { CTA, SITE, REVIEWS, INDUSTRY_ITEMS } from "@/content/site"
 import { CASE_STUDIES } from "@/content/case-studies"
-import { BUILD_TIERS, PRIMARY_TIERS, ENTRY_TIER, TYPICAL_RANGE, AUTOMATION_OFFERS, instalmentLabel } from "@/content/pricing"
+import { BUILD_TIERS, AUTOMATION_OFFERS } from "@/content/pricing"
 import { AutomationCard, AUTO_CSS, Icon } from "@/components/automation/AutomationUI"
 
 export const metadata = {
@@ -42,11 +42,11 @@ export const metadata = {
     // `%s | Build First Site` template append it would render it twice.
     title: { absolute: "Build First Site — Web, App & AI Development Australia" },
     description:
-        "Websites, apps and AI systems built for Australian businesses. Professional websites for Australian businesses: most projects $800–$3,500, fixed written quote, free homepage design first, and you own the code.",
+        "Websites, web apps and AI automation built for Australian businesses. Custom design, a free homepage design first, a written estimate after a short call, and you own the code.",
     alternates: { canonical: "/" },
     openGraph: {
-        title: "Build First Site — Fixed AUD Prices, Modern Stack",
-        description: "Websites, apps and AI systems. Fixed AUD prices. You own the code.",
+        title: "Build First Site — Web, App & AI Development Australia",
+        description: "Websites, web apps and AI automation for Australian businesses. You own the code.",
         url: "https://buildfirstsite.com/",
     },
 }
@@ -89,7 +89,7 @@ const SERVICES = [
     {
         title: "Maintenance & Support",
         icon: "/assets/imgs/page/services/1/icon-support.svg",
-        body: "Ongoing support and maintenance to keep your systems running smoothly. From AU$250/month.",
+        body: "Ongoing support and maintenance to keep your systems running smoothly, month to month.",
         href: "/services/maintenance-support/",
     },
 ]
@@ -102,8 +102,8 @@ const PORTFOLIO = CASE_STUDIES.filter((cs) =>
 /* ─── page ────────────────────────────────────────────────────────────── */
 
 /* Hero floating cards read these — never hardcode the price or timeline. */
+
 const starter = BUILD_TIERS.find((t) => t.id === 'starter')
-const entry = ENTRY_TIER
 
 export default function Home() {
     return (
@@ -151,11 +151,11 @@ export default function Home() {
                                     <span className="color-green-900"> built for Australian businesses.</span>
                                 </h1>
                                 <p className="text-body-lead-large color-gray-500 mt-40" style={{ maxWidth: 760, marginInline: 'auto' }}>
-                                    Clear pricing, custom design, no hidden fees, and you own your
+                                    Custom design, no hidden fees, and you own your
                                     website. When you're ready, we automate the follow-up too.
                                 </p>
                                 <p className="text-body-excerpt color-gray-600 mt-15">
-                                    Most projects {TYPICAL_RANGE.label} · Fixed written quote · Free homepage design first
+                                    Free homepage design first · Written estimate after a short call · You own the code
                                 </p>
                                 {/* Two paths (6 Oct 2026): websites stay the primary
                                     entry; automation is the second growth track.
@@ -188,8 +188,8 @@ export default function Home() {
                                             <div className="block-1 shape-2">
                                                 <div className="hero-float-card" style={{ padding: '26px 20px 18px', textAlign: 'center' }}>
                                                     <svg width="30" height="30" viewBox="0 0 24 24" fill="#006D77" aria-hidden="true"><path d="M21.4 11.6 12.4 2.6A2 2 0 0 0 11 2H4a2 2 0 0 0-2 2v7c0 .55.22 1.05.59 1.42l9 9a2 2 0 0 0 2.82 0l7-7a2 2 0 0 0 0-2.82zM6.5 8A1.5 1.5 0 1 1 8 6.5 1.5 1.5 0 0 1 6.5 8z"/></svg>
-                                                    <div style={{ fontSize: 24, fontWeight: 500, color: '#101828', marginTop: 10 }}>{entry.priceLabel}</div>
-                                                    <div style={{ fontSize: 17, color: '#667085', marginTop: 4 }}>Websites from</div>
+                                                    <div style={{ fontSize: 24, fontWeight: 500, color: '#101828', marginTop: 10 }}>Free</div>
+                                                    <div style={{ fontSize: 17, color: '#667085', marginTop: 4 }}>Homepage design first</div>
                                                     <svg viewBox="0 0 200 50" style={{ width: '100%', marginTop: 8 }} aria-hidden="true"><path d="M5 25 C 35 5, 55 5, 75 25 S 115 45, 135 25 S 175 5, 195 25" fill="none" stroke="#006D77" strokeWidth="6" strokeLinecap="round"/></svg>
                                                 </div>
                                             </div>
@@ -350,7 +350,7 @@ export default function Home() {
                             <p className="text-body-lead-large color-gray-600 mt-20">
                                 Small systems, built on the tools you already use, that answer
                                 enquiries, send your numbers and keep customers coming back.
-                                Fixed price after a free audit.
+                                Estimated after a free audit.
                             </p>
                         </div>
                     </div>
@@ -559,76 +559,48 @@ export default function Home() {
                 </section>
             )}
 
-            {/* ═══════════════ 8. PRICING ═══════════════
-                Figures come from content/pricing.js — the single source of
-                truth. Never hardcode a price here; if it looks wrong, fix it
-                there and every page updates together. Homepage shows only the
-                3 core site tiers (starter/business/unlimited) — E-Commerce,
-                Application and Custom Software are on /pricing/ only. */}
+            {/* ═══════════════ 8. HOW PRICING WORKS ═══════════════
+                Package prices were removed from the homepage on 15 Oct 2026
+                (Aman: people come for their problem; the estimate follows a
+                conversation, phase by phase). Prices live on /pricing/ only. */}
             <section id="pricing" className="section-box mt-60">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-8 mx-auto text-center mb-50">
-                            <span className="tag-1 bg-6 color-green-900">Pricing</span>
+                            <span className="tag-1 bg-6 color-green-900">How pricing works</span>
                             <h2 className="text-heading-1 color-gray-900 mt-20 mb-20">
-                                Know roughly what your website will cost before we talk
+                                Priced on what your project needs
                             </h2>
                             <p className="text-body-lead-large color-gray-600">
-                                Most websites we build cost between <strong>{TYPICAL_RANGE.label}</strong>.
-                                Every package includes the essentials. Once we understand what you
-                                need, we recommend the right scope and give you a fixed written price
-                                before work begins.
+                                No two businesses need the same thing, so we do not sell off a price list.
+                                Tell us what you need, we talk it through, and you get a written estimate,
+                                broken into phases if that suits your budget.
                             </p>
                         </div>
                     </div>
-
                     <div className="row">
-                        {PRIMARY_TIERS.map((t) => (
-                            <div className="col-lg-4 col-md-6 col-sm-12 mb-30" key={t.id}>
-                                <div className={`home-price-card${t.featured ? " is-featured" : ""}`}>
-                                    {t.featured && (
-                                        <span className="tag-1 bg-6 color-green-900 home-price-chip">
-                                            {t.tag || "Recommended"}
-                                        </span>
-                                    )}
-                                    <h3 className="text-heading-5 color-gray-900 mb-10">{t.name}</h3>
-                                    <p className="text-body-small color-gray-500 mb-25">{t.scope}</p>
-
-                                    {/* What's included first, then the number (27 Sep 2026). */}
-                                    <p className="text-body-text color-gray-600 mb-10">{t.tagline}</p>
-                                    <p className="text-body-small color-gray-500 mb-25">
-                                        Delivery {t.delivery} · SEO built in · You own the code
-                                    </p>
-
-                                    <span className="text-body-small color-gray-500">From</span>
-                                    <div className="home-price-amt">
-                                        <span className="text-heading-2 color-green-900">{t.priceLabel}</span>
-                                        <span className="text-body-small color-gray-500 ml-5">AUD</span>
-                                    </div>
-                                    <p className="text-body-small color-green-900 mt-5 mb-25">
-                                        {instalmentLabel(t) ? `or ${instalmentLabel(t)} · ` : ""}Free design before you pay
-                                    </p>
-
-                                    <Link href="/pricing/" data-event="pricing_package_click" data-package={t.id}
-                                        className="btn btn-default icon-arrow-right home-price-btn">
-                                        See what&apos;s included
-                                    </Link>
+                        {[
+                            { n: "01", h: "Tell us about your project", b: "A few lines on your business and what the website or app needs to do." },
+                            { n: "02", h: "A short call", b: "We ask the questions that change the scope, and suggest what to build first." },
+                            { n: "03", h: "A written estimate", b: "Scope, timeline and cost in writing, phase by phase, before any work starts." },
+                            { n: "04", h: "Build, launch, grow", b: "Weekly working builds, then optional support and new features as you grow." },
+                        ].map((step) => (
+                            <div className="col-lg-3 col-md-6 col-sm-12 mb-30" key={step.n}>
+                                <div className="home-price-card">
+                                    <span className="text-heading-5 color-green-900">{step.n}</span>
+                                    <h3 className="text-heading-6 color-gray-900 mt-15 mb-10">{step.h}</h3>
+                                    <p className="text-body-text color-gray-600 mb-0">{step.b}</p>
                                 </div>
                             </div>
                         ))}
                     </div>
-
                     <div className="text-center mt-10">
-                        <p className="text-body-text color-gray-600 mb-25">
-                            <strong>Custom projects:</strong> online stores, booking systems, portals,
-                            CRM integrations and AI are quoted on what you need.
-                        </p>
-                        <Link href="/pricing/" className="btn btn-default icon-arrow-right">
-                            See full pricing
+                        <Link href="/contact/" className="btn btn-black icon-arrow-right-white mr-15 mb-10">
+                            Tell us about your project
                         </Link>
-                        <p className="text-body-small color-gray-500 mt-25">
-                            All prices AUD · GST not included · Hosting included for year one
-                        </p>
+                        <Link href="/pricing/" className="btn btn-default icon-arrow-right mb-10">
+                            See typical starting prices
+                        </Link>
                     </div>
                 </div>
             </section>
