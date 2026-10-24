@@ -31,6 +31,11 @@
  * faq blocks also generate FAQPage schema automatically.
  */
 
+import { BUILD_TIERS, CARE_PLAN, RETAINER, TYPICAL_RANGE, PLATFORM_PRICES } from './pricing.js'
+
+/** Our package prices, by id, so prose on price-intent pages can't drift from pricing.js. */
+const TIER = Object.fromEntries(BUILD_TIERS.map((t) => [t.id, t]))
+
 export const LANDING_PAGES = [
   {
     slug: 'ai-web-development',
@@ -50,7 +55,7 @@ export const LANDING_PAGES = [
     related: [
       { href: '/services/ai-automation/', label: 'AI & Automation service' },
       { href: '/pricing/', label: 'All pricing' },
-      { href: '/blog/website-cost-australia/', label: 'What a website costs' },
+      { href: '/how-much-does-a-website-cost-australia/', label: 'What a website costs' },
     ],
     body: [
       { type: 'h2', text: 'What we actually build with AI' },
@@ -144,7 +149,7 @@ export const LANDING_PAGES = [
     related: [
       { href: '/nextjs-development/', label: 'Next.js development' },
       { href: '/pricing/', label: 'All pricing' },
-      { href: '/blog/website-cost-australia/', label: 'What a website costs' },
+      { href: '/how-much-does-a-website-cost-australia/', label: 'What a website costs' },
     ],
     body: [
       { type: 'h2', text: 'What a custom store gets you that Shopify does not' },
@@ -276,7 +281,7 @@ export const LANDING_PAGES = [
       },
       {
         type: 'p',
-        html: 'Hosting on Vercel is typically free to low-cost for a business site, scaling with traffic. No CMS licence, no plugin subscriptions, no page-builder fee.',
+        html: 'Hosting is free to low-cost for a business site: $0 on a free plan that allows business use, such as Cloudflare Pages, or about US$20 a month on Vercel Pro. No CMS licence, no plugin subscriptions, no page-builder fee.',
       },
       { type: 'h2', text: 'How we build it' },
       {
@@ -468,7 +473,7 @@ export const LANDING_PAGES = [
     related: [
       { href: '/web-design-melbourne/', label: 'Web design Melbourne' },
       { href: '/tradie-website-design/', label: 'Tradie website design' },
-      { href: '/blog/website-cost-australia/', label: 'What a website costs' },
+      { href: '/how-much-does-a-website-cost-australia/', label: 'What a website costs' },
       { href: '/pricing/', label: 'All pricing' },
     ],
     body: [
@@ -558,7 +563,7 @@ export const LANDING_PAGES = [
     related: [
       { href: '/web-design-melbourne/', label: 'Web design Melbourne' },
       { href: '/restaurant-website-design/', label: 'Restaurant website design' },
-      { href: '/blog/website-cost-australia/', label: 'What a website costs' },
+      { href: '/how-much-does-a-website-cost-australia/', label: 'What a website costs' },
       { href: '/pricing/', label: 'All pricing' },
     ],
     body: [
@@ -1264,205 +1269,298 @@ export const LANDING_PAGES = [
     ],
   },
   {
+    // MERGED 17 Oct 2026. This is now the single page for "how much does a
+    // website cost (Australia)". /how-much-does-a-website-cost-australia/ and
+    // /how-much-does-a-website-cost-australia/ were folded in and
+    // 301 to here (next.config.mjs). GSC on 17 Oct: the topic had ~2,000
+    // impressions split across 6 URLs, all at positions 73–90.
+    // Market figures first, our own prices last (docs/COST-PAGE-DEEP-DIVE §5:
+    // every page-one result reads like an independent market guide).
+    // Our prices come from pricing.js via TIER — never type a figure here.
     slug: 'how-much-does-a-website-cost-australia',
     image: '/assets/imgs/page/landing/how-much-does-a-website-cost-australia.webp',
-    imageAlt: 'Three Australian website pricing tiers compared side by side in AUD',
-    metaTitle: 'How Much Does a Website Cost in Australia? (2026)',
-    metaDescription: 'Website cost Australia 2026: landing page from $800, business website from $1,900, e-commerce from $4,500. Real AUD prices, no hidden fees.',
-    eyebrow: 'Australia · 2026 Pricing Guide',
+    imageAlt: 'Australian website cost ranges compared side by side in AUD',
+    metaTitle: 'How Much Does a Website Cost in Australia? (2026 Guide)',
+    metaDescription: 'What a website really costs in Australia in 2026: AUD ranges by provider and business type, the five-year total, hidden costs and quote red flags.',
+    eyebrow: 'Australia · 2026 cost guide',
     h1: 'How much does a website cost in Australia?',
-    lead: 'Short answer: a landing page starts at $800 AUD, a business website at $1,900 AUD, and a custom e-commerce store at $4,500 AUD. But there is a lot more to the picture.',
+    lead: 'Short answer: most Australian cost guides put a professional small business website at $3,000 to $10,000 AUD, but real quotes for the same brief run from about $500 to $50,000. Who builds it moves the price more than the website itself does. Below are the ranges by provider and business type, what it costs over five years, and how to compare quotes fairly.',
     priceTiers: [],
-    lastUpdated: '2026-09-21',
+    datePublished: '2026-08-08',
+    lastUpdated: '2026-10-17',
     schemaType: 'Article',
     breadcrumb: 'How Much Does a Website Cost in Australia?',
     related: [
       { href: '/small-business-website-checklist/', label: 'Small business website checklist' },
+      { href: '/website-hosting-cost-australia/', label: 'Website hosting costs' },
       { href: '/hire-website-builder/', label: 'Hire a website builder' },
-      { href: '/pricing/', label: 'All pricing' },
+      { href: '/pricing/', label: 'Our starting prices' },
     ],
     body: [
-      { type: 'h2', text: 'Website cost summary — Australia 2026' },
+      { type: 'h2', text: 'Website cost in Australia at a glance (2026)' },
+      {
+        type: 'p',
+        html: 'The biggest variable is not the website. It is who builds it. Here is the 2026 Australian market by provider type, in AUD.',
+      },
       {
         type: 'table',
-        headers: [
-          'Website type',
-          'Price range (AUD)',
-          'Timeline',
-        ],
+        headers: ['Who builds it', 'Typical AUD cost', 'What you usually get'],
         rows: [
-          [
-            'Landing page (1 page)',
-            '$800 – $1,500',
-            '~2 weeks',
-          ],
-          [
-            'Small business website (3–5 pages)',
-            '$1,900 – $5,000',
-            '2–3 weeks',
-          ],
-          [
-            'Corporate website (5–10 pages)',
-            '$5,000 – $12,000',
-            '4–6 weeks',
-          ],
-          [
-            'E-commerce store (custom)',
-            '$4,500 – $10,000',
-            '4–6 weeks',
-          ],
-          [
-            'AI / SaaS web application',
-            '$5,000 – $20,000+',
-            '6–12 weeks',
-          ],
-          [
-            'DIY builder (Wix/Squarespace)',
-            '$20–50/month',
-            'Your time to learn',
-          ],
+          ['DIY platform (Wix, Squarespace)', `$0–$500 to set up, then $${PLATFORM_PRICES.wix.min}–$${PLATFORM_PRICES.wix.max} a month`, 'You do the work. The monthly fee never stops.'],
+          ['Freelancer', '$500–$2,000 for a basic site', 'One person, quality varies. Up to $10,000 for complex builds.'],
+          ['Small studio', '$3,000–$7,000+', 'Custom build, direct contact with the builder, less overhead.'],
+          ['Full agency', '$10,000–$50,000+', 'Account management, formal process, a strategy layer.'],
         ],
       },
-      { type: 'h2', text: 'Landing page cost in Australia: $800 – $1,500 AUD' },
+      { type: 'h2', text: 'Website cost by type of site' },
       {
-        type: 'p',
-        html: 'A landing page is a single-page website designed to do one thing — convert visitors into leads or customers. Common uses include Google Ads campaign pages, product launch pages, waitlist sign-ups, and event registrations.',
+        type: 'table',
+        headers: ['Type of site', 'Typical AUD cost', 'Typical timeline'],
+        rows: [
+          ['One-page site or landing page', '$500–$2,000', '1–2 weeks'],
+          ['Small business website (5–10 pages)', '$3,000–$10,000', '2–4 weeks'],
+          ['Online store (custom)', '$5,000–$20,000', '4–8 weeks'],
+          ['Web app, portal or booking system', '$8,000+', '6–12 weeks'],
+        ],
       },
       {
         type: 'p',
-        html: 'At Build First Site, landing pages start at $800 AUD and are typically delivered in around 2 weeks. They include responsive design, a contact form, basic SEO setup, and hosting on Vercel (free for most business sites).',
+        html: 'These are market ranges from freelancers, studios and agencies, not our prices. Ours are further down, under <a href="#where-we-sit" class="color-green-900">where we sit</a>.',
       },
-      { type: 'p', html: 'Freelancers on Upwork or Fiverr can go lower ($200–$400), but quality varies significantly and SEO is rarely included.' },
-      { type: 'h2', text: 'Small business website cost in Australia: $1,900 – $5,000 AUD' },
+      { type: 'h2', text: 'What a website costs by business type' },
       {
-        type: 'p',
-        html: 'A professional small business website typically includes 3–7 pages (Home, About, Services, Contact, FAQ), is fully mobile-responsive, and comes with on-page SEO, a contact form, and Google Maps integration if applicable.',
-      },
-      {
-        type: 'p',
-        html: 'At Build First Site, small business websites start at $1,900 AUD and are delivered in 2–3 weeks. That includes schema markup, a sitemap, a fast <a href="/nextjs-development/" class="color-green-900">Next.js</a> build, and 30 days of free post-launch support.',
-      },
-      {
-        type: 'p',
-        html: 'Web agencies in Sydney and Melbourne typically charge $5,000–$15,000 for the same scope — the difference is overhead costs. As an independent studio, we pass that saving directly to you.',
-      },
-      { type: 'h2', text: 'E-commerce website cost in Australia: $4,500 – $10,000 AUD' },
-      {
-        type: 'p',
-        html: 'A custom e-commerce build includes product listings, a cart, Stripe checkout, order management, and an admin dashboard for managing your inventory. It is built to your exact business logic — not a template.',
+        type: 'table',
+        headers: ['Business type', 'Typical AUD cost', 'What drives it'],
+        rows: [
+          ['Tradie (plumber, electrician, builder)', '$1,500–$4,000', 'Local SEO, quote form, service-area pages, click-to-call. See <a href="/tradie-website-design/" class="color-green-900">tradie website design</a>.'],
+          ['Café or restaurant', '$2,500–$6,000', 'Menu, bookings, photos, opening hours'],
+          ['Professional services (accountant, lawyer, consultant)', '$3,000–$7,000', 'Several service pages, trust signals, lead forms'],
+          ['Health clinic or dental practice', '$3,000–$8,000', 'Online booking, accessibility, advertising rules. See <a href="/dental-website-design/" class="color-green-900">dental website design</a>.'],
+          ['Real estate', '$5,000–$12,000', 'Listings, search and filters, CRM integration'],
+          ['Retail and e-commerce', '$5,000–$15,000', 'Cart, checkout, inventory, shipping, admin'],
+          ['Startup or SaaS web app', '$8,000+', 'Accounts, billing, dashboards, custom features'],
+        ],
       },
       {
         type: 'p',
-        html: 'Shopify starts at about $52 AUD/month (~$624/year) and charges 0.5–2% transaction fees on top of Stripe\'s fees. On $200,000 annual revenue, that is $1,000–$4,500/year going to Shopify forever. A custom-built store has no platform fees beyond hosting.',
+        html: 'A tradie who mainly needs to be found on Google and take quote requests sits at the lower end. A retailer selling 200 products with live stock levels sits much higher, because there is more to build and test.',
+      },
+      { type: 'h2', text: 'Why the same brief gets quotes ten times apart' },
+      {
+        type: 'p',
+        html: 'Send an identical five-page brief to six Australian providers and you will get numbers between roughly $900 and $12,000. That is not because five of them are lying. "A website" describes an outcome, not a scope of work. Four things drive the difference.',
+      },
+      { type: 'h3', text: '1. Who is doing the building' },
+      {
+        type: 'p',
+        html: 'This is the largest single factor, and it has little to do with the code. A $12,000 agency quote is not twelve thousand dollars of development. As an illustration, it often breaks down something like this:',
+      },
+      {
+        type: 'table',
+        headers: ['Line item (illustrative)', 'Roughly', 'Do you benefit?'],
+        rows: [
+          ['Design and development', '$2,000–$3,000', 'Yes, this is the website'],
+          ['Account and project management', '$2,000–$3,000', 'Sometimes, on complex projects'],
+          ['Sales, proposal and discovery time', '$1,500–$2,500', 'No, it pays for the pitch'],
+          ['Office, tools and overhead', '$2,000–$3,000', 'No'],
+          ['Margin', '$1,500–$2,500', 'No'],
+        ],
       },
       {
         type: 'p',
-        html: 'Build First Site\'s e-commerce stores start at $4,500 AUD. They use Stripe for payments (around 1.75% in Australia, no additional platform fee), with full code ownership on delivery.',
+        html: 'None of that is dishonest. An agency with a city office and salaried staff has those costs and has to recover them. But when you compare a $12,000 quote with a $3,000 one, you are often comparing similar amounts of actual building.',
       },
-      { type: 'h2', text: 'DIY vs hiring a professional in Australia' },
+      { type: 'h3', text: '2. Custom design or a template' },
       {
         type: 'p',
-        html: '<a href="/wix-vs-custom-website/" class="color-green-900">Wix</a>, <a href="/squarespace-vs-custom-website/" class="color-green-900">Squarespace</a>, and <a href="/webflow-vs-custom-website/" class="color-green-900">Webflow</a> are great tools — but they are not free. Wix business plans run about $21 to $55 AUD/month ($252 to $660/year). Over 5 years that is $1,920 AUD in platform fees, and you never own the site.',
+        html: 'A template build is a theme with your logo and colours dropped in. It is quick and cheap, and it looks like thousands of other businesses on the same theme. A custom design is drawn for your business. The gap is usually $1,000 to $3,000, and many quotes do not say which one you are getting. Ask.',
+      },
+      { type: 'h3', text: '3. Page count and features' },
+      {
+        type: 'p',
+        html: 'More pages is more work. Features are where quotes grow: online booking, a customer login, payments or a CRM connection each add real engineering. A five-page brochure site and a five-page site with online booking are different projects.',
+      },
+      { type: 'h3', text: '4. Whether SEO is included' },
+      {
+        type: 'p',
+        html: 'A site built without clean structure, structured data, sensible URLs and fast loading has to be fixed later, and fixing is dearer than building it right. Some quotes include this. Many do not, then sell it back to you as a monthly retainer.',
+      },
+      { type: 'h2', text: 'The number nobody quotes: the five-year total' },
+      {
+        type: 'p',
+        html: 'Comparing build prices is comparing the deposit, not the mortgage. Here is what the same small business site costs over five years on each route.',
+      },
+      {
+        type: 'table',
+        headers: ['Route', 'Build', 'Ongoing over 5 years', 'Five-year total'],
+        rows: [
+          ['Wix or Squarespace, self-built', '$0–$500', `$${(PLATFORM_PRICES.wix.min * 60).toLocaleString('en-AU')}–$${(PLATFORM_PRICES.wix.max * 60).toLocaleString('en-AU')} platform fees`, `$${(PLATFORM_PRICES.wix.min * 60).toLocaleString('en-AU')}–$${(PLATFORM_PRICES.wix.max * 60 + 500).toLocaleString('en-AU')}`],
+          ['Freelancer, template build', '$500–$2,000', '$1,200–$4,000 hosting and fixes', '$1,700–$6,000'],
+          ['WordPress agency build', '$2,000–$4,000', '$4,700–$14,100 hosting, plugins, maintenance', '$6,700–$18,100'],
+          ['Full agency, custom', '$10,000–$50,000', '$6,000–$30,000 retainer', '$16,000–$80,000'],
+          ['Small studio, custom, you own the code', '$3,000–$7,000', '$100–$15,000 domain, hosting, optional care', '$3,100–$22,000'],
+        ],
       },
       {
         type: 'p',
-        html: 'A $1,900 custom-built website hosted on Vercel\'s free tier costs $0/month in perpetuity. Over 5 years you are ahead by $2,920 — and you own everything.',
+        html: 'Two things stand out. The DIY route is cheapest in cash, but you own nothing at the end and the fee never stops. And WordPress, often chosen because it seems economical, is frequently the second most expensive route over five years once plugin licences and security maintenance are counted. <a href="/wordpress-vs-custom-website/" class="color-green-900">WordPress vs a custom website</a> goes through that in detail.',
+      },
+      { type: 'h2', text: 'Website hosting costs in Australia: $0 to about $65 a month' },
+      {
+        type: 'p',
+        html: 'Hosting is the ongoing cost of keeping the site live, and it depends mostly on what the site is built with.',
+      },
+      {
+        type: 'table',
+        headers: ['If your site is…', 'Monthly (AUD)'],
+        rows: [
+          ['A static or Next.js build on a free plan that allows business use', '$0'],
+          ['The same build on a paid plan (for example Vercel Pro)', 'about $30 (US$20)'],
+          ['WordPress on Australian hosting', `$${PLATFORM_PRICES.ventraip.min}–$${PLATFORM_PRICES.siteground.max}`],
+          ['On Wix, Squarespace or Shopify', `$${PLATFORM_PRICES.squarespace.min}–$${PLATFORM_PRICES.shopify.max}`],
+        ],
       },
       {
         type: 'p',
-        html: 'The bigger cost with DIY builders is your time. Building a professional website on Wix from scratch takes 40–100 hours for most business owners. At even $50/hour of your time, that is $1,900–$5,000 of opportunity cost.',
+        html: 'One catch worth knowing: free plans are not all equal. Vercel\'s free Hobby plan is for personal, non-commercial projects, so a business site on Vercel needs the Pro plan. Cloudflare Pages is a common free option for static business sites. Also watch introductory hosting rates that renew at several times the price. <a href="/website-hosting-cost-australia/" class="color-green-900">What website hosting actually costs</a> has the platform-by-platform figures and renewal prices.',
       },
-      { type: 'h2', text: 'What makes a website cost more in Australia?' },
+      { type: 'h2', text: 'The costs most guides leave out' },
       {
         type: 'ul',
         items: [
-          '<strong>Number of pages and features</strong> — more pages means more design and development time.',
-          '<strong>Custom design vs template</strong> — a fully custom design costs more but looks unique.',
-          '<strong>E-commerce complexity</strong> — variants, subscriptions and custom checkout flows add time.',
-          '<strong>Integrations</strong> — CRM, booking systems, APIs, payment gateways beyond Stripe.',
-          '<strong>Who you hire</strong> — a large Sydney agency charges 3–5x more than an independent developer for the same quality work.',
-          '<strong>Ongoing maintenance</strong> — some providers bundle monthly retainers; Build First Site includes 30 days free and then offers optional Care from $79/month or Care + SEO at $250/month.',
+          '<strong>Domain name.</strong> About $15–$30 a year for a .com.au.',
+          '<strong>Copywriting and photos.</strong> If you supply them, you save. If the provider writes them, you pay for it.',
+          '<strong>Business email.</strong> Google Workspace or Microsoft 365, charged per person per month.',
+          '<strong>Paid plugins and apps.</strong> Common on WordPress and Shopify, often billed yearly.',
+          '<strong>Changes after launch.</strong> Ask what a small edit costs before you sign, and whether you can make it yourself.',
         ],
       },
-      { type: 'h2', text: 'Website hosting costs in Australia: $0 – $65/month' },
+      { type: 'h2', text: 'What you should be paying for at any price' },
       {
         type: 'p',
-        html: 'Hosting is the ongoing cost of keeping the site live. For most small business websites it can be genuinely free — what you pay depends almost entirely on what the site is built with.',
+        html: 'These are not extras. If a quote treats them as add-ons, that tells you something about the quote.',
       },
+      {
+        type: 'ul',
+        items: [
+          '<strong>Mobile-first build.</strong> Most Australian visits are on phones. A desktop design squashed down later is built for the minority of your visitors.',
+          '<strong>Technical SEO.</strong> Clean structure, structured data, titles, sitemap. Built in, not bolted on.',
+          '<strong>Fast loading.</strong> Ask for a PageSpeed score on a site they have already built.',
+          '<strong>A way to edit your own content.</strong> Paying a developer to change a phone number is a bad deal for everyone.',
+          '<strong>Analytics and Search Console set up.</strong> Otherwise you cannot tell whether any of it worked.',
+          '<strong>Ownership of the code and accounts.</strong> Repository, domain and hosting in your name.',
+        ],
+      },
+      { type: 'h2', text: 'One-off payment or monthly plan?' },
+      {
+        type: 'p',
+        html: '<strong>One-off (best for most businesses).</strong> You pay for the build, own the site outright, and only pay small ongoing costs for a domain and hosting. You are never trapped.',
+      },
+      {
+        type: 'p',
+        html: '<strong>Monthly website plans ($50–$200 a month).</strong> Low upfront cost and someone maintains it for you, but often you never own the site. Over three years, $100 a month is $3,600, which is often more than a custom build would have cost. Always ask: <em>"If I stop paying, do I keep my website and my domain?"</em>',
+      },
+      { type: 'h2', text: 'Red flags when comparing website quotes' },
+      {
+        type: 'ul',
+        items: [
+          '<strong>No written scope.</strong> If the quote does not list pages, features and what is excluded, you cannot compare it with anything.',
+          '<strong>Hourly billing with no cap.</strong> You carry all the risk of their estimate being wrong.',
+          '<strong>Nothing about who owns the code.</strong> Ask directly. If the answer is vague, assume you do not.',
+          '<strong>A monthly fee that is required, not optional.</strong> Check what happens to the site if you stop paying. Some go offline.',
+          '<strong>No mention of mobile, speed or SEO.</strong> If it is not in the quote, it is not being done.',
+          '<strong>No preview until the end.</strong> You should be able to see progress on a staging link.',
+        ],
+      },
+      { type: 'h2', text: 'How to compare quotes fairly' },
+      {
+        type: 'p',
+        html: 'Send every provider the same brief and ask each one these five questions. The answers make a $3,000 quote and a $12,000 quote comparable.',
+      },
+      {
+        type: 'ol',
+        items: [
+          'Is the design custom or based on a template?',
+          'What are the total costs in year one and year two, including hosting?',
+          'Who owns the code, the domain and the hosting account at the end?',
+          'What exactly is included for SEO?',
+          'Who actually writes the code, and where are they based?',
+        ],
+      },
+      {
+        type: 'p',
+        html: 'The last one matters more than people expect. Plenty of quotes that present as local are built offshore. That can work well. The problem is when it is not disclosed and you pay a local premium for it. Our <a href="/freelancer-vs-web-design-agency/" class="color-green-900">freelancer vs agency comparison</a> goes further, and the <a href="/small-business-website-checklist/" class="color-green-900">small business website checklist</a> is a neutral way to check any provider, including us.',
+      },
+      { type: 'h2', text: 'So what should a small business spend?' },
       {
         type: 'table',
-        headers: [
-          'If your site is…',
-          'Monthly (AUD)',
-        ],
+        headers: ['Situation', 'Sensible AUD range'],
         rows: [
-          [
-            'A modern static or Next.js build',
-            '$0',
-          ],
-          [
-            'WordPress on Australian hosting',
-            '$9 – $65',
-          ],
-          [
-            'On Wix, Squarespace or Shopify',
-            '$17 – $575',
-          ],
+          ['Brand new, testing whether the business works', '$500–$1,500'],
+          ['Established, the website is a real lead source', '$1,900–$6,000'],
+          ['Several locations or services', '$3,500–$10,000'],
+          ['Selling online', '$4,500–$20,000'],
+          ['Booking, portal or customer login needed', '$4,500–$25,000'],
         ],
       },
       {
         type: 'p',
-        html: 'Those ranges hide a lot, and some of it costs real money — introductory hosting rates that renew up to ten times higher, platform fees that never stop, and the question of whether you can move the site at all. <a href="/website-hosting-cost-australia/" class="color-green-900">What website hosting actually costs</a> has the platform-by-platform figures, the renewal traps and the one-year and five-year totals.',
+        html: 'Spending $15,000 on a site for a business turning over $200,000 is hard to justify. So is spending $500 on a site that is meant to be your main sales channel. Match the spend to what the site has to do.',
+      },
+      { type: 'h2', text: 'Where we sit, disclosed' },
+      {
+        type: 'p',
+        html: `Since this is our site, here are our own starting points, in AUD: <strong>${TIER.starter.priceLabel}</strong> for ${TIER.starter.includes[0]}, <strong>${TIER.business.priceLabel}</strong> for ${TIER.business.includes[0].toLowerCase()}, <strong>${TIER.unlimited.priceLabel}</strong> for ${TIER.unlimited.includes[0].replace(', no cap', '')}, and from <strong>${TIER.ecommerce.priceLabel}</strong> for an online store or web app. Most projects land in the ${TYPICAL_RANGE.label} range. Starter and up can be paid in ${TIER.starter.payments} instalments.`,
       },
       {
         type: 'p',
-        html: 'Every site we build is deployed on a free tier by default — $0 a month in hosting for most small business sites, with the first year included regardless. You can move to a paid plan or a different host whenever you like, because you own the code.',
+        html: `We do not quote off a price list. Tell us what you need, we talk it through on a short call, and you get a written estimate, broken into phases if that suits your budget. Care is optional at ${CARE_PLAN.priceLabel} a month, or ${RETAINER.priceLabel} a month with ongoing SEO. You own the code from day one. You deal directly with the engineer who writes it, who is based in India, and your day-to-day contact is in Australia. All packages side by side are on the <a href="/pricing/" class="color-green-900">pricing page</a>.`,
       },
-      { type: 'h2', text: 'Common questions' },
-      {
-        type: 'faq',
-        q: 'How much does a website cost australia?',
-        a: 'The Australian market average for a small business site sits between $6,500 and $10,000, with DIY platforms from $500 and agencies reaching $50,000. Our published prices are $800 for three to five pages, $1,900 for up to ten, $3,500 for ten pages or more and $4,500 for e-commerce, all AUD before GST.',
-      },
-      {
-        type: 'faq',
-        q: 'How much does a website cost for small business?',
-        a: 'For an Australian small business, $800 to $4,500 AUD covers almost every realistic case: $800 for a three to five page presence, $1,900 for up to ten pages, $3,500 for ten pages or more, $4,500 for an online store. Agencies commonly quote $5,000 to $15,000 for the same scope, and most of that gap is overhead rather than build work.',
-      },
-      {
-        type: 'faq',
-        q: 'How much to build a website australia?',
-        a: 'Building costs $800 to $4,500 AUD with us depending on page count and whether you need e-commerce. Across the wider market, expect $500 to $3,000 for a DIY platform build, $500 to $2,000 from a freelancer for something basic, $3,000 to $7,000 from a small studio and $10,000 upward from a full agency.',
-      },
-      {
-        type: 'faq',
-        q: 'How much does it cost to host a website?',
-        a: 'Free to about $60 AUD a month depending on the build. A modern static site runs free on Vercel indefinitely for typical small business traffic, and we include the first year regardless. WordPress needs managed hosting at roughly $15 to $60 a month, which is a real ongoing cost people forget when comparing build prices.',
-      },
-      {
-        type: 'faq',
-        q: 'How much does a website cost per month?',
-        a: 'With a custom build you own, it can be $0 — hosting is free on Vercel for most small business sites and there is no platform fee. Wix and Squarespace charge $15 to $58 a month indefinitely. Our optional Care plan is $79 a month, and Care + SEO is $250 a month and cancels with 30 days notice; nothing about the site stops working if you do not take it.',
-      },
+      { type: 'h2', text: 'Common questions about website costs in Australia' },
       {
         type: 'faq',
         q: 'How much does a website cost in Australia in 2026?',
-        a: 'A basic landing page costs $800–$1,500 AUD. A business website (3–7 pages) costs $1,900–$5,000 AUD. A custom e-commerce store costs $4,500–$10,000 AUD. DIY builders like Wix costs about $21–$55/month but have limitations. Prices vary based on design complexity, number of pages, and custom features needed.',
+        a: 'Most Australian guides put a professional small business website at $3,000 to $10,000 AUD. The full range runs from about $500 for a DIY or basic freelancer site to $50,000 or more from a full agency. A one-page site is usually $500 to $2,000, and a custom online store $5,000 to $20,000.',
       },
       {
         type: 'faq',
-        q: 'How much does a small business website cost in Australia?',
-        a: 'A professional small business website in Australia typically costs between $1,900 and $5,000 AUD for a custom-built solution. This includes design, development, mobile responsiveness, basic SEO, and 30 days of post-launch support.',
+        q: 'What is the average cost of website design for a small business in Australia?',
+        a: 'For a 5 to 10 page professional site, $5,000 to $15,000 is the usual band from an Australian agency, and $3,000 to $7,000 from a small studio. Who builds it moves the number more than the website does, because agency quotes include account management, sales time, office costs and margin.',
+      },
+      {
+        type: 'faq',
+        q: 'How much is a landing page in Australia?',
+        a: 'A single landing page typically costs $500 to $2,000 AUD from a freelancer or small studio, and more from an agency. The price depends on whether the design is custom, whether copywriting is included, and what the page connects to, such as a booking system or CRM.',
       },
       {
         type: 'faq',
         q: 'How much does an e-commerce website cost in Australia?',
-        a: 'A custom e-commerce website in Australia costs $4,500–$10,000 AUD depending on the number of products, payment integrations, and custom features. Shopify plans run about $52 to $575 AUD a month depending on tier, with transaction fees on top unless you use Shopify Payments. A custom-built e-commerce store has no monthly platform fees beyond hosting.',
+        a: `A custom online store usually costs $5,000 to $20,000 AUD depending on the number of products, payment options and integrations. Shopify plans run about $${PLATFORM_PRICES.shopify.min} to $${PLATFORM_PRICES.shopify.max} AUD a month, with transaction fees on top unless you use Shopify Payments. A custom store you own has no platform fee beyond hosting.`,
       },
       {
         type: 'faq',
-        q: 'Is it cheaper to use Wix or hire a web developer in Australia?',
-        a: 'Wix costs about $21–$55/month ($252–$660/year) with template limitations and no code ownership. A professional web developer costs $1,900+ upfront but you own the site forever with no monthly fees. Over 3 years, the total cost is often comparable — but the custom site performs significantly better in SEO and conversions.',
+        q: 'How much does it cost to host a website in Australia?',
+        a: 'From $0 to about $65 AUD a month. A static or Next.js business site can run on a free plan that allows commercial use, such as Cloudflare Pages. Vercel\'s free plan is for non-commercial projects, so a business site there needs Pro at US$20 a month. WordPress hosting is roughly $9 to $65 a month, and platforms like Wix and Shopify include hosting in their monthly fee.',
+      },
+      {
+        type: 'faq',
+        q: 'Why are website quotes so different for the same brief?',
+        a: 'Mostly overhead rather than work. A large agency quote includes account management, sales and discovery time, office costs and margin, which together often exceed the design and development. Custom versus template design, features such as booking or payments, and whether SEO is included explain most of the rest.',
+      },
+      {
+        type: 'faq',
+        q: 'Is it cheaper to use Wix or hire a web developer?',
+        a: `Wix is cheaper upfront, at about $${PLATFORM_PRICES.wix.min} to $${PLATFORM_PRICES.wix.max} AUD a month, but the fee never stops and you never own the site. Over five years that is $${(PLATFORM_PRICES.wix.min * 60).toLocaleString('en-AU')} to $${(PLATFORM_PRICES.wix.max * 60).toLocaleString('en-AU')} in fees alone. A custom site costs more upfront, you own it, and it usually performs better in search, so the five-year cost is often comparable.`,
+      },
+      {
+        type: 'faq',
+        q: 'Do I need to pay monthly for a website?',
+        a: 'No, though many arrangements are set up that way. A custom build with code you own can run on low-cost or free hosting with no platform fee. Wix and Squarespace charge every month and the site stops working if you stop paying. Always check what happens to the site when payments end.',
+      },
+      {
+        type: 'faq',
+        q: 'How much does Build First Site charge?',
+        a: `Our starting points are ${TIER.starter.priceLabel} for 3 to 5 pages, ${TIER.business.priceLabel} for up to 10 pages, ${TIER.unlimited.priceLabel} for 10 or more, and from ${TIER.ecommerce.priceLabel} for an online store or web app. Every project is different, so we give a written estimate after a short call, broken into phases if that helps. Full details are on our pricing page.`,
       },
     ],
     showPrices: true,
@@ -1516,7 +1614,7 @@ export const LANDING_PAGES = [
             'Monthly fee',
             '~$28 AUD/mo',
             '~$35 AUD/mo',
-            '$0/mo (Vercel free)',
+            '$0/mo (free hosting plan)',
           ],
           [
             'Cost at 1 year',
@@ -1883,7 +1981,7 @@ export const LANDING_PAGES = [
       {
         type: 'faq',
         q: 'How much does it cost to set up a small business website in Australia?',
-        a: 'A DIY website using Wix or Squarespace costs $20–50/month. A domain name costs $15–30/year. Hosting on Vercel is free for most small business sites. Our own estimate depends on your project; typical starting points are on our <a href="/pricing/" class="color-green-900">pricing page</a>.',
+        a: 'A DIY website using Wix or Squarespace costs $20–50/month. A domain name costs $15–30/year. Hosting can be free on a plan that allows business use, such as Cloudflare Pages. Our own estimate depends on your project; typical starting points are on our <a href="/pricing/" class="color-green-900">pricing page</a>.',
       },
       {
         type: 'faq',
@@ -2080,7 +2178,7 @@ export const LANDING_PAGES = [
           ],
           [
             'Monthly cost',
-            '✓ $0/mo — host on Vercel free tier',
+            '✓ $0/mo on a free hosting plan such as Cloudflare Pages',
             '$17–62/mo for as long as you keep it',
           ],
           [
@@ -2185,7 +2283,7 @@ export const LANDING_PAGES = [
       {
         type: 'faq',
         q: 'Will I own the website after it is built?',
-        a: 'Yes, completely. You receive the full GitHub repository on your launch day. Host it on Vercel (free tier covers most business sites), AWS, or your own server. No ongoing fees to us.',
+        a: 'Yes, completely. You receive the full GitHub repository on your launch day. Host it on Cloudflare Pages (free for most business sites), Vercel Pro, AWS, or your own server. No ongoing fees to us.',
       },
       {
         type: 'faq',
@@ -2725,7 +2823,7 @@ export const LANDING_PAGES = [
       { type: 'h2', text: 'What you get' },
       {
         type: 'p',
-        html: 'You own the source code. Hosting on Vercel is free. No ongoing platform fee, no proprietary CMS, no lock-in. The $0 hosting situation means you will be ahead on total cost within 12 months of a typical dental agency quote.',
+        html: 'You own the source code. Hosting can be free on a plan that allows business use. No ongoing platform fee, no proprietary CMS, no lock-in. The $0 hosting situation means you will be ahead on total cost within 12 months of a typical dental agency quote.',
       },
       { type: 'h2', text: 'AHPRA compliance on dental websites' },
       {
@@ -2853,7 +2951,7 @@ export const LANDING_PAGES = [
           [
             'Hosting cost',
             '$15–60/month',
-            '$0 on Vercel free tier',
+            '$0 on a free hosting plan',
           ],
           [
             'Content editing',
@@ -2893,7 +2991,7 @@ export const LANDING_PAGES = [
           [
             'Hosting (5 yrs)',
             '$1,200–3,600',
-            '$0 (Vercel free tier)',
+            '$0 (free hosting plan)',
           ],
           [
             'Premium plugins (5 yrs)',
@@ -2978,12 +3076,12 @@ export const LANDING_PAGES = [
       {
         type: 'faq',
         q: 'How much does a WordPress website cost in Australia?',
-        a: 'A typical small business WordPress build runs $2,000 to $4,000 up front, plus $15 to $60 a month hosting, $500 to $1,500 in premium plugins over five years, and $50 to $150 a month maintenance if you want it kept patched. That lands between $6,700 and $18,100 across five years. A custom build from us starts at $1,900 for the same page count with free hosting on Vercel and no plugin fees.',
+        a: 'A typical small business WordPress build runs $2,000 to $4,000 up front, plus $15 to $60 a month hosting, $500 to $1,500 in premium plugins over five years, and $50 to $150 a month maintenance if you want it kept patched. That lands between $6,700 and $18,100 across five years. A custom build from us starts at $1,900 for the same page count with free hosting available (for example Cloudflare Pages) and no plugin fees.',
       },
       {
         type: 'faq',
         q: 'Is WordPress cheaper than a custom website?',
-        a: 'Cheaper up front sometimes, more expensive over five years almost always. Hosting, premium plugins and mandatory maintenance add up, while a static custom build has no plugin fees and free hosting on Vercel. The five-year table above shows the difference.',
+        a: 'Cheaper up front sometimes, more expensive over five years almost always. Hosting, premium plugins and mandatory maintenance add up, while a static custom build has no plugin fees and can host free on a plan that allows business use. The five-year table above shows the difference.',
       },
     ],
     showPrices: true,
@@ -3043,7 +3141,7 @@ export const LANDING_PAGES = [
           [
             'Hosting',
             'Bundled, required',
-            'Free on Vercel',
+            'Free on a business-friendly plan (e.g. Cloudflare Pages)',
           ],
           [
             'Code export',
@@ -3094,7 +3192,7 @@ export const LANDING_PAGES = [
           [
             'Hosting (5 yrs)',
             'Included above',
-            '$0 (Vercel free tier)',
+            '$0 (free hosting plan)',
           ],
           [
             'Five-year total',
@@ -3444,7 +3542,7 @@ export const LANDING_PAGES = [
           '<strong>SEO from the first line.</strong> Semantic HTML, structured data, meta, sitemap - wired in during the build, not sold back to you later.',
           '<strong>Mobile first.</strong> Roughly 68% of Australian traffic is mobile, so that is where we start.',
           '<strong>Full code ownership.</strong> Repository and hosting in your name.',
-          '<strong>Hosting included for year one</strong>, then free on Vercel for most small business sites.',
+          '<strong>Hosting included for year one</strong>, then free on a plan such as Cloudflare Pages for most small business sites.',
         ],
       },
       {
@@ -3650,7 +3748,7 @@ export const LANDING_PAGES = [
           ],
           [
             'Old hosting account',
-            'No — you move to your own, free on Vercel for most sites',
+            'No — you move to your own, free on a plan such as Cloudflare Pages for most sites',
           ],
         ],
       },
@@ -3772,7 +3870,7 @@ export const LANDING_PAGES = [
       },
       {
         type: 'p',
-        html: 'We answer all five in the quote without being asked. The wider market context is in <a href="/blog/average-cost-website-design-small-business/" class="color-green-900">the average cost of website design for small business</a>.',
+        html: 'We answer all five in the quote without being asked. The wider market context is in <a href="/how-much-does-a-website-cost-australia/" class="color-green-900">the average cost of website design for small business</a>.',
       },
       { type: 'h2', text: 'Ready when you are' },
       {
@@ -4320,7 +4418,7 @@ export const LANDING_PAGES = [
       {
         type: 'faq',
         q: 'How much does it cost to host a website?',
-        a: 'For a small business site in Australia, $0 to about $65 AUD a month. A static or Next.js build hosts free on Vercel or Cloudflare Pages indefinitely at normal small business traffic. WordPress needs paid hosting, typically $9 to $65 a month. Wix, Squarespace and Shopify bundle hosting into a subscription of roughly $17 to $575 a month depending on the platform and plan.',
+        a: 'For a small business site in Australia, $0 to about $65 AUD a month. A static or Next.js build hosts free on Cloudflare Pages at normal small business traffic. Vercel\'s free plan is for non-commercial projects, so a business site on Vercel needs Pro at US$20 a month. WordPress needs paid hosting, typically $9 to $65 a month. Wix, Squarespace and Shopify bundle hosting into a subscription of roughly $17 to $575 a month depending on the platform and plan.',
       },
       {
         type: 'faq',
@@ -4335,7 +4433,7 @@ export const LANDING_PAGES = [
       {
         type: 'faq',
         q: 'Can you host a website for free?',
-        a: 'Yes. Vercel and Cloudflare Pages both host static and modern JavaScript sites free, with SSL and a global CDN included, and the limits are generous enough that most small business sites never reach them. The catch is that free hosting cannot run WordPress, which needs a database and PHP. So the honest framing is not that hosting costs money — it is that WordPress costs money to host.',
+        a: 'Yes. Cloudflare Pages hosts static and modern JavaScript sites free, with SSL and a global CDN included, and the limits are generous enough that most small business sites never reach them. Vercel also has a free plan, but it is for personal, non-commercial projects; a business site there needs Pro. The catch is that free hosting cannot run WordPress, which needs a database and PHP. So the honest framing is not that hosting costs money — it is that WordPress costs money to host.',
       },
       {
         type: 'faq',
@@ -4355,7 +4453,7 @@ export const LANDING_PAGES = [
       {
         type: 'faq',
         q: 'How much does website hosting cost in Australia?',
-        a: 'Australian-owned hosts like VentraIP start around $8.95 a month and renew close to that. International hosts selling into Australia often advertise from about $6.99 and renew between $26.99 and $64.99. Modern static hosting on Vercel or Cloudflare is free. Always compare the renewal price rather than the introductory one.',
+        a: 'Australian-owned hosts like VentraIP start around $8.95 a month and renew close to that. International hosts selling into Australia often advertise from about $6.99 and renew between $26.99 and $64.99. Modern static hosting on a plan such as Cloudflare Pages is free. Always compare the renewal price rather than the introductory one.',
       },
       {
         type: 'faq',

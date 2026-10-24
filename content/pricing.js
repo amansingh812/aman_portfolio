@@ -87,12 +87,12 @@ export const COMPETITOR_PRICES_VERIFIED = '2026-08-07';
  * no competitor names at the point of decision (see the note above).
  *
  * agencyCustomSite: the range the site already cites for a custom small-business
- * site from an Australian agency (/blog/average-cost-website-design-small-business/,
+ * site from an Australian agency (/how-much-does-a-website-cost-australia/,
  * homepage FAQ). diyYears: horizon for the DIY-builder comparison, computed
  * from PLATFORM_PRICES.wix so it can't drift from the verified figures.
  */
 export const MARKET_CONTEXT = {
-    agencyCustomSite: { min: 5000, max: 15000, source: '/blog/average-cost-website-design-small-business/' },
+    agencyCustomSite: { min: 5000, max: 15000, source: '/how-much-does-a-website-cost-australia/' },
     diyYears: 5,
 };
 

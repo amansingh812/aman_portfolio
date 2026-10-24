@@ -23,26 +23,6 @@ export const BLOG_POSTS = [
     image: "/assets/imgs/page/blog/7-website-mistakes-australia.webp",
   },
   {
-    slug: "website-cost-australia",
-    // CANNIBALISATION FIX (21 Sep 2026). This post's metaTitle was
-    // character-for-character identical to /how-much-does-a-website-cost-australia/
-    // — two pages telling Google they answer the same query, on the same
-    // site, with no canonical between them. GSC showed both competing:
-    // the landing page at position 94 and this at 91.8. Retitled to a
-    // genuinely different angle (what changed this year) and pointed at
-    // the landing page, which is the one we want to own the head term.
-    canonicalTo: "/how-much-does-a-website-cost-australia/",
-    metaDescription: "What a website really costs in Australia in 2026. DIY, freelancer and agency prices in AUD, ongoing costs, and what actually drives the number.",
-    metaTitle: "Website Cost Australia: What Changed in 2026",
-    title: "Website Cost in Australia: What Changed in 2026",
-    excerpt: "A clear 2026 breakdown of website costs in Australia — DIY, freelancer and agency prices, ongoing costs, and what drives the price in real AUD numbers.",
-    category: "Pricing Guide",
-    date: "2026-07-20",
-    readingTime: "7 min read",
-    href: "/blog/website-cost-australia/",
-    image: "/assets/imgs/page/blog/website-cost-australia.webp",
-  },
-  {
     slug: "signs-website-losing-customers",
     metaDescription: "Traffic but no enquiries? One of these five fixable issues is usually why — slow load, poor mobile, unclear message, weak CTAs or no trust signals.",
     metaTitle: "5 Signs Your Website Is Losing You Customers",
@@ -53,18 +33,6 @@ export const BLOG_POSTS = [
     readingTime: "8 min read",
     href: "/blog/signs-website-losing-customers/",
     image: "/assets/imgs/page/blog/signs-website-losing-customers.webp",
-  },
-  {
-    slug: "small-business-website-checklist",
-    metaDescription: "Everything a small business website needs in 2026 — pages, mobile, speed, SEO, trust and lead capture. A practical Australian checklist, no fluff.",
-    metaTitle: "Small Business Website Checklist Australia 2026",
-    title: "Small Business Website Checklist for 2026 (Australia)",
-    excerpt: "Everything a small business website needs in 2026 — a practical Australian checklist covering core pages, mobile, speed, SEO, trust and lead capture.",
-    category: "Checklist",
-    date: "2026-07-28",
-    readingTime: "8 min read",
-    href: "/blog/small-business-website-checklist/",
-    image: "/assets/imgs/page/blog/small-business-website-checklist.webp",
   },
   {
     slug: "wordpress-vs-custom-website",
@@ -106,18 +74,6 @@ export const BLOG_POSTS = [
     readingTime: "9 min read",
     href: "/blog/what-small-business-website-actually-needs/",
     image: "/assets/imgs/page/blog/what-small-business-website-actually-needs.webp",
-  },
-  {
-    slug: "average-cost-website-design-small-business",
-    metaDescription: "What website design actually costs Australian small businesses in 2026. Real market averages by provider type, the five-year total, and how to compare quotes.",
-    metaTitle: "Average Cost of Website Design for Small Business AU",
-    title: "The Average Cost of Website Design for Small Business in Australia (2026)",
-    excerpt: "The Australian market average sits between $6,500 and $10,000 for a small business website. Here is what that money buys, what it does not, and why identical briefs come back with quotes ten times apart.",
-    category: "Pricing Guide",
-    date: "2026-09-01",
-    readingTime: "11 min read",
-    href: "/blog/average-cost-website-design-small-business/",
-    image: "/assets/imgs/page/blog/average-cost-website-design-small-business.webp",
   },
   {
     slug: "tradie-website-cost",

@@ -67,6 +67,12 @@ const nextConfig = {
       // Googlebot read the string '/month' (Care plan `period`) out of the page's
       // JS payload as a URL and logged a 404 (GSC, 19 Sep 2026). Harmless; redirected to clear it.
       { source: '/month/', destination: '/pricing/', permanent: true },
+      // 17 Oct 2026 cannibalisation merge (docs/AI-VISIBILITY-LOG.md). GSC showed the
+      // cost topic split across 6 URLs at positions 73–90 and two checklist pages.
+      // The posts' best sections now live on the single owner page.
+      { source: '/blog/website-cost-australia/', destination: '/how-much-does-a-website-cost-australia/', permanent: true },
+      { source: '/blog/average-cost-website-design-small-business/', destination: '/how-much-does-a-website-cost-australia/', permanent: true },
+      { source: '/blog/small-business-website-checklist/', destination: '/small-business-website-checklist/', permanent: true },
 
       // ── Agon template demo pages, removed 21 Sep 2026 ──────────────────
       // Nine routes shipped with the Agon template and were never stripped
