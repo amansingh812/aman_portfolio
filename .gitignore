@@ -119,3 +119,6 @@ brand/_vid/
 
 # Client work (prototypes, briefs) — not part of the website
 clients/
+
+# Remotion video project (separate from the website)
+my-motion-graphics/

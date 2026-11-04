@@ -636,12 +636,16 @@ export const LANDING_PAGES = [
   },
   {
     slug: 'web-design-melbourne',
+    format: 'v2',
+    heroImage: '/assets/imgs/page/landing/web-design-melbourne-hero.png',
+    answer: "Web design in Melbourne typically costs $3,000 to $10,000 at an agency. We build custom websites for Melbourne businesses with local SEO included, you deal directly with the engineer who writes the code, and you own it on launch day with no retainer.",
+    takeaways: ["Melbourne agency quotes vary widely because of <b>overheads and platforms</b>, not quality.", "Hire direct: <b>one accountable builder</b>, an Australian contact, no agency chain.", "Local SEO for your <b>suburb and services</b> is included in every build.", "See your homepage designed free before you commit."],
     inlineForm: true,
     image: '/assets/imgs/page/landing/web-design-melbourne.webp',
-    imageAlt: 'Melbourne skyline behind a local business website built for the local market',
+    imageAlt: "Illustration of the Melbourne skyline and a tram behind a laptop and phone showing a business website",
     metaTitle: 'Web Design & Web Developer Melbourne',
     metaDescription: 'Melbourne web design and web developer: custom sites, local SEO, and you own the code. Free homepage design first, then an estimate after a short call.',
-    lastUpdated: '2026-10-12',
+    lastUpdated: '2026-11-04',
     eyebrow: 'MELBOURNE, VICTORIA',
     h1: 'Web Design Melbourne: a Web Developer With Published Prices',
     lead: 'Melbourne web design and development, built by the engineer who writes the code. Modern Next.js builds, local SEO included, and the source code is yours on launch day — no retainer, no lock-in.',
@@ -670,7 +674,7 @@ export const LANDING_PAGES = [
       { href: '/pricing/', label: 'All pricing' },
     ],
     body: [
-      { type: 'h2', text: 'Why Melbourne quotes vary so wildly' },
+      { type: 'h2', text: 'Why Melbourne quotes vary so wildly', oneline: "agency overhead, page builders and retainers explain most of the spread." },
       {
         type: 'p',
         html: 'Ask five Melbourne agencies for a five-page business website and you will get quotes between $2,000 and $20,000 (<a href="/how-much-does-a-website-cost-australia/" class="color-green-900">why the range is that wide</a>) for work that is functionally identical. The spread is not about quality. It is about overheads — a Collins Street office, an account manager, a sales team and a project coordinator all sit inside that number before a single line of code is written.',
@@ -683,7 +687,7 @@ export const LANDING_PAGES = [
           '<strong>You cannot leave.</strong> Several Australian agencies build on their own CMS and hosting. Moving means rebuilding from scratch. It is almost never disclosed upfront.',
         ],
       },
-      { type: 'h2', text: 'What we build for Melbourne businesses' },
+      { type: 'h2', text: 'What we build for Melbourne businesses', oneline: "service sites, online stores, booking systems and apps." },
       {
         type: 'ul',
         items: [
@@ -693,7 +697,7 @@ export const LANDING_PAGES = [
           '<strong>Retail and e-commerce.</strong> Stripe checkout, real inventory and order management — without paying a platform commission on every sale you make.',
         ],
       },
-      { type: 'h2', text: 'What a Melbourne website takes' },
+      { type: 'h2', text: 'What a Melbourne website takes', oneline: "scope, timeline and what you need to prepare." },
       {
         type: 'p',
         html: 'Typical build times are below. Every project is different, so after a short call you get a written estimate, broken into phases if that suits your budget.',
@@ -727,7 +731,7 @@ export const LANDING_PAGES = [
         type: 'p',
         html: 'Full package details are on the <a href="/pricing/" class="color-green-900">pricing page</a>, and <a href="/how-much-does-a-website-cost-australia/" class="color-green-900">what a website costs in Australia</a> explains why Melbourne quotes for the same scope range so widely.',
       },
-      { type: 'h2', text: 'Web developer in Melbourne: hire direct, without the agency overhead' },
+      { type: 'h2', text: 'Web developer in Melbourne: hire direct, without the agency overhead', oneline: "talk to the builder, not an account manager." },
       {
         type: 'p',
         html: 'When you search for a web developer in Melbourne you mostly find agencies: a salesperson, an account manager and a project coordinator between you and whoever writes the code. Here you deal directly with the engineer who builds your site, and your day-to-day contact is in Melbourne for meetings and calls. No hand-offs and no office rent built into your quote.',
@@ -740,7 +744,7 @@ export const LANDING_PAGES = [
           '<strong>More than brochure sites.</strong> Booking systems, customer portals, online stores and <a href="/services/ai-automation/" class="color-green-900">automations</a> that answer enquiries for you.',
         ],
       },
-      { type: 'h2', text: 'Web design across Melbourne\'s suburbs' },
+      { type: 'h2', text: 'Web design across Melbourne\'s suburbs', oneline: "local SEO for the suburbs you actually serve." },
       {
         type: 'p',
         html: 'Your contact is Melbourne-based, so a first meeting in person is easy anywhere in the metro area. After that, most projects run over calls and a live preview link. What changes from suburb to suburb is not the price but what your customers are searching for, so here is what we focus on in the areas we hear from most.',
@@ -792,12 +796,12 @@ export const LANDING_PAGES = [
         type: 'p',
         html: 'We also work with businesses in Carlton, Hawthorn, Camberwell, Box Hill, Glen Waverley, Dandenong, Frankston and Geelong. Wherever you are, the price and the process are the same.',
       },
-      { type: 'h2', text: 'Tradie web design in Melbourne' },
+      { type: 'h2', text: 'Tradie web design in Melbourne', oneline: "fast, call-first sites for trades." },
       {
         type: 'p',
         html: 'A large share of the Melbourne businesses we hear from are trades: plumbers, electricians, builders and landscapers. Their sites need one thing above everything else, which is turning a search into a phone call. Tap-to-call fixed on mobile, service-area sections for the suburbs you actually cover, and a quote form that asks for job type, suburb and photos. The full approach is on our <a href="/tradie-website-design/" class="color-green-900">tradie website design</a> page.',
       },
-      { type: 'h2', text: 'Sites we have actually shipped' },
+      { type: 'h2', text: 'Sites we have actually shipped', oneline: "live client sites you can open, and labelled concept builds." },
       {
         type: 'p',
         html: 'Real client work on their own domains. Open any of them and run a speed test — we would rather you checked than took our word for it. <a href="https://www.hsracegear.com" target="_blank" rel="noopener noreferrer" class="color-green-900">HS Race Gear</a> — motorsport e-commerce, large product catalogue. <a href="https://mobilearmour.com.au" target="_blank" rel="noopener noreferrer" class="color-green-900">Mobile Armour</a> — Australian retail, speed and SEO rebuild. <a href="https://www.autozenlyai.com" target="_blank" rel="noopener noreferrer" class="color-green-900">Autozenly AI</a> — AI SaaS, admin dashboard and platform. <a href="https://planet.ltfinance.com" target="_blank" rel="noopener noreferrer" class="color-green-900">LT Finance</a> — enterprise fintech platform.',
@@ -1278,8 +1282,12 @@ export const LANDING_PAGES = [
     // every page-one result reads like an independent market guide).
     // Our prices come from pricing.js via TIER — never type a figure here.
     slug: 'how-much-does-a-website-cost-australia',
+    format: 'v2',
+    heroImage: '/assets/imgs/page/landing/how-much-does-a-website-cost-australia-hero.png',
+    answer: "A professional small business website in Australia usually costs $3,000 to $10,000 AUD from an agency, $500 to $3,000 from a freelancer, and $17 to $62 a month on a DIY builder. The fairest comparison is the five-year total: build price plus hosting, plans and changes.",
+    takeaways: ["Quotes for the same brief range from about <b>$500 to $50,000</b>; who builds it moves the price most.", "Compare the <b>five-year total</b>, not the sticker price. Monthly fees often exceed the build cost.", "Hosting runs from <b>$0 to about $65 a month</b> depending on the platform.", "Check a quote for ownership, scope, SEO basics and support after launch before comparing numbers."],
     image: '/assets/imgs/page/landing/how-much-does-a-website-cost-australia.webp',
-    imageAlt: 'Australian website cost ranges compared side by side in AUD',
+    imageAlt: "Illustration of a calculator, coins, a website on a laptop and a five-year cost chart",
     metaTitle: 'How Much Does a Website Cost in Australia? (2026 Guide)',
     metaDescription: 'What a website really costs in Australia in 2026: AUD ranges by provider and business type, the five-year total, hidden costs and quote red flags.',
     eyebrow: 'Australia · 2026 cost guide',
@@ -1287,7 +1295,7 @@ export const LANDING_PAGES = [
     lead: 'Short answer: most Australian cost guides put a professional small business website at $3,000 to $10,000 AUD, but real quotes for the same brief run from about $500 to $50,000. Who builds it moves the price more than the website itself does. Below are the ranges by provider and business type, what it costs over five years, and how to compare quotes fairly.',
     priceTiers: [],
     datePublished: '2026-08-08',
-    lastUpdated: '2026-10-17',
+    lastUpdated: '2026-11-04',
     schemaType: 'Article',
     breadcrumb: 'How Much Does a Website Cost in Australia?',
     related: [
@@ -1297,7 +1305,7 @@ export const LANDING_PAGES = [
       { href: '/pricing/', label: 'Our starting prices' },
     ],
     body: [
-      { type: 'h2', text: 'Website cost in Australia at a glance (2026)' },
+      { type: 'h2', text: 'Website cost in Australia at a glance (2026)', oneline: "the market ranges in one table, so you know where any quote sits." },
       {
         type: 'p',
         html: 'The biggest variable is not the website. It is who builds it. Here is the 2026 Australian market by provider type, in AUD.',
@@ -1312,7 +1320,7 @@ export const LANDING_PAGES = [
           ['Full agency', '$10,000–$50,000+', 'Account management, formal process, a strategy layer.'],
         ],
       },
-      { type: 'h2', text: 'Website cost by type of site' },
+      { type: 'h2', text: 'Website cost by type of site', oneline: "a brochure site, an online store and a web app are priced very differently." },
       {
         type: 'table',
         headers: ['Type of site', 'Typical AUD cost', 'Typical timeline'],
@@ -1327,7 +1335,7 @@ export const LANDING_PAGES = [
         type: 'p',
         html: 'These are market ranges from freelancers, studios and agencies, not our prices. Ours are further down, under <a href="#where-we-sit" class="color-green-900">where we sit</a>.',
       },
-      { type: 'h2', text: 'What a website costs by business type' },
+      { type: 'h2', text: 'What a website costs by business type', oneline: "typical ranges for tradies, clinics, cafes and other common businesses." },
       {
         type: 'table',
         headers: ['Business type', 'Typical AUD cost', 'What drives it'],
@@ -1345,7 +1353,7 @@ export const LANDING_PAGES = [
         type: 'p',
         html: 'A tradie who mainly needs to be found on Google and take quote requests sits at the lower end. A retailer selling 200 products with live stock levels sits much higher, because there is more to build and test.',
       },
-      { type: 'h2', text: 'Why the same brief gets quotes ten times apart' },
+      { type: 'h2', text: 'Why the same brief gets quotes ten times apart', oneline: "overheads, platform and process explain most of the gap, not quality." },
       {
         type: 'p',
         html: 'Send an identical five-page brief to six Australian providers and you will get numbers between roughly $900 and $12,000. That is not because five of them are lying. "A website" describes an outcome, not a scope of work. Four things drive the difference.',
@@ -1385,7 +1393,7 @@ export const LANDING_PAGES = [
         type: 'p',
         html: 'A site built without clean structure, structured data, sensible URLs and fast loading has to be fixed later, and fixing is dearer than building it right. Some quotes include this. Many do not, then sell it back to you as a monthly retainer.',
       },
-      { type: 'h2', text: 'The number nobody quotes: the five-year total' },
+      { type: 'h2', text: 'The number nobody quotes: the five-year total', oneline: "add hosting, plans and changes to the build price to compare fairly." },
       {
         type: 'p',
         html: 'Comparing build prices is comparing the deposit, not the mortgage. Here is what the same small business site costs over five years on each route.',
@@ -1405,7 +1413,7 @@ export const LANDING_PAGES = [
         type: 'p',
         html: 'Two things stand out. The DIY route is cheapest in cash, but you own nothing at the end and the fee never stops. And WordPress, often chosen because it seems economical, is frequently the second most expensive route over five years once plugin licences and security maintenance are counted. <a href="/wordpress-vs-custom-website/" class="color-green-900">WordPress vs a custom website</a> goes through that in detail.',
       },
-      { type: 'h2', text: 'Website hosting costs in Australia: $0 to about $65 a month' },
+      { type: 'h2', text: 'Website hosting costs in Australia: $0 to about $65 a month', oneline: "what each hosting option costs and which plans allow business use." },
       {
         type: 'p',
         html: 'Hosting is the ongoing cost of keeping the site live, and it depends mostly on what the site is built with.',
@@ -1424,7 +1432,7 @@ export const LANDING_PAGES = [
         type: 'p',
         html: 'One catch worth knowing: free plans are not all equal. Vercel\'s free Hobby plan is for personal, non-commercial projects, so a business site on Vercel needs the Pro plan. Cloudflare Pages is a common free option for static business sites. Also watch introductory hosting rates that renew at several times the price. <a href="/website-hosting-cost-australia/" class="color-green-900">What website hosting actually costs</a> has the platform-by-platform figures and renewal prices.',
       },
-      { type: 'h2', text: 'The costs most guides leave out' },
+      { type: 'h2', text: 'The costs most guides leave out', oneline: "domain, copywriting, photos, integrations and your own time." },
       {
         type: 'ul',
         items: [
@@ -1435,7 +1443,7 @@ export const LANDING_PAGES = [
           '<strong>Changes after launch.</strong> Ask what a small edit costs before you sign, and whether you can make it yourself.',
         ],
       },
-      { type: 'h2', text: 'What you should be paying for at any price' },
+      { type: 'h2', text: 'What you should be paying for at any price', oneline: "the minimum every quote should include, whatever it costs." },
       {
         type: 'p',
         html: 'These are not extras. If a quote treats them as add-ons, that tells you something about the quote.',
@@ -1451,7 +1459,7 @@ export const LANDING_PAGES = [
           '<strong>Ownership of the code and accounts.</strong> Repository, domain and hosting in your name.',
         ],
       },
-      { type: 'h2', text: 'One-off payment or monthly plan?' },
+      { type: 'h2', text: 'One-off payment or monthly plan?', oneline: "paying once usually costs less over five years; monthly spreads the cash." },
       {
         type: 'p',
         html: '<strong>One-off (best for most businesses).</strong> You pay for the build, own the site outright, and only pay small ongoing costs for a domain and hosting. You are never trapped.',
@@ -1460,7 +1468,7 @@ export const LANDING_PAGES = [
         type: 'p',
         html: '<strong>Monthly website plans ($50–$200 a month).</strong> Low upfront cost and someone maintains it for you, but often you never own the site. Over three years, $100 a month is $3,600, which is often more than a custom build would have cost. Always ask: <em>"If I stop paying, do I keep my website and my domain?"</em>',
       },
-      { type: 'h2', text: 'Red flags when comparing website quotes' },
+      { type: 'h2', text: 'Red flags when comparing website quotes', oneline: "warning signs that a cheap quote will cost more later." },
       {
         type: 'ul',
         items: [
@@ -1472,7 +1480,7 @@ export const LANDING_PAGES = [
           '<strong>No preview until the end.</strong> You should be able to see progress on a staging link.',
         ],
       },
-      { type: 'h2', text: 'How to compare quotes fairly' },
+      { type: 'h2', text: 'How to compare quotes fairly', oneline: "put every quote on the same scope and the same five-year horizon." },
       {
         type: 'p',
         html: 'Send every provider the same brief and ask each one these five questions. The answers make a $3,000 quote and a $12,000 quote comparable.',
@@ -1491,7 +1499,7 @@ export const LANDING_PAGES = [
         type: 'p',
         html: 'The last one matters more than people expect. Plenty of quotes that present as local are built offshore. That can work well. The problem is when it is not disclosed and you pay a local premium for it. Our <a href="/freelancer-vs-web-design-agency/" class="color-green-900">freelancer vs agency comparison</a> goes further, and the <a href="/small-business-website-checklist/" class="color-green-900">small business website checklist</a> is a neutral way to check any provider, including us.',
       },
-      { type: 'h2', text: 'So what should a small business spend?' },
+      { type: 'h2', text: 'So what should a small business spend?', oneline: "a practical budget by stage of business." },
       {
         type: 'table',
         headers: ['Situation', 'Sensible AUD range'],
@@ -1507,7 +1515,7 @@ export const LANDING_PAGES = [
         type: 'p',
         html: 'Spending $15,000 on a site for a business turning over $200,000 is hard to justify. So is spending $500 on a site that is meant to be your main sales channel. Match the spend to what the site has to do.',
       },
-      { type: 'h2', text: 'Where we sit, disclosed' },
+      { type: 'h2', text: 'Where we sit, disclosed', oneline: "our own starting prices, so you can compare them with the market." },
       {
         type: 'p',
         html: `Since this is our site, here are our own starting points, in AUD: <strong>${TIER.starter.priceLabel}</strong> for ${TIER.starter.includes[0]}, <strong>${TIER.business.priceLabel}</strong> for ${TIER.business.includes[0].toLowerCase()}, <strong>${TIER.unlimited.priceLabel}</strong> for ${TIER.unlimited.includes[0].replace(', no cap', '')}, and from <strong>${TIER.ecommerce.priceLabel}</strong> for an online store or web app. Most projects land in the ${TYPICAL_RANGE.label} range. Starter and up can be paid in ${TIER.starter.payments} instalments.`,
@@ -1791,15 +1799,19 @@ export const LANDING_PAGES = [
   },
   {
     slug: 'small-business-website-checklist',
+    format: 'v2',
+    heroImage: '/assets/imgs/page/landing/small-business-website-checklist-hero.png',
+    answer: "Before a small business website goes live, check seven areas: domain and hosting, the must-have pages, mobile design, SEO basics, speed, legal pages and analytics. This 27-point checklist covers each one, with what to check and why it matters.",
+    takeaways: ["Seven areas, <b>27 checks</b>: domain, pages, design, SEO, speed, legal and analytics.", "Most launch problems are <b>missing basics</b>: page titles, a privacy policy, analytics, or slow mobile pages.", "Test everything <b>on a phone</b>; that is where most Australian visitors are.", "Tick it off yourself, or have us build a site that passes every item."],
     image: '/assets/imgs/page/landing/small-business-website-checklist.webp',
-    imageAlt: 'Small business website checklist completed beside a launched website',
+    imageAlt: "Illustration of a checklist with ticked boxes beside a website, with icons for domain, security, speed, SEO and analytics",
     metaTitle: 'Small Business Website Checklist (Australia 2026)',
     metaDescription: 'The complete small business website checklist for 2026 — 27 things every business site needs before launch, from domain to analytics.',
     eyebrow: 'Free Guide · Australia 2026',
     h1: 'Small business website checklist (27 things)',
     lead: 'Everything your small business website needs before it goes live — from domain and hosting through to SEO, speed, legal pages, and analytics. Work through each section and you will have a site that actually works for your business.',
     priceTiers: [],
-    lastUpdated: '2026-09-21',
+    lastUpdated: '2026-11-04',
     schemaType: 'Article',
     breadcrumb: 'Small Business Website Checklist',
     related: [
@@ -1808,7 +1820,7 @@ export const LANDING_PAGES = [
       { href: '/pricing/', label: 'All pricing' },
     ],
     body: [
-      { type: 'h2', text: '1. Domain & hosting' },
+      { type: 'h2', text: '1. Domain & hosting', oneline: "own your domain, use HTTPS, and pick hosting that allows business use." },
       { type: 'p', html: 'Your foundation. Get these right before anything else.' },
       { type: 'h3', text: 'Custom domain name registered' },
       {
@@ -1830,7 +1842,7 @@ export const LANDING_PAGES = [
         type: 'p',
         html: '<code>hello@yourbusiness.com.au</code> looks far more credible than <code>yourbusiness@gmail.com</code>. Google Workspace costs around $9/month. Zoho Mail is free for one domain.',
       },
-      { type: 'h2', text: '2. Must-have pages' },
+      { type: 'h2', text: '2. Must-have pages', oneline: "home, services, about, contact and the pages that answer buyer questions." },
       { type: 'p', html: 'Every small business website needs these pages — missing any of them costs you leads.' },
       { type: 'h3', text: 'Homepage with a clear value proposition' },
       {
@@ -1862,7 +1874,7 @@ export const LANDING_PAGES = [
         type: 'p',
         html: 'Answers common objections before the visitor has to ask. Also earns a "People Also Ask" rich result in Google when properly marked up with FAQPage schema — free real estate in search results.',
       },
-      { type: 'h2', text: '3. Design & mobile' },
+      { type: 'h2', text: '3. Design & mobile', oneline: "readable, fast and easy to tap on a phone." },
       { type: 'p', html: 'Over 60% of Australian small business web traffic is mobile. If your site breaks on a phone, you are losing more than half your visitors.' },
       { type: 'h3', text: 'Fully mobile-responsive design' },
       {
@@ -1884,7 +1896,7 @@ export const LANDING_PAGES = [
         type: 'p',
         html: 'Images over 500KB slow your site down. Use WebP format. Compress images with Squoosh or TinyPNG before uploading. Every image needs descriptive alt text for SEO and accessibility.',
       },
-      { type: 'h2', text: '4. SEO basics' },
+      { type: 'h2', text: '4. SEO basics', oneline: "titles, descriptions, headings, structured data and a sitemap." },
       { type: 'p', html: 'You don\'t need to be an SEO expert. These basics ensure Google can find and understand your site.' },
       { type: 'h3', text: 'Unique title tags on every page' },
       {
@@ -1916,7 +1928,7 @@ export const LANDING_PAGES = [
         type: 'p',
         html: 'Make sure robots.txt isn\'t accidentally blocking Google. Every page should have a self-referencing canonical tag to prevent duplicate content issues.',
       },
-      { type: 'h2', text: '5. Speed & performance' },
+      { type: 'h2', text: '5. Speed & performance', oneline: "pass Core Web Vitals; slow pages lose visitors and rankings." },
       { type: 'p', html: 'Google uses page speed as a ranking signal. A 1-second delay in load time reduces conversions by around 7%.' },
       { type: 'h3', text: 'Google PageSpeed score above 80 on mobile' },
       {
@@ -1933,7 +1945,7 @@ export const LANDING_PAGES = [
         type: 'p',
         html: 'WebP images are 25–35% smaller than JPEGs at the same quality. Setting explicit width/height on images prevents layout shifts (improves CLS score).',
       },
-      { type: 'h2', text: '6. Legal pages' },
+      { type: 'h2', text: '6. Legal pages', oneline: "privacy policy and terms, required if you collect any personal data." },
       { type: 'p', html: 'Required under Australian law for any business collecting personal data (contact forms, email sign-ups, purchases).' },
       { type: 'h3', text: 'Privacy Policy page' },
       {
@@ -1950,7 +1962,7 @@ export const LANDING_PAGES = [
         type: 'p',
         html: 'Displaying your ABN in your footer builds trust and is expected by Australian B2B clients. For e-commerce, it\'s often legally required on invoices and receipts.',
       },
-      { type: 'h2', text: '7. Analytics & tracking' },
+      { type: 'h2', text: '7. Analytics & tracking', oneline: "measure visits and enquiries so you know what works." },
       { type: 'p', html: 'You can\'t improve what you don\'t measure. These take 30 minutes to set up and pay dividends forever.' },
       { type: 'h3', text: 'Google Analytics 4 installed' },
       {
@@ -1967,7 +1979,7 @@ export const LANDING_PAGES = [
         type: 'p',
         html: 'Bing powers Microsoft Copilot and other AI web search. Import from Google Search Console in one click. Takes 5 minutes, gives you another traffic source.',
       },
-      { type: 'h2', text: 'Don\'t want to do this yourself?' },
+      { type: 'h2', text: 'Don\'t want to do this yourself?', oneline: "we build sites that pass every item on this list." },
       {
         type: 'p',
         html: 'Build First Site builds small business websites with every item on this checklist handled — domain setup, SEO, speed optimisation, legal pages, Google Analytics, and Google Search Console. <a href="/hire-website-builder/" class="color-green-900">See how we build websites →</a>',
@@ -1992,309 +2004,103 @@ export const LANDING_PAGES = [
   },
   {
     slug: 'hire-website-builder',
+    format: 'v2',
     image: '/assets/imgs/page/landing/hire-website-builder.webp',
-    imageAlt: 'Working directly with a website builder reviewing a design together',
-    metaTitle: 'Hire Someone to Build a Website in Australia',
-    metaDescription: 'Need someone to make you a website? Hire website developers for small business in Australia: free homepage design first, a written estimate after a short call, and you own the code.',
-    lastUpdated: '2026-10-12',
-    eyebrow: 'Australia · Professional Website Builder',
+    heroImage: '/assets/imgs/page/landing/hire-website-builder-hero.png',
+    imageAlt: 'Illustration of a small-business homepage on a laptop and phone, beside a written estimate and a key for code ownership',
+    metaTitle: 'Hire Someone to Build a Website in Australia | Website Developers for Small Business',
+    metaDescription: 'Need someone to build a website for you? Website developers for small business in Australia: free homepage design first, a written estimate after a short call, and you own the code.',
+    lastUpdated: '2026-11-04',
+    eyebrow: 'Website developers for small business · Australia',
     h1: 'Hire someone to build your website',
-    lead: 'We are website developers for small business — no templates, no page builders, no monthly fees. We will design your homepage free before you commit, so you can judge the work on your own business first.',
-    priceTiers: [
-      'starter',
-      'business',
-      'ecommerce',
-      'custom-software',
+    lead: 'You deal directly with the engineer who writes your code, your day-to-day contact is in Australia, and we design your homepage free before you commit to anything.',
+    answer: 'To hire someone to build a website in Australia, send a two-line brief (what your business does and what visitors should do), see a homepage design, then get a written estimate listing pages, features and timeline. Before paying, check that the code, domain and hosting will be in your name and that someone is responsible after launch.',
+    takeaways: [
+      'There are <b>four ways to hire</b>: freelance marketplaces, task platforms, platform partners (Wix, Squarespace) and a developer or small studio directly.',
+      'A good quote is <b>written</b>, lists pages and features, and says who supports the site after launch.',
+      '<b>Ownership matters</b>: if the code and hosting are not in your name, you are renting the site.',
+      'With us you <b>see your homepage designed first</b>, in about two business days, before paying anything.',
     ],
     schemaType: 'Service',
     breadcrumb: 'Hire a Website Builder',
     related: [
       { href: '/how-much-does-a-website-cost-australia/', label: 'Website cost guide' },
-      { href: '/nextjs-development/', label: 'Next.js development' },
-      { href: '/ecommerce-development/', label: 'E-commerce development' },
+      { href: '/freelancer-vs-web-design-agency/', label: 'Freelancer vs agency' },
+      { href: '/work/', label: 'Live sites we have built' },
     ],
     body: [
-      { type: 'h2', text: 'What website developers for small business should actually give you' },
-      {
-        type: 'p',
-        html: 'Most small businesses do not need an agency. They need a developer who returns calls, gives a clear written estimate, and hands over the code at the end. That is the whole job, and it is what this page is about.',
-      },
-      { type: 'h2', text: 'Website developers for small business in Australia: who you actually deal with' },
-      {
-        type: 'p',
-        html: 'When you search for website developers in Australia you mostly find agencies, where a salesperson takes the brief and the build is passed along the chain. With us there is no chain. You deal directly with the engineer who writes your code, and your day-to-day contact for calls and paperwork is in Australia. That is why a quote comes back in one business day and a change request does not need a meeting.',
-      },
-      {
-        type: 'ul',
-        items: [
-          '<strong>One accountable builder</strong> from the first call to launch, and after it.',
-          '<strong>Built for small business budgets:</strong> priced per project, no hourly billing, and you can pay in stages.',
-          '<strong>Small business features that matter:</strong> click-to-call, quote and booking forms, Google Business Profile setup, and fast loading on phones, where most Australian visitors are.',
-          '<strong>Proof you can check:</strong> the <a href="/work/" class="color-green-900">live sites we have built</a>, not mock-ups.',
-        ],
-      },
-      { type: 'h2', text: 'Need someone to make you a website? Start here' },
-      { type: 'p', html: 'If you have never hired anyone for this before, the process is shorter than people expect:' },
-      {
-        type: 'ol',
-        items: [
-          '<strong>Send a two-line brief:</strong> what the business does and what the site should get people to do (call, book, buy, enquire). Use the <a href="/free-homepage-design/" class="color-green-900">free homepage design form</a> or <a href="/contact/" class="color-green-900">contact us</a>.',
-          '<strong>See your homepage designed</strong> in about two business days, before you pay anything.',
-          '<strong>Get a written estimate</strong> for the full site, with pages and timeline listed.',
-          '<strong>Approve, review on a live link, launch.</strong> The code, domain and hosting are in your name.',
-        ],
-      },
-      { type: 'h2', text: 'Where can you hire someone to build a website?' },
-      {
-        type: 'p',
-        html: 'There are four realistic routes in Australia, and the honest differences between them are rarely written down by the people selling each one. Here they are.',
-      },
-      {
-        type: 'table',
-        headers: [
-          'Where',
-          'Typical price',
-          'What you are actually getting',
-          'Main risk',
-        ],
-        rows: [
-          [
-            'Freelance marketplace (Upwork, Fiverr, Freelancer)',
-            'Lowest advertised',
-            'A bidding pool. You screen and manage the person yourself.',
-            'Quality varies enormously and the platform takes a cut of every dollar. Vetting is entirely on you.',
-          ],
-          [
-            'Local task platform (Airtasker)',
-            'Low',
-            'Someone nearby who does websites among other things.',
-            'Rarely a specialist. Ongoing support after launch is unlikely.',
-          ],
-          [
-            'Platform marketplace (Wix, Squarespace partners)',
-            'Mid',
-            'A certified builder — for that platform only.',
-            'The result is locked to that platform, and the monthly fee never stops.',
-          ],
-          [
-            'Direct with a developer or small studio',
-            'Mid',
-            'One person accountable end to end.',
-            'You have to find a good one. Harder to compare on price alone.',
-          ],
-        ],
-      },
-      {
-        type: 'p',
-        html: 'We are the fourth. We are not going to pretend the marketplaces are useless — if you need a logo tweaked or one page changed, Fiverr is genuinely the right tool and we would rather you used it. The case for hiring directly is a business website you intend to keep for years, where somebody needs to still be there in month eight when you want a new page.',
-      },
-      { type: 'h2', text: 'How much does it cost to hire someone to build a website?' },
-      {
-        type: 'p',
-        html: 'Typical starting prices are on the <a href="/pricing/" class="color-green-900">pricing page</a>, and <a href="/how-much-does-a-website-cost-australia/" class="color-green-900">what a website costs in Australia</a> covers the wider market including what agencies charge. Your own estimate follows a short call about what you need.',
-      },
-      {
-        type: 'p',
-        html: 'Two costs people forget when comparing quotes. First, the monthly fee — a marketplace build on Wix or Squarespace carries one indefinitely, and over five years that usually exceeds the build price. Second, the exit cost: if you do not own the code, moving to another developer means building it again. Both are covered in the <a href="/affordable-website-design-small-business/" class="color-green-900">five-year cost comparison</a>, and <a href="/website-hosting-cost-australia/" class="color-green-900">what website hosting costs</a> has the platform-by-platform numbers.',
-      },
-      { type: 'h2', text: 'Paying someone to build a website: what the money should buy' },
-      {
-        type: 'p',
-        html: 'When you pay someone to build a website, the price should cover more than the pages. Before you agree to any quote, check that it includes all of these, in writing:',
-      },
-      {
-        type: 'ul',
-        items: [
-          '<strong>A written scope and estimate.</strong> Which pages, which features, how many rounds of changes.',
-          '<strong>Design that is yours, not a reskinned template.</strong> Ask to see the homepage before you pay the bulk of the fee. We design yours free first.',
-          '<strong>The basics of being found.</strong> Page titles, structured data, a sitemap, mobile speed and Google Business Profile setup.',
-          '<strong>The code, domain and hosting in your name.</strong> Otherwise you are renting the site, not buying it.',
-          '<strong>Support after launch.</strong> Who fixes a broken form in month three, and what it costs.',
-        ],
-      },
-      { type: 'p', html: 'If a quote leaves any of these out, it is not cheaper; the cost has just moved to later.' },
-      { type: 'h2', text: 'Looking for a small business website builder?' },
-      {
-        type: 'p',
-        html: '"Website builder" means two different things. One is a do-it-yourself tool such as Wix or Squarespace, where you pay monthly and build the site yourself. The other is a person who builds it for you. If you have the time and a simple need, a DIY tool is a reasonable start, and our <a href="/wix-vs-custom-website/" class="color-green-900">Wix vs custom comparison</a> is honest about when it is enough. If you would rather spend that time running the business, you want the second kind, and that is what we are. The table further down compares the two side by side.',
-      },
-      { type: 'h2', text: 'What to have ready before you hire anyone' },
-      {
-        type: 'p',
-        html: 'The single biggest cause of a website project going over time and over budget is not the developer. It is starting without knowing what the site is for. Half an hour on this list will save you weeks:',
-      },
-      {
-        type: 'ol',
-        items: [
-          '<strong>One sentence on what the site must do.</strong> Get enquiries, take bookings, sell products, or be somewhere credible to send people. These lead to different builds.',
-          '<strong>Your page list.</strong> Home, About, Services, Contact is four. Every service on its own page is more. Page count is what most website estimates are based on, including ours.',
-          '<strong>Who writes the words.</strong> The most common reason a build stalls is waiting on content from the client. Decide upfront whether that is you or the developer.',
-          '<strong>Photos.</strong> Real photos of your work, premises or team beat stock every time. If you do not have them, budget for a photographer or say so early.',
-          '<strong>Anything it has to connect to.</strong> Booking system, payment gateway, CRM, accounting software. These change the quote and are expensive to bolt on afterwards.',
-        ],
-      },
-      { type: 'h2', text: 'What to check before you pay a deposit' },
-      {
-        type: 'ul',
-        items: [
-          '<strong>Ask who owns the code.</strong> Get it in writing. If the answer is vague, or the site only works on their hosting, you are renting.',
-          '<strong>Open two of their past sites on your phone.</strong> Not the portfolio screenshots — the live sites. Most Australian traffic is mobile and this takes thirty seconds.',
-          '<strong>Ask what happens after launch.</strong> Who fixes a broken form in month three, and at what price.',
-          '<strong>Ask for a written estimate and scope.</strong> An hourly estimate with no cap is not a quote.',
-          '<strong>Check they will still be contactable.</strong> A marketplace account that goes quiet is a real risk and the platform will not rebuild your site for you.',
-        ],
-      },
-      {
-        type: 'p',
-        html: 'A fuller version of this is in our guide on <a href="/guides/how-to-choose-a-web-developer/" class="color-green-900">how to choose a web developer</a>, and <a href="/freelancer-vs-web-design-agency/" class="color-green-900">freelancer vs agency</a> covers the trade-off if you are weighing a bigger shop.',
-      },
-      { type: 'h2', text: 'Why hire a website builder instead of doing it yourself?' },
-      {
-        type: 'p',
-        html: '<a href="/wix-vs-custom-website/" class="color-green-900">Wix</a> and <a href="/squarespace-vs-custom-website/" class="color-green-900">Squarespace</a> look easy — until you need something they can\'t do. Here is what you actually get when you hire a professional website builder instead.',
-      },
-      {
-        type: 'table',
-        headers: [
-          '',
-          'Hire Build First Site',
-          'DIY (Wix / Squarespace)',
-        ],
-        rows: [
-          [
-            'Design',
-            '✓ Custom-built for your brand',
-            'Template — looks like thousands of other sites',
-          ],
-          [
-            'Page speed',
-            '✓ 90–100 Lighthouse score',
-            'Often 40–60 on mobile',
-          ],
-          [
-            'SEO',
-            '✓ Schema, sitemap, semantic HTML included',
-            'Basic — limited structured data',
-          ],
-          [
-            'Monthly cost',
-            '✓ $0/mo on a free hosting plan such as Cloudflare Pages',
-            '$17–62/mo for as long as you keep it',
-          ],
-          [
-            'Code ownership',
-            '✓ Full GitHub repo on launch day',
-            'Platform owns everything',
-          ],
-          [
-            'E-commerce fees',
-            '✓ Only Stripe\'s processing fee — nothing to us',
-            'Up to 3% platform fee + monthly plan',
-          ],
-          [
-            'Custom features',
-            '✓ Anything is possible',
-            'Limited to what the platform offers',
-          ],
-          [
-            'Time you spend',
-            '✓ A brief and a couple of review sessions',
-            '40–100 hours learning and building',
-          ],
-        ],
-      },
-      { type: 'h2', text: 'Every type of website, built right' },
-      {
-        type: 'ul',
-        items: [
-          '<strong>Starter websites</strong> — about 5–7 days. Three to five pages for new businesses, sole traders and simple service businesses. Fast, mobile-first, SEO foundations included.',
-          '<strong>Business websites</strong> — about 2–3 weeks. Multi-page websites for services, professional firms, trades, hospitality, and local businesses. SEO-optimised from day one.',
-          '<strong>E-commerce stores</strong> — about 4–6 weeks. Custom online stores with Stripe checkout, product management, and admin dashboard. No Shopify monthly fees.',
-          '<strong>Web and AI applications</strong> — scoped per project. SaaS products, portals, AI chatbots and automation tools, integrated with OpenAI, Claude and Gemini — production-ready, not demos.',
-        ],
-      },
-      { type: 'h2', text: 'Getting your website built — five steps' },
-      {
-        type: 'ol',
-        items: [
-          '<strong>Tell us about your project.</strong> Fill in the contact form or book a free 30-minute call. Tell us what you need, your timeline, and your budget.',
-          '<strong>Receive a written proposal.</strong> After a short call you get a written proposal with scope, estimate and timeline, plus your homepage designed free. No hourly rates, no scope creep.',
-          'Work begins once you approve the scope.',
-          '<strong>Review your site on a live staging link.</strong> You watch your site take shape in real time, with revisions included and feedback handled directly.',
-          '<strong>Launch and full code handover.</strong> Your site goes live and you receive the full code repository. It is yours, permanently.',
-        ],
-      },
-      { type: 'h2', text: 'Further reading' },
-      {
-        type: 'p',
-        html: 'Before you hire anyone: <a href="/freelancer-vs-web-design-agency/" class="color-green-900">freelancer vs agency</a>, <a href="/how-much-does-a-website-cost-australia/" class="color-green-900">what a website costs</a>.',
-      },
+      { type: 'h2', text: 'Who you actually deal with', oneline: 'one accountable builder from the first call to launch, and after it.' },
+      { type: 'p', html: 'Most small businesses do not need an agency. They need a developer who returns calls, gives a clear written estimate and hands over the code at the end. When you search for website developers in Australia you mostly find agencies, where a salesperson takes the brief and the build is passed along a chain. With us there is no chain.' },
+      { type: 'cards', items: [
+        { icon: '👨‍💻', title: 'Direct access to the builder', text: 'You talk to the engineer who writes your code. No account managers, no hand-offs.' },
+        { icon: '📞', title: 'Australian contact', text: 'Your day-to-day contact for calls and paperwork is in Australia, in your timezone.' },
+        { icon: '🔑', title: 'You own everything', text: 'Code, domain and hosting are in your name on launch day. No lock-in, no platform fee.' },
+      ]},
+      { type: 'callout', tone: 'note', title: 'Proof you can check', html: 'Open the <a href="/work/">live sites we have built</a> on your phone. Concept builds are labelled as concepts; client sites are on their own domains.' },
+
+      { type: 'h2', text: 'Need someone to make you a website? Here is how it works', toc: 'How it works', oneline: 'four steps, and you see the design before you pay anything.' },
+      { type: 'image', src: '/assets/imgs/page/landing/hire-website-builder-process.png', fallback: '/assets/imgs/page/landing/hire-website-builder.webp', alt: 'Four-step journey: send a brief, see a free homepage design, get a written estimate, launch', caption: 'Brief → free homepage design → written estimate → launch.' },
+      { type: 'timeline', items: [
+        { when: 'Day 1 · Send a two-line brief', text: 'What the business does and what the site should get people to do: call, book, buy or enquire. Use the free homepage design form or contact us.' },
+        { when: 'About 2 business days · See your homepage', text: 'Designed with your real business name and services, before you pay anything.' },
+        { when: 'After a short call · Written estimate', text: 'Pages, features and timeline listed, phase by phase if that suits your budget.' },
+        { when: 'Launch · Review on a live link', text: 'Approve, go live, and receive the code, domain and hosting in your name.' },
+      ]},
+      { type: 'cta', title: 'Want to see your homepage first?', text: 'Send two lines about your business. We design it free, so you judge the work, not the pitch.', button: 'Get a free homepage design →', href: '/free-homepage-design/' },
+
+      { type: 'h2', text: 'Where can you hire someone to build a website?', toc: 'Where to hire', oneline: 'four realistic routes in Australia, each with a different main risk.' },
+      { type: 'table', headers: ['Where', 'What you are actually getting', 'Main risk'], rows: [
+        ['Freelance marketplace (Upwork, Fiverr, Freelancer)', 'A bidding pool. You screen and manage the person yourself.', 'Quality varies enormously and the platform takes a cut. Vetting is on you.'],
+        ['Local task platform (Airtasker)', 'Someone nearby who does websites among other things.', 'Rarely a specialist. Ongoing support after launch is unlikely.'],
+        ['Platform partner (Wix, Squarespace)', 'A certified builder, for that platform only.', 'Locked to the platform, and the monthly fee never stops.'],
+        ['Direct with a developer or small studio', 'One person accountable end to end.', 'You have to find a good one. Harder to compare on price alone.'],
+      ]},
+      { type: 'p', html: 'We are the fourth. If you need a logo tweaked or one page changed, a marketplace is the right tool. The case for hiring directly is a business website you intend to keep for years, where somebody still needs to be there in month eight when you want a new page.' },
+
+      { type: 'h2', text: 'Hire a builder or do it yourself?', toc: 'Hire vs DIY', oneline: 'DIY tools are cheap to start and costly to keep; a built site costs once and is yours.' },
+      { type: 'image', src: '/assets/imgs/page/landing/hire-website-builder-ownership.png', fallback: '/assets/imgs/page/landing/hire-website-builder.webp', alt: 'Comparison: a website locked inside a platform with a recurring monthly fee, versus a website you own with the key and the code', caption: 'Renting a site on a platform vs owning the code.' },
+      { type: 'compare',
+        bad: { title: 'DIY builder (Wix, Squarespace)', items: ['A template that looks like thousands of others', 'Often 40–60 mobile speed score', '$17–62 a month for as long as you keep it', 'The platform owns the site', '40–100 hours of your time'] },
+        good: { title: 'Hire Build First Site', items: ['Designed for your business and customers', '90–100 Lighthouse target on mobile', 'No platform fee; free hosting plans such as Cloudflare Pages suit most business sites', 'Full code repository on launch day', 'A brief and a couple of review sessions'] } },
+      { type: 'p', html: 'If you have the time and a simple need, a DIY tool is a reasonable start; our <a href="/wix-vs-custom-website/">Wix vs custom comparison</a> is honest about when it is enough.' },
+
+      { type: 'h2', text: 'How much does it cost to hire someone to build a website?', toc: 'What it costs', oneline: 'it depends on pages and features; you get a written estimate after a short call.' },
+      { type: 'p', html: 'Typical starting points are on the <a href="/pricing/">pricing page</a>, and <a href="/how-much-does-a-website-cost-australia/">what a website costs in Australia</a> covers the wider market, including what agencies charge.' },
+      { type: 'callout', tone: 'warn', title: 'Two costs people forget', html: 'The monthly fee on a platform build, which over five years usually exceeds the build price, and the exit cost: if you do not own the code, moving developers means building again. See the <a href="/affordable-website-design-small-business/">five-year cost comparison</a>.' },
+
+      { type: 'h2', text: 'What your quote should include', toc: 'Check your quote', oneline: 'tick these off before you pay a deposit to anyone, including us.' },
+      { type: 'checklist', title: 'Before you pay a deposit', doneText: 'All five covered. That quote is worth taking seriously.', items: [
+        { t: 'A written scope and estimate', w: 'Pages, features, rounds of changes. An hourly rate with no cap is not a quote.' },
+        { t: 'Design that is yours', w: 'See the homepage before paying the bulk of the fee. We design yours free first.' },
+        { t: 'The basics of being found', w: 'Page titles, structured data, sitemap, mobile speed, Google Business Profile setup.' },
+        { t: 'Code, domain and hosting in your name', w: 'Get it in writing. Otherwise you are renting.' },
+        { t: 'Support after launch', w: 'Who fixes a broken form in month three, and what it costs.' },
+      ]},
+
+      { type: 'h2', text: 'What to have ready before you hire anyone', toc: 'What to prepare', oneline: 'half an hour on these five saves weeks of back and forth.' },
+      { type: 'cards', cols: 2, items: [
+        { icon: '🎯', title: 'What the site must do', text: 'Get enquiries, take bookings, sell, or be somewhere credible to send people. Each leads to a different build.' },
+        { icon: '📄', title: 'Your page list', text: 'Home, About, Services, Contact is four. Every service on its own page is more. Page count drives most estimates.' },
+        { icon: '✍️', title: 'Who writes the words', text: 'Builds most often stall waiting on content. Decide up front whether that is you or the developer.' },
+        { icon: '🔌', title: 'What it connects to', text: 'Booking system, payments, CRM, accounting software. These change the estimate and are costly to bolt on later.' },
+      ]},
+
+      { type: 'h2', text: 'What we build', oneline: 'from a few pages for a sole trader to custom software.' },
+      { type: 'stats', items: [
+        { value: '5–7 days', label: 'Starter site, 3–5 pages' },
+        { value: '2–3 weeks', label: 'Business site, up to 10 pages' },
+        { value: '4–6 weeks', label: 'Online store with Stripe checkout' },
+      ]},
+      { type: 'p', html: 'Web and AI applications, portals and automation are scoped per project. See <a href="/ecommerce-development/">e-commerce development</a> and <a href="/services/ai-automation/">AI and automation</a>.' },
+
       { type: 'h2', text: 'Common questions' },
-      {
-        type: 'faq',
-        q: 'How do I find good website developers for my small business in Australia?',
-        a: 'Look past the portfolio screenshots. Open two or three of their live sites on your phone, ask who owns the code at the end, ask for a written estimate with a clear scope instead of open-ended hourly billing, and ask who will fix things after launch. A good small business developer answers all four in writing. We publish our prices, show live client sites, hand over the full code, and design your homepage free before you commit.',
-      },
-      {
-        type: 'faq',
-        q: 'I need someone to make me a website. Where do I start?',
-        a: 'Write two lines: what your business does, and what you want visitors to do (call, book, buy or enquire). Send that through our free homepage design form. You see your homepage designed in about two business days, then get a written estimate for the whole site. There is nothing to pay until you approve the quote.',
-      },
-      {
-        type: 'faq',
-        q: 'What is the average cost to hire someone to build a website?',
-        a: 'It depends on what you need: the number of pages, features such as bookings, payments or logins, and any integrations. After a short call we send a written estimate, broken into phases if that suits your budget. Typical starting points are on our <a href="/pricing/" class="color-green-900">pricing page</a>.',
-      },
-      {
-        type: 'faq',
-        q: 'Is it worth paying someone to build a website?',
-        a: 'For a business, usually yes, once you count your own time. A DIY builder costs roughly $17 to $62 a month on Wix or Squarespace business plans for as long as you keep the site, plus the 40 to 100 hours it takes to learn and build, and you still own nothing at the end. Paying a developer once gets you a faster site that you own outright. If you are just testing an idea, a DIY tool is fine to start with.',
-      },
-      {
-        type: 'faq',
-        q: 'Can I hire someone to build a website for me?',
-        a: 'Yes, and you do not need to understand any of the technical side to do it. Tell us what the business does and what you want the site to achieve, and you get a written scope and estimate within one business day. We design your homepage before you commit to anything, so you can judge the work rather than the pitch.',
-      },
-      {
-        type: 'faq',
-        q: 'Can ChatGPT build me a website?',
-        a: 'It can produce a working page, and for a personal project or a rough prototype that is genuinely useful. What it does not do is decide what your business needs the site to say, write copy that reflects how you actually sell, handle hosting and domains, set up the technical SEO, or be responsible when a form stops delivering enquiries six months later. AI is part of how we build too — it is a tool in the process, not a replacement for someone being accountable for the result.',
-      },
-      {
-        type: 'faq',
-        q: 'Where can I hire someone to build a website near me?',
-        a: 'For most small business websites, proximity matters less than it used to — the work is done remotely and reviewed on a live link either way. What matters is a local point of contact in your timezone, which is what we have: your day-to-day contact is in Australia. We build for businesses across Australia, including <a href="/web-design-melbourne/" class="color-green-900">web design in Melbourne</a> and <a href="/web-design-sydney/" class="color-green-900">web design in Sydney</a>, plus Brisbane, Perth, Adelaide and Canberra.',
-      },
-      {
-        type: 'faq',
-        q: 'Can I hire someone to build a website for my small business?',
-        a: 'Yes, and that is exactly what we do. You tell us what the business needs, we send a written scope and estimate within one business day, and we design your homepage free before you commit to anything. You are hiring the person who writes the code, not an account manager.',
-      },
-      {
-        type: 'faq',
-        q: 'How much does it cost to hire a website builder in Australia?',
-        a: 'It depends on what you need: the number of pages, features such as bookings, payments or logins, and any integrations. After a short call we send a written estimate, broken into phases if that suits your budget. Typical starting points are on our <a href="/pricing/" class="color-green-900">pricing page</a>.',
-      },
-      {
-        type: 'faq',
-        q: 'How long does it take to get a website built?',
-        a: 'Starter sites (3–5 pages): 5–7 days. Business websites: 2–3 weeks. E-commerce stores: 4–6 weeks. Custom applications: scoped per project. Timelines are locked in your proposal before work starts.',
-      },
-      {
-        type: 'faq',
-        q: 'Will I own the website after it is built?',
-        a: 'Yes, completely. You receive the full GitHub repository on your launch day. Host it on Cloudflare Pages (free for most business sites), Vercel Pro, AWS, or your own server. No ongoing fees to us.',
-      },
-      {
-        type: 'faq',
-        q: 'Do I need to know anything about websites?',
-        a: 'Not at all. You bring your business — we handle everything else. Design, development, domain setup, hosting, SEO basics, and a support window after launch.',
-      },
-      {
-        type: 'faq',
-        q: 'Why hire a professional website builder instead of using Wix or Squarespace?',
-        a: 'DIY builders like Wix and Squarespace give you a template. A professional website builder gives you a custom, fast-loading site built specifically for your business — with better SEO, better performance, and no monthly platform fees eating into your revenue.',
-      },
+      { type: 'faq', open: true, q: 'I need someone to build a website for me. Where do I start?', a: 'Write two lines: what your business does, and what you want visitors to do (call, book, buy or enquire). Send that through our free homepage design form. You see your homepage designed in about two business days, then get a written estimate for the whole site. There is nothing to pay until you approve the estimate.' },
+      { type: 'faq', q: 'How do I find good website developers for my small business in Australia?', a: 'Open two or three of their live sites on your phone, ask who owns the code at the end, ask for a written estimate with a clear scope rather than open-ended hourly billing, and ask who fixes things after launch. A good developer answers all four in writing.' },
+      { type: 'faq', q: 'How much does it cost to hire someone to build a website?', a: 'It depends on the number of pages, features such as bookings, payments or logins, and integrations. After a short call we send a written estimate, phase by phase if that suits your budget. Typical starting points are on our pricing page.' },
+      { type: 'faq', q: 'Is it worth paying someone to build a website?', a: 'For a business, usually yes once you count your own time. A DIY builder costs roughly $17 to $62 a month for as long as you keep the site, plus 40 to 100 hours to learn and build, and you own nothing at the end. If you are just testing an idea, a DIY tool is fine to start with.' },
+      { type: 'faq', q: 'Will I own the website after it is built?', a: 'Yes. You receive the full code repository on launch day, and the domain and hosting are in your name. Host it on Cloudflare Pages, Vercel Pro, AWS or your own server, with no ongoing fees to us.' },
+      { type: 'faq', q: 'Where can I hire someone to build a website near me?', a: 'For most small business sites, proximity matters less than a contact in your timezone. The work is reviewed on a live link either way. Your day-to-day contact with us is in Australia, and we build for businesses across the country, including Melbourne, Sydney, Brisbane, Perth, Adelaide and Canberra.' },
+      { type: 'faq', q: 'Can ChatGPT build me a website?', a: 'It can produce a working page, which is useful for a prototype. It does not decide what your business needs the site to say, handle hosting and domains, set up technical SEO, or take responsibility when a form stops delivering enquiries. AI is part of how we build; it is a tool, not a replacement for someone accountable.' },
     ],
   },
   {
@@ -2684,8 +2490,12 @@ export const LANDING_PAGES = [
   },
   {
     slug: 'ndis-website-design',
+    format: 'v2',
+    heroImage: '/assets/imgs/page/landing/ndis-website-design-hero.png',
+    answer: "An NDIS provider website should meet WCAG 2.1 AA accessibility, explain each support in plain English, show service areas and make referrals easy for participants, families and support coordinators. We build accessible, fast NDIS websites with local SEO included, and you own the code.",
+    takeaways: ["<b>WCAG 2.1 AA</b> is the accessibility standard NDIS provider sites should meet.", "Write for <b>two audiences</b>: coordinators checking credibility, families checking fit.", "A <b>page per service</b> and a simple referral form drive enquiries.", "We have no NDIS clients yet; accessibility is a capability we can show and test."],
     image: '/assets/imgs/page/landing/ndis-website-design.webp',
-    imageAlt: 'NDIS provider website passing WCAG 2.1 AA contrast and keyboard tests',
+    imageAlt: "Illustration of an accessible website with large text, an accessibility icon, keyboard navigation and a referral form",
     metaTitle: 'NDIS Website Design Australia | WCAG 2.1 AA',
     metaDescription: 'NDIS provider website design Australia — WCAG 2.1 AA compliant, fast, participant-friendly. Build First Site.',
     eyebrow: 'NDIS & Disability Services',
@@ -2705,7 +2515,7 @@ export const LANDING_PAGES = [
       { href: '/blog/ndis-website-accessibility-checklist/', label: 'WCAG 2.1 AA checklist' },
     ],
     body: [
-      { type: 'h2', text: 'What makes an NDIS website different' },
+      { type: 'h2', text: 'What makes an NDIS website different', oneline: "accessibility, plain language and two audiences with different needs." },
       {
         type: 'p',
         html: 'NDIS providers serve participants who may have physical, cognitive, sensory, or communication disabilities. A website that works fine for an able-bodied user can be completely inaccessible to your actual audience — small font, low colour contrast, keyboard-only navigation that breaks, or video without captions.',
@@ -2714,7 +2524,7 @@ export const LANDING_PAGES = [
         type: 'p',
         html: 'Beyond your participants, the Disability Discrimination Act 1992 creates a legal obligation for service providers to make digital services accessible. <a href="/blog/wcag-audit-process-ndis-websites/" class="color-green-900">WCAG 2.1 AA</a> is the benchmark the Australian Human Rights Commission refers to. A non-compliant website is a liability, not just a missed opportunity.',
       },
-      { type: 'h2', text: 'What WCAG 2.1 AA compliance means in practice' },
+      { type: 'h2', text: 'What WCAG 2.1 AA compliance means in practice', oneline: "contrast, keyboard use, alt text, headings and readable text." },
       {
         type: 'ul',
         items: [
@@ -2727,7 +2537,7 @@ export const LANDING_PAGES = [
           '<strong>No content that flashes more than 3 times per second</strong> — seizure safety.',
         ],
       },
-      { type: 'h2', text: 'What NDIS provider websites need to convert' },
+      { type: 'h2', text: 'What NDIS provider websites need to convert', oneline: "clear services, service areas and an easy referral path." },
       {
         type: 'p',
         html: 'Accessibility is table stakes. Conversion is the other half of the job. The participants and coordinators visiting your site are making a real decision about support services — trust signals matter more here than on a typical business website.',
@@ -2742,12 +2552,12 @@ export const LANDING_PAGES = [
           '<strong>Testimonials from participants or families</strong> (with permission). Third-party trust is critical in this sector.',
         ],
       },
-      { type: 'h2', text: 'What every NDIS build includes' },
+      { type: 'h2', text: 'What every NDIS build includes', oneline: "accessibility testing, plain-English structure and local SEO." },
       {
         type: 'p',
         html: 'We include WCAG 2.1 AA compliance, Google Business Profile setup, local schema markup, structured data for each service, and a Lighthouse mobile score above 90 in every NDIS build.',
       },
-      { type: 'h2', text: 'SEO for NDIS providers' },
+      { type: 'h2', text: 'SEO for NDIS providers', oneline: "local search, service pages and accessibility all help rankings." },
       {
         type: 'p',
         html: 'NDIS provider SEO is different from general local SEO. Participants and coordinators search by service type and location: "SIL providers Melbourne", "community participation NDIS Parramatta", "speech therapy NDIS Canberra". These are high-intent searches with low competition because most NDIS providers still rely on the NDIS provider finder and word of mouth.',
@@ -2791,8 +2601,12 @@ export const LANDING_PAGES = [
   },
   {
     slug: 'dental-website-design',
+    format: 'v2',
+    heroImage: '/assets/imgs/page/landing/dental-website-design-hero.png',
+    answer: "A dental practice website should turn local searches into booked appointments: online booking, clear treatment pages, fast mobile loading, local SEO and copy that follows AHPRA advertising rules (no testimonials, no guaranteed outcomes). We build these without a template or a monthly platform fee, and you own the code.",
+    takeaways: ["The job of a dental site is <b>booked appointments</b>, mostly from phones.", "<b>AHPRA rules</b> apply to dental advertising: no testimonials, no misleading claims, no guaranteed results.", "A page per treatment and a complete Google Business Profile drive <b>local search</b>.", "We have no dental clients yet; we describe our approach and show a labelled concept build."],
     image: '/assets/imgs/page/landing/dental-website-design.webp',
-    imageAlt: 'Dental clinic website with online appointment booking on a tablet',
+    imageAlt: "Illustration of a dental clinic website on a phone and laptop with an online booking calendar and a map pin",
     metaTitle: 'Dental Website Design Australia 2026',
     metaDescription: 'Dental practice website design Australia — appointment booking integrations, AHPRA-compliant copy, fast mobile pages.',
     eyebrow: 'Healthcare · Dental',
@@ -2811,7 +2625,7 @@ export const LANDING_PAGES = [
       { href: '/pricing/', label: 'View all pricing' },
     ],
     body: [
-      { type: 'h2', text: 'What a dental website needs to do in 2026' },
+      { type: 'h2', text: 'What a dental website needs to do in 2026', oneline: "convert searchers into booked appointments, on a phone, in seconds." },
       {
         type: 'p',
         html: 'Most dental practice websites fall into one of two categories: a 2018-era <a href="/wordpress-vs-custom-website/" class="color-green-900">WordPress</a> theme that loads slowly and looks dated, or a website built by a dental marketing agency that locks you into a proprietary system and a monthly retainer you can never leave.',
@@ -2820,12 +2634,12 @@ export const LANDING_PAGES = [
         type: 'p',
         html: 'Neither serves your patients well. A patient searching for a dentist on their phone at 9pm needs a fast page, an obvious phone number, and a booking link — not a slow-loading slider and a generic stock photo of someone smiling. That is what we build.',
       },
-      { type: 'h2', text: 'What you get' },
+      { type: 'h2', text: 'What you get', oneline: "everything included in a dental build, with no platform lock-in." },
       {
         type: 'p',
         html: 'You own the source code. Hosting can be free on a plan that allows business use. No ongoing platform fee, no proprietary CMS, no lock-in. The $0 hosting situation means you will be ahead on total cost within 12 months of a typical dental agency quote.',
       },
-      { type: 'h2', text: 'AHPRA compliance on dental websites' },
+      { type: 'h2', text: 'AHPRA compliance on dental websites', oneline: "what the advertising rules mean for your copy, images and reviews." },
       {
         type: 'p',
         html: 'AHPRA guidelines restrict health practitioners from using patient testimonials in marketing materials — a blanket "we have 200 five-star reviews" widget is a compliance issue if it displays individual patient testimonials on the page. We build dental websites with this in mind: aggregate review stars from Google Business Profile are fine, individual testimonials require care.',
@@ -2834,7 +2648,7 @@ export const LANDING_PAGES = [
         type: 'p',
         html: 'We do not write clinical claims we cannot substantiate. Any copy about treatments includes appropriate caveats ("results may vary"), and we do not use before/after treatment photos without appropriate context. AHPRA audits practices for digital advertising — we make sure your website is not the thing that triggers one.',
       },
-      { type: 'h2', text: 'Features every dental website should have' },
+      { type: 'h2', text: 'Features every dental website should have', oneline: "booking, treatment pages, health-fund info, maps and fast loading." },
       {
         type: 'ul',
         items: [
@@ -2847,7 +2661,7 @@ export const LANDING_PAGES = [
           '<strong>Emergency dental landing page.</strong> "Emergency dentist [suburb]" is one of the highest-intent searches in dental. A dedicated emergency page targeting your suburb captures this traffic.',
         ],
       },
-      { type: 'h2', text: 'Local SEO for dental practices' },
+      { type: 'h2', text: 'Local SEO for dental practices', oneline: "how patients nearby find you, and what moves rankings." },
       {
         type: 'p',
         html: '"Dentist near me" and "[suburb] dentist" are the two highest-volume dental searches in Australia. Ranking in the Google Maps pack for those terms is determined primarily by Google Business Profile completeness, distance from the searcher, and website authority.',
@@ -3432,6 +3246,12 @@ export const LANDING_PAGES = [
   },
   {
     slug: 'affordable-website-design-small-business',
+    format: 'v2',
+    image: '/assets/imgs/page/landing/how-much-does-a-website-cost-australia.webp',
+    imageAlt: "Illustration of a small shopfront beside a laptop showing a website, a piggy bank and a key for ownership",
+    heroImage: '/assets/imgs/page/landing/affordable-website-design-hero.png',
+    answer: "Affordable website design for a small business means a fair five-year cost, not just a low starting price. Our packages start at $800 for 3 to 5 pages, with no monthly platform fee and the code in your name, and we design your homepage free before you pay anything.",
+    takeaways: ["Judge \"cheap\" over <b>five years</b>: platform fees add up faster than build prices.", "Our packages start at <b>$800</b>; see your homepage designed free first.", "Low cost comes from <b>no agency overhead</b>, not from cutting SEO, design or ownership.", "A cheap site is a false economy if you cannot own it, edit it or get found on Google."],
     metaTitle: 'Affordable Website Design for Small Business | From $800',
     metaDescription: 'Affordable website design for Australian small business from $800 AUD. Clear starting prices, no monthly fee, and you own the code. Free homepage design first.',
     eyebrow: 'Affordable',
@@ -3452,7 +3272,7 @@ export const LANDING_PAGES = [
       { href: '/hire-website-builder/', label: 'Hire a website builder' },
     ],
     body: [
-      { type: 'h2', text: 'What affordable actually means here' },
+      { type: 'h2', text: 'What affordable actually means here', oneline: "a low five-year cost and a site you own, not a low sticker price." },
       {
         type: 'p',
         html: 'Affordable is a word every agency uses and almost none of them define. Here is our definition: a starting price you can read before you contact us, no monthly platform fee, and full ownership of the code so you are never paying to stay.',
@@ -3461,7 +3281,7 @@ export const LANDING_PAGES = [
         type: 'p',
         html: 'A three to five page site is <strong>$800</strong>. Up to ten pages is <strong>$1,900</strong>. Ten pages or more is <strong>$3,500</strong>. E-commerce is <strong>$4,500</strong>. Those are the numbers, in AUD, before GST. Nothing changes unless the scope changes, and if it does we re-quote openly rather than quietly adding hours.',
       },
-      { type: 'h2', text: 'Cheap is a five-year number, not a sticker price' },
+      { type: 'h2', text: 'Cheap is a five-year number, not a sticker price', oneline: "add up build, hosting and fees over five years to compare." },
       {
         type: 'p',
         html: 'There are cheaper quotes than ours in Australia. Some start under $400. If the sticker price is the only number you compare, we lose that comparison — so here is the number that actually decides what a website costs you.',
@@ -3479,7 +3299,7 @@ export const LANDING_PAGES = [
         type: 'p',
         html: 'The full platform-by-platform breakdown — what Wix, Squarespace, Shopify and Australian WordPress hosts actually charge, and which renewal prices jump — is on <a href="/website-hosting-cost-australia/" class="color-green-900">what website hosting costs</a>. For what drives the build price rather than the running cost, see <a href="/how-much-does-a-website-cost-australia/" class="color-green-900">what a website costs in Australia</a>.',
       },
-      { type: 'h2', text: 'See your homepage designed before you pay anything' },
+      { type: 'h2', text: 'See your homepage designed before you pay anything', oneline: "judge the work on your own business first, free." },
       {
         type: 'p',
         html: 'Choosing a web designer is mostly guesswork. You look at their portfolio, you hope your project turns out the same, and you find out after you have paid a deposit.',
@@ -3498,7 +3318,7 @@ export const LANDING_PAGES = [
         ],
       },
       { type: 'p', html: 'Ask for one from the <a href="/contact/" class="color-green-900">contact page</a> and tell us what the business does.' },
-      { type: 'h2', text: 'Why we can charge $800 when agencies charge $5,000' },
+      { type: 'h2', text: 'Why we can charge $800 when agencies charge $5,000', oneline: "no sales team, no office overhead, and a modern stack." },
       { type: 'p', html: 'Not because the work is worse. Because the overhead is smaller and we do not have to recover it from you.' },
       {
         type: 'table',
@@ -3533,7 +3353,7 @@ export const LANDING_PAGES = [
         type: 'p',
         html: 'A $5,000 quote for a five page site is not five thousand dollars of building. It is roughly a thousand dollars of building and four thousand of everything else. We stripped out the everything else.',
       },
-      { type: 'h2', text: 'What you still get at $800' },
+      { type: 'h2', text: 'What you still get at $800', oneline: "custom design, SEO foundations, a CMS and full code ownership." },
       {
         type: 'ul',
         items: [
@@ -3549,7 +3369,7 @@ export const LANDING_PAGES = [
         type: 'p',
         html: 'Nothing is withheld to make a cheaper tier look worse. The only variable is how many pages you need - the full breakdown is on the <a href="/pricing/" class="color-green-900">pricing page</a>.',
       },
-      { type: 'h2', text: 'When cheap is a false economy' },
+      { type: 'h2', text: 'When cheap is a false economy', oneline: "situations where the lowest quote costs more later." },
       { type: 'p', html: 'Worth saying plainly, because it is the honest part of a page like this. Cheap becomes expensive when:' },
       {
         type: 'ul',
@@ -3565,7 +3385,7 @@ export const LANDING_PAGES = [
         type: 'p',
         html: 'A $20 a month builder is $1,200 over five years and you own nothing at the end of it. We set the real numbers out in <a href="/how-much-does-a-website-cost-australia/" class="color-green-900">what a website actually costs in Australia</a> and in <a href="/wix-vs-custom-website/" class="color-green-900">Wix vs a custom website</a>.',
       },
-      { type: 'h2', text: 'Who this suits' },
+      { type: 'h2', text: 'Who this suits', oneline: "new businesses, sole traders and small service businesses." },
       {
         type: 'p',
         html: 'Tradies, cafes, clinics, agents, consultants, retailers - any Australian small business that needs a credible site that brings in enquiries and does not want to spend five figures finding out whether it works. If you are in the trades specifically, the <a href="/tradie-website-design/" class="color-green-900">tradie website page</a> covers suburb pages and click-to-call in more detail.',

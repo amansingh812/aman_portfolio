@@ -1,5 +1,10 @@
 export const BLOG_CONTENT = {
   "best-web-design-agencies-australia": {
+    format: "v2",
+    heroImage: "/assets/imgs/page/blog/best-web-design-agencies-australia-hero.png",
+    heroAlt: "Illustration of an Australia map with website cards pinned across it, a balance scale of price tags and a key",
+    answer: "The best web design agency in Australia depends on budget, platform and whether you want to own your site. Published entry prices range from about $800 to $1,000 for small studios, with agencies higher. Compare on published price, technology and code ownership, and ask who you will actually deal with.",
+    takeaways: ["We compare six Australian agencies on <b>published price, technology and code ownership</b>.", "Entry prices start around <b>$800 to $1,000</b>; agency builds commonly run several thousand.", "The question few ask: <b>do you own the website</b> when the work ends?", "We are one of the six, so our weakness is stated up front."],
     "lead": "Six Australian web design agencies, compared on published prices, technology and code ownership. We're one of the four — so here's our weakness up front, and every figure linked to its source.",
     "content": [
       {
@@ -16,7 +21,8 @@ export const BLOG_CONTENT = {
       },
       {
         "type": "h2",
-        "text": "Quick comparison: what Australian web agencies charge in 2026"
+        "text": "Quick comparison: what Australian web agencies charge in 2026",
+        "oneline": "published prices side by side, each linked to its source."
       },
       {
         "type": "p",
@@ -303,7 +309,8 @@ export const BLOG_CONTENT = {
       },
       {
         "type": "h2",
-        "text": "The question almost nobody asks: do you actually own your website?"
+        "text": "The question almost nobody asks: do you actually own your website?",
+        "oneline": "platform lock-in is the cost nobody quotes."
       },
       {
         "type": "p",
@@ -331,7 +338,8 @@ export const BLOG_CONTENT = {
       },
       {
         "type": "h2",
-        "text": "How to choose between them"
+        "text": "How to choose between them",
+        "oneline": "match the agency to your budget, platform and how long you will keep the site."
       },
       {
         "type": "p",
@@ -1376,74 +1384,134 @@ export const BLOG_CONTENT = {
     ],
   },
   "seo-for-ndis-providers": {
+    format: "v2",
+    chip: "SEO · NDIS guide",
+    heroImage: "/assets/imgs/page/blog/ndis-seo-hero.png",
+    heroAlt: "Illustration of a phone showing a local map search with a provider pin, surrounded by checklist, accessibility and review cards",
     lead:
-      "Most NDIS participants and support coordinators find providers through Google. This guide covers what actually moves rankings for NDIS providers in Australia — local search, service pages, plain-English content and accessibility — and what to ignore.",
+      "What actually moves Google rankings for NDIS providers in Australia, in the order to do it, and what to ignore.",
+    answer:
+      "Most NDIS enquiries start in local search. Complete your Google Business Profile, collect genuine reviews, give each service its own page, write in plain English at a Year 7–9 level, and fix accessibility. Expect three to six months before rankings move.",
+    takeaways: [
+      "Your site has <b>two audiences</b>: support coordinators checking credibility, and families checking whether you can help.",
+      "<b>Google Business Profile</b> is the biggest free local factor. An incomplete profile is the most common gap we see.",
+      "<b>One page per service</b> beats one “Our Services” page listing eight things.",
+      "<b>Accessibility work is SEO work.</b> For NDIS providers, compliance and marketing overlap.",
+    ],
+    endTitle: "Planning an NDIS provider website?",
+    endText: "Our NDIS website design covers WCAG 2.1 AA and local SEO from day one. Start with a free homepage design, or book a call.",
     content: [
-      {"type": "h2", "text": "How people actually find NDIS providers"},
-      {"type": "p", "html": "Three channels bring most enquiries, and SEO only affects two of them."},
-      {"type": "ul", "items": ["<strong>Support coordinator referral.</strong> Relationship-driven, but coordinators check your website before recommending you. A weak site loses referrals you had already earned.", "<strong>Google search.</strong> Participants and families searching \"support coordination near me\" or \"SIL provider Melbourne\". This is what SEO addresses.", "<strong>The NDIS Provider Finder.</strong> Separate from Google — make sure your listing is complete, but it is not something SEO influences."]},
-      {"type": "p", "html": "The practical implication: your website has two audiences with different needs. A coordinator is assessing credibility and service fit. A family is trying to work out whether you can help and how to contact you. Write for both."},
-      {"type": "h2", "text": "Local SEO comes first"},
-      {"type": "p", "html": "NDIS services are delivered locally, so local search matters more than general SEO. Two things dominate."},
-      {"type": "p", "html": "<strong>Google Business Profile.</strong> Free, and it accounts for roughly a third of local ranking weight. Set the primary category correctly — \"Disability services provider\" or the closest match — fill in every field, list your service areas, and add real photos. An incomplete profile is the most common gap we see."},
-      {"type": "p", "html": "<strong>Reviews.</strong> Ask satisfied participants and families, with care and without pressure. Never offer anything in exchange — that breaches Google's policy and Australian Consumer Law. Reply to every review."},
-      {"type": "p", "html": "Beyond that, keep your name, address and phone number identical everywhere they appear — your site, Google, the Provider Finder, directories. Inconsistency weakens the entity Google builds of your organisation."},
-      {"type": "h2", "text": "Build a page per service, not one page listing all of them"},
-      {"type": "p", "html": "This is the single biggest on-site opportunity for most providers."},
-      {"type": "p", "html": "A page titled \"Our Services\" listing eight things ranks for none of them. Eight pages, each covering one service properly, can rank for eight different searches. Someone searching \"supported independent living Brunswick\" should land on a page about supported independent living, not a general services page they then have to navigate."},
-      {"type": "table", "headers": ["Service", "Page targets", "Should answer"], "rows": [["Support coordination", "support coordination [city]", "What a coordinator does, who is eligible, how to start"], ["SIL", "supported independent living [city]", "What housing looks like, staffing, how vacancies work"], ["Community participation", "community participation NDIS", "What activities, how funding is used"], ["Plan management", "ndis plan management [city]", "How invoicing works, what it costs a participant"], ["Therapy supports", "[therapy type] ndis [city]", "Qualifications, wait times, telehealth options"]]},
-      {"type": "p", "html": "Each page needs genuine detail — eligibility, what happens first, wait times, who to contact. Eight thin pages are worse than one good one."},
-      {"type": "h2", "text": "Write in plain English"},
-      {"type": "p", "html": "This is both an SEO factor and an accessibility one, which is unusual and useful."},
-      {"type": "p", "html": "Most provider websites are written for auditors. Phrases like \"person-centred service delivery frameworks\" and \"capacity building supports aligned to participant goals\" appear on hundreds of sites and mean nothing to a parent trying to find respite care."},
-      {"type": "p", "html": "Write how people search. Someone types \"who can help my son live independently\", not \"SIL capacity building framework\". Answer the question in the words they used, and target a Year 7 to 9 reading level — the same standard our <a href=\"/blog/ndis-website-accessibility-checklist/\">accessibility checklist</a> recommends."},
-      {"type": "p", "html": "Fast page performance is equally essential for local search rankings and accessibility. Learn how we engineer fast, accessible websites with upfront quotes on our <a href=\"/pricing/\">transparent AUD pricing page</a> or test your current page performance on our <a href=\"/website-speed-checker/\">free website speed checker</a>."},
-      {"type": "h2", "text": "Accessibility is an SEO factor"},
-      {"type": "p", "html": "Building an accessible site improves rankings, because most accessibility work overlaps with what search engines need."},
-      {"type": "ul", "items": ["Semantic HTML and correct heading order help screen readers and help Google parse structure", "Descriptive alt text serves blind users and image search", "Descriptive link text helps screen reader navigation and passes context between pages", "Fast, mobile-friendly pages are a WCAG consideration and a confirmed ranking factor", "Plain language reaches cognitive disability users and matches how people search"]},
+      {"type": "h2", "text": "How people actually find NDIS providers", "toc": "How people find providers", "oneline": "three channels bring most enquiries, and SEO affects two of them."},
+      {"type": "cards", "items": [
+        {"icon": "🤝", "title": "Coordinator referral", "text": "Relationship-driven, but coordinators check your website before recommending you. A weak site loses referrals you had already earned.", "tag": "SEO helps"},
+        {"icon": "🔎", "title": "Google search", "text": "Participants and families searching “support coordination near me” or “SIL provider Melbourne”.", "tag": "SEO helps"},
+        {"icon": "📋", "title": "NDIS Provider Finder", "text": "The official directory. Keep your listing complete and consistent with your site.", "tag": "Outside SEO", "tagMuted": true}
+      ]},
+      {"type": "p", "html": "So your website has two audiences with different needs. Write for both:"},
+      {"type": "tabs", "tabs": [
+        {"label": "Support coordinator", "html": "<p><b>They are asking:</b> “Is this provider credible, and do they fit my participant?”</p><ul><li>Services and service areas up front</li><li>Current capacity and how referrals work</li><li>A fast referral form</li></ul>"},
+        {"label": "Participant or family", "html": "<p><b>They are asking:</b> “Can you help us, and how do I contact you?”</p><ul><li>A plain-English description of each support</li><li>What happens first, and wait times</li><li>Phone, SMS and email, plus interpreter options</li></ul>"}
+      ]},
+
+      {"type": "h2", "text": "Local SEO comes first", "oneline": "NDIS services are delivered locally, so local search matters more than general SEO."},
+      {"type": "stats", "items": [
+        {"value": "~⅓", "label": "of local ranking weight comes from your Google Business Profile"},
+        {"value": "$0", "label": "to set up and maintain the profile"},
+        {"value": "Every", "label": "review deserves a reply, good or bad"}
+      ]},
+      {"type": "p", "html": "<strong>Google Business Profile.</strong> Set the primary category to “Disability services provider” or the closest match, fill in every field, list your service areas and add real photos."},
+      {"type": "p", "html": "<strong>Reviews.</strong> Ask satisfied participants and families, with care and without pressure, and reply to every review."},
+      {"type": "callout", "tone": "warn", "title": "Never offer anything for a review", "html": "That breaches Google’s policy and Australian Consumer Law."},
+      {"type": "callout", "tone": "tip", "title": "Keep your name, address and phone identical everywhere", "html": "Your site, Google, the Provider Finder and directories. Inconsistency weakens how Google understands your organisation."},
+
+      {"type": "h2", "text": "Build a page per service, not one page listing all of them", "toc": "A page per service", "oneline": "eight focused pages can rank for eight searches; one combined page ranks for none."},
+      {"type": "image", "src": "/assets/imgs/page/blog/ndis-seo-page-per-service.png", "fallback": "/assets/imgs/page/blog/seo-for-ndis-providers.webp", "alt": "Diagram: one cluttered services page crossed out, next to eight separate service pages each with its own icon and a tick", "caption": "Someone searching “supported independent living Brunswick” should land on a page about exactly that."},
+      {"type": "table", "headers": ["Service", "Page targets", "Should answer"], "rows": [
+        ["Support coordination", "<code>support coordination [city]</code>", "What a coordinator does, who is eligible, how to start"],
+        ["SIL", "<code>supported independent living [city]</code>", "What housing looks like, staffing, how vacancies work"],
+        ["Community participation", "<code>community participation NDIS</code>", "Which activities, how funding works"]
+      ]},
+      {"type": "callout", "tone": "note", "title": "Depth beats count", "html": "Each page needs real detail: eligibility, what happens first, wait times, who to contact. Eight thin pages are worse than one good one."},
+      {"type": "cta", "title": "Want to see this on your own site?", "text": "We’ll design your homepage free, with your real services, so you can judge before deciding anything.", "button": "Get a free homepage design →", "href": "/free-homepage-design/"},
+
+      {"type": "h2", "text": "Write in plain English", "oneline": "write the way people search. It helps SEO and accessibility at the same time."},
+      {"type": "compare",
+        "bad": {"title": "Written for auditors", "items": ["“Person-centred service delivery frameworks”", "“Capacity building supports aligned to participant goals”", "“SIL capacity building framework”"]},
+        "good": {"title": "Written for people", "items": ["“We help you plan your week and get where you need to go”", "“Support to learn new skills, at your pace”", "“Who can help my son live independently?”"]}},
+      {"type": "p", "html": "Answer the question in the words people used, and aim for a Year 7–9 reading level, the same standard as our <a href=\"/blog/ndis-website-accessibility-checklist/\">NDIS accessibility checklist</a>. Page speed matters too: test yours with our <a href=\"/website-speed-checker/\">free website speed checker</a>."},
+
+      {"type": "h2", "text": "Accessibility is an SEO factor", "toc": "Accessibility is SEO", "oneline": "most accessibility work is exactly what search engines need too."},
+      {"type": "table", "headers": ["Accessibility fix", "Helps people", "Helps Google"], "rows": [
+        ["Semantic HTML, heading order", "Screen reader users", "Understands page structure"],
+        ["Descriptive alt text", "Blind users", "Image search"],
+        ["Descriptive link text", "Screen reader navigation", "Context between pages"],
+        ["Fast, mobile-friendly pages", "Everyone, on any device", "Confirmed ranking factor"],
+        ["Plain language", "Cognitive disability, low literacy", "Matches real searches"]
+      ]},
       {"type": "p", "html": "For NDIS providers this is the rare case where compliance work and marketing work are the same work."},
+
       {"type": "h2", "text": "What to ignore"},
-      {"type": "ul", "items": ["<strong>Keyword stuffing.</strong> Repeating \"NDIS provider Melbourne\" forty times does not work and reads badly to the humans deciding whether to trust you.", "<strong>Buying backlinks.</strong> Against Google's guidelines and a real risk to a site you depend on.", "<strong>Ranking guarantees.</strong> Nobody can guarantee position one. An agency promising it is either guessing or targeting a term nobody searches.", "<strong>A suburb page for every suburb.</strong> Thirty near-identical pages is the scaled-content pattern Google penalises. Cover your service area properly on fewer, better pages."]},
-      {"type": "h2", "text": "A realistic order to work in"},
-      {"type": "table", "headers": ["Do this", "Why first", "Effort"], "rows": [["Complete your Google Business Profile", "Biggest local factor, free", "2 hours"], ["Ask for reviews", "Slowest input to move, start now", "Ongoing"], ["Split services into individual pages", "Biggest on-site gain", "1–2 weeks"], ["Rewrite copy in plain English", "Helps SEO and accessibility together", "1 week"], ["Fix accessibility failures", "Compliance plus ranking", "Varies"], ["Publish participant-focused guides", "Long-term authority", "Ongoing"]]},
-      {"type": "p", "html": "Expect three to six months before rankings move meaningfully. Anyone promising faster is selling something."},
+      {"type": "cards", "items": [
+        {"icon": "🚫", "tone": "bad", "title": "Keyword stuffing", "text": "Repeating “NDIS provider Melbourne” forty times reads badly to the people deciding whether to trust you."},
+        {"icon": "🔗", "tone": "bad", "title": "Buying backlinks", "text": "Against Google’s guidelines and a real risk to a site you depend on."},
+        {"icon": "🎯", "tone": "bad", "title": "Ranking guarantees", "text": "Nobody can guarantee position one. Anyone promising it is selling something."}
+      ]},
+
+      {"type": "h2", "text": "A realistic order to work in", "toc": "The order to work in", "oneline": "tick off what you have done; the rest is your plan."},
+      {"type": "checklist", "title": "Your NDIS SEO checklist", "doneText": "All done. Now give it three to six months and keep collecting reviews.", "items": [
+        {"t": "Complete your Google Business Profile", "w": "Biggest local factor, and free", "e": "2 hours"},
+        {"t": "Ask for reviews", "w": "Slowest input to move, so start now", "e": "Ongoing"},
+        {"t": "Split services into individual pages", "w": "Biggest on-site gain", "e": "1–2 weeks"},
+        {"t": "Rewrite copy in plain English", "w": "Helps SEO and accessibility together", "e": "1 week"},
+        {"t": "Fix accessibility issues", "w": "Alt text, headings, contrast, keyboard use", "e": "1 week"}
+      ]},
+      {"type": "timeline", "items": [
+        {"when": "Weeks", "text": "Google Business Profile changes start to show in local results"},
+        {"when": "3–6 months", "text": "Meaningful ranking movement for service pages"},
+        {"when": "Longer", "text": "Competitive metro markets, where links and reviews decide it"}
+      ]},
+
       {"type": "h2", "text": "Common questions"},
-      {"type": "faq", "q": "How do NDIS providers rank higher on Google?", "a": "Start with a complete Google Business Profile and genuine reviews, which drive local search where most NDIS enquiries begin. Then build a separate page for each service rather than one combined services page, write in plain English at a Year 7 to 9 reading level, and fix accessibility issues — semantic HTML, alt text and fast mobile pages help both screen readers and search engines. Expect three to six months for meaningful movement."},
-      {"type": "faq", "q": "Does website accessibility affect SEO?", "a": "Yes, and for NDIS providers the overlap is substantial. Semantic HTML and heading structure help both screen readers and search engines parse a page. Descriptive alt text serves blind users and image search. Descriptive link text aids screen reader navigation and passes context to Google. Fast mobile-friendly pages are a WCAG consideration and a confirmed ranking factor."},
-      {"type": "faq", "q": "Should NDIS providers create a page for every suburb they serve?", "a": "No. Thirty near-identical suburb pages is exactly the scaled-content pattern Google's helpful content systems target, and a site-wide demotion would take your good pages down with it. Cover your service area properly within fewer, stronger pages, and only build a separate location page where you have a genuine physical presence or distinct service offering."},
-      {"type": "faq", "q": "How long does SEO take for an NDIS provider?", "a": "Three to six months for meaningful ranking movement, longer in competitive metro markets. Google Business Profile improvements can show results within weeks because local search responds faster than organic. Content and authority take longer. Any agency guaranteeing first-page rankings within 30 days is either guessing or targeting terms nobody searches."},
-    ,
-      {"type": "p", "html": "Planning a full NDIS provider website? Our <a href=\"/ndis-website-design/\">NDIS website design service</a> covers WCAG 2.1 AA compliance and local SEO built in from day one."}
+      {"type": "faq", "open": true, "q": "How do NDIS providers rank higher on Google?", "a": "Start with a complete Google Business Profile and genuine reviews, which drive local search where most NDIS enquiries begin. Then build a separate page for each service rather than one combined services page, write in plain English at a Year 7 to 9 reading level, and fix accessibility issues such as semantic HTML, alt text and contrast."},
+      {"type": "faq", "q": "Does website accessibility affect SEO?", "a": "Yes, and for NDIS providers the overlap is substantial. Semantic HTML and heading structure help both screen readers and search engines parse a page. Descriptive alt text serves blind users and image search. Descriptive link text aids screen reader navigation and passes context to Google. Fast mobile-friendly pages are a WCAG consideration and a ranking factor."},
+      {"type": "faq", "q": "Should NDIS providers create a page for every suburb they serve?", "a": "No. Thirty near-identical suburb pages is exactly the scaled-content pattern Google's helpful content systems target, and a site-wide demotion would take your good pages down with it. Cover your service area properly within fewer, stronger pages, and only build a separate location page where you have something genuinely local to say."},
+      {"type": "faq", "q": "How long does SEO take for an NDIS provider?", "a": "Three to six months for meaningful ranking movement, longer in competitive metro markets. Google Business Profile improvements can show results within weeks because local search responds faster than organic. Any agency guaranteeing first-page rankings within 30 days is either guessing or selling something."},
+      {"type": "p", "html": "Planning a full NDIS provider website? Our <a href=\"/ndis-website-design/\">NDIS website design service</a> covers WCAG 2.1 AA compliance and local SEO from day one."}
     ],
   },
   "best-ndis-website-designers": {
+    format: "v2",
+    heroImage: "/assets/imgs/page/blog/best-ndis-website-designers-hero.png",
+    heroAlt: "Illustration of four website studio cards compared side by side with a magnifying glass and an accessibility badge",
+    answer: "The best NDIS website designer for you depends on whether you value sector specialisation or engineering and accessibility. Ask every agency for a WCAG 2.1 AA audit of a site they built, who owns the code, and a written price. Specialists commonly charge $3,000 to $8,000; generalists with accessibility capability often less.",
+    takeaways: ["There are <b>two kinds</b>: NDIS specialists and generalists with accessibility capability.", "The single best test: ask for a <b>WCAG 2.1 AA audit</b> of a site they built.", "Check <b>code ownership</b> and a written price before shortlisting.", "We are on this list and say plainly where competitors are stronger."],
     lead:
       "Several Australian agencies specialise exclusively in NDIS website design, and several generalists do the work well too. This compares who is operating in the space, the five questions that separate them, and where we sit — including what we cannot claim.",
     content: [
-      {"type": "h2", "text": "How this list works"},
+      {"type": "h2", "text": "How this list works", "oneline": "verifiable facts only, alphabetical, and our own weaknesses disclosed."},
       {"type": "p", "html": "Build First Site is on this list. We are not going to rank ourselves first or pretend to be neutral — instead, everything below is stated as fact you can verify yourself, and we have flagged plainly where competitors are stronger than us."},
       {"type": "p", "html": "<strong>What we did not do:</strong> invent review counts, rank companies we have not researched, or copy claims off their own homepages and present them as findings. Where we could not verify something, we say so."},
-      {"type": "h2", "text": "The two kinds of NDIS web designer"},
+      {"type": "h2", "text": "The two kinds of NDIS web designer", "oneline": "specialists know the sector; generalists often build better and cost less."},
       {"type": "p", "html": "Before any list is useful, understand the split. It explains most of the price difference."},
       {"type": "p", "html": "<strong>NDIS specialists.</strong> Agencies whose entire business is NDIS providers, often with exact-match domains like ndiswebsitedesigns.com.au or participantconnect.com.au. They know the sector, the language and the referral journey. Some understand accessibility deeply; others are marketers who outsource the build and treat accessibility as a word on a page. The specialisation usually carries a premium of roughly $1,000 to $3,000."},
       {"type": "p", "html": "<strong>Generalists with accessibility capability.</strong> Studios that build accessible sites across sectors. You lose some NDIS-specific fluency and gain, usually, better engineering and lower prices. Build First Site sits here."},
       {"type": "p", "html": "Neither is automatically better. The question is which weakness you can live with."},
-      {"type": "h2", "text": "Who is operating in this space"},
+      {"type": "h2", "text": "Who is operating in this space", "oneline": "Australian agencies actively marketing NDIS website design."},
       {"type": "p", "html": "These are Australian agencies actively marketing NDIS website design, listed alphabetically rather than ranked. Details are what they publish about themselves — verify anything that matters to your decision."},
       {"type": "table", "headers": ["Agency", "Focus", "What stands out"], "rows": [["Aussify", "Generalist with NDIS pages", "Publishes prices. Also runs \"best NDIS agencies\" listicles that place themselves first"], ["Build First Site (us)", "Generalist, accessibility-first", "Prices published from $800. WCAG 2.1 AA in every build. No NDIS clients yet"], ["2Brownies", "NDIS specialist", "Claims 200+ NDIS provider sites built"], ["NDIS Website Designs", "NDIS specialist, exact-match domain", "Entire business is NDIS providers"], ["Participant Connect", "NDIS specialist", "Positions around the participant journey"], ["Velacore", "NDIS specialist", "Markets on compliance and accessibility"]]},
       {"type": "p", "html": "We have not audited these sites, so this is not a quality ranking. Use the criteria below to assess any of them, including us."},
-      {"type": "h2", "text": "The five questions that actually separate them"},
+      {"type": "h2", "text": "The five questions that actually separate them", "oneline": "ask these and the field sorts itself quickly."},
       {"type": "p", "html": "Ask every agency on your shortlist these. The answers sort the field faster than any list can."},
       {"type": "ol", "items": ["<strong>\"Can you show me a WCAG 2.1 AA audit of a site you built?\"</strong> This is the question. An agency that genuinely does accessibility has test output and will send it. One that treats it as marketing will change the subject or send a screenshot of a Lighthouse score, which is not the same thing.", "<strong>\"Do we own the source code and hosting account?\"</strong> Several Australian agencies build on proprietary systems you cannot leave without a rebuild. It is rarely disclosed before signing. Ask directly and watch how long the answer takes.", "<strong>\"Is accessibility included, or a line item?\"</strong> Built in from the start it costs close to nothing, because semantic HTML and proper contrast are how a site should be built anyway. Charged separately usually means it is being retrofitted.", "<strong>\"Who writes the content, and at what reading level?\"</strong> Participant-facing pages should sit around Year 7 to 9. Most provider websites are written for auditors, in language that excludes the people they are trying to reach.", "<strong>\"What happens to the site if we stop paying you monthly?\"</strong> If the answer is that it goes offline, you are renting."]},
-      {"type": "h2", "text": "What a good NDIS website has to do"},
+      {"type": "h2", "text": "What a good NDIS website has to do", "oneline": "accessible, plain English, a page per service, easy referrals."},
       {"type": "p", "html": "Two audiences, different needs, one site. Support coordinators are assessing your credibility and service fit before they refer. Participants and families are working out whether you can help and how to reach you."},
       {"type": "ul", "items": ["<strong>Accessible to WCAG 2.1 AA</strong> — not as a badge, but because your users are more likely than most to rely on screen readers, keyboard navigation and high contrast", "<strong>A page per service</strong> rather than one combined services page — that is how you rank for what people actually search", "<strong>Plain English at Year 7 to 9</strong> — write \"we help you live independently\", not \"capacity building supports aligned to participant goals\"", "<strong>Obvious next step</strong> — a referral form or phone number that does not require scrolling to find", "<strong>Fast on a phone</strong> — most first visits are mobile, and speed is both an accessibility and a ranking factor"]},
-      {"type": "h2", "text": "Being straight about where we sit"},
+      {"type": "h2", "text": "Being straight about where we sit", "oneline": "no NDIS clients yet; accessibility capability we can evidence."},
       {"type": "p", "html": "<strong>Build First Site has not yet built a website for an NDIS provider.</strong> If deep sector experience is what you need most, one of the specialists above will serve you better and we would rather say so than win the job dishonestly."},
       {"type": "p", "html": "What we can evidence is the capability that decides whether an NDIS site is any good: we build accessible, fast, semantic websites, and WCAG 2.1 AA is included in every build rather than priced as an extra. Our client work is at <a href=\"https://www.hsracegear.com\" target=\"_blank\" rel=\"noopener\">hsracegear.com</a> and <a href=\"https://mobilearmour.com.au\" target=\"_blank\" rel=\"noopener\">mobilearmour.com.au</a> — none of it NDIS. Open them, run Lighthouse, and judge the build quality directly."},
       {"type": "p", "html": "Our prices are published: $800 for three to five pages, $1,900 for up to ten, $3,500 unlimited. Details on the <a href=\"/pricing/\">pricing page</a>, and our <a href=\"/blog/ndis-website-cost/\">NDIS website cost guide</a> covers what the specialists charge."},
       {"type": "h2", "text": "Common questions"},
-      {"type": "faq", "q": "Who are the best NDIS website designers in Australia?", "a": "Several Australian agencies specialise exclusively in NDIS providers, including 2Brownies, NDIS Website Designs, Participant Connect and Velacore, alongside generalists like Aussify and Build First Site. There is no single best — the right choice depends on whether you value sector fluency or engineering and accessibility capability more. The fastest way to separate them is to ask each for a WCAG 2.1 AA audit of a site they built."},
+      {"type": "faq", "open": true, "q": "Who are the best NDIS website designers in Australia?", "a": "Several Australian agencies specialise exclusively in NDIS providers, including 2Brownies, NDIS Website Designs, Participant Connect and Velacore, alongside generalists like Aussify and Build First Site. There is no single best — the right choice depends on whether you value sector fluency or engineering and accessibility capability more. The fastest way to separate them is to ask each for a WCAG 2.1 AA audit of a site they built."},
       {"type": "faq", "q": "Should I use an NDIS-specialist agency or a generalist?", "a": "Specialists know the sector language, referral journeys and participant needs, and typically charge a premium of $1,000 to $3,000 for that focus. Generalists with genuine accessibility capability often build better and cost less but need more briefing on the sector. Neither is automatically right. Ask both for accessibility test output — that separates the ones doing the work from the ones marketing it."},
       {"type": "faq", "q": "How do I check if an NDIS web designer actually understands accessibility?", "a": "Ask for a WCAG 2.1 AA audit of a site they built. An agency doing the work will have it. Then check one of their live sites yourself — unplug your mouse and try to complete the contact form using only the keyboard. If you get stuck or cannot see where the focus is, they are not delivering accessibility regardless of what the sales page says."},
       {"type": "faq", "q": "How much should an NDIS website cost?", "a": "Between AU$800 and AU$4,500 for a standard provider website depending on scope. NDIS-specialist agencies commonly quote AU$3,000 to $8,000 for comparable work. The premium is only worth paying if they can evidence the specialisation with accessibility test results rather than just sector-specific marketing language."},

@@ -19,6 +19,9 @@
  */
 import Layout from "@/components/layout/Layout"
 import BlogContent from "@/components/blog/BlogContent"
+import BlogContentV2, { tocFrom, pick } from "@/components/blog/BlogContentV2"
+import { ReadingProgress, Toc } from "@/components/blog/BlogInteractive"
+import "@/components/blog/blog-post.css"
 import Image from "next/image"
 import Breadcrumbs from "@/components/elements/Breadcrumbs"
 import Link from "next/link"
@@ -200,6 +203,69 @@ export default function LandingPage({ page }) {
         })
     }
 
+    const pricingSection = tiers.length > 0 && (
+                <section className="section-box mt-80">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-10 mx-auto">
+                                <span className="tag-1 bg-6 color-green-900">Pricing</span>
+                                <h2 className="text-heading-2 color-gray-900 mt-25 mb-15">
+                                    Starting prices
+                                </h2>
+                                {/* Price framing (27 Sep 2026): what's included first, then the
+                                    number, with honest reference points from pricing.js. */}
+                                <p className="text-body-text color-gray-600 mb-30">
+                                    What’s included, then what it costs. For context, a custom small-business
+                                    site from an Australian agency is commonly quoted at {priceContext()[0].value},
+                                    and a DIY builder costs {priceContext()[1].value} over five years without
+                                    you ever owning the site. Every figure below is a starting point. Your
+                                    estimate depends on what your project needs, and we send it in writing,
+                                    phase by phase, after we have talked it through.
+                                </p>
+                                <div className="table-responsive">
+                                    <table style={{ width: "100%", borderCollapse: "collapse" }}>
+                                        <thead>
+                                            <tr style={{ borderBottom: "2px solid #004E56" }}>
+                                                <th className="text-body-lead color-gray-900" style={{ padding: 16, textAlign: "left" }}>Package</th>
+                                                <th className="text-body-lead color-gray-900" style={{ padding: 16, textAlign: "left" }}>What’s included</th>
+                                                <th className="text-body-lead color-gray-900" style={{ padding: 16, textAlign: "left" }}>Delivery</th>
+                                                <th className="text-body-lead color-gray-900" style={{ padding: 16, textAlign: "right" }}>Price</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {tiers.map((t) => (
+                                                <tr key={t.id} style={{ borderBottom: "1px solid #E4E7EC" }}>
+                                                    <td style={{ padding: 18 }}>
+                                                        <span className="text-heading-6 color-gray-900">{t.name}</span>
+                                                        <p className="text-body-small color-gray-500 mb-0 mt-5">{t.tagline}</p>
+                                                    </td>
+                                                    <td className="text-body-text color-gray-600" style={{ padding: 18 }}>{t.scope}</td>
+                                                    <td className="text-body-text color-gray-600" style={{ padding: 18 }}>{t.delivery}</td>
+                                                    <td style={{ padding: 18, textAlign: "right" }}>
+                                                        {!/^from/i.test(t.priceLabel) && <span className="text-body-small color-gray-500 d-block">From</span>}
+                                                        <span className="text-heading-5 color-green-900">{t.priceLabel}</span>
+                                                        <span className="text-body-small color-gray-500 d-block">{instalmentLabel(t) ? `or ${instalmentLabel(t)}` : "starting price"}</span>
+                                                    </td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <p className="text-body-text color-gray-600 mt-25">
+                                    Ongoing <strong>{CARE_PLAN.name} from {CARE_PLAN.priceLabel}{CARE_PLAN.period}</strong>,
+                                    or {RETAINER.name} at {RETAINER.priceLabel}{RETAINER.period}. Both optional, cancel with 30 days notice.
+                                    Your homepage is designed free before you pay anything.{" "}
+                                    <Link href="/pricing/" className="color-green-900">See all pricing →</Link>
+                                </p>
+                                <p className="text-body-small color-gray-500">
+                                    All prices AUD · GST not included · You own the code
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            )
+
     return (
         <Layout>
             <script
@@ -207,6 +273,61 @@ export default function LandingPage({ page }) {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
 
+            {/* ── HERO (v2 format, Nov 2026) ── */}
+            {page.format === "v2" ? (
+                <div className="bp">
+                    <ReadingProgress />
+                    <header className="bp-hero">
+                        <div className="container">
+                            <div className="bp-hero-grid">
+                                <div>
+                                    <Breadcrumbs items={[{ name: page.breadcrumb || page.metaTitle }]} />
+                                    <span className="bp-chip">{page.eyebrow}</span>
+                                    <h1>{page.h1}</h1>
+                                    <p className="bp-lead">{page.lead}</p>
+                                    <div className="bp-byline">
+                                        <span className="bp-avatar" aria-hidden="true">AS</span>
+                                        <span>By <Link href="/about/">Aman Singh</Link>, the engineer who builds every site</span>
+                                        <span>·</span>
+                                        <span>Updated <time dateTime={modified}>{new Date(modified).toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" })}</time></span>
+                                    </div>
+                                    <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 26 }}>
+                                        <Link href={page.inlineForm ? "#quote" : "/free-homepage-design/"} data-event="free_design_cta" data-package="landing-hero" className="bp-btn bp-btn-k">{page.heroCta || "Get a free homepage design"}</Link>
+                                        <a data-loc="landing-page" href={SITE.calendly} target="_blank" rel="noopener noreferrer" className="bp-btn bp-btn-o">Book a free call</a>
+                                    </div>
+                                </div>
+                                {page.image && (
+                                    <div className="bp-heroimg">
+                                        <Image src={pick(page.heroImage, page.image)} alt={page.imageAlt || page.h1} width={1200} height={675}
+                                            sizes="(max-width: 991px) 100vw, 520px" priority />
+                                    </div>
+                                )}
+                            </div>
+                            {page.answer && (
+                                <div className="bp-answer">
+                                    <div className="bp-ic" aria-hidden="true">💡</div>
+                                    <div><h2>Short answer</h2><p>{page.answer}</p></div>
+                                </div>
+                            )}
+                        </div>
+                    </header>
+                    {pricingSection}
+                    <div className="container">
+                        <div className="bp-layout">
+                            <Toc items={tocFrom(page.body)} />
+                            <article className="bp-article">
+                                {page.takeaways?.length > 0 && (
+                                    <div className="bp-takeaways">
+                                        <h2>⚡ Key takeaways</h2>
+                                        <ul>{page.takeaways.map((t, k) => <li key={k}><span className="bp-tick" aria-hidden="true">✓</span><span dangerouslySetInnerHTML={{ __html: t }} /></li>)}</ul>
+                                    </div>
+                                )}
+                                <BlogContentV2 blocks={page.body} />
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            ) : (<>
             {/* ── HERO ── */}
             <section className="section-box mt-70">
                 <div className="container">
@@ -273,69 +394,7 @@ export default function LandingPage({ page }) {
                 </div>
             </section>
 
-            {/* ── PRICING (live from content/pricing.js) ── */}
-            {tiers.length > 0 && (
-                <section className="section-box mt-80">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-10 mx-auto">
-                                <span className="tag-1 bg-6 color-green-900">Pricing</span>
-                                <h2 className="text-heading-2 color-gray-900 mt-25 mb-15">
-                                    Starting prices
-                                </h2>
-                                {/* Price framing (27 Sep 2026): what's included first, then the
-                                    number, with honest reference points from pricing.js. */}
-                                <p className="text-body-text color-gray-600 mb-30">
-                                    What’s included, then what it costs. For context, a custom small-business
-                                    site from an Australian agency is commonly quoted at {priceContext()[0].value},
-                                    and a DIY builder costs {priceContext()[1].value} over five years without
-                                    you ever owning the site. Every figure below is a starting point. Your
-                                    estimate depends on what your project needs, and we send it in writing,
-                                    phase by phase, after we have talked it through.
-                                </p>
-                                <div className="table-responsive">
-                                    <table style={{ width: "100%", borderCollapse: "collapse" }}>
-                                        <thead>
-                                            <tr style={{ borderBottom: "2px solid #004E56" }}>
-                                                <th className="text-body-lead color-gray-900" style={{ padding: 16, textAlign: "left" }}>Package</th>
-                                                <th className="text-body-lead color-gray-900" style={{ padding: 16, textAlign: "left" }}>What’s included</th>
-                                                <th className="text-body-lead color-gray-900" style={{ padding: 16, textAlign: "left" }}>Delivery</th>
-                                                <th className="text-body-lead color-gray-900" style={{ padding: 16, textAlign: "right" }}>Price</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {tiers.map((t) => (
-                                                <tr key={t.id} style={{ borderBottom: "1px solid #E4E7EC" }}>
-                                                    <td style={{ padding: 18 }}>
-                                                        <span className="text-heading-6 color-gray-900">{t.name}</span>
-                                                        <p className="text-body-small color-gray-500 mb-0 mt-5">{t.tagline}</p>
-                                                    </td>
-                                                    <td className="text-body-text color-gray-600" style={{ padding: 18 }}>{t.scope}</td>
-                                                    <td className="text-body-text color-gray-600" style={{ padding: 18 }}>{t.delivery}</td>
-                                                    <td style={{ padding: 18, textAlign: "right" }}>
-                                                        {!/^from/i.test(t.priceLabel) && <span className="text-body-small color-gray-500 d-block">From</span>}
-                                                        <span className="text-heading-5 color-green-900">{t.priceLabel}</span>
-                                                        <span className="text-body-small color-gray-500 d-block">{instalmentLabel(t) ? `or ${instalmentLabel(t)}` : "starting price"}</span>
-                                                    </td>
-                                                </tr>
-                                            ))}
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <p className="text-body-text color-gray-600 mt-25">
-                                    Ongoing <strong>{CARE_PLAN.name} from {CARE_PLAN.priceLabel}{CARE_PLAN.period}</strong>,
-                                    or {RETAINER.name} at {RETAINER.priceLabel}{RETAINER.period}. Both optional, cancel with 30 days notice.
-                                    Your homepage is designed free before you pay anything.{" "}
-                                    <Link href="/pricing/" className="color-green-900">See all pricing →</Link>
-                                </p>
-                                <p className="text-body-small color-gray-500">
-                                    All prices AUD · GST not included · You own the code
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            )}
+            {pricingSection}
 
             {/* ── BODY ── */}
             <section className="section-box mt-80">
@@ -349,6 +408,7 @@ export default function LandingPage({ page }) {
                     </div>
                 </div>
             </section>
+            </>)}
 
             {/* ── INLINE QUOTE FORM — only on pages with `inlineForm: true`.
                 ONE form, after the prices, body and FAQs. Until 8 Oct 2026 there

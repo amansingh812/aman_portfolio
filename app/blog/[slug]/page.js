@@ -3,6 +3,9 @@
 import Layout from "@/components/layout/Layout"
 import Breadcrumbs from "@/components/elements/Breadcrumbs"
 import BlogContent from "@/components/blog/BlogContent"
+import BlogContentV2, { tocFrom, pick } from "@/components/blog/BlogContentV2"
+import { ReadingProgress, Toc } from "@/components/blog/BlogInteractive"
+import "@/components/blog/blog-post.css"
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
@@ -111,6 +114,97 @@ export default async function BlogPost({ params }) {
                 acceptedAnswer: { "@type": "Answer", text: f.a },
             })),
         })
+    }
+
+    /* ── New format (Nov 2026): posts opt in with `format: "v2"` in blog-content.js ── */
+    if (article.format === "v2") {
+        const toc = tocFrom(article.content)
+        return (
+            <Layout>
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+                <ReadingProgress />
+                <div className="bp">
+                    <header className="bp-hero">
+                        <div className="container">
+                            <div className="bp-hero-grid">
+                                <div>
+                                    <Breadcrumbs items={[{ name: "Blog", href: "/blog/" }, { name: post.title }]} />
+                                    <span className="bp-chip">{article.chip || post.category}</span>
+                                    <h1>{post.title}</h1>
+                                    <p className="bp-lead">{article.lead || post.excerpt}</p>
+                                    <div className="bp-byline">
+                                        <span className="bp-avatar" aria-hidden="true">AS</span>
+                                        <span>By <Link href="/about/">Aman Singh</Link>, engineer at Build First Site</span>
+                                        <span>·</span>
+                                        {post.updated
+                                            ? <span>Updated <time dateTime={post.updated}>{fmtDate(post.updated)}</time></span>
+                                            : <time dateTime={post.date}>{fmtDate(post.date)}</time>}
+                                        {post.readingTime && <><span>·</span><span>{post.readingTime}</span></>}
+                                    </div>
+                                </div>
+                                <div className="bp-heroimg">
+                                    <Image src={pick(article.heroImage, post.image)} alt={article.heroAlt || post.title}
+                                        width={1200} height={675} sizes="(max-width: 991px) 100vw, 520px" priority />
+                                </div>
+                            </div>
+                            {article.answer && (
+                                <div className="bp-answer">
+                                    <div className="bp-ic" aria-hidden="true">💡</div>
+                                    <div><h2>Short answer</h2><p>{article.answer}</p></div>
+                                </div>
+                            )}
+                        </div>
+                    </header>
+
+                    <div className="container">
+                        <div className="bp-layout">
+                            <Toc items={toc} />
+                            <article className="bp-article">
+                                {article.takeaways?.length > 0 && (
+                                    <div className="bp-takeaways">
+                                        <h2>⚡ Key takeaways</h2>
+                                        <ul>
+                                            {article.takeaways.map((t, i) => (
+                                                <li key={i}><span className="bp-tick" aria-hidden="true">✓</span><span dangerouslySetInnerHTML={{ __html: t }} /></li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
+                                <BlogContentV2 blocks={article.content} />
+
+                                <div className="bp-author">
+                                    <span className="bp-avatar" aria-hidden="true">AS</span>
+                                    <div>
+                                        <h3>Written by Aman Singh</h3>
+                                        <p>Software engineer at Build First Site. Builds fast, accessible websites for Australian small businesses. <Link href="/about/">More about Aman →</Link></p>
+                                    </div>
+                                </div>
+
+                                <div className="bp-end">
+                                    <h3>{article.endTitle || "Want to see this applied to your business?"}</h3>
+                                    <p style={{ margin: 0 }}>{article.endText || "We’ll design your homepage free, with your real business name and services, so you can judge the work before deciding anything."}</p>
+                                    <div className="row-btns">
+                                        <Link href="/free-homepage-design/" data-event="free_design_cta" data-package="blog-post" className="bp-btn bp-btn-k">Get a free homepage design</Link>
+                                        <a data-loc="blog-post" href={SITE.calendly} target="_blank" rel="noopener noreferrer" className="bp-btn bp-btn-o">Book a free call</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                        {related.length > 0 && (
+                            <section aria-label="Related reading" style={{ marginBottom: 80 }}>
+                                <h2 style={{ fontSize: 28, marginBottom: 20 }}>Keep reading</h2>
+                                <div className="bp-rel">
+                                    {related.map((r) => (
+                                        <Link key={r.slug} href={r.href}><span>{r.category}</span><h3>{r.title}</h3></Link>
+                                    ))}
+                                </div>
+                            </section>
+                        )}
+                    </div>
+                </div>
+            </Layout>
+        )
     }
 
     return (
