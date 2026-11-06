@@ -21,6 +21,14 @@ const TYPES = [
     { id: "custom-software", label: "Custom software", icon: "cog" },
 ]
 
+const TICKS = [
+    { val: 1, label: "1" },
+    { val: 5, label: "5" },
+    { val: 10, label: "10" },
+    { val: 20, label: "20" },
+    { val: 30, label: "30+" },
+]
+
 /* Add-ons offered in the estimator. Names must match ADDONS in pricing.js. */
 const EXTRAS = [
     { key: "Logo design", icon: "pen" },
@@ -101,10 +109,25 @@ export default function PriceEstimator() {
                     <input id="pe-pages" type="range" min="1" max="30" value={pages}
                         onChange={(e) => setPages(Number(e.target.value))}
                         style={{ "--pct": `${pct}%` }} aria-valuetext={`${pages} pages`} />
-                    <div className="pe-ticks" aria-hidden="true"><span>1</span><span>5</span><span>10</span><span>20</span><span>30+</span></div>
+                    <div className="pe-ticks" aria-hidden="true">
+                        {TICKS.map((t) => {
+                            const p = ((t.val - 1) / 29) * 100
+                            return (
+                                <span
+                                    key={t.val}
+                                    className={`pe-tick${pages >= t.val ? " active" : ""}`}
+                                    style={{ left: `${p}%` }}
+                                    onClick={() => setPages(t.val)}
+                                    title={`Set to ${t.label} pages`}
+                                >
+                                    {t.label}
+                                </span>
+                            )
+                        })}
+                    </div>
                     {type === "website" && (
                         <p className="pe-hint">
-                            {pages <= 5 ? "Starter covers 3–5 pages." : pages <= 10 ? "Business covers up to 10 pages." : "Growth has no page cap."}
+                            {pages <= 5 ? "Starter ($499) covers 3–5 pages." : pages <= 10 ? "Business ($1,500) covers up to 10 pages." : "Growth covers 10+ pages."}
                         </p>
                     )}
                     {type !== "website" && <p className="pe-hint">Pages affect copywriting; the build is scoped on the call.</p>}

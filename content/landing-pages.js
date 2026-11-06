@@ -3279,7 +3279,7 @@ export const LANDING_PAGES = [
       },
       {
         type: 'p',
-        html: 'A three to five page site is <strong>$800</strong>. Up to ten pages is <strong>$1,900</strong>. Ten pages or more is <strong>$3,500</strong>. E-commerce is <strong>$4,500</strong>. Those are the numbers, in AUD, before GST. Nothing changes unless the scope changes, and if it does we re-quote openly rather than quietly adding hours.',
+        html: 'A three to five page site is <strong>$499</strong>. Up to ten pages is <strong>$1,500</strong>. Ten pages or more is <strong>$3,500</strong>. E-commerce is <strong>$3,600</strong>. Those are the numbers, in AUD, before GST. Nothing changes unless the scope changes, and if it does we re-quote openly rather than quietly adding hours.',
       },
       { type: 'h2', text: 'Cheap is a five-year number, not a sticker price', oneline: "add up build, hosting and fees over five years to compare." },
       {
@@ -3394,12 +3394,12 @@ export const LANDING_PAGES = [
       {
         type: 'faq',
         q: 'How much is a landing page?',
-        a: 'A single landing page falls inside our Starter package at $800 AUD, which covers three to five pages — so a one-page build costs the same as a small site and you may as well use the pages. Across the market a standalone landing page runs roughly $500 to $2,500 depending on whether the design is custom and whether copy is included.',
+        a: 'A single landing page falls inside our Starter package at $499 AUD, which covers three to five pages — so a one-page build costs the same as a small site and you may as well use the pages. Across the market a standalone landing page runs roughly $500 to $2,500 depending on whether the design is custom and whether copy is included.',
       },
       {
         type: 'faq',
         q: 'How much does a small business website cost in Australia?',
-        a: 'Ours are published: $800 AUD for three to five pages, $1,900 for up to ten pages, $3,500 for ten pages or more, and $4,500 for e-commerce. Australian agencies commonly quote $3,000 to $10,000 for the same scope. Your own estimate depends on what your project needs.',
+        a: 'Ours are published: $499 AUD for three to five pages, $1,500 for up to ten pages, $3,500 for ten pages or more, and $3,600 for e-commerce. Australian agencies commonly quote $3,000 to $10,000 for the same scope. Your own estimate depends on what your project needs.',
       },
       {
         type: 'faq',
@@ -3609,7 +3609,7 @@ export const LANDING_PAGES = [
     slug: 'website-design-quote',
     inlineForm: true,
     metaTitle: 'Website Design Quote Australia | Written Estimate',
-    metaDescription: 'Get a website design quote: a written estimate after a short call, starting prices published from $800, and a free homepage design before you commit.',
+    metaDescription: 'Get a website design quote: a written estimate after a short call, starting prices published from $499, and a free homepage design before you commit.',
     eyebrow: 'Get a quote',
     h1: 'Website Design Quote — A Written Estimate After a Short Call',
     lead: 'You want a number. Most agencies want a discovery call first. Ours are already published, and a written quote for your specific project comes back within one business day — no meeting required unless you want one.',
@@ -3634,7 +3634,7 @@ export const LANDING_PAGES = [
       },
       {
         type: 'p',
-        html: 'Three to five pages <strong>$800</strong>. Up to ten pages <strong>$1,900</strong>. Ten pages or more <strong>$3,500</strong>. E-commerce or a web app <strong>$4,500</strong>. Custom software from <strong>$5,000</strong>. All AUD, GST not included, hosting covered for year one. The full breakdown is on the <a href="/pricing/" class="color-green-900">pricing page</a>.',
+        html: 'Three to five pages <strong>$499</strong>. Up to ten pages <strong>$1,500</strong>. Ten pages or more <strong>$3,500</strong>. E-commerce or a web app <strong>$3,600</strong>. Custom software from <strong>$4,000</strong>. All AUD, GST not included, hosting covered for year one. The full breakdown is on the <a href="/pricing/" class="color-green-900">pricing page</a>.',
       },
       { type: 'h2', text: 'What we need from you' },
       { type: 'p', html: 'Four things. It takes about two minutes to write and you do not need to know anything technical.' },

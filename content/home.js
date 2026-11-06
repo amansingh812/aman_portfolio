@@ -10,7 +10,7 @@ export const HERO = {
   "h1Accent": "Australian businesses",
   "h1Trail": "more enquiries.",
   "sub": "A senior engineer who builds everything, and a local contact in Australia. You own the code.",
-  "priceAnchor": "Websites from $800 · Up to 10 pages $1,900 · E-commerce from $4,500",
+  "priceAnchor": "Websites from $499 · Up to 10 pages $1,500 · E-commerce from $3,600",
   "primaryCta": {
     "label": "Get a free quote",
     "href": "#contact"
@@ -210,7 +210,7 @@ export const OBJECTIONS = [
   },
   {
     "q": "What if I only need something small?",
-    "a": "A 3–5 page site starts at $800. If what you need is genuinely simpler than a custom build — sometimes a DIY builder is the right answer for a brand-new business — we will tell you that rather than sell you something you do not need yet."
+    "a": "A 3–5 page site starts at $499. If what you need is genuinely simpler than a custom build — sometimes a DIY builder is the right answer for a brand-new business — we will tell you that rather than sell you something you do not need yet."
   }
 ];
 
@@ -387,14 +387,14 @@ export const PRICE_TIERS = [
   {
     "title": "Starter",
     "desc": "3–5 pages with everything included — custom design, CMS, SEO, schema and analytics.",
-    "price": "$800",
+    "price": "$499",
     "aud": "3–5 pages",
     "timeline": "5–7 days"
   },
   {
     "title": "Business",
     "desc": "Up to 10 pages. Same inclusions, more room to explain everything you do.",
-    "price": "$1,900",
+    "price": "$1,500",
     "aud": "Up to 10 pages",
     "timeline": "2–3 weeks"
   },
@@ -408,7 +408,7 @@ export const PRICE_TIERS = [
   {
     "title": "E-Commerce",
     "desc": "Full store with Stripe, inventory, orders and customer accounts.",
-    "price": "$4,500",
+    "price": "$3,600",
     "aud": "Online store",
     "timeline": "4–6 weeks"
   }
@@ -443,7 +443,7 @@ export const FAQS = [
   },
   {
     "q": "How much does a project cost?",
-    "a": "Every price is published in AUD on our pricing page and set by scope, not by features. 3–5 pages is $800, up to 10 pages $1,900, 10+ pages $3,500, e-commerce and web applications from $4,500, and custom software from $5,000. You get a fixed quote upfront — never hourly billing."
+    "a": "Every price is published in AUD on our pricing page and set by scope, not by features. 3–5 pages is $499, up to 10 pages $1,500, 10+ pages $3,500, e-commerce and web applications from $3,600, and custom software from $4,000. You get a fixed quote upfront — never hourly billing."
   },
   {
     "q": "What are the payment terms?",

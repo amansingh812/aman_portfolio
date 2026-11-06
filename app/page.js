@@ -94,10 +94,18 @@ const SERVICES = [
     },
 ]
 
-/* Only the 3 real, shipped client projects — spec builds live in /work/ */
-const PORTFOLIO = CASE_STUDIES.filter((cs) =>
-    ["hs-race-gear", "mobile-armour", "autozenlyai"].includes(cs.slug)
-)
+/* 6 real, shipped client projects — each live on its own domain */
+const FEATURED_SLUGS = [
+    "hs-race-gear",
+    "mobile-armour",
+    "autozenlyai",
+    "marlow-vine",
+    "swarom",
+    "school-scout",
+]
+const PORTFOLIO = FEATURED_SLUGS.map((slug) =>
+    CASE_STUDIES.find((cs) => cs.slug === slug)
+).filter(Boolean)
 
 /* ─── page ────────────────────────────────────────────────────────────── */
 
@@ -469,7 +477,7 @@ export default function Home() {
                                 Recent work
                             </h2>
                             <p className="text-body-lead-large color-gray-600 mt-20">
-                                Live products we&apos;ve designed, built and shipped — each on the client&apos;s own domain.
+                                Live products we&apos;ve designed, built and shipped — open to inspect.
                             </p>
                         </div>
                     </div>

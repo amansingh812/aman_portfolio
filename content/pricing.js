@@ -17,11 +17,12 @@
  * ── POSITIONING (revised 6 Oct 2026, Sprint 1) ──────────────────────────
  * Hybrid model: show enough price to remove uncertainty, use the discovery
  * call for scope, then a fixed written quote.
- *   1. REFERENCE RANGE first: "most projects $800–$3,500" (TYPICAL_RANGE).
- *      We tried "from $490" on 2 Oct and reverted it on 6 Oct: a low anchor
- *      makes the real quote ($1,900 for most) feel expensive.
- *   2. THREE primary packages (PRIMARY_TIERS): Starter, Business
- *      (Recommended, the core offer), Growth. Everything bigger is a custom
+ *   1. REFERENCE RANGE first: "most projects $499–$3,500" (TYPICAL_RANGE).
+ *      Starter ($499) provides a credible presence for small businesses,
+ *      Business ($1,500) covers established service businesses, and
+ *      Growth ($3,500) covers larger sites.
+ *   2. THREE primary packages (PRIMARY_TIERS): Starter ($499), Business
+ *      ($1,500, Recommended, the core offer), Growth ($3,500). Everything bigger is a custom
  *      project with a published "from" figure (CUSTOM_PROJECTS).
  *   3. FREE homepage design before any payment (FREE_DESIGN).
  *   4. SMALL payments: Starter and up can be paid in 4 instalments.
@@ -140,8 +141,8 @@ export const BUILD_TIERS = [
   {
     id: 'launch',
     name: 'Launch',
-    price: 490,
-    priceLabel: '$490',
+    price: 390,
+    priceLabel: '$390',
     scope: '1-page website',
     tagline: 'One page that gets the phone ringing.',
     delivery: '3–5 days',
@@ -152,8 +153,8 @@ export const BUILD_TIERS = [
   {
     id: 'starter',
     name: 'Starter',
-    price: 800,
-    priceLabel: '$800',
+    price: 499,
+    priceLabel: '$499',
     scope: '3–5 pages',
     tagline: 'A credible presence, live in a week.',
     delivery: '5–7 days',
@@ -166,8 +167,8 @@ export const BUILD_TIERS = [
   {
     id: 'business',
     name: 'Business',
-    price: 1900,
-    priceLabel: '$1,900',
+    price: 1500,
+    priceLabel: '$1,500',
     scope: 'Up to 10 pages',
     tagline: 'A stronger site built to bring in enquiries.',
     delivery: '2–3 weeks',
@@ -197,8 +198,8 @@ export const BUILD_TIERS = [
   {
     id: 'ecommerce',
     name: 'E-Commerce',
-    price: 4500,
-    priceLabel: '$4,500',
+    price: 3600,
+    priceLabel: '$3,600',
     scope: 'Online store',
     tagline: 'Sell online on a platform you control.',
     delivery: '4–6 weeks',
@@ -208,8 +209,8 @@ export const BUILD_TIERS = [
   {
     id: 'application',
     name: 'Application',
-    price: 4500,
-    priceLabel: '$4,500',
+    price: 3600,
+    priceLabel: '$3,600',
     scope: 'Web or mobile app',
     tagline: 'Dashboards, portals and booking systems.',
     delivery: '4–8 weeks',
@@ -219,8 +220,8 @@ export const BUILD_TIERS = [
   {
     id: 'custom-software',
     name: 'Custom Software',
-    price: 5000,
-    priceLabel: 'from $5,000',
+    price: 4000,
+    priceLabel: 'from $4,000',
     scope: 'Scoped per project',
     tagline: 'CRM, ERP, SaaS, AI platforms.',
     delivery: 'Scoped per project',
@@ -389,8 +390,8 @@ export const AUTOMATION_OFFERS = [
     name: 'AI chatbot & AI-written replies',
     short: 'AI assistant',
     // Same figure as ADDONS "AI chatbot" — keep them in step.
-    price: 900,
-    priceLabel: '$900',
+    price: 720,
+    priceLabel: '$720',
     outcome: 'Answers common questions 24/7 and drafts replies in your tone, handing over to a person when needed.',
     includes: ['Trained on your services, prices and FAQs', 'On your website, or drafting email replies for you to approve', 'Hands over to a person, with the conversation attached', 'Every conversation logged'],
     notIncluded: ['AI usage fees (paid directly to the AI provider)', 'Phone/voice answering'],
@@ -413,14 +414,14 @@ export const AUTOMATION_ENTRY = AUTOMATION_OFFERS.reduce((a, b) => (b.price < a.
  * focused on the price. Available for service pages, proposals and quotes.
  */
 export const ADDONS = [
-  { name: 'Logo design',           price: '$290',      note: '5 concepts, unlimited revisions, full file set' },
-  { name: 'Brand kit',             price: '$490',      note: 'Logo suite, colours, typography, usage guide' },
-  { name: 'Copywriting',           price: '$140/page', note: 'Researched, SEO-aware, written to convert' },
-  { name: 'Extra page',            price: '$180',      note: 'Added to any package' },
-  { name: 'AI chatbot',            price: 'from $900', note: 'Trained on your content, embedded on your site' },
-  { name: 'Booking system',        price: 'from $700', note: 'Calendar, reminders, payment capture' },
-  { name: 'Multi-language',        price: 'from $600', note: 'Per additional language, with hreflang' },
-  { name: 'Migration from Wix/WP', price: 'from $400', note: 'Content and SEO preserved, redirects mapped' },
+  { name: 'Logo design',           price: '$230',      note: '5 concepts, unlimited revisions, full file set' },
+  { name: 'Brand kit',             price: '$390',      note: 'Logo suite, colours, typography, usage guide' },
+  { name: 'Copywriting',           price: '$110/page', note: 'Researched, SEO-aware, written to convert' },
+  { name: 'Extra page',            price: '$140',      note: 'Added to any package' },
+  { name: 'AI chatbot',            price: 'from $720', note: 'Trained on your content, embedded on your site' },
+  { name: 'Booking system',        price: 'from $560', note: 'Calendar, reminders, payment capture' },
+  { name: 'Multi-language',        price: 'from $480', note: 'Per additional language, with hreflang' },
+  { name: 'Migration from Wix/WP', price: 'from $320', note: 'Content and SEO preserved, redirects mapped' },
 ];
 
 /* ─────────────────────────────────────────────────────────────────────────
@@ -487,7 +488,7 @@ export const PRICING_FAQS = [
   },
   {
     q: 'Can the price change once we start?',
-    a: 'Only if the scope changes. You get a written scope and estimate before any work begins, and once you accept it that number does not change unless you ask for something outside the agreed scope — in which case we re-quote it openly rather than quietly adding hours. Payment is split 50% to start and 50% on launch, or on Starter and above you can pay in 4 equal monthly instalments (Starter is 4 × $200).',
+    a: 'Only if the scope changes. You get a written scope and estimate before any work begins, and once you accept it that number does not change unless you ask for something outside the agreed scope — in which case we re-quote it openly rather than quietly adding hours. Payment is split 50% to start and 50% on launch, or on Starter and above you can pay in 4 equal monthly instalments (Starter is 4 × $125).',
   },
   {
     q: 'Can I see the design before I pay anything?',
