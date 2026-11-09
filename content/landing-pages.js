@@ -2008,7 +2008,7 @@ export const LANDING_PAGES = [
     image: '/assets/imgs/page/landing/hire-website-builder.webp',
     heroImage: '/assets/imgs/page/landing/hire-website-builder-hero.png',
     imageAlt: 'Illustration of a small-business homepage on a laptop and phone, beside a written estimate and a key for code ownership',
-    metaTitle: 'Hire Someone to Build a Website in Australia | Website Developers for Small Business',
+    metaTitle: 'Hire Someone to Build a Website in Australia | You Own It',
     metaDescription: 'Need someone to build a website for you? Website developers for small business in Australia: free homepage design first, a written estimate after a short call, and you own the code.',
     lastUpdated: '2026-11-04',
     eyebrow: 'Website developers for small business · Australia',

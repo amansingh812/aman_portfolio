@@ -24,8 +24,12 @@ User-agent: anthropic-ai
 Allow: /
 
 # Sitemaps
+# sitemap.xml and sitemap-images.xml are the only two, both generated:
+#   npm run sitemap        -> sitemap.xml + sitemap-index.xml
+#   npm run sitemap:images -> sitemap-images.xml
+# sitemap-city-pages.xml and sitemap-service-pages.xml were removed 9 Nov 2026.
+# They re-listed 16 URLs already in sitemap.xml, were missing Canberra and 10
+# newer pages, and had stale lastmod dates. See docs/ORGANIC-SEO-AUDIT-2026-11-09.md §3.
 Sitemap: https://buildfirstsite.com/sitemap-index.xml
 Sitemap: https://buildfirstsite.com/sitemap.xml
-Sitemap: https://buildfirstsite.com/sitemap-city-pages.xml
-Sitemap: https://buildfirstsite.com/sitemap-service-pages.xml
 Sitemap: https://buildfirstsite.com/sitemap-images.xml

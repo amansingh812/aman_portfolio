@@ -23,7 +23,7 @@ export const INDUSTRY_PAGES = [
   {
     slug: 'healthcare',
     title: 'Healthcare',
-    metaTitle: 'Healthcare Website Design Australia | Clinics, Booking, Telehealth',
+    metaTitle: 'Healthcare Website Design Australia | Clinics & Booking',
     metaDescription: 'Websites for Australian clinics and allied health: online booking, telehealth pages, privacy-aware forms and local SEO.',
     eyebrow: 'Healthcare · Australia',
     h1: 'Healthcare website design',
@@ -75,7 +75,7 @@ export const INDUSTRY_PAGES = [
     slug: 'real-estate',
     canonicalTo: '/real-estate-website-design/',
     title: 'Real Estate',
-    metaTitle: 'Real Estate Web Development Australia | Agent Sites, Property Platforms',
+    metaTitle: 'Real Estate Web Development Australia | Agent Sites',
     metaDescription: 'Property listing websites, agent profiles and enquiry flows for Australian real estate. Fast search, mobile-first.',
     eyebrow: 'Real estate · Australia',
     h1: 'Real estate web development',
@@ -126,7 +126,7 @@ export const INDUSTRY_PAGES = [
   {
     slug: 'construction-trades',
     title: 'Construction & Trades',
-    metaTitle: 'Tradie Website Design Australia | Plumber, Electrician, Builder Sites',
+    metaTitle: 'Tradie Website Design Australia | Plumbers & Builders',
     metaDescription: 'Websites for Australian tradies: plumbers, electricians, builders, landscapers. Click-to-call, quote forms, local SEO.',
     eyebrow: 'Trades · Australia',
     h1: 'Tradie website design',
@@ -177,7 +177,7 @@ export const INDUSTRY_PAGES = [
   {
     slug: 'hospitality',
     title: 'Hospitality',
-    metaTitle: 'Restaurant & Hospitality Web Development Australia | Menus, Bookings',
+    metaTitle: 'Restaurant & Hospitality Websites Australia | Bookings',
     metaDescription: 'Websites for Australian restaurants, cafés, bars and hotels. Direct bookings, readable menus, event pages. No PDF menus.',
     eyebrow: 'Hospitality · Australia',
     h1: 'Restaurant and hospitality websites',
@@ -228,7 +228,7 @@ export const INDUSTRY_PAGES = [
   {
     slug: 'education',
     title: 'Education',
-    metaTitle: 'Education Web Development Australia | Schools, Courses, Student Portals',
+    metaTitle: 'Education Web Development Australia | Schools & Courses',
     metaDescription: 'Websites and platforms for Australian schools, training providers and course creators: course catalogues, enrolment forms, student portals.',
     eyebrow: 'Education · Australia',
     h1: 'Education web development',
@@ -330,7 +330,7 @@ export const INDUSTRY_PAGES = [
   {
     slug: 'finance-legal',
     title: 'Finance & Legal',
-    metaTitle: 'Finance & Legal Web Development Australia | Secure, Compliant Sites',
+    metaTitle: 'Finance & Legal Websites Australia | Secure & Compliant',
     metaDescription: 'Websites for Australian financial advisers, accountants and law firms: secure intake forms, client portals, practitioner profiles.',
     eyebrow: 'Finance and legal · Australia',
     h1: 'Websites for finance and legal firms',

@@ -7,6 +7,10 @@ import { SITE } from "@/content/site"
 import { BLOG_POSTS } from "@/content/blog"
 import { GUIDES } from "@/content/guides"
 import { fmtDate } from "@/lib/format"
+import { pick } from "@/components/blog/BlogContentV2"
+
+/* Thumbnail: post-specific image (thumb), else its own image, else a neutral fallback. */
+const thumbOf = (post, fb) => pick(post.thumb, post.image) || fb
 
 export const metadata = {
     title: "Blog — Web Development Insights Australia",
@@ -39,6 +43,7 @@ export default function BlogPage() {
         readingTime: g.readingTime,
         href: `/guides/${g.slug}/`,
         image: g.image,
+        thumb: g.thumb,
     }))
 
     const allPosts = [...BLOG_POSTS, ...guidePosts].sort(
@@ -128,7 +133,7 @@ export default function BlogPage() {
                                             <Image
                                                 width={0} height={0} sizes="100vw"
                                                 style={{ width: "100%", height: "auto", borderRadius: 12 }}
-                                                src={post.image || `/assets/imgs/page/blog/2/img-${i + 1}.png`}
+                                                src={thumbOf(post, "/assets/imgs/page/blog/website-cost-australia.webp")}
                                                 alt={post.title}
                                             />
                                         </Link>
@@ -157,7 +162,7 @@ export default function BlogPage() {
                                             <Image
                                                 width={0} height={0} sizes="100vw"
                                                 style={{ width: "100%", height: "auto", borderRadius: 12 }}
-                                                src={post.image || "/assets/imgs/page/blog/2/img-news-1.png"}
+                                                src={thumbOf(post, "/assets/imgs/page/blog/website-cost-australia.webp")}
                                                 alt={post.title}
                                             />
                                         </Link>
@@ -196,7 +201,7 @@ export default function BlogPage() {
                                             <Image
                                                 width={0} height={0} sizes="100vw"
                                                 style={{ width: "auto", height: "auto" }}
-                                                src={`/assets/imgs/page/homepage1/img-news-${(i % 9) + 1}.png`}
+                                                src={thumbOf(post, "/assets/imgs/page/blog/website-cost-australia.webp")}
                                                 alt={post.title}
                                             />
                                         </Link>

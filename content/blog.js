@@ -20,6 +20,7 @@ export const BLOG_POSTS = [
     date: "2026-07-15",
     readingTime: "8 min read",
     href: "/blog/7-website-mistakes-australia/",
+    thumb: "/assets/imgs/page/blog/7-website-mistakes-australia-thumb.png",
     image: "/assets/imgs/page/blog/7-website-mistakes-australia.webp",
   },
   {
@@ -32,6 +33,7 @@ export const BLOG_POSTS = [
     date: "2026-07-25",
     readingTime: "8 min read",
     href: "/blog/signs-website-losing-customers/",
+    thumb: "/assets/imgs/page/blog/signs-website-losing-customers-thumb.png",
     image: "/assets/imgs/page/blog/signs-website-losing-customers.webp",
   },
   {
@@ -44,6 +46,7 @@ export const BLOG_POSTS = [
     date: "2026-08-01",
     readingTime: "9 min read",
     href: "/blog/wordpress-vs-custom-website/",
+    thumb: "/assets/imgs/page/blog/wordpress-vs-custom-website-thumb.png",
     image: "/assets/imgs/page/blog/wordpress-vs-custom-website.webp",
   },
   {
@@ -61,6 +64,7 @@ export const BLOG_POSTS = [
     date: "2026-08-03",
     readingTime: "8 min read",
     href: "/blog/how-long-to-build-a-website/",
+    thumb: "/assets/imgs/page/blog/how-long-to-build-a-website-thumb.png",
     image: "/assets/imgs/page/blog/how-long-to-build-a-website.webp",
   },
   {
@@ -73,6 +77,7 @@ export const BLOG_POSTS = [
     date: "2026-09-05",
     readingTime: "9 min read",
     href: "/blog/what-small-business-website-actually-needs/",
+    thumb: "/assets/imgs/page/blog/what-small-business-website-actually-needs-thumb.png",
     image: "/assets/imgs/page/blog/what-small-business-website-actually-needs.webp",
   },
   {
@@ -85,6 +90,7 @@ export const BLOG_POSTS = [
     date: "2026-08-05",
     readingTime: "9 min read",
     href: "/blog/tradie-website-cost/",
+    thumb: "/assets/imgs/page/blog/tradie-website-cost-thumb.png",
     image: "/assets/imgs/page/blog/tradie-website-cost.webp",
   },
   {
@@ -98,6 +104,7 @@ export const BLOG_POSTS = [
     updated: "2026-11-04",
     readingTime: "9 min read",
     href: "/blog/best-web-design-agencies-australia/",
+    thumb: "/assets/imgs/page/blog/best-web-design-agencies-australia-hero.png",
     image: "/assets/imgs/page/blog/best-web-design-agencies-australia.webp",
   },
   {
@@ -110,6 +117,7 @@ export const BLOG_POSTS = [
     date: "2026-08-08",
     readingTime: "10 min read",
     href: "/blog/ndis-website-accessibility-checklist/",
+    thumb: "/assets/imgs/page/blog/ndis-website-accessibility-checklist-thumb.png",
     image: "/assets/imgs/page/blog/ndis-website-accessibility-checklist.webp",
   },
   {
@@ -122,6 +130,7 @@ export const BLOG_POSTS = [
     date: "2026-08-08",
     readingTime: "8 min read",
     href: "/blog/ndis-website-cost/",
+    thumb: "/assets/imgs/page/blog/ndis-website-cost-thumb.png",
     image: "/assets/imgs/page/blog/ndis-website-cost.webp",
   },
   {
@@ -135,6 +144,7 @@ export const BLOG_POSTS = [
     date: "2026-08-08",
     readingTime: "9 min read",
     href: "/blog/seo-for-ndis-providers/",
+    thumb: "/assets/imgs/page/blog/ndis-seo-hero.png",
     image: "/assets/imgs/page/blog/seo-for-ndis-providers.webp",
   },
   {
@@ -148,6 +158,7 @@ export const BLOG_POSTS = [
     date: "2026-08-08",
     readingTime: "9 min read",
     href: "/blog/best-ndis-website-designers/",
+    thumb: "/assets/imgs/page/blog/best-ndis-website-designers-hero.png",
     image: "/assets/imgs/page/blog/best-ndis-website-designers.webp",
   },
   {
@@ -160,6 +171,7 @@ export const BLOG_POSTS = [
     date: "2026-08-11",
     readingTime: "8 min read",
     href: "/blog/wordpress-vs-nextjs-speed-australia/",
+    thumb: "/assets/imgs/page/blog/wordpress-vs-nextjs-speed-australia-thumb.png",
     image: "/assets/imgs/page/blog/wordpress-vs-nextjs-speed-australia.webp",
   },
   {
@@ -172,6 +184,7 @@ export const BLOG_POSTS = [
     date: "2026-08-11",
     readingTime: "7 min read",
     href: "/blog/tradie-suburb-pages-seo/",
+    thumb: "/assets/imgs/page/blog/tradie-suburb-pages-seo-thumb.png",
     image: "/assets/imgs/page/blog/tradie-suburb-pages-seo.webp",
   },
   {
@@ -184,6 +197,7 @@ export const BLOG_POSTS = [
     date: "2026-08-11",
     readingTime: "9 min read",
     href: "/blog/wcag-audit-process-ndis-websites/",
+    thumb: "/assets/imgs/page/blog/wcag-audit-process-ndis-websites-thumb.png",
     image: "/assets/imgs/page/blog/wcag-audit-process-ndis-websites.webp",
   },
   {
@@ -196,6 +210,7 @@ export const BLOG_POSTS = [
     date: "2026-10-08",
     readingTime: "8 min read",
     href: "/blog/ai-receptionist-australia-cost/",
+    thumb: "/assets/imgs/page/blog/ai-receptionist-australia-cost-thumb.png",
     image: "/assets/imgs/page/blog/ai-receptionist-australia-cost.webp",
   },
 ];

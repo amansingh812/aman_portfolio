@@ -42,20 +42,43 @@ for f in list(ROOT.glob("public/*/index.html")) + list(ROOT.glob("app/**/*.js"))
 # Dynamic routes: app/services/[slug] and app/industries/[slug] are backed by
 # data files. A link is only broken if the slug is absent from BOTH the route
 # tree AND the data. Without this the audit reports false positives.
+# Slugs may be written either `slug: '...'` (content files) or `"slug": "..."`
+# (case-studies.js). The original pattern only matched the double-quoted form,
+# so every service and industry slug set came back EMPTY and the broken-link
+# check reported five phantom 404s that all return 200 in production.
+# See docs/ORGANIC-SEO-AUDIT-2026-11-09.md §3.
+SLUG_RE = re.compile(r"""^\s*["']?slug["']?\s*:\s*["']([a-z0-9-]+)["']""", re.M)
+
 def _slugs(datafile):
     f = ROOT/datafile
-    return set(re.findall(r'slug: "([a-z0-9-]+)"', f.read_text())) if f.exists() else set()
-SERVICE_SLUGS  = _slugs("content/service-pages.js")
-INDUSTRY_SLUGS = _slugs("content/industry-pages.js")
+    return set(SLUG_RE.findall(f.read_text(errors="ignore"))) if f.exists() else set()
+
+LANDING_SLUGS    = _slugs("content/landing-pages.js")
+SERVICE_SLUGS    = _slugs("content/service-pages.js")
+INDUSTRY_SLUGS   = _slugs("content/industry-pages.js")
+BLOG_SLUGS       = _slugs("content/blog.js")
+GUIDE_SLUGS      = _slugs("content/guides.js")
+CASE_SLUGS       = _slugs("content/case-studies.js")
+AUTOMATION_SLUGS = _slugs("content/automation-pages.js")
+
+DYNAMIC = {
+    "blog":       BLOG_SLUGS,
+    "guides":     GUIDE_SLUGS,
+    "work":       CASE_SLUGS,
+    "industries": INDUSTRY_SLUGS,
+    "services":   SERVICE_SLUGS,
+}
 
 def page_exists(path):
     slug = path.strip("/")
     if not slug: return True
     if (ROOT/f"public/{slug}/index.html").exists(): return True
-    if (ROOT/f"app/{slug}").is_dir(): return True
-    if slug.startswith("industries/") and slug.split("/",1)[1] in INDUSTRY_SLUGS: return True
-    if slug.startswith("services/")   and slug.split("/",1)[1] in SERVICE_SLUGS:  return True
-    if slug in SERVICE_SLUGS or slug in INDUSTRY_SLUGS: return True
+    if (ROOT/"app"/slug/"page.js").exists(): return True
+    head, _, tail = slug.partition("/")
+    if tail and head in DYNAMIC:
+        return tail in DYNAMIC[head]
+    if slug in LANDING_SLUGS or slug in AUTOMATION_SLUGS:
+        return True
     return False
 
 # ══ 1. STATIC PAGES ══
@@ -143,6 +166,37 @@ for m in re.finditer(r'slug: "([a-z0-9-]+)"', blog):
 for l in sorted(all_links):
     if l.startswith("/blog/") or l in ("/","#"): continue
     if not page_exists(l): err("links", f"broken internal link → {l}")
+
+# ══ 4. SITEMAP vs CODE ══
+# The sitemap was hand-maintained and drifted: 4 live pages were in no sitemap
+# at all and one URL was listed twice. Nothing caught it because this script
+# only checked blog posts. Reconcile both directions every run.
+CODE_URLS = set()
+for f in ROOT.glob("app/**/page.js"):
+    rel = f.parent.relative_to(ROOT/"app")
+    if "[" in str(rel): continue          # dynamic: covered by the slug sets
+    body = f.read_text(errors="ignore")
+    if re.search(r'robots\s*:\s*\{[^}]*index\s*:\s*false', body, re.S):
+        continue                           # intentionally noindex (/results/)
+    path = "/" if str(rel) == "." else f"/{str(rel).replace(chr(92), '/')}/"
+    CODE_URLS.add(path)
+
+for sl in LANDING_SLUGS | AUTOMATION_SLUGS: CODE_URLS.add(f"/{sl}/")
+for pre, slugs in DYNAMIC.items():
+    for sl in slugs: CODE_URLS.add(f"/{pre}/{sl}/")
+
+for u in sorted(CODE_URLS - SITEMAP_URLS):
+    err("sitemap", f"page exists but is not in any sitemap → {u}")
+for u in sorted(SITEMAP_URLS - CODE_URLS):
+    err("sitemap", f"in sitemap but no such page → {u}")
+
+# Duplicate entries inside sitemap.xml — a URL listed twice is a wasted crawl.
+# Only the page sitemap: sitemap-images.xml repeats each page URL by design,
+# once per image it contains, so counting those would flag every page.
+_page_locs = re.findall(r'<loc>https://buildfirstsite\.com(/[^<]*)</loc>',
+                        (ROOT/"public/sitemap.xml").read_text(errors="ignore"))
+for _u in {u for u in _page_locs if _page_locs.count(u) > 1}:
+    warn("sitemap", f"listed more than once in sitemap.xml → {_u}")
 
 # ══ REPORT ══
 print("═" * 68)

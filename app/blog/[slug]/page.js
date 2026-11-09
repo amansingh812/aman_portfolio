@@ -290,7 +290,7 @@ export default async function BlogPost({ params }) {
                                         width={0} height={0} sizes="100vw"
                                         style={{ width: "100%", height: "auto" }}
                                         className="img-responsive bdr-16 mb-30"
-                                        src={post.image || "/assets/imgs/page/blog/single/img-1.png"}
+                                        src={pick(post.thumb, post.image) || "/assets/imgs/page/blog/website-cost-australia.webp"}
                                         alt={post.title}
                                         fetchpriority="high"
                                     />
@@ -371,7 +371,7 @@ export default async function BlogPost({ params }) {
                                                     <Image
                                                         width={0} height={0} sizes="100vw"
                                                         style={{ width: "100%", height: "auto" }}
-                                                        src={`/assets/imgs/page/homepage1/img-news-${(i + 1)}.png`}
+                                                        src={pick(r.thumb, r.image) || "/assets/imgs/page/blog/website-cost-australia.webp"}
                                                         alt={r.title}
                                                     />
                                                 </Link>

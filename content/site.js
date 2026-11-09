@@ -198,7 +198,7 @@ export const FOOTER_COLUMNS = [
     // Industries left the main nav on 4 Oct 2026; this column (plus the hub
     // link) keeps every industry page linked from every page.
     links: [
-      ...INDUSTRY_ITEMS.slice(0, 6).map(i => ({ label: i.label, href: i.href })),
+      ...INDUSTRY_ITEMS.map(i => ({ label: i.label, href: i.href })),
       { label: 'All industries', href: '/industries/' },
     ],
   },
