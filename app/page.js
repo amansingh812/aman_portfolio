@@ -3,17 +3,17 @@
 /**
  * Home (/) — Build First Site homepage, v3.
  *
- * Restructured to match the wireframe anatomy the user shared:
- *   1. HERO             — powerful statement + primary CTA + animated mockup
- *   2. TECH STACK strip — social proof via the modern stack we ship with
- *   3. BENEFITS (3)     — Modern stack · You own the code
- *   4. INDUSTRIES TEASER
- *   5. SERVICES (6)     — end-to-end offer, links to individual service pages
- *   6. PORTFOLIO (3)    — 3 recent projects with LIVE DEMO buttons
- *   7. CLIENT REVIEWS    — empty until real quotes exist (see content/site.js REVIEWS)
- *   8. HOW PRICING WORKS — 4 steps, no prices (prices live on /pricing/ only)
- *   9. FAQ              — Accordion (existing component)
- *  10. FINAL CTA        — big rounded panel, Get a quote + Book a call
+ * Section order (v4, 11 Nov 2026 — fewer sections, one job each):
+ *   1. HERO              hire-a-developer statement, two CTAs, four entry paths, short answer
+ *   2. PROMISE MARQUEE   replaces the tech-logo strip
+ *   3. WHAT WE BUILD     BuildShowcase tabs (replaces Who-we-work-with, Automation, Services)
+ *   4. PORTFOLIO         recent work with live links
+ *   5. BENEFITS          how you grow with us
+ *   6. HOW HIRING WORKS  ProcessFlow (animated), links to /pricing/
+ *   7. CLIENT REVIEWS    hidden until REVIEWS has real quotes
+ *   8. MEET THE ENGINEER
+ *   9. FAQ
+ *  10. START YOUR PROJECT inline form (the final CTA)
  *
  * PRICES: never hardcode a figure in this file. Import BUILD_TIERS and
  * RETAINER from content/pricing.js so the homepage, /pricing/ and every
@@ -27,26 +27,35 @@
  */
 import Layout from "@/components/layout/Layout"
 import Accordion from "@/components/elements/Accordion"
-import TechStack from "@/components/home/TechStack"
 import ClientReviews from "@/components/slider/ClientReviews"
 import ProjectThumb from "@/components/portfolio/ProjectThumb"
 import Link from "next/link"
 import Image from "next/image"
+import ContactPageForm from "@/components/elements/ContactPageForm"
+import PIcon from "@/components/pricing/Icon"
+import ProcessFlow from "@/components/home/ProcessFlow"
+import BuildShowcase from "@/components/home/BuildShowcase"
+import fs from "node:fs"
+import path from "node:path"
+
+const has = (src) => fs.existsSync(path.join(process.cwd(), "public", src))
+import { pick } from "@/components/blog/BlogContentV2"
 import { CTA, SITE, REVIEWS, INDUSTRY_ITEMS } from "@/content/site"
 import { CASE_STUDIES } from "@/content/case-studies"
-import { BUILD_TIERS, AUTOMATION_OFFERS } from "@/content/pricing"
+import { BUILD_TIERS, AUTOMATION_OFFERS, FREE_DESIGN } from "@/content/pricing"
 import { AutomationCard, AUTO_CSS, Icon } from "@/components/automation/AutomationUI"
 
 export const metadata = {
-    // ABSOLUTE — the brand is already the first words here, so letting the root
-    // `%s | Build First Site` template append it would render it twice.
-    title: { absolute: "Build First Site — Web, App & AI Development Australia" },
+    // ABSOLUTE — the root template would otherwise append the brand twice.
+    // 11 Nov 2026: leads with the hire intent; "Australia" stays because the
+    // homepage ranks for "website design australia" queries.
+    title: { absolute: "Hire a Web Developer in Australia & Worldwide | Build First Site" },
     description:
-        "Websites, web apps and AI automation built for Australian businesses. Custom design, a free homepage design first, a written estimate after a short call, and you own the code.",
+        "Hire a web developer for your website, web app, online store or AI automation. Work directly with the engineer, see a free homepage design first, get a written estimate, and own the code. Australia and worldwide.",
     alternates: { canonical: "/" },
     openGraph: {
-        title: "Build First Site — Web, App & AI Development Australia",
-        description: "Websites, web apps and AI automation for Australian businesses. You own the code.",
+        title: "Hire a Web Developer — Websites, Apps & AI Automation | Build First Site",
+        description: "Work directly with the engineer who builds your website, app or automation. Free homepage design first. You own the code.",
         url: "https://buildfirstsite.com/",
     },
 }
@@ -131,6 +140,54 @@ export default function Home() {
 .home-price-amt { display:flex; align-items:baseline;
   padding-bottom:22px; border-bottom:1px solid #E4E7EC; }
 .home-price-btn { margin-top:auto; width:100%; text-align:center; }
+.hp-hero{background:linear-gradient(180deg,#E6F3F5 0%,#fff 100%);padding:70px 0 50px}
+.hp-hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.hp-hero h1{font-size:clamp(36px,5vw,64px);line-height:1.08;letter-spacing:-.02em;color:#101828;margin:18px 0 20px}
+.hp-hero h1 span{color:#006D77}
+.hp-chip{display:inline-block;background:#fff;border:1px solid #BEE1E6;color:#004349;font-weight:700;font-size:13px;letter-spacing:.05em;text-transform:uppercase;padding:7px 14px;border-radius:99px}
+.hp-ticks{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:22px;font-size:15px;color:#344054}
+.hp-ticks span:before{content:"✓";color:#067647;font-weight:800;margin-right:6px}
+.hp-heroimg img{width:100%;height:auto;border-radius:24px;border:1px solid #E4E7EC;box-shadow:0 30px 60px -32px rgba(16,24,40,.4)}
+.hp-paths{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:40px}
+.hp-path{display:flex;align-items:center;gap:10px;background:#fff;border:1.5px solid #E4E7EC;border-radius:14px;padding:14px 16px;font-weight:700;color:#101828;text-decoration:none;min-height:56px;transition:all .2s}
+.hp-path:hover{border-color:#006D77;transform:translateY(-2px);color:#004349}
+.hp-path i{font-style:normal;width:34px;height:34px;border-radius:10px;background:#E6F3F5;display:grid;place-items:center;flex:none}
+.hp-answer{display:grid;grid-template-columns:auto 1fr;gap:20px;background:#004349;border-radius:18px;padding:28px 32px;margin-top:10px}
+.hp-answer h2{font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:#BEE1E6;margin:0 0 6px}
+.hp-answer p{margin:0;color:#fff;font-size:19px;line-height:1.6}
+.hp-head{max-width:720px;margin:0 auto 44px;text-align:center}
+.hp-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s}
+.hp-step{background:#fff;border:1px solid #E4E7EC;border-radius:18px;padding:26px;position:relative}
+.hp-step:before{counter-increment:s;content:"0" counter(s);display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:#006D77;color:#fff;font-weight:800;margin-bottom:16px}
+.hp-step h3{font-size:19px;color:#101828;margin-bottom:8px}
+.hp-step p{font-size:15px;color:#475467;margin:0}
+.hp-step small{display:block;margin-top:12px;color:#005F68;font-weight:700}
+.hp-who{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.hp-card{background:#fff;border:1px solid #E4E7EC;border-radius:18px;padding:26px;transition:transform .2s,box-shadow .2s}
+.hp-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px -26px rgba(0,67,73,.45)}
+.hp-card h3{font-size:19px;color:#101828;margin:0 0 8px}
+.hp-card p{font-size:15px;color:#475467;margin:0 0 12px}
+.hp-card a{font-weight:700;color:#005F68}
+.hp-eng{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:center;background:#F8FAFB;border:1px solid #E4E7EC;border-radius:24px;padding:44px}
+.hp-eng img{width:100%;height:auto;border-radius:18px}
+.hp-avatar{width:64px;height:64px;border-radius:50%;background:#006D77;color:#fff;display:grid;place-items:center;font-weight:800;font-size:22px}
+.hp-prom{display:grid;grid-template-columns:1fr 1fr;gap:10px 20px;list-style:none;padding:0;margin:20px 0}
+.hp-prom li{padding-left:26px;position:relative;font-size:16px;color:#344054}
+.hp-prom li:before{content:"✓";position:absolute;left:0;color:#067647;font-weight:800}
+.hp-start{background:linear-gradient(135deg,#004349,#006D77);border-radius:24px;padding:48px}
+.hp-start h2,.hp-start .lead{color:#fff}
+.hp-start .formbox{background:#fff;border-radius:18px;padding:28px}
+@media(max-width:991px){.hp-hero-grid,.hp-eng{grid-template-columns:1fr}.hp-paths,.hp-steps{grid-template-columns:1fr 1fr}.hp-who{grid-template-columns:1fr}.hp-start{padding:28px 20px}.hp-eng{padding:26px}}
+@media(max-width:560px){.hp-paths,.hp-steps,.hp-prom{grid-template-columns:1fr}.hp-answer{grid-template-columns:1fr;padding:22px}}
+@media(prefers-reduced-motion:reduce){.hp-path,.hp-card{transition:none}}
+.hp-mq{overflow:hidden;background:#101828;padding:18px 0;margin-top:10px}
+.hp-mq-track{display:flex;width:max-content;animation:hpMq 38s linear infinite}
+.hp-mq:hover .hp-mq-track{animation-play-state:paused}
+.hp-mq ul{display:flex;list-style:none;margin:0;padding:0}
+.hp-mq li{white-space:nowrap;color:#fff;font-weight:700;font-size:17px;padding:0 26px;display:flex;align-items:center;gap:26px}
+.hp-mq li:after{content:"✦";color:#F5A66B}
+@keyframes hpMq{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.hp-mq-track{animation:none;flex-wrap:wrap;width:auto}.hp-mq ul[aria-hidden=true]{display:none}.hp-mq ul{flex-wrap:wrap}}
 .hero-float-card { background:#fff; border-radius:12px; box-shadow:0 47px 65px rgba(21,28,38,.1); }
 .home-price-retainer { background:#F4FAFB; border:1px solid #BEE1E6; border-radius:16px;
   padding:32px 36px; display:flex; align-items:center; justify-content:space-between;
@@ -148,322 +205,90 @@ export default function Home() {
                 which is the §1 fake-metrics problem, so the frames here show
                 real client sites instead — the same live screenshots the
                 portfolio section already uses. */}
-            <section id="home" className="section-box">
-                <div className="banner-hero bg-service-2" style={{ position: "relative", overflow: "hidden" }}>
-                    {/* Decorative side graphics (Nov 2026): inline SVG, no image requests,
-                        hidden under 1200px so they never crowd the headline. */}
-                    <style dangerouslySetInnerHTML={{ __html: `
-.hero-deco{position:absolute;width:320px;pointer-events:none;z-index:0}
-.hero-deco.l{left:0;bottom:0}.hero-deco.r{right:0;top:40px}
-.hero-deco svg{width:100%;height:auto;animation:heroFloat 10s ease-in-out infinite}
-.hero-deco.r svg{animation-delay:-3.5s}
-@keyframes heroFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-@media (max-width:1399px){.hero-deco{width:220px}}
-@media (max-width:1199px){.hero-deco{opacity:.35}}
-@media (max-width:767px){.hero-deco{display:none}}
-@media (prefers-reduced-motion:reduce){.hero-deco svg{animation:none}}
-#home .container{position:relative;z-index:1}
-` }} />
-                    <div className="hero-deco l" aria-hidden="true"><svg viewBox="0 0 320 620" fill="none"><g stroke="#006D77" strokeOpacity="0.35" strokeWidth="1.2"><line x1="11" y1="144" x2="4" y2="134"/><line x1="156" y1="233" x2="193" y2="183"/><line x1="3" y1="314" x2="2" y2="270"/><line x1="81" y1="506" x2="221" y2="429"/><line x1="14" y1="81" x2="122" y2="48"/><line x1="21" y1="359" x2="50" y2="361"/><line x1="3" y1="314" x2="50" y2="361"/><line x1="3" y1="314" x2="34" y2="355"/><line x1="53" y1="101" x2="5" y2="64"/><line x1="21" y1="359" x2="34" y2="355"/><line x1="152" y1="579" x2="221" y2="429"/><line x1="133" y1="248" x2="90" y2="190"/><line x1="53" y1="101" x2="4" y2="134"/><line x1="308" y1="38" x2="310" y2="81"/><line x1="49" y1="500" x2="114" y2="535"/><line x1="118" y1="229" x2="90" y2="190"/><line x1="161" y1="53" x2="193" y2="183"/><line x1="81" y1="506" x2="152" y2="579"/><line x1="156" y1="233" x2="90" y2="190"/><line x1="81" y1="506" x2="114" y2="535"/><line x1="2" y1="270" x2="21" y2="359"/><line x1="5" y1="64" x2="14" y2="81"/><line x1="53" y1="101" x2="161" y2="53"/><line x1="53" y1="101" x2="11" y2="144"/><line x1="308" y1="38" x2="251" y2="184"/><line x1="53" y1="101" x2="122" y2="48"/><line x1="152" y1="579" x2="114" y2="535"/><line x1="81" y1="506" x2="49" y2="500"/><line x1="251" y1="184" x2="310" y2="81"/><line x1="11" y1="144" x2="14" y2="81"/><line x1="251" y1="184" x2="193" y2="183"/><line x1="173" y1="267" x2="193" y2="183"/><line x1="221" y1="429" x2="114" y2="535"/><line x1="14" y1="81" x2="4" y2="134"/><line x1="3" y1="314" x2="21" y2="359"/><line x1="161" y1="53" x2="310" y2="81"/><line x1="2" y1="270" x2="34" y2="355"/><line x1="5" y1="64" x2="4" y2="134"/><line x1="133" y1="248" x2="156" y2="233"/><line x1="53" y1="101" x2="14" y2="81"/><line x1="118" y1="229" x2="133" y2="248"/><line x1="152" y1="579" x2="49" y2="500"/><line x1="133" y1="248" x2="173" y2="267"/><line x1="251" y1="184" x2="156" y2="233"/><line x1="50" y1="361" x2="34" y2="355"/><line x1="161" y1="53" x2="308" y2="38"/><line x1="161" y1="53" x2="122" y2="48"/><line x1="251" y1="184" x2="173" y2="267"/><line x1="118" y1="229" x2="156" y2="233"/><line x1="118" y1="229" x2="173" y2="267"/><line x1="156" y1="233" x2="173" y2="267"/></g><g fill="#006D77" fillOpacity="0.55"><circle cx="53" cy="101" r="5"/><circle cx="161" cy="53" r="3.5"/><circle cx="118" cy="229" r="3.5"/><circle cx="3" cy="314" r="3.5"/><circle cx="2" cy="270" r="5"/><circle cx="5" cy="64" r="3.5"/><circle cx="81" cy="506" r="3.5"/><circle cx="11" cy="144" r="3.5"/><circle cx="152" cy="579" r="5"/><circle cx="133" cy="248" r="3.5"/><circle cx="308" cy="38" r="3.5"/><circle cx="251" cy="184" r="3.5"/><circle cx="14" cy="81" r="5"/><circle cx="49" cy="500" r="3.5"/><circle cx="21" cy="359" r="3.5"/><circle cx="156" cy="233" r="3.5"/><circle cx="122" cy="48" r="5"/><circle cx="4" cy="134" r="3.5"/><circle cx="173" cy="267" r="3.5"/><circle cx="50" cy="361" r="3.5"/><circle cx="90" cy="190" r="5"/><circle cx="221" cy="429" r="3.5"/><circle cx="34" cy="355" r="3.5"/><circle cx="114" cy="535" r="3.5"/><circle cx="193" cy="183" r="5"/><circle cx="310" cy="81" r="3.5"/></g></svg></div>
-                    <div className="hero-deco r" aria-hidden="true"><svg viewBox="0 0 320 560" fill="none"><g stroke="#006D77" strokeOpacity="0.35" strokeWidth="1.2"><line x1="112" y1="319" x2="61" y2="179"/><line x1="186" y1="256" x2="279" y2="234"/><line x1="78" y1="520" x2="87" y2="477"/><line x1="61" y1="179" x2="186" y2="256"/><line x1="302" y1="73" x2="308" y2="144"/><line x1="223" y1="369" x2="250" y2="371"/><line x1="241" y1="419" x2="223" y2="369"/><line x1="241" y1="419" x2="249" y2="481"/><line x1="304" y1="274" x2="314" y2="253"/><line x1="304" y1="274" x2="279" y2="234"/><line x1="186" y1="256" x2="86" y2="164"/><line x1="78" y1="520" x2="161" y2="546"/><line x1="317" y1="425" x2="249" y2="481"/><line x1="78" y1="520" x2="197" y2="487"/><line x1="141" y1="331" x2="186" y2="256"/><line x1="112" y1="319" x2="186" y2="256"/><line x1="302" y1="73" x2="314" y2="253"/><line x1="61" y1="179" x2="86" y2="164"/><line x1="302" y1="73" x2="279" y2="234"/><line x1="241" y1="419" x2="197" y2="487"/><line x1="197" y1="487" x2="87" y2="477"/><line x1="161" y1="546" x2="87" y2="477"/><line x1="308" y1="144" x2="279" y2="234"/><line x1="308" y1="144" x2="314" y2="253"/><line x1="314" y1="253" x2="279" y2="234"/><line x1="112" y1="319" x2="141" y2="331"/><line x1="112" y1="319" x2="86" y2="164"/><line x1="112" y1="319" x2="223" y2="369"/><line x1="141" y1="331" x2="223" y2="369"/><line x1="316" y1="389" x2="250" y2="371"/><line x1="249" y1="481" x2="197" y2="487"/><line x1="316" y1="389" x2="317" y2="425"/><line x1="241" y1="419" x2="250" y2="371"/><line x1="318" y1="371" x2="316" y2="389"/><line x1="304" y1="274" x2="319" y2="259"/><line x1="241" y1="419" x2="317" y2="425"/><line x1="318" y1="371" x2="250" y2="371"/><line x1="161" y1="546" x2="197" y2="487"/><line x1="319" y1="259" x2="314" y2="253"/><line x1="318" y1="371" x2="317" y2="425"/><line x1="319" y1="259" x2="279" y2="234"/></g><g fill="#006D77" fillOpacity="0.55"><circle cx="241" cy="419" r="5"/><circle cx="304" cy="274" r="3.5"/><circle cx="318" cy="371" r="3.5"/><circle cx="112" cy="319" r="3.5"/><circle cx="61" cy="179" r="5"/><circle cx="141" cy="331" r="3.5"/><circle cx="186" cy="256" r="3.5"/><circle cx="78" cy="520" r="3.5"/><circle cx="223" cy="369" r="5"/><circle cx="316" cy="389" r="3.5"/><circle cx="161" cy="546" r="3.5"/><circle cx="86" cy="164" r="3.5"/><circle cx="250" cy="371" r="5"/><circle cx="319" cy="259" r="3.5"/><circle cx="302" cy="73" r="3.5"/><circle cx="317" cy="425" r="3.5"/><circle cx="308" cy="144" r="5"/><circle cx="249" cy="481" r="3.5"/><circle cx="314" cy="253" r="3.5"/><circle cx="197" cy="487" r="3.5"/><circle cx="87" cy="477" r="5"/><circle cx="279" cy="234" r="3.5"/></g></svg></div>
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-12 text-center">
-                                <span className="tag-1" style={{ color: "#A8411A" }}>Free homepage design before you commit</span>
-                                <h1 className="text-display-2 mt-30">
-                                    Professional websites
-                                    <span className="color-green-900"> built for Australian businesses.</span>
-                                </h1>
-                                <p className="text-body-lead-large color-gray-500 mt-40" style={{ maxWidth: 760, marginInline: 'auto' }}>
-                                    Custom design, no hidden fees, and you own your
-                                    website. When you're ready, we automate the follow-up too.
-                                </p>
-                                <p className="text-body-excerpt color-gray-600 mt-15">
-                                    Free homepage design first · Written estimate after a short call · You own the code
-                                </p>
-                                {/* Two paths (6 Oct 2026): websites stay the primary
-                                    entry; automation is the second growth track.
-                                    cta_path_click tells us which one visitors pick. */}
-                                <div className="mt-40 text-center">
-                                    <Link href="/pricing/" data-event="cta_path_click" data-package="website"
-                                        className="btn btn-black icon-arrow-right-white mr-10 mb-10">
-                                        I need a website
-                                    </Link>
-                                    <Link href="/services/ai-automation/" data-event="cta_path_click" data-package="automation"
-                                        className="btn btn-default icon-arrow-right mb-10">
-                                        I want to automate my business
-                                    </Link>
-                                </div>
-                                <p className="text-body-small color-gray-500 mt-15">
-                                    <Link href="/work/" className="color-gray-900">See our work →</Link>
-                                </p>
-                            </div>
-
-                            <div className="col-lg-12 d-none d-lg-block">
-                                <div className="row">
-                                    <div className="col-lg-2" />
-                                    <div className="col-lg-8">
-                                        <div className="banner-imgs">
-                                            {/* Floating cards — same look as the template's
-                                                "68K+ User Activated" / "Sketch Content" /
-                                                "Business Feed" cards, rebuilt as HTML so the
-                                                numbers are REAL. Every figure comes from
-                                                content/pricing.js; nothing here is invented. */}
-                                            <div className="block-1 shape-2">
-                                                <div className="hero-float-card" style={{ padding: '26px 20px 18px', textAlign: 'center' }}>
-                                                    <svg width="30" height="30" viewBox="0 0 24 24" fill="#006D77" aria-hidden="true"><path d="M21.4 11.6 12.4 2.6A2 2 0 0 0 11 2H4a2 2 0 0 0-2 2v7c0 .55.22 1.05.59 1.42l9 9a2 2 0 0 0 2.82 0l7-7a2 2 0 0 0 0-2.82zM6.5 8A1.5 1.5 0 1 1 8 6.5 1.5 1.5 0 0 1 6.5 8z"/></svg>
-                                                    <div style={{ fontSize: 24, fontWeight: 500, color: '#101828', marginTop: 10 }}>Free</div>
-                                                    <div style={{ fontSize: 17, color: '#667085', marginTop: 4 }}>Homepage design first</div>
-                                                    <svg viewBox="0 0 200 50" style={{ width: '100%', marginTop: 8 }} aria-hidden="true"><path d="M5 25 C 35 5, 55 5, 75 25 S 115 45, 135 25 S 175 5, 195 25" fill="none" stroke="#006D77" strokeWidth="6" strokeLinecap="round"/></svg>
-                                                </div>
-                                            </div>
-                                            <div className="block-2 shape-2">
-                                                <div className="hero-float-card d-flex align-items-center" style={{ padding: '22px 22px', gap: 16 }}>
-                                                    <span style={{ width: 46, height: 46, borderRadius: '50%', background: '#FBE3E8', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                                                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B4235A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>
-                                                    </span>
-                                                    <div style={{ flex: 1, textAlign: 'left' }}>
-                                                        <div style={{ fontSize: 17, fontWeight: 600, color: '#101828' }}>You own the code</div>
-                                                        <div style={{ fontSize: 15, color: '#667085' }}>No lock-in, ever</div>
-                                                    </div>
-                                                    <span style={{ color: '#475467', fontSize: 22, lineHeight: 1 }} aria-hidden="true">⋮</span>
-                                                </div>
-                                            </div>
-                                            <div className="block-3 shape-2">
-                                                <div className="hero-float-card d-flex align-items-center" style={{ padding: '26px 26px', gap: 10, background: '#F8F9FC' }}>
-                                                    <div style={{ textAlign: 'left' }}>
-                                                        <span style={{ display: 'inline-block', background: '#006D77', color: '#fff', fontSize: 14, padding: '6px 16px', borderRadius: 999 }}>Starter build</span>
-                                                        <div style={{ fontSize: 20, color: '#101828', marginTop: 18 }}>{starter.delivery}</div>
-                                                        <div style={{ fontSize: 15, color: '#667085', marginTop: 4 }}>Brief to live</div>
-                                                    </div>
-                                                    <svg viewBox="0 0 200 120" style={{ width: '58%', flexShrink: 0 }} aria-hidden="true">
-                                                        <defs><linearGradient id="heroFeed" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#D8A6F5"/><stop offset="1" stopColor="#D8A6F5" stopOpacity="0"/></linearGradient></defs>
-                                                        <path d="M5 105 C 25 70, 40 95, 55 80 S 70 20, 85 45 S 100 95, 115 60 S 130 5, 145 30 S 160 95, 175 80 S 190 70, 195 70 L 195 120 L 5 120 Z" fill="url(#heroFeed)"/>
-                                                        <path d="M5 105 C 25 70, 40 95, 55 80 S 70 20, 85 45 S 100 95, 115 60 S 130 5, 145 30 S 160 95, 175 80 S 190 70, 195 70" fill="none" stroke="#006D77" strokeWidth="4" strokeLinecap="round"/>
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                            {/* Centre mockup: a sample app dashboard (template art).
-                                                It illustrates "apps that scale" as a product UI;
-                                                the floating cards around it carry the real claims. */}
-                                            <Image
-                                                width={0} height={0} sizes="(max-width: 1200px) 66vw, 760px"
-                                                style={{ width: "100%", height: "auto" }}
-                                                src="/assets/imgs/page/services/1/banner.png"
-                                                alt="Example web app dashboard design"
-                                                /* Not `priority`: this block is d-none below lg, and
-                                                   priority preloads it on phones too, competing with the
-                                                   real mobile LCP (the H1). Lazy + high fetch priority
-                                                   loads it straight away on desktop and never on mobile. */
-                                                loading="lazy"
-                                                fetchPriority="high"
-                                            />
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-2" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* ═══════════════ 2. TECH STACK TRUST STRIP ═══════════════ */}
-            <TechStack />
-
-            {/* ═══════════════ 3. BENEFITS — index-2 split layout ═══════════════ */}
-            <section className="section-box">
-                <div className="container mt-50">
-                    <div className="row">
-                        {/* Left — photo with floating chart card */}
-                        <div className="col-lg-6 col-sm-12 block-img-we-do">
-                            <div className="inner-image">
-                                <Image
-                                    className="bdrd-16 img-responsive"
-                                    width={0} height={0} sizes="(max-width: 992px) 100vw, 50vw"
-                                    style={{ width: "100%", height: "auto" }}
-                                    src="/assets/imgs/page/homepage2/img-2.webp"
-                                    alt="Build First Site — web development studio at work"
-                                />
-                                <div className="block-chart">
-                                    <Image width={0} height={0} sizes="100vw"
-                                        style={{ width: "auto", height: "auto" }}
-                                        src="/assets/imgs/page/homepage2/chart.png"
-                                        alt="Project growth chart"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Right — tag + heading + 3 icon-list items */}
-                        <div className="col-lg-6 col-sm-12 block-we-do-2">
-                            <span className="tag-1 bg-6 color-green-900">Growth without the chaos</span>
-                            <h2 className="text-heading-1 mt-30">
-                                How can you grow with us?
-                            </h2>
-                            <p className="text-body-lead-large color-gray-600 mt-30">
-                                Bring in better opportunities, turn more of them into customers,
-                                and remove the busywork that makes growth feel heavy.
-                            </p>
-                            <div className="list-icons mt-50">
-                                <div className="item-icon none-bd">
-                                    <span className="icon-left">
-                                        <Image width={0} height={0} sizes="100vw"
-                                            style={{ width: "auto", height: "auto" }}
-                                            src="/assets/imgs/page/homepage2/icon-work.svg"
-                                            alt="The right customers find you"
-                                        />
-                                    </span>
-                                    <h4 className="text-heading-4">The right customers find you</h4>
-                                    <p className="text-body-excerpt color-gray-600 mt-15">
-                                        Every good enquiry gets a clear next step, so interest turns into a conversation instead of stalling out.
-                                    </p>
-                                </div>
-                                <div className="item-icon none-bd">
-                                    <span className="icon-left">
-                                        <Image width={0} height={0} sizes="100vw"
-                                            style={{ width: "auto", height: "auto" }}
-                                            src="/assets/imgs/page/homepage2/icon-design.svg"
-                                            alt="Routine work happens without chasing"
-                                        />
-                                    </span>
-                                    <h4 className="text-heading-4">Routine work runs itself</h4>
-                                    <p className="text-body-excerpt color-gray-600 mt-15">
-                                        Follow-ups, updates and admin happen in the background — nothing depends on you remembering to chase it.
-                                    </p>
-                                </div>
-                                <div className="item-icon none-bd">
-                                    <span className="icon-left">
-                                        <Image width={0} height={0} sizes="100vw"
-                                            style={{ width: "auto", height: "auto" }}
-                                            src="/assets/imgs/page/homepage2/icon-advance.svg"
-                                            alt="You can see what is actually working"
-                                        />
-                                    </span>
-                                    <h4 className="text-heading-4">You see what's actually working</h4>
-                                    <p className="text-body-excerpt color-gray-600 mt-15">
-                                        Clear visibility into what's driving results, so decisions are based on what's happening, not guesswork.
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="mt-40">
-                                <Link href="/about/" className="btn btn-black icon-arrow-right-white">
-                                    See your growth path
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* ═══════════════ 4. WHAT CAN WE AUTOMATE? ═══════════════
-                Replaced the Industries teaser on 4 Oct 2026 (Sprint 2):
-                automation is the second growth track. Cards and prices come
-                from AUTOMATION_OFFERS in content/pricing.js. Industry pages
-                stay linked through the "Who we work with" strip below and the
-                footer column. */}
-            <style dangerouslySetInnerHTML={{ __html: AUTO_CSS }} />
-            <section className="section-box" id="automation">
+            <section id="home" className="hp-hero">
                 <div className="container">
-                    <div className="row">
-                        <div className="col-lg-8 mx-auto text-center mt-100">
-                            <span className="tag-1 bg-6 color-green-900">AI &amp; Automation</span>
-                            <h2 className="text-heading-1 color-gray-900 mt-20 mb-10">
-                                What can we automate?
-                            </h2>
-                            <p className="text-body-lead-large color-gray-600 mt-20">
-                                Small systems, built on the tools you already use, that answer
-                                enquiries, send your numbers and keep customers coming back.
-                                Estimated after a free audit.
+                    <div className="hp-hero-grid">
+                        <div>
+                            <span className="hp-chip">Web developer for hire · Australia &amp; worldwide</span>
+                            <h1>Hire a web developer who <span>builds it with you, start to finish.</span></h1>
+                            <p className="text-body-lead-large color-gray-600" style={{ maxWidth: 600 }}>
+                                Websites, online stores, web apps and AI automation. You work directly with the
+                                engineer who writes the code, you see your homepage designed before you pay,
+                                and the finished product is yours.
                             </p>
-                        </div>
-                    </div>
-                    <div className="row mt-50">
-                        {AUTOMATION_OFFERS.map((o) => (
-                            <div key={o.id} className="col-lg-4 col-md-6 mb-30">
-                                <AutomationCard offer={o} loc="homepage" />
+                            <div className="mt-30">
+                                <Link href="#start" data-event="cta_path_click" data-package="start-project"
+                                    className="btn btn-black icon-arrow-right-white mr-10 mb-10">
+                                    Start my project
+                                </Link>
+                                <a data-loc="home-hero" href={SITE.calendly} target="_blank" rel="noopener noreferrer"
+                                    className="btn btn-default icon-arrow-right mb-10">
+                                    Book a free call
+                                </a>
                             </div>
-                        ))}
-                        <div className="col-lg-4 col-md-6 mb-30">
-                            <Link href="/free-automation-audit/" className="text-decoration-none d-block h-100"
-                                data-event="automation_audit_cta" data-package="homepage">
-                                <div className="h-100 hover-up" style={{ background: '#006D77', borderRadius: 18, padding: 28 }}>
-                                    <div className="ac-top">
-                                        <span className="ac-ic" style={{ background: 'rgba(255,255,255,.14)', color: '#83C5BE' }}><Icon name="sparkle" /></span>
-                                        <h3 className="text-heading-5 mb-0" style={{ color: '#fff' }}>Free automation audit</h3>
-                                    </div>
-                                    <p className="text-body-text mb-15" style={{ color: '#E6F3F5' }}>
-                                        Not sure where to start? Answer four questions and get a written map of
-                                        what to automate first.
-                                    </p>
-                                    <span className="text-heading-6" style={{ color: '#E6F3F5' }}>Start the audit →</span>
-                                </div>
-                            </Link>
+                            <div className="hp-ticks">
+                                <span>Free homepage design first</span>
+                                <span>Written estimate, phase by phase</span>
+                                <span>You own the code</span>
+                            </div>
+                        </div>
+                        <div className="hp-heroimg">
+                            <Image
+                                src={pick("/assets/imgs/page/home/hero-desk.png", "/assets/imgs/page/services/1/banner.png")}
+                                alt="A developer's desk with a laptop showing a business website, a code editor on a second screen and the site on a phone"
+                                width={1200} height={900} sizes="(max-width: 991px) 100vw, 560px" priority
+                            />
                         </div>
                     </div>
 
-                    {/* Who we work with — keeps the industry pages linked from the homepage. */}
-                    <div className="text-center mt-30 mb-20">
-                        <p className="text-body-small color-gray-500 mb-15">Who we work with</p>
-                        {INDUSTRY_ITEMS.map((i) => (
-                            <Link key={i.href} href={i.href}
-                                className="d-inline-block mr-10 mb-10 text-body-small color-gray-900"
-                                style={{ border: '1px solid #E4E7EC', borderRadius: 50, padding: '8px 16px' }}>
-                                {i.label}
-                            </Link>
-                        ))}
+                    {/* What do you need built? Four entry paths. */}
+                    <nav className="hp-paths" aria-label="What do you need built?">
+                        <Link className="hp-path" href="/services/web-development/" data-event="cta_path_click" data-package="website"><i><PIcon size={18} name="globe" /></i>A business website</Link>
+                        <Link className="hp-path" href="/ecommerce-development/" data-event="cta_path_click" data-package="store"><i><PIcon size={18} name="cart" /></i>An online store</Link>
+                        <Link className="hp-path" href="/services/custom-software/" data-event="cta_path_click" data-package="app"><i><PIcon size={18} name="layout" /></i>A web app or portal</Link>
+                        <Link className="hp-path" href="/services/ai-automation/" data-event="cta_path_click" data-package="automation"><i><PIcon size={18} name="bot" /></i>AI &amp; automation</Link>
+                    </nav>
+
+                    {/* AEO: the direct answer search and AI assistants quote. */}
+                    <div className="hp-answer mt-40">
+                        <div aria-hidden="true" style={{ fontSize: 28 }}>💡</div>
+                        <div>
+                            <h2>Short answer</h2>
+                            <p>
+                                Build First Site is a small web development studio you can hire to design and build
+                                websites, online stores, web apps and AI automation. Clients work directly with the
+                                engineer, see a free homepage design first, get a written estimate after a short call,
+                                and own the code. We work with businesses in Australia and worldwide.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* ═══════════════ 5. SERVICES ═══════════════ */}
-            <section id="services" className="section-box mt-50">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-8 mx-auto text-center mb-40">
-                            <span className="tag-1 bg-6 color-green-900">Services</span>
-                            <h2 className="text-heading-2 color-gray-900 mt-20 mb-20">
-                                End-to-end delivery by<br className="d-lg-block d-none" />
-                                the person who builds it
-                            </h2>
-                            <p className="text-body-lead-large color-gray-600 mb-30">
-                                Direct, coordinated delivery to design, build, launch and support your
-                                work across web, mobile, marketing and AI.
-                            </p>
-                        </div>
-                    </div>
+            {/* ═══════════════ 2. PROMISE MARQUEE (replaces the tech-logo strip, 11 Nov 2026) ═══════════════ */}
+            <div className="hp-mq" aria-label="What you get when you hire us">
+                <div className="hp-mq-track">
+                    {[0, 1].map((r) => (
+                        <ul key={r} aria-hidden={r === 1}>
+                            {["Free homepage design first", "You own the code", "Written estimate before you commit", "Direct access to the engineer", "No lock-in, no platform fees", "Built for Google and AI search", "Pay in instalments"].map((t) => <li key={t}>{t}</li>)}
+                        </ul>
+                    ))}
                 </div>
-                <div className="container mt-20">
-                    <div className="row">
-                        {SERVICES.map((s) => (
-                            <div className="col-lg-4 col-md-6 col-sm-6 col-12 mb-40" key={s.title}>
-                                <Link href={s.href} className="d-block h-100" style={{ textDecoration: 'none' }}>
-                                    <div className="list-icons">
-                                        <div className="item-icon none-bd">
-                                            <span className="icon-left">
-                                                <Image
-                                                    width={0} height={0} sizes="100vw"
-                                                    style={{ width: "auto", height: "auto" }}
-                                                    src={s.icon}
-                                                    alt={s.title}
-                                                />
-                                            </span>
-                                            <h4 className="text-heading-6 color-gray-900">{s.title}</h4>
-                                            <p className="text-body-text color-gray-600 mt-15">{s.body}</p>
-                                            <span className="text-heading-6 color-green-900 mt-15 d-inline-block">
-                                                Learn more →
-                                            </span>
-                                        </div>
-                                    </div>
-                                </Link>
-                            </div>
-                        ))}
+            </div>
+
+            {/* ═══════════════ 3. WHAT WE BUILD (one showcase replaces Who-we-work-with, Automation and Services) ═══════════════ */}
+            <section className="section-box mt-80" id="services">
+                <div className="container">
+                    <div className="hp-head">
+                        <span className="tag-1 bg-6 color-green-900">What we build</span>
+                        <h2 className="text-heading-1 mt-20">Pick what you need. See how it works.</h2>
                     </div>
-                    <div className="text-center mt-10 mb-20">
-                        <Link href="/services/" className="btn btn-black icon-arrow-right-white">
-                            See all services
-                        </Link>
-                    </div>
+                    <BuildShowcase items={[
+                        { id: "website", photo: has("/assets/imgs/page/home/tab-website.png") ? "/assets/imgs/page/home/tab-website.png" : null, tab: "Business website", title: "A website that brings in calls and enquiries", text: "Custom designed for your business, fast on phones, and set up to be found on Google.", points: ["Click-to-call, quote and booking forms", "SEO and Google Business Profile setup", "Edit it yourself, no developer needed"], goodFor: "trades, clinics, cafes, consultants, local services, and businesses replacing an old Wix or WordPress site", href: "/services/web-development/", cta: "Website development" },
+                        { id: "store", photo: has("/assets/imgs/page/home/tab-store.png") ? "/assets/imgs/page/home/tab-store.png" : null, tab: "Online store", title: "A store you own, without platform fees", text: "Sell online with a fast storefront, secure Stripe checkout and your own admin dashboard.", points: ["Products, stock and orders in one place", "Only standard payment processing fees", "Your catalogue and customer data stay yours"], goodFor: "retailers, makers and brands moving off Shopify or marketplaces", href: "/ecommerce-development/", cta: "E-commerce development" },
+                        { id: "app", photo: has("/assets/imgs/page/home/tab-app.png") ? "/assets/imgs/page/home/tab-app.png" : null, tab: "Web app or portal", title: "Software that replaces spreadsheets and manual work", text: "Customer portals, booking systems, dashboards and internal tools, built around how your business runs.", points: ["Logins, roles and secure data", "Turn an AI-built prototype into a real product", "iOS and Android apps in Flutter or React Native"], goodFor: "startups, founders and growing companies", href: "/services/custom-software/", cta: "Custom software" },
+                        { id: "automation", photo: has("/assets/imgs/page/home/auto-reply.png") ? "/assets/imgs/page/home/auto-reply.png" : null, tab: "AI & automation", title: "Routine work that runs by itself", text: "Instant replies to new leads, automatic reports and AI chatbots, built on the tools you already use.", points: ["Every enquiry answered in seconds", "Data synced between your tools", "A free automation audit to find the best first step"], goodFor: "teams losing hours to follow-ups, data entry and reporting", href: "/services/ai-automation/", cta: "AI & automation" },
+                    ]} />
                 </div>
             </section>
 
@@ -543,6 +368,104 @@ export default function Home() {
                 </div>
             </section>
 
+            {/* ═══════════════ 3. BENEFITS — index-2 split layout ═══════════════ */}
+            <section className="section-box">
+                <div className="container mt-50">
+                    <div className="row">
+                        {/* Left — photo with floating chart card */}
+                        <div className="col-lg-6 col-sm-12 block-img-we-do">
+                            <div className="inner-image">
+                                <Image
+                                    className="bdrd-16 img-responsive"
+                                    width={0} height={0} sizes="(max-width: 992px) 100vw, 50vw"
+                                    style={{ width: "100%", height: "auto" }}
+                                    src="/assets/imgs/page/homepage2/img-2.webp"
+                                    alt="Two people reviewing website results on a whiteboard in a studio"
+                                />
+                            </div>
+                        </div>
+
+                        {/* Right — tag + heading + 3 icon-list items */}
+                        <div className="col-lg-6 col-sm-12 block-we-do-2">
+                            <span className="tag-1 bg-6 color-green-900">Growth without the chaos</span>
+                            <h2 className="text-heading-1 mt-30">
+                                How can you grow with us?
+                            </h2>
+                            <p className="text-body-lead-large color-gray-600 mt-30">
+                                Bring in better opportunities, turn more of them into customers,
+                                and remove the busywork that makes growth feel heavy.
+                            </p>
+                            <div className="list-icons mt-50">
+                                <div className="item-icon none-bd">
+                                    <span className="icon-left">
+                                        <Image width={0} height={0} sizes="100vw"
+                                            style={{ width: "auto", height: "auto" }}
+                                            src="/assets/imgs/page/homepage2/icon-work.svg"
+                                            alt="The right customers find you"
+                                        />
+                                    </span>
+                                    <h4 className="text-heading-4">The right customers find you</h4>
+                                    <p className="text-body-excerpt color-gray-600 mt-15">
+                                        Every good enquiry gets a clear next step, so interest turns into a conversation instead of stalling out.
+                                    </p>
+                                </div>
+                                <div className="item-icon none-bd">
+                                    <span className="icon-left">
+                                        <Image width={0} height={0} sizes="100vw"
+                                            style={{ width: "auto", height: "auto" }}
+                                            src="/assets/imgs/page/homepage2/icon-design.svg"
+                                            alt="Routine work happens without chasing"
+                                        />
+                                    </span>
+                                    <h4 className="text-heading-4">Routine work runs itself</h4>
+                                    <p className="text-body-excerpt color-gray-600 mt-15">
+                                        Follow-ups, updates and admin happen in the background — nothing depends on you remembering to chase it.
+                                    </p>
+                                </div>
+                                <div className="item-icon none-bd">
+                                    <span className="icon-left">
+                                        <Image width={0} height={0} sizes="100vw"
+                                            style={{ width: "auto", height: "auto" }}
+                                            src="/assets/imgs/page/homepage2/icon-advance.svg"
+                                            alt="You can see what is actually working"
+                                        />
+                                    </span>
+                                    <h4 className="text-heading-4">You see what's actually working</h4>
+                                    <p className="text-body-excerpt color-gray-600 mt-15">
+                                        Clear visibility into what's driving results, so decisions are based on what's happening, not guesswork.
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="mt-40">
+                                <Link href="/about/" className="btn btn-black icon-arrow-right-white">
+                                    See your growth path
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* ═══════════════ 2b. HOW YOUR PROJECT STARTS (11 Nov 2026) ═══════════════ */}
+            <section className="section-box mt-80" id="how-it-works">
+                <div className="container">
+                    <div className="hp-head">
+                        <span className="tag-1 bg-6 color-green-900">How hiring us works</span>
+                        <h2 className="text-heading-1 mt-20">From first message to launch in four steps</h2>
+                        <p className="text-body-lead-large color-gray-600 mt-15">No jargon, no hourly billing, and nothing to pay until you have seen the design.</p>
+                    </div>
+                    <ProcessFlow steps={[
+                        { title: "Tell us what you need", text: "Two lines are enough: what the business does and what the site or app should achieve.", when: "Day 1" },
+                        { title: "See your homepage, free", text: "We design it with your real name and services, so you judge the work, not a pitch.", when: `About ${FREE_DESIGN.turnaround}` },
+                        { title: "Get a written estimate", text: "Scope, timeline and cost, phase by phase, after a short call. It only changes if the scope does.", when: "After a short call" },
+                        { title: "Build, review, launch", text: "You watch progress on a live link, then receive the code, domain and hosting in your name.", when: `Starter sites: ${starter.delivery}` },
+                    ]} />
+                    <p className="text-body-text color-gray-600 text-center mt-40">
+                        Want a number first? <Link href="/pricing/" className="color-green-900" style={{ fontWeight: 700 }}>See typical starting prices and estimate yours →</Link>
+                    </p>
+                </div>
+            </section>
+
             {/* ═══════════════ 7. CLIENT REVIEWS ═══════════════ */}
             {/* Whole section is skipped until REVIEWS in content/site.js has real,
                 permissioned quotes — see CLAUDE.md §1. No heading without content
@@ -583,48 +506,34 @@ export default function Home() {
                 </section>
             )}
 
-            {/* ═══════════════ 8. HOW PRICING WORKS ═══════════════
-                Package prices were removed from the homepage on 15 Oct 2026
-                (Aman: people come for their problem; the estimate follows a
-                conversation, phase by phase). Prices live on /pricing/ only. */}
-            <section id="pricing" className="section-box mt-60">
+            {/* ═══════════════ 8b. MEET THE ENGINEER (11 Nov 2026) ═══════════════
+                No photo yet: CLAUDE.md requires Aman's REAL photo here, never
+                stock or AI. Initials until he supplies one. */}
+            <section className="section-box mt-100">
                 <div className="container">
-                    <div className="row">
-                        <div className="col-lg-8 mx-auto text-center mb-50">
-                            <span className="tag-1 bg-6 color-green-900">How pricing works</span>
-                            <h2 className="text-heading-1 color-gray-900 mt-20 mb-20">
-                                Priced on what your project needs
-                            </h2>
-                            <p className="text-body-lead-large color-gray-600">
-                                No two businesses need the same thing, so we do not sell off a price list.
-                                Tell us what you need, we talk it through, and you get a written estimate,
-                                broken into phases if that suits your budget.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="row">
-                        {[
-                            { n: "01", h: "Tell us about your project", b: "A few lines on your business and what the website or app needs to do." },
-                            { n: "02", h: "A short call", b: "We ask the questions that change the scope, and suggest what to build first." },
-                            { n: "03", h: "A written estimate", b: "Scope, timeline and cost in writing, phase by phase, before any work starts." },
-                            { n: "04", h: "Build, launch, grow", b: "Weekly working builds, then optional support and new features as you grow." },
-                        ].map((step) => (
-                            <div className="col-lg-3 col-md-6 col-sm-12 mb-30" key={step.n}>
-                                <div className="home-price-card">
-                                    <span className="text-heading-5 color-green-900">{step.n}</span>
-                                    <h3 className="text-heading-6 color-gray-900 mt-15 mb-10">{step.h}</h3>
-                                    <p className="text-body-text color-gray-600 mb-0">{step.b}</p>
-                                </div>
+                    <div className="hp-eng">
+                        <div>
+                            <div className="d-flex align-items-center" style={{ gap: 14 }}>
+                                <span className="hp-avatar" aria-hidden="true">AS</span>
+                                <div><div className="text-heading-5 color-gray-900">Aman Singh</div><div className="text-body-small color-gray-500">Engineer, Build First Site</div></div>
                             </div>
-                        ))}
-                    </div>
-                    <div className="text-center mt-10">
-                        <Link href="/contact/" className="btn btn-black icon-arrow-right-white mr-15 mb-10">
-                            Tell us about your project
-                        </Link>
-                        <Link href="/pricing/" className="btn btn-default icon-arrow-right mb-10">
-                            See typical starting prices
-                        </Link>
+                            <h2 className="text-heading-2 mt-25">You hire the person who writes your code</h2>
+                        </div>
+                        <div>
+                            <p className="text-body-lead color-gray-700">
+                                Hi, I'm Aman. I've spent seven years building web, mobile and AI software, including
+                                enterprise fintech. When you hire Build First Site there is no sales team and no
+                                hand-off: you talk to me about the build, and a local contact in Australia looks
+                                after calls and paperwork.
+                            </p>
+                            <ul className="hp-prom">
+                                <li>Custom built, never a template</li>
+                                <li>You can edit the site yourself</li>
+                                <li>Built for Google and AI search</li>
+                                <li>Code, domain and hosting in your name</li>
+                            </ul>
+                            <Link href="/about/" className="btn btn-default icon-arrow-right">More about us</Link>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -657,47 +566,25 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* ═══════════════ 10. FINAL CTA ═══════════════ */}
-            <section className="section-box overflow-visible mt-100 mb-100">
+            {/* ═══════════════ 9b. START YOUR PROJECT (inline form) ═══════════════ */}
+            <section className="section-box mt-100 mb-100" id="start" style={{ scrollMarginTop: 100 }}>
                 <div className="container">
-                    <div className="row">
-                        <div className="col-lg-10 mx-auto">
-                            <div className="bg-6 box-newsletter position-relative">
-                                <div className="row">
-                                    <div className="col-lg-7 col-md-8">
-                                        <span className="text-body-capitalized color-gray-600 text-uppercase">
-                                            Ready when you are
-                                        </span>
-                                        <h4 className="text-heading-2 mb-10 mt-10">
-                                            Ready to build?
-                                        </h4>
-                                        <p className="text-body-text color-gray-600">
-                                            Tell us what you&apos;re trying to build — we&apos;ll come back with
-                                            a written scope, an AUD price and a delivery date within
-                                            one business day.
-                                        </p>
-                                        <div className="mt-30">
-                                            <Link href="/contact/" className="btn btn-black icon-arrow-right-white mr-15">
-                                                Get a quote
-                                            </Link>
-                                            <a data-loc="homepage" href={SITE.calendly} target="_blank" rel="noopener noreferrer"
-                                                className="btn btn-link icon-arrow-right color-gray-900">
-                                                Book a free call
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-5 col-md-4 mt-30 mt-lg-0 mt-md-30 mt-sm-30 position-relative text-end">
-                                        <div className="block-chart shape-1">
-                                            <Image width={0} height={0} sizes="100vw"
-                                                style={{ width: "auto", height: "auto" }}
-                                                src="/assets/imgs/template/chart.png" alt="Analytics" />
-                                        </div>
-                                        <Image width={0} height={0} sizes="(max-width: 992px) 60vw, 420px"
-                                            style={{ width: "auto", height: "auto" }}
-                                            className="img-responsive img-newsletter"
-                                            src="/assets/imgs/template/img-newsletter.webp" alt="Book a call" />
-                                    </div>
-                                </div>
+                    <div className="hp-start">
+                        <div className="row align-items-center">
+                            <div className="col-lg-5 mb-30">
+                                <h2 className="text-heading-1">Start your project</h2>
+                                <p className="text-body-lead-large lead mt-15" style={{ color: "#E6F3F5" }}>
+                                    Tell us what you want built. We reply within one business day, then design
+                                    your homepage free so you can see the work before deciding anything.
+                                </p>
+                                <p className="mt-20" style={{ color: "#E6F3F5" }}>
+                                    Prefer to talk? <a data-loc="home-start" href={SITE.calendly} target="_blank" rel="noopener noreferrer" style={{ color: "#fff", fontWeight: 700 }}>Book a free call</a> or <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer" style={{ color: "#fff", fontWeight: 700 }}>message us on WhatsApp</a>.
+                                </p>
+                            </div>
+                            <div className="col-lg-7">
+                                <div className="formbox"><div className="row">
+                                    <ContactPageForm source="Homepage (start project form)" wrapperClass="col-lg-12" submitLabel="Start my project" />
+                                </div></div>
                             </div>
                         </div>
                     </div>

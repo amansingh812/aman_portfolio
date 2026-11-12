@@ -930,6 +930,21 @@ export const LANDING_PAGES = [
       { type: 'h2', text: 'Sydney web design questions' },
       {
         type: 'faq',
+        q: 'How do I hire a web developer in Sydney?',
+        a: 'Send a short description of your business and what the site needs to do through the form on this page, or book a free call. Within one business day you get a written scope and estimate, and we design your homepage free before you commit — so you are judging real work rather than a proposal.',
+      },
+      {
+        type: 'faq',
+        q: 'Can I speak directly to the developer building my Sydney website?',
+        a: 'Yes. You deal with the engineer who writes your code, not an account manager or a sales team. The person who scopes the work is the person who builds it, and your day-to-day contact and meetings are handled from Australia.',
+      },
+      {
+        type: 'faq',
+        q: 'Can you build a website for my product or app, not just a brochure site?',
+        a: 'Yes. Alongside marketing sites we build product sites, customer portals, booking systems, dashboards, e-commerce stores and the automations behind them, and connect them to the tools you already use. If your product needs a public face plus accounts, payments or a login, that is scoped as a custom build rather than a template.',
+      },
+      {
+        type: 'faq',
         q: 'How much does a website cost in Sydney?',
         a: 'It depends on what you need: the number of pages, features such as bookings, payments or logins, and any integrations. After a short call we send a written estimate, broken into phases if that suits your budget. Typical starting points are on our <a href="/pricing/" class="color-green-900">pricing page</a>.',
       },
@@ -1024,6 +1039,21 @@ export const LANDING_PAGES = [
         html: 'Also useful if you are comparing options: <a href="/pricing/" class="color-green-900">our pricing</a>, <a href="/tradie-website-design/" class="color-green-900">tradie websites</a>.',
       },
       { type: 'h2', text: 'Brisbane web design questions' },
+      {
+        type: 'faq',
+        q: 'How do I hire a web developer in Brisbane?',
+        a: 'Send a short description of your business and what the site needs to do through the form on this page, or book a free call. Within one business day you get a written scope and estimate, and we design your homepage free before you commit — so you are judging real work rather than a proposal.',
+      },
+      {
+        type: 'faq',
+        q: 'Can I speak directly to the developer building my Brisbane website?',
+        a: 'Yes. You deal with the engineer who writes your code, not an account manager or a sales team. The person who scopes the work is the person who builds it, and your day-to-day contact and meetings are handled from Australia.',
+      },
+      {
+        type: 'faq',
+        q: 'Can you build a website for my product or app, not just a brochure site?',
+        a: 'Yes. Alongside marketing sites we build product sites, customer portals, booking systems, dashboards, e-commerce stores and the automations behind them, and connect them to the tools you already use. If your product needs a public face plus accounts, payments or a login, that is scoped as a custom build rather than a template.',
+      },
       {
         type: 'faq',
         q: 'How much does a website cost in Brisbane?',
@@ -1136,6 +1166,21 @@ export const LANDING_PAGES = [
         html: 'Also useful if you are comparing options: <a href="/pricing/" class="color-green-900">our pricing</a>, <a href="/web-design-adelaide/" class="color-green-900">web design Adelaide</a>, <a href="/tradie-website-design/" class="color-green-900">tradie websites</a>.',
       },
       { type: 'h2', text: 'Perth web design questions' },
+      {
+        type: 'faq',
+        q: 'How do I hire a web developer in Perth?',
+        a: 'Send a short description of your business and what the site needs to do through the form on this page, or book a free call. Within one business day you get a written scope and estimate, and we design your homepage free before you commit — so you are judging real work rather than a proposal.',
+      },
+      {
+        type: 'faq',
+        q: 'Can I speak directly to the developer building my Perth website?',
+        a: 'Yes. You deal with the engineer who writes your code, not an account manager or a sales team. The person who scopes the work is the person who builds it, and your day-to-day contact and meetings are handled from Australia.',
+      },
+      {
+        type: 'faq',
+        q: 'Can you build a website for my product or app, not just a brochure site?',
+        a: 'Yes. Alongside marketing sites we build product sites, customer portals, booking systems, dashboards, e-commerce stores and the automations behind them, and connect them to the tools you already use. If your product needs a public face plus accounts, payments or a login, that is scoped as a custom build rather than a template.',
+      },
       {
         type: 'faq',
         q: 'How much does a website cost in Perth?',
@@ -2065,7 +2110,7 @@ export const LANDING_PAGES = [
       { type: 'p', html: 'If you have the time and a simple need, a DIY tool is a reasonable start; our <a href="/wix-vs-custom-website/">Wix vs custom comparison</a> is honest about when it is enough.' },
 
       { type: 'h2', text: 'How much does it cost to hire someone to build a website?', toc: 'What it costs', oneline: 'it depends on pages and features; you get a written estimate after a short call.' },
-      { type: 'p', html: 'Typical starting points are on the <a href="/pricing/">pricing page</a>, and <a href="/how-much-does-a-website-cost-australia/">what a website costs in Australia</a> covers the wider market, including what agencies charge.' },
+      { type: 'p', html: `Most sites we build are ${TYPICAL_RANGE.label} depending on pages and features. Typical starting points are on the <a href="/pricing/">pricing page</a>, and <a href="/how-much-does-a-website-cost-australia/">what a website costs in Australia</a> covers the wider market, including what agencies charge.` },
       { type: 'callout', tone: 'warn', title: 'Two costs people forget', html: 'The monthly fee on a platform build, which over five years usually exceeds the build price, and the exit cost: if you do not own the code, moving developers means building again. See the <a href="/affordable-website-design-small-business/">five-year cost comparison</a>.' },
 
       { type: 'h2', text: 'What your quote should include', toc: 'Check your quote', oneline: 'tick these off before you pay a deposit to anyone, including us.' },
@@ -3818,6 +3863,21 @@ export const LANDING_PAGES = [
         html: 'Nothing is held back to make a cheaper option look worse. Typical starting points are on the <a href="/pricing/" class="color-green-900">pricing page</a>.',
       },
       { type: 'h2', text: 'Canberra web design questions' },
+      {
+        type: 'faq',
+        q: 'How do I hire a web developer in Canberra?',
+        a: 'Send a short description of your business and what the site needs to do through the form on this page, or book a free call. Within one business day you get a written scope and estimate, and we design your homepage free before you commit — so you are judging real work rather than a proposal.',
+      },
+      {
+        type: 'faq',
+        q: 'Can I speak directly to the developer building my Canberra website?',
+        a: 'Yes. You deal with the engineer who writes your code, not an account manager or a sales team. The person who scopes the work is the person who builds it, and your day-to-day contact and meetings are handled from Australia.',
+      },
+      {
+        type: 'faq',
+        q: 'Can you build a website for my product or app, not just a brochure site?',
+        a: 'Yes. Alongside marketing sites we build product sites, customer portals, booking systems, dashboards, e-commerce stores and the automations behind them, and connect them to the tools you already use. If your product needs a public face plus accounts, payments or a login, that is scoped as a custom build rather than a template.',
+      },
       {
         type: 'faq',
         q: 'How much does a website cost in Canberra?',
