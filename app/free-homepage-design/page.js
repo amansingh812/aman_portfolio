@@ -13,6 +13,12 @@
  */
 import Layout from "@/components/layout/Layout"
 import Link from "next/link"
+import Image from "next/image"
+import fs from "node:fs"
+import path from "node:path"
+
+const has = (src) => fs.existsSync(path.join(process.cwd(), "public", src))
+const FD_IMG = "/assets/imgs/page/services/x/free-design.png"
 import ContactPageForm from "@/components/elements/ContactPageForm"
 import { SITE } from "@/content/site"
 import { FREE_DESIGN } from "@/content/pricing"
@@ -56,6 +62,20 @@ const FAQS = [
 ]
 
 const css = `
+.fd-ans{display:grid;grid-template-columns:auto 1fr;gap:18px;background:#004349;border-radius:18px;padding:24px 28px;margin-top:40px}
+.fd-ans h2{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#BEE1E6;margin:0 0 6px}
+.fd-ans p{margin:0;color:#fff;font-size:18px;line-height:1.6}
+.fd-story{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.fd-story img{width:100%;height:auto;border-radius:22px;box-shadow:0 26px 50px -30px rgba(16,24,40,.45)}
+.fd-ind{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.fd-ind div{background:#fff;border:1px solid #E4E7EC;border-radius:14px;padding:18px}
+.fd-ind b{display:block;color:#101828;margin-bottom:4px}
+.fd-ind span{font-size:15px;color:#475467}
+.fd-ceo{display:grid;grid-template-columns:auto 1fr;gap:22px;background:#F8FAFB;border:1px solid #E4E7EC;border-radius:22px;padding:32px}
+.fd-av{width:60px;height:60px;border-radius:50%;background:#006D77;color:#fff;display:grid;place-items:center;font-weight:800;font-size:20px}
+@media(max-width:991px){.fd-story{grid-template-columns:1fr;gap:26px}.fd-ind{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.fd-ind{grid-template-columns:1fr}.fd-ans,.fd-ceo{grid-template-columns:1fr}}
+
 .fd-hero { background:#F4FAFB; border-radius:24px; padding:70px 50px; }
 @media (max-width:767px){ .fd-hero{ padding:44px 22px; } }
 .fd-steps { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
@@ -146,6 +166,50 @@ export default function FreeHomepageDesignPage() {
                             </div>
                         </div>
                     </div>
+                    <div className="fd-ans">
+                        <div aria-hidden="true" style={{ fontSize: 26 }}>💡</div>
+                        <div>
+                            <h2>Short answer</h2>
+                            <p>
+                                Build First Site designs your website homepage for free, usually within {FREE_DESIGN.turnaround}, using your
+                                real business name, services and photos. There is no deposit and no obligation. If you like it, you get a
+                                written estimate for the full site; if not, you walk away and owe nothing. Available to businesses in Australia
+                                and worldwide.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* WHY DESIGN FIRST (12 Nov 2026) */}
+            <section className="section-box mt-100">
+                <div className="container">
+                    <div className="fd-story">
+                        <div>
+                            {has(FD_IMG) && (
+                                <Image src={FD_IMG} alt="A homepage design mock-up on a designer's monitor with colour swatches and wireframe sketches"
+                                    width={1200} height={900} loading="lazy" sizes="(max-width: 991px) 100vw, 560px" />
+                            )}
+                        </div>
+                        <div>
+                            <span className="tag-1 bg-6 color-green-900">Why we design first</span>
+                            <h2 className="text-heading-2 color-gray-900 mt-20 mb-20">Hiring a web developer shouldn’t be a leap of faith</h2>
+                            <p className="text-body-lead color-gray-600">
+                                Most agencies ask for a deposit before you have seen a single screen. You choose based on a sales call and a
+                                portfolio of other people’s businesses, then hope the result fits yours.
+                            </p>
+                            <p className="text-body-lead color-gray-600">
+                                We flip that. You see your own homepage, designed for your business, before you spend anything. It is the
+                                fastest way for you to judge our work, and for us to understand what you need. See what the full build involves on our{" "}
+                                <Link href="/services/web-development/" className="color-green-900">website development page</Link>.
+                            </p>
+                            <ul className="fd-list mt-20">
+                                <li className="text-body-text color-gray-900">Your logo, colours, services and photos, not placeholder text</li>
+                                <li className="text-body-text color-gray-900">Desktop and mobile versions of the homepage</li>
+                                <li className="text-body-text color-gray-900">Sent as a design preview, with notes on the rest of the site</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -201,6 +265,42 @@ export default function FreeHomepageDesignPage() {
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            {/* WHO IT'S FOR */}
+            <section className="section-box mt-100">
+                <div className="container">
+                    <div className="row"><div className="col-lg-8 mx-auto text-center">
+                        <span className="tag-1 bg-6 color-green-900">Who it’s for</span>
+                        <h2 className="text-heading-2 color-gray-900 mt-25">Any business that wants to see before it buys</h2>
+                    </div></div>
+                    <div className="fd-ind">
+                        <div><b>New businesses</b><span>Your first website, designed around what you sell.</span></div>
+                        <div><b>Businesses with an old site</b><span>See how a redesign would look before committing. <Link href="/small-business-website-redesign/" className="color-green-900">Redesigns →</Link></span></div>
+                        <div><b>Trades and local services</b><span>Call-first homepages built to win local jobs. <Link href="/tradie-website-design/" className="color-green-900">Tradie sites →</Link></span></div>
+                        <div><b>Clinics and NDIS providers</b><span>Accessible, booking-focused homepages. <Link href="/ndis-website-design/" className="color-green-900">NDIS sites →</Link></span></div>
+                        <div><b>Online sellers</b><span>A store homepage that showcases your best products. <Link href="/ecommerce-development/" className="color-green-900">E-commerce →</Link></span></div>
+                        <div><b>Hospitality</b><span>Menus, bookings and atmosphere on the first screen. <Link href="/restaurant-website-design/" className="color-green-900">Restaurant sites →</Link></span></div>
+                    </div>
+                </div>
+            </section>
+
+            {/* FOUNDER NOTE */}
+            <section className="section-box mt-100">
+                <div className="container">
+                    <div className="row"><div className="col-lg-10 mx-auto">
+                        <div className="fd-ceo">
+                            <span className="fd-av" aria-hidden="true">AS</span>
+                            <div>
+                                <p className="text-body-lead color-gray-700 mb-10">
+                                    “I offer the homepage design free because I’d rather earn your trust with work than with a pitch.
+                                    If the design isn’t right for you, you’ve lost nothing, and I’ve learned what you need.”
+                                </p>
+                                <p className="text-heading-6 color-gray-900 mb-0">Aman Singh <span className="color-gray-500" style={{ fontWeight: 400 }}>· Founder and engineer, Build First Site</span></p>
+                            </div>
+                        </div>
+                    </div></div>
                 </div>
             </section>
 

@@ -452,4 +452,8 @@ export const SERVICE_PAGES = [
 ];
 
 export { CITY_LINKS };
-export function getServicePage(slug) { return SERVICE_PAGES.find((x) => x.slug === slug); }
+import { SERVICE_EXTRAS } from './service-extras.js';
+export function getServicePage(slug) {
+  const base = SERVICE_PAGES.find((x) => x.slug === slug);
+  return base ? { ...base, ...(SERVICE_EXTRAS[slug] || {}) } : undefined;
+}

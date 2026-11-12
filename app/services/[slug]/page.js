@@ -25,6 +25,53 @@ import Layout from "@/components/layout/Layout"
 import Breadcrumbs from "@/components/elements/Breadcrumbs"
 import ProjectThumb from "@/components/portfolio/ProjectThumb"
 import Link from "next/link"
+import Image from "next/image"
+import fs from "node:fs"
+import path from "node:path"
+
+/* Show a self-hosted image only when the file exists (lets copy ship before images). */
+const has = (src) => !!src && fs.existsSync(path.join(process.cwd(), "public", src))
+
+/* Extra sections added 12 Nov 2026: short answer, story blocks, industries,
+   Australia, founder note. All optional per page. */
+const XCSS = `
+.svx-answer{display:grid;grid-template-columns:auto 1fr;gap:18px;background:#004349;border-radius:18px;padding:24px 28px;margin-top:34px}
+.svx-answer h2{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#BEE1E6;margin:0 0 6px}
+.svx-answer p{margin:0;color:#fff;font-size:18px;line-height:1.6}
+.svx-heroimg img{width:100%;height:auto;border-radius:22px;box-shadow:0 30px 60px -30px rgba(16,24,40,.45)}
+.svx-story{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-top:70px}
+.svx-story:first-child{margin-top:0}
+.svx-story.flip .svx-img{order:2}
+.svx-img img{width:100%;height:auto;border-radius:22px;box-shadow:0 26px 50px -30px rgba(16,24,40,.45)}
+.svx-kick{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#005F68;background:#E6F3F5;padding:6px 12px;border-radius:99px}
+.svx-story h3{font-size:clamp(26px,3vw,36px);line-height:1.15;color:#101828;margin:14px 0}
+.svx-story p{font-size:17px;color:#475467;line-height:1.7}
+.svx-pts{list-style:none;padding:0;margin:16px 0 0}
+.svx-pts li{position:relative;padding:7px 0 7px 30px;color:#344054}
+.svx-pts li:before{content:"✓";position:absolute;left:0;top:7px;width:20px;height:20px;border-radius:50%;background:#E6F3F5;color:#004349;font-size:12px;font-weight:800;display:grid;place-items:center}
+.svx-ind{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.svx-ind div{background:#fff;border:1px solid #E4E7EC;border-radius:16px;padding:20px;transition:transform .2s,box-shadow .2s}
+.svx-ind div:hover{transform:translateY(-3px);box-shadow:0 18px 34px -24px rgba(0,67,73,.45)}
+.svx-ind b{display:block;color:#101828;font-size:17px;margin-bottom:6px}
+.svx-ind span{color:#475467;font-size:15px}
+.svx-note{font-size:14px;color:#667085;margin-top:18px;text-align:center}
+.svx-au{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;background:linear-gradient(135deg,#004349,#006D77);border-radius:26px;padding:48px;color:#fff}
+.svx-au h2{color:#fff;font-size:clamp(26px,3vw,36px);margin:12px 0}
+.svx-au p{color:#E6F3F5}
+.svx-au ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.svx-au li{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:14px 16px;color:#fff}
+.svx-au li b{display:block;color:#fff;margin-bottom:2px}
+.svx-au li span{color:#E6F3F5;font-size:15px}
+.svx-au a{color:#fff;font-weight:700}
+.svx-ceo{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start;background:#F8FAFB;border:1px solid #E4E7EC;border-radius:24px;padding:36px}
+.svx-av{width:64px;height:64px;border-radius:50%;background:#006D77;color:#fff;display:grid;place-items:center;font-weight:800;font-size:22px}
+.svx-ceo blockquote{margin:0;font-size:19px;line-height:1.7;color:#344054}
+.svx-ceo cite{display:block;margin-top:14px;font-style:normal;font-weight:700;color:#101828}
+.svx-ceo cite span{font-weight:400;color:#667085}
+@media(max-width:991px){.svx-story,.svx-au{grid-template-columns:1fr;gap:26px}.svx-story.flip .svx-img{order:0}.svx-ind{grid-template-columns:1fr 1fr}.svx-au{padding:28px}}
+@media(max-width:560px){.svx-ind{grid-template-columns:1fr}.svx-answer,.svx-ceo{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.svx-ind div{transition:none}}
+`
 import { notFound } from "next/navigation"
 import { CTA, SITE, SERVICE_ITEMS } from "@/content/site"
 import { SERVICE_PAGES, getServicePage, CITY_LINKS } from "@/content/service-pages"
@@ -128,7 +175,7 @@ export default async function ServiceDetailPage({ params }) {
 
     return (
         <Layout>
-            <style dangerouslySetInnerHTML={{ __html: CSS }} />
+            <style dangerouslySetInnerHTML={{ __html: CSS + XCSS }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
             <div className="svc">
@@ -158,7 +205,12 @@ export default async function ServiceDetailPage({ params }) {
                                     ))}
                                 </div>
                             </div>
-                            {hero && (
+                            {has(s.heroImage) ? (
+                                <div className="svx-heroimg">
+                                    <Image src={s.heroImage} alt={s.heroAlt || s.h1} width={1200} height={900} priority
+                                        sizes="(max-width: 991px) 100vw, 560px" />
+                                </div>
+                            ) : hero && (
                                 <div className="d-none d-lg-block" style={{ position: "relative" }}>
                                     <Link href={`/work/${hero.slug}/`} className="svc-browser d-block" aria-label={`${hero.name} case study`}>
                                         <div className="bar"><i /><i /><i /><span>{hostOf(hero.liveUrl)}</span></div>
@@ -173,6 +225,14 @@ export default async function ServiceDetailPage({ params }) {
                             )}
                         </div>
                     </div>
+                    {s.answer && (
+                        <div className="container">
+                            <div className="svx-answer">
+                                <div aria-hidden="true" style={{ fontSize: 26 }}>💡</div>
+                                <div><h2>Short answer</h2><p>{s.answer}</p></div>
+                            </div>
+                        </div>
+                    )}
                 </section>
 
                 {/* 2. PROOF STRIP — real clients only */}
@@ -205,6 +265,82 @@ export default async function ServiceDetailPage({ params }) {
                         </div>
                     </div>
                 </section>
+
+                {/* 3b. STORY BLOCKS — image + explanation, alternating */}
+                {s.story?.length > 0 && (
+                    <section className="svc-sec" style={{ background: "#fff" }}>
+                        <div className="container">
+                            {s.story.map((b, i) => (
+                                <div key={b.title} className={`svx-story${i % 2 ? " flip" : ""}`}>
+                                    <div className="svx-img">
+                                        {has(b.image) && (
+                                            <Image src={b.image} alt={b.alt} width={1200} height={900} loading="lazy"
+                                                sizes="(max-width: 991px) 100vw, 560px" />
+                                        )}
+                                    </div>
+                                    <div>
+                                        <span className="svx-kick">{b.kicker}</span>
+                                        <h3>{b.title}</h3>
+                                        {b.text.map((t, k) => <p key={k} dangerouslySetInnerHTML={{ __html: t }} />)}
+                                        {b.points && <ul className="svx-pts">{b.points.map((pt) => <li key={pt}>{pt}</li>)}</ul>}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+                )}
+
+                {/* 3c. INDUSTRIES — capability only, no implied clients (CLAUDE.md §1) */}
+                {s.industries?.length > 0 && (
+                    <section className="svc-sec">
+                        <div className="container">
+                            <div className="svc-center">
+                                <h2 className="svc-h2">{s.industriesTitle || "Industries we build for"}</h2>
+                                <p className="svc-lead">{s.industriesLead}</p>
+                            </div>
+                            <div className="svx-ind">
+                                {s.industries.map((d) => (
+                                    <div key={d.name}>
+                                        <b>{d.href ? <Link href={d.href} style={{ color: "inherit" }}>{d.name}</Link> : d.name}</b>
+                                        <span>{d.text}</span>
+                                    </div>
+                                ))}
+                            </div>
+                            <p className="svx-note">We describe what we build for each industry. Client work is listed separately on <Link href="/work/" className="color-green-900">our work page</Link>.</p>
+                        </div>
+                    </section>
+                )}
+
+                {/* 3d. AUSTRALIA */}
+                {s.australia && (
+                    <section className="svc-sec" style={{ background: "#fff" }}>
+                        <div className="container">
+                            <div className="svx-au">
+                                <div>
+                                    <span className="svx-kick" style={{ background: "rgba(255,255,255,.14)", color: "#fff" }}>Australia and worldwide</span>
+                                    <h2>{s.australia.title}</h2>
+                                    {s.australia.text.map((t, k) => <p key={k} dangerouslySetInnerHTML={{ __html: t }} />)}
+                                </div>
+                                <ul>{s.australia.points.map((pt) => <li key={pt.b}><b>{pt.b}</b><span>{pt.t}</span></li>)}</ul>
+                            </div>
+                        </div>
+                    </section>
+                )}
+
+                {/* 3e. FOUNDER NOTE — first person, Aman (no photo until a real one is supplied) */}
+                {s.founder && (
+                    <section className="svc-sec">
+                        <div className="container">
+                            <div className="svx-ceo">
+                                <span className="svx-av" aria-hidden="true">AS</span>
+                                <div>
+                                    <blockquote>{s.founder}</blockquote>
+                                    <cite>Aman Singh <span>· Founder and engineer, Build First Site</span></cite>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                )}
 
                 {/* 4. PROCESS */}
                 <section className="svc-sec svc-mint">

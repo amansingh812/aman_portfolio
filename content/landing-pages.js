@@ -133,8 +133,12 @@ export const LANDING_PAGES = [
   },
   {
     slug: 'ecommerce-development',
+    format: 'v2',
+    heroImage: '/assets/imgs/page/services/x/store-hero.png',
+    answer: "Build First Site builds custom online stores for small and growing businesses in Australia and worldwide: fast product pages, secure Stripe checkout and your own admin for products, stock and orders. You pay only standard payment processing fees, with no monthly platform fee on top, and you own the store and its customer data.",
+    takeaways: ["A custom store means <b>no monthly platform fee</b> and no per-sale cut beyond payment processing.", "You own the <b>code, catalogue and customer data</b>, so you can move or grow without rebuilding.", "Shopify is still the right answer for some stores, and we say so when it is.", "See your store homepage designed free before you commit."],
     image: '/assets/imgs/page/landing/ecommerce-development.webp',
-    imageAlt: 'Online store product grid with cart and secure payment checkout',
+    imageAlt: "A small product studio with an online store on a laptop and orders packed in shipping boxes",
     metaTitle: 'Ecommerce Development Australia',
     metaDescription: 'Custom ecommerce development in Australia — Stripe checkout, your own inventory, zero platform commission.',
     eyebrow: 'Ecommerce',
@@ -152,7 +156,8 @@ export const LANDING_PAGES = [
       { href: '/how-much-does-a-website-cost-australia/', label: 'What a website costs' },
     ],
     body: [
-      { type: 'h2', text: 'What a custom store gets you that Shopify does not' },
+      { type: 'h2', text: 'What a custom store gets you that Shopify does not', oneline: "lower running costs, full ownership and checkout designed around your products." },
+      { type: 'image', src: '/assets/imgs/page/services/x/store-story.png', fallback: '/assets/imgs/page/landing/ecommerce-development.webp', alt: 'A laptop showing an online store product page beside packed orders and a card payment terminal', caption: 'Your store, your checkout, your customer data.' },
       {
         type: 'p',
         html: 'The business outcome first: more of every sale in your account, a store that looks like your brand instead of a theme, and no subscription that keeps running whether you sell anything or not.',
@@ -167,7 +172,7 @@ export const LANDING_PAGES = [
           '<strong>Order automation.</strong> Confirmation emails, stock updates and order handoffs wired together so nothing needs to be typed twice.',
         ],
       },
-      { type: 'h2', text: 'Where Shopify is the right answer' },
+      { type: 'h2', text: 'Where Shopify is the right answer', oneline: "very large catalogues and apps you rely on can make Shopify the better choice." },
       {
         type: 'p',
         html: 'Said plainly, because most developers pitching a custom build will not. If you are validating a product idea with a handful of SKUs and no development budget, a $30-a-month Shopify plan gets you selling this week — a custom build cannot compete with that speed at the very beginning.',
@@ -176,13 +181,13 @@ export const LANDING_PAGES = [
         type: 'p',
         html: 'Custom development earns its cost once you have real product volume, a workflow the templates cannot express (we compare the platforms in <a href="/wix-vs-custom-website/" class="color-green-900">Wix vs a custom website</a> and <a href="/squarespace-vs-custom-website/" class="color-green-900">Squarespace vs custom</a>), or the transaction fees are large enough that removing them pays for the build within a year or two. If you are not there yet, we will tell you honestly and point you at the cheaper option.',
       },
-      { type: 'h2', text: 'How pricing works' },
+      { type: 'h2', text: 'How pricing works', oneline: "a written estimate after a short call, with typical starting points on the pricing page." },
       {
         type: 'p',
         html: 'Every project is different, so we do not quote off a price list. Tell us what you need, we talk it through on a short call, and you get a written estimate, broken into phases if that suits your budget. Typical starting points are on our <a href="/pricing/" class="color-green-900">pricing page</a>.',
       },
       { type: 'p', html: 'After launch you pay Stripe’s processing fees and hosting directly. No platform subscription, because there is no platform.' },
-      { type: 'h2', text: 'How we build it' },
+      { type: 'h2', text: 'How we build it', oneline: "design first, then build, test and launch on a live link you can review." },
       {
         type: 'ul',
         items: [
@@ -193,7 +198,7 @@ export const LANDING_PAGES = [
           'Deployed to Vercel, repository in your name — you can hand it to another developer at any point',
         ],
       },
-      { type: 'h2', text: 'Ecommerce builds we have shipped' },
+      { type: 'h2', text: 'Ecommerce builds we have shipped', oneline: "live stores you can open and test on your phone." },
       {
         type: 'p',
         html: '<a href="https://www.hsracegear.com" target="_blank" rel="noopener noreferrer" class="color-green-900">HS Race Gear</a> — a full custom store for an Australian racing gear brand, with a 3D product viewer, custom measurement forms, Stripe checkout and an admin dashboard built from scratch. <a href="https://mobilearmour.com.au" target="_blank" rel="noopener noreferrer" class="color-green-900">Mobile Armour</a> — an AI-enhanced accessories store with OpenAI-driven product recommendations and Stripe payments.',
