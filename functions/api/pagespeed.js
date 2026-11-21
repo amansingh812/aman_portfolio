@@ -1,6 +1,6 @@
-import { NextResponse } from 'next/server';
+// Cloudflare Pages Function: GET /api/pagespeed?url=... (ported from app/api/pagespeed/route.js)
+// Env: GOOGLE_PAGESPEED_API_KEY (secret, optional — falls back to mock data on quota errors as before).
 
-export const maxDuration = 60; // Set maximum execution time for serverless functions
 
 const generateMockData = (targetUrl) => {
   // Generate pseudo-random but consistent scores based on the URL name
@@ -58,29 +58,29 @@ const generateMockData = (targetUrl) => {
   };
 };
 
-export async function GET(request) {
+export async function onRequestGet({ request, env }) {
   const { searchParams } = new URL(request.url);
   const targetUrl = searchParams.get('url');
 
   if (!targetUrl) {
-    return NextResponse.json({ error: 'URL parameter is required' }, { status: 400 });
+    return Response.json({ error: 'URL parameter is required' }, { status: 400 });
   }
 
   try {
     new URL(targetUrl);
   } catch (e) {
-    return NextResponse.json({ error: 'Invalid URL format' }, { status: 400 });
+    return Response.json({ error: 'Invalid URL format' }, { status: 400 });
   }
 
-  const apiKey = process.env.GOOGLE_PAGESPEED_API_KEY || '';
-  const isDev = process.env.NODE_ENV === 'development';
+  const apiKey = env.GOOGLE_PAGESPEED_API_KEY || '';
+  const isDev = false;
 
   // If no API key is set and we're in local development, instantly fall back to mock data
   if (!apiKey && isDev) {
     console.log(`[PageSpeed API] No GOOGLE_PAGESPEED_API_KEY found. Serving mock data in development mode for: ${targetUrl}`);
     // Simulate API delay for realistic testing experience
     await new Promise((resolve) => setTimeout(resolve, 2000));
-    return NextResponse.json(generateMockData(targetUrl));
+    return Response.json(generateMockData(targetUrl));
   }
 
   const buildApiUrl = (strategy) => {
@@ -102,9 +102,9 @@ export async function GET(request) {
       if (isDev) {
         console.warn(`[PageSpeed API] Google PageSpeed API rate limit exceeded (429). Falling back to mock data in development.`);
         await new Promise((resolve) => setTimeout(resolve, 1500));
-        return NextResponse.json(generateMockData(targetUrl));
+        return Response.json(generateMockData(targetUrl));
       }
-      return NextResponse.json(
+      return Response.json(
         { error: 'Google PageSpeed API quota exceeded. Please configure GOOGLE_PAGESPEED_API_KEY in Vercel/environment variables to restore service.' },
         { status: 429 }
       );
@@ -117,9 +117,9 @@ export async function GET(request) {
        
        if (isDev) {
          console.warn(`[PageSpeed API] Failed fetching from Google. Falling back to mock data in development.`);
-         return NextResponse.json(generateMockData(targetUrl));
+         return Response.json(generateMockData(targetUrl));
        }
-       return NextResponse.json({ error: 'Failed to fetch PageSpeed data from Google' }, { status: 500 });
+       return Response.json({ error: 'Failed to fetch PageSpeed data from Google' }, { status: 500 });
     }
 
     const mobileData = await mobileResponse.json();
@@ -154,14 +154,14 @@ export async function GET(request) {
       isMock: false
     };
 
-    return NextResponse.json(results);
+    return Response.json(results);
 
   } catch (error) {
     console.error('Error fetching PageSpeed data:', error);
     if (isDev) {
       console.warn(`[PageSpeed API] Unexpected error. Falling back to mock data in development.`);
-      return NextResponse.json(generateMockData(targetUrl));
+      return Response.json(generateMockData(targetUrl));
     }
-    return NextResponse.json({ error: 'An unexpected error occurred while fetching PageSpeed data.' }, { status: 500 });
+    return Response.json({ error: 'An unexpected error occurred while fetching PageSpeed data.' }, { status: 500 });
   }
 }

@@ -1,15 +1,10 @@
-import nodemailer from 'nodemailer'
-
-const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 587,
-    secure: false,
-    auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_APP_PASSWORD,
-    },
-})
-
+// Cloudflare Pages Function: POST /api/contact
+// Ported from the Next API route (app/api/contact/route.js). Workers can't open SMTP
+// sockets, so Gmail/nodemailer is replaced with Resend's HTTP API.
+// Env (Cloudflare Pages > Settings > Variables and secrets):
+//   RESEND_API_KEY  (secret, required)
+//   CONTACT_TO      (default contact@buildfirstsite.com)
+//   CONTACT_FROM    (default "Build First Site <contact@buildfirstsite.com>"; domain must be verified in Resend)
 /* ── Shared styles ─────────────────────────────────────────────── */
 const ORANGE = '#D9541A'
 const DARK   = '#101828'
@@ -195,9 +190,21 @@ function thankYouHtml({ name }) {
 </body></html>`
 }
 
-/* ── API Route ──────────────────────────────────────────────────── */
-export async function POST(request) {
+async function sendEmail(env, payload) {
+    const res = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+    })
+    if (!res.ok) throw new Error(`Resend ${res.status}: ${await res.text()}`)
+}
+
+/* ── Handler ────────────────────────────────────────────────────── */
+export async function onRequestPost({ request, env }) {
     try {
+        if (!env.RESEND_API_KEY) throw new Error('RESEND_API_KEY is not set')
+        const FROM = env.CONTACT_FROM || 'Build First Site <contact@buildfirstsite.com>'
+        const TO = env.CONTACT_TO || 'contact@buildfirstsite.com'
         const raw = await request.json()
 
         if (!raw?.name || !raw?.email) {
@@ -230,17 +237,18 @@ export async function POST(request) {
 
         await Promise.all([
             // 1. Notification to us
-            transporter.sendMail({
-                from: `"Build First Site" <${process.env.GMAIL_USER}>`,
-                to: process.env.GMAIL_USER,
-                replyTo: emailText,
+            sendEmail(env, {
+                from: FROM,
+                to: [TO],
+                reply_to: emailText,
                 subject: `New enquiry from ${nameText}${companyText ? ` · ${companyText}` : ''}`,
                 html: notificationHtml({ name, email, phone, company, message, source: source || 'buildfirstsite.com', heardFrom, website, page }),
             }),
             // 2. Thank-you to the enquirer
-            transporter.sendMail({
-                from: `"Build First Site" <${process.env.GMAIL_USER}>`,
-                to: emailText,
+            sendEmail(env, {
+                from: FROM,
+                to: [emailText],
+                reply_to: TO,
                 subject: `Thanks for reaching out, ${nameText.split(' ')[0]}`,
                 html: thankYouHtml({ name }),
             }),
